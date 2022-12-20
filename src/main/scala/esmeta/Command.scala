@@ -134,22 +134,6 @@ case object CmdEval extends Command("eval", CmdBuildCFG >> Eval) {
 }
 
 // -----------------------------------------------------------------------------
-// Tester for Test262 (ECMAScript Test Suite)
-// -----------------------------------------------------------------------------
-/** `test262-test` command */
-case object CmdTest262Test
-  extends Command("test262-test", CmdBuildCFG >> Test262Test) {
-  val help = "tests Test262 tests with harness files (default: tests/test262)."
-  val examples = List(
-    "esmeta test262-test                                           # all ",
-    "esmeta test262-test tests/test262/test/built-ins/Map/map.js   # file",
-    "esmeta test262-test tests/test262/test/language/expressions   # directory",
-  )
-  override val targetName = "<js|dir>+"
-  override val needTarget = false
-}
-
-// -----------------------------------------------------------------------------
 // ECMAScript Transformer
 // -----------------------------------------------------------------------------
 
