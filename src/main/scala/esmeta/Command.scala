@@ -152,15 +152,6 @@ case object CmdTest262Test
 // -----------------------------------------------------------------------------
 // ECMAScript Transformer
 // -----------------------------------------------------------------------------
-/** `inject` command */
-case object CmdInject extends Command("inject", CmdBuildCFG >> Inject) {
-  val help = "injects assertions to check final state of an ECMAScript file."
-  val examples = List(
-    "esmeta inject a.js                               # inject assertions.",
-    "esmeta inject a.js -inject:defs -inject:out=b.js # dump with definitions.",
-  )
-  override val targetName = "<js>+"
-}
 
 /** `mutate` command */
 case object CmdMutate extends Command("mutate", CmdBuildCFG >> Mutate) {

@@ -74,7 +74,6 @@ object ESMeta extends Git(BASE_DIR) {
     // Tester for Test262 (ECMAScript Test Suite)
     CmdTest262Test,
     // ECMAScript Transformer
-    CmdInject,
     CmdMutate,
     // ECMAScript Static Analysis (Meta-Level Static Analysis)
     CmdAnalyze,
@@ -98,7 +97,6 @@ object ESMeta extends Git(BASE_DIR) {
     // Tester for Test262 (ECMAScript Test Suite)
     Test262Test,
     // ECMAScript Transformer
-    Inject,
     Mutate,
     // ECMAScript Static Analysis (Meta-Level Static Analysis)
     Analyze,
