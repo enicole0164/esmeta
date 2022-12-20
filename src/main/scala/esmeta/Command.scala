@@ -96,19 +96,6 @@ case object CmdBuildCFG extends Command("build-cfg", CmdCompile >> BuildCFG) {
 }
 
 // -----------------------------------------------------------------------------
-// Analysis of ECMA-262
-// -----------------------------------------------------------------------------
-/** `tycheck` command */
-case object CmdTypeCheck extends Command("tycheck", CmdBuildCFG >> TypeCheck) {
-  val help = "performs a type analysis of ECMA-262."
-  val examples = List(
-    "esmeta tycheck                              # type check for spec.",
-    "esmeta tycheck -tycheck:target='.*ToString' # type check with targets",
-    "esmeta tycheck -extract:target=es2022       # type check for es2022 spec.",
-  )
-}
-
-// -----------------------------------------------------------------------------
 // Interpreter & Double Debugger for ECMAScript
 // -----------------------------------------------------------------------------
 /** `parse` command */
@@ -118,24 +105,6 @@ case object CmdParse extends Command("parse", CmdExtract >> Parse) {
     "esmeta parse a.js                         # parse a.js file.",
     "esmeta parse a.js -extract:target=es2022  # parse with es2022 spec.",
     "esmeta parse a.js -parse:debug            # parse in the debugging mode.",
-  )
-  override val targetName = "<js>+"
-}
-
-// -----------------------------------------------------------------------------
-// ECMAScript Transformer
-// -----------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------
-// ECMAScript Static Analysis (Meta-Level Static Analysis)
-// -----------------------------------------------------------------------------
-/** `analyze` command */
-case object CmdAnalyze extends Command("analyze", CmdBuildCFG >> Analyze) {
-  val help = "analyzes an ECMAScript file using meta-level static analysis."
-  val examples = List(
-    "esmeta analyze a.js                         # analyze a.js file.",
-    "esmeta analyze a.js -extract:target=es2022  # analyze with es2022 spec.",
-    "esmeta analyze a.js -analyze:repl           # analyze in a REPL mode.",
   )
   override val targetName = "<js>+"
 }

@@ -66,12 +66,8 @@ object ESMeta extends Git(BASE_DIR) {
     CmdExtract,
     CmdCompile,
     CmdBuildCFG,
-    // Analysis of ECMA-262
-    CmdTypeCheck,
     // Interpreter & Double Debugger for ECMAScript
     CmdParse,
-    // ECMAScript Static Analysis (Meta-Level Static Analysis)
-    CmdAnalyze,
   )
   val cmdMap = commands.foldLeft[Map[String, Command[_]]](Map()) {
     case (map, cmd) => map + (cmd.name -> cmd)
@@ -84,12 +80,8 @@ object ESMeta extends Git(BASE_DIR) {
     Extract,
     Compile,
     BuildCFG,
-    // Analysis of ECMA-262
-    TypeCheck,
     // Interpreter & Double Debugger for ECMAScript
     Parse,
-    // ECMAScript Static Analysis (Meta-Level Static Analysis)
-    Analyze,
   )
 
   /** command options */
