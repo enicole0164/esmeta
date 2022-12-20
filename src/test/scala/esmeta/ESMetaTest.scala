@@ -1,6 +1,5 @@
 package esmeta
 
-import esmeta.cfgBuilder.CFGBuilder
 import esmeta.compiler.Compiler
 import esmeta.error.{NotSupported => NSError}
 import esmeta.error.NotSupported.*
@@ -169,5 +168,4 @@ object ESMetaTest {
   lazy val spec = Extractor()
   lazy val grammar = spec.grammar
   lazy val program = Compiler(spec)
-  lazy val cfg = CFGBuilder(program)
 }

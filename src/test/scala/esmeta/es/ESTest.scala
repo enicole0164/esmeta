@@ -1,12 +1,8 @@
 package esmeta.es
 
 import esmeta.ESMetaTest
-import esmeta.analyzer.*
-import esmeta.analyzer.domain.*
-import esmeta.cfgBuilder.CFGBuilder
 import esmeta.compiler.Compiler
 import esmeta.es.util.*
-import esmeta.interpreter.*
 import esmeta.ir.NormalInst
 import esmeta.parser.AstFrom
 import esmeta.spec.Spec
@@ -37,39 +33,11 @@ object ESTest {
   // interpreter helpers
   // ---------------------------------------------------------------------------
   // interpreter with additional assertion checks
-  class CheckAfter(
-    st: State,
-    checkAfter: List[NormalInst],
-  ) extends Interpreter(st):
-    override lazy val result: State =
-      while (step) {}
-      for (assert <- checkAfter) super.eval(assert)
-      st
 
   // eval ES codes
-  def eval(
-    str: String,
-    checkAfter: List[NormalInst] = Nil,
-    cachedAst: Option[Ast] = None,
-    filename: Option[String] = None,
-  ): State =
-    new CheckAfter(Initialize(cfg, str, cachedAst, filename), checkAfter).result
-  def evalFile(
-    filename: String,
-    checkAfter: List[NormalInst] = Nil,
-    cachedAst: Option[Ast] = None,
-  ): State = eval(readFile(filename), checkAfter, cachedAst, Some(filename))
 
   // ---------------------------------------------------------------------------
   // analyzer helpers
-  // ---------------------------------------------------------------------------
-  // analyzer
-  lazy val analyzer = ESAnalyzer(cfg)
-
-  // analyze ES codes
-  def analyzeFile(filename: String): AbsSemantics =
-    analyzer(readFile(filename).trim)
-  def analyze(str: String): AbsSemantics = analyzer(str)
 
   // tests for ES parser
   def parseTest(ast: Ast): Ast =
@@ -83,22 +51,4 @@ object ESTest {
   def checkExit(st: State): st.type = st(GLOBAL_RESULT) match
     case Undef => st
     case v     => fail(s"return not undefined: $v")
-  def evalTest(
-    str: String,
-    checkAfter: List[NormalInst] = Nil,
-    cachedAst: Option[Ast] = None,
-  ): State = checkExit(eval(str, checkAfter, cachedAst))
-  def evalTestFile(
-    filename: String,
-    checkAfter: List[NormalInst] = Nil,
-    cachedAst: Option[Ast] = None,
-  ): State = checkExit(evalFile(filename, checkAfter, cachedAst))
-
-  // tests for ES analyzer
-  def checkExit(absSem: AbsSemantics): AbsSemantics =
-    assert(absSem.finalResult.value.getSingle == One(Undef))
-    absSem
-  def analyzeTest(str: String): AbsSemantics = checkExit(analyze(str))
-  def analyzeTestFile(filename: String): AbsSemantics =
-    checkExit(analyzeFile(filename))
 }
