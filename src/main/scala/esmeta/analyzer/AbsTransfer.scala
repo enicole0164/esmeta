@@ -5,7 +5,6 @@ import esmeta.analyzer.util.*
 import esmeta.cfg.*
 import esmeta.error.*
 import esmeta.es.*
-import esmeta.interpreter.Interpreter
 import esmeta.ir.{Func => _, *}
 import esmeta.parser.ESValueParser
 import esmeta.state.*
@@ -89,15 +88,6 @@ class AbsTransfer(sem: AbsSemantics) extends Optimized with PruneHelper {
     var ret @ AbsRet(value, st) = sem(rp)
 
     // proper type handle
-    Interpreter.setTypeMap
-      .get(rp.func.name)
-      .map(ty => {
-        if (!value.unwrapCompletion.isBottom) {
-          val (newV, newSt) = st.setType(value.unwrapCompletion, ty)
-          value = newV ⊔ value.abruptCompletion
-          st = newSt
-        }
-      })
 
     // return wrapped values
     for {
@@ -292,8 +282,6 @@ class AbsTransfer(sem: AbsSemantics) extends Optimized with PruneHelper {
                     method = true,
                   )
                 case None => error("invalid sdo")
-            case One(AstValue(lex: Lexical)) =>
-              newV ⊔= AbsValue(Interpreter.eval(lex, method))
             case Many =>
               // lexical sdo
               newV ⊔= bv.getLexical(method)
@@ -568,12 +556,7 @@ class AbsTransfer(sem: AbsSemantics) extends Optimized with PruneHelper {
   )(using cp: ControlPoint): AbsValue =
     import UOp.*
     operand.getSingle match
-      case Zero => AbsValue.Bot
-      case One(x: SimpleValue) =>
-        optional(AbsValue(Interpreter.eval(uop, x))).getOrElse(AbsValue.Bot)
-      case One(Math(x)) =>
-        optional(AbsValue(Interpreter.eval(uop, Math(x))))
-          .getOrElse(AbsValue.Bot)
+      case Zero   => AbsValue.Bot
       case One(_) => AbsValue.Bot
       case Many =>
         uop match
@@ -593,12 +576,6 @@ class AbsTransfer(sem: AbsSemantics) extends Optimized with PruneHelper {
     import BOp.*
     (left.getSingle, right.getSingle) match {
       case (Zero, _) | (_, Zero) => AbsValue.Bot
-      case (One(l: SimpleValue), One(r: SimpleValue)) =>
-        optional(AbsValue(Interpreter.eval(bop, l, r)))
-          .getOrElse(AbsValue.Bot)
-      case (One(Math(l)), One(Math(r))) =>
-        optional(AbsValue(Interpreter.eval(bop, Math(l), Math(r))))
-          .getOrElse(AbsValue.Bot)
       case (One(lpart: Part), One(rpart: Part)) if bop == Eq || bop == Equal =>
         if (lpart == rpart) {
           if (st.isSingle(lpart)) AVT

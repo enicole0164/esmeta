@@ -122,17 +122,6 @@ case object CmdParse extends Command("parse", CmdExtract >> Parse) {
   override val targetName = "<js>+"
 }
 
-/** `eval` command */
-case object CmdEval extends Command("eval", CmdBuildCFG >> Eval) {
-  val help = "evaluates an ECMAScript file."
-  val examples = List(
-    "esmeta eval a.js                         # eval a.js file.",
-    "esmeta eval a.js -extract:target=es2022  # eval with es2022 spec.",
-    "esmeta eval a.js -eval:log               # eval in the logging mode.",
-  )
-  override val targetName = "<js>+"
-}
-
 // -----------------------------------------------------------------------------
 // ECMAScript Transformer
 // -----------------------------------------------------------------------------

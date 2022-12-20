@@ -1,6 +1,5 @@
 package esmeta.error
 
-import esmeta.interpreter.*
 import esmeta.es.*
 import esmeta.ir.*
 import esmeta.cfg.*

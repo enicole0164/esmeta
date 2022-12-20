@@ -70,7 +70,6 @@ object ESMeta extends Git(BASE_DIR) {
     CmdTypeCheck,
     // Interpreter & Double Debugger for ECMAScript
     CmdParse,
-    CmdEval,
     // ECMAScript Static Analysis (Meta-Level Static Analysis)
     CmdAnalyze,
   )
@@ -89,7 +88,6 @@ object ESMeta extends Git(BASE_DIR) {
     TypeCheck,
     // Interpreter & Double Debugger for ECMAScript
     Parse,
-    Eval,
     // ECMAScript Static Analysis (Meta-Level Static Analysis)
     Analyze,
   )
