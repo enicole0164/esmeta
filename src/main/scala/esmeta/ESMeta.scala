@@ -65,7 +65,6 @@ object ESMeta extends Git(BASE_DIR) {
     // Mechanized Specification Extraction
     CmdExtract,
     CmdCompile,
-    CmdBuildCFG,
     // Interpreter & Double Debugger for ECMAScript
     CmdParse,
   )
@@ -79,7 +78,6 @@ object ESMeta extends Git(BASE_DIR) {
     // Mechanized Specification Extraction
     Extract,
     Compile,
-    BuildCFG,
     // Interpreter & Double Debugger for ECMAScript
     Parse,
   )

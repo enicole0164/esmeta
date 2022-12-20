@@ -86,15 +86,6 @@ case object CmdCompile extends Command("compile", CmdExtract >> Compile) {
   )
 }
 
-/** `build-cfg` command */
-case object CmdBuildCFG extends Command("build-cfg", CmdCompile >> BuildCFG) {
-  val help = "builds a control-flow graph (CFG) from an IR program."
-  val examples = List(
-    "esmeta build-cfg                          # build CFG for spec.",
-    "esmeta build-cfg -extract:target=es2022   # build CFG for es2022 spec.",
-  )
-}
-
 // -----------------------------------------------------------------------------
 // Interpreter & Double Debugger for ECMAScript
 // -----------------------------------------------------------------------------
