@@ -133,14 +133,6 @@ case object CmdEval extends Command("eval", CmdBuildCFG >> Eval) {
   override val targetName = "<js>+"
 }
 
-/** `web` command */
-case object CmdWeb extends Command("web", CmdBuildCFG >> Web) {
-  val help = "starts a web server for an ECMAScript double debugger."
-  val examples = List(
-    "esmeta web    # turn on the server (Use with `esmeta-debugger-client`).",
-  )
-}
-
 // -----------------------------------------------------------------------------
 // Tester for Test262 (ECMAScript Test Suite)
 // -----------------------------------------------------------------------------
