@@ -2,7 +2,6 @@ package esmeta.spec
 
 import esmeta.compiler.Compiler
 import esmeta.lang.*
-import esmeta.parser.{ESParser, AstFrom}
 import esmeta.spec.util.*
 import esmeta.ty.*
 import esmeta.util.BaseUtils.*
@@ -20,10 +19,6 @@ case class Spec(
   tyModel: TyModel = TyModel(), // type models
   document: Document = Document(""), // HTML Document element
 ) extends SpecElem {
-
-  /** ECMAScript parser */
-  lazy val esParser: ESParser = ESParser(grammar)
-  lazy val scriptParser: AstFrom = esParser("Script")
 
   /** get incomplete algorithms */
   lazy val incompleteAlgorithms: List[Algorithm] =

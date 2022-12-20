@@ -85,17 +85,3 @@ case object CmdCompile extends Command("compile", CmdExtract >> Compile) {
     "esmeta compile -extract:target=es2022 # compile es2022 spec to IR program",
   )
 }
-
-// -----------------------------------------------------------------------------
-// Interpreter & Double Debugger for ECMAScript
-// -----------------------------------------------------------------------------
-/** `parse` command */
-case object CmdParse extends Command("parse", CmdExtract >> Parse) {
-  val help = "parses an ECMAScript file."
-  val examples = List(
-    "esmeta parse a.js                         # parse a.js file.",
-    "esmeta parse a.js -extract:target=es2022  # parse with es2022 spec.",
-    "esmeta parse a.js -parse:debug            # parse in the debugging mode.",
-  )
-  override val targetName = "<js>+"
-}

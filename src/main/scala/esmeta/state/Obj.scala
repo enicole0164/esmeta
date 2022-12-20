@@ -3,7 +3,6 @@ package esmeta.state
 import esmeta.cfg.*
 import esmeta.error.*
 import esmeta.ir.{Func => IRFunc, *}
-import esmeta.parser.ESValueParser
 import scala.collection.mutable.{Map => MMap}
 
 // Objects
@@ -61,20 +60,12 @@ case class MapObj(
   /** keys of map */
   def keys: Vector[PureValue] = keys(intSorted = false)
   def keys(intSorted: Boolean): Vector[PureValue] = {
-    if (!intSorted) {
-      if (ty == "SubMap")
-        props.toVector
-          .sortBy(_._2._2)
-          .map(_._1)
-      else props.toVector.map(_._1).sortBy(_.toString)
-    } else
-      (for {
-        (Str(s), _) <- props.toVector
-        d = ESValueParser.str2Number(s)
-        if toStringHelper(d) == s
-        i = d.toLong // should handle unsigned integer
-        if d == i
-      } yield (s, i)).sortBy(_._2).map { case (s, _) => Str(s) }
+    if (ty == "SubMap")
+      props.toVector
+        .sortBy(_._2._2)
+        .map(_._1)
+    else props.toVector.map(_._1).sortBy(_.toString)
+
   }
 }
 object MapObj {

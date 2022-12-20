@@ -2,7 +2,6 @@ package esmeta.ir
 
 import esmeta.*
 import esmeta.ir.util.{Parser, YetCollector}
-import esmeta.parser.{ESParser, AstFrom}
 import esmeta.spec.Spec
 import esmeta.ty.TyModel
 import esmeta.util.BaseUtils.*
@@ -19,10 +18,6 @@ case class Program(
 
   /** the main function */
   lazy val main: Func = getUnique(funcs, _.main, "main function")
-
-  /** ECMAScript parser */
-  lazy val esParser: ESParser = spec.esParser
-  lazy val scriptParser: AstFrom = esParser("Script")
 
   /** get list of all yet expressions */
   lazy val yets: List[(EYet, Func)] = for {
