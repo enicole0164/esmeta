@@ -32,6 +32,7 @@ object SelectionEval {
         println(s"index: $idx")
       }
       idx += 1
+      println(script.name)
       val cov = getCoverage(baseDir)
       val (_, updated, _, blockingSet) = cov.runAndCheckBlockings(script)
       if (updated) {
