@@ -42,6 +42,7 @@ object SelectionEval {
           case (isBug, blocking) =>
             if isBug then isBug
             else
+              println(s"Blocking: ${blocking.code}")
               targets.foldLeft(false) {
                 case (isTargetBug, target) =>
                   if isTargetBug then true
