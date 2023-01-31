@@ -30,6 +30,7 @@ object SelectionEval {
       if (idx % 10 == 0) {
         println(s"index: $idx")
       }
+      idx += 1
       val cov = getCoverage(baseDir)
       val (_, updated, _, blockingSet) = cov.runAndCheckBlockings(script)
       if (updated) {
