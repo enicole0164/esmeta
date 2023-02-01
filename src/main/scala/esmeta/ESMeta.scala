@@ -84,6 +84,8 @@ object ESMeta extends Git(BASE_DIR) {
     CmdHandleCoverage,
     // ECMAScript Static Analysis (Meta-Level Static Analysis)
     CmdAnalyze,
+    // Automatic Conformance-test Generator
+    CmdFolderInject,
   )
   val cmdMap = commands.foldLeft[Map[String, Command[_]]](Map()) {
     case (map, cmd) => map + (cmd.name -> cmd)
@@ -114,7 +116,8 @@ object ESMeta extends Git(BASE_DIR) {
     HandleCoverage,
     // ECMAScript Static Analysis (Meta-Level Static Analysis)
     Analyze,
-    // Transpile and validate the given program
+    // Automatic Conformance-test Generator
+    FolderInject,
   )
 
   /** command options */

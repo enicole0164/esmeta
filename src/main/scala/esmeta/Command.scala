@@ -307,3 +307,15 @@ case object CmdAnalyze extends Command("analyze", CmdBuildCFG >> Analyze) {
   )
   override val targetName = "<js>"
 }
+
+// -----------------------------------------------------------------------------
+// Auto Conformance Test Generator
+// -----------------------------------------------------------------------------
+/** `folder-inject` command */
+case object CmdFolderInject extends Command("folder-inject", CmdBuildCFG >> FolderInject) {
+  val help = "injects assertions to check final state of a folder of ECMAScript files."
+  val examples = List(
+    "esmeta folder-inject dir                         # inject assertions to files in dir.",
+  )
+  override val targetName = "<dir>"
+}
