@@ -1,1 +1,0 @@
-class x { async [ 0 ] ( ) { } } 

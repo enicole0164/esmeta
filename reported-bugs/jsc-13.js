@@ -1,1 +1,0 @@
-const x = 0 ; for ( { x } in [ 0 ] ) ; 
