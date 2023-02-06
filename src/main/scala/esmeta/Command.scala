@@ -317,5 +317,5 @@ case object CmdFolderInject extends Command("folder-inject", CmdBuildCFG >> Fold
   val examples = List(
     "esmeta folder-inject dir                         # inject assertions to files in dir.",
   )
-  override val targetName = "<dir>"
+  // override val targetName = "<dir>"
 }

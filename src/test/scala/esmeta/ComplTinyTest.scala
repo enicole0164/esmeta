@@ -13,6 +13,7 @@ class ComplTinyTest extends ESMetaTest {
   // registration
   def init: Unit = {
     val expected = GenCompl.content
+    println(expected)
     val result = optional(readFile(s"$BASE_DIR/.completion")).getOrElse("")
     check("completion") { assert(result == expected) }
   }
