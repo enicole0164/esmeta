@@ -63,6 +63,10 @@ case object FolderInject extends Phase[CFG, Unit] {
     //   .filterNot(skip)
     //   .foldLeft
     // for every file, inject assertion
+    
+    // IQ1. getData 함수를 잘 정의하면, dumpDir을 사용할 수 있지 않을까?
+    // IQ2. USE_STRICT를 붙여서 새로운 reported-bugs-usestrict를 만들어보자.
+
     val injection = names.map(
         (filename:String) => {
         val filepath = s"$codeDir/$filename"
