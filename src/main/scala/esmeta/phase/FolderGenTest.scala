@@ -50,8 +50,8 @@ case object FolderGenTest
     //       s"$FUZZ_LOG_DIR/recent/minimal-assertion",
     //     )
     //   }
-    val codeDir = "./reported-bugs-usestrict"
-    val assertionDir = "./reported-bugs-assertion-usestrict"
+    val codeDir = s"$FOLDERINJECT_LOG_DIR/reported-bugs-usestrict"
+    val assertionDir = s"$FOLDERINJECT_LOG_DIR/reported-bugs-assertion-usestrict"
     val mygentestlogdir = 
     validate(codeDir, assertionDir)
     val names = getNames(codeDir)

@@ -27,7 +27,6 @@ case object FolderInject extends Phase[CFG, Unit] {
     cmdConfig: CommandConfig,
     config: Config,
   ): Unit = withCFG(cfg) {
-    // println("Folder-inject phase")
     _config = config
     
     // Collect file name
@@ -40,21 +39,16 @@ case object FolderInject extends Phase[CFG, Unit] {
         )
         s"./reported-bugs",
       }
-    val assertDir = s"./reported-bugs-assertion"
-    val assertDir_usestrict = s"./reported-bugs-assertion-usestrict"
+    val assertDir = s"$FOLDERINJECT_LOG_DIR/reported-bugs-assertion"
+    val assertDir_usestrict = s"$FOLDERINJECT_LOG_DIR/reported-bugs-assertion-usestrict"
     val names = getNames(codeDir)
-    // println(names)
     
     debug(s"- Handling each code...")
-    // names
-    //   .filterNot(skip)
-    //   .foldLeft
-    // for every file, inject assertion
     
     // IQ1. getData 함수를 잘 정의하면, dumpDir을 사용할 수 있지 않을까?
     // IQ2. USE_STRICT를 붙여서 새로운 reported-bugs-usestrict를 만들어보자.
-    val useStrictDir = s"./reported-bugs-usestrict"
-    val assertFullDir = s"./reported-bugs-assertfull"
+    val useStrictDir = s"$FOLDERINJECT_LOG_DIR/reported-bugs-usestrict"
+    val assertFullDir = s"$FOLDERINJECT_LOG_DIR/reported-bugs-assertfull"
 
     val injection = names.map(
         (filename:String) => {
