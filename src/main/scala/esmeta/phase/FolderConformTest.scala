@@ -20,8 +20,8 @@ case object FolderConformTest
     ),
     Map[Target, Iterable[String]],
   ] {
-  val name = "conform-test"
-  val help = "Perform conformance test for an ECMAScript Engine or a transpiler"
+  val name = "folder-conform-test"
+  val help = "Perform conformance test for an ECMAScript Engine or a transpiler based on tests in given folder"
 
   private var _config: Config = null
   private type Input = Map[Target, Iterable[Script]]

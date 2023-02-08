@@ -172,11 +172,6 @@ case object FolderGenTest
       "list of engines to test, separated by comma",
     ),
     (
-      "transpilers",
-      StrOption((c, s) => c.transpilers = Some(s)),
-      "list of transpilers to test, separated by comma",
-    ),
-    (
       "use-cache",
       BoolOption(c => c.cache = true),
       "use cached transpiled codes from previous run",
@@ -195,7 +190,6 @@ case object FolderGenTest
   case class Config(
     var debug: Boolean = false,
     var engines: Option[String] = None,
-    var transpilers: Option[String] = None,
     var cache: Boolean = false,
     var only: Option[String] = None,
     var skip: Option[String] = None,
