@@ -3,7 +3,11 @@ package esmeta
 import esmeta.phase.*
 import esmeta.util.ArgParser
 
-/** commands
+import esmeta.phase.FolderInject
+import esmeta.es.Script
+import esmeta.js.Target
+
+import esmeta.phase.ConformTest/** commands
   *
   * @tparam Result
   *   the result typeof command
@@ -317,5 +321,43 @@ case object CmdFolderInject extends Command("folder-inject", CmdBuildCFG >> Fold
   val examples = List(
     "esmeta folder-inject dir                         # inject assertions to files in dir.",
   )
+  override def showResult(_unit: Unit) = ()
   // override val targetName = "<dir>"
+}
+
+/** `folder-gen-test` command */
+case object CmdFolderGenTest extends Command("folder-gen-test", CmdFolderInject >> FolderGenTest) {
+  val help = "generate conform tests for an ECMAScript engine from a folder of ECMAScript files "
+  val examples = List(
+    "esmeta folder-gen-test dir                         # inject assertions to files in dir and generate test.",
+  )
+  // override val targetName = "<dir>"
+  override def showResult(
+    testMapPair: (
+      Map[esmeta.js.Target, Iterable[esmeta.es.Script]],
+      Iterable[esmeta.es.Script],
+    ),
+  ): Unit =
+    val (etestMap, _) = testMapPair
+    etestMap.foreach {
+      case (engine, tests) =>
+        println(s"${tests.size} tests generated for the engine `$engine`.")
+    }
+}
+
+/** `comform-test` command */
+case object CmdFolderConformTest
+  extends Command("folder-conform-test", CmdFolderGenTest >> FolderConformTest) {
+  val help = "perform conform test for an ECMAScript engine or a transpiler."
+  val examples = List(
+    "esmeta folder-comform-test                     # perform conform test",
+  )
+  override def showResult(
+    fails: Map[esmeta.js.Target, Iterable[String]],
+  ): Unit =
+    fails.foreach {
+      case (e, fails) =>
+        println(s"failing tests for `$e`: ")
+        fails.foreach(f => println(s"  $f"))
+    }
 }

@@ -16,7 +16,7 @@ import esmeta.util.*
 import esmeta.util.SystemUtils.*
 import esmeta.util.BaseUtils.*
 
-/** `inject` phase */
+/** `FolderInject` phase */
 case object FolderInject extends Phase[CFG, Unit] {
   val name = "folder-inject"
   val help = "injects assertions to check final state of a folder of ECMAScript files."
@@ -27,7 +27,7 @@ case object FolderInject extends Phase[CFG, Unit] {
     cmdConfig: CommandConfig,
     config: Config,
   ): Unit = withCFG(cfg) {
-    println("Folder-inject phase")
+    // println("Folder-inject phase")
     _config = config
     
     // Collect file name
@@ -43,7 +43,7 @@ case object FolderInject extends Phase[CFG, Unit] {
     val assertDir = s"./reported-bugs-assertion"
     val assertDir_usestrict = s"./reported-bugs-assertion-usestrict"
     val names = getNames(codeDir)
-    println(names)
+    // println(names)
     
     debug(s"- Handling each code...")
     // names
@@ -60,27 +60,23 @@ case object FolderInject extends Phase[CFG, Unit] {
         (filename:String) => {
         val filepath = s"$codeDir/$filename"
         dumpFile(
-            name = "an use-strict injected ECMAScript program",
             data = USE_STRICT + readFile(s"$codeDir/$filename") + LINE_SEP,
             filename = s"$useStrictDir/$filename"
         )
         val injected = Injector.fromFile(filepath, config.defs, config.log)
         dumpFile(
-            name = "an assertion-injected ECMAScript program",
             data = injected.core,
             filename = s"$assertDir/$filename"
         )
         val filepath_usestrict = s"$useStrictDir/$filename"
         val injected_usestrict = Injector.fromFile(filepath_usestrict, config.defs, config.log)
         dumpFile(
-            name = "an assertion-injected ECMAScript program",
             data = injected_usestrict.core,
             filename = s"$assertDir_usestrict/$filename"
         )
         val filepath_assertFull = s"$useStrictDir/$filename"
         val injected_assertFull = Injector.fromFile(filepath_assertFull, config.defs, config.log)
         dumpFile(
-            name = "an assertion-injected ECMAScript program",
             data = injected_usestrict,
             filename = s"$assertFullDir/$filename"
         )

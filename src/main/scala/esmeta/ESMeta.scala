@@ -4,6 +4,7 @@ import esmeta.error.*
 import esmeta.phase.*
 import esmeta.util.*
 
+import esmeta.phase.ConformTest
 /** ESMeta top-level object */
 object ESMeta extends Git(BASE_DIR) {
 
@@ -86,6 +87,8 @@ object ESMeta extends Git(BASE_DIR) {
     CmdAnalyze,
     // Automatic Conformance-test Generator
     CmdFolderInject,
+    CmdFolderGenTest,
+    CmdFolderConformTest,
   )
   val cmdMap = commands.foldLeft[Map[String, Command[_]]](Map()) {
     case (map, cmd) => map + (cmd.name -> cmd)
@@ -118,6 +121,8 @@ object ESMeta extends Git(BASE_DIR) {
     Analyze,
     // Automatic Conformance-test Generator
     FolderInject,
+    FolderGenTest,
+    FolderConformTest,
   )
 
   /** command options */

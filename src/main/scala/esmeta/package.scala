@@ -24,6 +24,8 @@ val CATEGORIZE_LOG_DIR = s"$LOG_DIR/categorize"
 val HANDLE_COVERAGE_LOG_DIR = s"$LOG_DIR/handle-coverage"
 val EVAL_LOG_DIR = s"$LOG_DIR/eval"
 val TEST262TEST_LOG_DIR = s"$LOG_DIR/test262"
+val FOLDERGENTEST_LOG_DIR = s"$LOG_DIR/folder-gen-test"
+val FOLDERCONFORMTEST_LOG_DIR = s"$LOG_DIR/folder-conform-test"
 
 /** tests directory root */
 val TEST_DIR = s"$BASE_DIR/tests"
