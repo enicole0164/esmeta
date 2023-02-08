@@ -8,6 +8,7 @@ import esmeta.es.util.injector.Injector
 import esmeta.es.Script
 import esmeta.interpreter.Interpreter
 import esmeta.es.*
+import esmeta.es.util.*
 import esmeta.state.*
 import esmeta.test262.*
 import esmeta.js.*
@@ -26,23 +27,8 @@ case object FolderInject extends Phase[CFG, Unit] {
     cmdConfig: CommandConfig,
     config: Config,
   ): Unit = withCFG(cfg) {
-    println("Hi there~")
+    println("Folder-inject phase")
     _config = config
-
-//   ): Unit = withCFG(cfg) {
-//     val filename = getFirstFilename(cmdConfig, this.name)
-//     val injected = Injector.fromFile(filename, config.defs, config.log)
-
-//     // dump the assertion-injected ECMAScript program
-//     for (filename <- config.out)
-//       dumpFile(
-//         name = "an assertion-injected ECMAScript program",
-//         data = injected,
-//         filename = filename,
-//       )
-
-//     injected.toString
-//   }
     
     // Collect file name
     val codeDir = optional {
@@ -55,6 +41,7 @@ case object FolderInject extends Phase[CFG, Unit] {
         s"./reported-bugs",
       }
     val assertDir = s"./reported-bugs-assertion"
+    val assertDir_usestrict = s"./reported-bugs-assertion-usestrict"
     val names = getNames(codeDir)
     println(names)
     
@@ -66,28 +53,39 @@ case object FolderInject extends Phase[CFG, Unit] {
     
     // IQ1. getData 함수를 잘 정의하면, dumpDir을 사용할 수 있지 않을까?
     // IQ2. USE_STRICT를 붙여서 새로운 reported-bugs-usestrict를 만들어보자.
+    val useStrictDir = s"./reported-bugs-usestrict"
+    val assertFullDir = s"./reported-bugs-assertfull"
 
     val injection = names.map(
         (filename:String) => {
         val filepath = s"$codeDir/$filename"
+        dumpFile(
+            name = "an use-strict injected ECMAScript program",
+            data = USE_STRICT + readFile(s"$codeDir/$filename") + LINE_SEP,
+            filename = s"$useStrictDir/$filename"
+        )
         val injected = Injector.fromFile(filepath, config.defs, config.log)
         dumpFile(
             name = "an assertion-injected ECMAScript program",
             data = injected.core,
             filename = s"$assertDir/$filename"
         )
+        val filepath_usestrict = s"$useStrictDir/$filename"
+        val injected_usestrict = Injector.fromFile(filepath_usestrict, config.defs, config.log)
+        dumpFile(
+            name = "an assertion-injected ECMAScript program",
+            data = injected_usestrict.core,
+            filename = s"$assertDir_usestrict/$filename"
+        )
+        val filepath_assertFull = s"$useStrictDir/$filename"
+        val injected_assertFull = Injector.fromFile(filepath_assertFull, config.defs, config.log)
+        dumpFile(
+            name = "an assertion-injected ECMAScript program",
+            data = injected_usestrict,
+            filename = s"$assertFullDir/$filename"
+        )
     }
     )
-    // println(injection)
-
-    // val filepath = s"$codeDir/bbl-01.js"
-    // val injected = Injector.fromFile(filepath, config.defs, config.log)
-    // // println(injected.core) // 저장 in dir
-    // dumpFile(
-    //     name = "an assertion-injected ECMAScript program",
-    //     data = injected.core,
-    //     filename = s"$assertDir/bbl-01.js"
-    // )
   }
     
     // ----------
