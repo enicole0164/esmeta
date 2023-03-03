@@ -518,7 +518,7 @@ object Coverage {
     kFs: Int,
     cp: Boolean,
   )
-  def fromLog(baseDir: String): Coverage =
+  def fromLog(baseDir: String, justCov: Boolean): Coverage =
     val jsonProtocol = JsonProtocol(cfg)
     import jsonProtocol.given
 
@@ -556,4 +556,19 @@ object Coverage {
     // TODO: Recover target conds
 
     cov
+  
+  def fromLog2(baseDir: String): Unit = 
+    val jsonProtocol = JsonProtocol(cfg)
+    import jsonProtocol.given
+
+    def rj[T](json: String)(implicit decoder: Decoder[T]) =
+      readJson[T](s"$baseDir/$json")
+
+    val con: CoverageConstructor = rj(s"constructor.json")
+    val cov = new Coverage(con.timeLimit, con.kFs, con.cp)
+
+    val nodeViewInfos: Vector[NodeViewInfo] = rj("node-coverage.json")
+    val condViewInfos: Vector[CondViewInfo] = rj("branch-coverage.json")
+
+    
 }

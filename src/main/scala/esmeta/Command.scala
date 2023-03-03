@@ -158,6 +158,22 @@ case object CmdTest262Test
 }
 
 // -----------------------------------------------------------------------------
+// Tester for Test262 (ECMAScript Test Suite)
+// -----------------------------------------------------------------------------
+/** `test262-cov` command */
+case object CmdTest262Cov
+  extends Command("test262-cov", CmdBuildCFG >> Test262Cov) {
+  val help = "load Test262 coverage (default: tests/test262)."
+  val examples = List(
+    "esmeta test262-cov                                           # all ",
+    "esmeta test262-cov tests/test262/test/built-ins/Map/map.js   # file",
+    "esmeta test262-cov tests/test262/test/language/expressions   # directory",
+  )
+  override val targetName = "<js|dir>*"
+  override val needTarget = false
+}
+
+// -----------------------------------------------------------------------------
 // ECMAScript Helper Modules
 // -----------------------------------------------------------------------------
 /** `inject` command */
