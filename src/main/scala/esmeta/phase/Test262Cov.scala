@@ -20,7 +20,11 @@ import esmeta.es.util.fuzzer.Fuzzer
 import esmeta.es.Script
 
 /** `test262-cov` phase */
-case object Test262Cov extends Phase[CFG, Unit] {
+case object Test262Cov
+  extends Phase[
+    CFG,
+    Unit,
+  ] {
   val name = "test262-cov"
   val help = "Loads coverage from JSON files"
   def apply(
@@ -28,12 +32,19 @@ case object Test262Cov extends Phase[CFG, Unit] {
     cmdConfig: CommandConfig,
     config: Config,
   ): Unit = withCFG(cfg) {
-    println("In test262-cov phase")
+    // 0. Set inputs
+    val log_cov_dir = cmdConfig.targets(0)
+    val script_path = cmdConfig.targets(1)
+
+    val logDir: String = s"$TEST262COV_LOG_DIR/cov-$dateStr"
+    
+    // Example command
+    // run test262-cov eval-230306_15_16 tests/test262/test/language/expressions/addition/bigint-and-number.js dir_test262-cov
 
     // 1. Load Coverage from log
     import Coverage.{*, given}
 
-    val from_log : (Coverage, CoverageConstructor) = fromLog2(s"$TEST262TEST_LOG_DIR/eval-230306_15_16/")
+    val from_log : (Coverage, CoverageConstructor) = fromLog2(s"$TEST262TEST_LOG_DIR/$log_cov_dir")
 
     val log_cov : Coverage = from_log._1
     val log_con : CoverageConstructor = from_log._2
@@ -42,7 +53,7 @@ case object Test262Cov extends Phase[CFG, Unit] {
     val script_cov : Coverage = new Coverage(log_con.timeLimit, log_con.kFs, log_con.cp)
 
     // 3. Load new_script
-    val script = Script(readFile(s"$TEST262TEST_LOG_DIR/eval-230306_15_16/minimal/tests/test262/test/language/expressions/addition/bigint-and-number.js"), "bigint-and-number.js")
+    val script = Script(readFile(s"$TEST262TEST_LOG_DIR/$log_cov_dir/minimal/$script_path"), s"$script_path")
 
     // 4. Record the code's Coverage
 
@@ -54,15 +65,11 @@ case object Test262Cov extends Phase[CFG, Unit] {
     println((result._2, result._3))
 
     // 5. Dump the coverage.
-    script_cov.dumpTo("./dir_test262-cov")
+    script_cov.dumpTo(logDir)
 
 
-    // 6. Compare the coverage.
-
-
-    // TODO:
-    // 1. Input으로 만들 수  있게 변환하기
-    // 2. Coverage가 포함이 되는지 확인할 수 있게 만들기!
+    // 6. Compare the coverage. (return the coverage that the original cov doesn't have)
+    
   
   }
 
