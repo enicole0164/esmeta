@@ -135,7 +135,7 @@ class Coverage(
   /** dump results */
   def dumpTo(
     baseDir: String,
-    withScripts: Boolean = false,
+    withScripts: Boolean = true,
     withScriptInfo: Boolean = false,
     withTargetCondViews: Boolean = false,
     withUnreachableFuncs: Boolean = false,
@@ -162,14 +162,14 @@ class Coverage(
       filename = s"$baseDir/node-coverage.json",
       space = true,
     )
-    log("Dupmed node coverage")
+    log("Dumped node coverage")
     dumpJson(
       name = if (withMsg) Some("branch coverage") else None,
       data = condViewInfos(orderedCondViews),
       filename = s"$baseDir/branch-coverage.json",
       space = true,
     )
-    log("Dupmed branch coverage")
+    log("Dumped branch coverage")
     if (withScripts)
       dumpDir[Script](
         name = if (withMsg) Some("minimal ECMAScript programs") else None,
@@ -179,7 +179,7 @@ class Coverage(
         getData = USE_STRICT + _.code + LINE_SEP,
         remove = true,
       )
-      log("Dupmed scripts")
+      log("Dumped scripts")
     if (withScriptInfo) {
       dumpDir[(String, ScriptInfo)](
         name = if (withMsg) Some("minimal ECMAScript assertions") else None,
@@ -189,7 +189,7 @@ class Coverage(
         getData = _._2.test.core, // TODO: dump this as json?
         remove = true,
       )
-      log("Dupmed assertions")
+      log("Dumped assertions")
       /*
       dumpJson(
         name =
@@ -211,6 +211,26 @@ class Coverage(
       log("dumped touched cond views")
        */
     }
+    if (true)
+      dumpJson(
+        name =
+          if (withMsg) Some("list of touched node view of minimal programs")
+          else None,
+        data = minimalTouchNodeViewJson(getNodeViewsId),
+        filename = s"$baseDir/minimal-touch-nodeview.json",
+        space = false,
+      )
+      log("dumped touched node views")
+      dumpJson(
+        name =
+          if (withMsg) Some("list of touched cond view of minimal programs")
+          else None,
+        data = minimalTouchCondViewJson(getCondViewsId),
+        filename = s"$baseDir/minimal-touch-condview.json",
+        space = false,
+      )
+      log("dumped touched cond views")
+
     if (withTargetCondViews)
       dumpJson(
         name = if (withMsg) Some("target conditional branches") else None,
@@ -518,7 +538,7 @@ object Coverage {
     kFs: Int,
     cp: Boolean,
   )
-  def fromLog(baseDir: String, justCov: Boolean): Coverage =
+  def fromLog(baseDir: String): Coverage =
     val jsonProtocol = JsonProtocol(cfg)
     import jsonProtocol.given
 
@@ -556,8 +576,12 @@ object Coverage {
     // TODO: Recover target conds
 
     cov
-  
-  def fromLog2(baseDir: String): Unit = 
+
+  def fromLog2(baseDir: String): (Coverage, CoverageConstructor) =
+    // needed
+    // constructor.json, node-coverage.json, branch-coverage.json,
+    // minimal-touch-nodeview.json, minimal-touch-condview.json,
+    // minimal/
     val jsonProtocol = JsonProtocol(cfg)
     import jsonProtocol.given
 
@@ -570,5 +594,31 @@ object Coverage {
     val nodeViewInfos: Vector[NodeViewInfo] = rj("node-coverage.json")
     val condViewInfos: Vector[CondViewInfo] = rj("branch-coverage.json")
 
-    
+    val minimalTouchNodeView: Map[String, Vector[Int]] = rj(
+      "minimal-touch-nodeview.json",
+    )
+    val minimalTouchCondView: Map[String, Vector[Int]] = rj(
+      "minimal-touch-condview.json",
+    )
+  
+    for {
+      minimal <- listFiles(s"$baseDir/minimal/tests/test262/test/language/expressions/addition")
+      name = minimal.getName
+      code = readFile(minimal.getPath).drop(USE_STRICT.length).strip
+      script = Script(code, name)
+    } {
+      minimalTouchNodeView(s"tests/test262/test/language/expressions/addition/"+name).foreach(i =>
+        cov.update(nodeViewInfos(i).nodeView, script),
+      )
+      minimalTouchCondView(s"tests/test262/test/language/expressions/addition/"+name).foreach(i =>
+        cov.update(condViewInfos(i).condView, None, script),
+      )
+    }
+
+    // TODO: read assertions, and recover complete minimal infos
+    // TODO: Recover target conds
+
+    (cov, con)
+  
 }
+

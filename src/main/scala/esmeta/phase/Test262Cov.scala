@@ -16,6 +16,8 @@ import java.io.File
 import esmeta.es.util.Coverage.CoverageConstructor
 import io.circe.*, io.circe.syntax.*
 import io.circe.Json
+import esmeta.es.util.fuzzer.Fuzzer
+import esmeta.es.Script
 
 /** `test262-cov` phase */
 case object Test262Cov extends Phase[CFG, Unit] {
@@ -28,55 +30,40 @@ case object Test262Cov extends Phase[CFG, Unit] {
   ): Unit = withCFG(cfg) {
     println("In test262-cov phase")
 
-    // load coverage from JSON files
-    // node-coverage,
-    // branch-coverage,
-    
-
-    // Resulting Coverage.
+    // 1. Load Coverage from log
     import Coverage.{*, given}
 
-    val cov : Coverage = fromLog(s"$TEST262TEST_LOG_DIR/eval-230303_17_32/", true)
-    // val jsonProtocol = JsonProtocol(cfg)
-    // import jsonProtocol.given
+    val from_log : (Coverage, CoverageConstructor) = fromLog2(s"$TEST262TEST_LOG_DIR/eval-230306_15_16/")
 
-    // def rj[T](json: String)(implicit decoder: Decoder[T]) =
-    //   readJson[T](s"$TEST262TEST_LOG_DIR/ecal-230303_17_32/$json")
+    val log_cov : Coverage = from_log._1
+    val log_con : CoverageConstructor = from_log._2
 
-    // val con: CoverageConstructor = rj(s"constructor.json")
-    // val cov = new Coverage(con.timeLimit, con.kFs, con.cp)
+    // 2. Get new_script's coverage and compare.
+    val script_cov : Coverage = new Coverage(log_con.timeLimit, log_con.kFs, log_con.cp)
 
-    // val nodeViewInfos: Vector[NodeViewInfo] = rj("node-coverage.json")
-    // val condViewInfos: Vector[CondViewInfo] = rj("branch-coverage.json")
+    // 3. Load new_script
+    val script = Script(readFile(s"$TEST262TEST_LOG_DIR/eval-230306_15_16/minimal/tests/test262/test/language/expressions/addition/bigint-and-number.js"), "bigint-and-number.js")
+
+    // 4. Record the code's Coverage
+
+    // take script as input
+    script_cov.runAndCheck(script)
+
+    val result = log_cov.runAndCheck(script)
+    // updated, covered
+    println((result._2, result._3))
+
+    // 5. Dump the coverage.
+    script_cov.dumpTo("./dir_test262-cov")
 
 
+    // 6. Compare the coverage.
 
-    // ------------------------------- From Test262Test ----------------------------------
-    // // set test mode
-    // if (!config.noTestMode) TEST_MODE = true
 
-    // // get target version of Test262
-    // val version = Test262.getVersion(config.target)
-    // val test262 = Test262(version)
-
-    // // run test262 eval test in debugging mode
-    // if (config.debug)
-    //   test262.evalTest(
-    //     cmdConfig.targets,
-    //     kFs = config.kFs,
-    //     cp = config.cp,
-    //   )
-    // // run test262 eval test
-    // else
-    //   test262.evalTest(
-    //     cmdConfig.targets,
-    //     config.log,
-    //     config.progress,
-    //     config.coverage,
-    //     config.timeLimit,
-    //     config.kFs,
-    //     config.cp,
-    //   )
+    // TODO:
+    // 1. Input으로 만들 수  있게 변환하기
+    // 2. Coverage가 포함이 되는지 확인할 수 있게 만들기!
+  
   }
 
   def defaultConfig: Config = Config()
