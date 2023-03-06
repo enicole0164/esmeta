@@ -115,6 +115,9 @@ class Coverage(
 
     (finalSt, updated, covered)
 
+  /** return the coverage that original coverage doesn't have covered.
+    * 
+    */
   /** get node coverage */
   def nodeCov: Int = nodeViewMap.size
   def nodeViewCov: Int = nodeViews.size
