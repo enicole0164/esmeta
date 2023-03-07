@@ -53,6 +53,7 @@ val IR_TEST_DIR = s"$TEST_DIR/ir"
 val ES_TEST_DIR = s"$TEST_DIR/es"
 val TEST262_DIR = s"$TEST_DIR/test262"
 val TEST262_TEST_DIR = s"$TEST262_DIR/test"
+val COVTEST_TEST_DIR = s"$TEST_DIR/covtest"
 
 /** error stack trace display mode */
 var ERROR_MODE = false
