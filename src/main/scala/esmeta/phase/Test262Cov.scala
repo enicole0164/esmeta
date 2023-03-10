@@ -39,17 +39,13 @@ case object Test262Cov
     // Set inputs
     val log_cov_dir = cmdConfig.targets(0)
     val targets = cmdConfig.targets.drop(1)
-
     val logDir: String = s"$TEST262COV_LOG_DIR/cov-$dateStr"
     
     val result = Test262Coverage(log_cov_dir, logDir).coverage_runAndCheck(targets)
     
-    result match 
-      case true =>
-        println("Test262 is not enough")
-      case false =>
-        println("Test262 is enough")
-
+    println(s"Total ${result._2 + result._3} tests")
+    println(s"Covered tests: ${result._2}")
+    println(s"Uncovered tests: ${result._3}")
   }
 
   def defaultConfig: Config = Config()

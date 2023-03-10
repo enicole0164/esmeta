@@ -136,13 +136,15 @@ class Coverage(
     for ((nodeView, _) <- interp.touchedNodeViews)
       getScript(nodeView) match
         case None =>
+          println(s"Missing ${script.name} : $nodeView")
           covered = true
         case _ =>
 
     // update branch coverage
-    for ((condView, nearest) <- interp.touchedCondViews)
+    for ((condView, _) <- interp.touchedCondViews)
       getScript(condView) match
         case None =>
+          println(s"Missing ${script.name} : $condView")
           covered = true
         case _ =>
 
