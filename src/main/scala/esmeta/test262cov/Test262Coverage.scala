@@ -93,16 +93,18 @@ case class Test262Coverage(
 
     covered
   */
+
   def coverage_runAndCheck(paths: List[String] = List(COVTEST_TEST_DIR)): Boolean =
     val from_log : (Coverage, CoverageConstructor) = fromLog2(s"$TEST262TEST_LOG_DIR/$log_cov_dir")
     val log_cov : Coverage = from_log._1
     val log_con : CoverageConstructor = from_log._2
 
-    val covered = false
+    var covered = false
+    var covered_tests = 0
+    var uncovered_tests = 0
 
     val combined_script_cov : Coverage = new Coverage(log_con.timeLimit, log_con.kFs, log_con.cp)
 
-    println(paths)
     // val scripts = getDataList(paths).map(_.relName)
     val scripts = getDataList(paths)
     
@@ -117,9 +119,12 @@ case class Test262Coverage(
       val result = log_cov.runAndCheckwoUpdate(script)
       result match
         case true =>
-          println(s"Coverage of Test262 didn't cover the program ${script.name}")
+          println(s"Coverage of Test262 didn't cover the program ${script.name}");
+          covered = true
+          covered_tests += 1
         case false =>
           println(s"Coverage of Test262 covers the program ${script.name}")
+          uncovered_tests += 1
       script_cov.dumpTo(baseDir = s"$logDir/${script.name}", withMsg = false, logBool = false)
     }
 

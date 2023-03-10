@@ -21,7 +21,7 @@ import esmeta.test262coverage.Test262Coverage
 case object Test262Cov
   extends Phase[
     CFG,
-    Boolean,
+    Unit,
   ] {
   val name = "test262-cov"
   val help = "Loads coverage from JSON files"
@@ -29,20 +29,26 @@ case object Test262Cov
     cfg: CFG,
     cmdConfig: CommandConfig,
     config: Config,
-  ): Boolean = withCFG(cfg) {
+  ): Unit = withCFG(cfg) {
+    // Example command
+    // run test262-cov eval-230306_15_16 tests/test262/test/language/expressions/addition/bigint-and-number.js
+    // run test262-cov eval-230306_15_16 tests/covtest
+    // run test262-cov eval-230306_15_16
+
+
     // Set inputs
     val log_cov_dir = cmdConfig.targets(0)
     val targets = cmdConfig.targets.drop(1)
 
     val logDir: String = s"$TEST262COV_LOG_DIR/cov-$dateStr"
     
-    // Example command
-    // run test262-cov eval-230306_15_16 tests/test262/test/language/expressions/addition/bigint-and-number.js
-    // run test262-cov eval-230306_15_16
-
     val result = Test262Coverage(log_cov_dir, logDir).coverage_runAndCheck(targets)
     
-    result
+    result match 
+      case true =>
+        println("Test262 is not enough")
+      case false =>
+        println("Test262 is enough")
 
   }
 
