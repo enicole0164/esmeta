@@ -29,7 +29,9 @@ case class Test262Coverage(
       case Nil   => List(COVTEST_TEST_DIR)
       case paths => paths,
     )
-  def coverage_runAndCheck(script_path: String): (Boolean, Boolean) =
+
+  /**
+  def coverage_runAndCheck_script(script_path: String): (Boolean, Boolean) =
     val from_log : (Coverage, CoverageConstructor) = fromLog2(s"$TEST262TEST_LOG_DIR/$log_cov_dir")
     val log_cov : Coverage = from_log._1
     val log_con : CoverageConstructor = from_log._2
@@ -47,9 +49,82 @@ case class Test262Coverage(
 
     val result = log_cov.runAndCheck(script)
     // updated, covered
-    println((result._2, result._3))
+    
+    (result._2, result._3) match
+      case ( _ , true) =>
+        println("Coverage of Test262 didn't cover the program")
+      case ( _ , false) =>
+        println("Coverage of Test262 covers the program")
 
     // 5. Dump the coverage.
     script_cov.dumpTo(logDir)
-    (true, true)
+
+    (result._2, result._3)
+
+  def coverage_runAndCheck_dir(dir: String = COVTEST_TEST_DIR): Boolean =
+    val from_log : (Coverage, CoverageConstructor) = fromLog2(s"$TEST262TEST_LOG_DIR/$log_cov_dir")
+    val log_cov : Coverage = from_log._1
+    val log_con : CoverageConstructor = from_log._2
+
+    val covered = false
+
+    val combined_script_cov : Coverage = new Coverage(log_con.timeLimit, log_con.kFs, log_con.cp)
+
+    val scripts = getDataList(List(dir)).map(_.relName)
+
+    for (script_path <- scripts) {
+      // Get coverage of specific script
+      val script = Script(readFile(s"$COVTEST_TEST_DIR/$script_path"), s"$script_path")
+      val script_cov : Coverage = new Coverage(log_con.timeLimit, log_con.kFs, log_con.cp)
+      script_cov.runAndCheck(script)
+      combined_script_cov.runAndCheck(script)
+
+      val result = log_cov.runAndCheckwoUpdate(script)
+      result match
+        case true =>
+          println(s"Coverage of Test262 didn't cover the program ${script.name}")
+        case false =>
+          println(s"Coverage of Test262 covers the program ${script.name}")
+      script_cov.dumpTo(baseDir = s"$logDir/${script.name}", withMsg = false, logBool = false)
+    }
+
+    // 5. Dump the coverage.
+    combined_script_cov.dumpTo(s"$logDir/combined_script_coverage", withMsg = false, logBool = false)
+
+    covered
+  */
+  def coverage_runAndCheck(paths: List[String] = List(COVTEST_TEST_DIR)): Boolean =
+    val from_log : (Coverage, CoverageConstructor) = fromLog2(s"$TEST262TEST_LOG_DIR/$log_cov_dir")
+    val log_cov : Coverage = from_log._1
+    val log_con : CoverageConstructor = from_log._2
+
+    val covered = false
+
+    val combined_script_cov : Coverage = new Coverage(log_con.timeLimit, log_con.kFs, log_con.cp)
+
+    println(paths)
+    // val scripts = getDataList(paths).map(_.relName)
+    val scripts = getDataList(paths)
+    
+
+    for (script_path <- scripts) {
+      // Get coverage of specific script
+      val script = Script(readFile(s"${script_path}"), s"${script_path.relName}")
+      val script_cov : Coverage = new Coverage(log_con.timeLimit, log_con.kFs, log_con.cp)
+      script_cov.runAndCheck(script)
+      combined_script_cov.runAndCheck(script)
+
+      val result = log_cov.runAndCheckwoUpdate(script)
+      result match
+        case true =>
+          println(s"Coverage of Test262 didn't cover the program ${script.name}")
+        case false =>
+          println(s"Coverage of Test262 covers the program ${script.name}")
+      script_cov.dumpTo(baseDir = s"$logDir/${script.name}", withMsg = false, logBool = false)
+    }
+
+    // 5. Dump the coverage.
+    combined_script_cov.dumpTo(s"$logDir/combined_script_coverage", withMsg = false, logBool = false)
+
+    covered
 }

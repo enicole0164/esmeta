@@ -32,7 +32,7 @@ object MetaData {
     val relName =
       if (absPath.startsWith(COVTEST_TEST_DIR))
         absPath.drop(COVTEST_TEST_DIR.length + 1)
-      else ""
+      else filename
     val source = Source.fromFile(filename)
     val lines =
       try source.getLines.toList

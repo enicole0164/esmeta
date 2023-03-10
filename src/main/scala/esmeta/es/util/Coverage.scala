@@ -63,6 +63,14 @@ class Coverage(
     check(script, interp)
   }
 
+  /** evaluate a given ECMAScript program, update coverage, and return
+    * evaluation result with whether it succeeds to increase coverage
+    */
+  def runAndCheckwoUpdate(script: Script): Boolean = {
+    val interp = run(script.code)
+    check_wo_update(script, interp)
+  }
+
   /** evaluate a given ECMAScript program. */
   def run(code: String): Interp = {
     // run interpreter and record touched
@@ -114,7 +122,32 @@ class Coverage(
     // assert: _minimalScripts ~= _minimalInfo.keys
 
     (finalSt, updated, covered)
+  
+  /** update coverage, and return evaluation result with whether it succeeds to
+    * increase coverage
+    */
+  def check_wo_update(script: Script, interp: Interp): Boolean =
+    val Script(code, name) = script
 
+    // covered new elements
+    var covered = false
+
+    // update node coverage
+    for ((nodeView, _) <- interp.touchedNodeViews)
+      getScript(nodeView) match
+        case None =>
+          covered = true
+        case _ =>
+
+    // update branch coverage
+    for ((condView, nearest) <- interp.touchedCondViews)
+      getScript(condView) match
+        case None =>
+          covered = true
+        case _ =>
+
+    covered
+  
   /** return the coverage that original coverage doesn't have covered.
     * 
     */
@@ -143,6 +176,7 @@ class Coverage(
     withTargetCondViews: Boolean = false,
     withUnreachableFuncs: Boolean = false,
     withMsg: Boolean = true,
+    logBool: Boolean = true,
   ): Unit =
     mkdir(baseDir)
     lazy val orderedNodeViews = nodeViews.toList.sorted
@@ -165,14 +199,14 @@ class Coverage(
       filename = s"$baseDir/node-coverage.json",
       space = true,
     )
-    log("Dumped node coverage")
+    if (logBool) log("Dumped node coverage")
     dumpJson(
       name = if (withMsg) Some("branch coverage") else None,
       data = condViewInfos(orderedCondViews),
       filename = s"$baseDir/branch-coverage.json",
       space = true,
     )
-    log("Dumped branch coverage")
+    if (logBool) log("Dumped branch coverage")
     if (withScripts)
       dumpDir[Script](
         name = if (withMsg) Some("minimal ECMAScript programs") else None,
@@ -182,7 +216,7 @@ class Coverage(
         getData = USE_STRICT + _.code + LINE_SEP,
         remove = true,
       )
-      log("Dumped scripts")
+      if (logBool) log("Dumped scripts")
     if (withScriptInfo) {
       dumpDir[(String, ScriptInfo)](
         name = if (withMsg) Some("minimal ECMAScript assertions") else None,
@@ -192,7 +226,7 @@ class Coverage(
         getData = _._2.test.core, // TODO: dump this as json?
         remove = true,
       )
-      log("Dumped assertions")
+      if (logBool) log("Dumped assertions")
       /*
       dumpJson(
         name =
@@ -223,7 +257,7 @@ class Coverage(
         filename = s"$baseDir/minimal-touch-nodeview.json",
         space = false,
       )
-      log("dumped touched node views")
+      if (logBool) log("dumped touched node views")
       dumpJson(
         name =
           if (withMsg) Some("list of touched cond view of minimal programs")
@@ -232,7 +266,7 @@ class Coverage(
         filename = s"$baseDir/minimal-touch-condview.json",
         space = false,
       )
-      log("dumped touched cond views")
+      if (logBool) log("dumped touched cond views")
 
     if (withTargetCondViews)
       dumpJson(
@@ -244,7 +278,7 @@ class Coverage(
         filename = s"$baseDir/target-conds.json",
         space = true,
       )
-      log("dumped target conds")
+      if (logBool) log("dumped target conds")
     if (withUnreachableFuncs)
       dumpFile(
         name = if (withMsg) Some("unreachable functions") else None,
@@ -255,7 +289,7 @@ class Coverage(
           .mkString(LINE_SEP),
         filename = s"$baseDir/unreach-funcs",
       )
-      log("dumped unreachable functions")
+      if (logBool) log("dumped unreachable functions")
 
   override def toString: String =
     val app = new Appender
