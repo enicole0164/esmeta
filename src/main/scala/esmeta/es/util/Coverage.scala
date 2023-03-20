@@ -641,17 +641,32 @@ object Coverage {
     )
   
     for {
-      minimal <- listFiles(s"$baseDir/minimal/tests/test262/test/language/expressions/addition")
-      name = minimal.getName
+      minimal <- walkTree_onlyFiles(s"$baseDir/minimal")
+      name = minimal.getPath.drop(s"$baseDir/minimal".length).strip
       code = readFile(minimal.getPath).drop(USE_STRICT.length).strip
       script = Script(code, name)
-    } {
-      minimalTouchNodeView(s"tests/test262/test/language/expressions/addition/"+name).foreach(i =>
+      mtnv = minimalTouchNodeView.get(name)
+      mtcv = minimalTouchCondView.get(name)
+    } { mtnv match {
+      case Some(vec)  => vec.foreach(i =>
         cov.update(nodeViewInfos(i).nodeView, script),
       )
-      minimalTouchCondView(s"tests/test262/test/language/expressions/addition/"+name).foreach(i =>
-        cov.update(condViewInfos(i).condView, None, script),
-      )
+      case None => println(s"Possibly not minimal in nv: $name")
+      }
+      mtcv match {
+        case Some(vec)  => vec.foreach(i =>
+          cov.update(condViewInfos(i).condView, None, script),
+        )
+        case None =>  println(s"Possibly not minimal in cv: $name")
+      }
+    
+      // minimalTouchNodeView(name).foreach(i =>
+      //   cov.update(nodeViewInfos(i).nodeView, script),
+      // )
+      // minimalTouchCondView(name).foreach(i =>
+      //   cov.update(condViewInfos(i).condView, None, script),
+      // )
+      // print("DONE")
     }
 
     // TODO: read assertions, and recover complete minimal infos

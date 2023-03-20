@@ -36,6 +36,12 @@ object SystemUtils {
         else Iterator.empty
     }.flatMap(walkTree)
 
+  def walkTree_onlyFiles(filename: String, sort:Boolean=false): Iterable[File] =
+    if (!sort)
+      walkTree(File(filename)).filter(_.isFile)
+    else
+      walkTree(File(filename)).toSeq.sortWith(_.getPath < _.getPath).toIterable.filter(_.isFile)
+
   /** extension filter */
   def extFilter(ext: String): (String | File) => Boolean = _ match {
     case name: String => name.endsWith(s".$ext")
