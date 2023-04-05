@@ -51,6 +51,19 @@ class Coverage(
   private var condViewMap: Map[Cond, Map[View, Script]] = Map()
   private var condViews: Set[CondView] = Set()
 
+  /* -------------------- for MISSVIEW -------------------------------- */
+  /* (node) -> ((view) -> (script))                                     */
+  // missing nv and cv to scripts
+  private var missNodeViewMap: Map[Node, Map[View, Script]] = Map()
+  private var missNodeViews: Set[NodeView] = Set()
+  private var missCondViewMap: Map[Cond, Map[View, Script]] = Map()
+  private var missCondViews: Set[CondView] = Set()
+
+  /* (script) -> (nodeview)                                             */
+  private var missNodeViewMap2: Map[Script, Set[NodeView]] = Map()
+  private var missCondViewMap2: Map[Script, Set[CondView]] = Map()
+  /* ------------------------------------------------------------------ */
+
   // target conditional branches
   def targetCondViews: Map[Cond, Map[View, Option[Nearest]]] = _targetCondViews
   private var _targetCondViews: Map[Cond, Map[View, Option[Nearest]]] = Map()
@@ -136,6 +149,7 @@ class Coverage(
     for ((nodeView, _) <- interp.touchedNodeViews)
       getScript(nodeView) match
         case None =>
+          addMissView(nodeView, script)
           println(s"Missing ${script.name} : $nodeView")
           covered = true
         case _ =>
@@ -144,10 +158,14 @@ class Coverage(
     for ((condView, _) <- interp.touchedCondViews)
       getScript(condView) match
         case None =>
+          addMissView(condView, script)
           println(s"Missing ${script.name} : $condView")
           covered = true
         case _ =>
 
+    // update script to set of Nodeview map
+    addMissView2(script)
+    
     covered
   
   /** return the coverage that original coverage doesn't have covered.
@@ -293,6 +311,25 @@ class Coverage(
       )
       if (logBool) log("dumped unreachable functions")
 
+  // /* Dump missing nodeviews */
+  // def dumpMiss(
+  //   baseDir: String,
+  // ): Unit =
+  //   mkdir(baseDir)
+  //   lazy val orderedNodeViews = missNodeViews.toList.sorted
+  //   lazy val orderedCondViews = missCondViews.toList.sorted
+  //   lazy val getNodeViewsId = missNodeViewMap2.zipWithIndex.toMap
+  //   lazy val getCondViewsId = missCondViewMap2.zipWithIndex.toMap
+
+  //   dumpJson(
+  //     name = Some()
+  //     data = nodeViewInfos
+  //     filename = s"$baseDir/miss-node-coverage.json",
+  //     space = true,
+  //   )
+  // /* Dump missing nodeviews */
+  
+
   override def toString: String =
     val app = new Appender
     (app >> "- coverage:").wrap("", "") {
@@ -391,6 +428,30 @@ class Coverage(
     val newViews = origViews + (view -> nearest)
     _targetCondViews += cond -> newViews
 
+  /* -------------------- for MISSVIEW ------------------------------- */
+  // add miss view
+  private def addMissView(nodeView: NodeView, script: Script): Unit=
+    missNodeViews += nodeView
+    val NodeView(node, view) = nodeView
+    missNodeViewMap += node -> updated(apply(node), view, script)
+
+  private def addMissView(condView: CondView, script: Script): Unit=
+    missCondViews += condView
+    val CondView(cond, view) = condView
+    missCondViewMap += cond -> updated(apply(cond), view, script)
+  
+  // update mapping for miss
+  private def updated_miss[View](
+    map: Map[View, Script],
+    view: View,
+    script: Script,
+  ): Map[View, Script] = 
+    map + (view -> script)
+
+  private def addMissView2(script: Script): Unit=
+    missNodeViewMap2 += script -> missNodeViews
+    missCondViewMap2 += script -> missCondViews
+  /* ---------------------------------------------------------------- */
   // script parser
   private lazy val scriptParser = cfg.scriptParser
 
