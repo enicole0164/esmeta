@@ -92,6 +92,26 @@ case class Test262(
     verbose = useProgress,
   )
 
+  /** for Test262Fuzzer */
+  def giveTest() = {
+    // get metadata list
+    val dataList: List[MetaData] = getDataList(Nil)
+    
+    // get all applicable tests with progress bar
+    val tests = getTests(
+      name = "eval",
+      dataList = dataList,
+    )
+
+    lazy val pool = (for {
+      test <- tests
+      code = loadTest(test.name)
+    } yield code).toSet.toVector.sortBy(_.length)
+    pool
+  }
+
+  
+
   /** interpreter test */
   def evalTest(
     paths: Iterable[String] = Nil,

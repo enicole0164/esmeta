@@ -27,6 +27,7 @@ class CFG(
   /** an ECMAScript parser */
   lazy val esParser: ESParser = program.esParser
   lazy val scriptParser: AstFrom = esParser("Script")
+  lazy val moduleParser: AstFrom = esParser("Module")
 
   /** ESMAScript initializer */
   lazy val init: Initialize = new Initialize(this)

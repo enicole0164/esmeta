@@ -21,7 +21,9 @@ class Initialize(cfg: CFG) {
 
   /** get initial state from JS file */
   def fromFile(filename: String): State =
-    val (ast, semiInjected) = cfg.scriptParser.fromFileWithCode(filename)
+    println("FIX1: Initialize.scala fromFile(filename: String) considers the file tobe script always")
+    val (ast, semiInjected) = cfg.moduleParser.fromFileWithCode(filename)
+    // val (ast, semiInjected) = cfg.scriptParser.fromFileWithCode(filename)
     from(semiInjected, ast)
 
   /** get initial state with source text and cached AST */

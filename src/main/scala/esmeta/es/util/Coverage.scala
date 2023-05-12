@@ -79,6 +79,14 @@ class Coverage(
   /** evaluate a given ECMAScript program, update coverage, and return
     * evaluation result with whether it succeeds to increase coverage
     */
+  def runAndCheck_test262(script: Script): (State, Boolean, Boolean) = {
+    val interp = run(script.code)
+    check_test262(script, interp)
+  }
+
+  /** evaluate a given ECMAScript program, update coverage, and return
+    * evaluation result with whether it succeeds to increase coverage
+    */
   def runAndCheckwoUpdate(script: Script): Boolean = {
     val interp = run(script.code)
     check_wo_update(script, interp)
@@ -167,7 +175,54 @@ class Coverage(
     addMissView2(script)
     
     covered
-  
+
+  /** if 'test262' do not update
+    */
+  def check_test262(script: Script, interp: Interp): (State, Boolean, Boolean) =
+    val Script(code, name) = script
+
+    val initSt =
+      cfg.init.from(code) // TODO: Check if recreating init state is OK
+    val finalSt = interp.result
+
+    // covered new elements
+    var covered = false
+    // updated elements
+    var updated = false
+
+    // update node coverage
+    for ((nodeView, _) <- interp.touchedNodeViews)
+      getScript(nodeView) match
+        case None =>
+          update(nodeView, script); updated = true; covered = true
+        case Some(origScript) if origScript.code.length > code.length =>
+          val Script(_, ori_name) = origScript 
+          val isTest262 = (ori_name.substring(0, 7) == "test262")
+          if (!isTest262) update(nodeView, script); updated = true
+        case _ =>
+
+    // update branch coverage
+    for ((condView, nearest) <- interp.touchedCondViews)
+      getScript(condView) match
+        case None =>
+          update(condView, nearest, script); updated = true; covered = true
+        case Some(origScript) if origScript.code.length > code.length =>
+          val Script(_, ori_name) = origScript 
+          val isTest262 = (ori_name.substring(0, 7) == "test262")
+          if (!isTest262) update(condView, nearest, script); updated = true
+        case _ =>
+
+    // update script info
+    if (updated)
+      _minimalInfo += script.name -> ScriptInfo(
+        ConformTest.createTest(initSt, finalSt),
+        interp.touchedNodeViews.map(_._1),
+        interp.touchedCondViews.map(_._1),
+      )
+    // assert: _minimalScripts ~= _minimalInfo.keys
+
+    (finalSt, updated, covered)
+    
   /** return the coverage that original coverage doesn't have covered.
     * 
     */

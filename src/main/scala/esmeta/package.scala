@@ -25,6 +25,7 @@ val HANDLE_COVERAGE_LOG_DIR = s"$LOG_DIR/handle-coverage"
 val EVAL_LOG_DIR = s"$LOG_DIR/eval"
 val TEST262TEST_LOG_DIR = s"$LOG_DIR/test262"
 val TEST262COV_LOG_DIR = s"$LOG_DIR/test262-cov"
+val TEST262FUZZ_LOG_DIR = s"$LOG_DIR/test262-fuzz"
 
 /** tests directory root */
 val TEST_DIR = s"$BASE_DIR/tests"

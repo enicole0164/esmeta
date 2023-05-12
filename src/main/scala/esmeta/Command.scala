@@ -3,6 +3,7 @@ package esmeta
 import esmeta.phase.*
 import esmeta.util.ArgParser
 
+import esmeta.phase.Test262Fuzz
 /** commands
   *
   * @tparam Result
@@ -158,7 +159,7 @@ case object CmdTest262Test
 }
 
 // -----------------------------------------------------------------------------
-// Tester for Test262 (ECMAScript Test Suite)
+// Coverage Checker for Test262 (ECMAScript Test Suite)
 // -----------------------------------------------------------------------------
 /** `test262-cov` command */
 case object CmdTest262Cov
@@ -170,6 +171,22 @@ case object CmdTest262Cov
     "esmeta test262-cov tests/test262/test/language/expressions   # directory",
   )
   override val targetName = "<js|dir>*"
+  override val needTarget = false
+}
+
+// -----------------------------------------------------------------------------
+// Fuzzer for Test262 (ECMAScript Test Suite)
+// -----------------------------------------------------------------------------
+/** `test262-fuzz` command */
+case object CmdTest262Fuzz
+  extends Command("test262-fuzz", CmdBuildCFG >> Test262Fuzz) {
+  val help = "fuzz Test262 to reach 100% coverage (default: tests/test262)."
+  val examples = List(
+    "esmeta test262-fuzz                                          # all ",
+    // "esmeta test262-cov tests/test262/test/built-ins/Map/map.js   # file",
+    // "esmeta test262-cov tests/test262/test/language/expressions   # directory",
+  )
+  // override val targetName = "<js|dir>*"
   override val needTarget = false
 }
 

@@ -240,6 +240,8 @@ class Interpreter(
           st.allocList(syn.children.flatten.map(AstValue(_)).toList)
         case _ => throw InvalidASTChildren(a)
     case EYet(msg) =>
+      println("FIX2: Interpreter.scala thinks module is EYET")
+      println("FIX3: Interpreter.scala The program is already parsed with EYET")
       throw NotSupported(msg)
     case EContains(list, elem, field) =>
       val l = eval(list).getList(list, st)
