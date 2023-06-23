@@ -191,6 +191,22 @@ case object CmdTest262Fuzz
 }
 
 // -----------------------------------------------------------------------------
+// Test Coverage for Test262 (ECMAScript Test Suite)
+// -----------------------------------------------------------------------------
+/** `test262-testcov` command */
+case object CmdTest262TestCov
+  extends Command("test262-testcov", CmdBuildCFG >> Test262TestCov) {
+  val help = "save coverage of each test"
+  val examples = List(
+    "esmeta test262-testcov                                          # all ",
+    // "esmeta test262-cov tests/test262/test/built-ins/Map/map.js   # file",
+    // "esmeta test262-cov tests/test262/test/language/expressions   # directory",
+  )
+  // override val targetName = "<js|dir>*"
+  override val needTarget = false
+}
+
+// -----------------------------------------------------------------------------
 // ECMAScript Helper Modules
 // -----------------------------------------------------------------------------
 /** `inject` command */

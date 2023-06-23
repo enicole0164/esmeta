@@ -19,7 +19,7 @@ case class Test262Coverage(
 ) {
   import Coverage.{*, given}
 
-  lazy val from_log = fromLog2(s"$TEST262TEST_LOG_DIR/$log_cov_dir")
+  lazy val from_log = fromLog_testcov(s"$TEST262TEST_LOG_DIR/$log_cov_dir")
   lazy val log_cov = from_log._1
   lazy val log_con = from_log._2
 

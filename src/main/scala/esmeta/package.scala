@@ -30,6 +30,9 @@ val TEST262FUZZ_LOG_DIR = s"$LOG_DIR/test262-fuzz"
 /** tests directory root */
 val TEST_DIR = s"$BASE_DIR/tests"
 
+/** coverage directory root */
+val COV_DIR = s"$BASE_DIR/cov"
+
 /** specification directory */
 val ECMA262_DIR = s"$BASE_DIR/ecma262"
 val SPEC_HTML = s"$ECMA262_DIR/spec.html"
@@ -55,6 +58,8 @@ val ES_TEST_DIR = s"$TEST_DIR/es"
 val TEST262_DIR = s"$TEST_DIR/test262"
 val TEST262_TEST_DIR = s"$TEST262_DIR/test"
 val COVTEST_TEST_DIR = s"$TEST_DIR/covtest"
+
+val TEST262_COV_DIR = s"$COV_DIR/test262"
 
 /** error stack trace display mode */
 var ERROR_MODE = false

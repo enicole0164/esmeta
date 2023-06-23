@@ -6,6 +6,11 @@ import esmeta.state.util.{JsonProtocol => StateJsonProtocol}
 import esmeta.util.*
 import io.circe.*, io.circe.generic.semiauto.*
 import io.circe.syntax.*
+import esmeta.state.Nearest
+import esmeta.es.util.injector.ConformTest
+import esmeta.es.util.injector.ExitTag
+import esmeta.es.util.injector.NormalTag
+import esmeta.phase.Test262TestCov.DiscoveredNodeInfo
 
 /** JSON protocols for CFG */
 class JsonProtocol(cfg: CFG) extends StateJsonProtocol(cfg) {
@@ -40,12 +45,22 @@ class JsonProtocol(cfg: CFG) extends StateJsonProtocol(cfg) {
   given condViewEncoder: Encoder[CondView] = deriveEncoder
   given funcViewDecoder: Decoder[FuncView] = deriveDecoder
   given funcViewEncoder: Encoder[FuncView] = deriveEncoder
+  given nearestDecoder: Decoder[Nearest] = deriveDecoder
+  given nearestEncoder: Encoder[Nearest] = deriveEncoder
 
   // meta-info for each view or features
   given nodeViewInfoDecoder: Decoder[NodeViewInfo] = deriveDecoder
   given nodeViewInfoEncoder: Encoder[NodeViewInfo] = deriveEncoder
   given condViewInfoDecoder: Decoder[CondViewInfo] = deriveDecoder
   given condViewInfoEncoder: Encoder[CondViewInfo] = deriveEncoder
+  given minimalInfoDecoder: Decoder[MinimalInfo] = deriveDecoder
+  given minimalInfoEncoder: Encoder[MinimalInfo] = deriveEncoder
+  given discoveredNodeInfoDecoder: Decoder[DiscoveredNodeInfo] = deriveDecoder
+  given discoveredNodeInfoEncoder: Encoder[DiscoveredNodeInfo] = deriveEncoder
+
+  //
+  // lazy implicit val exitTagDecoder: Decoder[ExitTag] = deriveDecoder
+  // given exitTagEncoder: Encoder[ExitTag] = deriveEncoder
 
   // Coverage class
   given coverageConstructorDecoder: Decoder[CoverageConstructor] = deriveDecoder

@@ -13,6 +13,9 @@ import esmeta.util.*
 import esmeta.util.SystemUtils.*
 import io.circe.*, io.circe.syntax.*
 import math.Ordering.Implicits.seqOrdering
+import scala.collection.immutable
+import java.io.{File}
+import esmeta.BASE_DIR
 
 /** coverage measurement in CFG */
 class Coverage(
@@ -28,6 +31,9 @@ class Coverage(
   def minimalScripts: Set[Script] = _minimalScripts
   private var _minimalScripts: Set[Script] = Set()
 
+
+  // // modifier
+  // def minimalInfoModifier(minimalInfoNew: Map[String, ScriptInfo]) = Map()
   // meta-info of each script
   private var _minimalInfo: Map[String, ScriptInfo] = Map()
 
@@ -44,6 +50,10 @@ class Coverage(
   // get script from nodes or conditions
   def getScript(nv: NodeView): Option[Script] = apply(nv.node).get(nv.view)
   def getScript(cv: CondView): Option[Script] = apply(cv.cond).get(cv.view)
+
+  // Accessor for nodeViewMap
+  def getNodeViewMap = nodeViewMap
+  def getCondViewMap = condViewMap
 
   // mapping from nodes/conditions to scripts
   private var nodeViewMap: Map[Node, Map[View, Script]] = Map()
@@ -366,6 +376,99 @@ class Coverage(
       )
       if (logBool) log("dumped unreachable functions")
 
+  /** dump results */
+  def dumpToBaseDir(
+    baseDir: String,
+    withScripts: Boolean = true,
+    withScriptInfo: Boolean = false,
+    withTargetCondViews: Boolean = false,
+    withUnreachableFuncs: Boolean = false,
+    withMsg: Boolean = true,
+    logBool: Boolean = true,
+  ): Unit =
+    mkdir(baseDir)
+    lazy val orderedNodeViews = nodeViews.toList.sorted
+    lazy val orderedCondViews = condViews.toList.sorted
+    lazy val getNodeViewsId = orderedNodeViews.zipWithIndex.toMap
+    lazy val getCondViewsId = orderedCondViews.zipWithIndex.toMap
+
+    dumpJson(
+      CoverageConstructor(timeLimit, kFs, cp),
+      s"$baseDir/constructor.json",
+    )
+
+    val st = System.nanoTime()
+    def elapsedSec = (System.nanoTime() - st) / 1000000 / 1e3
+    def log(msg: Any) =
+      if (withMsg) println(s"[$elapsedSec s] $msg")
+
+    dumpJson(
+      name = if (withMsg) Some("node coverage") else None,
+      data = nodeViewInfos(orderedNodeViews),
+      filename = s"$baseDir/node-coverage.json",
+      space = true,
+    )
+    if (logBool) log("Dumped node coverage")
+    dumpJson(
+      name = if (withMsg) Some("branch coverage") else None,
+      data = condViewInfos(orderedCondViews),
+      filename = s"$baseDir/branch-coverage.json",
+      space = true,
+    )
+    if (logBool) log("Dumped branch coverage")
+    if (withScripts)
+    dumpFile(USE_STRICT + _minimalScripts.head.code + LINE_SEP, s"$baseDir/code.js")
+    if (logBool) log("Dumped scripts")
+    if (withScriptInfo)
+      dumpFile(_minimalInfo.head._2.test.core, s"$baseDir/assertion.js")
+      dumpJson(
+        name =
+          if (withMsg) Some("list of minimal infos")
+          else None,
+        data = minimalInfos(),
+        filename = s"$baseDir/minimal-info.json",
+        space = true,
+      )
+    if (true)
+      dumpJson(
+        name =
+          if (withMsg) Some("list of touched node view of minimal programs")
+          else None,
+        data = minimalTouchNodeViewJson(getNodeViewsId),
+        filename = s"$baseDir/minimal-touch-nodeview.json",
+        space = false,
+      )
+      if (logBool) log("dumped touched node views")
+      dumpJson(
+        name =
+          if (withMsg) Some("list of touched cond view of minimal programs")
+          else None,
+        data = minimalTouchCondViewJson(getCondViewsId),
+        filename = s"$baseDir/minimal-touch-condview.json",
+        space = false,
+      )
+      if (logBool) log("dumped touched cond views")
+
+    if (withTargetCondViews)
+      dumpJson(
+        name = if (withMsg) Some("target conditional branches") else None,
+        data = targetCondViewJson(getCondViewsId),
+        filename = s"$baseDir/target-conds.json",
+        space = true,
+      )
+      if (logBool) log("dumped target conds")
+    if (withUnreachableFuncs)
+      dumpFile(
+        name = if (withMsg) Some("unreachable functions") else None,
+        data = cfg.funcs
+          .filter(f => !nodeViewMap.contains(f.entry))
+          .map(_.name)
+          .sorted
+          .mkString(LINE_SEP),
+        filename = s"$baseDir/unreach-funcs",
+      )
+      if (logBool) log("dumped unreachable functions")
+
   // /* Dump missing nodeviews */
   // def dumpMiss(
   //   baseDir: String,
@@ -542,6 +645,35 @@ class Coverage(
       (condView, idx) <- ordered.zipWithIndex
       script <- getScript(condView)
     } yield CondViewInfo(idx, condView, script.name)
+  
+  // get JSON for target branch
+  private def targetViewInfos(getCondViewsId: Map[CondView, Int], targetCondView: List[(Cond, Map[Option[(List[Feature], Feature, Option[CallPath])], Option[Nearest]])]) : List[TargetCondViewInfo]=
+    for {
+      (cond, viewMap) <- targetCondView
+      (view, nearest) <- viewMap
+      condView = CondView(cond, view)
+      script = getScript(condView).get
+      idx = getCondViewsId(condView)
+    } yield TargetCondViewInfo(idx, condView, script.name, nearest)
+
+  // get JSON for touched cond view of minimal
+  private def targetCondViewJson(getId: Map[CondView, Int]): Json =
+    Json.fromFields(
+      _targetCondViews.map((cond, viewMap) =>
+        viewMap.map((view, nearest) => 
+          val condView = CondView(cond, view)
+          val script = getScript(condView).get
+          val idx = getId(condView).toString()
+          (idx, nearest.asJson)
+        ).toList,
+      ).flatten,
+    )
+
+  // get JSON for minimal info
+  private def minimalInfos(): List[MinimalInfo] = 
+    for {
+      (script, info) <- _minimalInfo.toList
+    } yield MinimalInfo(script, minimalCondView = info.touchedCondViews.toList, minimalNodeView = info.touchedNodeViews.toList)
 }
 
 object Coverage {
@@ -687,12 +819,142 @@ object Coverage {
   // meta-info for each view or features
   case class NodeViewInfo(index: Int, nodeView: NodeView, script: String)
   case class CondViewInfo(index: Int, condView: CondView, script: String)
+  case class TargetCondViewInfo(index: Int, condView: CondView, script: String, nearest: Option[Nearest])
+  case class MinimalInfo(name: String, minimalCondView: List[CondView], minimalNodeView: List[NodeView])
 
   case class CoverageConstructor(
     timeLimit: Option[Int],
     kFs: Int,
     cp: Boolean,
   )
+  def compareNodeCov(dir1: String, dir2: String): List[(NodeView, String)] = 
+    val jsonProtocol = JsonProtocol(cfg)
+    import jsonProtocol.given
+    
+    def rj1[T](json: String)(implicit decoder: Decoder[T]) =
+      readJson[T](s"$dir1/$json")
+    def rj2[T](json: String)(implicit decoder: Decoder[T]) =
+      readJson[T](s"$dir2/$json")
+    
+    val nodeViewInfos1: Vector[NodeViewInfo] = rj1("node-coverage.json")
+    val nodeViewInfos2: Vector[NodeViewInfo] = rj2("node-coverage.json")
+
+    var nodeViewMap1: Map[NodeView, String] = Map()
+    var nodeViews1: Set[NodeView] = Set()
+    var nodeViewMap2: Map[NodeView, String] = Map()
+    var nodeViews2: Set[NodeView] = Set()
+
+    for {
+      NodeViewInfo(index, nodeView, script) <- nodeViewInfos1
+    } {
+      nodeViews1 += nodeView
+      nodeViewMap1 += (nodeView -> script)
+    }
+    for {
+      NodeViewInfo(index, nodeView, script) <- nodeViewInfos2
+    } {
+      nodeViews2 += nodeView
+      nodeViewMap2 += (nodeView -> script)
+    }
+    val diff = nodeViews2 -- nodeViews1
+
+    (nodeViewMap2.view.filterKeys(diff)).toList
+
+  def compareCondCov(dir1: String, dir2: String): List[(CondView, String)] = 
+    val jsonProtocol = JsonProtocol(cfg)
+    import jsonProtocol.given
+    
+    def rj1[T](json: String)(implicit decoder: Decoder[T]) =
+      readJson[T](s"$dir1/$json")
+    def rj2[T](json: String)(implicit decoder: Decoder[T]) =
+      readJson[T](s"$dir2/$json")
+    
+    val condViewInfos1: Vector[CondViewInfo] = rj1("branch-coverage.json")
+    val condViewInfos2: Vector[CondViewInfo] = rj2("branch-coverage.json")
+
+    var condViewMap1: Map[CondView, String] = Map()
+    var condViews1: Set[CondView] = Set()
+    var condViewMap2: Map[CondView, String] = Map()
+    var condViews2: Set[CondView] = Set()
+
+    for {
+      CondViewInfo(index, condView, script) <- condViewInfos1
+    } {
+      condViews1 += condView
+      condViewMap1 += (condView -> script)
+    }
+    for {
+      CondViewInfo(index, condView, script) <- condViewInfos2
+    } {
+      condViews2 += condView
+      condViewMap2 += (condView -> script)
+    }
+    val diff = condViews2 -- condViews1
+
+    (condViewMap2.view.filterKeys(diff)).toList
+  
+  def getDetailedDescriptionOfNode(discoveredNodeScript: List[(NodeView, String)]) =
+    for {
+      (nodeView, script) <- discoveredNodeScript
+      NodeView(node, view) = nodeView
+    } {
+      println(node.loc)
+      node match
+        case block: Block => {
+          println(block.insts)
+        }
+        case call: Call => {
+          println(call.callInst)
+        }
+        case branch: Branch => {
+          println(branch.cond)
+        }
+    }
+
+  def getDetailedDescriptionOfANode(discoveredNodeScript: (NodeView, String)) =  
+    val (nodeView: NodeView, script: String) = discoveredNodeScript
+    val NodeView(node, view) = nodeView
+    print(s"\"${node.loc}\",")
+    node match
+      case block: Block => {
+        println(s"\"${block.insts}\"")
+      }
+      case call: Call => {
+        println(s"\"${call.callInst}\"")
+      }
+      case branch: Branch => {
+        println(s"\"${branch.cond}\"")
+      }
+  
+  def getDetailedDescriptionOfCond(discoveredCondScript: List[(CondView, String)]) =
+    for {
+      (condView, script) <- discoveredCondScript
+      CondView(cond, view) = condView
+      Cond(elem, bool) = cond
+    } {
+      println(cond.loc)
+      elem match
+        case branch: Branch => {
+          println(s"${branch.cond} ${bool}")
+        }
+        case riaExpr: WeakUIdRef[EReturnIfAbrupt] => {
+          println(s"${riaExpr.get} ${bool}")
+        }
+    }
+
+  def getDetailedDescriptionOfACond(discoveredCondScript: (CondView, String)) =  
+    val (condView: CondView, script: String) = discoveredCondScript
+    val CondView(cond, view) = condView
+    val Cond(elem, bool) = cond
+    print(s"\"${cond.loc}\",")
+    elem match
+      case branch: Branch => {
+        println(s"\"${branch.cond}\", ${bool}")
+      }
+      case riaExpr: WeakUIdRef[EReturnIfAbrupt] => {
+        println(s"\"${riaExpr.get}\", ${bool}")
+      }
+
   def fromLog(baseDir: String): Coverage =
     val jsonProtocol = JsonProtocol(cfg)
     import jsonProtocol.given
@@ -732,7 +994,110 @@ object Coverage {
 
     cov
 
-  def fromLog2(baseDir: String): (Coverage, CoverageConstructor) =
+  def fromLog_testfuzz(baseDir: String): Coverage =
+    val jsonProtocol = JsonProtocol(cfg)
+    import jsonProtocol.given
+
+    def rj[T](json: String)(implicit decoder: Decoder[T]) =
+      readJson[T](s"$baseDir/$json")
+
+    val con: CoverageConstructor = rj(s"constructor.json")
+    val cov = new Coverage(con.timeLimit, con.kFs, con.cp)
+
+    val nodeViewInfos: Vector[NodeViewInfo] = rj("node-coverage.json")
+    val condViewInfos: Vector[CondViewInfo] = rj("branch-coverage.json")
+
+    val targetConds: Map[String, Option[Nearest]] = rj("target-conds.json")
+    val targetConds2: Map[Int, Option[Nearest]] = targetConds.map((idx_string, nearest) => idx_string.toInt -> nearest)
+
+    val minimalTouchNodeView: Map[String, Vector[Int]] = rj(
+      "minimal-touch-nodeview.json",
+    )
+    val minimalTouchCondView: Map[String, Vector[Int]] = rj(
+      "minimal-touch-condview.json",
+    )
+    val minimal = new File(s"$baseDir/code.js")
+    // val name = testDir + minimal.getName
+    val name = get_testname(baseDir)
+    val code = readFile(minimal.getPath).drop(USE_STRICT.length).strip
+    val script = Script(code, name)
+
+    minimalTouchNodeView(name).foreach(i =>
+      cov.update(nodeViewInfos(i).nodeView, script),
+    )
+    minimalTouchCondView(name).foreach(i => targetConds2.get(i) match
+      case None => cov.update(condViewInfos(i).condView, None, script)
+      case Some(nearest) => cov.update(condViewInfos(i).condView, nearest, script)
+    )
+
+    // TODO: read assertions, and recover complete minimal infos
+    // TODO: Recover target conds
+
+    cov
+
+  def fromLog_testfuzz_multiple_files(baseDir: String, cov: Coverage): Coverage =
+    val jsonProtocol = JsonProtocol(cfg)
+    import jsonProtocol.given
+
+    def rj[T](json: String)(implicit decoder: Decoder[T]) =
+      readJson[T](s"$baseDir/$json")
+
+    val nodeViewInfos: Vector[NodeViewInfo] = rj("node-coverage.json")
+    val condViewInfos: Vector[CondViewInfo] = rj("branch-coverage.json")
+
+    val targetConds: Map[String, Option[Nearest]] = rj("target-conds.json")
+    val targetConds2: Map[Int, Option[Nearest]] = targetConds.map((idx_string, nearest) => idx_string.toInt -> nearest)
+
+    val minimalTouchNodeView: Map[String, Vector[Int]] = rj(
+      "minimal-touch-nodeview.json",
+    )
+    val minimalTouchCondView: Map[String, Vector[Int]] = rj(
+      "minimal-touch-condview.json",
+    )
+    // val minimalInfo: Vector[MinimalInfo] = rj(
+    //   "minimal-info.json"
+    // )
+
+    val minimal = new File(s"$baseDir/code.js")
+    val name = get_testname(baseDir)
+    val code = readFile(minimal.getPath).drop(USE_STRICT.length).strip
+    val script = Script(code, name)
+
+    minimalTouchNodeView(name).foreach(i =>
+      cov.getScript(nodeViewInfos(i).nodeView) match
+        case None => cov.update(nodeViewInfos(i).nodeView, script)
+        case Some(origScript) if origScript.code.length > script.code.length =>
+          cov.update(nodeViewInfos(i).nodeView, script)
+        case _ =>
+    )
+    minimalTouchCondView(name).foreach(i => targetConds2.get(i) match
+      case None => {
+        cov.getScript(condViewInfos(i).condView) match
+          case None => cov.update(condViewInfos(i).condView, None, script)
+          case Some(origScript) if origScript.code.length > script.code.length =>
+            cov.update(condViewInfos(i).condView, None, script)
+          case _ =>
+      }
+      case Some(nearest) => {
+        cov.getScript(condViewInfos(i).condView) match
+          case None => cov.update(condViewInfos(i).condView, nearest, script)
+          case Some(origScript) if origScript.code.length > script.code.length =>
+            cov.update(condViewInfos(i).condView, nearest, script)
+          case _ =>
+      }
+    )
+    
+
+    cov
+
+    // TODO: read assertions, and recover complete minimal infos
+    // TODO: Recover target conds
+
+  private def get_testname(baseDir: String): String =
+    baseDir.substring(BASE_DIR.length() + 5, baseDir.length()) + ".js"
+
+
+  def fromLog_testcov(baseDir: String): (Coverage, CoverageConstructor) =
     // needed
     // constructor.json, node-coverage.json, branch-coverage.json,
     // minimal-touch-nodeview.json, minimal-touch-condview.json,
@@ -775,14 +1140,6 @@ object Coverage {
         )
         case None =>  println(s"Possibly not minimal in cv: $name")
       }
-    
-      // minimalTouchNodeView(name).foreach(i =>
-      //   cov.update(nodeViewInfos(i).nodeView, script),
-      // )
-      // minimalTouchCondView(name).foreach(i =>
-      //   cov.update(condViewInfos(i).condView, None, script),
-      // )
-      // print("DONE")
     }
 
     // TODO: read assertions, and recover complete minimal infos
