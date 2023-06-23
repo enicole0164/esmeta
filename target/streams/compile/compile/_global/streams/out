@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: /Users/jaenic/Documents/GitHub/esmeta/src/main/scala/esmeta/es/util/Coverage.scala:544:63 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m544 |[0m      code = readFile(minimal.getPath).drop(USE_STRICT.length).strip[0m
+[0m[[0m[31merror[0m] [0m[0m    |             [31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |value strip is not a member of String, but could be made available as an extension method.[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m
+[0m[[0m[31merror[0m] [0m[0m    |One of the following imports might make progress towards fixing the problem:[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m
+[0m[[0m[31merror[0m] [0m[0m    |  import akka.http.impl.util.JavaMapping.Implicits.convertToScala[0m
+[0m[[0m[31merror[0m] [0m[0m    |  import akka.http.javadsl.server.RoutingJavaMapping.Implicits.convertToScala[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m

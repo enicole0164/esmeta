@@ -1,1 +1,0 @@
-let [ x ] = function * ( ) { yield `${ yield }` ; } ( ) ; 

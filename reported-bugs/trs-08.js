@@ -1,1 +1,0 @@
-[ ... function * ( ) { throw 0 ; } ( ) ] ;

@@ -1,1 +1,0 @@
-class C { static #x = #x in 0 } ;
