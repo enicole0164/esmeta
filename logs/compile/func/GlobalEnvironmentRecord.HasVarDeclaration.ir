@@ -1,0 +1,10 @@
+def <CONC>:GlobalEnvironmentRecord.HasVarDeclaration(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+): Boolean {
+  let varDeclaredNames = envRec.VarNames
+  if (contains varDeclaredNames N) {
+    return true
+  } else {}
+  return false
+}

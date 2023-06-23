@@ -1,0 +1,5 @@
+def <SYNTAX>:FormalParameters[0,0].ExpectedArgumentCount(
+  this: Ast:FormalParameters[0,0],
+): Unknown["Integer"] {
+  return 0
+}

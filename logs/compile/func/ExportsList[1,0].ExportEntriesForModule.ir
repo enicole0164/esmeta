@@ -1,0 +1,10 @@
+def <SYNTAX>:ExportsList[1,0].ExportEntriesForModule(
+  this: Ast:ExportsList[1,0],
+  module: Unknown,
+): Unknown["ListOfExportEntryRecords"] {
+  sdo-call %0 = this[0]->ExportEntriesForModule(module)
+  let specs1 = %0
+  sdo-call %1 = this[1]->ExportEntriesForModule(module)
+  let specs2 = %1
+  return (list-concat specs1 specs2)[#859]
+}

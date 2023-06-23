@@ -1,0 +1,5 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.PreventExtensions(
+  this: ModuleNamespaceExoticObject,
+): Normal[True] {
+  return true
+}

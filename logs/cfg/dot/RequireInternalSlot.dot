@@ -1,0 +1,38 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1075 {
+    label = "def RequireInternalSlot(O: Unknown, internalSlot: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster1075_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1075_entry_name -> cluster1075_entry [arrowhead=none, color="black", style=dashed]
+    cluster1075_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1075_entry -> node4222 [color="black"]
+    cluster1075_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1075_exit_name -> cluster1075_exit [arrowhead=none, color="black", style=dashed]
+    cluster1075_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4222_name [shape=none, label=<<font color="black">Branch[4222]</font>>]
+    node4222_name -> node4222 [arrowhead=none, color="black", style=dashed]
+    node4222 [shape=diamond, label=<<font color="black">(! (= (typeof O) @Object))</font>> color="black" fillcolor="white", style=filled]
+    node4222 -> node4223 [label=<<font color="black">true</font>> color="black"]
+    node4222 -> node4224 [label=<<font color="black">false</font>> color="black"]
+    node4223_name [shape=none, label=<<font color="black">Block[4223]</font>>]
+    node4223_name -> node4223 [arrowhead=none, color="black", style=dashed]
+    node4223 [shape=box, label=<<font color="black">[0] return comp[~throw~/~empty~]((new OrdinaryObject(&quot;Prototype&quot; -&gt; @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%TypeError.prototype%&quot;], &quot;ErrorData&quot; -&gt; undefined))[#415])<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4223 -> cluster1075_exit [color="black"]
+    node4224_name [shape=none, label=<<font color="black">Branch[4224]</font>>]
+    node4224_name -> node4224 [arrowhead=none, color="black", style=dashed]
+    node4224 [shape=diamond, label=<<font color="black">(= O[internalSlot] absent)</font>> color="black" fillcolor="white", style=filled]
+    node4224 -> node4225 [label=<<font color="black">true</font>> color="black"]
+    node4224 -> node4226 [label=<<font color="black">false</font>> color="black"]
+    node4225_name [shape=none, label=<<font color="black">Block[4225]</font>>]
+    node4225_name -> node4225 [arrowhead=none, color="black", style=dashed]
+    node4225 [shape=box, label=<<font color="black">[0] return comp[~throw~/~empty~]((new OrdinaryObject(&quot;Prototype&quot; -&gt; @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%TypeError.prototype%&quot;], &quot;ErrorData&quot; -&gt; undefined))[#416])<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4225 -> cluster1075_exit [color="black"]
+    node4226_name [shape=none, label=<<font color="black">Block[4226]</font>>]
+    node4226_name -> node4226 [arrowhead=none, color="black", style=dashed]
+    node4226 [shape=box, label=<<font color="black">[0] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4226 -> cluster1075_exit [color="black"]
+  }
+}

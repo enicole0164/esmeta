@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue ) { if ( mustBeTrue === true ) { return ; } if ( message ) { var x ; } throw new Test262Error ( message ) ; } 0 ? 0 : 0 ; x => 0 ; function Test262Error ( message ) { message || "" ; } try { } finally { } function $DONOTEVALUATE ( ) { throw "Test262: This statement should not be evaluated." ; } var n = new Number ( 7 ) ; assert . sameValue ( n . toPrecision ( undefined ) ) ; assert . sameValue ( ( 39 ) . toPrecision ( undefined ) , "39" ) ; assert . sameValue ( Number ( ) , "0" ) ; 

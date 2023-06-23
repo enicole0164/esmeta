@@ -1,0 +1,29 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster974 {
+    label = "def <CONC>:DeclarativeEnvironmentRecord.HasBinding(envRec: DeclarativeEnvironmentRecord, N: String): Normal[Boolean]"
+    style = rounded
+    cluster974_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster974_entry_name -> cluster974_entry [arrowhead=none, color="black", style=dashed]
+    cluster974_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster974_entry -> node3586 [color="black"]
+    cluster974_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster974_exit_name -> cluster974_exit [arrowhead=none, color="black", style=dashed]
+    cluster974_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3586_name [shape=none, label=<<font color="black">Branch[3586]</font>>]
+    node3586_name -> node3586 [arrowhead=none, color="black", style=dashed]
+    node3586 [shape=diamond, label=<<font color="black">(! (= envRec.SubMap[N] absent))</font>> color="black" fillcolor="white", style=filled]
+    node3586 -> node3587 [label=<<font color="black">true</font>> color="black"]
+    node3586 -> node3588 [label=<<font color="black">false</font>> color="black"]
+    node3587_name [shape=none, label=<<font color="black">Block[3587]</font>>]
+    node3587_name -> node3587 [arrowhead=none, color="black", style=dashed]
+    node3587 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3587 -> cluster974_exit [color="black"]
+    node3588_name [shape=none, label=<<font color="black">Block[3588]</font>>]
+    node3588_name -> node3588 [arrowhead=none, color="black", style=dashed]
+    node3588 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3588 -> cluster974_exit [color="black"]
+  }
+}

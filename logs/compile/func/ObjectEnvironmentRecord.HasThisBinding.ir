@@ -1,0 +1,5 @@
+def <CONC>:ObjectEnvironmentRecord.HasThisBinding(
+  envRec: ObjectEnvironmentRecord,
+): False {
+  return false
+}

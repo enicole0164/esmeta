@@ -1,0 +1,5 @@
+def <SYNTAX>:LabelledItem[1,0].LexicallyScopedDeclarations(
+  this: Ast:LabelledItem[1,0],
+): List[Ast] {
+  return (new [this[0]])[#161]
+}

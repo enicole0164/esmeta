@@ -1,0 +1,6 @@
+def <SYNTAX>:FunctionDeclaration[1,0].Contains(
+  this: Ast:FunctionDeclaration[1,0],
+  symbol: Unknown,
+): Boolean {
+  return false
+}

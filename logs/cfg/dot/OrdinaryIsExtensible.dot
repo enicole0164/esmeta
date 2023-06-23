@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1052 {
+    label = "def OrdinaryIsExtensible(O: Object): Boolean"
+    style = rounded
+    cluster1052_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1052_entry_name -> cluster1052_entry [arrowhead=none, color="black", style=dashed]
+    cluster1052_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1052_entry -> node3952 [color="black"]
+    cluster1052_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1052_exit_name -> cluster1052_exit [arrowhead=none, color="black", style=dashed]
+    cluster1052_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3952_name [shape=none, label=<<font color="black">Block[3952]</font>>]
+    node3952_name -> node3952 [arrowhead=none, color="black", style=dashed]
+    node3952 [shape=box, label=<<font color="black">[0] return O.Extensible<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3952 -> cluster1052_exit [color="black"]
+  }
+}

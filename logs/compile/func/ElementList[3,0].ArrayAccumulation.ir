@@ -1,0 +1,14 @@
+def <SYNTAX>:ElementList[3,0].ArrayAccumulation(
+  this: Ast:ElementList[3,0],
+  array: Unknown["Array"],
+  nextIndex: Unknown["Integer"],
+): Unknown["EitherANormalCompletionContainingAnIntegerOrAnAbruptCompletion"] {
+  sdo-call %0 = this[0]->ArrayAccumulation(array, nextIndex)
+  nextIndex = [? %0]
+  if (! (= this[1] absent)) {
+    sdo-call %1 = this[1]->ArrayAccumulation(array, nextIndex)
+    nextIndex = [? %1]
+  } else {}
+  sdo-call %2 = this[2]->ArrayAccumulation(array, nextIndex)
+  return [? %2]
+}

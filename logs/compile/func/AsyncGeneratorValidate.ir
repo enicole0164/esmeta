@@ -1,0 +1,15 @@
+def AsyncGeneratorValidate(
+  generator: Unknown,
+  generatorBrand: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<RequireInternalSlot>(generator, "AsyncGeneratorContext")
+  [? %0]
+  call %1 = clo<RequireInternalSlot>(generator, "AsyncGeneratorState")
+  [? %1]
+  call %2 = clo<RequireInternalSlot>(generator, "AsyncGeneratorQueue")
+  [? %2]
+  if (! (= generator.GeneratorBrand generatorBrand)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1329])
+  } else {}
+  return ~unused~
+}

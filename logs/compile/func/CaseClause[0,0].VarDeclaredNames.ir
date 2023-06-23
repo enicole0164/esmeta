@@ -1,0 +1,9 @@
+def <SYNTAX>:CaseClause[0,0].VarDeclaredNames(
+  this: Ast:CaseClause[0,0],
+): List[String] {
+  if (! (= this[1] absent)) {
+    sdo-call %0 = this[1]->VarDeclaredNames()
+    return %0
+  } else {}
+  return (new [])[#209]
+}

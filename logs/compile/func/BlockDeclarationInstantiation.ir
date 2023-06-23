@@ -1,0 +1,38 @@
+def BlockDeclarationInstantiation(
+  code: Ast,
+  env: DeclarativeEnvironmentRecord,
+): Const[~unused~] {
+  sdo-call %0 = code->LexicallyScopedDeclarations()
+  let declarations = %0
+  let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  %2 = declarations
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let d = %2[%1]
+    sdo-call %5 = d->BoundNames()
+    %4 = %5
+    %3 = 0
+    loop[foreach] (< %3 %4.length) {
+      let dn = %4[%3]
+      sdo-call %6 = d->IsConstantDeclaration()
+      if (= %6 true) {
+        method-call %7 = env->CreateImmutableBinding(dn, true)
+        [! %7]
+      } else {
+        method-call %8 = env->CreateMutableBinding(dn, false)
+        [! %8]
+      }
+      %3 = (+ %3 1)
+    }
+    if (|| (|| (|| (? d: "FunctionDeclaration") (? d: "GeneratorDeclaration")) (? d: "AsyncFunctionDeclaration")) (? d: "AsyncGeneratorDeclaration")) {
+      sdo-call %9 = d->BoundNames()
+      let fn = %9[0]
+      sdo-call %10 = d->InstantiateFunctionObject(env, privateEnv)
+      let fo = %10
+      method-call %11 = env->InitializeBinding(fn, fo)
+      [! %11]
+    } else {}
+    %1 = (+ %1 1)
+  }
+  return ~unused~
+}

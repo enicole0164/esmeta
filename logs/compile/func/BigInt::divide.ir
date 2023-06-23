@@ -1,0 +1,10 @@
+def <NUM>:BigInt::divide(
+  x: BigInt,
+  y: BigInt,
+): Normal[BigInt] | Abrupt {
+  if (= y 0n) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#9])
+  } else {}
+  let quotient = (/ ([math] x) ([math] y))
+  return ([bigInt] quotient)
+}

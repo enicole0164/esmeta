@@ -1,0 +1,6 @@
+def <SYNTAX>:MethodDefinition[5,0].PropName(
+  this: Ast:MethodDefinition[5,0],
+): Const[~empty~] | String {
+  sdo-call %0 = this[0]->PropName()
+  return %0
+}

@@ -1,0 +1,15 @@
+def <BUILTIN>:INTRINSICS.String.prototype.localeCompare(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let that = (pop < argumentsList) else let that = absent
+  if (< 0 argumentsList.length) let reserved1 = (pop < argumentsList) else let reserved1 = absent
+  if (< 0 argumentsList.length) let reserved2 = (pop < argumentsList) else let reserved2 = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  call %2 = clo<ToString>(that)
+  let thatValue = [? %2]
+}

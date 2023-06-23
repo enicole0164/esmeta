@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1594 {
+    label = "def <SYNTAX>:MethodDefinition[0,0].MethodDefinitionEvaluation(this: Ast:MethodDefinition[0,0], object: Unknown, enumerable: Unknown): Normal[PrivateElement | Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster1594_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1594_entry_name -> cluster1594_entry [arrowhead=none, color="black", style=dashed]
+    cluster1594_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1594_entry -> node8515 [color="black"]
+    cluster1594_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1594_exit_name -> cluster1594_exit [arrowhead=none, color="black", style=dashed]
+    cluster1594_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8515_name [shape=none, label=<<font color="black">Call[8515]</font>>]
+    node8515_name -> node8515 [arrowhead=none, color="black", style=dashed]
+    node8515 [shape=cds, label=<<font color="black">%0 = this-&gt;DefineMethod(object)</font>> color="black" fillcolor="white", style=filled]
+    node8515 -> node8516 [color="black"]
+    node8516_name [shape=none, label=<<font color="black">Block[8516]</font>>]
+    node8516_name -> node8516 [arrowhead=none, color="black", style=dashed]
+    node8516 [shape=box, label=<<font color="black">[0] let methodDef = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8516 -> node8517 [color="black"]
+    node8517_name [shape=none, label=<<font color="black">Call[8517]</font>>]
+    node8517_name -> node8517 [arrowhead=none, color="black", style=dashed]
+    node8517 [shape=cds, label=<<font color="black">%1 = clo&lt;SetFunctionName&gt;(methodDef.Closure, methodDef.Key)</font>> color="black" fillcolor="white", style=filled]
+    node8517 -> node8518 [color="black"]
+    node8518_name [shape=none, label=<<font color="black">Call[8518]</font>>]
+    node8518_name -> node8518 [arrowhead=none, color="black", style=dashed]
+    node8518 [shape=cds, label=<<font color="black">%2 = clo&lt;DefineMethodProperty&gt;(object, methodDef.Key, methodDef.Closure, enumerable)</font>> color="black" fillcolor="white", style=filled]
+    node8518 -> node8519 [color="black"]
+    node8519_name [shape=none, label=<<font color="black">Block[8519]</font>>]
+    node8519_name -> node8519 [arrowhead=none, color="black", style=dashed]
+    node8519 [shape=box, label=<<font color="black">[0] return %2<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8519 -> cluster1594_exit [color="black"]
+  }
+}

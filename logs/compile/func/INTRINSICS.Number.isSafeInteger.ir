@@ -1,0 +1,14 @@
+def <BUILTIN>:INTRINSICS.Number.isSafeInteger(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let number = (pop < argumentsList) else let number = absent
+  call %0 = clo<IsIntegralNumber>(number)
+  if (= %0 true) {
+    if (! (< (- (** 2 53) 1) (abs ([math] number)))) {
+      return true
+    } else {}
+  } else {}
+  return false
+}

@@ -1,0 +1,9 @@
+def <SYNTAX>:ExportFromClause[1,0].ExportEntriesForModule(
+  this: Ast:ExportFromClause[1,0],
+  module: Unknown,
+): Unknown["ListOfExportEntryRecords"] {
+  sdo-call %0 = this[0]->StringValue()
+  let exportName = %0
+  let entry = (new ExportEntryRecord("ModuleRequest" -> module, "ImportName" -> ~all~, "LocalName" -> null, "ExportName" -> exportName))[#856]
+  return (new [entry])[#857]
+}

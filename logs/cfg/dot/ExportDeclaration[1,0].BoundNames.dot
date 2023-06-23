@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster228 {
+    label = "def <SYNTAX>:ExportDeclaration[1,0].BoundNames(this: Ast:ExportDeclaration[1,0]): List[String]"
+    style = rounded
+    cluster228_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster228_entry_name -> cluster228_entry [arrowhead=none, color="black", style=dashed]
+    cluster228_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster228_entry -> node1633 [color="black"]
+    cluster228_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster228_exit_name -> cluster228_exit [arrowhead=none, color="black", style=dashed]
+    cluster228_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1633_name [shape=none, label=<<font color="black">Block[1633]</font>>]
+    node1633_name -> node1633 [arrowhead=none, color="black", style=dashed]
+    node1633 [shape=box, label=<<font color="black">[0] return (new [])[#109]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1633 -> cluster228_exit [color="black"]
+  }
+}

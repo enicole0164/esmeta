@@ -1,0 +1,11 @@
+def <CONC>:DeclarativeEnvironmentRecord.InitializeBinding(
+  envRec: DeclarativeEnvironmentRecord,
+  N: String,
+  V: ESValue,
+): Normal[Const[~unused~]] {
+  assert (= envRec.SubMap[N].initialized false)
+  envRec.SubMap[N].BoundValue = V
+  envRec.SubMap[N].initialized = true
+  call %0 = clo<NormalCompletion>(~unused~)
+  return %0
+}

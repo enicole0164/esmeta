@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2279 {
+    label = "def <SYNTAX>:CharacterClass[0,0].CompileCharacterClass(this: Ast:CharacterClass[0,0]): Unknown["RecordWithFields[[CharSet]](aCharSet)And[[Invert]](aBoolean)"]"
+    style = rounded
+    cluster2279_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2279_entry_name -> cluster2279_entry [arrowhead=none, color="black", style=dashed]
+    cluster2279_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2279_entry -> node14025 [color="black"]
+    cluster2279_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2279_exit_name -> cluster2279_exit [arrowhead=none, color="black", style=dashed]
+    cluster2279_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14025_name [shape=none, label=<<font color="black">Call[14025]</font>>]
+    node14025_name -> node14025 [arrowhead=none, color="black", style=dashed]
+    node14025 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileToCharSet()</font>> color="black" fillcolor="white", style=filled]
+    node14025 -> node14026 [color="black"]
+    node14026_name [shape=none, label=<<font color="black">Block[14026]</font>>]
+    node14026_name -> node14026 [arrowhead=none, color="black", style=dashed]
+    node14026 [shape=box, label=<<font color="black">[0] let A = %0<BR ALIGN="LEFT"/>[1] return (new Record(&quot;CharSet&quot; -&gt; A, &quot;Invert&quot; -&gt; false))[#983]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14026 -> cluster2279_exit [color="black"]
+  }
+}

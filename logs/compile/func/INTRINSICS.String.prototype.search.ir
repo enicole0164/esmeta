@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.String.prototype.search(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let regexp = (pop < argumentsList) else let regexp = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  if (! (|| (= regexp undefined) (= regexp null))) {
+    call %1 = clo<GetMethod>(regexp, @SYMBOL.search)
+    let searcher = [? %1]
+    if (! (= searcher undefined)) {
+      call %2 = clo<Call>(searcher, regexp, (new [O])[#964])
+      return [? %2]
+    } else {}
+  } else {}
+  call %3 = clo<ToString>(O)
+  let string = [? %3]
+  call %4 = clo<RegExpCreate>(regexp, undefined)
+  let rx = [? %4]
+  call %5 = clo<Invoke>(rx, @SYMBOL.search, (new [string])[#965])
+  return [? %5]
+}

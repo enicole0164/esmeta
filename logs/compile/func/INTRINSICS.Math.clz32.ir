@@ -1,0 +1,11 @@
+def <BUILTIN>:INTRINSICS.Math.clz32(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  call %0 = clo<ToUint32>(x)
+  let n = [? %0]
+  (yet "Let _p_ be the number of leading zero bits in the unsigned 32-bit binary representation of _n_.")
+  return ([number] p)
+}

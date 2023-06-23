@@ -1,0 +1,42 @@
+def ArraySpeciesCreate(
+  originalArray: Unknown,
+  length: Unknown["NonnegativeInteger"],
+): Normal[Object] | Abrupt {
+  call %0 = clo<IsArray>(originalArray)
+  let isArray = [? %0]
+  if (= isArray false) {
+    call %1 = clo<ArrayCreate>(length)
+    return [? %1]
+  } else {}
+  call %2 = clo<Get>(originalArray, "constructor")
+  let C = [? %2]
+  call %3 = clo<IsConstructor>(C)
+  if (= %3 true) {
+    let thisRealm = @EXECUTION_STACK[0].Realm
+    call %4 = clo<GetFunctionRealm>(C)
+    let realmC = [? %4]
+    if (! (= thisRealm realmC)) {
+      call %5 = clo<SameValue>(C, realmC.Intrinsics["%Array%"])
+      if (= %5 true) {
+        C = undefined
+      } else {}
+    } else {}
+  } else {}
+  if (= (typeof C) @Object) {
+    call %6 = clo<Get>(C, @SYMBOL.species)
+    C = [? %6]
+    if (= C null) {
+      C = undefined
+    } else {}
+  } else {}
+  if (= C undefined) {
+    call %7 = clo<ArrayCreate>(length)
+    return [? %7]
+  } else {}
+  call %8 = clo<IsConstructor>(C)
+  if (= %8 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#451])
+  } else {}
+  call %9 = clo<Construct>(C, (new [([number] length)])[#452])
+  return [? %9]
+}

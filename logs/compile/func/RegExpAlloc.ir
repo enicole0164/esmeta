@@ -1,0 +1,9 @@
+def RegExpAlloc(
+  newTarget: Unknown,
+): Normal[Object] | Abrupt {
+  call %0 = clo<OrdinaryCreateFromConstructor>(newTarget, "%RegExp.prototype%", (new ["RegExpMatcher", "OriginalSource", "OriginalFlags"])[#985])
+  let obj = [? %0]
+  call %1 = clo<DefinePropertyOrThrow>(obj, "lastIndex", (new PropertyDescriptor("Writable" -> true, "Enumerable" -> false, "Configurable" -> false))[#986])
+  [! %1]
+  return obj
+}

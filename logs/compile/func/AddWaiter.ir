@@ -1,0 +1,9 @@
+def AddWaiter(
+  WL: Unknown["WaiterList"],
+  W: Unknown["AgentSignifier"],
+): Const[~unused~] {
+  assert (yet "The calling agent is in the critical section for _WL_.")
+  assert (yet "_W_ is not on the list of waiters in any WaiterList.")
+  (yet "Add _W_ to the end of the list of waiters in _WL_.")
+  return ~unused~
+}

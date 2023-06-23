@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue ) { return ; } throw Test262Error ; } x => 0 ; assert . sameValue = { flags : true } ; do ; while ( 0 ) ; 0 ? 0 : 0 ; async x => 0 ; function Test262Error ( message ) { message || "" ; } Test262Error . toString = function ( ) { return "Test262Error: " + this . message ; } ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; class x { } Boolean . prototype . toString = function ( ) { return typeof this ; } ; assert . sameValue ( true . toLocaleString ( ) , "boolean" ) ; 

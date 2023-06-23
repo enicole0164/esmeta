@@ -1,0 +1,42 @@
+def InitializeTypedArrayFromArrayBuffer(
+  O: Unknown["TypedArray"],
+  buffer: Unknown["ArrayBufferOrASharedArrayBuffer"],
+  byteOffset: ESValue,
+  length: ESValue,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<TypedArrayElementSize>(O)
+  let elementSize = %0
+  call %1 = clo<ToIndex>(byteOffset)
+  let offset = [? %1]
+  if (! (== (% offset elementSize) 0)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1108])
+  } else {}
+  if (! (= length undefined)) {
+    call %2 = clo<ToIndex>(length)
+    let newLength = [? %2]
+  } else {}
+  call %3 = clo<IsDetachedBuffer>(buffer)
+  if (= %3 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1109])
+  } else {}
+  let bufferByteLength = buffer.ArrayBufferByteLength
+  if (= length undefined) {
+    if (! (== (% bufferByteLength elementSize) 0)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1110])
+    } else {}
+    let newByteLength = (- bufferByteLength offset)
+    if (< newByteLength 0) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1111])
+    } else {}
+  } else {
+    let newByteLength = (* newLength elementSize)
+    if (< bufferByteLength (+ offset newByteLength)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1112])
+    } else {}
+  }
+  O.ViewedArrayBuffer = buffer
+  O.ByteLength = newByteLength
+  O.ByteOffset = offset
+  O.ArrayLength = (/ newByteLength elementSize)
+  return ~unused~
+}

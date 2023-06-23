@@ -1,0 +1,5 @@
+def <SYNTAX>:PropertyDefinition[4,0].PropName(
+  this: Ast:PropertyDefinition[4,0],
+): Const[~empty~] | String {
+  return ~empty~
+}

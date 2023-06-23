@@ -1,0 +1,11 @@
+def <SYNTAX>:Atom[1,0].CompileAtom(
+  this: Ast:Atom[1,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  (yet "Let _A_ be the CharSet of all characters.")
+  if (! (= DotAll true)) {
+    (yet "Remove from _A_ all characters corresponding to a code point on the right-hand side of the |LineTerminator| production.")
+  } else {}
+  call %0 = clo<CharacterSetMatcher>(A, false, direction)
+  return %0
+}

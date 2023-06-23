@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster589 {
+    label = "def <SYNTAX>:CaseClause[0,0].ContainsUndefinedBreakTarget(this: Ast:CaseClause[0,0], labelSet: Unknown): Boolean"
+    style = rounded
+    cluster589_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster589_entry_name -> cluster589_entry [arrowhead=none, color="black", style=dashed]
+    cluster589_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster589_entry -> node2647 [color="black"]
+    cluster589_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster589_exit_name -> cluster589_exit [arrowhead=none, color="black", style=dashed]
+    cluster589_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2647_name [shape=none, label=<<font color="black">Branch[2647]</font>>]
+    node2647_name -> node2647 [arrowhead=none, color="black", style=dashed]
+    node2647 [shape=diamond, label=<<font color="black">(! (= this[1] absent))</font>> color="black" fillcolor="white", style=filled]
+    node2647 -> node2648 [label=<<font color="black">true</font>> color="black"]
+    node2647 -> node2650 [label=<<font color="black">false</font>> color="black"]
+    node2648_name [shape=none, label=<<font color="black">Call[2648]</font>>]
+    node2648_name -> node2648 [arrowhead=none, color="black", style=dashed]
+    node2648 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;ContainsUndefinedBreakTarget(labelSet)</font>> color="black" fillcolor="white", style=filled]
+    node2648 -> node2649 [color="black"]
+    node2650_name [shape=none, label=<<font color="black">Block[2650]</font>>]
+    node2650_name -> node2650 [arrowhead=none, color="black", style=dashed]
+    node2650 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2650 -> cluster589_exit [color="black"]
+    node2649_name [shape=none, label=<<font color="black">Block[2649]</font>>]
+    node2649_name -> node2649 [arrowhead=none, color="black", style=dashed]
+    node2649 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2649 -> cluster589_exit [color="black"]
+  }
+}

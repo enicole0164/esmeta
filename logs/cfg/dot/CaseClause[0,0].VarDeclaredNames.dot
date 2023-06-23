@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster367 {
+    label = "def <SYNTAX>:CaseClause[0,0].VarDeclaredNames(this: Ast:CaseClause[0,0]): List[String]"
+    style = rounded
+    cluster367_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster367_entry_name -> cluster367_entry [arrowhead=none, color="black", style=dashed]
+    cluster367_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster367_entry -> node2016 [color="black"]
+    cluster367_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster367_exit_name -> cluster367_exit [arrowhead=none, color="black", style=dashed]
+    cluster367_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2016_name [shape=none, label=<<font color="black">Branch[2016]</font>>]
+    node2016_name -> node2016 [arrowhead=none, color="black", style=dashed]
+    node2016 [shape=diamond, label=<<font color="black">(! (= this[1] absent))</font>> color="black" fillcolor="white", style=filled]
+    node2016 -> node2017 [label=<<font color="black">true</font>> color="black"]
+    node2016 -> node2019 [label=<<font color="black">false</font>> color="black"]
+    node2017_name [shape=none, label=<<font color="black">Call[2017]</font>>]
+    node2017_name -> node2017 [arrowhead=none, color="black", style=dashed]
+    node2017 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;VarDeclaredNames()</font>> color="black" fillcolor="white", style=filled]
+    node2017 -> node2018 [color="black"]
+    node2019_name [shape=none, label=<<font color="black">Block[2019]</font>>]
+    node2019_name -> node2019 [arrowhead=none, color="black", style=dashed]
+    node2019 [shape=box, label=<<font color="black">[0] return (new [])[#209]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2019 -> cluster367_exit [color="black"]
+    node2018_name [shape=none, label=<<font color="black">Block[2018]</font>>]
+    node2018_name -> node2018 [arrowhead=none, color="black", style=dashed]
+    node2018 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2018 -> cluster367_exit [color="black"]
+  }
+}

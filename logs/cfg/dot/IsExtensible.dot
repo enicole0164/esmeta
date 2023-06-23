@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster117 {
+    label = "def IsExtensible(O: Object): Normal[Boolean] | Abrupt"
+    style = rounded
+    cluster117_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster117_entry_name -> cluster117_entry [arrowhead=none, color="black", style=dashed]
+    cluster117_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster117_entry -> node893 [color="black"]
+    cluster117_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster117_exit_name -> cluster117_exit [arrowhead=none, color="black", style=dashed]
+    cluster117_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node893_name [shape=none, label=<<font color="black">Call[893]</font>>]
+    node893_name -> node893 [arrowhead=none, color="black", style=dashed]
+    node893 [shape=cds, label=<<font color="black">%0 = O-&gt;IsExtensible()</font>> color="black" fillcolor="white", style=filled]
+    node893 -> node894 [color="black"]
+    node894_name [shape=none, label=<<font color="black">Block[894]</font>>]
+    node894_name -> node894 [arrowhead=none, color="black", style=dashed]
+    node894 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node894 -> cluster117_exit [color="black"]
+  }
+}

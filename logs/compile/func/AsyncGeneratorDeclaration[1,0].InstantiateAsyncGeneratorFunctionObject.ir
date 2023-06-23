@@ -1,0 +1,15 @@
+def <SYNTAX>:AsyncGeneratorDeclaration[1,0].InstantiateAsyncGeneratorFunctionObject(
+  this: Ast:AsyncGeneratorDeclaration[1,0],
+  env: Unknown,
+  privateEnv: Unknown,
+): FunctionObject {
+  let sourceText = (source-text this)
+  call %0 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%AsyncGeneratorFunction.prototype%"], sourceText, this[0], this[1], ~non-lexical-this~, env, privateEnv)
+  let F = %0
+  call %1 = clo<SetFunctionName>(F, "default")
+  call %2 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%AsyncGeneratorFunction.prototype.prototype%"])
+  let prototype = %2
+  call %3 = clo<DefinePropertyOrThrow>(F, "prototype", (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false))[#672])
+  [! %3]
+  return F
+}

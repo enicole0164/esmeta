@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1863 {
+    label = "def <SYNTAX>:ParenthesizedExpression[0,0].HasCallInTailPosition(this: Ast:ParenthesizedExpression[0,0], call: Unknown): Boolean"
+    style = rounded
+    cluster1863_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1863_entry_name -> cluster1863_entry [arrowhead=none, color="black", style=dashed]
+    cluster1863_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1863_entry -> node9963 [color="black"]
+    cluster1863_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1863_exit_name -> cluster1863_exit [arrowhead=none, color="black", style=dashed]
+    cluster1863_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node9963_name [shape=none, label=<<font color="black">Call[9963]</font>>]
+    node9963_name -> node9963 [arrowhead=none, color="black", style=dashed]
+    node9963 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;HasCallInTailPosition(call)</font>> color="black" fillcolor="white", style=filled]
+    node9963 -> node9964 [color="black"]
+    node9964_name [shape=none, label=<<font color="black">Block[9964]</font>>]
+    node9964_name -> node9964 [arrowhead=none, color="black", style=dashed]
+    node9964 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9964 -> cluster1863_exit [color="black"]
+  }
+}

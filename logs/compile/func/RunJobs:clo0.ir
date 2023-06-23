@@ -1,0 +1,9 @@
+def <CLO>:RunJobs:clo0(
+): Unknown {
+  let sourceText = @SOURCE_TEXT
+  call %0 = clo<ParseScript>(sourceText, @EXECUTION_STACK[0].Realm, undefined)
+  let script = %0
+  call %1 = clo<ScriptEvaluation>(script)
+  [? %1]
+  return undefined
+}

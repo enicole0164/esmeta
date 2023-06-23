@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster85 {
+    label = "def <SYNTAX>:StringNumericLiteral[1,3].StringNumericValue(this: Ast:StringNumericLiteral[1,3]): Number"
+    style = rounded
+    cluster85_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster85_entry_name -> cluster85_entry [arrowhead=none, color="black", style=dashed]
+    cluster85_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster85_entry -> node637 [color="black"]
+    cluster85_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster85_exit_name -> cluster85_exit [arrowhead=none, color="black", style=dashed]
+    cluster85_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node637_name [shape=none, label=<<font color="black">Call[637]</font>>]
+    node637_name -> node637 [arrowhead=none, color="black", style=dashed]
+    node637 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;StringNumericValue()</font>> color="black" fillcolor="white", style=filled]
+    node637 -> node638 [color="black"]
+    node638_name [shape=none, label=<<font color="black">Block[638]</font>>]
+    node638_name -> node638 [arrowhead=none, color="black", style=dashed]
+    node638 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node638 -> cluster85_exit [color="black"]
+  }
+}

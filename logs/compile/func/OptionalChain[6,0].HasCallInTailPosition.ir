@@ -1,0 +1,6 @@
+def <SYNTAX>:OptionalChain[6,0].HasCallInTailPosition(
+  this: Ast:OptionalChain[6,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

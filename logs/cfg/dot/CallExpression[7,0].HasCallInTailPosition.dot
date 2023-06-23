@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1821 {
+    label = "def <SYNTAX>:CallExpression[7,0].HasCallInTailPosition(this: Ast:CallExpression[7,0], call: Unknown): Boolean"
+    style = rounded
+    cluster1821_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1821_entry_name -> cluster1821_entry [arrowhead=none, color="black", style=dashed]
+    cluster1821_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1821_entry -> node9894 [color="black"]
+    cluster1821_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1821_exit_name -> cluster1821_exit [arrowhead=none, color="black", style=dashed]
+    cluster1821_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node9894_name [shape=none, label=<<font color="black">Block[9894]</font>>]
+    node9894_name -> node9894 [arrowhead=none, color="black", style=dashed]
+    node9894 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9894 -> cluster1821_exit [color="black"]
+  }
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:ArrayAssignmentPattern[0,0].DestructuringAssignmentEvaluation(
+  this: Ast:ArrayAssignmentPattern[0,0],
+  value: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<GetIterator>(value)
+  let iteratorRecord = [? %0]
+  call %1 = clo<NormalCompletion>(~unused~)
+  call %2 = clo<IteratorClose>(iteratorRecord, %1)
+  return [? %2]
+}

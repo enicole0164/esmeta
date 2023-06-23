@@ -1,0 +1,8 @@
+def <SYNTAX>:ExportDeclaration[4,0].BoundNames(
+  this: Ast:ExportDeclaration[4,0],
+): List[String] {
+  sdo-call %0 = this[0]->BoundNames()
+  let declarationNames = %0
+  (yet "If _declarationNames_ does not include the element *\"\\*default\\*\"*, append *\"\\*default\\*\"* to _declarationNames_.")
+  return declarationNames
+}

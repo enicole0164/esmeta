@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } var x ; throw new Test262Error ( message ) ; } assert . _isSameValue = x => 0 ; assert . notSameValue = { resolve : null } ; assert . _toString = this ; function await ( ) { } { join : false ; } ; await => { } ; class x { } assert . sameValue ( [ - 1 , 0 , 1 ] . lastIndexOf ( - 1n ) , 0 , '[-1, 0, 1].lastIndexOf(-1)' ) ; 

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1049 {
+    label = "def <INTERNAL>:OrdinaryObject.SetPrototypeOf(O: OrdinaryObject, V: Object | Null): Normal[Boolean]"
+    style = rounded
+    cluster1049_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1049_entry_name -> cluster1049_entry [arrowhead=none, color="black", style=dashed]
+    cluster1049_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1049_entry -> node3930 [color="black"]
+    cluster1049_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1049_exit_name -> cluster1049_exit [arrowhead=none, color="black", style=dashed]
+    cluster1049_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3930_name [shape=none, label=<<font color="black">Call[3930]</font>>]
+    node3930_name -> node3930 [arrowhead=none, color="black", style=dashed]
+    node3930 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinarySetPrototypeOf&gt;(O, V)</font>> color="black" fillcolor="white", style=filled]
+    node3930 -> node3931 [color="black"]
+    node3931_name [shape=none, label=<<font color="black">Block[3931]</font>>]
+    node3931_name -> node3931 [arrowhead=none, color="black", style=dashed]
+    node3931 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3931 -> cluster1049_exit [color="black"]
+  }
+}

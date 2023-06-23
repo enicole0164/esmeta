@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1132 {
+    label = "def IntegerIndexedObjectCreate(prototype: Unknown): IntegerIndexedExoticObject"
+    style = rounded
+    cluster1132_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1132_entry_name -> cluster1132_entry [arrowhead=none, color="black", style=dashed]
+    cluster1132_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1132_entry -> node4886 [color="black"]
+    cluster1132_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1132_exit_name -> cluster1132_exit [arrowhead=none, color="black", style=dashed]
+    cluster1132_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4886_name [shape=none, label=<<font color="black">Block[4886]</font>>]
+    node4886_name -> node4886 [arrowhead=none, color="black", style=dashed]
+    node4886 [shape=box, label=<<font color="black">[0] let internalSlotsList = (new [&quot;Prototype&quot;, &quot;Extensible&quot;, &quot;ViewedArrayBuffer&quot;, &quot;TypedArrayName&quot;, &quot;ContentType&quot;, &quot;ByteLength&quot;, &quot;ByteOffset&quot;, &quot;ArrayLength&quot;])[#475]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4886 -> node4887 [color="black"]
+    node4887_name [shape=none, label=<<font color="black">Call[4887]</font>>]
+    node4887_name -> node4887 [arrowhead=none, color="black", style=dashed]
+    node4887 [shape=cds, label=<<font color="black">%0 = clo&lt;MakeBasicObject&gt;(internalSlotsList)</font>> color="black" fillcolor="white", style=filled]
+    node4887 -> node4888 [color="black"]
+    node4888_name [shape=none, label=<<font color="black">Block[4888]</font>>]
+    node4888_name -> node4888 [arrowhead=none, color="black", style=dashed]
+    node4888 [shape=box, label=<<font color="black">[0] let A = %0<BR ALIGN="LEFT"/>[1] A.GetOwnProperty = clo&lt;IntegerIndexedExoticObject.GetOwnProperty&gt;<BR ALIGN="LEFT"/>[2] A.HasProperty = clo&lt;IntegerIndexedExoticObject.HasProperty&gt;<BR ALIGN="LEFT"/>[3] A.DefineOwnProperty = clo&lt;IntegerIndexedExoticObject.DefineOwnProperty&gt;<BR ALIGN="LEFT"/>[4] A.Get = clo&lt;IntegerIndexedExoticObject.Get&gt;<BR ALIGN="LEFT"/>[5] A.Set = clo&lt;IntegerIndexedExoticObject.Set&gt;<BR ALIGN="LEFT"/>[6] A.Delete = clo&lt;IntegerIndexedExoticObject.Delete&gt;<BR ALIGN="LEFT"/>[7] A.OwnPropertyKeys = clo&lt;IntegerIndexedExoticObject.OwnPropertyKeys&gt;<BR ALIGN="LEFT"/>[8] A.Prototype = prototype<BR ALIGN="LEFT"/>[9] return A<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4888 -> cluster1132_exit [color="black"]
+  }
+}

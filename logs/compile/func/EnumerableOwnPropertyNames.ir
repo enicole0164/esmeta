@@ -1,0 +1,35 @@
+def EnumerableOwnPropertyNames(
+  O: Object,
+  kind: Const[~key+value~, ~key~, ~value~],
+): Unknown["EitherANormalCompletionContainingAListOrAnAbruptCompletion"] {
+  method-call %0 = O->OwnPropertyKeys()
+  let ownKeys = [? %0]
+  let properties = (new [])[#62]
+  %2 = ownKeys
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let key = %2[%1]
+    if (= (typeof key) @String) {
+      method-call %3 = O->GetOwnProperty(key)
+      let desc = [? %3]
+      if (&& (! (= desc undefined)) (= desc.Enumerable true)) {
+        if (= kind ~key~) {
+          push properties < key
+        } else {
+          call %4 = clo<Get>(O, key)
+          let value = [? %4]
+          if (= kind ~value~) {
+            push properties < value
+          } else {
+            assert (= kind ~key+value~)
+            call %5 = clo<CreateArrayFromList>((new [key, value])[#63])
+            let entry = %5
+            push properties < entry
+          }
+        }
+      } else {}
+    } else {}
+    %1 = (+ %1 1)
+  }
+  return properties
+}

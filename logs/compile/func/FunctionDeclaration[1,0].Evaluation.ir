@@ -1,0 +1,5 @@
+def <SYNTAX>:FunctionDeclaration[1,0].Evaluation(
+  this: Ast:FunctionDeclaration[1,0],
+): Unknown {
+  return ~empty~
+}

@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.get RegExp.prototype.dotAll(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let R = this
+  let cu = 115cu
+  call %0 = clo<RegExpHasFlag>(R, cu)
+  return [? %0]
+}

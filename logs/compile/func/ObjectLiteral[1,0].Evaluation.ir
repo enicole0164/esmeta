@@ -1,0 +1,9 @@
+def <SYNTAX>:ObjectLiteral[1,0].Evaluation(
+  this: Ast:ObjectLiteral[1,0],
+): Unknown {
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let obj = %0
+  sdo-call %1 = this[0]->PropertyDefinitionEvaluation(obj)
+  [? %1]
+  return obj
+}

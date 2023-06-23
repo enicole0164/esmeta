@@ -1,0 +1,43 @@
+def <CLO>:CreateArrayIterator:clo0(
+): Unknown {
+  let index = 0
+  loop[repeat] true {
+    if (! (= array.TypedArrayName absent)) {
+      call %0 = clo<IsDetachedBuffer>(array.ViewedArrayBuffer)
+      if (= %0 true) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1050])
+      } else {}
+      let len = array.ArrayLength
+    } else {
+      call %1 = clo<LengthOfArrayLike>(array)
+      let len = [? %1]
+    }
+    if (! (< index len)) {
+      call %2 = clo<NormalCompletion>(undefined)
+      return %2
+    } else {}
+    if (= kind ~key~) {
+      call %3 = clo<CreateIterResultObject>(([number] index), false)
+      call %4 = clo<GeneratorYield>(%3)
+      [? %4]
+    } else {
+      call %5 = clo<ToString>(([number] index))
+      let elementKey = [! %5]
+      call %6 = clo<Get>(array, elementKey)
+      let elementValue = [? %6]
+      if (= kind ~value~) {
+        call %7 = clo<CreateIterResultObject>(elementValue, false)
+        call %8 = clo<GeneratorYield>(%7)
+        [? %8]
+      } else {
+        assert (= kind ~key+value~)
+        call %9 = clo<CreateArrayFromList>((new [([number] index), elementValue])[#1051])
+        let result = %9
+        call %10 = clo<CreateIterResultObject>(result, false)
+        call %11 = clo<GeneratorYield>(%10)
+        [? %11]
+      }
+    }
+    index = (+ index 1)
+  }
+}

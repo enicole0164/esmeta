@@ -1,0 +1,5 @@
+def <SYNTAX>:IdentifierReference[1,0].AssignmentTargetType(
+  this: Ast:IdentifierReference[1,0],
+): Const[~invalid~, ~simple~] {
+  return ~simple~
+}

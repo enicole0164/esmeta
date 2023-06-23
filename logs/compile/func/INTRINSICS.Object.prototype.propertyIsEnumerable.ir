@@ -1,0 +1,17 @@
+def <BUILTIN>:INTRINSICS.Object.prototype.propertyIsEnumerable(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let V = (pop < argumentsList) else let V = absent
+  call %0 = clo<ToPropertyKey>(V)
+  let P = [? %0]
+  call %1 = clo<ToObject>(this)
+  let O = [? %1]
+  method-call %2 = O->GetOwnProperty(P)
+  let desc = [? %2]
+  if (= desc undefined) {
+    return false
+  } else {}
+  return desc.Enumerable
+}

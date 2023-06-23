@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } x : ; throw new Test262Error ( message ) ; } ; x => 0 ; assert . notSameValue = { [ Symbol . search ] : '' } ; var x ; try { } catch { } finally { } function Test262Error ( message ) { this . message = message || "" ; } ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; function $DONOTEVALUATE ( ) { throw { message : 0 } ; } var result = eval ( '{length: 3000}() => 42;' ) ; var expected = 3000 ; 

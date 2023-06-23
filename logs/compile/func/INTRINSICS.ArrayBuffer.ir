@@ -1,0 +1,14 @@
+def <BUILTIN>:INTRINSICS.ArrayBuffer(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let length = (pop < argumentsList) else let length = absent
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1150])
+  } else {}
+  call %0 = clo<ToIndex>(length)
+  let byteLength = [? %0]
+  call %1 = clo<AllocateArrayBuffer>(NewTarget, byteLength)
+  return [? %1]
+}

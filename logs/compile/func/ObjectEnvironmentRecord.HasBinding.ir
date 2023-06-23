@@ -1,0 +1,25 @@
+def <CONC>:ObjectEnvironmentRecord.HasBinding(
+  envRec: ObjectEnvironmentRecord,
+  N: String,
+): Normal[Boolean] | Abrupt {
+  let bindingObject = envRec.BindingObject
+  call %0 = clo<HasProperty>(bindingObject, N)
+  let foundBinding = [? %0]
+  if (= foundBinding false) {
+    return false
+  } else {}
+  if (= envRec.IsWithEnvironment false) {
+    return true
+  } else {}
+  call %1 = clo<Get>(bindingObject, @SYMBOL.unscopables)
+  let unscopables = [? %1]
+  if (= (typeof unscopables) @Object) {
+    call %2 = clo<Get>(unscopables, N)
+    call %3 = clo<ToBoolean>([? %2])
+    let blocked = %3
+    if (= blocked true) {
+      return false
+    } else {}
+  } else {}
+  return true
+}

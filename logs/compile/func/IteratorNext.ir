@@ -1,0 +1,16 @@
+def IteratorNext(
+  iteratorRecord: IteratorRecord,
+  value?: ESValue,
+): Normal[Object] | Abrupt {
+  if (= value absent) {
+    call %0 = clo<Call>(iteratorRecord.NextMethod, iteratorRecord.Iterator)
+    let result = [? %0]
+  } else {
+    call %1 = clo<Call>(iteratorRecord.NextMethod, iteratorRecord.Iterator, (new [value])[#76])
+    let result = [? %1]
+  }
+  if (! (= (typeof result) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#77])
+  } else {}
+  return result
+}

@@ -1,0 +1,17 @@
+def <INTERNAL>:IntegerIndexedExoticObject.OwnPropertyKeys(
+  O: IntegerIndexedExoticObject,
+): Normal[List[Symbol | String]] {
+  let keys = (new [])[#474]
+  call %0 = clo<IsDetachedBuffer>(O.ViewedArrayBuffer)
+  if (= %0 false) {
+    let i = 0
+    loop[foreach-int] (< i O.ArrayLength) {
+      call %1 = clo<ToString>(([number] i))
+      push keys < [! %1]
+      i = (+ i 1)
+    }
+  } else {}
+  (yet "For each own property key _P_ of _O_ such that Type(_P_) is String and _P_ is not an integer index, in ascending chronological order of property creation, do\n  1. Append _P_ to _keys_.")
+  (yet "For each own property key _P_ of _O_ such that Type(_P_) is Symbol, in ascending chronological order of property creation, do\n  1. Append _P_ to _keys_.")
+  return keys
+}

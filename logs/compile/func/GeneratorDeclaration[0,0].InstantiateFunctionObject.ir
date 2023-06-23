@@ -1,0 +1,8 @@
+def <SYNTAX>:GeneratorDeclaration[0,0].InstantiateFunctionObject(
+  this: Ast:GeneratorDeclaration[0,0],
+  env: Unknown,
+  privateEnv: Unknown,
+): FunctionObject {
+  sdo-call %0 = this->InstantiateGeneratorFunctionObject(env, privateEnv)
+  return %0
+}

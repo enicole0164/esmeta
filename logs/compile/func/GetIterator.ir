@@ -1,0 +1,35 @@
+def GetIterator(
+  obj: ESValue,
+  hint?: Const[~async~, ~sync~],
+  method?: FunctionObject,
+): Normal[IteratorRecord] | Abrupt {
+  if (= hint absent) {
+    hint = ~sync~
+  } else {}
+  if (= method absent) {
+    if (= hint ~async~) {
+      call %0 = clo<GetMethod>(obj, @SYMBOL.asyncIterator)
+      method = [? %0]
+      if (= method undefined) {
+        call %1 = clo<GetMethod>(obj, @SYMBOL.iterator)
+        let syncMethod = [? %1]
+        call %2 = clo<GetIterator>(obj, ~sync~, syncMethod)
+        let syncIteratorRecord = [? %2]
+        call %3 = clo<CreateAsyncFromSyncIterator>(syncIteratorRecord)
+        return %3
+      } else {}
+    } else {
+      call %4 = clo<GetMethod>(obj, @SYMBOL.iterator)
+      method = [? %4]
+    }
+  } else {}
+  call %5 = clo<Call>(method, obj)
+  let iterator = [? %5]
+  if (! (= (typeof iterator) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#74])
+  } else {}
+  call %6 = clo<GetV>(iterator, "next")
+  let nextMethod = [? %6]
+  let iteratorRecord = (new IteratorRecord("Iterator" -> iterator, "NextMethod" -> nextMethod, "Done" -> false))[#75]
+  return iteratorRecord
+}

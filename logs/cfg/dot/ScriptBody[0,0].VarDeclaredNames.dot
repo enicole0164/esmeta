@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster384 {
+    label = "def <SYNTAX>:ScriptBody[0,0].VarDeclaredNames(this: Ast:ScriptBody[0,0]): List[String]"
+    style = rounded
+    cluster384_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster384_entry_name -> cluster384_entry [arrowhead=none, color="black", style=dashed]
+    cluster384_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster384_entry -> node2060 [color="black"]
+    cluster384_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster384_exit_name -> cluster384_exit [arrowhead=none, color="black", style=dashed]
+    cluster384_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2060_name [shape=none, label=<<font color="black">Call[2060]</font>>]
+    node2060_name -> node2060 [arrowhead=none, color="black", style=dashed]
+    node2060 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;TopLevelVarDeclaredNames()</font>> color="black" fillcolor="white", style=filled]
+    node2060 -> node2061 [color="black"]
+    node2061_name [shape=none, label=<<font color="black">Block[2061]</font>>]
+    node2061_name -> node2061 [arrowhead=none, color="black", style=dashed]
+    node2061 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2061 -> cluster384_exit [color="black"]
+  }
+}

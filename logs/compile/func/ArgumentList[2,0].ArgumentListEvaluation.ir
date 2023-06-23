@@ -1,0 +1,11 @@
+def <SYNTAX>:ArgumentList[2,0].ArgumentListEvaluation(
+  this: Ast:ArgumentList[2,0],
+): Normal[List[ESValue]] | Abrupt {
+  sdo-call %0 = this[0]->ArgumentListEvaluation()
+  let precedingArgs = [? %0]
+  sdo-call %1 = this[1]->Evaluation()
+  let ref = %1
+  call %2 = clo<GetValue>(ref)
+  let arg = [? %2]
+  return (list-concat precedingArgs (new [arg])[#579])[#578]
+}

@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1040 {
+    label = "def InitializeHostDefinedRealm(): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster1040_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1040_entry_name -> cluster1040_entry [arrowhead=none, color="black", style=dashed]
+    cluster1040_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1040_entry -> node3911 [color="black"]
+    cluster1040_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1040_exit_name -> cluster1040_exit [arrowhead=none, color="black", style=dashed]
+    cluster1040_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3911_name [shape=none, label=<<font color="black">Call[3911]</font>>]
+    node3911_name -> node3911 [arrowhead=none, color="black", style=dashed]
+    node3911 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateRealm&gt;()</font>> color="black" fillcolor="white", style=filled]
+    node3911 -> node3912 [color="black"]
+    node3912_name [shape=none, label=<<font color="black">Block[3912]</font>>]
+    node3912_name -> node3912 [arrowhead=none, color="black", style=dashed]
+    node3912 [shape=box, label=<<font color="black">[0] let realm = %0<BR ALIGN="LEFT"/>[1] let newContext = (new ExecutionContext())[#398]<BR ALIGN="LEFT"/>[2] newContext.Function = null<BR ALIGN="LEFT"/>[3] newContext.Realm = realm<BR ALIGN="LEFT"/>[4] newContext.ScriptOrModule = null<BR ALIGN="LEFT"/>[5] push newContext &gt; @EXECUTION_STACK<BR ALIGN="LEFT"/>[6] let global = undefined<BR ALIGN="LEFT"/>[7] let thisValue = undefined<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3912 -> node3913 [color="black"]
+    node3913_name [shape=none, label=<<font color="black">Call[3913]</font>>]
+    node3913_name -> node3913 [arrowhead=none, color="black", style=dashed]
+    node3913 [shape=cds, label=<<font color="black">%1 = clo&lt;SetRealmGlobalObject&gt;(realm, global, thisValue)</font>> color="black" fillcolor="white", style=filled]
+    node3913 -> node3914 [color="black"]
+    node3914_name [shape=none, label=<<font color="black">Call[3914]</font>>]
+    node3914_name -> node3914 [arrowhead=none, color="black", style=dashed]
+    node3914 [shape=cds, label=<<font color="black">%2 = clo&lt;SetDefaultGlobalBindings&gt;(realm)</font>> color="black" fillcolor="white", style=filled]
+    node3914 -> node3915 [color="black"]
+    node3915_name [shape=none, label=<<font color="black">Block[3915]</font>>]
+    node3915_name -> node3915 [arrowhead=none, color="black", style=dashed]
+    node3915 [shape=box, label=<<font color="black">[0] let globalObj = [? %2]<BR ALIGN="LEFT"/>[1] nop<BR ALIGN="LEFT"/>[2] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3915 -> cluster1040_exit [color="black"]
+  }
+}

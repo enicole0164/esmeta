@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1121 {
+    label = "def <BUILTIN-CLO>:MakeArgGetter:clo0(this: Unknown, argumentsList: Unknown, NewTarget: Unknown): Unknown"
+    style = rounded
+    cluster1121_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1121_entry_name -> cluster1121_entry [arrowhead=none, color="black", style=dashed]
+    cluster1121_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1121_entry -> node4798 [color="black"]
+    cluster1121_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1121_exit_name -> cluster1121_exit [arrowhead=none, color="black", style=dashed]
+    cluster1121_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4798_name [shape=none, label=<<font color="black">Call[4798]</font>>]
+    node4798_name -> node4798 [arrowhead=none, color="black", style=dashed]
+    node4798 [shape=cds, label=<<font color="black">%0 = env-&gt;GetBindingValue(name, false)</font>> color="black" fillcolor="white", style=filled]
+    node4798 -> node4799 [color="black"]
+    node4799_name [shape=none, label=<<font color="black">Block[4799]</font>>]
+    node4799_name -> node4799 [arrowhead=none, color="black", style=dashed]
+    node4799 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4799 -> cluster1121_exit [color="black"]
+  }
+}

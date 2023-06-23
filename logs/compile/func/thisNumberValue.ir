@@ -1,0 +1,13 @@
+def thisNumberValue(
+  value: Unknown,
+): Unknown {
+  if (= (typeof value) @Number) {
+    return value
+  } else {}
+  if (&& (= (typeof value) @Object) (! (= value.NumberData absent))) {
+    let n = value.NumberData
+    assert (= (typeof n) @Number)
+    return n
+  } else {}
+  return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#925])
+}

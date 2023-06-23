@@ -1,0 +1,16 @@
+def <BUILTIN-CLO>:INTRINSICS.Promise.prototype.finally:clo1(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let reason = (pop < argumentsList) else let reason = absent
+  call %0 = clo<Call>(onFinally, undefined)
+  let result = [? %0]
+  call %1 = clo<PromiseResolve>(C, result)
+  let promise = [? %1]
+  let throwReason = clo<INTRINSICS.Promise.prototype.finally:clo1:clo0, [reason]>
+  call %2 = clo<CreateBuiltinFunction>(throwReason, 0, "", (new [])[#1308])
+  let thrower = %2
+  call %3 = clo<Invoke>(promise, "then", (new [thrower])[#1309])
+  return [? %3]
+}

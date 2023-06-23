@@ -1,0 +1,209 @@
+def FunctionDeclarationInstantiation(
+  func: FunctionObject,
+  argumentsList: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  let calleeContext = @EXECUTION_STACK[0]
+  let code = func.ECMAScriptCode
+  let strict = func.Strict
+  let formals = func.FormalParameters
+  sdo-call %0 = formals->BoundNames()
+  let parameterNames = %0
+  if (duplicated parameterNames) {
+    let hasDuplicates = true
+  } else {
+    let hasDuplicates = false
+  }
+  sdo-call %1 = formals->IsSimpleParameterList()
+  let simpleParameterList = %1
+  sdo-call %2 = formals->ContainsExpression()
+  let hasParameterExpressions = %2
+  sdo-call %3 = code->VarDeclaredNames()
+  let varNames = %3
+  sdo-call %4 = code->VarScopedDeclarations()
+  let varDeclarations = %4
+  sdo-call %5 = code->LexicallyDeclaredNames()
+  let lexicalNames = %5
+  let functionNames = (new [])[#432]
+  let functionsToInitialize = (new [])[#433]
+  %7 = varDeclarations
+  %6 = %7.length
+  loop[foreach] (< 0 %6) {
+    %6 = (- %6 1)
+    let d = %7[%6]
+    if (! (|| (|| (? d: "VariableDeclaration") (? d: "ForBinding")) (? d: "BindingIdentifier"))) {
+      assert (|| (|| (|| (? d: "FunctionDeclaration") (? d: "GeneratorDeclaration")) (? d: "AsyncFunctionDeclaration")) (? d: "AsyncGeneratorDeclaration"))
+      sdo-call %8 = d->BoundNames()
+      let fn = %8[0]
+      if (! (contains functionNames fn)) {
+        push fn > functionNames
+        nop
+        push d > functionsToInitialize
+      } else {}
+    } else {}
+  }
+  let argumentsObjectNeeded = true
+  if (= func.ThisMode ~lexical~) {
+    nop
+    argumentsObjectNeeded = false
+  } else {
+    if (contains parameterNames "arguments") {
+      argumentsObjectNeeded = false
+    } else {
+      if (= hasParameterExpressions false) {
+        if (|| (contains functionNames "arguments") (contains lexicalNames "arguments")) {
+          argumentsObjectNeeded = false
+        } else {}
+      } else {}
+    }
+  }
+  if (|| (= strict true) (= hasParameterExpressions false)) {
+    nop
+    let env = calleeContext.LexicalEnvironment
+  } else {
+    nop
+    let calleeEnv = calleeContext.LexicalEnvironment
+    call %9 = clo<NewDeclarativeEnvironment>(calleeEnv)
+    let env = %9
+    assert (= calleeContext.VariableEnvironment calleeEnv)
+    calleeContext.LexicalEnvironment = env
+  }
+  %11 = parameterNames
+  %10 = 0
+  loop[foreach] (< %10 %11.length) {
+    let paramName = %11[%10]
+    method-call %12 = env->HasBinding(paramName)
+    let alreadyDeclared = [! %12]
+    nop
+    if (= alreadyDeclared false) {
+      method-call %13 = env->CreateMutableBinding(paramName, false)
+      [! %13]
+      if (= hasDuplicates true) {
+        method-call %14 = env->InitializeBinding(paramName, undefined)
+        [! %14]
+      } else {}
+    } else {}
+    %10 = (+ %10 1)
+  }
+  if (= argumentsObjectNeeded true) {
+    if (|| (= strict true) (= simpleParameterList false)) {
+      call %15 = clo<CreateUnmappedArgumentsObject>(argumentsList)
+      let ao = %15
+    } else {
+      nop
+      call %16 = clo<CreateMappedArgumentsObject>(func, formals, argumentsList, env)
+      let ao = %16
+    }
+    if (= strict true) {
+      method-call %17 = env->CreateImmutableBinding("arguments", false)
+      [! %17]
+    } else {
+      method-call %18 = env->CreateMutableBinding("arguments", false)
+      [! %18]
+    }
+    method-call %19 = env->InitializeBinding("arguments", ao)
+    [! %19]
+    let parameterBindings = (list-concat parameterNames (new ["arguments"])[#435])[#434]
+  } else {
+    let parameterBindings = parameterNames
+  }
+  call %20 = clo<CreateListIteratorRecord>(argumentsList)
+  let iteratorRecord = %20
+  if (= hasDuplicates true) {
+    sdo-call %21 = formals->IteratorBindingInitialization(iteratorRecord, undefined)
+    [? %21]
+  } else {
+    sdo-call %22 = formals->IteratorBindingInitialization(iteratorRecord, env)
+    [? %22]
+  }
+  if (= hasParameterExpressions false) {
+    nop
+    let instantiatedVarNames = (copy parameterBindings)[#436]
+    %24 = varNames
+    %23 = 0
+    loop[foreach] (< %23 %24.length) {
+      let n = %24[%23]
+      if (! (contains instantiatedVarNames n)) {
+        push instantiatedVarNames < n
+        method-call %25 = env->CreateMutableBinding(n, false)
+        [! %25]
+        method-call %26 = env->InitializeBinding(n, undefined)
+        [! %26]
+      } else {}
+      %23 = (+ %23 1)
+    }
+    let varEnv = env
+  } else {
+    nop
+    call %27 = clo<NewDeclarativeEnvironment>(env)
+    let varEnv = %27
+    calleeContext.VariableEnvironment = varEnv
+    let instantiatedVarNames = (new [])[#437]
+    %29 = varNames
+    %28 = 0
+    loop[foreach] (< %28 %29.length) {
+      let n = %29[%28]
+      if (! (contains instantiatedVarNames n)) {
+        push instantiatedVarNames < n
+        method-call %30 = varEnv->CreateMutableBinding(n, false)
+        [! %30]
+        if (|| (! (contains parameterBindings n)) (contains functionNames n)) {
+          let initialValue = undefined
+        } else {
+          method-call %31 = env->GetBindingValue(n, false)
+          let initialValue = [! %31]
+        }
+        method-call %32 = varEnv->InitializeBinding(n, initialValue)
+        [! %32]
+        nop
+      } else {}
+      %28 = (+ %28 1)
+    }
+  }
+  nop
+  if (= strict false) {
+    call %33 = clo<NewDeclarativeEnvironment>(varEnv)
+    let lexEnv = %33
+    nop
+  } else {
+    let lexEnv = varEnv
+  }
+  calleeContext.LexicalEnvironment = lexEnv
+  sdo-call %34 = code->LexicallyScopedDeclarations()
+  let lexDeclarations = %34
+  %36 = lexDeclarations
+  %35 = 0
+  loop[foreach] (< %35 %36.length) {
+    let d = %36[%35]
+    nop
+    sdo-call %39 = d->BoundNames()
+    %38 = %39
+    %37 = 0
+    loop[foreach] (< %37 %38.length) {
+      let dn = %38[%37]
+      sdo-call %40 = d->IsConstantDeclaration()
+      if (= %40 true) {
+        method-call %41 = lexEnv->CreateImmutableBinding(dn, true)
+        [! %41]
+      } else {
+        method-call %42 = lexEnv->CreateMutableBinding(dn, false)
+        [! %42]
+      }
+      %37 = (+ %37 1)
+    }
+    %35 = (+ %35 1)
+  }
+  let privateEnv = calleeContext.PrivateEnvironment
+  %44 = functionsToInitialize
+  %43 = 0
+  loop[foreach] (< %43 %44.length) {
+    let f = %44[%43]
+    sdo-call %45 = f->BoundNames()
+    let fn = %45[0]
+    sdo-call %46 = f->InstantiateFunctionObject(lexEnv, privateEnv)
+    let fo = %46
+    method-call %47 = varEnv->SetMutableBinding(fn, fo, false)
+    [! %47]
+    %43 = (+ %43 1)
+  }
+  return ~unused~
+}

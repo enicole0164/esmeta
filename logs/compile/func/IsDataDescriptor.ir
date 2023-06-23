@@ -1,0 +1,14 @@
+def IsDataDescriptor(
+  Desc: PropertyDescriptor | Undefined,
+): Boolean {
+  if (= Desc undefined) {
+    return false
+  } else {}
+  if (! (= Desc.Value absent)) {
+    return true
+  } else {}
+  if (! (= Desc.Writable absent)) {
+    return true
+  } else {}
+  return false
+}

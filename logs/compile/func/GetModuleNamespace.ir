@@ -1,0 +1,25 @@
+def GetModuleNamespace(
+  module: Unknown["InstanceOfAConcreteSubclassOfModuleRecord"],
+): Unknown["EitherANormalCompletionContainingEitherAModuleNamespaceObjectOr~empty~,OrAnAbruptCompletion"] {
+  assert (|| (! (? module: "CyclicModuleRecord")) (! (= module.Status ~unlinked~)))
+  let namespace = module.Namespace
+  if (= namespace ~empty~) {
+    method-call %0 = module->GetExportedNames()
+    let exportedNames = [? %0]
+    let unambiguousNames = (new [])[#802]
+    %2 = exportedNames
+    %1 = 0
+    loop[foreach] (< %1 %2.length) {
+      let name = %2[%1]
+      method-call %3 = module->ResolveExport(name)
+      let resolution = [? %3]
+      if (? resolution: "ResolvedBindingRecord") {
+        push unambiguousNames < name
+      } else {}
+      %1 = (+ %1 1)
+    }
+    call %4 = clo<ModuleNamespaceCreate>(module, unambiguousNames)
+    namespace = %4
+  } else {}
+  return namespace
+}

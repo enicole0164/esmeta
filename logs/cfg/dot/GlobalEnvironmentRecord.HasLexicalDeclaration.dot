@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1010 {
+    label = "def <CONC>:GlobalEnvironmentRecord.HasLexicalDeclaration(envRec: GlobalEnvironmentRecord, N: String): Boolean"
+    style = rounded
+    cluster1010_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1010_entry_name -> cluster1010_entry [arrowhead=none, color="black", style=dashed]
+    cluster1010_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1010_entry -> node3761 [color="black"]
+    cluster1010_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1010_exit_name -> cluster1010_exit [arrowhead=none, color="black", style=dashed]
+    cluster1010_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3761_name [shape=none, label=<<font color="black">Block[3761]</font>>]
+    node3761_name -> node3761 [arrowhead=none, color="black", style=dashed]
+    node3761 [shape=box, label=<<font color="black">[0] let DclRec = envRec.DeclarativeRecord<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3761 -> node3762 [color="black"]
+    node3762_name [shape=none, label=<<font color="black">Call[3762]</font>>]
+    node3762_name -> node3762 [arrowhead=none, color="black", style=dashed]
+    node3762 [shape=cds, label=<<font color="black">%0 = DclRec-&gt;HasBinding(N)</font>> color="black" fillcolor="white", style=filled]
+    node3762 -> node3763 [color="black"]
+    node3763_name [shape=none, label=<<font color="black">Block[3763]</font>>]
+    node3763_name -> node3763 [arrowhead=none, color="black", style=dashed]
+    node3763 [shape=box, label=<<font color="black">[0] return [! %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3763 -> cluster1010_exit [color="black"]
+  }
+}

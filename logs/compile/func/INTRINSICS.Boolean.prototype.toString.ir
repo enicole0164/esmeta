@@ -1,0 +1,13 @@
+def <BUILTIN>:INTRINSICS.Boolean.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisBooleanValue>(this)
+  let b = [? %0]
+  if (= b true) {
+    return "true"
+  } else {
+    return "false"
+  }
+}

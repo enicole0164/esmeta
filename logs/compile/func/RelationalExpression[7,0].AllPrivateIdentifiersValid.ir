@@ -1,0 +1,11 @@
+def <SYNTAX>:RelationalExpression[7,0].AllPrivateIdentifiersValid(
+  this: Ast:RelationalExpression[7,0],
+  names: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->StringValue()
+  if (contains names %0) {
+    sdo-call %1 = this[1]->AllPrivateIdentifiersValid(names)
+    return %1
+  } else {}
+  return false
+}

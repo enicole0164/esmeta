@@ -1,0 +1,6 @@
+def <SYNTAX>:DecimalEscape[0,0].CapturingGroupNumber(
+  this: Ast:DecimalEscape[0,0],
+): Unknown["PositiveInteger"] {
+  sdo-call %0 = this[0]->MV()
+  return %0
+}

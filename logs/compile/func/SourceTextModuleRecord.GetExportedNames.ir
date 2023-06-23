@@ -1,0 +1,53 @@
+def <CONC>:SourceTextModuleRecord.GetExportedNames(
+  module: SourceTextModuleRecord,
+  exportStarSet?: Unknown["ListOfSourceTextModuleRecords"],
+): Normal[List[String | Null]] | Abrupt {
+  if (= exportStarSet absent) {
+    exportStarSet = (new [])[#785]
+  } else {}
+  if (contains exportStarSet module) {
+    assert (yet "We've reached the starting point of an `export *` circularity.")
+    return (new [])[#786]
+  } else {}
+  push exportStarSet < module
+  let exportedNames = (new [])[#787]
+  %1 = module.LocalExportEntries
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let e = %1[%0]
+    assert (yet "_module_ provides the direct binding for this export.")
+    push exportedNames < e.ExportName
+    %0 = (+ %0 1)
+  }
+  %3 = module.IndirectExportEntries
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let e = %3[%2]
+    assert (yet "_module_ imports a specific binding for this export.")
+    push exportedNames < e.ExportName
+    %2 = (+ %2 1)
+  }
+  %5 = module.StarExportEntries
+  %4 = 0
+  loop[foreach] (< %4 %5.length) {
+    let e = %5[%4]
+    call %6 = clo<HostResolveImportedModule>(module, e.ModuleRequest)
+    let requestedModule = [? %6]
+    method-call %7 = requestedModule->GetExportedNames(exportStarSet)
+    let starNames = [? %7]
+    %9 = starNames
+    %8 = 0
+    loop[foreach] (< %8 %9.length) {
+      let n = %9[%8]
+      call %10 = clo<SameValue>(n, "default")
+      if (= %10 false) {
+        if (! (contains exportedNames n)) {
+          push exportedNames < n
+        } else {}
+      } else {}
+      %8 = (+ %8 1)
+    }
+    %4 = (+ %4 1)
+  }
+  return exportedNames
+}

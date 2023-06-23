@@ -1,0 +1,9 @@
+def <SYNTAX>:ModuleItemList[1,0].ImportEntries(
+  this: Ast:ModuleItemList[1,0],
+): Unknown["ListOfImportEntryRecords"] {
+  sdo-call %0 = this[0]->ImportEntries()
+  let entries1 = %0
+  sdo-call %1 = this[1]->ImportEntries()
+  let entries2 = %1
+  return (list-concat entries1 entries2)[#804]
+}

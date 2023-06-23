@@ -1,0 +1,16 @@
+def InitializeBoundName(
+  name: String,
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  if (! (= environment undefined)) {
+    method-call %0 = environment->InitializeBinding(name, value)
+    [! %0]
+    return ~unused~
+  } else {
+    call %1 = clo<ResolveBinding>(name)
+    let lhs = [? %1]
+    call %2 = clo<PutValue>(lhs, value)
+    return [? %2]
+  }
+}

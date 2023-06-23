@@ -1,0 +1,9 @@
+def RoundMVResult(
+  n: Unknown["MathematicalValue"],
+): Number {
+  (yet "If the decimal representation of _n_ has 20 or fewer significant digits, return 𝔽(_n_).")
+  (yet "Let _option1_ be the mathematical value denoted by the result of replacing each significant digit in the decimal representation of _n_ after the 20th with a 0 digit.")
+  (yet "Let _option2_ be the mathematical value denoted by the result of replacing each significant digit in the decimal representation of _n_ after the 20th with a 0 digit and then incrementing it at the 20th position (with carrying as necessary).")
+  (yet "Let _chosen_ be an implementation-defined choice of either _option1_ or _option2_.")
+  return ([number] chosen)
+}

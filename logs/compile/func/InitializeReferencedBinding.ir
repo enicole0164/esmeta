@@ -1,0 +1,14 @@
+def InitializeReferencedBinding(
+  V: Unknown,
+  W: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  [? V]
+  [? W]
+  assert (? V: "ReferenceRecord")
+  call %0 = clo<IsUnresolvableReference>(V)
+  assert (= %0 false)
+  let base = V.Base
+  assert (? base: "EnvironmentRecord")
+  method-call %1 = base->InitializeBinding(V.ReferencedName, W)
+  return [? %1]
+}

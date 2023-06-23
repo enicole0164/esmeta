@@ -1,0 +1,12 @@
+def RequireInternalSlot(
+  O: Unknown,
+  internalSlot: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  if (! (= (typeof O) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#415])
+  } else {}
+  if (= O[internalSlot] absent) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#416])
+  } else {}
+  return ~unused~
+}

@@ -1,0 +1,14 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.Delete(
+  O: ModuleNamespaceExoticObject,
+  P: Symbol | String,
+): Normal[Boolean] {
+  if (= (typeof P) @Symbol) {
+    call %0 = clo<OrdinaryDelete>(O, P)
+    return [! %0]
+  } else {}
+  let exports = O.Exports
+  if (contains exports P) {
+    return false
+  } else {}
+  return true
+}

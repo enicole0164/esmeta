@@ -1,0 +1,32 @@
+def RawBytesToNumeric(
+  type: Unknown["TypedArrayElementType"],
+  rawBytes: Unknown["List"],
+  isLittleEndian: Boolean,
+): Number | BigInt {
+  (yet "Let _elementSize_ be the Element Size value specified in <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for Element Type _type_.")
+  if (= isLittleEndian false) {
+    (yet "reverse the order of the elements of _rawBytes_.")
+  } else {}
+  if (= type ~Float32~) {
+    (yet "Let _value_ be the byte elements of _rawBytes_ concatenated and interpreted as a little-endian bit string encoding of an IEEE 754-2019 binary32 value.")
+    (yet "If _value_ is an IEEE 754-2019 binary32 NaN value, return the *NaN* Number value.")
+    (yet "Return the Number value that corresponds to _value_.")
+  } else {}
+  if (= type ~Float64~) {
+    (yet "Let _value_ be the byte elements of _rawBytes_ concatenated and interpreted as a little-endian bit string encoding of an IEEE 754-2019 binary64 value.")
+    (yet "If _value_ is an IEEE 754-2019 binary64 NaN value, return the *NaN* Number value.")
+    (yet "Return the Number value that corresponds to _value_.")
+  } else {}
+  call %0 = clo<IsUnsignedElementType>(type)
+  if (= %0 true) {
+    (yet "Let _intValue_ be the byte elements of _rawBytes_ concatenated and interpreted as a bit string encoding of an unsigned little-endian binary number.")
+  } else {
+    (yet "Let _intValue_ be the byte elements of _rawBytes_ concatenated and interpreted as a bit string encoding of a binary little-endian two's complement number of bit length _elementSize_ × 8.")
+  }
+  call %1 = clo<IsBigIntElementType>(type)
+  if (= %1 true) {
+    (yet "return the BigInt value that corresponds to _intValue_.")
+  } else {
+    (yet "return the Number value that corresponds to _intValue_.")
+  }
+}

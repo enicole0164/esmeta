@@ -1,0 +1,5 @@
+def <SYNTAX>:ArrowParameters[0,0].IsSimpleParameterList(
+  this: Ast:ArrowParameters[0,0],
+): Boolean {
+  return true
+}

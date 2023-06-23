@@ -1,0 +1,23 @@
+def SpeciesConstructor(
+  O: Object,
+  defaultConstructor: Unknown["Constructor"],
+): Unknown["EitherANormalCompletionContainingAConstructorOrAnAbruptCompletion"] {
+  call %0 = clo<Get>(O, "constructor")
+  let C = [? %0]
+  if (= C undefined) {
+    return defaultConstructor
+  } else {}
+  if (! (= (typeof C) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#60])
+  } else {}
+  call %1 = clo<Get>(C, @SYMBOL.species)
+  let S = [? %1]
+  if (|| (= S undefined) (= S null)) {
+    return defaultConstructor
+  } else {}
+  call %2 = clo<IsConstructor>(S)
+  if (= %2 true) {
+    return S
+  } else {}
+  return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#61])
+}

@@ -1,0 +1,8 @@
+def <SYNTAX>:StatementListItem[1,0].TopLevelLexicallyScopedDeclarations(
+  this: Ast:StatementListItem[1,0],
+): List[Ast] {
+  if (? this[0]: "Declaration0") {
+    return (new [])[#285]
+  } else {}
+  return (new [this[0]])[#286]
+}

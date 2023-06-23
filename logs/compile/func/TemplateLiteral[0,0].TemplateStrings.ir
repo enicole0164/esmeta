@@ -1,0 +1,13 @@
+def <SYNTAX>:TemplateLiteral[0,0].TemplateStrings(
+  this: Ast:TemplateLiteral[0,0],
+  raw: Unknown,
+): List[String] {
+  if (= raw false) {
+    sdo-call %0 = this[0]->TV()
+    let string = %0
+  } else {
+    sdo-call %1 = this[0]->TRV()
+    let string = %1
+  }
+  return (new [string])[#550]
+}

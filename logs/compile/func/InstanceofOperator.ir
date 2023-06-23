@@ -1,0 +1,21 @@
+def InstanceofOperator(
+  V: ESValue,
+  target: ESValue,
+): Normal[Boolean] | Abrupt {
+  if (! (= (typeof target) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#590])
+  } else {}
+  call %0 = clo<GetMethod>(target, @SYMBOL.hasInstance)
+  let instOfHandler = [? %0]
+  if (! (= instOfHandler undefined)) {
+    call %1 = clo<Call>(instOfHandler, target, (new [V])[#591])
+    call %2 = clo<ToBoolean>([? %1])
+    return %2
+  } else {}
+  call %3 = clo<IsCallable>(target)
+  if (= %3 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#592])
+  } else {}
+  call %4 = clo<OrdinaryHasInstance>(target, V)
+  return [? %4]
+}

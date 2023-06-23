@@ -1,0 +1,5 @@
+def <SYNTAX>:BindingIdentifier[1,0].BoundNames(
+  this: Ast:BindingIdentifier[1,0],
+): List[String] {
+  return (new ["yield"])[#83]
+}

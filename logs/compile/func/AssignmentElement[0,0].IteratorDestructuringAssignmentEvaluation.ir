@@ -1,0 +1,59 @@
+def <SYNTAX>:AssignmentElement[0,0].IteratorDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentElement[0,0],
+  iteratorRecord: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  if (! (|| (? this[0]: "ObjectLiteral") (? this[0]: "ArrayLiteral"))) {
+    sdo-call %0 = this[0]->Evaluation()
+    let lref = %0
+    [? lref]
+  } else {}
+  if (= iteratorRecord.Done false) {
+    call %1 = clo<IteratorStep>(iteratorRecord)
+    call %2 = clo<Completion>(%1)
+    let next = %2
+    if (&& (comp? next) (! (= next.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? next]
+    if (= next false) {
+      iteratorRecord.Done = true
+    } else {
+      call %3 = clo<IteratorValue>(next)
+      call %4 = clo<Completion>(%3)
+      let value = %4
+      if (&& (comp? value) (! (= value.Type ~normal~))) {
+        iteratorRecord.Done = true
+      } else {}
+      [? value]
+    }
+  } else {}
+  if (= iteratorRecord.Done true) {
+    let value = undefined
+  } else {}
+  if (&& (! (= this[1] absent)) (= value undefined)) {
+    call %6 = clo<IsAnonymousFunctionDefinition>(this[1])
+    %5 = (= %6 true)
+    if %5 {
+      sdo-call %7 = this[0]->IsIdentifierRef()
+      %5 = (= %7 true)
+    } else {}
+    if %5 {
+      sdo-call %8 = this[1]->NamedEvaluation(lref.ReferencedName)
+      let v = [? %8]
+    } else {
+      sdo-call %9 = this[1]->Evaluation()
+      let defaultValue = %9
+      call %10 = clo<GetValue>(defaultValue)
+      let v = [? %10]
+    }
+  } else {
+    let v = value
+  }
+  if (|| (? this[0]: "ObjectLiteral") (? this[0]: "ArrayLiteral")) {
+    let nestedAssignmentPattern = (parse this[0] (nt |AssignmentPattern|[]))
+    sdo-call %11 = nestedAssignmentPattern->DestructuringAssignmentEvaluation(v)
+    return [? %11]
+  } else {}
+  call %12 = clo<PutValue>(lref, v)
+  return [? %12]
+}

@@ -1,0 +1,10 @@
+def SymbolDescriptiveString(
+  sym: Symbol,
+): String {
+  let desc = sym.Description
+  if (= desc undefined) {
+    desc = ""
+  } else {}
+  assert (= (typeof desc) @String)
+  return (concat "Symbol(" desc ")")
+}

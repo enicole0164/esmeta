@@ -1,0 +1,33 @@
+def <BUILTIN>:INTRINSICS.Error.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  if (! (= (typeof O) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#921])
+  } else {}
+  call %0 = clo<Get>(O, "name")
+  let name = [? %0]
+  if (= name undefined) {
+    name = "Error"
+  } else {
+    call %1 = clo<ToString>(name)
+    name = [? %1]
+  }
+  call %2 = clo<Get>(O, "message")
+  let msg = [? %2]
+  if (= msg undefined) {
+    msg = ""
+  } else {
+    call %3 = clo<ToString>(msg)
+    msg = [? %3]
+  }
+  if (= name "") {
+    return msg
+  } else {}
+  if (= msg "") {
+    return name
+  } else {}
+  return (concat name 58cu 32cu msg)
+}

@@ -1,0 +1,17 @@
+def MakeBasicObject(
+  internalSlotsList: Unknown["ListOfInternalSlotNames"],
+): Object {
+  let obj = (new Object())[#39]
+  let idx = 0
+  loop[repeat] (< idx internalSlotsList.length) {
+    obj[internalSlotsList[idx]] = undefined
+    idx = (+ idx 1)
+  }
+  nop
+  assert (yet "If the caller will not be overriding both _obj_'s [[GetPrototypeOf]] and [[SetPrototypeOf]] essential internal methods, then _internalSlotsList_ contains [[Prototype]].")
+  assert (yet "If the caller will not be overriding all of _obj_'s [[SetPrototypeOf]], [[IsExtensible]], and [[PreventExtensions]] essential internal methods, then _internalSlotsList_ contains [[Extensible]].")
+  if (contains internalSlotsList "Extensible") {
+    obj.Extensible = true
+  } else {}
+  return obj
+}

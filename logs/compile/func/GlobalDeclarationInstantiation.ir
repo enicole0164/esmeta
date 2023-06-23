@@ -1,0 +1,137 @@
+def GlobalDeclarationInstantiation(
+  script: Ast[ScriptBody],
+  env: GlobalEnvironmentRecord,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = script->LexicallyDeclaredNames()
+  let lexNames = %0
+  sdo-call %1 = script->VarDeclaredNames()
+  let varNames = %1
+  %3 = lexNames
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let name = %3[%2]
+    method-call %4 = env->HasVarDeclaration(name)
+    if (= %4 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#750])
+    } else {}
+    method-call %5 = env->HasLexicalDeclaration(name)
+    if (= %5 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#751])
+    } else {}
+    method-call %6 = env->HasRestrictedGlobalProperty(name)
+    let hasRestrictedGlobal = [? %6]
+    if (= hasRestrictedGlobal true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#752])
+    } else {}
+    %2 = (+ %2 1)
+  }
+  %8 = varNames
+  %7 = 0
+  loop[foreach] (< %7 %8.length) {
+    let name = %8[%7]
+    method-call %9 = env->HasLexicalDeclaration(name)
+    if (= %9 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#753])
+    } else {}
+    %7 = (+ %7 1)
+  }
+  sdo-call %10 = script->VarScopedDeclarations()
+  let varDeclarations = %10
+  let functionsToInitialize = (new [])[#754]
+  let declaredFunctionNames = (new [])[#755]
+  %12 = varDeclarations
+  %11 = %12.length
+  loop[foreach] (< 0 %11) {
+    %11 = (- %11 1)
+    let d = %12[%11]
+    if (! (|| (|| (? d: "VariableDeclaration") (? d: "ForBinding")) (? d: "BindingIdentifier"))) {
+      assert (|| (|| (|| (? d: "FunctionDeclaration") (? d: "GeneratorDeclaration")) (? d: "AsyncFunctionDeclaration")) (? d: "AsyncGeneratorDeclaration"))
+      nop
+      sdo-call %13 = d->BoundNames()
+      let fn = %13[0]
+      if (! (contains declaredFunctionNames fn)) {
+        method-call %14 = env->CanDeclareGlobalFunction(fn)
+        let fnDefinable = [? %14]
+        if (= fnDefinable false) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#756])
+        } else {}
+        push declaredFunctionNames < fn
+        push d > functionsToInitialize
+      } else {}
+    } else {}
+  }
+  let declaredVarNames = (new [])[#757]
+  %16 = varDeclarations
+  %15 = 0
+  loop[foreach] (< %15 %16.length) {
+    let d = %16[%15]
+    if (|| (|| (? d: "VariableDeclaration") (? d: "ForBinding")) (? d: "BindingIdentifier")) {
+      sdo-call %19 = d->BoundNames()
+      %18 = %19
+      %17 = 0
+      loop[foreach] (< %17 %18.length) {
+        let vn = %18[%17]
+        if (! (contains declaredFunctionNames vn)) {
+          method-call %20 = env->CanDeclareGlobalVar(vn)
+          let vnDefinable = [? %20]
+          if (= vnDefinable false) {
+            return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#758])
+          } else {}
+          if (! (contains declaredVarNames vn)) {
+            push declaredVarNames < vn
+          } else {}
+        } else {}
+        %17 = (+ %17 1)
+      }
+    } else {}
+    %15 = (+ %15 1)
+  }
+  nop
+  nop
+  sdo-call %21 = script->LexicallyScopedDeclarations()
+  let lexDeclarations = %21
+  let privateEnv = null
+  %23 = lexDeclarations
+  %22 = 0
+  loop[foreach] (< %22 %23.length) {
+    let d = %23[%22]
+    nop
+    sdo-call %26 = d->BoundNames()
+    %25 = %26
+    %24 = 0
+    loop[foreach] (< %24 %25.length) {
+      let dn = %25[%24]
+      sdo-call %27 = d->IsConstantDeclaration()
+      if (= %27 true) {
+        method-call %28 = env->CreateImmutableBinding(dn, true)
+        [? %28]
+      } else {
+        method-call %29 = env->CreateMutableBinding(dn, false)
+        [? %29]
+      }
+      %24 = (+ %24 1)
+    }
+    %22 = (+ %22 1)
+  }
+  %31 = functionsToInitialize
+  %30 = 0
+  loop[foreach] (< %30 %31.length) {
+    let f = %31[%30]
+    sdo-call %32 = f->BoundNames()
+    let fn = %32[0]
+    sdo-call %33 = f->InstantiateFunctionObject(env, privateEnv)
+    let fo = %33
+    method-call %34 = env->CreateGlobalFunctionBinding(fn, fo, false)
+    [? %34]
+    %30 = (+ %30 1)
+  }
+  %36 = declaredVarNames
+  %35 = 0
+  loop[foreach] (< %35 %36.length) {
+    let vn = %36[%35]
+    method-call %37 = env->CreateGlobalVarBinding(vn, false)
+    [? %37]
+    %35 = (+ %35 1)
+  }
+  return ~unused~
+}

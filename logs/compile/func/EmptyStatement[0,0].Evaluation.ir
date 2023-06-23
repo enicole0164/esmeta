@@ -1,0 +1,5 @@
+def <SYNTAX>:EmptyStatement[0,0].Evaluation(
+  this: Ast:EmptyStatement[0,0],
+): Unknown {
+  return ~empty~
+}

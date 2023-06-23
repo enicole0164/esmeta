@@ -1,0 +1,7 @@
+def <SYNTAX>:SwitchStatement[0,0].ContainsUndefinedBreakTarget(
+  this: Ast:SwitchStatement[0,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->ContainsUndefinedBreakTarget(labelSet)
+  return %0
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1972 {
+    label = "def <SYNTAX>:ExportSpecifier[1,0].ReferencedBindings(this: Ast:ExportSpecifier[1,0]): List[Ast]"
+    style = rounded
+    cluster1972_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1972_entry_name -> cluster1972_entry [arrowhead=none, color="black", style=dashed]
+    cluster1972_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1972_entry -> node10679 [color="black"]
+    cluster1972_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1972_exit_name -> cluster1972_exit [arrowhead=none, color="black", style=dashed]
+    cluster1972_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10679_name [shape=none, label=<<font color="black">Call[10679]</font>>]
+    node10679_name -> node10679 [arrowhead=none, color="black", style=dashed]
+    node10679 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ReferencedBindings()</font>> color="black" fillcolor="white", style=filled]
+    node10679 -> node10680 [color="black"]
+    node10680_name [shape=none, label=<<font color="black">Block[10680]</font>>]
+    node10680_name -> node10680 [arrowhead=none, color="black", style=dashed]
+    node10680 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10680 -> cluster1972_exit [color="black"]
+  }
+}

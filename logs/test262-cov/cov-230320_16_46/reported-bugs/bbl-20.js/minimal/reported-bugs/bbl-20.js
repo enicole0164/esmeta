@@ -1,0 +1,2 @@
+"use strict";
+ class x extends function x ( { x = new . target } ) { } { } new x ( ) ;

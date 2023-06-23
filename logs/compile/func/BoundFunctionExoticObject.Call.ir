@@ -1,0 +1,12 @@
+def <INTERNAL>:BoundFunctionExoticObject.Call(
+  F: BoundFunctionExoticObject,
+  thisArgument: ESValue,
+  argumentsList: List[ESValue],
+): Normal[ESValue] | Abrupt {
+  let target = F.BoundTargetFunction
+  let boundThis = F.BoundThis
+  let boundArgs = F.BoundArguments
+  let args = (list-concat boundArgs argumentsList)[#443]
+  call %0 = clo<Call>(target, boundThis, args)
+  return [? %0]
+}

@@ -1,0 +1,41 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.filter(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let callbackfn = (pop < argumentsList) else let callbackfn = absent
+  if (< 0 argumentsList.length) let thisArg = (pop < argumentsList) else let thisArg = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  call %2 = clo<IsCallable>(callbackfn)
+  if (= %2 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1021])
+  } else {}
+  call %3 = clo<ArraySpeciesCreate>(O, 0)
+  let A = [? %3]
+  let k = 0
+  let to = 0
+  loop[repeat] (< k len) {
+    call %4 = clo<ToString>(([number] k))
+    let Pk = [! %4]
+    call %5 = clo<HasProperty>(O, Pk)
+    let kPresent = [? %5]
+    if (= kPresent true) {
+      call %6 = clo<Get>(O, Pk)
+      let kValue = [? %6]
+      call %7 = clo<Call>(callbackfn, thisArg, (new [kValue, ([number] k), O])[#1022])
+      call %8 = clo<ToBoolean>([? %7])
+      let selected = %8
+      if (= selected true) {
+        call %9 = clo<ToString>(([number] to))
+        call %10 = clo<CreateDataPropertyOrThrow>(A, [! %9], kValue)
+        [? %10]
+        to = (+ to 1)
+      } else {}
+    } else {}
+    k = (+ k 1)
+  }
+  return A
+}

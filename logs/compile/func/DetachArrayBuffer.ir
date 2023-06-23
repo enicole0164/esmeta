@@ -1,0 +1,17 @@
+def DetachArrayBuffer(
+  arrayBuffer: Unknown["ArrayBuffer"],
+  key?: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<IsSharedArrayBuffer>(arrayBuffer)
+  assert (= %0 false)
+  if (= key absent) {
+    key = undefined
+  } else {}
+  call %1 = clo<SameValue>(arrayBuffer.ArrayBufferDetachKey, key)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1143])
+  } else {}
+  arrayBuffer.ArrayBufferData = null
+  arrayBuffer.ArrayBufferByteLength = 0
+  return ~unused~
+}

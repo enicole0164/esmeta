@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster446 {
+    label = "def <SYNTAX>:Catch[0,0].VarScopedDeclarations(this: Ast:Catch[0,0]): List[Ast]"
+    style = rounded
+    cluster446_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster446_entry_name -> cluster446_entry [arrowhead=none, color="black", style=dashed]
+    cluster446_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster446_entry -> node2241 [color="black"]
+    cluster446_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster446_exit_name -> cluster446_exit [arrowhead=none, color="black", style=dashed]
+    cluster446_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2241_name [shape=none, label=<<font color="black">Call[2241]</font>>]
+    node2241_name -> node2241 [arrowhead=none, color="black", style=dashed]
+    node2241 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;VarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2241 -> node2242 [color="black"]
+    node2242_name [shape=none, label=<<font color="black">Block[2242]</font>>]
+    node2242_name -> node2242 [arrowhead=none, color="black", style=dashed]
+    node2242 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2242 -> cluster446_exit [color="black"]
+  }
+}

@@ -1,0 +1,12 @@
+def <CONC>:FunctionEnvironmentRecord.BindThisValue(
+  envRec: FunctionEnvironmentRecord,
+  V: ESValue,
+): Normal[ESValue] | Abrupt {
+  assert (! (= envRec.ThisBindingStatus ~lexical~))
+  if (= envRec.ThisBindingStatus ~initialized~) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#375])
+  } else {}
+  envRec.ThisValue = V
+  envRec.ThisBindingStatus = ~initialized~
+  return V
+}

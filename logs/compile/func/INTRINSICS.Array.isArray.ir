@@ -1,0 +1,9 @@
+def <BUILTIN>:INTRINSICS.Array.isArray(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let arg = (pop < argumentsList) else let arg = absent
+  call %0 = clo<IsArray>(arg)
+  return [? %0]
+}

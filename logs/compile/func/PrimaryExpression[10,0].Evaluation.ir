@@ -1,0 +1,12 @@
+def <SYNTAX>:PrimaryExpression[10,0].Evaluation(
+  this: Ast:PrimaryExpression[10,0],
+): Unknown {
+  sdo-call %0 = this[0]->BodyText()
+  call %1 = clo<CodePointsToString>(%0)
+  let pattern = %1
+  sdo-call %2 = this[0]->FlagText()
+  call %3 = clo<CodePointsToString>(%2)
+  let flags = %3
+  call %4 = clo<RegExpCreate>(pattern, flags)
+  return [! %4]
+}

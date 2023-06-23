@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2263 {
+    label = "def <SYNTAX>:QuantifierPrefix[2,0].CompileQuantifierPrefix(this: Ast:QuantifierPrefix[2,0]): Unknown["RecordWithFields[[Min]](aNonnegativeInteger)And[[Max]](aNonnegativeIntegerOr+∞)"]"
+    style = rounded
+    cluster2263_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2263_entry_name -> cluster2263_entry [arrowhead=none, color="black", style=dashed]
+    cluster2263_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2263_entry -> node13973 [color="black"]
+    cluster2263_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2263_exit_name -> cluster2263_exit [arrowhead=none, color="black", style=dashed]
+    cluster2263_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13973_name [shape=none, label=<<font color="black">Block[13973]</font>>]
+    node13973_name -> node13973 [arrowhead=none, color="black", style=dashed]
+    node13973 [shape=box, label=<<font color="black">[0] return (new Record(&quot;Min&quot; -&gt; 0, &quot;Max&quot; -&gt; 1))[#979]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13973 -> cluster2263_exit [color="black"]
+  }
+}

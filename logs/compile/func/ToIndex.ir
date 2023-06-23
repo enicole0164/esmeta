@@ -1,0 +1,18 @@
+def ToIndex(
+  value: ESValue,
+): Unknown["EitherANormalCompletionContainingANonnegativeIntegerOrAnAbruptCompletion"] {
+  if (= value undefined) {
+    return 0
+  } else {
+    call %0 = clo<ToIntegerOrInfinity>(value)
+    let integer = [? %0]
+    call %1 = clo<ToLength>(([number] integer))
+    let clamped = [! %1]
+    call %2 = clo<SameValue>(([number] integer), clamped)
+    if (= %2 false) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#37])
+    } else {}
+    assert (yet "0 ≤ _integer_ ≤ 2<sup>53</sup> - 1.")
+    return integer
+  }
+}

@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1086 {
+    label = "def <SYNTAX>:ClassStaticBlockBody[0,0].EvaluateBody(this: Ast:ClassStaticBlockBody[0,0], functionObject: Unknown, argumentsList: Unknown["List"]): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1086_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1086_entry_name -> cluster1086_entry [arrowhead=none, color="black", style=dashed]
+    cluster1086_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1086_entry -> node4279 [color="black"]
+    cluster1086_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1086_exit_name -> cluster1086_exit [arrowhead=none, color="black", style=dashed]
+    cluster1086_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4279_name [shape=none, label=<<font color="black">Block[4279]</font>>]
+    node4279_name -> node4279 [arrowhead=none, color="black", style=dashed]
+    node4279 [shape=box, label=<<font color="black">[0] assert (= argumentsList.length 0)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4279 -> node4280 [color="black"]
+    node4280_name [shape=none, label=<<font color="black">Call[4280]</font>>]
+    node4280_name -> node4280 [arrowhead=none, color="black", style=dashed]
+    node4280 [shape=cds, label=<<font color="black">%0 = this-&gt;EvaluateClassStaticBlockBody(functionObject)</font>> color="black" fillcolor="white", style=filled]
+    node4280 -> node4281 [color="black"]
+    node4281_name [shape=none, label=<<font color="black">Block[4281]</font>>]
+    node4281_name -> node4281 [arrowhead=none, color="black", style=dashed]
+    node4281 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4281 -> cluster1086_exit [color="black"]
+  }
+}

@@ -1,0 +1,24 @@
+def IterableToList(
+  items: ESValue,
+  method?: FunctionObject,
+): Unknown["EitherANormalCompletionContainingAListOrAnAbruptCompletion"] {
+  if (! (= method absent)) {
+    call %0 = clo<GetIterator>(items, ~sync~, method)
+    let iteratorRecord = [? %0]
+  } else {
+    call %1 = clo<GetIterator>(items, ~sync~)
+    let iteratorRecord = [? %1]
+  }
+  let values = (new [])[#81]
+  let next = true
+  loop[repeat] (! (= next false)) {
+    call %2 = clo<IteratorStep>(iteratorRecord)
+    next = [? %2]
+    if (! (= next false)) {
+      call %3 = clo<IteratorValue>(next)
+      let nextValue = [? %3]
+      (yet "Append _nextValue_ to the end of the List _values_.")
+    } else {}
+  }
+  return values
+}

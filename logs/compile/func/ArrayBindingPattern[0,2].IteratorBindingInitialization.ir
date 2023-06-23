@@ -1,0 +1,8 @@
+def <SYNTAX>:ArrayBindingPattern[0,2].IteratorBindingInitialization(
+  this: Ast:ArrayBindingPattern[0,2],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+  return [? %0]
+}

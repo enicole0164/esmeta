@@ -1,0 +1,79 @@
+def SerializeJSONProperty(
+  state: Unknown,
+  key: Unknown,
+  holder: Unknown,
+): Normal[String | Undefined] | Abrupt {
+  call %0 = clo<Get>(holder, key)
+  let value = [? %0]
+  if (|| (= (typeof value) @Object) (= (typeof value) @BigInt)) {
+    call %1 = clo<GetV>(value, "toJSON")
+    let toJSON = [? %1]
+    call %2 = clo<IsCallable>(toJSON)
+    if (= %2 true) {
+      call %3 = clo<Call>(toJSON, value, (new [key])[#1197])
+      value = [? %3]
+    } else {}
+  } else {}
+  if (! (= state.ReplacerFunction undefined)) {
+    call %4 = clo<Call>(state.ReplacerFunction, holder, (new [key, value])[#1198])
+    value = [? %4]
+  } else {}
+  if (= (typeof value) @Object) {
+    if (! (= value.NumberData absent)) {
+      call %5 = clo<ToNumber>(value)
+      value = [? %5]
+    } else {
+      if (! (= value.StringData absent)) {
+        call %6 = clo<ToString>(value)
+        value = [? %6]
+      } else {
+        if (! (= value.BooleanData absent)) {
+          value = value.BooleanData
+        } else {
+          if (! (= value.BigIntData absent)) {
+            value = value.BigIntData
+          } else {}
+        }
+      }
+    }
+  } else {}
+  if (= value null) {
+    return "null"
+  } else {}
+  if (= value true) {
+    return "true"
+  } else {}
+  if (= value false) {
+    return "false"
+  } else {}
+  if (= (typeof value) @String) {
+    call %7 = clo<QuoteJSONString>(value)
+    return %7
+  } else {}
+  if (= (typeof value) @Number) {
+    if (! (|| (= value NaN) (|| (= value +INF) (= value -INF)))) {
+      call %8 = clo<ToString>(value)
+      return [! %8]
+    } else {}
+    return "null"
+  } else {}
+  if (= (typeof value) @BigInt) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1199])
+  } else {}
+  %9 = (= (typeof value) @Object)
+  if %9 {
+    call %10 = clo<IsCallable>(value)
+    %9 = (= %10 false)
+  } else {}
+  if %9 {
+    call %11 = clo<IsArray>(value)
+    let isArray = [? %11]
+    if (= isArray true) {
+      call %12 = clo<SerializeJSONArray>(state, value)
+      return [? %12]
+    } else {}
+    call %13 = clo<SerializeJSONObject>(state, value)
+    return [? %13]
+  } else {}
+  return undefined
+}

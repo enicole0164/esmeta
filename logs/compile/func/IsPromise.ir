@@ -1,0 +1,11 @@
+def IsPromise(
+  x: Unknown,
+): Boolean {
+  if (! (= (typeof x) @Object)) {
+    return false
+  } else {}
+  if (= x.PromiseState absent) {
+    return false
+  } else {}
+  return true
+}

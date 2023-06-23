@@ -1,0 +1,41 @@
+def <CLO>:INTRINSICS.TypedArray.prototype.sort:clo0(
+  x: Unknown,
+  y: Unknown,
+): Unknown {
+  assert (yet "Both Type(_x_) and Type(_y_) are Number or both are BigInt.")
+  if (! (= comparefn undefined)) {
+    call %0 = clo<Call>(comparefn, undefined, (new [x, y])[#1098])
+    call %1 = clo<ToNumber>([? %0])
+    let v = [? %1]
+    call %2 = clo<IsDetachedBuffer>(buffer)
+    if (= %2 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1099])
+    } else {}
+    if (= v NaN) {
+      return 0.0f
+    } else {}
+    return v
+  } else {}
+  if (&& (= x NaN) (= y NaN)) {
+    return 0.0f
+  } else {}
+  if (= x NaN) {
+    return 1.0f
+  } else {}
+  if (= y NaN) {
+    return -1.0f
+  } else {}
+  if (< x y) {
+    return -1.0f
+  } else {}
+  if (< y x) {
+    return 1.0f
+  } else {}
+  if (&& (= x -0.0f) (= y 0.0f)) {
+    return -1.0f
+  } else {}
+  if (&& (= x 0.0f) (= y -0.0f)) {
+    return 1.0f
+  } else {}
+  return 0.0f
+}

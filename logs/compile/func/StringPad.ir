@@ -1,0 +1,31 @@
+def StringPad(
+  O: ESValue,
+  maxLength: ESValue,
+  fillString: ESValue,
+  placement: Const[~end~, ~start~],
+): Normal[String] | Abrupt {
+  call %0 = clo<ToString>(O)
+  let S = [? %0]
+  call %1 = clo<ToLength>(maxLength)
+  let intMaxLength = ([math] [? %1])
+  let stringLength = S.length
+  if (! (< stringLength intMaxLength)) {
+    return S
+  } else {}
+  if (= fillString undefined) {
+    (yet "let _filler_ be the String value consisting solely of the code unit 0x0020 (SPACE).")
+  } else {
+    call %2 = clo<ToString>(fillString)
+    let filler = [? %2]
+  }
+  if (= filler "") {
+    return S
+  } else {}
+  let fillLen = (- intMaxLength stringLength)
+  (yet "Let _truncatedStringFiller_ be the String value consisting of repeated concatenations of _filler_ truncated to length _fillLen_.")
+  if (= placement ~start~) {
+    return (concat truncatedStringFiller S)
+  } else {
+    return (concat S truncatedStringFiller)
+  }
+}

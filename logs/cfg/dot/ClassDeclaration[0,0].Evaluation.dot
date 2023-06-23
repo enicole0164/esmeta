@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1699 {
+    label = "def <SYNTAX>:ClassDeclaration[0,0].Evaluation(this: Ast:ClassDeclaration[0,0]): Unknown"
+    style = rounded
+    cluster1699_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1699_entry_name -> cluster1699_entry [arrowhead=none, color="black", style=dashed]
+    cluster1699_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1699_entry -> node9566 [color="black"]
+    cluster1699_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1699_exit_name -> cluster1699_exit [arrowhead=none, color="black", style=dashed]
+    cluster1699_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node9566_name [shape=none, label=<<font color="black">Call[9566]</font>>]
+    node9566_name -> node9566 [arrowhead=none, color="black", style=dashed]
+    node9566 [shape=cds, label=<<font color="black">%0 = this-&gt;BindingClassDeclarationEvaluation()</font>> color="black" fillcolor="white", style=filled]
+    node9566 -> node9567 [color="black"]
+    node9567_name [shape=none, label=<<font color="black">Block[9567]</font>>]
+    node9567_name -> node9567 [arrowhead=none, color="black", style=dashed]
+    node9567 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/>[1] return ~empty~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9567 -> cluster1699_exit [color="black"]
+  }
+}

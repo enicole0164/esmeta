@@ -1,0 +1,12 @@
+def CreateIterResultObject(
+  value: ESValue,
+  done: Boolean,
+): Unknown["ObjectThatConformsToThe<i>IteratorResult</i>Interface"] {
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let obj = %0
+  call %1 = clo<CreateDataPropertyOrThrow>(obj, "value", value)
+  [! %1]
+  call %2 = clo<CreateDataPropertyOrThrow>(obj, "done", done)
+  [! %2]
+  return obj
+}

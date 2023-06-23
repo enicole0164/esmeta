@@ -1,0 +1,8 @@
+def <SYNTAX>:RegExpIdentifierName[0,0].CapturingGroupName(
+  this: Ast:RegExpIdentifierName[0,0],
+): String {
+  sdo-call %0 = this->RegExpIdentifierCodePoints()
+  let idTextUnescaped = %0
+  call %1 = clo<CodePointsToString>(idTextUnescaped)
+  return %1
+}

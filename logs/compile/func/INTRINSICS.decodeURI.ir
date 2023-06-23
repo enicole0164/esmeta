@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.decodeURI(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let encodedURI = (pop < argumentsList) else let encodedURI = absent
+  call %0 = clo<ToString>(encodedURI)
+  let uriString = [? %0]
+  (yet "Let _reservedURISet_ be a String containing one instance of each code unit valid in |uriReserved| plus *\"#\"*.")
+  call %1 = clo<Decode>(uriString, reservedURISet)
+  return [? %1]
+}

@@ -1,0 +1,13 @@
+def OrdinaryObjectCreate(
+  proto: Object | Null,
+  additionalInternalSlotsList?: Unknown["ListOfNamesOfInternalSlots"],
+): Object {
+  let internalSlotsList = (new ["Prototype", "Extensible"])[#413]
+  if (! (= additionalInternalSlotsList absent)) {
+    internalSlotsList = (list-concat internalSlotsList additionalInternalSlotsList)[#414]
+  } else {}
+  call %0 = clo<MakeBasicObject>(internalSlotsList)
+  let O = %0
+  O.Prototype = proto
+  return O
+}

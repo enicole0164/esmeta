@@ -1,0 +1,5 @@
+def <SYNTAX>:BindingElement[1,0].HasInitializer(
+  this: Ast:BindingElement[1,0],
+): Boolean {
+  return false
+}

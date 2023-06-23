@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2198 {
+    label = "def <BUILTIN>:INTRINSICS.String.prototype.trimEnd(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2198_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2198_entry_name -> cluster2198_entry [arrowhead=none, color="black", style=dashed]
+    cluster2198_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2198_entry -> node13820 [color="black"]
+    cluster2198_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2198_exit_name -> cluster2198_exit [arrowhead=none, color="black", style=dashed]
+    cluster2198_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13820_name [shape=none, label=<<font color="black">Block[13820]</font>>]
+    node13820_name -> node13820 [arrowhead=none, color="black", style=dashed]
+    node13820 [shape=box, label=<<font color="black">[0] let S = this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13820 -> node13821 [color="black"]
+    node13821_name [shape=none, label=<<font color="black">Call[13821]</font>>]
+    node13821_name -> node13821 [arrowhead=none, color="black", style=dashed]
+    node13821 [shape=cds, label=<<font color="black">%0 = clo&lt;TrimString&gt;(S, ~end~)</font>> color="black" fillcolor="white", style=filled]
+    node13821 -> node13822 [color="black"]
+    node13822_name [shape=none, label=<<font color="black">Block[13822]</font>>]
+    node13822_name -> node13822 [arrowhead=none, color="black", style=dashed]
+    node13822 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13822 -> cluster2198_exit [color="black"]
+  }
+}

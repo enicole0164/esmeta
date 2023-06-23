@@ -1,0 +1,5 @@
+def <SYNTAX>:ExportFromClause[0,0].ExportedNames(
+  this: Ast:ExportFromClause[0,0],
+): List[String] {
+  return (new [])[#831]
+}

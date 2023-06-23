@@ -1,0 +1,5 @@
+def <SYNTAX>:ExportDeclaration[1,0].ModuleRequests(
+  this: Ast:ExportDeclaration[1,0],
+): List[String] {
+  return (new [])[#763]
+}

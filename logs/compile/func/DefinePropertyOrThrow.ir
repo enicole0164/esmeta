@@ -1,0 +1,12 @@
+def DefinePropertyOrThrow(
+  O: Object,
+  P: Symbol | String,
+  desc: PropertyDescriptor,
+): Normal[Const[~unused~]] | Abrupt {
+  method-call %0 = O->DefineOwnProperty(P, desc)
+  let success = [? %0]
+  if (= success false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#45])
+  } else {}
+  return ~unused~
+}

@@ -1,0 +1,22 @@
+def <INTERNAL>:ArgumentsExoticObject.Set(
+  args: ArgumentsExoticObject,
+  P: Symbol | String,
+  V: ESValue,
+  Receiver: ESValue,
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<SameValue>(args, Receiver)
+  if (= %0 false) {
+    let isMapped = false
+  } else {
+    let map = args.ParameterMap
+    call %1 = clo<HasOwnProperty>(map, P)
+    let isMapped = [! %1]
+  }
+  if (= isMapped true) {
+    assert (yet "The following Set will succeed, since formal parameters mapped by arguments objects are always writable.")
+    call %2 = clo<Set>(map, P, V, false)
+    [! %2]
+  } else {}
+  call %3 = clo<OrdinarySet>(args, P, V, Receiver)
+  return [? %3]
+}

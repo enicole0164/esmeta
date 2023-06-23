@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2679 {
+    label = "def <BUILTIN>:INTRINSICS.String.prototype.toUpperCase(this: Unknown, argumentsList: Unknown, NewTarget: Unknown): Unknown"
+    style = rounded
+    cluster2679_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2679_entry_name -> cluster2679_entry [arrowhead=none, color="black", style=dashed]
+    cluster2679_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2679_entry -> node19919 [color="black"]
+    cluster2679_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2679_exit_name -> cluster2679_exit [arrowhead=none, color="black", style=dashed]
+    cluster2679_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19919_name [shape=none, label=<<font color="black">Block[19919]</font>>]
+    node19919_name -> node19919 [arrowhead=none, color="black", style=dashed]
+    node19919 [shape=box, label=<<font color="black">[0] (yet &quot;[YET] String.prototype.toUpperCase&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19919 -> cluster2679_exit [color="black"]
+  }
+}

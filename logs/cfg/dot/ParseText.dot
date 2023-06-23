@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1169 {
+    label = "def ParseText(sourceText: Unknown["SequenceOfUnicodeCodePoints"], goalSymbol: Unknown["NonterminalInOneOfTheECMAScriptGrammars"]): Unknown["ParseNodeOrANonemptyListOf*SyntaxError*Objects"]"
+    style = rounded
+    cluster1169_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1169_entry_name -> cluster1169_entry [arrowhead=none, color="black", style=dashed]
+    cluster1169_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1169_entry -> node5365 [color="black"]
+    cluster1169_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1169_exit_name -> cluster1169_exit [arrowhead=none, color="black", style=dashed]
+    cluster1169_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5365_name [shape=none, label=<<font color="black">Block[5365]</font>>]
+    node5365_name -> node5365 [arrowhead=none, color="black", style=dashed]
+    node5365 [shape=box, label=<<font color="black">[0] (yet &quot;Attempt to parse _sourceText_ using _goalSymbol_ as the goal symbol, and analyse the parse result for any early error conditions. Parsing and early error detection may be interleaved in an implementation-defined manner.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;If the parse succeeded and no early errors were found, return the Parse Node (an instance of _goalSymbol_) at the root of the parse tree resulting from the parse.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Otherwise, return a List of one or more *SyntaxError* objects representing the parsing errors and/or early errors. If more than one parsing error or early error is present, the number and ordering of error objects in the list is implementation-defined, but at least one must be present.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5365 -> cluster1169_exit [color="black"]
+  }
+}

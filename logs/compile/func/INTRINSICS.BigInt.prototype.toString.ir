@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.BigInt.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let radix = (pop < argumentsList) else let radix = absent
+  call %0 = clo<thisBigIntValue>(this)
+  let x = [? %0]
+  if (= radix undefined) {
+    let radixMV = 10
+  } else {
+    call %1 = clo<ToIntegerOrInfinity>(radix)
+    let radixMV = [? %1]
+  }
+  if (|| (< radixMV 2) (< 36 radixMV)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#934])
+  } else {}
+  if (== radixMV 10) {
+    call %2 = clo<ToString>(x)
+    return [! %2]
+  } else {}
+  return ([str radixMV] x)
+}

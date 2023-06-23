@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster298 {
+    label = "def <SYNTAX>:LabelledStatement[0,0].LexicallyScopedDeclarations(this: Ast:LabelledStatement[0,0]): List[Ast]"
+    style = rounded
+    cluster298_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster298_entry_name -> cluster298_entry [arrowhead=none, color="black", style=dashed]
+    cluster298_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster298_entry -> node1844 [color="black"]
+    cluster298_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster298_exit_name -> cluster298_exit [arrowhead=none, color="black", style=dashed]
+    cluster298_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1844_name [shape=none, label=<<font color="black">Call[1844]</font>>]
+    node1844_name -> node1844 [arrowhead=none, color="black", style=dashed]
+    node1844 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;LexicallyScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node1844 -> node1845 [color="black"]
+    node1845_name [shape=none, label=<<font color="black">Block[1845]</font>>]
+    node1845_name -> node1845 [arrowhead=none, color="black", style=dashed]
+    node1845 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1845 -> cluster298_exit [color="black"]
+  }
+}

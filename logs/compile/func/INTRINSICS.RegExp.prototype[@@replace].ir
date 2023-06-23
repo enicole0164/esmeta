@@ -1,0 +1,121 @@
+def <BUILTIN>:INTRINSICS.RegExp.prototype[@@replace](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let string = (pop < argumentsList) else let string = absent
+  if (< 0 argumentsList.length) let replaceValue = (pop < argumentsList) else let replaceValue = absent
+  let rx = this
+  if (! (= (typeof rx) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#999])
+  } else {}
+  call %0 = clo<ToString>(string)
+  let S = [? %0]
+  let lengthS = S.length
+  call %1 = clo<IsCallable>(replaceValue)
+  let functionalReplace = %1
+  if (= functionalReplace false) {
+    call %2 = clo<ToString>(replaceValue)
+    replaceValue = [? %2]
+  } else {}
+  call %3 = clo<Get>(rx, "global")
+  call %4 = clo<ToBoolean>([? %3])
+  let global = %4
+  if (= global true) {
+    call %5 = clo<Get>(rx, "unicode")
+    call %6 = clo<ToBoolean>([? %5])
+    let fullUnicode = %6
+    call %7 = clo<Set>(rx, "lastIndex", 0.0f, true)
+    [? %7]
+  } else {}
+  let results = (new [])[#1000]
+  let done = false
+  loop[repeat] (= done false) {
+    call %8 = clo<RegExpExec>(rx, S)
+    let result = [? %8]
+    if (= result null) {
+      done = true
+    } else {
+      push results < result
+      if (= global false) {
+        done = true
+      } else {
+        call %9 = clo<Get>(result, "0")
+        call %10 = clo<ToString>([? %9])
+        let matchStr = [? %10]
+        if (= matchStr "") {
+          call %11 = clo<Get>(rx, "lastIndex")
+          call %12 = clo<ToLength>([? %11])
+          let thisIndex = ([math] [? %12])
+          call %13 = clo<AdvanceStringIndex>(S, thisIndex, fullUnicode)
+          let nextIndex = %13
+          call %14 = clo<Set>(rx, "lastIndex", ([number] nextIndex), true)
+          [? %14]
+        } else {}
+      }
+    }
+  }
+  let accumulatedResult = ""
+  let nextSourcePosition = 0
+  %16 = results
+  %15 = 0
+  loop[foreach] (< %15 %16.length) {
+    let result = %16[%15]
+    call %17 = clo<LengthOfArrayLike>(result)
+    let resultLength = [? %17]
+    let nCaptures = (max (- resultLength 1) 0)
+    call %18 = clo<Get>(result, "0")
+    call %19 = clo<ToString>([? %18])
+    let matched = [? %19]
+    let matchLength = matched.length
+    call %20 = clo<Get>(result, "index")
+    call %21 = clo<ToIntegerOrInfinity>([? %20])
+    let position = [? %21]
+    position = (clamp position 0 lengthS)
+    let n = 1
+    let captures = (new [])[#1001]
+    loop[repeat] (! (< nCaptures n)) {
+      call %22 = clo<ToString>(([number] n))
+      call %23 = clo<Get>(result, [! %22])
+      let capN = [? %23]
+      if (! (= capN undefined)) {
+        call %24 = clo<ToString>(capN)
+        capN = [? %24]
+      } else {}
+      push captures < capN
+      nop
+      n = (+ n 1)
+    }
+    call %25 = clo<Get>(result, "groups")
+    let namedCaptures = [? %25]
+    if (= functionalReplace true) {
+      let replacerArgs = (new [matched])[#1002]
+      (yet "Append in List order the elements of _captures_ to the end of the List _replacerArgs_.")
+      (yet "Append 𝔽(_position_) and _S_ to _replacerArgs_.")
+      if (! (= namedCaptures undefined)) {
+        push replacerArgs < namedCaptures
+      } else {}
+      call %26 = clo<Call>(replaceValue, undefined, replacerArgs)
+      let replValue = [? %26]
+      call %27 = clo<ToString>(replValue)
+      let replacement = [? %27]
+    } else {
+      if (! (= namedCaptures undefined)) {
+        call %28 = clo<ToObject>(namedCaptures)
+        namedCaptures = [? %28]
+      } else {}
+      call %29 = clo<GetSubstitution>(matched, S, position, captures, namedCaptures, replaceValue)
+      let replacement = [? %29]
+    }
+    if (! (< position nextSourcePosition)) {
+      nop
+      accumulatedResult = (concat accumulatedResult (substring S nextSourcePosition position) replacement)
+      nextSourcePosition = (+ position matchLength)
+    } else {}
+    %15 = (+ %15 1)
+  }
+  if (! (< nextSourcePosition lengthS)) {
+    return accumulatedResult
+  } else {}
+  return (concat accumulatedResult (substring S nextSourcePosition))
+}

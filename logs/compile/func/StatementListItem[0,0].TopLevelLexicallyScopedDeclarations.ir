@@ -1,0 +1,5 @@
+def <SYNTAX>:StatementListItem[0,0].TopLevelLexicallyScopedDeclarations(
+  this: Ast:StatementListItem[0,0],
+): List[Ast] {
+  return (new [])[#284]
+}

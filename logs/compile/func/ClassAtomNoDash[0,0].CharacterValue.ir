@@ -1,0 +1,6 @@
+def <SYNTAX>:ClassAtomNoDash[0,0].CharacterValue(
+  this: Ast:ClassAtomNoDash[0,0],
+): Unknown["NonnegativeInteger"] {
+  (yet "Let _ch_ be the code point matched by |SourceCharacter|.")
+  return ([math] ch)
+}

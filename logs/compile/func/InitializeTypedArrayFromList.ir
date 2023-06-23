@@ -1,0 +1,19 @@
+def InitializeTypedArrayFromList(
+  O: Unknown["TypedArray"],
+  values: List[ESValue],
+): Normal[Const[~unused~]] | Abrupt {
+  let len = values.length
+  call %0 = clo<AllocateTypedArrayBuffer>(O, len)
+  [? %0]
+  let k = 0
+  loop[repeat] (< k len) {
+    call %1 = clo<ToString>(([number] k))
+    let Pk = [! %1]
+    (yet "Let _kValue_ be the first element of _values_ and remove that element from _values_.")
+    call %2 = clo<Set>(O, Pk, kValue, true)
+    [? %2]
+    k = (+ k 1)
+  }
+  assert (yet "_values_ is now an empty List.")
+  return ~unused~
+}

@@ -1,0 +1,51 @@
+def <BUILTIN>:INTRINSICS.ForInIteratorPrototype.next(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  assert (= (typeof O) @Object)
+  assert (yet "_O_ has all of the internal slots of a For-In Iterator Instance (<emu-xref href=\"#sec-properties-of-for-in-iterator-instances\"></emu-xref>).")
+  let object = O.Object
+  let visited = O.VisitedKeys
+  let remaining = O.RemainingKeys
+  loop[repeat] true {
+    if (= O.ObjectWasVisited false) {
+      method-call %0 = object->OwnPropertyKeys()
+      let keys = [? %0]
+      %2 = keys
+      %1 = 0
+      loop[foreach] (< %1 %2.length) {
+        let key = %2[%1]
+        if (= (typeof key) @String) {
+          push remaining < key
+        } else {}
+        %1 = (+ %1 1)
+      }
+      O.ObjectWasVisited = true
+    } else {}
+    loop[repeat] (! (= remaining.length 0)) {
+      let r = remaining[0]
+      (pop < remaining)
+      if (! (contains visited r)) {
+        method-call %3 = object->GetOwnProperty(r)
+        let desc = [? %3]
+        if (! (= desc undefined)) {
+          push visited < r
+          if (= desc.Enumerable true) {
+            call %4 = clo<CreateIterResultObject>(r, false)
+            return %4
+          } else {}
+        } else {}
+      } else {}
+    }
+    method-call %5 = object->GetPrototypeOf()
+    object = [? %5]
+    O.Object = object
+    O.ObjectWasVisited = false
+    if (= object null) {
+      call %6 = clo<CreateIterResultObject>(undefined, true)
+      return %6
+    } else {}
+  }
+}

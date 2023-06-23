@@ -1,0 +1,6 @@
+def <SYNTAX>:ForDeclaration[0,0].IsDestructuring(
+  this: Ast:ForDeclaration[0,0],
+): Boolean {
+  sdo-call %0 = this[1]->IsDestructuring()
+  return %0
+}

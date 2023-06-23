@@ -1,0 +1,16 @@
+def <BUILTIN-CLO>:INTRINSICS.Proxy.revocable:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  let F = @EXECUTION_STACK[0].Function
+  let p = F.RevocableProxy
+  if (= p null) {
+    return undefined
+  } else {}
+  F.RevocableProxy = null
+  assert (? p: "ProxyObject")
+  p.ProxyTarget = null
+  p.ProxyHandler = null
+  return undefined
+}

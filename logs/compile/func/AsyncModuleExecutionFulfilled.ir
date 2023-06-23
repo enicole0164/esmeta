@@ -1,0 +1,49 @@
+def AsyncModuleExecutionFulfilled(
+  module: CyclicModuleRecord,
+): Const[~unused~] {
+  if (= module.Status ~evaluated~) {
+    assert (! (= module.EvaluationError ~empty~))
+    return ~unused~
+  } else {}
+  assert (= module.Status ~evaluating-async~)
+  assert (= module.AsyncEvaluation true)
+  assert (= module.EvaluationError ~empty~)
+  module.AsyncEvaluation = false
+  module.Status = ~evaluated~
+  if (! (= module.TopLevelCapability ~empty~)) {
+    assert (= module.CycleRoot module)
+    call %0 = clo<Call>(module.TopLevelCapability.Resolve, undefined, (new [undefined])[#775])
+    [! %0]
+  } else {}
+  let execList = (new [])[#776]
+  call %1 = clo<GatherAvailableAncestors>(module, execList)
+  (yet "Let _sortedExecList_ be a List whose elements are the elements of _execList_, in the order in which they had their [[AsyncEvaluation]] fields set to *true* in InnerModuleEvaluation.")
+  assert (yet "All elements of _sortedExecList_ have their [[AsyncEvaluation]] field set to *true*, [[PendingAsyncDependencies]] field set to 0, and [[EvaluationError]] field set to ~empty~.")
+  %3 = sortedExecList
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let m = %3[%2]
+    if (= m.Status ~evaluated~) {
+      assert (! (= m.EvaluationError ~empty~))
+    } else {
+      if (= m.HasTLA true) {
+        call %4 = clo<ExecuteAsyncModule>(m)
+      } else {
+        method-call %5 = m->ExecuteModule()
+        let result = %5
+        if (&& (comp? result) (! (= result.Type ~normal~))) {
+          call %6 = clo<AsyncModuleExecutionRejected>(m, result.Value)
+        } else {
+          m.Status = ~evaluated~
+          if (! (= m.TopLevelCapability ~empty~)) {
+            assert (= m.CycleRoot m)
+            call %7 = clo<Call>(m.TopLevelCapability.Resolve, undefined, (new [undefined])[#777])
+            [! %7]
+          } else {}
+        }
+      }
+    }
+    %2 = (+ %2 1)
+  }
+  return ~unused~
+}

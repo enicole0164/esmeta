@@ -1,0 +1,15 @@
+def TypedArraySpeciesCreate(
+  exemplar: Unknown["TypedArray"],
+  argumentList: Unknown,
+): Unknown["EitherANormalCompletionContainingATypedArrayOrAnAbruptCompletion"] {
+  (yet "Let _defaultConstructor_ be the intrinsic object listed in column one of <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for _exemplar_.[[TypedArrayName]].")
+  call %0 = clo<SpeciesConstructor>(exemplar, defaultConstructor)
+  let constructor = [? %0]
+  call %1 = clo<TypedArrayCreate>(constructor, argumentList)
+  let result = [? %1]
+  assert (yet "_result_ has [[TypedArrayName]] and [[ContentType]] internal slots.")
+  if (! (== result.ContentType exemplar.ContentType)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1102])
+  } else {}
+  return result
+}

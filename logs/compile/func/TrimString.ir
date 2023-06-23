@@ -1,0 +1,20 @@
+def TrimString(
+  string: ESValue,
+  where: Const[~end~, ~start+end~, ~start~],
+): Normal[String] | Abrupt {
+  call %0 = clo<RequireObjectCoercible>(string)
+  let str = [? %0]
+  call %1 = clo<ToString>(str)
+  let S = [? %1]
+  if (= where ~start~) {
+    (yet "let _T_ be the String value that is a copy of _S_ with leading white space removed.")
+  } else {
+    if (= where ~end~) {
+      (yet "let _T_ be the String value that is a copy of _S_ with trailing white space removed.")
+    } else {
+      assert (= where ~start+end~)
+      (yet "Let _T_ be the String value that is a copy of _S_ with both leading and trailing white space removed.")
+    }
+  }
+  return T
+}

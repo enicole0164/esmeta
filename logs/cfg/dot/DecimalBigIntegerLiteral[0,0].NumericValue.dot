@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1180 {
+    label = "def <SYNTAX>:DecimalBigIntegerLiteral[0,0].NumericValue(this: Ast:DecimalBigIntegerLiteral[0,0]): Number | BigInt"
+    style = rounded
+    cluster1180_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1180_entry_name -> cluster1180_entry [arrowhead=none, color="black", style=dashed]
+    cluster1180_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1180_entry -> node5384 [color="black"]
+    cluster1180_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1180_exit_name -> cluster1180_exit [arrowhead=none, color="black", style=dashed]
+    cluster1180_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5384_name [shape=none, label=<<font color="black">Block[5384]</font>>]
+    node5384_name -> node5384 [arrowhead=none, color="black", style=dashed]
+    node5384 [shape=box, label=<<font color="black">[0] return 0n<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5384 -> cluster1180_exit [color="black"]
+  }
+}

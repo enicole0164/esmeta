@@ -1,0 +1,20 @@
+def GetOwnPropertyKeys(
+  O: Unknown,
+  type: Const[~string~, ~symbol~],
+): Normal[List[Symbol | String]] | Abrupt {
+  call %0 = clo<ToObject>(O)
+  let obj = [? %0]
+  method-call %1 = obj->OwnPropertyKeys()
+  let keys = [? %1]
+  let nameList = (new [])[#895]
+  %3 = keys
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let nextKey = %3[%2]
+    if (|| (&& (= (typeof nextKey) @Symbol) (= type ~symbol~)) (&& (= (typeof nextKey) @String) (= type ~string~))) {
+      push nameList < nextKey
+    } else {}
+    %2 = (+ %2 1)
+  }
+  return nameList
+}

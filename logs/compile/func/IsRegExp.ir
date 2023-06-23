@@ -1,0 +1,17 @@
+def IsRegExp(
+  argument: Unknown,
+): Normal[Boolean] | Abrupt {
+  if (! (= (typeof argument) @Object)) {
+    return false
+  } else {}
+  call %0 = clo<Get>(argument, @SYMBOL.match)
+  let matcher = [? %0]
+  if (! (= matcher undefined)) {
+    call %1 = clo<ToBoolean>(matcher)
+    return %1
+  } else {}
+  if (! (= argument.RegExpMatcher absent)) {
+    return true
+  } else {}
+  return false
+}

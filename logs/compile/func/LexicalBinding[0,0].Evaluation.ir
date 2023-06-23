@@ -1,0 +1,11 @@
+def <SYNTAX>:LexicalBinding[0,0].Evaluation(
+  this: Ast:LexicalBinding[0,0],
+): Unknown {
+  sdo-call %0 = this[0]->StringValue()
+  call %1 = clo<ResolveBinding>(%0)
+  call %2 = clo<Completion>(%1)
+  let lhs = %2
+  call %3 = clo<InitializeReferencedBinding>(lhs, undefined)
+  [? %3]
+  return ~empty~
+}

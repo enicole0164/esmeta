@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1473 {
+    label = "def <SYNTAX>:CaseBlock[0,0].CaseBlockEvaluation(this: Ast:CaseBlock[0,0], input: Unknown): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1473_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1473_entry_name -> cluster1473_entry [arrowhead=none, color="black", style=dashed]
+    cluster1473_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1473_entry -> node7873 [color="black"]
+    cluster1473_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1473_exit_name -> cluster1473_exit [arrowhead=none, color="black", style=dashed]
+    cluster1473_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7873_name [shape=none, label=<<font color="black">Block[7873]</font>>]
+    node7873_name -> node7873 [arrowhead=none, color="black", style=dashed]
+    node7873 [shape=box, label=<<font color="black">[0] return undefined<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7873 -> cluster1473_exit [color="black"]
+  }
+}

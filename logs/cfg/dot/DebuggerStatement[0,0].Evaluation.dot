@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1509 {
+    label = "def <SYNTAX>:DebuggerStatement[0,0].Evaluation(this: Ast:DebuggerStatement[0,0]): Unknown"
+    style = rounded
+    cluster1509_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1509_entry_name -> cluster1509_entry [arrowhead=none, color="black", style=dashed]
+    cluster1509_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1509_entry -> node8278 [color="black"]
+    cluster1509_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1509_exit_name -> cluster1509_exit [arrowhead=none, color="black", style=dashed]
+    cluster1509_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8278_name [shape=none, label=<<font color="black">Block[8278]</font>>]
+    node8278_name -> node8278 [arrowhead=none, color="black", style=dashed]
+    node8278 [shape=box, label=<<font color="black">[0] (yet &quot;If an implementation-defined debugging facility is available and enabled, then\n  1. Perform an implementation-defined debugging action.\n  1. Return a new implementation-defined Completion Record.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;Else,\n  1. Return ~empty~.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8278 -> cluster1509_exit [color="black"]
+  }
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1008 {
+    label = "def <CONC>:GlobalEnvironmentRecord.GetThisBinding(envRec: GlobalEnvironmentRecord): Normal[Object]"
+    style = rounded
+    cluster1008_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1008_entry_name -> cluster1008_entry [arrowhead=none, color="black", style=dashed]
+    cluster1008_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1008_entry -> node3756 [color="black"]
+    cluster1008_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1008_exit_name -> cluster1008_exit [arrowhead=none, color="black", style=dashed]
+    cluster1008_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3756_name [shape=none, label=<<font color="black">Block[3756]</font>>]
+    node3756_name -> node3756 [arrowhead=none, color="black", style=dashed]
+    node3756 [shape=box, label=<<font color="black">[0] return envRec.GlobalThisValue<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3756 -> cluster1008_exit [color="black"]
+  }
+}

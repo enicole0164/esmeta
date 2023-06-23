@@ -1,0 +1,34 @@
+def OrdinarySetPrototypeOf(
+  O: Object,
+  V: Object | Null,
+): Boolean {
+  let current = O.Prototype
+  call %0 = clo<SameValue>(V, current)
+  if (= %0 true) {
+    return true
+  } else {}
+  let extensible = O.Extensible
+  if (= extensible false) {
+    return false
+  } else {}
+  let p = V
+  let done = false
+  loop[repeat] (= done false) {
+    if (= p null) {
+      done = true
+    } else {
+      call %1 = clo<SameValue>(p, O)
+      if (= %1 true) {
+        return false
+      } else {
+        if (! (= p.GetPrototypeOf clo<OrdinaryObject.GetPrototypeOf>)) {
+          done = true
+        } else {
+          p = p.Prototype
+        }
+      }
+    }
+  }
+  O.Prototype = V
+  return true
+}

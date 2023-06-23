@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1206 {
+    label = "def <SYNTAX>:Elision[1,0].ArrayAccumulation(this: Ast:Elision[1,0], array: Unknown["Array"], nextIndex: Unknown["Integer"]): Unknown["EitherANormalCompletionContainingAnIntegerOrAnAbruptCompletion"]"
+    style = rounded
+    cluster1206_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1206_entry_name -> cluster1206_entry [arrowhead=none, color="black", style=dashed]
+    cluster1206_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1206_entry -> node5432 [color="black"]
+    cluster1206_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1206_exit_name -> cluster1206_exit [arrowhead=none, color="black", style=dashed]
+    cluster1206_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5432_name [shape=none, label=<<font color="black">Call[5432]</font>>]
+    node5432_name -> node5432 [arrowhead=none, color="black", style=dashed]
+    node5432 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ArrayAccumulation(array, (+ nextIndex 1))</font>> color="black" fillcolor="white", style=filled]
+    node5432 -> node5433 [color="black"]
+    node5433_name [shape=none, label=<<font color="black">Block[5433]</font>>]
+    node5433_name -> node5433 [arrowhead=none, color="black", style=dashed]
+    node5433 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5433 -> cluster1206_exit [color="black"]
+  }
+}

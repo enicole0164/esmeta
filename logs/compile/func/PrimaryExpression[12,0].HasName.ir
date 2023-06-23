@@ -1,0 +1,11 @@
+def <SYNTAX>:PrimaryExpression[12,0].HasName(
+  this: Ast:PrimaryExpression[12,0],
+): Boolean {
+  let expr = (parse this[0] (nt |ParenthesizedExpression|[]))
+  sdo-call %0 = expr->IsFunctionDefinition()
+  if (= %0 false) {
+    return false
+  } else {}
+  sdo-call %1 = expr->HasName()
+  return %1
+}

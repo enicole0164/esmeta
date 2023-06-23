@@ -1,0 +1,6 @@
+def <SYNTAX>:MethodDefinition[4,0].PrivateBoundIdentifiers(
+  this: Ast:MethodDefinition[4,0],
+): List[String] {
+  sdo-call %0 = this[0]->PrivateBoundIdentifiers()
+  return %0
+}

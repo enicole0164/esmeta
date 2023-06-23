@@ -1,0 +1,5 @@
+def <SYNTAX>:FunctionStatementList[0,0].Evaluation(
+  this: Ast:FunctionStatementList[0,0],
+): Unknown {
+  return undefined
+}

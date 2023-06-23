@@ -1,0 +1,5 @@
+def <CONC>:GlobalEnvironmentRecord.HasThisBinding(
+  envRec: GlobalEnvironmentRecord,
+): True {
+  return true
+}

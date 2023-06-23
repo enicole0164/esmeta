@@ -1,0 +1,13 @@
+def AsyncGeneratorStart(
+  generator: Unknown["AsyncGenerator"],
+  generatorBody: Unknown["FunctionBodyParseNodeOrAnAbstractClosureWithNoParameters"],
+): Const[~unused~] {
+  assert (= generator.AsyncGeneratorState undefined)
+  let genContext = @EXECUTION_STACK[0]
+  genContext.Generator = generator
+  genContext.ResumeCont = cont<AsyncGeneratorStart:cont0>
+  generator.AsyncGeneratorContext = genContext
+  generator.AsyncGeneratorState = ~suspendedStart~
+  generator.AsyncGeneratorQueue = (new [])[#1328]
+  return ~unused~
+}

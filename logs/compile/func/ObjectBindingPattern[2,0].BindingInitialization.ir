@@ -1,0 +1,9 @@
+def <SYNTAX>:ObjectBindingPattern[2,0].BindingInitialization(
+  this: Ast:ObjectBindingPattern[2,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->PropertyBindingInitialization(value, environment)
+  [? %0]
+  return ~unused~
+}

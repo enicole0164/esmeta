@@ -1,0 +1,20 @@
+def AsyncGeneratorAwaitReturn(
+  generator: Unknown["AsyncGenerator"],
+): Normal[Const[~unused~]] | Abrupt {
+  let queue = generator.AsyncGeneratorQueue
+  assert (! (= queue.length 0))
+  let next = queue[0]
+  call %0 = clo<Completion>(next.Completion)
+  let completion = %0
+  assert (= completion.Type ~return~)
+  call %1 = clo<PromiseResolve>(@EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"], completion.Value)
+  let promise = [? %1]
+  let fulfilledClosure = clo<AsyncGeneratorAwaitReturn:clo0, [generator]>
+  call %2 = clo<CreateBuiltinFunction>(fulfilledClosure, 1, "", (new [])[#1334])
+  let onFulfilled = %2
+  let rejectedClosure = clo<AsyncGeneratorAwaitReturn:clo1, [generator]>
+  call %3 = clo<CreateBuiltinFunction>(rejectedClosure, 1, "", (new [])[#1335])
+  let onRejected = %3
+  call %4 = clo<PerformPromiseThen>(promise, onFulfilled, onRejected)
+  return ~unused~
+}

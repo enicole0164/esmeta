@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2302 {
+    label = "def UnicodeMatchProperty(p: Unknown["ListOfUnicodeCodePoints"]): Unknown["UnicodePropertyName"]"
+    style = rounded
+    cluster2302_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2302_entry_name -> cluster2302_entry [arrowhead=none, color="black", style=dashed]
+    cluster2302_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2302_entry -> node14083 [color="black"]
+    cluster2302_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2302_exit_name -> cluster2302_exit [arrowhead=none, color="black", style=dashed]
+    cluster2302_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14083_name [shape=none, label=<<font color="black">Block[14083]</font>>]
+    node14083_name -> node14083 [arrowhead=none, color="black", style=dashed]
+    node14083 [shape=box, label=<<font color="black">[0] assert (yet &quot;_p_ is a Unicode &lt;emu-not-ref&gt;property name&lt;/emu-not-ref&gt; or property alias listed in the &ldquo;&lt;emu-not-ref&gt;Property name&lt;/emu-not-ref&gt; and aliases&rdquo; column of &lt;emu-xref href=\&quot;#table-nonbinary-unicode-properties\&quot;&gt;&lt;/emu-xref&gt; or &lt;emu-xref href=\&quot;#table-binary-unicode-properties\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;Let _c_ be the canonical &lt;emu-not-ref&gt;property name&lt;/emu-not-ref&gt; of _p_ as given in the &ldquo;Canonical &lt;emu-not-ref&gt;property name&lt;/emu-not-ref&gt;&rdquo; column of the corresponding row.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Return the List of Unicode code points _c_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14083 -> cluster2302_exit [color="black"]
+  }
+}

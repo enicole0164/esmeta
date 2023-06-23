@@ -1,0 +1,6 @@
+def <NUM>:BigInt::multiply(
+  x: BigInt,
+  y: BigInt,
+): BigInt {
+  return ([bigInt] (* x y))
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:ImportsList[1,0].ImportEntriesForModule(
+  this: Ast:ImportsList[1,0],
+  module: Unknown,
+): Unknown["ListOfImportEntryRecords"] {
+  sdo-call %0 = this[0]->ImportEntriesForModule(module)
+  let specs1 = %0
+  sdo-call %1 = this[1]->ImportEntriesForModule(module)
+  let specs2 = %1
+  return (list-concat specs1 specs2)[#815]
+}

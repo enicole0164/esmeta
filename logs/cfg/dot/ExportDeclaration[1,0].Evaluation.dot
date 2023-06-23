@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1976 {
+    label = "def <SYNTAX>:ExportDeclaration[1,0].Evaluation(this: Ast:ExportDeclaration[1,0]): Unknown"
+    style = rounded
+    cluster1976_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1976_entry_name -> cluster1976_entry [arrowhead=none, color="black", style=dashed]
+    cluster1976_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1976_entry -> node10684 [color="black"]
+    cluster1976_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1976_exit_name -> cluster1976_exit [arrowhead=none, color="black", style=dashed]
+    cluster1976_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10684_name [shape=none, label=<<font color="black">Block[10684]</font>>]
+    node10684_name -> node10684 [arrowhead=none, color="black", style=dashed]
+    node10684 [shape=box, label=<<font color="black">[0] return ~empty~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10684 -> cluster1976_exit [color="black"]
+  }
+}

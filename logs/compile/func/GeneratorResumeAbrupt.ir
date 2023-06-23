@@ -1,0 +1,29 @@
+def GeneratorResumeAbrupt(
+  generator: Unknown,
+  abruptCompletion: Abrupt[return, throw],
+  generatorBrand: Unknown,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<GeneratorValidate>(generator, generatorBrand)
+  let state = [? %0]
+  if (= state ~suspendedStart~) {
+    generator.GeneratorState = ~completed~
+    nop
+    state = ~completed~
+  } else {}
+  if (= state ~completed~) {
+    if (= abruptCompletion.Type ~return~) {
+      call %1 = clo<CreateIterResultObject>(abruptCompletion.Value, true)
+      return %1
+    } else {}
+    return [? abruptCompletion]
+  } else {}
+  assert (= state ~suspendedYield~)
+  let genContext = generator.GeneratorContext
+  let methodContext = @EXECUTION_STACK[0]
+  nop
+  generator.GeneratorState = ~executing~
+  push genContext > @EXECUTION_STACK
+  if (= genContext.ReturnCont absent) genContext.ReturnCont = (new [])[#1320] else {}
+  push cont<GeneratorResumeAbrupt:cont0> > genContext.ReturnCont
+  call %2 = genContext.ResumeCont(abruptCompletion)
+}

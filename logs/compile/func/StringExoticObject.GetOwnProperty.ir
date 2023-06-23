@@ -1,0 +1,12 @@
+def <INTERNAL>:StringExoticObject.GetOwnProperty(
+  S: StringExoticObject,
+  P: Symbol | String,
+): Normal[PropertyDescriptor | Undefined] {
+  call %0 = clo<OrdinaryGetOwnProperty>(S, P)
+  let desc = %0
+  if (! (= desc undefined)) {
+    return desc
+  } else {}
+  call %1 = clo<StringGetOwnProperty>(S, P)
+  return %1
+}

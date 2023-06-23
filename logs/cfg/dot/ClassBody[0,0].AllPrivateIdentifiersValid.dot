@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1640 {
+    label = "def <SYNTAX>:ClassBody[0,0].AllPrivateIdentifiersValid(this: Ast:ClassBody[0,0], names: Unknown): Boolean"
+    style = rounded
+    cluster1640_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1640_entry_name -> cluster1640_entry [arrowhead=none, color="black", style=dashed]
+    cluster1640_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1640_entry -> node8863 [color="black"]
+    cluster1640_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1640_exit_name -> cluster1640_exit [arrowhead=none, color="black", style=dashed]
+    cluster1640_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8863_name [shape=none, label=<<font color="black">Call[8863]</font>>]
+    node8863_name -> node8863 [arrowhead=none, color="black", style=dashed]
+    node8863 [shape=cds, label=<<font color="black">%0 = this-&gt;PrivateBoundIdentifiers()</font>> color="black" fillcolor="white", style=filled]
+    node8863 -> node8864 [color="black"]
+    node8864_name [shape=none, label=<<font color="black">Block[8864]</font>>]
+    node8864_name -> node8864 [arrowhead=none, color="black", style=dashed]
+    node8864 [shape=box, label=<<font color="black">[0] let newNames = (list-concat names %0)[#683]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8864 -> node8865 [color="black"]
+    node8865_name [shape=none, label=<<font color="black">Call[8865]</font>>]
+    node8865_name -> node8865 [arrowhead=none, color="black", style=dashed]
+    node8865 [shape=cds, label=<<font color="black">%1 = this[0]-&gt;AllPrivateIdentifiersValid(newNames)</font>> color="black" fillcolor="white", style=filled]
+    node8865 -> node8866 [color="black"]
+    node8866_name [shape=none, label=<<font color="black">Block[8866]</font>>]
+    node8866_name -> node8866 [arrowhead=none, color="black", style=dashed]
+    node8866 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8866 -> cluster1640_exit [color="black"]
+  }
+}

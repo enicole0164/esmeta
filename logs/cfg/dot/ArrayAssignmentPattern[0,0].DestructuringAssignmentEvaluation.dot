@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1350 {
+    label = "def <SYNTAX>:ArrayAssignmentPattern[0,0].DestructuringAssignmentEvaluation(this: Ast:ArrayAssignmentPattern[0,0], value: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster1350_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1350_entry_name -> cluster1350_entry [arrowhead=none, color="black", style=dashed]
+    cluster1350_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1350_entry -> node6736 [color="black"]
+    cluster1350_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1350_exit_name -> cluster1350_exit [arrowhead=none, color="black", style=dashed]
+    cluster1350_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6736_name [shape=none, label=<<font color="black">Call[6736]</font>>]
+    node6736_name -> node6736 [arrowhead=none, color="black", style=dashed]
+    node6736 [shape=cds, label=<<font color="black">%0 = clo&lt;GetIterator&gt;(value)</font>> color="black" fillcolor="white", style=filled]
+    node6736 -> node6737 [color="black"]
+    node6737_name [shape=none, label=<<font color="black">Block[6737]</font>>]
+    node6737_name -> node6737 [arrowhead=none, color="black", style=dashed]
+    node6737 [shape=box, label=<<font color="black">[0] let iteratorRecord = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6737 -> node6738 [color="black"]
+    node6738_name [shape=none, label=<<font color="black">Call[6738]</font>>]
+    node6738_name -> node6738 [arrowhead=none, color="black", style=dashed]
+    node6738 [shape=cds, label=<<font color="black">%1 = clo&lt;NormalCompletion&gt;(~unused~)</font>> color="black" fillcolor="white", style=filled]
+    node6738 -> node6739 [color="black"]
+    node6739_name [shape=none, label=<<font color="black">Call[6739]</font>>]
+    node6739_name -> node6739 [arrowhead=none, color="black", style=dashed]
+    node6739 [shape=cds, label=<<font color="black">%2 = clo&lt;IteratorClose&gt;(iteratorRecord, %1)</font>> color="black" fillcolor="white", style=filled]
+    node6739 -> node6740 [color="black"]
+    node6740_name [shape=none, label=<<font color="black">Block[6740]</font>>]
+    node6740_name -> node6740 [arrowhead=none, color="black", style=dashed]
+    node6740 [shape=box, label=<<font color="black">[0] return [? %2]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6740 -> cluster1350_exit [color="black"]
+  }
+}

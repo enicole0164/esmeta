@@ -1,0 +1,36 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.join(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let separator = (pop < argumentsList) else let separator = absent
+  let O = this
+  call %0 = clo<ValidateTypedArray>(O)
+  [? %0]
+  let len = O.ArrayLength
+  if (= separator undefined) {
+    let sep = ","
+  } else {
+    call %1 = clo<ToString>(separator)
+    let sep = [? %1]
+  }
+  let R = ""
+  let k = 0
+  loop[repeat] (< k len) {
+    if (< 0 k) {
+      R = (concat R sep)
+    } else {}
+    call %2 = clo<ToString>(([number] k))
+    call %3 = clo<Get>(O, [! %2])
+    let element = [! %3]
+    if (= element undefined) {
+      let next = ""
+    } else {
+      call %4 = clo<ToString>(element)
+      let next = [! %4]
+    }
+    R = (concat R next)
+    k = (+ k 1)
+  }
+  return R
+}

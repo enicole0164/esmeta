@@ -1,0 +1,20 @@
+def RegExpExec(
+  R: Object,
+  S: String,
+): Normal[Object | Null] | Abrupt {
+  call %0 = clo<Get>(R, "exec")
+  let exec = [? %0]
+  call %1 = clo<IsCallable>(exec)
+  if (= %1 true) {
+    call %2 = clo<Call>(exec, R, (new [S])[#987])
+    let result = [? %2]
+    if (! (|| (= (typeof result) @Object) (= (typeof result) @Null))) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#988])
+    } else {}
+    return result
+  } else {}
+  call %3 = clo<RequireInternalSlot>(R, "RegExpMatcher")
+  [? %3]
+  call %4 = clo<RegExpBuiltinExec>(R, S)
+  return [? %4]
+}

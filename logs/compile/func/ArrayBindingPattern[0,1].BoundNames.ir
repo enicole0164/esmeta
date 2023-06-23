@@ -1,0 +1,6 @@
+def <SYNTAX>:ArrayBindingPattern[0,1].BoundNames(
+  this: Ast:ArrayBindingPattern[0,1],
+): List[String] {
+  sdo-call %0 = this[1]->BoundNames()
+  return %0
+}

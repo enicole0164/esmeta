@@ -1,0 +1,8 @@
+def CreateIntrinsics(
+  realmRec: Unknown,
+): Const[~unused~] {
+  realmRec.Intrinsics = (new Record())[#394]
+  realmRec.Intrinsics = @INTRINSICS
+  call %0 = clo<AddRestrictedFunctionProperties>(realmRec.Intrinsics["%Function.prototype%"], realmRec)
+  return ~unused~
+}

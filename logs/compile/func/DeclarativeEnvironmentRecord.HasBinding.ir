@@ -1,0 +1,7 @@
+def <CONC>:DeclarativeEnvironmentRecord.HasBinding(
+  envRec: DeclarativeEnvironmentRecord,
+  N: String,
+): Normal[Boolean] {
+  if (! (= envRec.SubMap[N] absent)) return true else {}
+  return false
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1059 {
+    label = "def IsCompatiblePropertyDescriptor(Extensible: Boolean, Desc: PropertyDescriptor, Current: PropertyDescriptor): Boolean"
+    style = rounded
+    cluster1059_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1059_entry_name -> cluster1059_entry [arrowhead=none, color="black", style=dashed]
+    cluster1059_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1059_entry -> node3975 [color="black"]
+    cluster1059_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1059_exit_name -> cluster1059_exit [arrowhead=none, color="black", style=dashed]
+    cluster1059_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3975_name [shape=none, label=<<font color="black">Call[3975]</font>>]
+    node3975_name -> node3975 [arrowhead=none, color="black", style=dashed]
+    node3975 [shape=cds, label=<<font color="black">%0 = clo&lt;ValidateAndApplyPropertyDescriptor&gt;(undefined, &quot;&quot;, Extensible, Desc, Current)</font>> color="black" fillcolor="white", style=filled]
+    node3975 -> node3976 [color="black"]
+    node3976_name [shape=none, label=<<font color="black">Block[3976]</font>>]
+    node3976_name -> node3976 [arrowhead=none, color="black", style=dashed]
+    node3976 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3976 -> cluster1059_exit [color="black"]
+  }
+}

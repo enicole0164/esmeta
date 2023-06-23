@@ -1,0 +1,8 @@
+def <SYNTAX>:ForInOfStatement[0,0].ContainsUndefinedContinueTarget(
+  this: Ast:ForInOfStatement[0,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[2]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#323])
+  return %0
+}

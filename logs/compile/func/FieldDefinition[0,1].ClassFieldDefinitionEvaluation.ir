@@ -1,0 +1,21 @@
+def <SYNTAX>:FieldDefinition[0,1].ClassFieldDefinitionEvaluation(
+  this: Ast:FieldDefinition[0,1],
+  homeObject: Unknown,
+): Normal[ClassFieldDefinitionRecord] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  let name = %0
+  [? name]
+  if (! (= this[1] absent)) {
+    let formalParameterList = |FormalParameters|[TT]<0>
+    let env = @EXECUTION_STACK[0].LexicalEnvironment
+    let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+    let sourceText = ""
+    call %1 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Function.prototype%"], sourceText, formalParameterList, this[1], ~non-lexical-this~, env, privateEnv)
+    let initializer = %1
+    call %2 = clo<MakeMethod>(initializer, homeObject)
+    initializer.ClassFieldInitializerName = name
+  } else {
+    let initializer = ~empty~
+  }
+  return (new ClassFieldDefinitionRecord("Name" -> name, "Initializer" -> initializer))[#691]
+}

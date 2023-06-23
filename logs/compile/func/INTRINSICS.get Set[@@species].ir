@@ -1,0 +1,7 @@
+def <BUILTIN>:INTRINSICS.get Set[@@species](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  return this
+}

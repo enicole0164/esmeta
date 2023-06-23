@@ -1,0 +1,10 @@
+def <CONC>:ObjectEnvironmentRecord.CreateMutableBinding(
+  envRec: ObjectEnvironmentRecord,
+  N: String,
+  D: Boolean,
+): Normal[Const[~unused~]] | Abrupt {
+  let bindingObject = envRec.BindingObject
+  call %0 = clo<DefinePropertyOrThrow>(bindingObject, N, (new PropertyDescriptor("Value" -> undefined, "Writable" -> true, "Enumerable" -> true, "Configurable" -> D))[#372])
+  [? %0]
+  return ~unused~
+}

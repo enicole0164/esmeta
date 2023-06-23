@@ -1,0 +1,5 @@
+def <CONC>:DeclarativeEnvironmentRecord.HasThisBinding(
+  envRec: DeclarativeEnvironmentRecord,
+): False {
+  return false
+}

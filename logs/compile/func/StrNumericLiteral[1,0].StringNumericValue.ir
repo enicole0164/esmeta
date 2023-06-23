@@ -1,0 +1,6 @@
+def <SYNTAX>:StrNumericLiteral[1,0].StringNumericValue(
+  this: Ast:StrNumericLiteral[1,0],
+): Number {
+  sdo-call %0 = this[0]->MV()
+  return ([number] %0)
+}

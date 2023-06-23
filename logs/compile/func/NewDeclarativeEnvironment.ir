@@ -1,0 +1,7 @@
+def NewDeclarativeEnvironment(
+  E: EnvironmentRecord,
+): DeclarativeEnvironmentRecord {
+  let env = (new DeclarativeEnvironmentRecord())[#384]
+  env.OuterEnv = E
+  return env
+}

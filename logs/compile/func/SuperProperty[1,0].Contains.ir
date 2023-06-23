@@ -1,0 +1,7 @@
+def <SYNTAX>:SuperProperty[1,0].Contains(
+  this: Ast:SuperProperty[1,0],
+  symbol: Unknown,
+): Boolean {
+  (yet "If _symbol_ is the |ReservedWord| `super`, return *true*.")
+  return false
+}

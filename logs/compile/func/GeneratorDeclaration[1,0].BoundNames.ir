@@ -1,0 +1,5 @@
+def <SYNTAX>:GeneratorDeclaration[1,0].BoundNames(
+  this: Ast:GeneratorDeclaration[1,0],
+): List[String] {
+  return (new ["*default*"])[#99]
+}

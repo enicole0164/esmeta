@@ -1,0 +1,75 @@
+def <INTERNAL>:ProxyExoticObject.OwnPropertyKeys(
+  O: ProxyExoticObject,
+): Normal[List[Symbol | String]] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#524])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<GetMethod>(handler, "ownKeys")
+  let trap = [? %0]
+  if (= trap undefined) {
+    method-call %1 = target->OwnPropertyKeys()
+    return [? %1]
+  } else {}
+  call %2 = clo<Call>(trap, handler, (new [target])[#525])
+  let trapResultArray = [? %2]
+  call %3 = clo<CreateListFromArrayLike>(trapResultArray, (new [@String, @Symbol])[#526])
+  let trapResult = [? %3]
+  if (duplicated trapResult) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#527])
+  } else {}
+  call %4 = clo<IsExtensible>(target)
+  let extensibleTarget = [? %4]
+  method-call %5 = target->OwnPropertyKeys()
+  let targetKeys = [? %5]
+  assert (? targetKeys: "List[SymbolString]")
+  assert (! (duplicated targetKeys))
+  let targetConfigurableKeys = (new [])[#528]
+  let targetNonconfigurableKeys = (new [])[#529]
+  %7 = targetKeys
+  %6 = 0
+  loop[foreach] (< %6 %7.length) {
+    let key = %7[%6]
+    method-call %8 = target->GetOwnProperty(key)
+    let desc = [? %8]
+    if (&& (! (= desc undefined)) (= desc.Configurable false)) {
+      (yet "Append _key_ as an element of _targetNonconfigurableKeys_.")
+    } else {
+      (yet "Append _key_ as an element of _targetConfigurableKeys_.")
+    }
+    %6 = (+ %6 1)
+  }
+  if (&& (= extensibleTarget true) (= targetNonconfigurableKeys.length 0)) {
+    return trapResult
+  } else {}
+  (yet "Let _uncheckedResultKeys_ be a List whose elements are the elements of _trapResult_.")
+  %10 = targetNonconfigurableKeys
+  %9 = 0
+  loop[foreach] (< %9 %10.length) {
+    let key = %10[%9]
+    if (! (contains uncheckedResultKeys key)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#530])
+    } else {}
+    (yet "Remove _key_ from _uncheckedResultKeys_.")
+    %9 = (+ %9 1)
+  }
+  if (= extensibleTarget true) {
+    return trapResult
+  } else {}
+  %12 = targetConfigurableKeys
+  %11 = 0
+  loop[foreach] (< %11 %12.length) {
+    let key = %12[%11]
+    if (! (contains uncheckedResultKeys key)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#531])
+    } else {}
+    (yet "Remove _key_ from _uncheckedResultKeys_.")
+    %11 = (+ %11 1)
+  }
+  if (! (= uncheckedResultKeys.length 0)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#532])
+  } else {}
+  return trapResult
+}

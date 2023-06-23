@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2232 {
+    label = "def <SYNTAX>:RegExpIdentifierName[1,0].CapturingGroupName(this: Ast:RegExpIdentifierName[1,0]): String"
+    style = rounded
+    cluster2232_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2232_entry_name -> cluster2232_entry [arrowhead=none, color="black", style=dashed]
+    cluster2232_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2232_entry -> node13888 [color="black"]
+    cluster2232_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2232_exit_name -> cluster2232_exit [arrowhead=none, color="black", style=dashed]
+    cluster2232_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13888_name [shape=none, label=<<font color="black">Call[13888]</font>>]
+    node13888_name -> node13888 [arrowhead=none, color="black", style=dashed]
+    node13888 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;RegExpIdentifierCodePoints()</font>> color="black" fillcolor="white", style=filled]
+    node13888 -> node13889 [color="black"]
+    node13889_name [shape=none, label=<<font color="black">Block[13889]</font>>]
+    node13889_name -> node13889 [arrowhead=none, color="black", style=dashed]
+    node13889 [shape=box, label=<<font color="black">[0] let idTextUnescaped = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13889 -> node13890 [color="black"]
+    node13890_name [shape=none, label=<<font color="black">Call[13890]</font>>]
+    node13890_name -> node13890 [arrowhead=none, color="black", style=dashed]
+    node13890 [shape=cds, label=<<font color="black">%1 = clo&lt;CodePointsToString&gt;(idTextUnescaped)</font>> color="black" fillcolor="white", style=filled]
+    node13890 -> node13891 [color="black"]
+    node13891_name [shape=none, label=<<font color="black">Block[13891]</font>>]
+    node13891_name -> node13891 [arrowhead=none, color="black", style=dashed]
+    node13891 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13891 -> cluster2232_exit [color="black"]
+  }
+}

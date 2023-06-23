@@ -1,0 +1,13 @@
+def <SYNTAX>:IfStatement[0,0].ContainsUndefinedContinueTarget(
+  this: Ast:IfStatement[0,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#302])
+  let hasUndefinedLabels = %0
+  if (= hasUndefinedLabels true) {
+    return true
+  } else {}
+  sdo-call %1 = this[2]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#303])
+  return %1
+}

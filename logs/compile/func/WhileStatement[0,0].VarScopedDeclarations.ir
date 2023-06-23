@@ -1,0 +1,6 @@
+def <SYNTAX>:WhileStatement[0,0].VarScopedDeclarations(
+  this: Ast:WhileStatement[0,0],
+): List[Ast] {
+  sdo-call %0 = this[1]->VarScopedDeclarations()
+  return %0
+}

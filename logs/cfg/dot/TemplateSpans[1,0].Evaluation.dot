@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1253 {
+    label = "def <SYNTAX>:TemplateSpans[1,0].Evaluation(this: Ast:TemplateSpans[1,0]): Unknown"
+    style = rounded
+    cluster1253_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1253_entry_name -> cluster1253_entry [arrowhead=none, color="black", style=dashed]
+    cluster1253_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1253_entry -> node5753 [color="black"]
+    cluster1253_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1253_exit_name -> cluster1253_exit [arrowhead=none, color="black", style=dashed]
+    cluster1253_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5753_name [shape=none, label=<<font color="black">Call[5753]</font>>]
+    node5753_name -> node5753 [arrowhead=none, color="black", style=dashed]
+    node5753 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node5753 -> node5754 [color="black"]
+    node5754_name [shape=none, label=<<font color="black">Block[5754]</font>>]
+    node5754_name -> node5754 [arrowhead=none, color="black", style=dashed]
+    node5754 [shape=box, label=<<font color="black">[0] let head = %0<BR ALIGN="LEFT"/>[1] [? head]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5754 -> node5755 [color="black"]
+    node5755_name [shape=none, label=<<font color="black">Call[5755]</font>>]
+    node5755_name -> node5755 [arrowhead=none, color="black", style=dashed]
+    node5755 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;TV()</font>> color="black" fillcolor="white", style=filled]
+    node5755 -> node5756 [color="black"]
+    node5756_name [shape=none, label=<<font color="black">Block[5756]</font>>]
+    node5756_name -> node5756 [arrowhead=none, color="black", style=dashed]
+    node5756 [shape=box, label=<<font color="black">[0] let tail = %1<BR ALIGN="LEFT"/>[1] return (concat head tail)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5756 -> cluster1253_exit [color="black"]
+  }
+}

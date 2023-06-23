@@ -1,0 +1,37 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1111 {
+    label = "def <INTERNAL>:StringExoticObject.OwnPropertyKeys(O: StringExoticObject): Normal[List[Symbol | String]]"
+    style = rounded
+    cluster1111_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1111_entry_name -> cluster1111_entry [arrowhead=none, color="black", style=dashed]
+    cluster1111_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1111_entry -> node4662 [color="black"]
+    cluster1111_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1111_exit_name -> cluster1111_exit [arrowhead=none, color="black", style=dashed]
+    cluster1111_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4662_name [shape=none, label=<<font color="black">Block[4662]</font>>]
+    node4662_name -> node4662 [arrowhead=none, color="black", style=dashed]
+    node4662 [shape=box, label=<<font color="black">[0] let keys = (new [])[#457]<BR ALIGN="LEFT"/>[1] let str = O.StringData<BR ALIGN="LEFT"/>[2] assert (= (typeof str) @String)<BR ALIGN="LEFT"/>[3] let len = str.length<BR ALIGN="LEFT"/>[4] let i = 0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4662 -> node4663 [color="black"]
+    node4663_name [shape=none, label=<<font color="black">Branch[4663]</font>>]
+    node4663_name -> node4663 [arrowhead=none, color="black", style=dashed]
+    node4663 [shape=diamond, label=<<font color="black">(&lt; i len)</font>> color="black" fillcolor="white", style=filled]
+    node4663 -> node4664 [label=<<font color="black">true</font>> color="black"]
+    node4663 -> node4666 [label=<<font color="black">false</font>> color="black"]
+    node4664_name [shape=none, label=<<font color="black">Call[4664]</font>>]
+    node4664_name -> node4664 [arrowhead=none, color="black", style=dashed]
+    node4664 [shape=cds, label=<<font color="black">%0 = clo&lt;ToString&gt;(([number] i))</font>> color="black" fillcolor="white", style=filled]
+    node4664 -> node4665 [color="black"]
+    node4666_name [shape=none, label=<<font color="black">Block[4666]</font>>]
+    node4666_name -> node4666 [arrowhead=none, color="black", style=dashed]
+    node4666 [shape=box, label=<<font color="black">[0] (yet &quot;For each own property key _P_ of _O_ such that _P_ is an array index and ! ToIntegerOrInfinity(_P_) &ge; _len_, in ascending numeric index order, do\n  1. Append _P_ to _keys_.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;For each own property key _P_ of _O_ such that Type(_P_) is String and _P_ is not an array index, in ascending chronological order of property creation, do\n  1. Append _P_ to _keys_.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;For each own property key _P_ of _O_ such that Type(_P_) is Symbol, in ascending chronological order of property creation, do\n  1. Append _P_ to _keys_.&quot;)<BR ALIGN="LEFT"/>[3] return keys<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4666 -> cluster1111_exit [color="black"]
+    node4665_name [shape=none, label=<<font color="black">Block[4665]</font>>]
+    node4665_name -> node4665 [arrowhead=none, color="black", style=dashed]
+    node4665 [shape=box, label=<<font color="black">[0] push keys &lt; [! %0]<BR ALIGN="LEFT"/>[1] i = (+ i 1)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4665 -> node4663 [color="black"]
+  }
+}

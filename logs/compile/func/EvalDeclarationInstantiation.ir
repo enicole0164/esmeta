@@ -1,0 +1,192 @@
+def EvalDeclarationInstantiation(
+  body: Unknown,
+  varEnv: Unknown,
+  lexEnv: Unknown,
+  privateEnv: Unknown,
+  strict: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = body->VarDeclaredNames()
+  let varNames = %0
+  sdo-call %1 = body->VarScopedDeclarations()
+  let varDeclarations = %1
+  if (= strict false) {
+    if (? varEnv: "GlobalEnvironmentRecord") {
+      %3 = varNames
+      %2 = 0
+      loop[foreach] (< %2 %3.length) {
+        let name = %3[%2]
+        method-call %4 = varEnv->HasLexicalDeclaration(name)
+        if (= %4 true) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#874])
+        } else {}
+        nop
+        %2 = (+ %2 1)
+      }
+    } else {}
+    let thisEnv = lexEnv
+    assert (yet "The following loop will terminate.")
+    loop[repeat] (! (= thisEnv varEnv)) {
+      if (! (? thisEnv: "ObjectEnvironmentRecord")) {
+        nop
+        %6 = varNames
+        %5 = 0
+        loop[foreach] (< %5 %6.length) {
+          let name = %6[%5]
+          method-call %7 = thisEnv->HasBinding(name)
+          if (= [! %7] true) {
+            return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#875])
+            nop
+          } else {}
+          nop
+          %5 = (+ %5 1)
+        }
+      } else {}
+      thisEnv = thisEnv.OuterEnv
+    }
+  } else {}
+  let privateIdentifiers = (new [])[#876]
+  let pointer = privateEnv
+  loop[repeat] (! (= pointer null)) {
+    %9 = pointer.Names
+    %8 = 0
+    loop[foreach] (< %8 %9.length) {
+      let binding = %9[%8]
+      if (! (contains privateIdentifiers binding.Description)) {
+        push privateIdentifiers < binding.Description
+      } else {}
+      %8 = (+ %8 1)
+    }
+    pointer = pointer.OuterPrivateEnvironment
+  }
+  sdo-call %10 = body->AllPrivateIdentifiersValid(privateIdentifiers)
+  if (= %10 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#877])
+  } else {}
+  let functionsToInitialize = (new [])[#878]
+  let declaredFunctionNames = (new [])[#879]
+  %12 = varDeclarations
+  %11 = %12.length
+  loop[foreach] (< 0 %11) {
+    %11 = (- %11 1)
+    let d = %12[%11]
+    if (! (|| (|| (? d: "VariableDeclaration") (? d: "ForBinding")) (? d: "BindingIdentifier"))) {
+      assert (|| (|| (|| (? d: "FunctionDeclaration") (? d: "GeneratorDeclaration")) (? d: "AsyncFunctionDeclaration")) (? d: "AsyncGeneratorDeclaration"))
+      nop
+      sdo-call %13 = d->BoundNames()
+      let fn = %13[0]
+      if (! (contains declaredFunctionNames fn)) {
+        if (? varEnv: "GlobalEnvironmentRecord") {
+          method-call %14 = varEnv->CanDeclareGlobalFunction(fn)
+          let fnDefinable = [? %14]
+          if (= fnDefinable false) {
+            return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#880])
+          } else {}
+        } else {}
+        push declaredFunctionNames < fn
+        push d > functionsToInitialize
+      } else {}
+    } else {}
+  }
+  nop
+  let declaredVarNames = (new [])[#881]
+  %16 = varDeclarations
+  %15 = 0
+  loop[foreach] (< %15 %16.length) {
+    let d = %16[%15]
+    if (|| (|| (? d: "VariableDeclaration") (? d: "ForBinding")) (? d: "BindingIdentifier")) {
+      sdo-call %19 = d->BoundNames()
+      %18 = %19
+      %17 = 0
+      loop[foreach] (< %17 %18.length) {
+        let vn = %18[%17]
+        if (! (contains declaredFunctionNames vn)) {
+          if (? varEnv: "GlobalEnvironmentRecord") {
+            method-call %20 = varEnv->CanDeclareGlobalVar(vn)
+            let vnDefinable = [? %20]
+            if (= vnDefinable false) {
+              return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#882])
+            } else {}
+          } else {}
+          if (! (contains declaredVarNames vn)) {
+            push declaredVarNames < vn
+          } else {}
+        } else {}
+        %17 = (+ %17 1)
+      }
+    } else {}
+    %15 = (+ %15 1)
+  }
+  nop
+  sdo-call %21 = body->LexicallyScopedDeclarations()
+  let lexDeclarations = %21
+  %23 = lexDeclarations
+  %22 = 0
+  loop[foreach] (< %22 %23.length) {
+    let d = %23[%22]
+    nop
+    sdo-call %26 = d->BoundNames()
+    %25 = %26
+    %24 = 0
+    loop[foreach] (< %24 %25.length) {
+      let dn = %25[%24]
+      sdo-call %27 = d->IsConstantDeclaration()
+      if (= %27 true) {
+        method-call %28 = lexEnv->CreateImmutableBinding(dn, true)
+        [? %28]
+      } else {
+        method-call %29 = lexEnv->CreateMutableBinding(dn, false)
+        [? %29]
+      }
+      %24 = (+ %24 1)
+    }
+    %22 = (+ %22 1)
+  }
+  %31 = functionsToInitialize
+  %30 = 0
+  loop[foreach] (< %30 %31.length) {
+    let f = %31[%30]
+    sdo-call %32 = f->BoundNames()
+    let fn = %32[0]
+    sdo-call %33 = f->InstantiateFunctionObject(lexEnv, privateEnv)
+    let fo = %33
+    if (? varEnv: "GlobalEnvironmentRecord") {
+      method-call %34 = varEnv->CreateGlobalFunctionBinding(fn, fo, true)
+      [? %34]
+    } else {
+      method-call %35 = varEnv->HasBinding(fn)
+      let bindingExists = [! %35]
+      if (= bindingExists false) {
+        nop
+        method-call %36 = varEnv->CreateMutableBinding(fn, true)
+        [! %36]
+        method-call %37 = varEnv->InitializeBinding(fn, fo)
+        [! %37]
+      } else {
+        method-call %38 = varEnv->SetMutableBinding(fn, fo, false)
+        [! %38]
+      }
+    }
+    %30 = (+ %30 1)
+  }
+  %40 = declaredVarNames
+  %39 = 0
+  loop[foreach] (< %39 %40.length) {
+    let vn = %40[%39]
+    if (? varEnv: "GlobalEnvironmentRecord") {
+      method-call %41 = varEnv->CreateGlobalVarBinding(vn, true)
+      [? %41]
+    } else {
+      method-call %42 = varEnv->HasBinding(vn)
+      let bindingExists = [! %42]
+      if (= bindingExists false) {
+        nop
+        method-call %43 = varEnv->CreateMutableBinding(vn, true)
+        [! %43]
+        method-call %44 = varEnv->InitializeBinding(vn, undefined)
+        [! %44]
+      } else {}
+    }
+    %39 = (+ %39 1)
+  }
+  return ~unused~
+}

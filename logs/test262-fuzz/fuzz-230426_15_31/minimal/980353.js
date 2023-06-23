@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { { } 0 ; throw new Test262Error ( message ) ; } x => 0 ; var x ; var x ; assert . throws = async function ( x ) { } ; try { } catch { } function Test262Error ( message ) { this . message = message || "" ; } Test262Error . prototype . toString = { throw : async function * ( x ) { } } ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; function x ( ) { } var foo = { } ; var map = new WeakMap ( [ [ foo ] ] ) ; assert ( map . set ( foo , 1 ) , map , '`map.set(foo, 1)` returns `map`' ) ; 

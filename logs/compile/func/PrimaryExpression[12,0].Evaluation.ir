@@ -1,0 +1,7 @@
+def <SYNTAX>:PrimaryExpression[12,0].Evaluation(
+  this: Ast:PrimaryExpression[12,0],
+): Unknown {
+  let expr = (parse this[0] (nt |ParenthesizedExpression|[]))
+  sdo-call %0 = expr->Evaluation()
+  return %0
+}

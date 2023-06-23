@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster19 {
+    label = "def <NUM>:Number::subtract(x: Number, y: Number): Number"
+    style = rounded
+    cluster19_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster19_entry_name -> cluster19_entry [arrowhead=none, color="black", style=dashed]
+    cluster19_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster19_entry -> node229 [color="black"]
+    cluster19_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster19_exit_name -> cluster19_exit [arrowhead=none, color="black", style=dashed]
+    cluster19_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node229_name [shape=none, label=<<font color="black">Call[229]</font>>]
+    node229_name -> node229 [arrowhead=none, color="black", style=dashed]
+    node229 [shape=cds, label=<<font color="black">%1 = clo&lt;Number::unaryMinus&gt;(y)</font>> color="black" fillcolor="white", style=filled]
+    node229 -> node230 [color="black"]
+    node230_name [shape=none, label=<<font color="black">Call[230]</font>>]
+    node230_name -> node230 [arrowhead=none, color="black", style=dashed]
+    node230 [shape=cds, label=<<font color="black">%0 = clo&lt;Number::add&gt;(x, %1)</font>> color="black" fillcolor="white", style=filled]
+    node230 -> node231 [color="black"]
+    node231_name [shape=none, label=<<font color="black">Block[231]</font>>]
+    node231_name -> node231 [arrowhead=none, color="black", style=dashed]
+    node231 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node231 -> cluster19_exit [color="black"]
+  }
+}

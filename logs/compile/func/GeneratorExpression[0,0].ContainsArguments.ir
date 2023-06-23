@@ -1,0 +1,5 @@
+def <SYNTAX>:GeneratorExpression[0,0].ContainsArguments(
+  this: Ast:GeneratorExpression[0,0],
+): Boolean {
+  return false
+}

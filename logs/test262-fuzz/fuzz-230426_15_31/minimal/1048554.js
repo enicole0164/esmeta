@@ -1,0 +1,2 @@
+"use strict";
+let x ; 0 ; { sticky : true ; } ; function Test262Error ( message ) { message ; } 0 ?? 0 ; var quickIter = { } ; var iter , exprValue , throwReceived ; quickIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , throw : function * ( x , [ ] ) { } } ; } ; function * g ( ) { exprValue = yield * quickIter ; } iter = g ( ) ; iter . next ( ) ; iter . throw ( 2222 ) ; throw 0 ; 

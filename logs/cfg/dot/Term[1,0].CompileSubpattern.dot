@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2247 {
+    label = "def <SYNTAX>:Term[1,0].CompileSubpattern(this: Ast:Term[1,0], direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2247_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2247_entry_name -> cluster2247_entry [arrowhead=none, color="black", style=dashed]
+    cluster2247_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2247_entry -> node13926 [color="black"]
+    cluster2247_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2247_exit_name -> cluster2247_exit [arrowhead=none, color="black", style=dashed]
+    cluster2247_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13926_name [shape=none, label=<<font color="black">Call[13926]</font>>]
+    node13926_name -> node13926 [arrowhead=none, color="black", style=dashed]
+    node13926 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileAtom(direction)</font>> color="black" fillcolor="white", style=filled]
+    node13926 -> node13927 [color="black"]
+    node13927_name [shape=none, label=<<font color="black">Block[13927]</font>>]
+    node13927_name -> node13927 [arrowhead=none, color="black", style=dashed]
+    node13927 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13927 -> cluster2247_exit [color="black"]
+  }
+}

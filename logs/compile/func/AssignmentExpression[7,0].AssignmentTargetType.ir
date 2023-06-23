@@ -1,0 +1,5 @@
+def <SYNTAX>:AssignmentExpression[7,0].AssignmentTargetType(
+  this: Ast:AssignmentExpression[7,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

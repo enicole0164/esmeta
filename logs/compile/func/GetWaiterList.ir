@@ -1,0 +1,7 @@
+def GetWaiterList(
+  block: Unknown["SharedDataBlock"],
+  i: Unknown["NonnegativeIntegerThatIsEvenlyDivisibleBy4"],
+): Unknown["WaiterList"] {
+  assert (yet "_i_ and _i_ + 3 are valid byte offsets within the memory of _block_.")
+  (yet "Return the WaiterList that is referenced by the pair (_block_, _i_).")
+}

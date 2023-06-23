@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1620 {
+    label = "def <SYNTAX>:ClassElement[3,0].ClassElementKind(this: Ast:ClassElement[3,0]): Const[~ConstructorMethod~, ~NonConstructorMethod~, ~empty~]"
+    style = rounded
+    cluster1620_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1620_entry_name -> cluster1620_entry [arrowhead=none, color="black", style=dashed]
+    cluster1620_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1620_entry -> node8786 [color="black"]
+    cluster1620_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1620_exit_name -> cluster1620_exit [arrowhead=none, color="black", style=dashed]
+    cluster1620_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8786_name [shape=none, label=<<font color="black">Block[8786]</font>>]
+    node8786_name -> node8786 [arrowhead=none, color="black", style=dashed]
+    node8786 [shape=box, label=<<font color="black">[0] return ~NonConstructorMethod~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8786 -> cluster1620_exit [color="black"]
+  }
+}

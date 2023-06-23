@@ -1,0 +1,8 @@
+def <SYNTAX>:RegExpIdentifierName[1,0].RegExpIdentifierCodePoints(
+  this: Ast:RegExpIdentifierName[1,0],
+): Unknown["ListOfCodePoints"] {
+  (yet "Let _cps_ be RegExpIdentifierCodePoints of the derived |RegExpIdentifierName|.")
+  sdo-call %0 = this[1]->RegExpIdentifierCodePoint()
+  let cp = %0
+  return (list-concat cps (new [cp])[#974])[#973]
+}

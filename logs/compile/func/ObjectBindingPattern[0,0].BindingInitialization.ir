@@ -1,0 +1,7 @@
+def <SYNTAX>:ObjectBindingPattern[0,0].BindingInitialization(
+  this: Ast:ObjectBindingPattern[0,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  return ~unused~
+}

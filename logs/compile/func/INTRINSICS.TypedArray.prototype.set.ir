@@ -1,0 +1,20 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.set(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let source = (pop < argumentsList) else let source = absent
+  if (< 0 argumentsList.length) let offset = (pop < argumentsList) else let offset = absent
+  let target = this
+  call %0 = clo<RequireInternalSlot>(target, "TypedArrayName")
+  [? %0]
+  assert (! (= target.ViewedArrayBuffer absent))
+  call %1 = clo<ToIntegerOrInfinity>(offset)
+  let targetOffset = [? %1]
+  if (< targetOffset 0) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1084])
+  } else {}
+  (yet "If _source_ is an Object that has a [[TypedArrayName]] internal slot, then\n  1. Perform ? SetTypedArrayFromTypedArray(_target_, _targetOffset_, _source_).")
+  (yet "Else,\n  1. Perform ? SetTypedArrayFromArrayLike(_target_, _targetOffset_, _source_).")
+  return undefined
+}

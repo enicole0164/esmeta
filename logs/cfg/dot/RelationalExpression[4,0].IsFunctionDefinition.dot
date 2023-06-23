@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster724 {
+    label = "def <SYNTAX>:RelationalExpression[4,0].IsFunctionDefinition(this: Ast:RelationalExpression[4,0]): Boolean"
+    style = rounded
+    cluster724_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster724_entry_name -> cluster724_entry [arrowhead=none, color="black", style=dashed]
+    cluster724_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster724_entry -> node2956 [color="black"]
+    cluster724_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster724_exit_name -> cluster724_exit [arrowhead=none, color="black", style=dashed]
+    cluster724_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2956_name [shape=none, label=<<font color="black">Block[2956]</font>>]
+    node2956_name -> node2956 [arrowhead=none, color="black", style=dashed]
+    node2956 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2956 -> cluster724_exit [color="black"]
+  }
+}

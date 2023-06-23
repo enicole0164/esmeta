@@ -1,0 +1,6 @@
+def <SYNTAX>:ClassElement[4,0].ComputedPropertyContains(
+  this: Ast:ClassElement[4,0],
+  symbol: Unknown,
+): Boolean {
+  return false
+}

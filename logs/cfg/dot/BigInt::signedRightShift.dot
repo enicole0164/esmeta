@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster41 {
+    label = "def <NUM>:BigInt::signedRightShift(x: BigInt, y: BigInt): BigInt"
+    style = rounded
+    cluster41_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster41_entry_name -> cluster41_entry [arrowhead=none, color="black", style=dashed]
+    cluster41_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster41_entry -> node333 [color="black"]
+    cluster41_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster41_exit_name -> cluster41_exit [arrowhead=none, color="black", style=dashed]
+    cluster41_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node333_name [shape=none, label=<<font color="black">Call[333]</font>>]
+    node333_name -> node333 [arrowhead=none, color="black", style=dashed]
+    node333 [shape=cds, label=<<font color="black">%0 = clo&lt;BigInt::leftShift&gt;(x, (- y))</font>> color="black" fillcolor="white", style=filled]
+    node333 -> node334 [color="black"]
+    node334_name [shape=none, label=<<font color="black">Block[334]</font>>]
+    node334_name -> node334 [arrowhead=none, color="black", style=dashed]
+    node334 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node334 -> cluster41_exit [color="black"]
+  }
+}

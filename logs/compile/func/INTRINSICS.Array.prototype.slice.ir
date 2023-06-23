@@ -1,0 +1,60 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.slice(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let start = (pop < argumentsList) else let start = absent
+  if (< 0 argumentsList.length) let end = (pop < argumentsList) else let end = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  call %2 = clo<ToIntegerOrInfinity>(start)
+  let relativeStart = [? %2]
+  if (= relativeStart -INF) {
+    let k = 0
+  } else {
+    if (< relativeStart 0) {
+      let k = (max (+ len relativeStart) 0)
+    } else {
+      let k = (min relativeStart len)
+    }
+  }
+  if (= end undefined) {
+    let relativeEnd = len
+  } else {
+    call %3 = clo<ToIntegerOrInfinity>(end)
+    let relativeEnd = [? %3]
+  }
+  if (= relativeEnd -INF) {
+    let final = 0
+  } else {
+    if (< relativeEnd 0) {
+      let final = (max (+ len relativeEnd) 0)
+    } else {
+      let final = (min relativeEnd len)
+    }
+  }
+  let count = (max (- final k) 0)
+  call %4 = clo<ArraySpeciesCreate>(O, count)
+  let A = [? %4]
+  let n = 0
+  loop[repeat] (< k final) {
+    call %5 = clo<ToString>(([number] k))
+    let Pk = [! %5]
+    call %6 = clo<HasProperty>(O, Pk)
+    let kPresent = [? %6]
+    if (= kPresent true) {
+      call %7 = clo<Get>(O, Pk)
+      let kValue = [? %7]
+      call %8 = clo<ToString>(([number] n))
+      call %9 = clo<CreateDataPropertyOrThrow>(A, [! %8], kValue)
+      [? %9]
+    } else {}
+    k = (+ k 1)
+    n = (+ n 1)
+  }
+  call %10 = clo<Set>(A, "length", ([number] n), true)
+  [? %10]
+  return A
+}

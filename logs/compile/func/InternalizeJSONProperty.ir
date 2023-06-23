@@ -1,0 +1,51 @@
+def InternalizeJSONProperty(
+  holder: Object,
+  name: String,
+  reviver: FunctionObject,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<Get>(holder, name)
+  let val = [? %0]
+  if (= (typeof val) @Object) {
+    call %1 = clo<IsArray>(val)
+    let isArray = [? %1]
+    if (= isArray true) {
+      let I = 0
+      call %2 = clo<LengthOfArrayLike>(val)
+      let len = [? %2]
+      loop[repeat] (< I len) {
+        call %3 = clo<ToString>(([number] I))
+        let prop = [! %3]
+        call %4 = clo<InternalizeJSONProperty>(val, prop, reviver)
+        let newElement = [? %4]
+        if (= newElement undefined) {
+          method-call %5 = val->Delete(prop)
+          [? %5]
+        } else {
+          call %6 = clo<CreateDataProperty>(val, prop, newElement)
+          [? %6]
+        }
+        I = (+ I 1)
+      }
+    } else {
+      call %7 = clo<EnumerableOwnPropertyNames>(val, ~key~)
+      let keys = [? %7]
+      %9 = keys
+      %8 = 0
+      loop[foreach] (< %8 %9.length) {
+        let P = %9[%8]
+        call %10 = clo<InternalizeJSONProperty>(val, P, reviver)
+        let newElement = [? %10]
+        if (= newElement undefined) {
+          method-call %11 = val->Delete(P)
+          [? %11]
+        } else {
+          call %12 = clo<CreateDataProperty>(val, P, newElement)
+          [? %12]
+        }
+        %8 = (+ %8 1)
+      }
+    }
+  } else {}
+  call %13 = clo<Call>(reviver, holder, (new [name, val])[#1193])
+  return [? %13]
+}

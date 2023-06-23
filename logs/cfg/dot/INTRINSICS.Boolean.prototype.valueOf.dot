@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2043 {
+    label = "def <BUILTIN>:INTRINSICS.Boolean.prototype.valueOf(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2043_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2043_entry_name -> cluster2043_entry [arrowhead=none, color="black", style=dashed]
+    cluster2043_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2043_entry -> node11645 [color="black"]
+    cluster2043_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2043_exit_name -> cluster2043_exit [arrowhead=none, color="black", style=dashed]
+    cluster2043_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node11645_name [shape=none, label=<<font color="black">Call[11645]</font>>]
+    node11645_name -> node11645 [arrowhead=none, color="black", style=dashed]
+    node11645 [shape=cds, label=<<font color="black">%0 = clo&lt;thisBooleanValue&gt;(this)</font>> color="black" fillcolor="white", style=filled]
+    node11645 -> node11646 [color="black"]
+    node11646_name [shape=none, label=<<font color="black">Block[11646]</font>>]
+    node11646_name -> node11646 [arrowhead=none, color="black", style=dashed]
+    node11646 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node11646 -> cluster2043_exit [color="black"]
+  }
+}

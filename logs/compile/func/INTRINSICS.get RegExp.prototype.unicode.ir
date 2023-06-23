@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.get RegExp.prototype.unicode(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let R = this
+  let cu = 117cu
+  call %0 = clo<RegExpHasFlag>(R, cu)
+  return [? %0]
+}

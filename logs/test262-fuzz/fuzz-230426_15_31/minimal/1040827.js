@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue ) { if ( mustBeTrue ) { return ; } { } throw new Test262Error ( message ) ; } assert . _isSameValue = { has : async function ( x ) { } } ; x => 0 ; assert = [ 0 ] ; function Test262Error ( message ) { this . message = message ; } Test262Error . prototype . toString = function ( ) { return "Test262Error: " + this . message ; } ; var replaceValue = { toString : function ( ) { calls += 1 ; return "b" ; } , } ; var newString = "" . replace ( "a" ) ; assert ( newString , "" ) ; 

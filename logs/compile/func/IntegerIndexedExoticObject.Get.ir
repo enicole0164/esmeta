@@ -1,0 +1,16 @@
+def <INTERNAL>:IntegerIndexedExoticObject.Get(
+  O: IntegerIndexedExoticObject,
+  P: Symbol | String,
+  Receiver: ESValue,
+): Normal[ESValue] | Abrupt {
+  if (= (typeof P) @String) {
+    call %0 = clo<CanonicalNumericIndexString>(P)
+    let numericIndex = %0
+    if (! (= numericIndex undefined)) {
+      call %1 = clo<IntegerIndexedElementGet>(O, numericIndex)
+      return %1
+    } else {}
+  } else {}
+  call %2 = clo<OrdinaryGet>(O, P, Receiver)
+  return [? %2]
+}

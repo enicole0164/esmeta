@@ -1,0 +1,7 @@
+def NewModuleEnvironment(
+  E: EnvironmentRecord,
+): ModuleEnvironmentRecord {
+  let env = (new ModuleEnvironmentRecord())[#390]
+  env.OuterEnv = E
+  return env
+}

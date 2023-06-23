@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.get RegExp.prototype.source(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let R = this
+  if (! (= (typeof R) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1004])
+  } else {}
+  if (= R.OriginalSource absent) {
+    call %0 = clo<SameValue>(R, @EXECUTION_STACK[0].Realm.Intrinsics["%RegExp.prototype%"])
+    if (= %0 true) {
+      return "(?:)"
+    } else {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1005])
+    }
+  } else {}
+  assert (! (= R.OriginalFlags absent))
+  let src = R.OriginalSource
+  let flags = R.OriginalFlags
+  call %1 = clo<EscapeRegExpPattern>(src, flags)
+  return %1
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } return ; throw new Test262Error ( message ) ; } async x => 0 ; assert . sameValue = { dotAll : function ( x ) { } } ; switch ( 0 ) { } function Test262Error ( message ) { this . message = message || "" ; } ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; class WM extends WeakMap { } var map = new WM ( ) ; var obj = { } ; { ; } map . set ( obj , 42 ) ; assert . sameValue ( map . has ( x => 0 ) , true ) ; assert ( map . get ( obj ) , 42 ) ; 

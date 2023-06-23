@@ -1,0 +1,9 @@
+def <SYNTAX>:ForInOfStatement[1,0].VarDeclaredNames(
+  this: Ast:ForInOfStatement[1,0],
+): List[String] {
+  sdo-call %0 = this[0]->BoundNames()
+  let names1 = %0
+  sdo-call %1 = this[2]->VarDeclaredNames()
+  let names2 = %1
+  return (list-concat names1 names2)[#192]
+}

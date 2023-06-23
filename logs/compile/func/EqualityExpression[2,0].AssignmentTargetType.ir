@@ -1,0 +1,5 @@
+def <SYNTAX>:EqualityExpression[2,0].AssignmentTargetType(
+  this: Ast:EqualityExpression[2,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

@@ -1,0 +1,32 @@
+def <CLO>:NewPromiseReactionJob:clo0(
+): Unknown {
+  let promiseCapability = reaction.Capability
+  let type = reaction.Type
+  let handler = reaction.Handler
+  if (= handler ~empty~) {
+    if (= type ~Fulfill~) {
+      call %0 = clo<NormalCompletion>(argument)
+      let handlerResult = %0
+    } else {
+      assert (= type ~Reject~)
+      call %1 = clo<ThrowCompletion>(argument)
+      let handlerResult = %1
+    }
+  } else {
+    call %2 = clo<HostCallJobCallback>(handler, undefined, (new [argument])[#1246])
+    call %3 = clo<Completion>(%2)
+    let handlerResult = %3
+  }
+  if (= promiseCapability undefined) {
+    assert (! (&& (comp? handlerResult) (! (= handlerResult.Type ~normal~))))
+    return ~empty~
+  } else {}
+  assert (? promiseCapability: "PromiseCapabilityRecord")
+  if (&& (comp? handlerResult) (! (= handlerResult.Type ~normal~))) {
+    call %4 = clo<Call>(promiseCapability.Reject, undefined, (new [handlerResult.Value])[#1247])
+    return [? %4]
+  } else {
+    call %5 = clo<Call>(promiseCapability.Resolve, undefined, (new [handlerResult.Value])[#1248])
+    return [? %5]
+  }
+}

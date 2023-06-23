@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster20 {
+    label = "def <NUM>:Number::leftShift(x: Number, y: Number): Unknown["IntegralNumber"]"
+    style = rounded
+    cluster20_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster20_entry_name -> cluster20_entry [arrowhead=none, color="black", style=dashed]
+    cluster20_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster20_entry -> node232 [color="black"]
+    cluster20_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster20_exit_name -> cluster20_exit [arrowhead=none, color="black", style=dashed]
+    cluster20_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node232_name [shape=none, label=<<font color="black">Call[232]</font>>]
+    node232_name -> node232 [arrowhead=none, color="black", style=dashed]
+    node232 [shape=cds, label=<<font color="black">%0 = clo&lt;ToInt32&gt;(x)</font>> color="black" fillcolor="white", style=filled]
+    node232 -> node233 [color="black"]
+    node233_name [shape=none, label=<<font color="black">Block[233]</font>>]
+    node233_name -> node233 [arrowhead=none, color="black", style=dashed]
+    node233 [shape=box, label=<<font color="black">[0] let lnum = [! %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node233 -> node234 [color="black"]
+    node234_name [shape=none, label=<<font color="black">Call[234]</font>>]
+    node234_name -> node234 [arrowhead=none, color="black", style=dashed]
+    node234 [shape=cds, label=<<font color="black">%1 = clo&lt;ToUint32&gt;(y)</font>> color="black" fillcolor="white", style=filled]
+    node234 -> node235 [color="black"]
+    node235_name [shape=none, label=<<font color="black">Block[235]</font>>]
+    node235_name -> node235 [arrowhead=none, color="black", style=dashed]
+    node235 [shape=box, label=<<font color="black">[0] let rnum = [! %1]<BR ALIGN="LEFT"/>[1] let shiftCount = (% ([math] rnum) 32)<BR ALIGN="LEFT"/>[2] return ([number] (&lt;&lt; ([math] lnum) shiftCount))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node235 -> cluster20_exit [color="black"]
+  }
+}

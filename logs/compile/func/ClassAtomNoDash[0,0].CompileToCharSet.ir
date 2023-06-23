@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassAtomNoDash[0,0].CompileToCharSet(
+  this: Ast:ClassAtomNoDash[0,0],
+): Unknown["CharSet"] {
+  (yet "Return the CharSet containing the character matched by |SourceCharacter|.")
+}

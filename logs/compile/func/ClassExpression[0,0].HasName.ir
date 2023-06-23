@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassExpression[0,0].HasName(
+  this: Ast:ClassExpression[0,0],
+): Boolean {
+  return false
+}

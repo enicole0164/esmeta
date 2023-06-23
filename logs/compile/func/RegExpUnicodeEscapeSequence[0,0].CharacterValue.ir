@@ -1,0 +1,11 @@
+def <SYNTAX>:RegExpUnicodeEscapeSequence[0,0].CharacterValue(
+  this: Ast:RegExpUnicodeEscapeSequence[0,0],
+): Unknown["NonnegativeInteger"] {
+  sdo-call %0 = this[0]->CharacterValue()
+  let lead = %0
+  sdo-call %1 = this[1]->CharacterValue()
+  let trail = %1
+  call %2 = clo<UTF16SurrogatePairToCodePoint>(lead, trail)
+  let cp = %2
+  return ([math] cp)
+}

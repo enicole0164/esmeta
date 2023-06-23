@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster962 {
+    label = "def <SYNTAX>:ComputedPropertyName[0,0].PropName(this: Ast:ComputedPropertyName[0,0]): Const[~empty~] | String"
+    style = rounded
+    cluster962_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster962_entry_name -> cluster962_entry [arrowhead=none, color="black", style=dashed]
+    cluster962_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster962_entry -> node3566 [color="black"]
+    cluster962_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster962_exit_name -> cluster962_exit [arrowhead=none, color="black", style=dashed]
+    cluster962_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3566_name [shape=none, label=<<font color="black">Block[3566]</font>>]
+    node3566_name -> node3566 [arrowhead=none, color="black", style=dashed]
+    node3566 [shape=box, label=<<font color="black">[0] return ~empty~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3566 -> cluster962_exit [color="black"]
+  }
+}

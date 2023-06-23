@@ -1,0 +1,13 @@
+def <CONC>:GlobalEnvironmentRecord.HasBinding(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+): Normal[Boolean] | Abrupt {
+  let DclRec = envRec.DeclarativeRecord
+  method-call %0 = DclRec->HasBinding(N)
+  if (= [! %0] true) {
+    return true
+  } else {}
+  let ObjRec = envRec.ObjectRecord
+  method-call %1 = ObjRec->HasBinding(N)
+  return [? %1]
+}

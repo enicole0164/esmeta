@@ -1,0 +1,15 @@
+def <INTERNAL>:ArgumentsExoticObject.Delete(
+  args: ArgumentsExoticObject,
+  P: Symbol | String,
+): Normal[Boolean] | Abrupt {
+  let map = args.ParameterMap
+  call %0 = clo<HasOwnProperty>(map, P)
+  let isMapped = [! %0]
+  call %1 = clo<OrdinaryDelete>(args, P)
+  let result = [? %1]
+  if (&& (= result true) (= isMapped true)) {
+    method-call %2 = map->Delete(P)
+    [! %2]
+  } else {}
+  return result
+}

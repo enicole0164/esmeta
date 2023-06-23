@@ -1,0 +1,7 @@
+def <SYNTAX>:ForStatement[0,7].ContainsUndefinedBreakTarget(
+  this: Ast:ForStatement[0,7],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[3]->ContainsUndefinedBreakTarget(labelSet)
+  return %0
+}

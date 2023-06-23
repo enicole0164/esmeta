@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster42 {
+    label = "def <NUM>:BigInt::unsignedRightShift(x: BigInt, y: BigInt): Abrupt[throw]"
+    style = rounded
+    cluster42_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster42_entry_name -> cluster42_entry [arrowhead=none, color="black", style=dashed]
+    cluster42_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster42_entry -> node335 [color="black"]
+    cluster42_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster42_exit_name -> cluster42_exit [arrowhead=none, color="black", style=dashed]
+    cluster42_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node335_name [shape=none, label=<<font color="black">Block[335]</font>>]
+    node335_name -> node335 [arrowhead=none, color="black", style=dashed]
+    node335 [shape=box, label=<<font color="black">[0] return comp[~throw~/~empty~]((new OrdinaryObject(&quot;Prototype&quot; -&gt; @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%TypeError.prototype%&quot;], &quot;ErrorData&quot; -&gt; undefined))[#11])<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node335 -> cluster42_exit [color="black"]
+  }
+}

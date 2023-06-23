@@ -1,0 +1,870 @@
+[RunJobs] 37: call %0 = clo<InitializeHostDefinedRealm> @ (step 1, 2:18-46)() @ (step 1, 2:18-46) -> 38
+[InitializeHostDefinedRealm] 3911: call %0 = clo<CreateRealm> @ (step 1, 2:25-38)() @ (step 1, 2:25-38) -> 3912
+[CreateRealm] 3854: let realmRec = @REALM -> 3855
+[CreateRealm] 3855: call %0 = clo<CreateIntrinsics> @ (step 2, 3:20-48)(realmRec @ (step 2, 3:37-47) @ (step 2, 3:37-47)) @ (step 2, 3:20-48) -> 3856
+[CreateIntrinsics] 3857: {
+  realmRec @ (step 1, 2:16-26).Intrinsics @ (step 1, 2:16-41) = (new Record())[#394] @ (step 1, 2:45-57) @ (step 1, 2:12-58)
+  realmRec @ (step 2, 3:26-36).Intrinsics @ (step 2, 3:26-51) = @INTRINSICS @ (step 2, 3:12-1202) @ (step 2, 3:12-1202) @ (step 2, 3:12-1202)
+} -> 3858
+[CreateIntrinsics] 3857: {
+  realmRec @ (step 1, 2:16-26).Intrinsics @ (step 1, 2:16-41) = (new Record())[#394] @ (step 1, 2:45-57) @ (step 1, 2:12-58)
+  realmRec @ (step 2, 3:26-36).Intrinsics @ (step 2, 3:26-51) = @INTRINSICS @ (step 2, 3:12-1202) @ (step 2, 3:12-1202) @ (step 2, 3:12-1202)
+} -> 3858
+[CreateIntrinsics] 3858: call %0 = clo<AddRestrictedFunctionProperties> @ (step 3, 4:20-115)(realmRec @ (step 3, 4:52-62).Intrinsics["%Function.prototype%" @ (step 3, 4:52-102)] @ (step 3, 4:52-102) @ (step 3, 4:52-102), realmRec @ (step 3, 4:104-114) @ (step 3, 4:104-114)) @ (step 3, 4:20-115) -> 3859
+[AddRestrictedFunctionProperties] 4330: {
+  assert (! (= realm.Intrinsics["%ThrowTypeError%"] absent)) @ (step 1, 2:12-96)
+  let thrower = realm @ (step 2, 3:29-36).Intrinsics["%ThrowTypeError%" @ (step 2, 3:29-72)] @ (step 2, 3:29-72) @ (step 2, 3:29-72) @ (step 2, 3:12-73)
+} -> 4331
+[AddRestrictedFunctionProperties] 4330: {
+  assert (! (= realm.Intrinsics["%ThrowTypeError%"] absent)) @ (step 1, 2:12-96)
+  let thrower = realm @ (step 2, 3:29-36).Intrinsics["%ThrowTypeError%" @ (step 2, 3:29-72)] @ (step 2, 3:29-72) @ (step 2, 3:29-72) @ (step 2, 3:12-73)
+} -> 4331
+[AddRestrictedFunctionProperties] 4331: call %0 = clo<DefinePropertyOrThrow> @ (step 3, 4:22-174)(F @ (step 3, 4:44-47) @ (step 3, 4:44-47), "caller" @ (step 3, 4:49-59), (new PropertyDescriptor("Get" @ (step 3, 4:61-173) -> thrower @ (step 3, 4:91-100) @ (step 3, 4:91-100), "Set" @ (step 3, 4:61-173) -> thrower @ (step 3, 4:111-120) @ (step 3, 4:111-120), "Enumerable" @ (step 3, 4:61-173) -> false @ (step 3, 4:138-145), "Configurable" @ (step 3, 4:61-173) -> true @ (step 3, 4:165-171)))[#423] @ (step 3, 4:61-173)) @ (step 3, 4:22-174) -> 4332
+[DefinePropertyOrThrow] 1119: method-call %0 = O @ (step 1, 2:61-64)->DefineOwnProperty(P @ (step 1, 2:98-101) @ (step 1, 2:98-101), desc @ (step 1, 2:103-109) @ (step 1, 2:103-109)) @ (step 1, 2:31-110) -> 1120
+[<INTERNAL>:OrdinaryObject.DefineOwnProperty] 3967: call %0 = clo<OrdinaryDefineOwnProperty> @ (step 1, 2:21-64)(O @ (step 1, 2:47-50) @ (step 1, 2:47-50), P @ (step 1, 2:52-55) @ (step 1, 2:52-55), Desc @ (step 1, 2:57-63) @ (step 1, 2:57-63)) @ (step 1, 2:21-64) -> 3968
+[OrdinaryDefineOwnProperty] 3969: method-call %0 = O @ (step 1, 2:63-66)->GetOwnProperty(P @ (step 1, 2:97-100) @ (step 1, 2:97-100)) @ (step 1, 2:33-101) -> 3970
+[<INTERNAL>:OrdinaryObject.GetOwnProperty] 3956: call %0 = clo<OrdinaryGetOwnProperty> @ (step 1, 2:19-51)(O @ (step 1, 2:42-45) @ (step 1, 2:42-45), P @ (step 1, 2:47-50) @ (step 1, 2:47-50)) @ (step 1, 2:19-51) -> 3957
+[OrdinaryGetOwnProperty] 3958: if (= O.SubMap[P] absent) then 3959 else 3960
+[OrdinaryGetOwnProperty] 3959: return undefined
+[OrdinaryGetOwnProperty] Exited
+[<INTERNAL>:OrdinaryObject.GetOwnProperty] 3957: return %0 @ (step 1, 2:19-51) @ (step 1, 2:19-51) @ (step 1, 2:12-52)
+[<INTERNAL>:OrdinaryObject.GetOwnProperty] Exited
+[OrdinaryDefineOwnProperty] 3970: let current = [? %0 @ (step 1, 2:33-101) @ (step 1, 2:33-101)] @ (step 1, 2:31-101) @ (step 1, 2:14-102) -> 3971
+[OrdinaryDefineOwnProperty] 3971: call %1 = clo<IsExtensible> @ (step 2, 3:36-53)(O @ (step 2, 3:49-52) @ (step 2, 3:49-52)) @ (step 2, 3:36-53) -> 3972
+[IsExtensible] 893: method-call %0 = O @ (step 1, 2:51-54)->IsExtensible() @ (step 1, 2:21-84) -> 894
+[<INTERNAL>:OrdinaryObject.IsExtensible] 3950: call %0 = clo<OrdinaryIsExtensible> @ (step 1, 2:19-44)(O @ (step 1, 2:40-43) @ (step 1, 2:40-43)) @ (step 1, 2:19-44) -> 3951
+[OrdinaryIsExtensible] 3952: return O @ (step 1, 2:21-24).Extensible @ (step 1, 2:21-39) @ (step 1, 2:21-39) @ (step 1, 2:14-40)
+[OrdinaryIsExtensible] Exited
+[<INTERNAL>:OrdinaryObject.IsExtensible] 3951: return %0 @ (step 1, 2:19-44) @ (step 1, 2:19-44) @ (step 1, 2:12-45)
+[<INTERNAL>:OrdinaryObject.IsExtensible] Exited
+[IsExtensible] 894: return [? %0 @ (step 1, 2:21-84) @ (step 1, 2:21-84)] @ (step 1, 2:19-84) @ (step 1, 2:12-85)
+[IsExtensible] Exited
+[OrdinaryDefineOwnProperty] 3972: let extensible = [? %1 @ (step 2, 3:36-53) @ (step 2, 3:36-53)] @ (step 2, 3:34-53) @ (step 2, 3:14-54) -> 3973
+[OrdinaryDefineOwnProperty] 3973: call %2 = clo<ValidateAndApplyPropertyDescriptor> @ (step 3, 4:21-98)(O @ (step 3, 4:56-59) @ (step 3, 4:56-59), P @ (step 3, 4:61-64) @ (step 3, 4:61-64), extensible @ (step 3, 4:66-78) @ (step 3, 4:66-78), Desc @ (step 3, 4:80-86) @ (step 3, 4:80-86), current @ (step 3, 4:88-97) @ (step 3, 4:88-97)) @ (step 3, 4:21-98) -> 3974
+[ValidateAndApplyPropertyDescriptor] 3977: call %0 = clo<IsPropertyKey> @ (step 1, 2:22-40)(P @ (step 1, 2:36-39) @ (step 1, 2:36-39)) @ (step 1, 2:22-40) -> 3978
+[IsPropertyKey] 902: if (= (typeof argument @ (step 1, 2:20-30) @ (step 1, 2:20-30)) @ (step 1, 2:15-31) @String @ (step 1, 2:35-41) @ (step 1, 2:35-41)) @ (step 1, 2:15-41) then 903 else 904
+[IsPropertyKey] 903: return true @ (step 1, 2:50-56) @ (step 1, 2:43-57)
+[IsPropertyKey] Exited
+[ValidateAndApplyPropertyDescriptor] 3978: assert (= %0 @ (step 1, 2:22-40) @ (step 1, 2:22-40) true @ (step 1, 2:44-50)) @ (step 1, 2:22-50) @ (step 1, 2:14-51) -> 3979
+[ValidateAndApplyPropertyDescriptor] 3979: if (= current @ (step 2, 3:17-26) @ (step 2, 3:17-26) undefined @ (step 2, 3:30-41)) @ (step 2, 3:17-41) then 3980 else 4015
+[ValidateAndApplyPropertyDescriptor] 3980: if (= extensible @ (step 2.a, 4:19-31) @ (step 2.a, 4:19-31) false @ (step 2.a, 4:35-42)) @ (step 2.a, 4:19-42) then 3981 else 3982
+[ValidateAndApplyPropertyDescriptor] 3982: if (= O @ (step 2.b, 5:19-22) @ (step 2.b, 5:19-22) undefined @ (step 2.b, 5:26-37)) @ (step 2.b, 5:19-37) then 3983 else 3984
+[ValidateAndApplyPropertyDescriptor] 3984: call %1 = clo<IsAccessorDescriptor> @ (step 2.c, 6:19-47)(Desc @ (step 2.c, 6:40-46) @ (step 2.c, 6:40-46)) @ (step 2.c, 6:19-47) -> 3985
+[IsAccessorDescriptor] 461: if (= Desc @ (step 1, 2:17-23) @ (step 1, 2:17-23) undefined @ (step 1, 2:27-38)) @ (step 1, 2:17-38) then 462 else 463
+[IsAccessorDescriptor] 463: if (! (= Desc @ (step 2, 3:17-23).Get @ (step 2, 3:17-43) @ (step 2, 3:17-43) absent @ (step 2, 3:17-43)) @ (step 2, 3:17-43)) @ (step 2, 3:17-43) then 464 else 465
+[IsAccessorDescriptor] 464: return true @ (step 2, 3:52-58) @ (step 2, 3:45-59)
+[IsAccessorDescriptor] Exited
+[ValidateAndApplyPropertyDescriptor] 3985: if (= %1 @ (step 2.c, 6:19-47) @ (step 2.c, 6:19-47) true @ (step 2.c, 6:51-57)) @ (step 2.c, 6:19-57) then 3986 else 4000
+[ValidateAndApplyPropertyDescriptor] 3986: let ap = (new PropertyDescriptor())[#401] -> 3987
+[ValidateAndApplyPropertyDescriptor] 3987: if (= Desc.Get absent) then 3988 else 3989
+[ValidateAndApplyPropertyDescriptor] 3989: ap.Get = Desc.Get -> 3990
+[ValidateAndApplyPropertyDescriptor] 3990: if (= Desc.Set absent) then 3991 else 3992
+[ValidateAndApplyPropertyDescriptor] 3992: ap.Set = Desc.Set -> 3993
+[ValidateAndApplyPropertyDescriptor] 3993: if (= Desc.Enumerable absent) then 3994 else 3995
+[ValidateAndApplyPropertyDescriptor] 3995: ap.Enumerable = Desc.Enumerable -> 3996
+[ValidateAndApplyPropertyDescriptor] 3996: if (= Desc.Configurable absent) then 3997 else 3998
+[ValidateAndApplyPropertyDescriptor] 3998: ap.Configurable = Desc.Configurable -> 3999
+[ValidateAndApplyPropertyDescriptor] 3999: O.SubMap[P] = ap -> 4014
+[ValidateAndApplyPropertyDescriptor] 4014: return true @ (step 2.e, 10:23-29) @ (step 2.e, 10:16-30)
+[ValidateAndApplyPropertyDescriptor] Exited
+[OrdinaryDefineOwnProperty] 3974: return %2 @ (step 3, 4:21-98) @ (step 3, 4:21-98) @ (step 3, 4:14-99)
+[OrdinaryDefineOwnProperty] Exited
+[<INTERNAL>:OrdinaryObject.DefineOwnProperty] 3968: return [? %0 @ (step 1, 2:21-64) @ (step 1, 2:21-64)] @ (step 1, 2:19-64) @ (step 1, 2:12-65)
+[<INTERNAL>:OrdinaryObject.DefineOwnProperty] Exited
+[DefinePropertyOrThrow] 1120: let success = [? %0 @ (step 1, 2:31-110) @ (step 1, 2:31-110)] @ (step 1, 2:29-110) @ (step 1, 2:12-111) -> 1121
+[DefinePropertyOrThrow] 1121: if (= success @ (step 2, 3:15-24) @ (step 2, 3:15-24) false @ (step 2, 3:28-35)) @ (step 2, 3:15-35) then 1122 else 1123
+[DefinePropertyOrThrow] 1123: return ~unused~ @ (step 3, 4:19-27) @ (step 3, 4:12-28)
+[DefinePropertyOrThrow] Exited
+[AddRestrictedFunctionProperties] 4332: [! %0 @ (step 3, 4:22-174) @ (step 3, 4:22-174)] @ (step 3, 4:20-174) @ (step 3, 4:12-175) -> 4333
+[AddRestrictedFunctionProperties] 4333: call %1 = clo<DefinePropertyOrThrow> @ (step 4, 5:22-177)(F @ (step 4, 5:44-47) @ (step 4, 5:44-47), "arguments" @ (step 4, 5:49-62), (new PropertyDescriptor("Get" @ (step 4, 5:64-176) -> thrower @ (step 4, 5:94-103) @ (step 4, 5:94-103), "Set" @ (step 4, 5:64-176) -> thrower @ (step 4, 5:114-123) @ (step 4, 5:114-123), "Enumerable" @ (step 4, 5:64-176) -> false @ (step 4, 5:141-148), "Configurable" @ (step 4, 5:64-176) -> true @ (step 4, 5:168-174)))[#424] @ (step 4, 5:64-176)) @ (step 4, 5:22-177) -> 4334
+[DefinePropertyOrThrow] 1119: method-call %0 = O @ (step 1, 2:61-64)->DefineOwnProperty(P @ (step 1, 2:98-101) @ (step 1, 2:98-101), desc @ (step 1, 2:103-109) @ (step 1, 2:103-109)) @ (step 1, 2:31-110) -> 1120
+[<INTERNAL>:OrdinaryObject.DefineOwnProperty] 3967: call %0 = clo<OrdinaryDefineOwnProperty> @ (step 1, 2:21-64)(O @ (step 1, 2:47-50) @ (step 1, 2:47-50), P @ (step 1, 2:52-55) @ (step 1, 2:52-55), Desc @ (step 1, 2:57-63) @ (step 1, 2:57-63)) @ (step 1, 2:21-64) -> 3968
+[OrdinaryDefineOwnProperty] 3969: method-call %0 = O @ (step 1, 2:63-66)->GetOwnProperty(P @ (step 1, 2:97-100) @ (step 1, 2:97-100)) @ (step 1, 2:33-101) -> 3970
+[<INTERNAL>:OrdinaryObject.GetOwnProperty] 3956: call %0 = clo<OrdinaryGetOwnProperty> @ (step 1, 2:19-51)(O @ (step 1, 2:42-45) @ (step 1, 2:42-45), P @ (step 1, 2:47-50) @ (step 1, 2:47-50)) @ (step 1, 2:19-51) -> 3957
+[OrdinaryGetOwnProperty] 3958: if (= O.SubMap[P] absent) then 3959 else 3960
+[OrdinaryGetOwnProperty] 3959: return undefined
+[OrdinaryGetOwnProperty] Exited
+[<INTERNAL>:OrdinaryObject.GetOwnProperty] 3957: return %0 @ (step 1, 2:19-51) @ (step 1, 2:19-51) @ (step 1, 2:12-52)
+[<INTERNAL>:OrdinaryObject.GetOwnProperty] Exited
+[OrdinaryDefineOwnProperty] 3970: let current = [? %0 @ (step 1, 2:33-101) @ (step 1, 2:33-101)] @ (step 1, 2:31-101) @ (step 1, 2:14-102) -> 3971
+[OrdinaryDefineOwnProperty] 3971: call %1 = clo<IsExtensible> @ (step 2, 3:36-53)(O @ (step 2, 3:49-52) @ (step 2, 3:49-52)) @ (step 2, 3:36-53) -> 3972
+[IsExtensible] 893: method-call %0 = O @ (step 1, 2:51-54)->IsExtensible() @ (step 1, 2:21-84) -> 894
+[<INTERNAL>:OrdinaryObject.IsExtensible] 3950: call %0 = clo<OrdinaryIsExtensible> @ (step 1, 2:19-44)(O @ (step 1, 2:40-43) @ (step 1, 2:40-43)) @ (step 1, 2:19-44) -> 3951
+[OrdinaryIsExtensible] 3952: return O @ (step 1, 2:21-24).Extensible @ (step 1, 2:21-39) @ (step 1, 2:21-39) @ (step 1, 2:14-40)
+[OrdinaryIsExtensible] Exited
+[<INTERNAL>:OrdinaryObject.IsExtensible] 3951: return %0 @ (step 1, 2:19-44) @ (step 1, 2:19-44) @ (step 1, 2:12-45)
+[<INTERNAL>:OrdinaryObject.IsExtensible] Exited
+[IsExtensible] 894: return [? %0 @ (step 1, 2:21-84) @ (step 1, 2:21-84)] @ (step 1, 2:19-84) @ (step 1, 2:12-85)
+[IsExtensible] Exited
+[OrdinaryDefineOwnProperty] 3972: let extensible = [? %1 @ (step 2, 3:36-53) @ (step 2, 3:36-53)] @ (step 2, 3:34-53) @ (step 2, 3:14-54) -> 3973
+[OrdinaryDefineOwnProperty] 3973: call %2 = clo<ValidateAndApplyPropertyDescriptor> @ (step 3, 4:21-98)(O @ (step 3, 4:56-59) @ (step 3, 4:56-59), P @ (step 3, 4:61-64) @ (step 3, 4:61-64), extensible @ (step 3, 4:66-78) @ (step 3, 4:66-78), Desc @ (step 3, 4:80-86) @ (step 3, 4:80-86), current @ (step 3, 4:88-97) @ (step 3, 4:88-97)) @ (step 3, 4:21-98) -> 3974
+[ValidateAndApplyPropertyDescriptor] 3977: call %0 = clo<IsPropertyKey> @ (step 1, 2:22-40)(P @ (step 1, 2:36-39) @ (step 1, 2:36-39)) @ (step 1, 2:22-40) -> 3978
+[IsPropertyKey] 902: if (= (typeof argument @ (step 1, 2:20-30) @ (step 1, 2:20-30)) @ (step 1, 2:15-31) @String @ (step 1, 2:35-41) @ (step 1, 2:35-41)) @ (step 1, 2:15-41) then 903 else 904
+[IsPropertyKey] 903: return true @ (step 1, 2:50-56) @ (step 1, 2:43-57)
+[IsPropertyKey] Exited
+[ValidateAndApplyPropertyDescriptor] 3978: assert (= %0 @ (step 1, 2:22-40) @ (step 1, 2:22-40) true @ (step 1, 2:44-50)) @ (step 1, 2:22-50) @ (step 1, 2:14-51) -> 3979
+[ValidateAndApplyPropertyDescriptor] 3979: if (= current @ (step 2, 3:17-26) @ (step 2, 3:17-26) undefined @ (step 2, 3:30-41)) @ (step 2, 3:17-41) then 3980 else 4015
+[ValidateAndApplyPropertyDescriptor] 3980: if (= extensible @ (step 2.a, 4:19-31) @ (step 2.a, 4:19-31) false @ (step 2.a, 4:35-42)) @ (step 2.a, 4:19-42) then 3981 else 3982
+[ValidateAndApplyPropertyDescriptor] 3982: if (= O @ (step 2.b, 5:19-22) @ (step 2.b, 5:19-22) undefined @ (step 2.b, 5:26-37)) @ (step 2.b, 5:19-37) then 3983 else 3984
+[ValidateAndApplyPropertyDescriptor] 3984: call %1 = clo<IsAccessorDescriptor> @ (step 2.c, 6:19-47)(Desc @ (step 2.c, 6:40-46) @ (step 2.c, 6:40-46)) @ (step 2.c, 6:19-47) -> 3985
+[IsAccessorDescriptor] 461: if (= Desc @ (step 1, 2:17-23) @ (step 1, 2:17-23) undefined @ (step 1, 2:27-38)) @ (step 1, 2:17-38) then 462 else 463
+[IsAccessorDescriptor] 463: if (! (= Desc @ (step 2, 3:17-23).Get @ (step 2, 3:17-43) @ (step 2, 3:17-43) absent @ (step 2, 3:17-43)) @ (step 2, 3:17-43)) @ (step 2, 3:17-43) then 464 else 465
+[IsAccessorDescriptor] 464: return true @ (step 2, 3:52-58) @ (step 2, 3:45-59)
+[IsAccessorDescriptor] Exited
+[ValidateAndApplyPropertyDescriptor] 3985: if (= %1 @ (step 2.c, 6:19-47) @ (step 2.c, 6:19-47) true @ (step 2.c, 6:51-57)) @ (step 2.c, 6:19-57) then 3986 else 4000
+[ValidateAndApplyPropertyDescriptor] 3986: let ap = (new PropertyDescriptor())[#401] -> 3987
+[ValidateAndApplyPropertyDescriptor] 3987: if (= Desc.Get absent) then 3988 else 3989
+[ValidateAndApplyPropertyDescriptor] 3989: ap.Get = Desc.Get -> 3990
+[ValidateAndApplyPropertyDescriptor] 3990: if (= Desc.Set absent) then 3991 else 3992
+[ValidateAndApplyPropertyDescriptor] 3992: ap.Set = Desc.Set -> 3993
+[ValidateAndApplyPropertyDescriptor] 3993: if (= Desc.Enumerable absent) then 3994 else 3995
+[ValidateAndApplyPropertyDescriptor] 3995: ap.Enumerable = Desc.Enumerable -> 3996
+[ValidateAndApplyPropertyDescriptor] 3996: if (= Desc.Configurable absent) then 3997 else 3998
+[ValidateAndApplyPropertyDescriptor] 3998: ap.Configurable = Desc.Configurable -> 3999
+[ValidateAndApplyPropertyDescriptor] 3999: O.SubMap[P] = ap -> 4014
+[ValidateAndApplyPropertyDescriptor] 4014: return true @ (step 2.e, 10:23-29) @ (step 2.e, 10:16-30)
+[ValidateAndApplyPropertyDescriptor] Exited
+[OrdinaryDefineOwnProperty] 3974: return %2 @ (step 3, 4:21-98) @ (step 3, 4:21-98) @ (step 3, 4:14-99)
+[OrdinaryDefineOwnProperty] Exited
+[<INTERNAL>:OrdinaryObject.DefineOwnProperty] 3968: return [? %0 @ (step 1, 2:21-64) @ (step 1, 2:21-64)] @ (step 1, 2:19-64) @ (step 1, 2:12-65)
+[<INTERNAL>:OrdinaryObject.DefineOwnProperty] Exited
+[DefinePropertyOrThrow] 1120: let success = [? %0 @ (step 1, 2:31-110) @ (step 1, 2:31-110)] @ (step 1, 2:29-110) @ (step 1, 2:12-111) -> 1121
+[DefinePropertyOrThrow] 1121: if (= success @ (step 2, 3:15-24) @ (step 2, 3:15-24) false @ (step 2, 3:28-35)) @ (step 2, 3:15-35) then 1122 else 1123
+[DefinePropertyOrThrow] 1123: return ~unused~ @ (step 3, 4:19-27) @ (step 3, 4:12-28)
+[DefinePropertyOrThrow] Exited
+[AddRestrictedFunctionProperties] 4334: {
+  [! %1 @ (step 4, 5:22-177) @ (step 4, 5:22-177)] @ (step 4, 5:20-177) @ (step 4, 5:12-178)
+  return ~unused~ @ (step 5, 6:19-27) @ (step 5, 6:12-28)
+}
+[AddRestrictedFunctionProperties] 4334: {
+  [! %1 @ (step 4, 5:22-177) @ (step 4, 5:22-177)] @ (step 4, 5:20-177) @ (step 4, 5:12-178)
+  return ~unused~ @ (step 5, 6:19-27) @ (step 5, 6:12-28)
+}
+[AddRestrictedFunctionProperties] Exited
+[CreateIntrinsics] 3859: return ~unused~ @ (step 4, 5:19-27) @ (step 4, 5:12-28)
+[CreateIntrinsics] Exited
+[CreateRealm] 3856: {
+  realmRec @ (step 3, 4:16-26).GlobalObject @ (step 3, 4:16-43) = undefined @ (step 3, 4:47-58) @ (step 3, 4:12-59)
+  realmRec @ (step 4, 5:16-26).GlobalEnv @ (step 4, 5:16-40) = undefined @ (step 4, 5:44-55) @ (step 4, 5:12-56)
+  realmRec @ (step 5, 6:16-26).TemplateMap @ (step 5, 6:16-42) = (new [])[#393] @ (step 5, 6:46-62) @ (step 5, 6:12-63)
+  return realmRec @ (step 6, 7:19-29) @ (step 6, 7:19-29) @ (step 6, 7:12-30)
+}
+[CreateRealm] 3856: {
+  realmRec @ (step 3, 4:16-26).GlobalObject @ (step 3, 4:16-43) = undefined @ (step 3, 4:47-58) @ (step 3, 4:12-59)
+  realmRec @ (step 4, 5:16-26).GlobalEnv @ (step 4, 5:16-40) = undefined @ (step 4, 5:44-55) @ (step 4, 5:12-56)
+  realmRec @ (step 5, 6:16-26).TemplateMap @ (step 5, 6:16-42) = (new [])[#393] @ (step 5, 6:46-62) @ (step 5, 6:12-63)
+  return realmRec @ (step 6, 7:19-29) @ (step 6, 7:19-29) @ (step 6, 7:12-30)
+}
+[CreateRealm] 3856: {
+  realmRec @ (step 3, 4:16-26).GlobalObject @ (step 3, 4:16-43) = undefined @ (step 3, 4:47-58) @ (step 3, 4:12-59)
+  realmRec @ (step 4, 5:16-26).GlobalEnv @ (step 4, 5:16-40) = undefined @ (step 4, 5:44-55) @ (step 4, 5:12-56)
+  realmRec @ (step 5, 6:16-26).TemplateMap @ (step 5, 6:16-42) = (new [])[#393] @ (step 5, 6:46-62) @ (step 5, 6:12-63)
+  return realmRec @ (step 6, 7:19-29) @ (step 6, 7:19-29) @ (step 6, 7:12-30)
+}
+[CreateRealm] 3856: {
+  realmRec @ (step 3, 4:16-26).GlobalObject @ (step 3, 4:16-43) = undefined @ (step 3, 4:47-58) @ (step 3, 4:12-59)
+  realmRec @ (step 4, 5:16-26).GlobalEnv @ (step 4, 5:16-40) = undefined @ (step 4, 5:44-55) @ (step 4, 5:12-56)
+  realmRec @ (step 5, 6:16-26).TemplateMap @ (step 5, 6:16-42) = (new [])[#393] @ (step 5, 6:46-62) @ (step 5, 6:12-63)
+  return realmRec @ (step 6, 7:19-29) @ (step 6, 7:19-29) @ (step 6, 7:12-30)
+}
+[CreateRealm] Exited
+[InitializeHostDefinedRealm] 3912: {
+  let realm = %0 @ (step 1, 2:25-38) @ (step 1, 2:25-38) @ (step 1, 2:10-39)
+  let newContext = (new ExecutionContext())[#398] @ (step 2, 3:30-53) @ (step 2, 3:10-54)
+  newContext @ (step 3, 4:30-42).Function @ (step 3, 4:14-42) = null @ (step 3, 4:46-52) @ (step 3, 4:10-53)
+  newContext @ (step 4, 5:27-39).Realm @ (step 4, 5:14-39) = realm @ (step 4, 5:43-50) @ (step 4, 5:43-50) @ (step 4, 5:10-51)
+  newContext @ (step 5, 6:36-48).ScriptOrModule @ (step 5, 6:14-48) = null @ (step 5, 6:52-58) @ (step 5, 6:10-59)
+  push newContext @ (step 6, 7:15-27) @ (step 6, 7:10-112) > @EXECUTION_STACK @ (step 6, 7:10-112) @ (step 6, 7:10-112) @ (step 6, 7:10-112)
+  let global = undefined
+  let thisValue = undefined
+} -> 3913
+[InitializeHostDefinedRealm] 3912: {
+  let realm = %0 @ (step 1, 2:25-38) @ (step 1, 2:25-38) @ (step 1, 2:10-39)
+  let newContext = (new ExecutionContext())[#398] @ (step 2, 3:30-53) @ (step 2, 3:10-54)
+  newContext @ (step 3, 4:30-42).Function @ (step 3, 4:14-42) = null @ (step 3, 4:46-52) @ (step 3, 4:10-53)
+  newContext @ (step 4, 5:27-39).Realm @ (step 4, 5:14-39) = realm @ (step 4, 5:43-50) @ (step 4, 5:43-50) @ (step 4, 5:10-51)
+  newContext @ (step 5, 6:36-48).ScriptOrModule @ (step 5, 6:14-48) = null @ (step 5, 6:52-58) @ (step 5, 6:10-59)
+  push newContext @ (step 6, 7:15-27) @ (step 6, 7:10-112) > @EXECUTION_STACK @ (step 6, 7:10-112) @ (step 6, 7:10-112) @ (step 6, 7:10-112)
+  let global = undefined
+  let thisValue = undefined
+} -> 3913
+[InitializeHostDefinedRealm] 3912: {
+  let realm = %0 @ (step 1, 2:25-38) @ (step 1, 2:25-38) @ (step 1, 2:10-39)
+  let newContext = (new ExecutionContext())[#398] @ (step 2, 3:30-53) @ (step 2, 3:10-54)
+  newContext @ (step 3, 4:30-42).Function @ (step 3, 4:14-42) = null @ (step 3, 4:46-52) @ (step 3, 4:10-53)
+  newContext @ (step 4, 5:27-39).Realm @ (step 4, 5:14-39) = realm @ (step 4, 5:43-50) @ (step 4, 5:43-50) @ (step 4, 5:10-51)
+  newContext @ (step 5, 6:36-48).ScriptOrModule @ (step 5, 6:14-48) = null @ (step 5, 6:52-58) @ (step 5, 6:10-59)
+  push newContext @ (step 6, 7:15-27) @ (step 6, 7:10-112) > @EXECUTION_STACK @ (step 6, 7:10-112) @ (step 6, 7:10-112) @ (step 6, 7:10-112)
+  let global = undefined
+  let thisValue = undefined
+} -> 3913
+[InitializeHostDefinedRealm] 3912: {
+  let realm = %0 @ (step 1, 2:25-38) @ (step 1, 2:25-38) @ (step 1, 2:10-39)
+  let newContext = (new ExecutionContext())[#398] @ (step 2, 3:30-53) @ (step 2, 3:10-54)
+  newContext @ (step 3, 4:30-42).Function @ (step 3, 4:14-42) = null @ (step 3, 4:46-52) @ (step 3, 4:10-53)
+  newContext @ (step 4, 5:27-39).Realm @ (step 4, 5:14-39) = realm @ (step 4, 5:43-50) @ (step 4, 5:43-50) @ (step 4, 5:10-51)
+  newContext @ (step 5, 6:36-48).ScriptOrModule @ (step 5, 6:14-48) = null @ (step 5, 6:52-58) @ (step 5, 6:10-59)
+  push newContext @ (step 6, 7:15-27) @ (step 6, 7:10-112) > @EXECUTION_STACK @ (step 6, 7:10-112) @ (step 6, 7:10-112) @ (step 6, 7:10-112)
+  let global = undefined
+  let thisValue = undefined
+} -> 3913
+[InitializeHostDefinedRealm] 3912: {
+  let realm = %0 @ (step 1, 2:25-38) @ (step 1, 2:25-38) @ (step 1, 2:10-39)
+  let newContext = (new ExecutionContext())[#398] @ (step 2, 3:30-53) @ (step 2, 3:10-54)
+  newContext @ (step 3, 4:30-42).Function @ (step 3, 4:14-42) = null @ (step 3, 4:46-52) @ (step 3, 4:10-53)
+  newContext @ (step 4, 5:27-39).Realm @ (step 4, 5:14-39) = realm @ (step 4, 5:43-50) @ (step 4, 5:43-50) @ (step 4, 5:10-51)
+  newContext @ (step 5, 6:36-48).ScriptOrModule @ (step 5, 6:14-48) = null @ (step 5, 6:52-58) @ (step 5, 6:10-59)
+  push newContext @ (step 6, 7:15-27) @ (step 6, 7:10-112) > @EXECUTION_STACK @ (step 6, 7:10-112) @ (step 6, 7:10-112) @ (step 6, 7:10-112)
+  let global = undefined
+  let thisValue = undefined
+} -> 3913
+[InitializeHostDefinedRealm] 3912: {
+  let realm = %0 @ (step 1, 2:25-38) @ (step 1, 2:25-38) @ (step 1, 2:10-39)
+  let newContext = (new ExecutionContext())[#398] @ (step 2, 3:30-53) @ (step 2, 3:10-54)
+  newContext @ (step 3, 4:30-42).Function @ (step 3, 4:14-42) = null @ (step 3, 4:46-52) @ (step 3, 4:10-53)
+  newContext @ (step 4, 5:27-39).Realm @ (step 4, 5:14-39) = realm @ (step 4, 5:43-50) @ (step 4, 5:43-50) @ (step 4, 5:10-51)
+  newContext @ (step 5, 6:36-48).ScriptOrModule @ (step 5, 6:14-48) = null @ (step 5, 6:52-58) @ (step 5, 6:10-59)
+  push newContext @ (step 6, 7:15-27) @ (step 6, 7:10-112) > @EXECUTION_STACK @ (step 6, 7:10-112) @ (step 6, 7:10-112) @ (step 6, 7:10-112)
+  let global = undefined
+  let thisValue = undefined
+} -> 3913
+[InitializeHostDefinedRealm] 3912: {
+  let realm = %0 @ (step 1, 2:25-38) @ (step 1, 2:25-38) @ (step 1, 2:10-39)
+  let newContext = (new ExecutionContext())[#398] @ (step 2, 3:30-53) @ (step 2, 3:10-54)
+  newContext @ (step 3, 4:30-42).Function @ (step 3, 4:14-42) = null @ (step 3, 4:46-52) @ (step 3, 4:10-53)
+  newContext @ (step 4, 5:27-39).Realm @ (step 4, 5:14-39) = realm @ (step 4, 5:43-50) @ (step 4, 5:43-50) @ (step 4, 5:10-51)
+  newContext @ (step 5, 6:36-48).ScriptOrModule @ (step 5, 6:14-48) = null @ (step 5, 6:52-58) @ (step 5, 6:10-59)
+  push newContext @ (step 6, 7:15-27) @ (step 6, 7:10-112) > @EXECUTION_STACK @ (step 6, 7:10-112) @ (step 6, 7:10-112) @ (step 6, 7:10-112)
+  let global = undefined
+  let thisValue = undefined
+} -> 3913
+[InitializeHostDefinedRealm] 3913: call %1 = clo<SetRealmGlobalObject> @ (step 9, 10:18-70)(realm @ (step 9, 10:39-46) @ (step 9, 10:39-46), global @ (step 9, 10:48-56) @ (step 9, 10:48-56), thisValue @ (step 9, 10:58-69) @ (step 9, 10:58-69)) @ (step 9, 10:18-70) -> 3914
+[SetRealmGlobalObject] 3860: if (= globalObj @ (step 1, 2:15-26) @ (step 1, 2:15-26) undefined @ (step 1, 2:30-41)) @ (step 1, 2:15-41) then 3861 else 3864
+[SetRealmGlobalObject] 3861: let intrinsics = realmRec @ (step 1.a, 3:34-44).Intrinsics @ (step 1.a, 3:34-59) @ (step 1.a, 3:34-59) @ (step 1.a, 3:14-60) -> 3862
+[SetRealmGlobalObject] 3862: call %0 = clo<OrdinaryObjectCreate> @ (step 1.b, 4:33-90)(intrinsics @ (step 1.b, 4:54-66)["%Object.prototype%" @ (step 1.b, 4:54-89)] @ (step 1.b, 4:54-89) @ (step 1.b, 4:54-89)) @ (step 1.b, 4:33-90) -> 3863
+[OrdinaryObjectCreate] 4205: let internalSlotsList = (new ["Prototype" @ (step 1, 2:41-54), "Extensible" @ (step 1, 2:56-70)])[#413] @ (step 1, 2:39-72) @ (step 1, 2:12-73) -> 4206
+[OrdinaryObjectCreate] 4206: if (! (= additionalInternalSlotsList @ (step 2, 3:15-44) @ (step 2, 3:15-44) absent @ (step 2, 3:15-55)) @ (step 2, 3:15-55)) @ (step 2, 3:15-55) then 4207 else 4208
+[OrdinaryObjectCreate] 4208: call %0 = clo<MakeBasicObject> @ (step 3, 4:23-59)(internalSlotsList @ (step 3, 4:39-58) @ (step 3, 4:39-58)) @ (step 3, 4:23-59) -> 4209
+[MakeBasicObject] 1087: {
+  let obj = (new Object())[#39]
+  let idx = 0
+} -> 1088
+[MakeBasicObject] 1088: loop[repeat] (< idx internalSlotsList.length) then 1089 else 1090
+[MakeBasicObject] 1089: {
+  obj[internalSlotsList[idx]] = undefined
+  idx = (+ idx 1)
+} -> 1088
+[MakeBasicObject] 1088: loop[repeat] (< idx internalSlotsList.length) then 1089 else 1090
+[MakeBasicObject] 1089: {
+  obj[internalSlotsList[idx]] = undefined
+  idx = (+ idx 1)
+} -> 1088
+[MakeBasicObject] 1088: loop[repeat] (< idx internalSlotsList.length) then 1089 else 1090
+[MakeBasicObject] 1090: {
+  nop
+  assert (yet "If the caller will not be overriding both _obj_'s [[GetPrototypeOf]] and [[SetPrototypeOf]] essential internal methods, then _internalSlotsList_ contains [[Prototype]].") @ (step 3, 4:12-188)
+  assert (yet "If the caller will not be overriding all of _obj_'s [[SetPrototypeOf]], [[IsExtensible]], and [[PreventExtensions]] essential internal methods, then _internalSlotsList_ contains [[Extensible]].") @ (step 4, 5:12-213)
+} -> 1091
+[MakeBasicObject] 1091: if (contains internalSlotsList @ (step 5, 6:15-34) @ (step 5, 6:15-34) "Extensible" @ (step 5, 6:44-58)) @ (step 5, 6:15-58) then 1092 else 1093
+[MakeBasicObject] 1092: obj @ (step 5, 6:64-69).Extensible @ (step 5, 6:64-84) = true @ (step 5, 6:88-94) @ (step 5, 6:60-95) -> 1093
+[MakeBasicObject] 1093: return obj @ (step 6, 7:19-24) @ (step 6, 7:19-24) @ (step 6, 7:12-25)
+[MakeBasicObject] Exited
+[OrdinaryObjectCreate] 4209: {
+  let O = %0 @ (step 3, 4:23-59) @ (step 3, 4:23-59) @ (step 3, 4:12-60)
+  O @ (step 4, 5:16-19).Prototype @ (step 4, 5:16-33) = proto @ (step 4, 5:37-44) @ (step 4, 5:37-44) @ (step 4, 5:12-45)
+  return O @ (step 5, 6:19-22) @ (step 5, 6:19-22) @ (step 5, 6:12-23)
+}
+[OrdinaryObjectCreate] 4209: {
+  let O = %0 @ (step 3, 4:23-59) @ (step 3, 4:23-59) @ (step 3, 4:12-60)
+  O @ (step 4, 5:16-19).Prototype @ (step 4, 5:16-33) = proto @ (step 4, 5:37-44) @ (step 4, 5:37-44) @ (step 4, 5:12-45)
+  return O @ (step 5, 6:19-22) @ (step 5, 6:19-22) @ (step 5, 6:12-23)
+}
+[OrdinaryObjectCreate] 4209: {
+  let O = %0 @ (step 3, 4:23-59) @ (step 3, 4:23-59) @ (step 3, 4:12-60)
+  O @ (step 4, 5:16-19).Prototype @ (step 4, 5:16-33) = proto @ (step 4, 5:37-44) @ (step 4, 5:37-44) @ (step 4, 5:12-45)
+  return O @ (step 5, 6:19-22) @ (step 5, 6:19-22) @ (step 5, 6:12-23)
+}
+[OrdinaryObjectCreate] Exited
+[SetRealmGlobalObject] 3863: globalObj @ (step 1.b, 4:18-29) = %0 @ (step 1.b, 4:33-90) @ (step 1.b, 4:33-90) @ (step 1.b, 4:14-91) -> 3864
+[SetRealmGlobalObject] 3864: assert (= (typeof globalObj @ (step 2, 5:25-36) @ (step 2, 5:25-36)) @ (step 2, 5:20-37) @Object @ (step 2, 5:41-47) @ (step 2, 5:41-47)) @ (step 2, 5:20-47) @ (step 2, 5:12-48) -> 3865
+[SetRealmGlobalObject] 3865: if (= thisValue @ (step 3, 6:15-26) @ (step 3, 6:15-26) undefined @ (step 3, 6:30-41)) @ (step 3, 6:15-41) then 3866 else 3867
+[SetRealmGlobalObject] 3866: thisValue @ (step 3, 6:47-58) = globalObj @ (step 3, 6:62-73) @ (step 3, 6:62-73) @ (step 3, 6:43-74) -> 3867
+[SetRealmGlobalObject] 3867: realmRec @ (step 4, 7:16-26).GlobalObject @ (step 4, 7:16-43) = globalObj @ (step 4, 7:47-58) @ (step 4, 7:47-58) @ (step 4, 7:12-59) -> 3868
+[SetRealmGlobalObject] 3868: call %1 = clo<NewGlobalEnvironment> @ (step 5, 8:34-80)(globalObj @ (step 5, 8:55-66) @ (step 5, 8:55-66), thisValue @ (step 5, 8:68-79) @ (step 5, 8:68-79)) @ (step 5, 8:34-80) -> 3869
+[NewGlobalEnvironment] 3838: call %0 = clo<NewObjectEnvironment> @ (step 1, 2:30-72)(G @ (step 1, 2:51-54) @ (step 1, 2:51-54), false @ (step 1, 2:56-63), null @ (step 1, 2:65-71)) @ (step 1, 2:30-72) -> 3839
+[NewObjectEnvironment] 3832: {
+  let env = (new ObjectEnvironmentRecord())[#385] @ (step 1, 2:27-58) @ (step 1, 2:14-59)
+  env @ (step 2, 3:18-23).BindingObject @ (step 2, 3:18-41) = O @ (step 2, 3:45-48) @ (step 2, 3:45-48) @ (step 2, 3:14-49)
+  env @ (step 3, 4:18-23).IsWithEnvironment @ (step 3, 4:18-45) = W @ (step 3, 4:49-52) @ (step 3, 4:49-52) @ (step 3, 4:14-53)
+  env @ (step 4, 5:18-23).OuterEnv @ (step 4, 5:18-36) = E @ (step 4, 5:40-43) @ (step 4, 5:40-43) @ (step 4, 5:14-44)
+  return env @ (step 5, 6:21-26) @ (step 5, 6:21-26) @ (step 5, 6:14-27)
+}
+[NewObjectEnvironment] 3832: {
+  let env = (new ObjectEnvironmentRecord())[#385] @ (step 1, 2:27-58) @ (step 1, 2:14-59)
+  env @ (step 2, 3:18-23).BindingObject @ (step 2, 3:18-41) = O @ (step 2, 3:45-48) @ (step 2, 3:45-48) @ (step 2, 3:14-49)
+  env @ (step 3, 4:18-23).IsWithEnvironment @ (step 3, 4:18-45) = W @ (step 3, 4:49-52) @ (step 3, 4:49-52) @ (step 3, 4:14-53)
+  env @ (step 4, 5:18-23).OuterEnv @ (step 4, 5:18-36) = E @ (step 4, 5:40-43) @ (step 4, 5:40-43) @ (step 4, 5:14-44)
+  return env @ (step 5, 6:21-26) @ (step 5, 6:21-26) @ (step 5, 6:14-27)
+}
+[NewObjectEnvironment] 3832: {
+  let env = (new ObjectEnvironmentRecord())[#385] @ (step 1, 2:27-58) @ (step 1, 2:14-59)
+  env @ (step 2, 3:18-23).BindingObject @ (step 2, 3:18-41) = O @ (step 2, 3:45-48) @ (step 2, 3:45-48) @ (step 2, 3:14-49)
+  env @ (step 3, 4:18-23).IsWithEnvironment @ (step 3, 4:18-45) = W @ (step 3, 4:49-52) @ (step 3, 4:49-52) @ (step 3, 4:14-53)
+  env @ (step 4, 5:18-23).OuterEnv @ (step 4, 5:18-36) = E @ (step 4, 5:40-43) @ (step 4, 5:40-43) @ (step 4, 5:14-44)
+  return env @ (step 5, 6:21-26) @ (step 5, 6:21-26) @ (step 5, 6:14-27)
+}
+[NewObjectEnvironment] 3832: {
+  let env = (new ObjectEnvironmentRecord())[#385] @ (step 1, 2:27-58) @ (step 1, 2:14-59)
+  env @ (step 2, 3:18-23).BindingObject @ (step 2, 3:18-41) = O @ (step 2, 3:45-48) @ (step 2, 3:45-48) @ (step 2, 3:14-49)
+  env @ (step 3, 4:18-23).IsWithEnvironment @ (step 3, 4:18-45) = W @ (step 3, 4:49-52) @ (step 3, 4:49-52) @ (step 3, 4:14-53)
+  env @ (step 4, 5:18-23).OuterEnv @ (step 4, 5:18-36) = E @ (step 4, 5:40-43) @ (step 4, 5:40-43) @ (step 4, 5:14-44)
+  return env @ (step 5, 6:21-26) @ (step 5, 6:21-26) @ (step 5, 6:14-27)
+}
+[NewObjectEnvironment] 3832: {
+  let env = (new ObjectEnvironmentRecord())[#385] @ (step 1, 2:27-58) @ (step 1, 2:14-59)
+  env @ (step 2, 3:18-23).BindingObject @ (step 2, 3:18-41) = O @ (step 2, 3:45-48) @ (step 2, 3:45-48) @ (step 2, 3:14-49)
+  env @ (step 3, 4:18-23).IsWithEnvironment @ (step 3, 4:18-45) = W @ (step 3, 4:49-52) @ (step 3, 4:49-52) @ (step 3, 4:14-53)
+  env @ (step 4, 5:18-23).OuterEnv @ (step 4, 5:18-36) = E @ (step 4, 5:40-43) @ (step 4, 5:40-43) @ (step 4, 5:14-44)
+  return env @ (step 5, 6:21-26) @ (step 5, 6:21-26) @ (step 5, 6:14-27)
+}
+[NewObjectEnvironment] Exited
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] 3839: {
+  let objRec = %0 @ (step 1, 2:30-72) @ (step 1, 2:30-72) @ (step 1, 2:14-73)
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387] @ (step 2, 3:30-89) @ (step 2, 3:14-90)
+  let env = (new GlobalEnvironmentRecord())[#388] @ (step 3, 4:27-58) @ (step 3, 4:14-59)
+  env @ (step 4, 5:18-23).ObjectRecord @ (step 4, 5:18-40) = objRec @ (step 4, 5:44-52) @ (step 4, 5:44-52) @ (step 4, 5:14-53)
+  env @ (step 5, 6:18-23).GlobalThisValue @ (step 5, 6:18-43) = thisValue @ (step 5, 6:47-58) @ (step 5, 6:47-58) @ (step 5, 6:14-59)
+  env @ (step 6, 7:18-23).DeclarativeRecord @ (step 6, 7:18-45) = dclRec @ (step 6, 7:49-57) @ (step 6, 7:49-57) @ (step 6, 7:14-58)
+  env @ (step 7, 8:18-23).VarNames @ (step 7, 8:18-36) = (new [])[#389] @ (step 7, 8:40-56) @ (step 7, 8:14-57)
+  env @ (step 8, 9:18-23).OuterEnv @ (step 8, 9:18-36) = null @ (step 8, 9:40-46) @ (step 8, 9:14-47)
+  return env @ (step 9, 10:21-26) @ (step 9, 10:21-26) @ (step 9, 10:14-27)
+}
+[NewGlobalEnvironment] Exited
+[SetRealmGlobalObject] 3869: {
+  let newGlobalEnv = %1 @ (step 5, 8:34-80) @ (step 5, 8:34-80) @ (step 5, 8:12-81)
+  realmRec @ (step 6, 9:16-26).GlobalEnv @ (step 6, 9:16-40) = newGlobalEnv @ (step 6, 9:44-58) @ (step 6, 9:44-58) @ (step 6, 9:12-59)
+  return ~unused~ @ (step 7, 10:19-27) @ (step 7, 10:12-28)
+}
+[SetRealmGlobalObject] 3869: {
+  let newGlobalEnv = %1 @ (step 5, 8:34-80) @ (step 5, 8:34-80) @ (step 5, 8:12-81)
+  realmRec @ (step 6, 9:16-26).GlobalEnv @ (step 6, 9:16-40) = newGlobalEnv @ (step 6, 9:44-58) @ (step 6, 9:44-58) @ (step 6, 9:12-59)
+  return ~unused~ @ (step 7, 10:19-27) @ (step 7, 10:12-28)
+}
+[SetRealmGlobalObject] 3869: {
+  let newGlobalEnv = %1 @ (step 5, 8:34-80) @ (step 5, 8:34-80) @ (step 5, 8:12-81)
+  realmRec @ (step 6, 9:16-26).GlobalEnv @ (step 6, 9:16-40) = newGlobalEnv @ (step 6, 9:44-58) @ (step 6, 9:44-58) @ (step 6, 9:12-59)
+  return ~unused~ @ (step 7, 10:19-27) @ (step 7, 10:12-28)
+}
+[SetRealmGlobalObject] Exited
+[InitializeHostDefinedRealm] 3914: call %2 = clo<SetDefaultGlobalBindings> @ (step 10, 11:31-64)(realm @ (step 10, 11:56-63) @ (step 10, 11:56-63)) @ (step 10, 11:31-64) -> 3915
+[SetDefaultGlobalBindings] 3870: {
+  let global = realmRec @ (step 1, 2:28-38).GlobalObject @ (step 1, 2:28-55) @ (step 1, 2:28-55) @ (step 1, 2:12-56)
+  let keys = (keys @GLOBAL.SubMap)[#395]
+  let idx = 0
+} -> 3871
+[SetDefaultGlobalBindings] 3870: {
+  let global = realmRec @ (step 1, 2:28-38).GlobalObject @ (step 1, 2:28-55) @ (step 1, 2:28-55) @ (step 1, 2:12-56)
+  let keys = (keys @GLOBAL.SubMap)[#395]
+  let idx = 0
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3872: {
+  let name = keys[idx]
+  global.SubMap[name] = @GLOBAL.SubMap[name]
+  idx = (+ idx 1)
+} -> 3871
+[SetDefaultGlobalBindings] 3871: loop[repeat] (< idx keys.length) then 3872 else 3873
+[SetDefaultGlobalBindings] 3873: {
+  global.SubMap.globalThis = (new PropertyDescriptor("Value" -> global, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#396]
+  return global @ (step 3, 7:19-27) @ (step 3, 7:19-27) @ (step 3, 7:12-28)
+}
+[SetDefaultGlobalBindings] Exited
+[InitializeHostDefinedRealm] 3915: {
+  let globalObj = [? %2 @ (step 10, 11:31-64) @ (step 10, 11:31-64)] @ (step 10, 11:29-64) @ (step 10, 11:10-65)
+  nop
+  return ~unused~ @ (step 12, 13:17-25) @ (step 12, 13:10-26)
+}
+[InitializeHostDefinedRealm] 3915: {
+  let globalObj = [? %2 @ (step 10, 11:31-64) @ (step 10, 11:31-64)] @ (step 10, 11:29-64) @ (step 10, 11:10-65)
+  nop
+  return ~unused~ @ (step 12, 13:17-25) @ (step 12, 13:10-26)
+}
+[InitializeHostDefinedRealm] Exited
+[RunJobs] 38: {
+  [? %0 @ (step 1, 2:18-46) @ (step 1, 2:18-46)] @ (step 1, 2:16-46) @ (step 1, 2:8-47)
+  let scriptEvaluationJob = clo<RunJobs:clo0> @ (step 2, 3:37 - 7:29) @ (step 2, 3:8 - 7:29)
+} -> 39
+[RunJobs] 38: {
+  [? %0 @ (step 1, 2:18-46) @ (step 1, 2:18-46)] @ (step 1, 2:16-46) @ (step 1, 2:8-47)
+  let scriptEvaluationJob = clo<RunJobs:clo0> @ (step 2, 3:37 - 7:29) @ (step 2, 3:8 - 7:29)
+} -> 39
+[RunJobs] 39: call %1 = clo<HostEnqueuePromiseJob> @ (step 3, 8:16-86)(scriptEvaluationJob @ (step 3, 8:38-59) @ (step 3, 8:38-59), @EXECUTION_STACK @ (step 3, 8:61-85)[0 @ (step 3, 8:61-85)] @ (step 3, 8:61-85).Realm @ (step 3, 8:61-85) @ (step 3, 8:61-85)) @ (step 3, 8:16-86) -> 40
+[HostEnqueuePromiseJob] 19851: call %0 = clo<GetActiveScriptOrModule>() -> 19852
+[GetActiveScriptOrModule] 3874: if (= @EXECUTION_STACK.length 0) then 3875 else 3876
+[GetActiveScriptOrModule] 3876: {
+  let ec = absent
+  let idx = 0
+} -> 3877
+[GetActiveScriptOrModule] 3877: loop[repeat] (&& (< idx @EXECUTION_STACK.length) (= ec absent)) then 3878 else 3881
+[GetActiveScriptOrModule] 3878: if (! (= @EXECUTION_STACK[idx].ScriptOrModule null)) then 3879 else 3880
+[GetActiveScriptOrModule] 3880: idx = (+ idx 1) -> 3877
+[GetActiveScriptOrModule] 3877: loop[repeat] (&& (< idx @EXECUTION_STACK.length) (= ec absent)) then 3878 else 3881
+[GetActiveScriptOrModule] 3878: if (! (= @EXECUTION_STACK[idx].ScriptOrModule null)) then 3879 else 3880
+[GetActiveScriptOrModule] 3880: idx = (+ idx 1) -> 3877
+[GetActiveScriptOrModule] 3877: loop[repeat] (&& (< idx @EXECUTION_STACK.length) (= ec absent)) then 3878 else 3881
+[GetActiveScriptOrModule] 3881: if (= ec absent) then 3882 else 3883
+[GetActiveScriptOrModule] 3882: return null
+[GetActiveScriptOrModule] Exited
+[HostEnqueuePromiseJob] 19852: {
+  let newJob = (new PendingJob("Job" -> job, "Realm" -> realm, "ScriptOrModule" -> %0))[#1361]
+  push @JOB_QUEUE < newJob
+  return undefined
+}
+[HostEnqueuePromiseJob] Exited
+[RunJobs] 40: loop[repeat] true @ (step 4, 9:8 - 21:28) then 41
+[RunJobs] 41: {
+  (pop < @EXECUTION_STACK @ (step 4.a, 10:10-95) @ (step 4.a, 10:10-95)) @ (step 4.a, 10:10-95) @ (step 4.a, 10:10-95)
+  assert (= @EXECUTION_STACK.length 0) @ (step 4.b, 11:10-55)
+  let nextQueue = @JOB_QUEUE
+} -> 42
+[RunJobs] 41: {
+  (pop < @EXECUTION_STACK @ (step 4.a, 10:10-95) @ (step 4.a, 10:10-95)) @ (step 4.a, 10:10-95) @ (step 4.a, 10:10-95)
+  assert (= @EXECUTION_STACK.length 0) @ (step 4.b, 11:10-55)
+  let nextQueue = @JOB_QUEUE
+} -> 42

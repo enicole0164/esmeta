@@ -1,0 +1,16 @@
+def <BUILTIN>:INTRINSICS.String.prototype.toLowerCase(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  call %2 = clo<StringToCodePoints>(S)
+  let sText = %2
+  (yet "Let _lowerText_ be the result of toLowercase(_sText_), according to the Unicode Default Case Conversion algorithm.")
+  call %3 = clo<CodePointsToString>(lowerText)
+  let L = %3
+  return L
+}

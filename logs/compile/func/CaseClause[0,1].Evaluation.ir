@@ -1,0 +1,6 @@
+def <SYNTAX>:CaseClause[0,1].Evaluation(
+  this: Ast:CaseClause[0,1],
+): Unknown {
+  sdo-call %0 = this[1]->Evaluation()
+  return %0
+}

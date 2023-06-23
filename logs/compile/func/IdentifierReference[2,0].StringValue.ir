@@ -1,0 +1,5 @@
+def <SYNTAX>:IdentifierReference[2,0].StringValue(
+  this: Ast:IdentifierReference[2,0],
+): String {
+  return "await"
+}

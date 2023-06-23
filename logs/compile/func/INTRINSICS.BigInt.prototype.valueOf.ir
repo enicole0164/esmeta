@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.BigInt.prototype.valueOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisBigIntValue>(this)
+  return [? %0]
+}

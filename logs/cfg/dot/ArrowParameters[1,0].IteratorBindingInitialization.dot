@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster875 {
+    label = "def <SYNTAX>:ArrowParameters[1,0].IteratorBindingInitialization(this: Ast:ArrowParameters[1,0], iteratorRecord: Unknown, environment: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster875_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster875_entry_name -> cluster875_entry [arrowhead=none, color="black", style=dashed]
+    cluster875_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster875_entry -> node3452 [color="black"]
+    cluster875_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster875_exit_name -> cluster875_exit [arrowhead=none, color="black", style=dashed]
+    cluster875_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3452_name [shape=none, label=<<font color="black">Block[3452]</font>>]
+    node3452_name -> node3452 [arrowhead=none, color="black", style=dashed]
+    node3452 [shape=box, label=<<font color="black">[0] let formals = (parse this[0] (nt |ArrowFormalParameters|[]))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3452 -> node3453 [color="black"]
+    node3453_name [shape=none, label=<<font color="black">Call[3453]</font>>]
+    node3453_name -> node3453 [arrowhead=none, color="black", style=dashed]
+    node3453 [shape=cds, label=<<font color="black">%0 = formals-&gt;IteratorBindingInitialization(iteratorRecord, environment)</font>> color="black" fillcolor="white", style=filled]
+    node3453 -> node3454 [color="black"]
+    node3454_name [shape=none, label=<<font color="black">Block[3454]</font>>]
+    node3454_name -> node3454 [arrowhead=none, color="black", style=dashed]
+    node3454 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3454 -> cluster875_exit [color="black"]
+  }
+}

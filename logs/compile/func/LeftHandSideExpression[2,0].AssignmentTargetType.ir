@@ -1,0 +1,5 @@
+def <SYNTAX>:LeftHandSideExpression[2,0].AssignmentTargetType(
+  this: Ast:LeftHandSideExpression[2,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

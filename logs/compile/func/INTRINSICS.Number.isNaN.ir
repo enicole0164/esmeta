@@ -1,0 +1,15 @@
+def <BUILTIN>:INTRINSICS.Number.isNaN(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let number = (pop < argumentsList) else let number = absent
+  if (! (= (typeof number) @Number)) {
+    return false
+  } else {}
+  if (= number NaN) {
+    return true
+  } else {
+    return false
+  }
+}

@@ -1,0 +1,8 @@
+def NotifyWaiter(
+  WL: Unknown["WaiterList"],
+  W: Unknown["AgentSignifier"],
+): Const[~unused~] {
+  assert (yet "The calling agent is in the critical section for _WL_.")
+  (yet "Notify the agent _W_.")
+  return ~unused~
+}

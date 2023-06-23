@@ -1,0 +1,61 @@
+def <BUILTIN>:INTRINSICS.Number.prototype.toPrecision(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let precision = (pop < argumentsList) else let precision = absent
+  call %0 = clo<thisNumberValue>(this)
+  let x = [? %0]
+  if (= precision undefined) {
+    call %1 = clo<ToString>(x)
+    return [! %1]
+  } else {}
+  call %2 = clo<ToIntegerOrInfinity>(precision)
+  let p = [? %2]
+  if (|| (= x NaN) (|| (= x +INF) (= x -INF))) {
+    call %3 = clo<Number::toString>(x)
+    return %3
+  } else {}
+  if (|| (< p 1) (< 100 p)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#929])
+  } else {}
+  x = ([math] x)
+  let s = ""
+  if (< x 0) {
+    (yet "Set _s_ to the code unit 0x002D (HYPHEN-MINUS).")
+    x = (- x)
+  } else {}
+  if (== x 0) {
+    (yet "Let _m_ be the String value consisting of _p_ occurrences of the code unit 0x0030 (DIGIT ZERO).")
+    let e = 0
+  } else {
+    (yet "Let _e_ and _n_ be integers such that 10<sup>_p_ - 1</sup> ≤ _n_ < 10<sup>_p_</sup> and for which _n_ × 10<sup>_e_ - _p_ + 1</sup> - _x_ is as close to zero as possible. If there are two such sets of _e_ and _n_, pick the _e_ and _n_ for which _n_ × 10<sup>_e_ - _p_ + 1</sup> is larger.")
+    (yet "Let _m_ be the String value consisting of the digits of the decimal representation of _n_ (in order, with no leading zeroes).")
+    if (|| (< e (- 6)) (! (< e p))) {
+      assert (! (== e 0))
+      if (! (== p 1)) {
+        (yet "Let _a_ be the first code unit of _m_.")
+        (yet "Let _b_ be the other _p_ - 1 code units of _m_.")
+        m = (concat a "." b)
+      } else {}
+      if (< 0 e) {
+        let c = 43cu
+      } else {
+        assert (< e 0)
+        (yet "Let _c_ be the code unit 0x002D (HYPHEN-MINUS).")
+        e = (- e)
+      }
+      (yet "Let _d_ be the String value consisting of the digits of the decimal representation of _e_ (in order, with no leading zeroes).")
+      return (concat s m 101cu c d)
+    } else {}
+  }
+  if (== e (- p 1)) {
+    return (concat s m)
+  } else {}
+  if (! (< e 0)) {
+    (yet "Set _m_ to the string-concatenation of the first _e_ + 1 code units of _m_, the code unit 0x002E (FULL STOP), and the remaining _p_ - (_e_ + 1) code units of _m_.")
+  } else {
+    (yet "Set _m_ to the string-concatenation of the code unit 0x0030 (DIGIT ZERO), the code unit 0x002E (FULL STOP), -(_e_ + 1) occurrences of the code unit 0x0030 (DIGIT ZERO), and the String _m_.")
+  }
+  return (concat s m)
+}

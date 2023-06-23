@@ -1,0 +1,35 @@
+def FromPropertyDescriptor(
+  Desc: PropertyDescriptor | Undefined,
+): Object | Undefined {
+  if (= Desc undefined) {
+    return undefined
+  } else {}
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let obj = %0
+  assert (yet "_obj_ is an extensible ordinary object with no own properties.")
+  if (! (= Desc.Value absent)) {
+    call %1 = clo<CreateDataPropertyOrThrow>(obj, "value", Desc.Value)
+    [! %1]
+  } else {}
+  if (! (= Desc.Writable absent)) {
+    call %2 = clo<CreateDataPropertyOrThrow>(obj, "writable", Desc.Writable)
+    [! %2]
+  } else {}
+  if (! (= Desc.Get absent)) {
+    call %3 = clo<CreateDataPropertyOrThrow>(obj, "get", Desc.Get)
+    [! %3]
+  } else {}
+  if (! (= Desc.Set absent)) {
+    call %4 = clo<CreateDataPropertyOrThrow>(obj, "set", Desc.Set)
+    [! %4]
+  } else {}
+  if (! (= Desc.Enumerable absent)) {
+    call %5 = clo<CreateDataPropertyOrThrow>(obj, "enumerable", Desc.Enumerable)
+    [! %5]
+  } else {}
+  if (! (= Desc.Configurable absent)) {
+    call %6 = clo<CreateDataPropertyOrThrow>(obj, "configurable", Desc.Configurable)
+    [! %6]
+  } else {}
+  return obj
+}

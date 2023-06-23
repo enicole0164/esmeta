@@ -1,0 +1,5 @@
+def OrdinaryGetPrototypeOf(
+  O: Object,
+): Object | Null {
+  return O.Prototype
+}

@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.Object.isFrozen(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let O = (pop < argumentsList) else let O = absent
+  if (! (= (typeof O) @Object)) {
+    return true
+  } else {}
+  call %0 = clo<TestIntegrityLevel>(O, ~frozen~)
+  return [? %0]
+}

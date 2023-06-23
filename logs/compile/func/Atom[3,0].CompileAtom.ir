@@ -1,0 +1,9 @@
+def <SYNTAX>:Atom[3,0].CompileAtom(
+  this: Ast:Atom[3,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CompileCharacterClass()
+  let cc = %0
+  call %1 = clo<CharacterSetMatcher>(cc.CharSet, cc.Invert, direction)
+  return %1
+}

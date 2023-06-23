@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2612 {
+    label = "def GeneratorStart(generator: Unknown, generatorBody: Unknown["FunctionBodyParseNodeOrAnAbstractClosureWithNoParameters"]): Const[~unused~]"
+    style = rounded
+    cluster2612_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2612_entry_name -> cluster2612_entry [arrowhead=none, color="black", style=dashed]
+    cluster2612_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2612_entry -> node19339 [color="black"]
+    cluster2612_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2612_exit_name -> cluster2612_exit [arrowhead=none, color="black", style=dashed]
+    cluster2612_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19339_name [shape=none, label=<<font color="black">Block[19339]</font>>]
+    node19339_name -> node19339 [arrowhead=none, color="black", style=dashed]
+    node19339 [shape=box, label=<<font color="black">[0] assert (= generator.GeneratorState undefined)<BR ALIGN="LEFT"/>[1] let genContext = @EXECUTION_STACK[0]<BR ALIGN="LEFT"/>[2] genContext.Generator = generator<BR ALIGN="LEFT"/>[3] genContext.ResumeCont = cont&lt;GeneratorStart:cont0&gt;<BR ALIGN="LEFT"/>[4] generator.GeneratorContext = genContext<BR ALIGN="LEFT"/>[5] generator.GeneratorState = ~suspendedStart~<BR ALIGN="LEFT"/>[6] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19339 -> cluster2612_exit [color="black"]
+  }
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1017 {
+    label = "def <CONC>:ModuleEnvironmentRecord.HasThisBinding(envRec: ModuleEnvironmentRecord): True"
+    style = rounded
+    cluster1017_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1017_entry_name -> cluster1017_entry [arrowhead=none, color="black", style=dashed]
+    cluster1017_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1017_entry -> node3819 [color="black"]
+    cluster1017_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1017_exit_name -> cluster1017_exit [arrowhead=none, color="black", style=dashed]
+    cluster1017_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3819_name [shape=none, label=<<font color="black">Block[3819]</font>>]
+    node3819_name -> node3819 [arrowhead=none, color="black", style=dashed]
+    node3819 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3819 -> cluster1017_exit [color="black"]
+  }
+}

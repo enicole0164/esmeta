@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } ; throw new Test262Error ( message ) ; } async x => 0 ; assert . notSameValue = function ( ) { } ; assert = { preventExtensions : async function ( x ) { } } ; function Test262Error ( message ) { this . message = message || "" ; } { } function $DONOTEVALUATE ( ) { throw { value : false } ; } try { throw ( Error ( "hello" ) ) ; } catch ( e ) { var x ; } var c3 = 0 ; try { throw EvalError ( 1 ) ; } catch ( e ) { { } } ; var x ; var c6 = 0 ; ; 0 ; 

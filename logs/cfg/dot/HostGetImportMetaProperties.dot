@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2670 {
+    label = "def HostGetImportMetaProperties(moduleRecord: Unknown): Unknown"
+    style = rounded
+    cluster2670_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2670_entry_name -> cluster2670_entry [arrowhead=none, color="black", style=dashed]
+    cluster2670_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2670_entry -> node19856 [color="black"]
+    cluster2670_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2670_exit_name -> cluster2670_exit [arrowhead=none, color="black", style=dashed]
+    cluster2670_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19856_name [shape=none, label=<<font color="black">Block[19856]</font>>]
+    node19856_name -> node19856 [arrowhead=none, color="black", style=dashed]
+    node19856 [shape=box, label=<<font color="black">[0] return (new [])[#1362]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19856 -> cluster2670_exit [color="black"]
+  }
+}

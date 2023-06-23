@@ -1,0 +1,6 @@
+def <SYNTAX>:UnaryExpression[3,0].HasCallInTailPosition(
+  this: Ast:UnaryExpression[3,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

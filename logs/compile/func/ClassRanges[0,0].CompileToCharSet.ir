@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassRanges[0,0].CompileToCharSet(
+  this: Ast:ClassRanges[0,0],
+): Unknown["CharSet"] {
+  (yet "Return the empty CharSet.")
+}

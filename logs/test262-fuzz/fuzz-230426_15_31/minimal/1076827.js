@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue ) { return ; } x : ; throw new Test262Error ( message ) ; } assert . _isSameValue = { enumerable : function * ( x ) { } } ; await : ; 0 ; ; assert . _toString = function ( value ) { return 0 ; } ; function Test262Error ( message ) { this . message = message || "" ; } Test262Error . prototype . toString = { name : true } ; try { } finally { } let x ; if ( "" . indexOf ( ) !== 1 ) ; 

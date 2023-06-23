@@ -1,0 +1,104 @@
+def RegExpBuiltinExec(
+  R: Unknown["InitializedRegExpInstance"],
+  S: String,
+): Normal[ArrayExoticObject | Null] | Abrupt {
+  let length = S.length
+  call %0 = clo<Get>(R, "lastIndex")
+  call %1 = clo<ToLength>([? %0])
+  let lastIndex = ([math] [? %1])
+  let flags = R.OriginalFlags
+  if (contains flags "g") {
+    let global = true
+  } else {
+    let global = false
+  }
+  if (contains flags "y") {
+    let sticky = true
+  } else {
+    let sticky = false
+  }
+  if (contains flags "d") {
+    let hasIndices = true
+  } else {
+    let hasIndices = false
+  }
+  if (&& (= global false) (= sticky false)) {
+    lastIndex = 0
+  } else {}
+  let matcher = R.RegExpMatcher
+  if (contains flags "u") {
+    let fullUnicode = true
+  } else {
+    let fullUnicode = false
+  }
+  let matchSucceeded = false
+  if (= fullUnicode true) {
+    call %2 = clo<StringToCodePoints>(S)
+    let input = %2
+  } else {
+    (yet "let _input_ be a List whose elements are the code units that are the elements of _S_.")
+  }
+  nop
+  loop[repeat] (= matchSucceeded false) {
+    if (< length lastIndex) {
+      if (|| (= global true) (= sticky true)) {
+        call %3 = clo<Set>(R, "lastIndex", 0.0f, true)
+        [? %3]
+      } else {}
+      return null
+    } else {}
+    (yet "Let _inputIndex_ be the index into _input_ of the character that was obtained from element _lastIndex_ of _S_.")
+    call %4 = matcher(input, inputIndex)
+    let r = %4
+    if (= r ~failure~) {
+      if (= sticky true) {
+        call %5 = clo<Set>(R, "lastIndex", 0.0f, true)
+        [? %5]
+        return null
+      } else {}
+      call %6 = clo<AdvanceStringIndex>(S, lastIndex, fullUnicode)
+      lastIndex = %6
+    } else {
+      assert (? r: "State")
+      matchSucceeded = true
+    }
+  }
+  (yet "Let _e_ be _r_'s _endIndex_ value.")
+  if (= fullUnicode true) {
+    call %7 = clo<GetStringIndex>(S, e)
+    e = %7
+  } else {}
+  if (|| (= global true) (= sticky true)) {
+    call %8 = clo<Set>(R, "lastIndex", ([number] e), true)
+    [? %8]
+  } else {}
+  (yet "Let _n_ be the number of elements in _r_'s _captures_ List. (This is the same value as <emu-xref href=\"#sec-notation\"></emu-xref>'s _NcapturingParens_.)")
+  assert (< n (- (** 2 32) 1))
+  call %9 = clo<ArrayCreate>((+ n 1))
+  let A = [! %9]
+  assert (yet "The mathematical value of _A_'s *\"length\"* property is _n_ + 1.")
+  call %10 = clo<CreateDataPropertyOrThrow>(A, "index", ([number] lastIndex))
+  [! %10]
+  call %11 = clo<CreateDataPropertyOrThrow>(A, "input", S)
+  [! %11]
+  let match = (new MatchRecord("StartIndex" -> lastIndex, "EndIndex" -> e))[#989]
+  let indices = (new [])[#990]
+  let groupNames = (new [])[#991]
+  push indices < match
+  call %12 = clo<GetMatchString>(S, match)
+  let matchedSubstr = %12
+  call %13 = clo<CreateDataPropertyOrThrow>(A, "0", matchedSubstr)
+  [! %13]
+  (yet "If _R_ contains any |GroupName|, then\n  1. Let _groups_ be OrdinaryObjectCreate(*null*).\n  1. Let _hasGroups_ be *true*.")
+  (yet "Else,\n  1. Let _groups_ be *undefined*.\n  1. Let _hasGroups_ be *false*.")
+  call %14 = clo<CreateDataPropertyOrThrow>(A, "groups", groups)
+  [! %14]
+  (yet "For each integer _i_ such that _i_ ≥ 1 and _i_ ≤ _n_, in ascending order, do\n  1. Let _captureI_ be _i_<sup>th</sup> element of _r_'s _captures_ List.\n  1. If _captureI_ is *undefined*, then\n    1. Let _capturedValue_ be *undefined*.\n    1. Append *undefined* to _indices_.\n  1. Else,\n    1. Let _captureStart_ be _captureI_'s _startIndex_.\n    1. Let _captureEnd_ be _captureI_'s _endIndex_.\n    1. If _fullUnicode_ is *true*, then\n      1. Set _captureStart_ to GetStringIndex(_S_, _captureStart_).\n      1. Set _captureEnd_ to GetStringIndex(_S_, _captureEnd_).\n    1. Let _capture_ be Match Record { [[StartIndex]]: _captureStart_, [[EndIndex]]: _captureEnd_ }.\n    1. Let _capturedValue_ be GetMatchString(_S_, _capture_).\n    1. Append _capture_ to _indices_.\n  1. Perform ! CreateDataPropertyOrThrow(_A_, ! ToString(𝔽(_i_)), _capturedValue_).\n  1. If the _i_<sup>th</sup> capture of _R_ was defined with a |GroupName|, then\n    1. Let _s_ be the CapturingGroupName of the corresponding |RegExpIdentifierName|.\n    1. Perform ! CreateDataPropertyOrThrow(_groups_, _s_, _capturedValue_).\n    1. Append _s_ to _groupNames_.\n  1. Else,\n    1. Append *undefined* to _groupNames_.")
+  if (= hasIndices true) {
+    call %15 = clo<MakeMatchIndicesIndexPairArray>(S, indices, groupNames, hasGroups)
+    let indicesArray = %15
+    call %16 = clo<CreateDataPropertyOrThrow>(A, "indices", indicesArray)
+    [! %16]
+  } else {}
+  return A
+}

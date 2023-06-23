@@ -1,0 +1,7 @@
+def <SYNTAX>:GeneratorExpression[0,0].NamedEvaluation(
+  this: Ast:GeneratorExpression[0,0],
+  name: Unknown,
+): Normal[FunctionObject] | Abrupt {
+  sdo-call %0 = this->InstantiateGeneratorFunctionExpression(name)
+  return %0
+}

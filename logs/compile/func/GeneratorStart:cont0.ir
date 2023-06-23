@@ -1,0 +1,28 @@
+def <CONT>:GeneratorStart:cont0(
+): Const[~unused~] {
+  if (? generatorBody: "ParseNode") {
+    sdo-call %0 = generatorBody->Evaluation()
+    let result = %0
+  } else {
+    assert (yet "_generatorBody_ is an Abstract Closure with no parameters.")
+    call %1 = generatorBody()
+    let result = %1
+  }
+  assert (yet "If we return here, the generator either threw an exception or performed either an implicit or explicit return.")
+  (pop < @EXECUTION_STACK)
+  generator.GeneratorState = ~completed~
+  nop
+  if (= result.Type ~normal~) {
+    let resultValue = undefined
+  } else {
+    if (= result.Type ~return~) {
+      let resultValue = result.Value
+    } else {
+      assert (= result.Type ~throw~)
+      call %2 = (pop < genContext.ReturnCont)(result)
+    }
+  }
+  call %3 = clo<CreateIterResultObject>(resultValue, true)
+  call %4 = clo<NormalCompletion>(%3)
+  call %5 = (pop < genContext.ReturnCont)(%4)
+}

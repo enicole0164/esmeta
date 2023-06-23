@@ -1,0 +1,10 @@
+def <BUILTIN-CLO>:FinishDynamicImport:clo1(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let error = (pop < argumentsList) else let error = absent
+  call %0 = clo<Call>(promiseCapability.Reject, undefined, (new [error])[#799])
+  [! %0]
+  return ~unused~
+}

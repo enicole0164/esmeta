@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster283 {
+    label = "def <SYNTAX>:ModuleItem[1,0].LexicallyDeclaredNames(this: Ast:ModuleItem[1,0]): List[String]"
+    style = rounded
+    cluster283_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster283_entry_name -> cluster283_entry [arrowhead=none, color="black", style=dashed]
+    cluster283_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster283_entry -> node1764 [color="black"]
+    cluster283_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster283_exit_name -> cluster283_exit [arrowhead=none, color="black", style=dashed]
+    cluster283_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1764_name [shape=none, label=<<font color="black">Block[1764]</font>>]
+    node1764_name -> node1764 [arrowhead=none, color="black", style=dashed]
+    node1764 [shape=box, label=<<font color="black">[0] (yet &quot;If |ExportDeclaration| is `export` |VariableStatement|, return a new empty List.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1764 -> node1765 [color="black"]
+    node1765_name [shape=none, label=<<font color="black">Call[1765]</font>>]
+    node1765_name -> node1765 [arrowhead=none, color="black", style=dashed]
+    node1765 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;BoundNames()</font>> color="black" fillcolor="white", style=filled]
+    node1765 -> node1766 [color="black"]
+    node1766_name [shape=none, label=<<font color="black">Block[1766]</font>>]
+    node1766_name -> node1766 [arrowhead=none, color="black", style=dashed]
+    node1766 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1766 -> cluster283_exit [color="black"]
+  }
+}

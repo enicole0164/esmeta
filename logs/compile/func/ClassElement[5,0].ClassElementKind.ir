@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassElement[5,0].ClassElementKind(
+  this: Ast:ClassElement[5,0],
+): Const[~ConstructorMethod~, ~NonConstructorMethod~, ~empty~] {
+  return ~empty~
+}

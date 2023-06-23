@@ -1,0 +1,31 @@
+def SetFunctionName(
+  F: FunctionObject,
+  name: PrivateName | Symbol | String,
+  prefix?: String,
+): Const[~unused~] {
+  assert (&& F.Extensible (= F.SubMap.name absent))
+  if (= (typeof name) @Symbol) {
+    let description = name.Description
+    if (= description undefined) {
+      name = ""
+    } else {
+      name = (concat "[" description "]")
+    }
+  } else {
+    if (? name: "PrivateName") {
+      name = name.Description
+    } else {}
+  }
+  if (! (= F.InitialName absent)) {
+    F.InitialName = name
+  } else {}
+  if (! (= prefix absent)) {
+    name = (concat prefix 32cu name)
+    if (! (= F.InitialName absent)) {
+      (yet "Optionally, set _F_.[[InitialName]] to _name_.")
+    } else {}
+  } else {}
+  call %0 = clo<DefinePropertyOrThrow>(F, "name", (new PropertyDescriptor("Value" -> name, "Writable" -> false, "Enumerable" -> false, "Configurable" -> true))[#430])
+  [! %0]
+  return ~unused~
+}

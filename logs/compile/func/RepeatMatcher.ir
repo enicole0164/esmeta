@@ -1,0 +1,40 @@
+def RepeatMatcher(
+  m: Unknown["Matcher"],
+  min: Unknown["NonnegativeInteger"],
+  max: Unknown["NonnegativeIntegerOr+∞"],
+  greedy: Boolean,
+  x: Unknown["State"],
+  c: Unknown["Continuation"],
+  parenIndex: Unknown["NonnegativeInteger"],
+  parenCount: Unknown["NonnegativeInteger"],
+): Unknown["MatchResult"] {
+  if (== max 0) {
+    call %0 = c(x)
+    return %0
+  } else {}
+  (yet "Let _d_ be a new Continuation with parameters (_y_) that captures _m_, _min_, _max_, _greedy_, _x_, _c_, _parenIndex_, and _parenCount_ and performs the following steps when called:\n  1. Assert: _y_ is a State.\n  1. [id=\"step-repeatmatcher-done\"] If _min_ = 0 and _y_'s _endIndex_ = _x_'s _endIndex_, return ~failure~.\n  1. If _min_ = 0, let _min2_ be 0.\n  1. Else, let _min2_ be _min_ - 1.\n  1. If _max_ is +∞, let _max2_ be +∞.\n  1. Else, let _max2_ be _max_ - 1.\n  1. Return RepeatMatcher(_m_, _min2_, _max2_, _greedy_, _y_, _c_, _parenIndex_, _parenCount_).")
+  (yet "Let _cap_ be a copy of _x_'s _captures_ List.")
+  (yet "For each integer _k_ such that _parenIndex_ < _k_ and _k_ ≤ _parenIndex_ + _parenCount_, set _cap_[_k_] to *undefined*.")
+  (yet "Let _e_ be _x_'s _endIndex_.")
+  (yet "Let _xr_ be the State (_e_, _cap_).")
+  if (! (== min 0)) {
+    call %1 = m(xr, d)
+    return %1
+  } else {}
+  if (= greedy false) {
+    call %2 = c(x)
+    let z = %2
+    if (! (= z ~failure~)) {
+      return z
+    } else {}
+    call %3 = m(xr, d)
+    return %3
+  } else {}
+  call %4 = m(xr, d)
+  let z = %4
+  if (! (= z ~failure~)) {
+    return z
+  } else {}
+  call %5 = c(x)
+  return %5
+}

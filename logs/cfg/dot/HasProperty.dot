@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster140 {
+    label = "def HasProperty(O: Object, P: Symbol | String): Normal[Boolean] | Abrupt"
+    style = rounded
+    cluster140_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster140_entry_name -> cluster140_entry [arrowhead=none, color="black", style=dashed]
+    cluster140_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster140_entry -> node1137 [color="black"]
+    cluster140_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster140_exit_name -> cluster140_exit [arrowhead=none, color="black", style=dashed]
+    cluster140_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1137_name [shape=none, label=<<font color="black">Call[1137]</font>>]
+    node1137_name -> node1137 [arrowhead=none, color="black", style=dashed]
+    node1137 [shape=cds, label=<<font color="black">%0 = O-&gt;HasProperty(P)</font>> color="black" fillcolor="white", style=filled]
+    node1137 -> node1138 [color="black"]
+    node1138_name [shape=none, label=<<font color="black">Block[1138]</font>>]
+    node1138_name -> node1138 [arrowhead=none, color="black", style=dashed]
+    node1138 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1138 -> cluster140_exit [color="black"]
+  }
+}

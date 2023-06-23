@@ -1,0 +1,7 @@
+def <NUM>:BigInt::sameValue(
+  x: BigInt,
+  y: BigInt,
+): Boolean {
+  call %0 = clo<BigInt::equal>(x, y)
+  return %0
+}

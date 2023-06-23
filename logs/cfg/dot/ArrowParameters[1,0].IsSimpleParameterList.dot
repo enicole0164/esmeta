@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1547 {
+    label = "def <SYNTAX>:ArrowParameters[1,0].IsSimpleParameterList(this: Ast:ArrowParameters[1,0]): Boolean"
+    style = rounded
+    cluster1547_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1547_entry_name -> cluster1547_entry [arrowhead=none, color="black", style=dashed]
+    cluster1547_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1547_entry -> node8364 [color="black"]
+    cluster1547_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1547_exit_name -> cluster1547_exit [arrowhead=none, color="black", style=dashed]
+    cluster1547_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8364_name [shape=none, label=<<font color="black">Block[8364]</font>>]
+    node8364_name -> node8364 [arrowhead=none, color="black", style=dashed]
+    node8364 [shape=box, label=<<font color="black">[0] let formals = (parse this[0] (nt |ArrowFormalParameters|[]))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8364 -> node8365 [color="black"]
+    node8365_name [shape=none, label=<<font color="black">Call[8365]</font>>]
+    node8365_name -> node8365 [arrowhead=none, color="black", style=dashed]
+    node8365 [shape=cds, label=<<font color="black">%0 = formals-&gt;IsSimpleParameterList()</font>> color="black" fillcolor="white", style=filled]
+    node8365 -> node8366 [color="black"]
+    node8366_name [shape=none, label=<<font color="black">Block[8366]</font>>]
+    node8366_name -> node8366 [arrowhead=none, color="black", style=dashed]
+    node8366 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8366 -> cluster1547_exit [color="black"]
+  }
+}

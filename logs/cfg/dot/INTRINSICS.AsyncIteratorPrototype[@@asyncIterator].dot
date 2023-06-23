@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2560 {
+    label = "def <BUILTIN>:INTRINSICS.AsyncIteratorPrototype[@@asyncIterator](this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2560_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2560_entry_name -> cluster2560_entry [arrowhead=none, color="black", style=dashed]
+    cluster2560_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2560_entry -> node18560 [color="black"]
+    cluster2560_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2560_exit_name -> cluster2560_exit [arrowhead=none, color="black", style=dashed]
+    cluster2560_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node18560_name [shape=none, label=<<font color="black">Block[18560]</font>>]
+    node18560_name -> node18560 [arrowhead=none, color="black", style=dashed]
+    node18560 [shape=box, label=<<font color="black">[0] return this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18560 -> cluster2560_exit [color="black"]
+  }
+}

@@ -1,0 +1,18 @@
+def GetIdentifierReference(
+  env: EnvironmentRecord | Null,
+  name: String,
+  strict: Boolean,
+): Normal[ReferenceRecord] | Abrupt {
+  if (= env null) {
+    return (new ReferenceRecord("Base" -> ~unresolvable~, "ReferencedName" -> name, "Strict" -> strict, "ThisValue" -> ~empty~))[#382]
+  } else {}
+  method-call %0 = env->HasBinding(name)
+  let exists = [? %0]
+  if (= exists true) {
+    return (new ReferenceRecord("Base" -> env, "ReferencedName" -> name, "Strict" -> strict, "ThisValue" -> ~empty~))[#383]
+  } else {
+    let outer = env.OuterEnv
+    call %1 = clo<GetIdentifierReference>(outer, name, strict)
+    return [? %1]
+  }
+}

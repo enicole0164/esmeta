@@ -1,0 +1,28 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.push(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let items = argumentsList
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  let argCount = items.length
+  if (< (- (** 2 53) 1) (+ len argCount)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1034])
+  } else {}
+  %3 = items
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let E = %3[%2]
+    call %4 = clo<ToString>(([number] len))
+    call %5 = clo<Set>(O, [! %4], E, true)
+    [? %5]
+    len = (+ len 1)
+    %2 = (+ %2 1)
+  }
+  call %6 = clo<Set>(O, "length", ([number] len), true)
+  [? %6]
+  return ([number] len)
+}

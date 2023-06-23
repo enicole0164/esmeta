@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.Error(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let message = (pop < argumentsList) else let message = absent
+  if (< 0 argumentsList.length) let options = (pop < argumentsList) else let options = absent
+  if (= NewTarget undefined) {
+    let newTarget = @EXECUTION_STACK[0].Function
+  } else {
+    let newTarget = NewTarget
+  }
+  call %0 = clo<OrdinaryCreateFromConstructor>(newTarget, "%Error.prototype%", (new ["ErrorData"])[#920])
+  let O = [? %0]
+  if (! (= message undefined)) {
+    call %1 = clo<ToString>(message)
+    let msg = [? %1]
+    call %2 = clo<CreateNonEnumerableDataPropertyOrThrow>(O, "message", msg)
+  } else {}
+  call %3 = clo<InstallErrorCause>(O, options)
+  [? %3]
+  return O
+}

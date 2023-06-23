@@ -1,0 +1,47 @@
+def <INTERNAL>:ECMAScriptFunctionObject.Construct(
+  F: ECMAScriptFunctionObject,
+  argumentsList: List[ESValue],
+  newTarget: Unknown["Constructor"],
+): Normal[Object] | Abrupt {
+  let callerContext = @EXECUTION_STACK[0]
+  let kind = F.ConstructorKind
+  if (= kind ~base~) {
+    call %0 = clo<OrdinaryCreateFromConstructor>(newTarget, "%Object.prototype%")
+    let thisArgument = [? %0]
+  } else {}
+  call %1 = clo<PrepareForOrdinaryCall>(F, newTarget)
+  let calleeContext = %1
+  assert (= calleeContext @EXECUTION_STACK[0])
+  if (= kind ~base~) {
+    call %2 = clo<OrdinaryCallBindThis>(F, calleeContext, thisArgument)
+    call %3 = clo<InitializeInstanceElements>(thisArgument, F)
+    call %4 = clo<Completion>(%3)
+    let initializeResult = %4
+    if (&& (comp? initializeResult) (! (= initializeResult.Type ~normal~))) {
+      (pop < @EXECUTION_STACK)
+      return [? initializeResult]
+    } else {}
+  } else {}
+  let constructorEnv = calleeContext.LexicalEnvironment
+  call %5 = clo<OrdinaryCallEvaluateBody>(F, argumentsList)
+  call %6 = clo<Completion>(%5)
+  let result = %6
+  (pop < @EXECUTION_STACK)
+  if (= result.Type ~return~) {
+    if (= (typeof result.Value) @Object) {
+      return result.Value
+    } else {}
+    if (= kind ~base~) {
+      return thisArgument
+    } else {}
+    if (! (= result.Value undefined)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#419])
+    } else {}
+  } else {
+    [? result]
+  }
+  method-call %7 = constructorEnv->GetThisBinding()
+  let thisBinding = [? %7]
+  assert (= (typeof thisBinding) @Object)
+  return thisBinding
+}

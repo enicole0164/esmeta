@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1681 {
+    label = "def <SYNTAX>:ClassStaticBlock[0,0].ClassStaticBlockDefinitionEvaluation(this: Ast:ClassStaticBlock[0,0], homeObject: Unknown): ClassStaticBlockDefinitionRecord"
+    style = rounded
+    cluster1681_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1681_entry_name -> cluster1681_entry [arrowhead=none, color="black", style=dashed]
+    cluster1681_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1681_entry -> node8958 [color="black"]
+    cluster1681_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1681_exit_name -> cluster1681_exit [arrowhead=none, color="black", style=dashed]
+    cluster1681_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8958_name [shape=none, label=<<font color="black">Block[8958]</font>>]
+    node8958_name -> node8958 [arrowhead=none, color="black", style=dashed]
+    node8958 [shape=box, label=<<font color="black">[0] let lex = @EXECUTION_STACK[0].LexicalEnvironment<BR ALIGN="LEFT"/>[1] let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment<BR ALIGN="LEFT"/>[2] let sourceText = &quot;&quot;<BR ALIGN="LEFT"/>[3] let formalParameters = |FormalParameters|[TT]&lt;0&gt;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8958 -> node8959 [color="black"]
+    node8959_name [shape=none, label=<<font color="black">Call[8959]</font>>]
+    node8959_name -> node8959 [arrowhead=none, color="black", style=dashed]
+    node8959 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryFunctionCreate&gt;(@EXECUTION_STACK[0].Realm.Intrinsics[&quot;%Function.prototype%&quot;], sourceText, formalParameters, this[0], ~non-lexical-this~, lex, privateEnv)</font>> color="black" fillcolor="white", style=filled]
+    node8959 -> node8960 [color="black"]
+    node8960_name [shape=none, label=<<font color="black">Block[8960]</font>>]
+    node8960_name -> node8960 [arrowhead=none, color="black", style=dashed]
+    node8960 [shape=box, label=<<font color="black">[0] let bodyFunction = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8960 -> node8961 [color="black"]
+    node8961_name [shape=none, label=<<font color="black">Call[8961]</font>>]
+    node8961_name -> node8961 [arrowhead=none, color="black", style=dashed]
+    node8961 [shape=cds, label=<<font color="black">%1 = clo&lt;MakeMethod&gt;(bodyFunction, homeObject)</font>> color="black" fillcolor="white", style=filled]
+    node8961 -> node8962 [color="black"]
+    node8962_name [shape=none, label=<<font color="black">Block[8962]</font>>]
+    node8962_name -> node8962 [arrowhead=none, color="black", style=dashed]
+    node8962 [shape=box, label=<<font color="black">[0] return (new ClassStaticBlockDefinitionRecord(&quot;BodyFunction&quot; -&gt; bodyFunction))[#692]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8962 -> cluster1681_exit [color="black"]
+  }
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:ClassElement[4,0].ClassElementEvaluation(
+  this: Ast:ClassElement[4,0],
+  object: Unknown,
+): Normal[ClassFieldDefinitionRecord | ClassStaticBlockDefinitionRecord | PrivateName | Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->ClassStaticBlockDefinitionEvaluation(object)
+  return %0
+}

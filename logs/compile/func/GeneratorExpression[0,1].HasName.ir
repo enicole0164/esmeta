@@ -1,0 +1,5 @@
+def <SYNTAX>:GeneratorExpression[0,1].HasName(
+  this: Ast:GeneratorExpression[0,1],
+): Boolean {
+  return true
+}

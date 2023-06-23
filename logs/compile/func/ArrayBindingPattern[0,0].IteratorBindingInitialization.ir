@@ -1,0 +1,7 @@
+def <SYNTAX>:ArrayBindingPattern[0,0].IteratorBindingInitialization(
+  this: Ast:ArrayBindingPattern[0,0],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  return ~unused~
+}

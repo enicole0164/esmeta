@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } throw 0 ; throw Test262Error ; } do ; while ( 0 , 0 ) ; assert . sameValue = x => 0 ; async x => 0 ; assert . throws = function * ( ) { } ; { } function Test262Error ( message ) { this . message = message || "" ; } 0 ; Test262Error = ( message ) => { throw new Test262Error ( message ) ; } ; let x ; assert . sameValue ( 1 / [ true ] . lastIndexOf ( true , - 1 ) ) ; 

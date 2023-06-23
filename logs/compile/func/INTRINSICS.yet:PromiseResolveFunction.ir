@@ -1,0 +1,44 @@
+def <BUILTIN>:INTRINSICS.yet:PromiseResolveFunction(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let resolution = (pop < argumentsList) else let resolution = absent
+  let F = @EXECUTION_STACK[0].Function
+  assert (&& (! (= F.Promise absent)) (? F.Promise: "Object"))
+  let promise = F.Promise
+  let alreadyResolved = F.AlreadyResolved
+  if (= alreadyResolved.Value true) {
+    return undefined
+  } else {}
+  alreadyResolved.Value = true
+  call %0 = clo<SameValue>(resolution, promise)
+  if (= %0 true) {
+    let selfResolutionError = (new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1237]
+    call %1 = clo<RejectPromise>(promise, selfResolutionError)
+    return undefined
+  } else {}
+  if (! (= (typeof resolution) @Object)) {
+    call %2 = clo<FulfillPromise>(promise, resolution)
+    return undefined
+  } else {}
+  call %3 = clo<Get>(resolution, "then")
+  call %4 = clo<Completion>(%3)
+  let then = %4
+  if (&& (comp? then) (! (= then.Type ~normal~))) {
+    call %5 = clo<RejectPromise>(promise, then.Value)
+    return undefined
+  } else {}
+  let thenAction = then.Value
+  call %6 = clo<IsCallable>(thenAction)
+  if (= %6 false) {
+    call %7 = clo<FulfillPromise>(promise, resolution)
+    return undefined
+  } else {}
+  call %8 = clo<HostMakeJobCallback>(thenAction)
+  let thenJobCallback = %8
+  call %9 = clo<NewPromiseResolveThenableJob>(promise, resolution, thenJobCallback)
+  let job = %9
+  call %10 = clo<HostEnqueuePromiseJob>(job.Job, job.Realm)
+  return undefined
+}

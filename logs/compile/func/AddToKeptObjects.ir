@@ -1,0 +1,7 @@
+def AddToKeptObjects(
+  object: Object,
+): Const[~unused~] {
+  (yet "Let _agentRecord_ be the surrounding agent's Agent Record.")
+  push agentRecord.KeptAlive < object
+  return ~unused~
+}

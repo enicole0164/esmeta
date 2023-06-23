@@ -1,0 +1,108 @@
+def <BUILTIN>:INTRINSICS.RegExp.prototype[@@split](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let string = (pop < argumentsList) else let string = absent
+  if (< 0 argumentsList.length) let limit = (pop < argumentsList) else let limit = absent
+  let rx = this
+  if (! (= (typeof rx) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1006])
+  } else {}
+  call %0 = clo<ToString>(string)
+  let S = [? %0]
+  call %1 = clo<SpeciesConstructor>(rx, @EXECUTION_STACK[0].Realm.Intrinsics["%RegExp%"])
+  let C = [? %1]
+  call %2 = clo<Get>(rx, "flags")
+  call %3 = clo<ToString>([? %2])
+  let flags = [? %3]
+  if (contains flags "u") {
+    let unicodeMatching = true
+  } else {
+    let unicodeMatching = false
+  }
+  if (contains flags "y") {
+    let newFlags = flags
+  } else {
+    let newFlags = (concat flags "y")
+  }
+  call %4 = clo<Construct>(C, (new [rx, newFlags])[#1007])
+  let splitter = [? %4]
+  call %5 = clo<ArrayCreate>(0)
+  let A = [! %5]
+  let lengthA = 0
+  if (= limit undefined) {
+    let lim = (- (** 2 32) 1)
+  } else {
+    call %6 = clo<ToUint32>(limit)
+    let lim = ([math] [? %6])
+  }
+  if (= lim 0) {
+    return A
+  } else {}
+  let size = S.length
+  if (= size 0) {
+    call %7 = clo<RegExpExec>(splitter, S)
+    let z = [? %7]
+    if (! (= z null)) {
+      return A
+    } else {}
+    call %8 = clo<CreateDataPropertyOrThrow>(A, "0", S)
+    [! %8]
+    return A
+  } else {}
+  let p = 0
+  let q = p
+  loop[repeat] (< q size) {
+    call %9 = clo<Set>(splitter, "lastIndex", ([number] q), true)
+    [? %9]
+    call %10 = clo<RegExpExec>(splitter, S)
+    let z = [? %10]
+    if (= z null) {
+      call %11 = clo<AdvanceStringIndex>(S, q, unicodeMatching)
+      q = %11
+    } else {
+      call %12 = clo<Get>(splitter, "lastIndex")
+      call %13 = clo<ToLength>([? %12])
+      let e = ([math] [? %13])
+      e = (min e size)
+      if (== e p) {
+        call %14 = clo<AdvanceStringIndex>(S, q, unicodeMatching)
+        q = %14
+      } else {
+        let T = (substring S p q)
+        call %15 = clo<ToString>(([number] lengthA))
+        call %16 = clo<CreateDataPropertyOrThrow>(A, [! %15], T)
+        [! %16]
+        lengthA = (+ lengthA 1)
+        if (== lengthA lim) {
+          return A
+        } else {}
+        p = e
+        call %17 = clo<LengthOfArrayLike>(z)
+        let numberOfCaptures = [? %17]
+        numberOfCaptures = (max (- numberOfCaptures 1) 0)
+        let i = 1
+        loop[repeat] (! (< numberOfCaptures i)) {
+          call %18 = clo<ToString>(([number] i))
+          call %19 = clo<Get>(z, [! %18])
+          let nextCapture = [? %19]
+          call %20 = clo<ToString>(([number] lengthA))
+          call %21 = clo<CreateDataPropertyOrThrow>(A, [! %20], nextCapture)
+          [! %21]
+          i = (+ i 1)
+          lengthA = (+ lengthA 1)
+          if (== lengthA lim) {
+            return A
+          } else {}
+        }
+        q = p
+      }
+    }
+  }
+  let T = (substring S p size)
+  call %22 = clo<ToString>(([number] lengthA))
+  call %23 = clo<CreateDataPropertyOrThrow>(A, [! %22], T)
+  [! %23]
+  return A
+}

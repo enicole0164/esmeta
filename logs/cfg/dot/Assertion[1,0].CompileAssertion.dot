@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2251 {
+    label = "def <SYNTAX>:Assertion[1,0].CompileAssertion(this: Ast:Assertion[1,0]): Unknown["Matcher"]"
+    style = rounded
+    cluster2251_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2251_entry_name -> cluster2251_entry [arrowhead=none, color="black", style=dashed]
+    cluster2251_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2251_entry -> node13953 [color="black"]
+    cluster2251_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2251_exit_name -> cluster2251_exit [arrowhead=none, color="black", style=dashed]
+    cluster2251_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13953_name [shape=none, label=<<font color="black">Block[13953]</font>>]
+    node13953_name -> node13953 [arrowhead=none, color="black", style=dashed]
+    node13953 [shape=box, label=<<font color="black">[0] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _e_ be _x_'s _endIndex_.\n  1. If _e_ = _InputLength_, or if _Multiline_ is *true* and the character _Input_[_e_] is one of |LineTerminator|, then\n    1. Return _c_(_x_).\n  1. Return ~failure~.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13953 -> cluster2251_exit [color="black"]
+  }
+}

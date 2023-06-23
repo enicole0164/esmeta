@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1644 {
+    label = "def <SYNTAX>:ClassElementName[1,0].PrivateBoundIdentifiers(this: Ast:ClassElementName[1,0]): List[String]"
+    style = rounded
+    cluster1644_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1644_entry_name -> cluster1644_entry [arrowhead=none, color="black", style=dashed]
+    cluster1644_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1644_entry -> node8876 [color="black"]
+    cluster1644_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1644_exit_name -> cluster1644_exit [arrowhead=none, color="black", style=dashed]
+    cluster1644_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8876_name [shape=none, label=<<font color="black">Call[8876]</font>>]
+    node8876_name -> node8876 [arrowhead=none, color="black", style=dashed]
+    node8876 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;StringValue()</font>> color="black" fillcolor="white", style=filled]
+    node8876 -> node8877 [color="black"]
+    node8877_name [shape=none, label=<<font color="black">Block[8877]</font>>]
+    node8877_name -> node8877 [arrowhead=none, color="black", style=dashed]
+    node8877 [shape=box, label=<<font color="black">[0] return (new [%0])[#684]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8877 -> cluster1644_exit [color="black"]
+  }
+}

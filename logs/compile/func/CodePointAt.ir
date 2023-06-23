@@ -1,0 +1,16 @@
+def CodePointAt(
+  string: String,
+  position: Unknown["NonnegativeInteger"],
+): Unknown["RecordWithFields[[CodePoint]](aCodePoint),[[CodeUnitCount]](aPositiveInteger),And[[IsUnpairedSurrogate]](aBoolean)"] {
+  let size = string.length
+  assert (&& (! (< position 0)) (< position size))
+  let first = string[position]
+  (yet "Let _cp_ be the code point whose numeric value is that of _first_.")
+  (yet "If _first_ is not a <emu-xref href=\"#leading-surrogate\"></emu-xref> or <emu-xref href=\"#trailing-surrogate\"></emu-xref>, then\n  1. Return Record { [[CodePoint]]: _cp_, [[CodeUnitCount]]: 1, [[IsUnpairedSurrogate]]: *false* }.")
+  (yet "If _first_ is a <emu-xref href=\"#trailing-surrogate\"></emu-xref> or _position_ + 1 = _size_, then\n  1. Return Record { [[CodePoint]]: _cp_, [[CodeUnitCount]]: 1, [[IsUnpairedSurrogate]]: *true* }.")
+  let second = string[(+ position 1)]
+  (yet "If _second_ is not a <emu-xref href=\"#trailing-surrogate\"></emu-xref>, then\n  1. Return Record { [[CodePoint]]: _cp_, [[CodeUnitCount]]: 1, [[IsUnpairedSurrogate]]: *true* }.")
+  call %0 = clo<UTF16SurrogatePairToCodePoint>(first, second)
+  cp = %0
+  return (new Record("CodePoint" -> cp, "CodeUnitCount" -> 2, "IsUnpairedSurrogate" -> false))[#541]
+}

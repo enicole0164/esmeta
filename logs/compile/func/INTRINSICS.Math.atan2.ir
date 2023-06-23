@@ -1,0 +1,70 @@
+def <BUILTIN>:INTRINSICS.Math.atan2(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let y = (pop < argumentsList) else let y = absent
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  call %0 = clo<ToNumber>(y)
+  let ny = [? %0]
+  call %1 = clo<ToNumber>(x)
+  let nx = [? %1]
+  if (|| (= ny NaN) (= nx NaN)) {
+    return NaN
+  } else {}
+  if (= ny +INF) {
+    if (= nx +INF) {
+      return ([approx-number] (/ @MATH_PI 4))
+    } else {}
+    if (= nx -INF) {
+      return ([approx-number] (/ (* 3 @MATH_PI) 4))
+    } else {}
+    return ([approx-number] (/ @MATH_PI 2))
+  } else {}
+  if (= ny -INF) {
+    if (= nx +INF) {
+      return ([approx-number] (/ (- @MATH_PI) 4))
+    } else {}
+    if (= nx -INF) {
+      return ([approx-number] (/ (- (* 3 @MATH_PI)) 4))
+    } else {}
+    return ([approx-number] (/ (- @MATH_PI) 2))
+  } else {}
+  if (= ny 0.0f) {
+    if (|| (< 0.0f nx) (= nx 0.0f)) {
+      return 0.0f
+    } else {}
+    return ([approx-number] @MATH_PI)
+  } else {}
+  if (= ny -0.0f) {
+    if (|| (< 0.0f nx) (= nx 0.0f)) {
+      return -0.0f
+    } else {}
+    return ([approx-number] (- @MATH_PI))
+  } else {}
+  assert (yet "_ny_ is finite and is neither *+0*<sub>𝔽</sub> nor *-0*<sub>𝔽</sub>.")
+  if (< 0.0f ny) {
+    if (= nx +INF) {
+      return 0.0f
+    } else {}
+    if (= nx -INF) {
+      return ([approx-number] @MATH_PI)
+    } else {}
+    if (|| (= nx 0.0f) (= nx -0.0f)) {
+      return ([approx-number] (/ @MATH_PI 2))
+    } else {}
+  } else {}
+  if (< ny -0.0f) {
+    if (= nx +INF) {
+      return -0.0f
+    } else {}
+    if (= nx -INF) {
+      return ([approx-number] (- @MATH_PI))
+    } else {}
+    if (|| (= nx 0.0f) (= nx -0.0f)) {
+      return ([approx-number] (/ (- @MATH_PI) 2))
+    } else {}
+  } else {}
+  assert (yet "_nx_ is finite and is neither *+0*<sub>𝔽</sub> nor *-0*<sub>𝔽</sub>.")
+  return ([approx-number] ([math:atan2] ([math] ny) ([math] nx)))
+}

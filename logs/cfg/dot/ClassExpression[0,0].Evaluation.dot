@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1700 {
+    label = "def <SYNTAX>:ClassExpression[0,0].Evaluation(this: Ast:ClassExpression[0,0]): Unknown"
+    style = rounded
+    cluster1700_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1700_entry_name -> cluster1700_entry [arrowhead=none, color="black", style=dashed]
+    cluster1700_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1700_entry -> node9568 [color="black"]
+    cluster1700_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1700_exit_name -> cluster1700_exit [arrowhead=none, color="black", style=dashed]
+    cluster1700_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node9568_name [shape=none, label=<<font color="black">Call[9568]</font>>]
+    node9568_name -> node9568 [arrowhead=none, color="black", style=dashed]
+    node9568 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;ClassDefinitionEvaluation(undefined, &quot;&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node9568 -> node9569 [color="black"]
+    node9569_name [shape=none, label=<<font color="black">Block[9569]</font>>]
+    node9569_name -> node9569 [arrowhead=none, color="black", style=dashed]
+    node9569 [shape=box, label=<<font color="black">[0] let value = [? %0]<BR ALIGN="LEFT"/>[1] value.SourceText = (source-text this)<BR ALIGN="LEFT"/>[2] return value<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9569 -> cluster1700_exit [color="black"]
+  }
+}

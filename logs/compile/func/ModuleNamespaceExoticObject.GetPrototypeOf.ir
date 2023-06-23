@@ -1,0 +1,5 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.GetPrototypeOf(
+  this: ModuleNamespaceExoticObject,
+): Normal[Null] {
+  return null
+}

@@ -1,0 +1,9 @@
+def <SYNTAX>:NameSpaceImport[0,0].ImportEntriesForModule(
+  this: Ast:NameSpaceImport[0,0],
+  module: Unknown,
+): Unknown["ListOfImportEntryRecords"] {
+  sdo-call %0 = this[0]->StringValue()
+  let localName = %0
+  let entry = (new ImportEntryRecord("ModuleRequest" -> module, "ImportName" -> ~namespace-object~, "LocalName" -> localName))[#812]
+  return (new [entry])[#813]
+}

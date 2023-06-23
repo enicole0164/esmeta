@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster171 {
+    label = "def CreateListIteratorRecord(list: Unknown["List"]): IteratorRecord"
+    style = rounded
+    cluster171_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster171_entry_name -> cluster171_entry [arrowhead=none, color="black", style=dashed]
+    cluster171_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster171_entry -> node1495 [color="black"]
+    cluster171_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster171_exit_name -> cluster171_exit [arrowhead=none, color="black", style=dashed]
+    cluster171_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1495_name [shape=none, label=<<font color="black">Block[1495]</font>>]
+    node1495_name -> node1495 [arrowhead=none, color="black", style=dashed]
+    node1495 [shape=box, label=<<font color="black">[0] let closure = clo&lt;CreateListIteratorRecord:clo0, [list]&gt;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1495 -> node1496 [color="black"]
+    node1496_name [shape=none, label=<<font color="black">Call[1496]</font>>]
+    node1496_name -> node1496 [arrowhead=none, color="black", style=dashed]
+    node1496 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateIteratorFromClosure&gt;(closure, ~empty~, @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%IteratorPrototype%&quot;])</font>> color="black" fillcolor="white", style=filled]
+    node1496 -> node1497 [color="black"]
+    node1497_name [shape=none, label=<<font color="black">Block[1497]</font>>]
+    node1497_name -> node1497 [arrowhead=none, color="black", style=dashed]
+    node1497 [shape=box, label=<<font color="black">[0] let iterator = %0<BR ALIGN="LEFT"/>[1] return (new IteratorRecord(&quot;Iterator&quot; -&gt; iterator, &quot;NextMethod&quot; -&gt; @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%GeneratorFunction.prototype.prototype.next%&quot;], &quot;Done&quot; -&gt; false))[#80]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1497 -> cluster171_exit [color="black"]
+  }
+}

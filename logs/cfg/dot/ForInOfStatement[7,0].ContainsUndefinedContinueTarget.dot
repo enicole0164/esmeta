@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster643 {
+    label = "def <SYNTAX>:ForInOfStatement[7,0].ContainsUndefinedContinueTarget(this: Ast:ForInOfStatement[7,0], iterationSet: Unknown, labelSet: Unknown): Boolean"
+    style = rounded
+    cluster643_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster643_entry_name -> cluster643_entry [arrowhead=none, color="black", style=dashed]
+    cluster643_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster643_entry -> node2778 [color="black"]
+    cluster643_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster643_exit_name -> cluster643_exit [arrowhead=none, color="black", style=dashed]
+    cluster643_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2778_name [shape=none, label=<<font color="black">Call[2778]</font>>]
+    node2778_name -> node2778 [arrowhead=none, color="black", style=dashed]
+    node2778 [shape=cds, label=<<font color="black">%0 = this[2]-&gt;ContainsUndefinedContinueTarget(iterationSet, (new [])[#330])</font>> color="black" fillcolor="white", style=filled]
+    node2778 -> node2779 [color="black"]
+    node2779_name [shape=none, label=<<font color="black">Block[2779]</font>>]
+    node2779_name -> node2779 [arrowhead=none, color="black", style=dashed]
+    node2779 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2779 -> cluster643_exit [color="black"]
+  }
+}

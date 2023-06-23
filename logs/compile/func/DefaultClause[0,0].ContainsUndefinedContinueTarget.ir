@@ -1,0 +1,11 @@
+def <SYNTAX>:DefaultClause[0,0].ContainsUndefinedContinueTarget(
+  this: Ast:DefaultClause[0,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#350])
+    return %0
+  } else {}
+  return false
+}

@@ -1,0 +1,51 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.unshift(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let items = argumentsList
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  let argCount = items.length
+  if (< 0 argCount) {
+    if (< (- (** 2 53) 1) (+ len argCount)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1049])
+    } else {}
+    let k = len
+    loop[repeat] (< 0 k) {
+      call %2 = clo<ToString>(([number] (- k 1)))
+      let from = [! %2]
+      call %3 = clo<ToString>(([number] (- (+ k argCount) 1)))
+      let to = [! %3]
+      call %4 = clo<HasProperty>(O, from)
+      let fromPresent = [? %4]
+      if (= fromPresent true) {
+        call %5 = clo<Get>(O, from)
+        let fromValue = [? %5]
+        call %6 = clo<Set>(O, to, fromValue, true)
+        [? %6]
+      } else {
+        assert (= fromPresent false)
+        call %7 = clo<DeletePropertyOrThrow>(O, to)
+        [? %7]
+      }
+      k = (- k 1)
+    }
+    let j = 0.0f
+    %9 = items
+    %8 = 0
+    loop[foreach] (< %8 %9.length) {
+      let E = %9[%8]
+      call %10 = clo<ToString>(j)
+      call %11 = clo<Set>(O, [! %10], E, true)
+      [? %11]
+      j = (+ j 1.0f)
+      %8 = (+ %8 1)
+    }
+  } else {}
+  call %12 = clo<Set>(O, "length", ([number] (+ len argCount)), true)
+  [? %12]
+  return ([number] (+ len argCount))
+}

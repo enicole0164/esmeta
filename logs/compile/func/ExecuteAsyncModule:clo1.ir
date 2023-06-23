@@ -1,0 +1,9 @@
+def <BUILTIN-CLO>:ExecuteAsyncModule:clo1(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let error = (pop < argumentsList) else let error = absent
+  call %0 = clo<AsyncModuleExecutionRejected>(module, error)
+  return undefined
+}

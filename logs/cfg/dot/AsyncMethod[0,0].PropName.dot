@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster970 {
+    label = "def <SYNTAX>:AsyncMethod[0,0].PropName(this: Ast:AsyncMethod[0,0]): Const[~empty~] | String"
+    style = rounded
+    cluster970_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster970_entry_name -> cluster970_entry [arrowhead=none, color="black", style=dashed]
+    cluster970_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster970_entry -> node3579 [color="black"]
+    cluster970_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster970_exit_name -> cluster970_exit [arrowhead=none, color="black", style=dashed]
+    cluster970_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3579_name [shape=none, label=<<font color="black">Call[3579]</font>>]
+    node3579_name -> node3579 [arrowhead=none, color="black", style=dashed]
+    node3579 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;PropName()</font>> color="black" fillcolor="white", style=filled]
+    node3579 -> node3580 [color="black"]
+    node3580_name [shape=none, label=<<font color="black">Block[3580]</font>>]
+    node3580_name -> node3580 [arrowhead=none, color="black", style=dashed]
+    node3580 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3580 -> cluster970_exit [color="black"]
+  }
+}

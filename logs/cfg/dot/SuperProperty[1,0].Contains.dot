@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster819 {
+    label = "def <SYNTAX>:SuperProperty[1,0].Contains(this: Ast:SuperProperty[1,0], symbol: Unknown): Boolean"
+    style = rounded
+    cluster819_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster819_entry_name -> cluster819_entry [arrowhead=none, color="black", style=dashed]
+    cluster819_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster819_entry -> node3128 [color="black"]
+    cluster819_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster819_exit_name -> cluster819_exit [arrowhead=none, color="black", style=dashed]
+    cluster819_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3128_name [shape=none, label=<<font color="black">Block[3128]</font>>]
+    node3128_name -> node3128 [arrowhead=none, color="black", style=dashed]
+    node3128 [shape=box, label=<<font color="black">[0] (yet &quot;If _symbol_ is the |ReservedWord| `super`, return *true*.&quot;)<BR ALIGN="LEFT"/>[1] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3128 -> cluster819_exit [color="black"]
+  }
+}

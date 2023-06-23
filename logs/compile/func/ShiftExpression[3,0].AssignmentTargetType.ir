@@ -1,0 +1,5 @@
+def <SYNTAX>:ShiftExpression[3,0].AssignmentTargetType(
+  this: Ast:ShiftExpression[3,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

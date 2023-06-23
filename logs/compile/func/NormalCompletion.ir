@@ -1,0 +1,5 @@
+def NormalCompletion(
+  value: Unknown,
+): Normal {
+  return comp[~normal~/~empty~](value)
+}

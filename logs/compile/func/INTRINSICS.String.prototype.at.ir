@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.String.prototype.at(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let index = (pop < argumentsList) else let index = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  let len = S.length
+  call %2 = clo<ToIntegerOrInfinity>(index)
+  let relativeIndex = [? %2]
+  if (! (< relativeIndex 0)) {
+    let k = relativeIndex
+  } else {
+    let k = (+ len relativeIndex)
+  }
+  if (|| (< k 0) (! (< k len))) {
+    return undefined
+  } else {}
+  return (substring S k (+ k 1))
+}

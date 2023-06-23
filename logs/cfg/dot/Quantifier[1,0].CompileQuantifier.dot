@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2260 {
+    label = "def <SYNTAX>:Quantifier[1,0].CompileQuantifier(this: Ast:Quantifier[1,0]): Unknown["RecordWithFields[[Min]](aNonnegativeInteger),[[Max]](aNonnegativeIntegerOr+∞),And[[Greedy]](aBoolean)"]"
+    style = rounded
+    cluster2260_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2260_entry_name -> cluster2260_entry [arrowhead=none, color="black", style=dashed]
+    cluster2260_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2260_entry -> node13969 [color="black"]
+    cluster2260_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2260_exit_name -> cluster2260_exit [arrowhead=none, color="black", style=dashed]
+    cluster2260_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13969_name [shape=none, label=<<font color="black">Call[13969]</font>>]
+    node13969_name -> node13969 [arrowhead=none, color="black", style=dashed]
+    node13969 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileQuantifierPrefix()</font>> color="black" fillcolor="white", style=filled]
+    node13969 -> node13970 [color="black"]
+    node13970_name [shape=none, label=<<font color="black">Block[13970]</font>>]
+    node13970_name -> node13970 [arrowhead=none, color="black", style=dashed]
+    node13970 [shape=box, label=<<font color="black">[0] let qp = %0<BR ALIGN="LEFT"/>[1] return (new Record(&quot;Min&quot; -&gt; qp.Min, &quot;Max&quot; -&gt; qp.Max, &quot;Greedy&quot; -&gt; false))[#976]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13970 -> cluster2260_exit [color="black"]
+  }
+}

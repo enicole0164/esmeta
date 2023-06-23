@@ -1,0 +1,10 @@
+def <SYNTAX>:OptionalChain[7,0].Contains(
+  this: Ast:OptionalChain[7,0],
+  symbol: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->Contains(symbol)
+  if (= %0 true) {
+    return true
+  } else {}
+  return false
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1511 {
+    label = "def <SYNTAX>:ObjectBindingPattern[1,0].ContainsExpression(this: Ast:ObjectBindingPattern[1,0]): Boolean"
+    style = rounded
+    cluster1511_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1511_entry_name -> cluster1511_entry [arrowhead=none, color="black", style=dashed]
+    cluster1511_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1511_entry -> node8280 [color="black"]
+    cluster1511_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1511_exit_name -> cluster1511_exit [arrowhead=none, color="black", style=dashed]
+    cluster1511_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8280_name [shape=none, label=<<font color="black">Block[8280]</font>>]
+    node8280_name -> node8280 [arrowhead=none, color="black", style=dashed]
+    node8280 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8280 -> cluster1511_exit [color="black"]
+  }
+}

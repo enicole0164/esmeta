@@ -1,0 +1,8 @@
+def <SYNTAX>:BindingIdentifier[0,0].Evaluation(
+  this: Ast:BindingIdentifier[0,0],
+): Unknown {
+  sdo-call %0 = this->StringValue()
+  let bindingId = %0
+  call %1 = clo<ResolveBinding>(bindingId)
+  return [? %1]
+}

@@ -1,0 +1,199 @@
+def <SYNTAX>:ClassTail[0,0].ClassDefinitionEvaluation(
+  this: Ast:ClassTail[0,0],
+  classBinding: Unknown,
+  className: Unknown,
+): Normal[FunctionObject] | Abrupt {
+  let env = @EXECUTION_STACK[0].LexicalEnvironment
+  call %0 = clo<NewDeclarativeEnvironment>(env)
+  let classEnv = %0
+  if (! (= classBinding undefined)) {
+    method-call %1 = classEnv->CreateImmutableBinding(classBinding, true)
+  } else {}
+  let outerPrivateEnvironment = @EXECUTION_STACK[0].PrivateEnvironment
+  call %2 = clo<NewPrivateEnvironment>(outerPrivateEnvironment)
+  let classPrivateEnvironment = %2
+  if (! (= this[1] absent)) {
+    sdo-call %5 = this[1]->PrivateBoundIdentifiers()
+    %4 = %5
+    %3 = 0
+    loop[foreach] (< %3 %4.length) {
+      let dn = %4[%3]
+      if (contains classPrivateEnvironment.Names dn: Unknown["PrivateName"] Description) {
+        assert (yet "This is only possible for getter/setter pairs.")
+      } else {
+        let name = (new PrivateName("Description" -> dn))[#735]
+        push classPrivateEnvironment.Names < name
+      }
+      %3 = (+ %3 1)
+    }
+  } else {}
+  if (= this[0] absent) {
+    let protoParent = @EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"]
+    let constructorParent = @EXECUTION_STACK[0].Realm.Intrinsics["%Function.prototype%"]
+  } else {
+    @EXECUTION_STACK[0].LexicalEnvironment = classEnv
+    nop
+    sdo-call %6 = this[0]->Evaluation()
+    let superclassRef = %6
+    @EXECUTION_STACK[0].LexicalEnvironment = env
+    call %7 = clo<GetValue>(superclassRef)
+    let superclass = [? %7]
+    if (= superclass null) {
+      let protoParent = null
+      let constructorParent = @EXECUTION_STACK[0].Realm.Intrinsics["%Function.prototype%"]
+    } else {
+      call %8 = clo<IsConstructor>(superclass)
+      if (= %8 false) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#697])
+      } else {
+        call %9 = clo<Get>(superclass, "prototype")
+        let protoParent = [? %9]
+        if (! (|| (= (typeof protoParent) @Object) (= (typeof protoParent) @Null))) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#698])
+        } else {}
+        let constructorParent = superclass
+      }
+    }
+  }
+  call %10 = clo<OrdinaryObjectCreate>(protoParent)
+  let proto = %10
+  if (= this[1] absent) {
+    let constructor = ~empty~
+  } else {
+    sdo-call %11 = this[1]->ConstructorMethod()
+    let constructor = %11
+  }
+  @EXECUTION_STACK[0].LexicalEnvironment = classEnv
+  @EXECUTION_STACK[0].PrivateEnvironment = classPrivateEnvironment
+  if (= constructor ~empty~) {
+    let defaultConstructor = clo<ClassTail[0,0].ClassDefinitionEvaluation:clo0>
+    call %12 = clo<CreateBuiltinFunction>(defaultConstructor, 0, className, (new ["ConstructorKind", "SourceText"])[#699], @EXECUTION_STACK[0].Realm, constructorParent)
+    let F = %12
+  } else {
+    sdo-call %13 = constructor->DefineMethod(proto, constructorParent)
+    let constructorInfo = [! %13]
+    let F = constructorInfo.Closure
+    call %14 = clo<MakeClassConstructor>(F)
+    call %15 = clo<SetFunctionName>(F, className)
+  }
+  call %16 = clo<MakeConstructor>(F, false, proto)
+  if (! (= this[0] absent)) {
+    F.ConstructorKind = ~derived~
+  } else {}
+  call %17 = clo<CreateMethodProperty>(proto, "constructor", F)
+  if (= this[1] absent) {
+    let elements = (new [])[#700]
+  } else {
+    sdo-call %18 = this[1]->NonConstructorElements()
+    let elements = %18
+  }
+  let instancePrivateMethods = (new [])[#701]
+  let staticPrivateMethods = (new [])[#702]
+  let instanceFields = (new [])[#703]
+  let staticElements = (new [])[#704]
+  %20 = elements
+  %19 = 0
+  loop[foreach] (< %19 %20.length) {
+    let e = %20[%19]
+    sdo-call %21 = e->IsStatic()
+    if (= %21 false) {
+      sdo-call %22 = e->ClassElementEvaluation(proto)
+      call %23 = clo<Completion>(%22)
+      let element = %23
+    } else {
+      sdo-call %24 = e->ClassElementEvaluation(F)
+      call %25 = clo<Completion>(%24)
+      let element = %25
+    }
+    if (&& (comp? element) (! (= element.Type ~normal~))) {
+      @EXECUTION_STACK[0].LexicalEnvironment = env
+      @EXECUTION_STACK[0].PrivateEnvironment = outerPrivateEnvironment
+      return [? element]
+    } else {}
+    element = element.Value
+    if (? element: "PrivateElement") {
+      assert (|| (= element.Kind ~method~) (= element.Kind ~accessor~))
+      sdo-call %26 = e->IsStatic()
+      if (= %26 false) {
+        let container = instancePrivateMethods
+      } else {
+        let container = staticPrivateMethods
+      }
+      if (contains container element.Key: Unknown["PrivateElement"] Key) {
+        let elems = container
+        let idx = 0
+        loop[repeat] (< idx elems.length) {
+          let elem = elems[idx]
+          if (= elem.Key element.Key) let existing = elem else {}
+          idx = (+ idx 1)
+        }
+        assert (&& (= element.Kind ~accessor~) (= existing.Kind ~accessor~))
+        if (= element.Get undefined) {
+          let combined = (new PrivateElement("Key" -> element.Key, "Kind" -> ~accessor~, "Get" -> existing.Get, "Set" -> element.Set))[#705]
+        } else {
+          let combined = (new PrivateElement("Key" -> element.Key, "Kind" -> ~accessor~, "Get" -> element.Get, "Set" -> existing.Set))[#706]
+        }
+        let elems = container
+        let idx = 0
+        loop[repeat] (< idx elems.length) {
+          let elem = elems[idx]
+          if (= elem existing) elems[idx] = combined else {}
+          idx = (+ idx 1)
+        }
+      } else {
+        push container < element
+      }
+    } else {
+      if (? element: "ClassFieldDefinitionRecord") {
+        sdo-call %27 = e->IsStatic()
+        if (= %27 false) {
+          push instanceFields < element
+        } else {
+          push staticElements < element
+        }
+      } else {
+        if (? element: "ClassStaticBlockDefinitionRecord") {
+          push staticElements < element
+        } else {}
+      }
+    }
+    %19 = (+ %19 1)
+  }
+  @EXECUTION_STACK[0].LexicalEnvironment = env
+  if (! (= classBinding undefined)) {
+    method-call %28 = classEnv->InitializeBinding(classBinding, F)
+    [! %28]
+  } else {}
+  F.PrivateMethods = instancePrivateMethods
+  F.Fields = instanceFields
+  %30 = staticPrivateMethods
+  %29 = 0
+  loop[foreach] (< %29 %30.length) {
+    let method = %30[%29]
+    call %31 = clo<PrivateMethodOrAccessorAdd>(F, method)
+    [! %31]
+    %29 = (+ %29 1)
+  }
+  %33 = staticElements
+  %32 = 0
+  loop[foreach] (< %32 %33.length) {
+    let elementRecord = %33[%32]
+    if (? elementRecord: "ClassFieldDefinitionRecord") {
+      call %34 = clo<DefineField>(F, elementRecord)
+      call %35 = clo<Completion>(%34)
+      let result = %35
+    } else {
+      assert (? elementRecord: "ClassStaticBlockDefinitionRecord")
+      call %36 = clo<Call>(elementRecord.BodyFunction, F)
+      call %37 = clo<Completion>(%36)
+      let result = %37
+    }
+    if (&& (comp? result) (! (= result.Type ~normal~))) {
+      @EXECUTION_STACK[0].PrivateEnvironment = outerPrivateEnvironment
+      return [? result]
+    } else {}
+    %32 = (+ %32 1)
+  }
+  @EXECUTION_STACK[0].PrivateEnvironment = outerPrivateEnvironment
+  return F
+}

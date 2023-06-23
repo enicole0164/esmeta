@@ -1,0 +1,11 @@
+def <SYNTAX>:AssignmentProperty[1,0].PropertyDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentProperty[1,0],
+  value: Unknown,
+): Normal[List[Symbol | String]] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  let name = %0
+  [? name]
+  sdo-call %1 = this[1]->KeyedDestructuringAssignmentEvaluation(value, name)
+  [? %1]
+  return (new [name])[#598]
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:ContinueStatement[0,0].Evaluation(
+  this: Ast:ContinueStatement[0,0],
+): Unknown {
+  return comp[~continue~/~empty~](~empty~)
+}

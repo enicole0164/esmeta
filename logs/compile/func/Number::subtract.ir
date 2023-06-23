@@ -1,0 +1,8 @@
+def <NUM>:Number::subtract(
+  x: Number,
+  y: Number,
+): Number {
+  call %1 = clo<Number::unaryMinus>(y)
+  call %0 = clo<Number::add>(x, %1)
+  return %0
+}

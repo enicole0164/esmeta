@@ -1,0 +1,5 @@
+def <CONC>:DeclarativeEnvironmentRecord.HasSuperBinding(
+  envRec: DeclarativeEnvironmentRecord,
+): False {
+  return false
+}

@@ -1,0 +1,6 @@
+def <CONT>:GeneratorResume:cont0(
+  result: Unknown,
+): Normal[ESValue] | Abrupt {
+  assert (= methodContext @EXECUTION_STACK[0])
+  return [? result]
+}

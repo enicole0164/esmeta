@@ -1,0 +1,5 @@
+def <SYNTAX>:AdditiveExpression[2,0].AssignmentTargetType(
+  this: Ast:AdditiveExpression[2,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

@@ -1,0 +1,12 @@
+def AllocateSharedArrayBuffer(
+  constructor: Unknown,
+  byteLength: Unknown["NonnegativeInteger"],
+): Unknown["EitherANormalCompletionContainingASharedArrayBufferOrAnAbruptCompletion"] {
+  call %0 = clo<OrdinaryCreateFromConstructor>(constructor, "%SharedArrayBuffer.prototype%", (new ["ArrayBufferData", "ArrayBufferByteLength"])[#1160])
+  let obj = [? %0]
+  call %1 = clo<CreateSharedByteDataBlock>(byteLength)
+  let block = [? %1]
+  obj.ArrayBufferData = block
+  obj.ArrayBufferByteLength = byteLength
+  return obj
+}

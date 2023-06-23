@@ -1,0 +1,54 @@
+def InnerModuleLinking(
+  module: ModuleRecord,
+  stack: Unknown,
+  index: Unknown["NonnegativeInteger"],
+): Unknown["EitherANormalCompletionContainingANonnegativeIntegerOrAnAbruptCompletion"] {
+  if (! (? module: "CyclicModuleRecord")) {
+    method-call %0 = module->Link()
+    [? %0]
+    return index
+  } else {}
+  if (|| (|| (|| (= module.Status ~linking~) (= module.Status ~linked~)) (= module.Status ~evaluating-async~)) (= module.Status ~evaluated~)) {
+    return index
+  } else {}
+  assert (= module.Status ~unlinked~)
+  module.Status = ~linking~
+  module.DFSIndex = index
+  module.DFSAncestorIndex = index
+  index = (+ index 1)
+  push stack < module
+  %2 = module.RequestedModules
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let required = %2[%1]
+    call %3 = clo<HostResolveImportedModule>(module, required)
+    let requiredModule = [? %3]
+    call %4 = clo<InnerModuleLinking>(requiredModule, stack, index)
+    index = [? %4]
+    if (? requiredModule: "CyclicModuleRecord") {
+      assert (|| (|| (|| (= requiredModule.Status ~linking~) (= requiredModule.Status ~linked~)) (= requiredModule.Status ~evaluating-async~)) (= requiredModule.Status ~evaluated~))
+      assert (yet "_requiredModule_.[[Status]] is ~linking~ if and only if _requiredModule_ is in _stack_.")
+      if (= requiredModule.Status ~linking~) {
+        module.DFSAncestorIndex = (min module.DFSAncestorIndex requiredModule.DFSAncestorIndex)
+      } else {}
+    } else {}
+    %1 = (+ %1 1)
+  }
+  method-call %5 = module->InitializeEnvironment()
+  [? %5]
+  assert (yet "_module_ occurs exactly once in _stack_.")
+  assert (! (< module.DFSIndex module.DFSAncestorIndex))
+  if (== module.DFSAncestorIndex module.DFSIndex) {
+    let done = false
+    loop[repeat] (= done false) {
+      (yet "Let _requiredModule_ be the last element in _stack_.")
+      (yet "Remove the last element of _stack_.")
+      assert (? requiredModule: "CyclicModuleRecord")
+      requiredModule.Status = ~linked~
+      if (= requiredModule module) {
+        done = true
+      } else {}
+    }
+  } else {}
+  return index
+}

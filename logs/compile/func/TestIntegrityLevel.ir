@@ -1,0 +1,37 @@
+def TestIntegrityLevel(
+  O: Object,
+  level: Const[~frozen~, ~sealed~],
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<IsExtensible>(O)
+  let extensible = [? %0]
+  if (= extensible true) {
+    return false
+  } else {}
+  nop
+  method-call %1 = O->OwnPropertyKeys()
+  let keys = [? %1]
+  %3 = keys
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let k = %3[%2]
+    method-call %4 = O->GetOwnProperty(k)
+    let currentDesc = [? %4]
+    if (! (= currentDesc undefined)) {
+      if (= currentDesc.Configurable true) {
+        return false
+      } else {}
+      %5 = (= level ~frozen~)
+      if %5 {
+        call %6 = clo<IsDataDescriptor>(currentDesc)
+        %5 = (= %6 true)
+      } else {}
+      if %5 {
+        if (= currentDesc.Writable true) {
+          return false
+        } else {}
+      } else {}
+    } else {}
+    %2 = (+ %2 1)
+  }
+  return true
+}

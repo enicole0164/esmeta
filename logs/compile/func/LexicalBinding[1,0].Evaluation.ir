@@ -1,0 +1,11 @@
+def <SYNTAX>:LexicalBinding[1,0].Evaluation(
+  this: Ast:LexicalBinding[1,0],
+): Unknown {
+  sdo-call %0 = this[1]->Evaluation()
+  let rhs = %0
+  call %1 = clo<GetValue>(rhs)
+  let value = [? %1]
+  let env = @EXECUTION_STACK[0].LexicalEnvironment
+  sdo-call %2 = this[0]->BindingInitialization(value, env)
+  return [? %2]
+}

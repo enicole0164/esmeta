@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster783 {
+    label = "def <SYNTAX>:ParenthesizedExpression[0,0].NamedEvaluation(this: Ast:ParenthesizedExpression[0,0], name: Unknown): Normal[FunctionObject] | Abrupt"
+    style = rounded
+    cluster783_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster783_entry_name -> cluster783_entry [arrowhead=none, color="black", style=dashed]
+    cluster783_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster783_entry -> node3024 [color="black"]
+    cluster783_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster783_exit_name -> cluster783_exit [arrowhead=none, color="black", style=dashed]
+    cluster783_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3024_name [shape=none, label=<<font color="black">Call[3024]</font>>]
+    node3024_name -> node3024 [arrowhead=none, color="black", style=dashed]
+    node3024 [shape=cds, label=<<font color="black">%0 = clo&lt;IsAnonymousFunctionDefinition&gt;(this[0])</font>> color="black" fillcolor="white", style=filled]
+    node3024 -> node3025 [color="black"]
+    node3025_name [shape=none, label=<<font color="black">Block[3025]</font>>]
+    node3025_name -> node3025 [arrowhead=none, color="black", style=dashed]
+    node3025 [shape=box, label=<<font color="black">[0] assert (= %0 true)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3025 -> node3026 [color="black"]
+    node3026_name [shape=none, label=<<font color="black">Call[3026]</font>>]
+    node3026_name -> node3026 [arrowhead=none, color="black", style=dashed]
+    node3026 [shape=cds, label=<<font color="black">%1 = this[0]-&gt;NamedEvaluation(name)</font>> color="black" fillcolor="white", style=filled]
+    node3026 -> node3027 [color="black"]
+    node3027_name [shape=none, label=<<font color="black">Block[3027]</font>>]
+    node3027_name -> node3027 [arrowhead=none, color="black", style=dashed]
+    node3027 [shape=box, label=<<font color="black">[0] return [? %1]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3027 -> cluster783_exit [color="black"]
+  }
+}

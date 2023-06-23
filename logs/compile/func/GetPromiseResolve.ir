@@ -1,0 +1,11 @@
+def GetPromiseResolve(
+  promiseConstructor: Unknown["Constructor"],
+): Normal[FunctionObject] | Abrupt {
+  call %0 = clo<Get>(promiseConstructor, "resolve")
+  let promiseResolve = [? %0]
+  call %1 = clo<IsCallable>(promiseResolve)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1263])
+  } else {}
+  return promiseResolve
+}

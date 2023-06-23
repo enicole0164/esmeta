@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.get Symbol.prototype.description(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let s = this
+  call %0 = clo<thisSymbolValue>(s)
+  let sym = [? %0]
+  return sym.Description
+}

@@ -1,0 +1,21 @@
+def BoundFunctionCreate(
+  targetFunction: FunctionObject,
+  boundThis: ESValue,
+  boundArgs: List[ESValue],
+): Normal[FunctionObject] | Abrupt {
+  method-call %0 = targetFunction->GetPrototypeOf()
+  let proto = [? %0]
+  let internalSlotsList = (list-concat (new ["Prototype", "Extensible"])[#446] (new ["BoundTargetFunction", "BoundThis", "BoundArguments"])[#447])[#445]
+  call %1 = clo<MakeBasicObject>(internalSlotsList)
+  let obj = %1
+  obj.Prototype = proto
+  obj.Call = clo<BoundFunctionExoticObject.Call>
+  call %2 = clo<IsConstructor>(targetFunction)
+  if (= %2 true) {
+    obj.Construct = clo<BoundFunctionExoticObject.Construct>
+  } else {}
+  obj.BoundTargetFunction = targetFunction
+  obj.BoundThis = boundThis
+  obj.BoundArguments = boundArgs
+  return obj
+}

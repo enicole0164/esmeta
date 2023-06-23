@@ -1,0 +1,6 @@
+def <SYNTAX>:RegExpUnicodeEscapeSequence[5,0].CharacterValue(
+  this: Ast:RegExpUnicodeEscapeSequence[5,0],
+): Unknown["NonnegativeInteger"] {
+  sdo-call %0 = this[0]->MV()
+  return %0
+}

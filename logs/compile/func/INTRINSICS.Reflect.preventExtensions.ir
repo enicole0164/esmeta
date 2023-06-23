@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.Reflect.preventExtensions(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  if (! (= (typeof target) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1354])
+  } else {}
+  method-call %0 = target->PreventExtensions()
+  return [? %0]
+}

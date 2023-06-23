@@ -1,0 +1,6 @@
+def Completion(
+  completionRecord: Normal,
+): Normal {
+  assert (? completionRecord: "CompletionRecord")
+  return completionRecord
+}

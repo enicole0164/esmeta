@@ -1,0 +1,9 @@
+def <SYNTAX>:QuantifierPrefix[5,0].CompileQuantifierPrefix(
+  this: Ast:QuantifierPrefix[5,0],
+): Unknown["RecordWithFields[[Min]](aNonnegativeInteger)And[[Max]](aNonnegativeIntegerOr+∞)"] {
+  sdo-call %0 = this[0]->MV()
+  let i = %0
+  sdo-call %1 = this[1]->MV()
+  let j = %1
+  return (new Record("Min" -> i, "Max" -> j))[#982]
+}

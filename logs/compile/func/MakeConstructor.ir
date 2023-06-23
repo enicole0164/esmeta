@@ -1,0 +1,27 @@
+def MakeConstructor(
+  F: BuiltinFunctionObject | ECMAScriptFunctionObject,
+  writablePrototype?: Boolean,
+  prototype?: Object,
+): Const[~unused~] {
+  if (? F: "ECMAScriptFunctionObject") {
+    call %0 = clo<IsConstructor>(F)
+    assert (= %0 false)
+    assert (&& F.Extensible (= F.SubMap.prototype absent))
+    F.Construct = clo<ECMAScriptFunctionObject.Construct>
+  } else {
+    F.Construct = clo<BuiltinFunctionObject.Construct>
+  }
+  F.ConstructorKind = ~base~
+  if (= writablePrototype absent) {
+    writablePrototype = true
+  } else {}
+  if (= prototype absent) {
+    call %1 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+    prototype = %1
+    call %2 = clo<DefinePropertyOrThrow>(prototype, "constructor", (new PropertyDescriptor("Value" -> F, "Writable" -> writablePrototype, "Enumerable" -> false, "Configurable" -> true))[#426])
+    [! %2]
+  } else {}
+  call %3 = clo<DefinePropertyOrThrow>(F, "prototype", (new PropertyDescriptor("Value" -> prototype, "Writable" -> writablePrototype, "Enumerable" -> false, "Configurable" -> false))[#427])
+  [! %3]
+  return ~unused~
+}

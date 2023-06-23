@@ -1,0 +1,6 @@
+def PrepareForTailCall(
+): Unknown {
+  assert true
+  @EXECUTION_STACK[0] = @EXECUTION_STACK[1]
+  return ~unused~
+}

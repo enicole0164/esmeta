@@ -1,0 +1,31 @@
+def CreateBuiltinFunction(
+  behaviour: Unknown["AbstractClosure,ASetOfAlgorithmSteps,OrSomeOtherDefinitionOfAFunction'sBehaviourProvidedInThisSpecification"],
+  length: Unknown["NonnegativeIntegerOr+∞"],
+  name: Symbol | String,
+  additionalInternalSlotsList: Unknown["ListOfNamesOfInternalSlots"],
+  realm?: RealmRecord,
+  prototype?: Object | Null,
+  prefix?: String,
+): FunctionObject {
+  if (= realm absent) {
+    realm = @EXECUTION_STACK[0].Realm
+  } else {}
+  if (= prototype absent) {
+    prototype = realm.Intrinsics["%Function.prototype%"]
+  } else {}
+  let internalSlotsList = (new ["Prototype", "Extensible", "Realm", "InitialName"])[#440]
+  internalSlotsList = (list-concat internalSlotsList additionalInternalSlotsList)[#441]
+  let func = (new BuiltinFunctionObject())[#442]
+  func.Code = behaviour
+  func.Prototype = prototype
+  func.Extensible = true
+  func.Realm = realm
+  func.InitialName = null
+  call %0 = clo<SetFunctionLength>(func, length)
+  if (= prefix absent) {
+    call %1 = clo<SetFunctionName>(func, name)
+  } else {
+    call %2 = clo<SetFunctionName>(func, name, prefix)
+  }
+  return func
+}

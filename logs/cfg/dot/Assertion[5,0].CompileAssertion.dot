@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2255 {
+    label = "def <SYNTAX>:Assertion[5,0].CompileAssertion(this: Ast:Assertion[5,0]): Unknown["Matcher"]"
+    style = rounded
+    cluster2255_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2255_entry_name -> cluster2255_entry [arrowhead=none, color="black", style=dashed]
+    cluster2255_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2255_entry -> node13958 [color="black"]
+    cluster2255_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2255_exit_name -> cluster2255_exit [arrowhead=none, color="black", style=dashed]
+    cluster2255_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13958_name [shape=none, label=<<font color="black">Call[13958]</font>>]
+    node13958_name -> node13958 [arrowhead=none, color="black", style=dashed]
+    node13958 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileSubpattern(~forward~)</font>> color="black" fillcolor="white", style=filled]
+    node13958 -> node13959 [color="black"]
+    node13959_name [shape=none, label=<<font color="black">Block[13959]</font>>]
+    node13959_name -> node13959 [arrowhead=none, color="black", style=dashed]
+    node13959 [shape=box, label=<<font color="black">[0] let m = %0<BR ALIGN="LEFT"/>[1] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called:\n    1. Assert: _y_ is a State.\n    1. Return _y_.\n  1. Let _r_ be _m_(_x_, _d_).\n  1. If _r_ is not ~failure~, return ~failure~.\n  1. Return _c_(_x_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13959 -> cluster2255_exit [color="black"]
+  }
+}

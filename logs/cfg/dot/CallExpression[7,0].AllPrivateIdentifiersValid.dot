@@ -1,0 +1,37 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1637 {
+    label = "def <SYNTAX>:CallExpression[7,0].AllPrivateIdentifiersValid(this: Ast:CallExpression[7,0], names: Unknown): Boolean"
+    style = rounded
+    cluster1637_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1637_entry_name -> cluster1637_entry [arrowhead=none, color="black", style=dashed]
+    cluster1637_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1637_entry -> node8849 [color="black"]
+    cluster1637_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1637_exit_name -> cluster1637_exit [arrowhead=none, color="black", style=dashed]
+    cluster1637_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8849_name [shape=none, label=<<font color="black">Call[8849]</font>>]
+    node8849_name -> node8849 [arrowhead=none, color="black", style=dashed]
+    node8849 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;StringValue()</font>> color="black" fillcolor="white", style=filled]
+    node8849 -> node8850 [color="black"]
+    node8850_name [shape=none, label=<<font color="black">Branch[8850]</font>>]
+    node8850_name -> node8850 [arrowhead=none, color="black", style=dashed]
+    node8850 [shape=diamond, label=<<font color="black">(contains names %0)</font>> color="black" fillcolor="white", style=filled]
+    node8850 -> node8851 [label=<<font color="black">true</font>> color="black"]
+    node8850 -> node8853 [label=<<font color="black">false</font>> color="black"]
+    node8851_name [shape=none, label=<<font color="black">Call[8851]</font>>]
+    node8851_name -> node8851 [arrowhead=none, color="black", style=dashed]
+    node8851 [shape=cds, label=<<font color="black">%1 = this[0]-&gt;AllPrivateIdentifiersValid(names)</font>> color="black" fillcolor="white", style=filled]
+    node8851 -> node8852 [color="black"]
+    node8853_name [shape=none, label=<<font color="black">Block[8853]</font>>]
+    node8853_name -> node8853 [arrowhead=none, color="black", style=dashed]
+    node8853 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8853 -> cluster1637_exit [color="black"]
+    node8852_name [shape=none, label=<<font color="black">Block[8852]</font>>]
+    node8852_name -> node8852 [arrowhead=none, color="black", style=dashed]
+    node8852 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8852 -> cluster1637_exit [color="black"]
+  }
+}

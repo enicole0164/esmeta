@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncFunctionExpression[0,0].HasName(
+  this: Ast:AsyncFunctionExpression[0,0],
+): Boolean {
+  return false
+}

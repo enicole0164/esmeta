@@ -1,0 +1,23 @@
+def <SYNTAX>:ClassTail[0,1].Contains(
+  this: Ast:ClassTail[0,1],
+  symbol: Unknown,
+): Boolean {
+  if (= symbol this[1]) {
+    return true
+  } else {}
+  if (= symbol this[0]) {
+    if (! (= this[0] absent)) {
+      return true
+    } else {
+      return false
+    }
+  } else {}
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->Contains(symbol)
+    if (= %0 true) {
+      return true
+    } else {}
+  } else {}
+  sdo-call %1 = this[1]->ComputedPropertyContains(symbol)
+  return %1
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:Atom[5,0].CompileAtom(
+  this: Ast:Atom[5,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CompileSubpattern(direction)
+  return %0
+}

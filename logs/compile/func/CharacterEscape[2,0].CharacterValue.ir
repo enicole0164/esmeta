@@ -1,0 +1,5 @@
+def <SYNTAX>:CharacterEscape[2,0].CharacterValue(
+  this: Ast:CharacterEscape[2,0],
+): Unknown["NonnegativeInteger"] {
+  (yet "Return the numeric value of U+0000 (NULL).")
+}

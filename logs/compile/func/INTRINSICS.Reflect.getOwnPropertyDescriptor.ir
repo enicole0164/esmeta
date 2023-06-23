@@ -1,0 +1,17 @@
+def <BUILTIN>:INTRINSICS.Reflect.getOwnPropertyDescriptor(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  if (< 0 argumentsList.length) let propertyKey = (pop < argumentsList) else let propertyKey = absent
+  if (! (= (typeof target) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1349])
+  } else {}
+  call %0 = clo<ToPropertyKey>(propertyKey)
+  let key = [? %0]
+  method-call %1 = target->GetOwnProperty(key)
+  let desc = [? %1]
+  call %2 = clo<FromPropertyDescriptor>(desc)
+  return %2
+}

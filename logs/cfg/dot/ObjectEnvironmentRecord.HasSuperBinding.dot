@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster991 {
+    label = "def <CONC>:ObjectEnvironmentRecord.HasSuperBinding(envRec: ObjectEnvironmentRecord): False"
+    style = rounded
+    cluster991_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster991_entry_name -> cluster991_entry [arrowhead=none, color="black", style=dashed]
+    cluster991_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster991_entry -> node3667 [color="black"]
+    cluster991_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster991_exit_name -> cluster991_exit [arrowhead=none, color="black", style=dashed]
+    cluster991_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3667_name [shape=none, label=<<font color="black">Block[3667]</font>>]
+    node3667_name -> node3667 [arrowhead=none, color="black", style=dashed]
+    node3667 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3667 -> cluster991_exit [color="black"]
+  }
+}

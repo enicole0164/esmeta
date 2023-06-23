@@ -1,0 +1,36 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.join(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let separator = (pop < argumentsList) else let separator = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  if (= separator undefined) {
+    let sep = ","
+  } else {
+    call %2 = clo<ToString>(separator)
+    let sep = [? %2]
+  }
+  let R = ""
+  let k = 0
+  loop[repeat] (< k len) {
+    if (< 0 k) {
+      R = (concat R sep)
+    } else {}
+    call %3 = clo<ToString>(([number] k))
+    call %4 = clo<Get>(O, [! %3])
+    let element = [? %4]
+    if (|| (= element undefined) (= element null)) {
+      let next = ""
+    } else {
+      call %5 = clo<ToString>(element)
+      let next = [? %5]
+    }
+    R = (concat R next)
+    k = (+ k 1)
+  }
+  return R
+}

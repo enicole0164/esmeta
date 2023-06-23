@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } { ; } throw new Test262Error ( message ) ; } { } assert . sameValue = { length : true } ; assert . notSameValue = { join : '' } ; 0 && 0 ; assert . _toString = x => { } ; function Test262Error ( message ) { this . message = message || "" ; } await => 0 ; x => 0 ; class x { } if ( function ( ) { return "gnulluna" ; } ( ) . replace ( 0 ? 0 : 0 , Function ( ) ) !== "gundefineduna" ) 0 ; 

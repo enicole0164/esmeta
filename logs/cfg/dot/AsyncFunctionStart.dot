@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2642 {
+    label = "def AsyncFunctionStart(promiseCapability: PromiseCapabilityRecord, asyncFunctionBody: Unknown): Const[~unused~]"
+    style = rounded
+    cluster2642_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2642_entry_name -> cluster2642_entry [arrowhead=none, color="black", style=dashed]
+    cluster2642_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2642_entry -> node19613 [color="black"]
+    cluster2642_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2642_exit_name -> cluster2642_exit [arrowhead=none, color="black", style=dashed]
+    cluster2642_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19613_name [shape=none, label=<<font color="black">Block[19613]</font>>]
+    node19613_name -> node19613 [arrowhead=none, color="black", style=dashed]
+    node19613 [shape=box, label=<<font color="black">[0] let runningContext = @EXECUTION_STACK[0]<BR ALIGN="LEFT"/>[1] let asyncContext = (copy runningContext)[#1338]<BR ALIGN="LEFT"/>[2] nop<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19613 -> node19614 [color="black"]
+    node19614_name [shape=none, label=<<font color="black">Call[19614]</font>>]
+    node19614_name -> node19614 [arrowhead=none, color="black", style=dashed]
+    node19614 [shape=cds, label=<<font color="black">%0 = clo&lt;AsyncBlockStart&gt;(promiseCapability, asyncFunctionBody, asyncContext)</font>> color="black" fillcolor="white", style=filled]
+    node19614 -> node19615 [color="black"]
+    node19615_name [shape=none, label=<<font color="black">Block[19615]</font>>]
+    node19615_name -> node19615 [arrowhead=none, color="black", style=dashed]
+    node19615 [shape=box, label=<<font color="black">[0] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19615 -> cluster2642_exit [color="black"]
+  }
+}

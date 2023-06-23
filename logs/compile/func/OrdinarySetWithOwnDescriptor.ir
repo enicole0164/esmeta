@@ -1,0 +1,54 @@
+def OrdinarySetWithOwnDescriptor(
+  O: Object,
+  P: Symbol | String,
+  V: ESValue,
+  Receiver: ESValue,
+  ownDesc: PropertyDescriptor | Undefined,
+): Normal[Boolean] | Abrupt {
+  if (= ownDesc undefined) {
+    method-call %0 = O->GetPrototypeOf()
+    let parent = [? %0]
+    if (! (= parent null)) {
+      method-call %1 = parent->Set(P, V, Receiver)
+      return [? %1]
+    } else {
+      ownDesc = (new PropertyDescriptor("Value" -> undefined, "Writable" -> true, "Enumerable" -> true, "Configurable" -> true))[#407]
+    }
+  } else {}
+  call %2 = clo<IsDataDescriptor>(ownDesc)
+  if (= %2 true) {
+    if (= ownDesc.Writable false) {
+      return false
+    } else {}
+    if (! (= (typeof Receiver) @Object)) {
+      return false
+    } else {}
+    method-call %3 = Receiver->GetOwnProperty(P)
+    let existingDescriptor = [? %3]
+    if (! (= existingDescriptor undefined)) {
+      call %4 = clo<IsAccessorDescriptor>(existingDescriptor)
+      if (= %4 true) {
+        return false
+      } else {}
+      if (= existingDescriptor.Writable false) {
+        return false
+      } else {}
+      let valueDesc = (new PropertyDescriptor("Value" -> V))[#408]
+      method-call %5 = Receiver->DefineOwnProperty(P, valueDesc)
+      return [? %5]
+    } else {
+      assert (= Receiver.SubMap[P] absent)
+      call %6 = clo<CreateDataProperty>(Receiver, P, V)
+      return [? %6]
+    }
+  } else {}
+  call %7 = clo<IsAccessorDescriptor>(ownDesc)
+  assert (= %7 true)
+  let setter = ownDesc.Set
+  if (= setter undefined) {
+    return false
+  } else {}
+  call %8 = clo<Call>(setter, Receiver, (new [V])[#409])
+  [? %8]
+  return true
+}

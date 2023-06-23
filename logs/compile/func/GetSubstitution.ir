@@ -1,0 +1,27 @@
+def GetSubstitution(
+  matched: String,
+  str: String,
+  position: Unknown["NonnegativeInteger"],
+  captures: Unknown["PossiblyEmptyList,EachOfWhoseElementsIsAStringOr*undefined*"],
+  namedCaptures: Object | Undefined,
+  replacementTemplate: String,
+): Normal[String] | Abrupt {
+  let stringLength = str.length
+  assert (! (< stringLength position))
+  let templateRemainder = replacementTemplate
+  let result = ""
+  loop[repeat] (! (= templateRemainder "")) {
+    nop
+    (yet "If _templateRemainder_ starts with *\"$$\"*, then\n  1. Let _ref_ be *\"$$\"*.\n  1. Let _refReplacement_ be *\"$\"*.")
+    (yet "Else if _templateRemainder_ starts with *\"$`\"*, then\n  1. Let _ref_ be *\"$`\"*.\n  1. Let _refReplacement_ be the substring of _str_ from 0 to _position_.")
+    (yet "Else if _templateRemainder_ starts with *\"$&\"*, then\n  1. Let _ref_ be *\"$&\"*.\n  1. Let _refReplacement_ be _matched_.")
+    (yet "Else if _templateRemainder_ starts with *\"$'\"* (0x0024 (DOLLAR SIGN) followed by 0x0027 (APOSTROPHE)), then\n  1. Let _ref_ be *\"$'\"*.\n  1. Let _matchLength_ be the length of _matched_.\n  1. Let _tailPos_ be _position_ + _matchLength_.\n  1. Let _refReplacement_ be the substring of _str_ from min(_tailPos_, _stringLength_).\n  1. NOTE: _tailPos_ can exceed _stringLength_ only if this abstract operation was invoked by a call to the intrinsic @@replace method of %RegExp.prototype% on an object whose *\"exec\"* property is not the intrinsic %RegExp.prototype.exec%.")
+    (yet "Else if _templateRemainder_ starts with *\"$\"* followed by 1 or more decimal digits, then\n  1. Let _found_ be *false*.\n  1. For each integer _d_ of « 2, 1 », do\n    1. If _found_ is *false* and _templateRemainder_ starts with *\"$\"* followed by _d_ or more decimal digits, then\n      1. Set _found_ to *true*.\n      1. Let _ref_ be the substring of _templateRemainder_ from 0 to 1 + _d_.\n      1. Let _digits_ be the substring of _templateRemainder_ from 1 to 1 + _d_.\n      1. Let _index_ be ℝ(StringToNumber(_digits_)).\n      1. Assert: 0 ≤ _index_ ≤ 99..\n      1. If _index_ = 0, then\n        1. Let _refReplacement_ be _ref_.\n      1. Else if _index_ ≤ the number of elements in _captures_, then\n        1. Let _capture_ be _captures_[_index_ - 1].\n        1. If _capture_ is *undefined*, then\n          1. Let _refReplacement_ be *\"\"*.\n        1. Else,\n          1. Let _refReplacement_ be _capture_.\n      1. Else,\n        1. Let _refReplacement_ be _ref_.")
+    (yet "Else if _templateRemainder_ starts with *\"$<\"*, then\n  1. Let _gtPos_ be StringIndexOf(_templateRemainder_, *\">\"*, 0).\n  1. If _gtPos_ = -1 or _namedCaptures_ is *undefined*, then\n    1. Let _ref_ be *\"$<\"*.\n    1. Let _refReplacement_ be _ref_.\n  1. Else,\n    1. Let _ref_ be the substring of _templateRemainder_ from 0 to _gtPos_ + 1.\n    1. Let _groupName_ be the substring of _templateRemainder_ from 2 to _gtPos_.\n    1. Assert: Type(_namedCaptures_) is Object.\n    1. Let _capture_ be ? Get(_namedCaptures_, _groupName_).\n    1. If _capture_ is *undefined*, then\n      1. Let _refReplacement_ be *\"\"*.\n    1. Else,\n      1. Let _refReplacement_ be ? ToString(_capture_).")
+    (yet "Else,\n  1. Let _ref_ be the substring of _templateRemainder_ from 0 to 1.\n  1. Let _refReplacement_ be _ref_.")
+    let refLength = ref.length
+    templateRemainder = (substring templateRemainder refLength)
+    result = (concat result refReplacement)
+  }
+  return result
+}

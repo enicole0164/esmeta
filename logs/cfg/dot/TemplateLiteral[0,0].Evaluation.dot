@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1250 {
+    label = "def <SYNTAX>:TemplateLiteral[0,0].Evaluation(this: Ast:TemplateLiteral[0,0]): Unknown"
+    style = rounded
+    cluster1250_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1250_entry_name -> cluster1250_entry [arrowhead=none, color="black", style=dashed]
+    cluster1250_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1250_entry -> node5739 [color="black"]
+    cluster1250_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1250_exit_name -> cluster1250_exit [arrowhead=none, color="black", style=dashed]
+    cluster1250_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5739_name [shape=none, label=<<font color="black">Call[5739]</font>>]
+    node5739_name -> node5739 [arrowhead=none, color="black", style=dashed]
+    node5739 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;TV()</font>> color="black" fillcolor="white", style=filled]
+    node5739 -> node5740 [color="black"]
+    node5740_name [shape=none, label=<<font color="black">Block[5740]</font>>]
+    node5740_name -> node5740 [arrowhead=none, color="black", style=dashed]
+    node5740 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5740 -> cluster1250_exit [color="black"]
+  }
+}

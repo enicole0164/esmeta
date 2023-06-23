@@ -1,0 +1,8 @@
+def <SYNTAX>:SwitchStatement[0,0].ContainsUndefinedContinueTarget(
+  this: Ast:SwitchStatement[0,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#333])
+  return %0
+}

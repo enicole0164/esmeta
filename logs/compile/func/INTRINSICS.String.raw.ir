@@ -1,0 +1,41 @@
+def <BUILTIN>:INTRINSICS.String.raw(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let template = (pop < argumentsList) else let template = absent
+  let substitutions = argumentsList
+  let numberOfSubstitutions = substitutions.length
+  call %0 = clo<ToObject>(template)
+  let cooked = [? %0]
+  call %1 = clo<Get>(cooked, "raw")
+  call %2 = clo<ToObject>([? %1])
+  let raw = [? %2]
+  call %3 = clo<LengthOfArrayLike>(raw)
+  let literalSegments = [? %3]
+  if (! (< 0 literalSegments)) {
+    return ""
+  } else {}
+  let stringElements = (new [])[#945]
+  let nextIndex = 0
+  loop[repeat] true {
+    call %4 = clo<ToString>(([number] nextIndex))
+    let nextKey = [! %4]
+    call %5 = clo<Get>(raw, nextKey)
+    call %6 = clo<ToString>([? %5])
+    let nextSeg = [? %6]
+    (yet "Append the code unit elements of _nextSeg_ to the end of _stringElements_.")
+    if (== (+ nextIndex 1) literalSegments) {
+      (yet "Return the String value whose code units are the elements in the List _stringElements_. If _stringElements_ has no elements, the empty String is returned.")
+    } else {}
+    if (< nextIndex numberOfSubstitutions) {
+      let next = substitutions[nextIndex]
+    } else {
+      let next = ""
+    }
+    call %7 = clo<ToString>(next)
+    let nextSub = [? %7]
+    (yet "Append the code unit elements of _nextSub_ to the end of _stringElements_.")
+    nextIndex = (+ nextIndex 1)
+  }
+}

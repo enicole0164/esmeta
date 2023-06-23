@@ -1,0 +1,37 @@
+def <SYNTAX>:UnaryExpression[1,0].Evaluation(
+  this: Ast:UnaryExpression[1,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let ref = %0
+  [? ref]
+  if (! (? ref: "ReferenceRecord")) {
+    return true
+  } else {}
+  call %1 = clo<IsUnresolvableReference>(ref)
+  if (= %1 true) {
+    assert (= ref.Strict false)
+    return true
+  } else {}
+  call %2 = clo<IsPropertyReference>(ref)
+  if (= %2 true) {
+    call %3 = clo<IsPrivateReference>(ref)
+    assert (= %3 false)
+    call %4 = clo<IsSuperReference>(ref)
+    if (= %4 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#586])
+    } else {}
+    call %5 = clo<ToObject>(ref.Base)
+    let baseObj = [? %5]
+    method-call %6 = baseObj->Delete(ref.ReferencedName)
+    let deleteStatus = [? %6]
+    if (&& (= deleteStatus false) (= ref.Strict true)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#587])
+    } else {}
+    return deleteStatus
+  } else {
+    let base = ref.Base
+    assert (? base: "EnvironmentRecord")
+    method-call %7 = base->DeleteBinding(ref.ReferencedName)
+    return [? %7]
+  }
+}

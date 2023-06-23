@@ -1,0 +1,17 @@
+def IntegerIndexedElementGet(
+  O: IntegerIndexedExoticObject,
+  index: Number,
+): Number | BigInt | Undefined {
+  call %0 = clo<IsValidIntegerIndex>(O, index)
+  if (= %0 false) {
+    return undefined
+  } else {}
+  let offset = O.ByteOffset
+  call %1 = clo<TypedArrayElementSize>(O)
+  let elementSize = %1
+  let indexedPosition = (+ (* ([math] index) elementSize) offset)
+  call %2 = clo<TypedArrayElementType>(O)
+  let elementType = %2
+  call %3 = clo<GetValueFromBuffer>(O.ViewedArrayBuffer, indexedPosition, elementType, true, ~Unordered~)
+  return %3
+}

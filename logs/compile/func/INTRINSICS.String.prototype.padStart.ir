@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.String.prototype.padStart(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let maxLength = (pop < argumentsList) else let maxLength = absent
+  if (< 0 argumentsList.length) let fillString = (pop < argumentsList) else let fillString = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<StringPad>(O, maxLength, fillString, ~start~)
+  return [? %1]
+}

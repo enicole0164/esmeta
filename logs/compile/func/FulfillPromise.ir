@@ -1,0 +1,13 @@
+def FulfillPromise(
+  promise: Unknown,
+  value: Unknown,
+): Const[~unused~] {
+  assert (= promise.PromiseState ~pending~)
+  let reactions = promise.PromiseFulfillReactions
+  promise.PromiseResult = value
+  promise.PromiseFulfillReactions = undefined
+  promise.PromiseRejectReactions = undefined
+  promise.PromiseState = ~fulfilled~
+  call %0 = clo<TriggerPromiseReactions>(reactions, value)
+  return ~unused~
+}

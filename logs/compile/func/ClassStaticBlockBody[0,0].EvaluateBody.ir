@@ -1,0 +1,9 @@
+def <SYNTAX>:ClassStaticBlockBody[0,0].EvaluateBody(
+  this: Ast:ClassStaticBlockBody[0,0],
+  functionObject: Unknown,
+  argumentsList: Unknown["List"],
+): Normal[ESValue] | Abrupt {
+  assert (= argumentsList.length 0)
+  sdo-call %0 = this->EvaluateClassStaticBlockBody(functionObject)
+  return [? %0]
+}

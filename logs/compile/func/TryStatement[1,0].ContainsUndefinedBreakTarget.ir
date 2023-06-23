@@ -1,0 +1,12 @@
+def <SYNTAX>:TryStatement[1,0].ContainsUndefinedBreakTarget(
+  this: Ast:TryStatement[1,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ContainsUndefinedBreakTarget(labelSet)
+  let hasUndefinedLabels = %0
+  if (= hasUndefinedLabels true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->ContainsUndefinedBreakTarget(labelSet)
+  return %1
+}

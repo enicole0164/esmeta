@@ -1,0 +1,18 @@
+def ArrayCreate(
+  length: Unknown["NonnegativeInteger"],
+  proto?: Unknown,
+): Normal[ArrayExoticObject] | Abrupt {
+  if (< (- (** 2 32) 1) length) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#448])
+  } else {}
+  if (= proto absent) {
+    proto = @EXECUTION_STACK[0].Realm.Intrinsics["%Array.prototype%"]
+  } else {}
+  call %0 = clo<MakeBasicObject>((new ["Prototype", "Extensible"])[#449])
+  let A = %0
+  A.Prototype = proto
+  A.DefineOwnProperty = clo<ArrayExoticObject.DefineOwnProperty>
+  call %1 = clo<OrdinaryDefineOwnProperty>(A, "length", (new PropertyDescriptor("Value" -> ([number] length), "Writable" -> true, "Enumerable" -> false, "Configurable" -> false))[#450])
+  [! %1]
+  return A
+}

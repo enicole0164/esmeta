@@ -1,0 +1,6 @@
+def <SYNTAX>:ForStatement[2,3].VarScopedDeclarations(
+  this: Ast:ForStatement[2,3],
+): List[Ast] {
+  sdo-call %0 = this[3]->VarScopedDeclarations()
+  return %0
+}

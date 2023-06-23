@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassElement[4,0].PrivateBoundIdentifiers(
+  this: Ast:ClassElement[4,0],
+): List[String] {
+  return (new [])[#686]
+}

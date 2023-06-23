@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } { } throw new Test262Error ( message ) ; } assert . _isSameValue = { preventExtensions : function * ( x ) { } } ; x => 0 ; async x => 0 ; ; if ( 0 ) ; function Test262Error ( message ) { this . message = message || "" ; } 0 ? x => 0 : 0 ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; class x { } Object . seal ( new ( Object . getPrototypeOf ( async ( ) => { } ) . constructor ) ( ) ) ; 

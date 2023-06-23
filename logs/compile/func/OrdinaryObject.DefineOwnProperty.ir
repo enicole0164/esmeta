@@ -1,0 +1,8 @@
+def <INTERNAL>:OrdinaryObject.DefineOwnProperty(
+  O: OrdinaryObject,
+  P: Symbol | String,
+  Desc: PropertyDescriptor,
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<OrdinaryDefineOwnProperty>(O, P, Desc)
+  return [? %0]
+}

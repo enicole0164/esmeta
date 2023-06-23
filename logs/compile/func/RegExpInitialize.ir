@@ -1,0 +1,42 @@
+def RegExpInitialize(
+  obj: Object,
+  pattern: ESValue,
+  flags: ESValue,
+): Normal[Object] | Abrupt {
+  if (= pattern undefined) {
+    let P = ""
+  } else {
+    call %0 = clo<ToString>(pattern)
+    let P = [? %0]
+  }
+  if (= flags undefined) {
+    let F = ""
+  } else {
+    call %1 = clo<ToString>(flags)
+    let F = [? %1]
+  }
+  (yet "If _F_ contains any code unit other than *\"d\"*, *\"g\"*, *\"i\"*, *\"m\"*, *\"s\"*, *\"u\"*, or *\"y\"* or if it contains the same code unit more than once, throw a *SyntaxError* exception.")
+  if (contains F "u") {
+    let u = true
+  } else {
+    let u = false
+  }
+  if (= u true) {
+    call %2 = clo<StringToCodePoints>(P)
+    let patternText = %2
+  } else {
+    (yet "Let _patternText_ be the result of interpreting each of _P_'s 16-bit elements as a Unicode BMP code point. UTF-16 decoding is not applied to the elements.")
+  }
+  call %3 = clo<ParsePattern>(patternText, u)
+  let parseResult = %3
+  (yet "If _parseResult_ is a non-empty List of *SyntaxError* objects, throw a *SyntaxError* exception.")
+  assert (? parseResult: "Ast[Pattern]")
+  obj.OriginalSource = P
+  obj.OriginalFlags = F
+  nop
+  sdo-call %4 = parseResult->CompilePattern()
+  obj.RegExpMatcher = %4
+  call %5 = clo<Set>(obj, "lastIndex", 0.0f, true)
+  [? %5]
+  return obj
+}

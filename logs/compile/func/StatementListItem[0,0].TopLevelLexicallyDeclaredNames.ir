@@ -1,0 +1,5 @@
+def <SYNTAX>:StatementListItem[0,0].TopLevelLexicallyDeclaredNames(
+  this: Ast:StatementListItem[0,0],
+): List[String] {
+  return (new [])[#281]
+}

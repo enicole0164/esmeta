@@ -1,0 +1,12 @@
+def SetImmutablePrototype(
+  O: Unknown,
+  V: Object | Null,
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->GetPrototypeOf()
+  let current = [? %0]
+  call %1 = clo<SameValue>(V, current)
+  if (= %1 true) {
+    return true
+  } else {}
+  return false
+}

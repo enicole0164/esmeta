@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster789 {
+    label = "def <SYNTAX>:AsyncArrowFunction[0,0].NamedEvaluation(this: Ast:AsyncArrowFunction[0,0], name: Unknown): Normal[FunctionObject] | Abrupt"
+    style = rounded
+    cluster789_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster789_entry_name -> cluster789_entry [arrowhead=none, color="black", style=dashed]
+    cluster789_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster789_entry -> node3038 [color="black"]
+    cluster789_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster789_exit_name -> cluster789_exit [arrowhead=none, color="black", style=dashed]
+    cluster789_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3038_name [shape=none, label=<<font color="black">Call[3038]</font>>]
+    node3038_name -> node3038 [arrowhead=none, color="black", style=dashed]
+    node3038 [shape=cds, label=<<font color="black">%0 = this-&gt;InstantiateAsyncArrowFunctionExpression(name)</font>> color="black" fillcolor="white", style=filled]
+    node3038 -> node3039 [color="black"]
+    node3039_name [shape=none, label=<<font color="black">Block[3039]</font>>]
+    node3039_name -> node3039 [arrowhead=none, color="black", style=dashed]
+    node3039 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3039 -> cluster789_exit [color="black"]
+  }
+}

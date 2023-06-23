@@ -1,0 +1,27 @@
+def <INTERNAL>:ProxyExoticObject.PreventExtensions(
+  O: ProxyExoticObject,
+): Normal[Boolean] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#490])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<GetMethod>(handler, "preventExtensions")
+  let trap = [? %0]
+  if (= trap undefined) {
+    method-call %1 = target->PreventExtensions()
+    return [? %1]
+  } else {}
+  call %2 = clo<Call>(trap, handler, (new [target])[#491])
+  call %3 = clo<ToBoolean>([? %2])
+  let booleanTrapResult = %3
+  if (= booleanTrapResult true) {
+    call %4 = clo<IsExtensible>(target)
+    let extensibleTarget = [? %4]
+    if (= extensibleTarget true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#492])
+    } else {}
+  } else {}
+  return booleanTrapResult
+}

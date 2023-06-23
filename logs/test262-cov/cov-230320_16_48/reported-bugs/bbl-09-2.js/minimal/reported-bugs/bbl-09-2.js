@@ -1,0 +1,2 @@
+"use strict";
+switch ( 0 ) { default : let x ; case x : } 

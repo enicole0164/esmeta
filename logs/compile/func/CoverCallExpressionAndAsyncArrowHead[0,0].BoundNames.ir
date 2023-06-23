@@ -1,0 +1,7 @@
+def <SYNTAX>:CoverCallExpressionAndAsyncArrowHead[0,0].BoundNames(
+  this: Ast:CoverCallExpressionAndAsyncArrowHead[0,0],
+): List[String] {
+  let head = (parse this (nt |AsyncArrowHead|[]))
+  sdo-call %0 = head->BoundNames()
+  return %0
+}

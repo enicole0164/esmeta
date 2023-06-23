@@ -1,0 +1,6 @@
+def <SYNTAX>:NewTarget[0,0].Evaluation(
+  this: Ast:NewTarget[0,0],
+): Unknown {
+  call %0 = clo<GetNewTarget>()
+  return %0
+}

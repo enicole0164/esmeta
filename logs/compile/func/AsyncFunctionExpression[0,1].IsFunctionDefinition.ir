@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncFunctionExpression[0,1].IsFunctionDefinition(
+  this: Ast:AsyncFunctionExpression[0,1],
+): Boolean {
+  return true
+}

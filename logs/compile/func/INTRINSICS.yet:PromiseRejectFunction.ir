@@ -1,0 +1,17 @@
+def <BUILTIN>:INTRINSICS.yet:PromiseRejectFunction(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let reason = (pop < argumentsList) else let reason = absent
+  let F = @EXECUTION_STACK[0].Function
+  assert (&& (! (= F.Promise absent)) (? F.Promise: "Object"))
+  let promise = F.Promise
+  let alreadyResolved = F.AlreadyResolved
+  if (= alreadyResolved.Value true) {
+    return undefined
+  } else {}
+  alreadyResolved.Value = true
+  call %0 = clo<RejectPromise>(promise, reason)
+  return undefined
+}

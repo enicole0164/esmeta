@@ -1,0 +1,5 @@
+def <SYNTAX>:NewTarget[0,0].AssignmentTargetType(
+  this: Ast:NewTarget[0,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

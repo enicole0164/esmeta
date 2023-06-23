@@ -1,0 +1,10 @@
+def MakePrivateReference(
+  baseValue: ESValue,
+  privateIdentifier: String,
+): ReferenceRecord {
+  let privEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  assert (! (= privEnv null))
+  call %0 = clo<ResolvePrivateIdentifier>(privEnv, privateIdentifier)
+  let privateName = %0
+  return (new ReferenceRecord("Base" -> baseValue, "ReferencedName" -> privateName, "Strict" -> true, "ThisValue" -> ~empty~))[#16]
+}

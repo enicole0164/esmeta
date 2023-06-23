@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2631 {
+    label = "def <CONT>:AsyncGeneratorResume:cont0(result: Unknown): Const[~unused~]"
+    style = rounded
+    cluster2631_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2631_entry_name -> cluster2631_entry [arrowhead=none, color="black", style=dashed]
+    cluster2631_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2631_entry -> node19524 [color="black"]
+    cluster2631_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2631_exit_name -> cluster2631_exit [arrowhead=none, color="black", style=dashed]
+    cluster2631_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19524_name [shape=none, label=<<font color="black">Block[19524]</font>>]
+    node19524_name -> node19524 [arrowhead=none, color="black", style=dashed]
+    node19524 [shape=box, label=<<font color="black">[0] assert (|| (! (comp? result)) (= result.Type ~normal~))<BR ALIGN="LEFT"/>[1] assert (&amp;&amp; (= callerContext @EXECUTION_STACK[0]) (! (= genContext @EXECUTION_STACK[0])))<BR ALIGN="LEFT"/>[2] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19524 -> cluster2631_exit [color="black"]
+  }
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:GeneratorMethod[0,0].PrivateBoundIdentifiers(
+  this: Ast:GeneratorMethod[0,0],
+): List[String] {
+  sdo-call %0 = this[0]->PrivateBoundIdentifiers()
+  return %0
+}

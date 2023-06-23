@@ -1,0 +1,8 @@
+def <SYNTAX>:ClassEscape[3,0].CompileToCharSet(
+  this: Ast:ClassEscape[3,0],
+): Unknown["CharSet"] {
+  sdo-call %0 = this->CharacterValue()
+  let cv = %0
+  (yet "Let _c_ be the character whose character value is _cv_.")
+  (yet "Return the CharSet containing the single character _c_.")
+}

@@ -1,0 +1,13 @@
+def <BUILTIN-CLO>:AsyncGeneratorAwaitReturn:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let value = (pop < argumentsList) else let value = absent
+  generator.AsyncGeneratorState = ~completed~
+  call %0 = clo<NormalCompletion>(value)
+  let result = %0
+  call %1 = clo<AsyncGeneratorCompleteStep>(generator, result, true)
+  call %2 = clo<AsyncGeneratorDrainQueue>(generator)
+  return undefined
+}

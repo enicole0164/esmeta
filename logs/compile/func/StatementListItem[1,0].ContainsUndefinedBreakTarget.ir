@@ -1,0 +1,6 @@
+def <SYNTAX>:StatementListItem[1,0].ContainsUndefinedBreakTarget(
+  this: Ast:StatementListItem[1,0],
+  labelSet: Unknown,
+): Boolean {
+  return false
+}

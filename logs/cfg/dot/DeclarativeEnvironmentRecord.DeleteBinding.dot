@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster980 {
+    label = "def <CONC>:DeclarativeEnvironmentRecord.DeleteBinding(envRec: DeclarativeEnvironmentRecord, N: String): Normal[Boolean]"
+    style = rounded
+    cluster980_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster980_entry_name -> cluster980_entry [arrowhead=none, color="black", style=dashed]
+    cluster980_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster980_entry -> node3622 [color="black"]
+    cluster980_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster980_exit_name -> cluster980_exit [arrowhead=none, color="black", style=dashed]
+    cluster980_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3622_name [shape=none, label=<<font color="black">Block[3622]</font>>]
+    node3622_name -> node3622 [arrowhead=none, color="black", style=dashed]
+    node3622 [shape=box, label=<<font color="black">[0] assert (yet &quot;_envRec_ has a binding for the name that is the value of _N_.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;If the binding for _N_ in _envRec_ cannot be deleted, return *false*.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Remove the binding for _N_ from _envRec_.&quot;)<BR ALIGN="LEFT"/>[3] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3622 -> cluster980_exit [color="black"]
+  }
+}

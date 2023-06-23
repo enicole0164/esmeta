@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message ) 0 ; throw new Test262Error ( message ) ; } ; assert . throws = function ( expectedErrorConstructor , func , message ) { var expectedName ; try { } catch { } finally { } { ; } try { func ( ) ; } catch ( thrown ) { { } return ; } debugger ; throw Test262Error ; } ; function Test262Error ( message ) { this . message = message ; } if ( 0 ) try { } finally { } let x ; var s = Symbol ( '66' ) ; assert . throws ( TypeError , function ( ) { s + '' ; } ) ; 

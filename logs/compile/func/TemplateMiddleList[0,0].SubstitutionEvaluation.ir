@@ -1,0 +1,9 @@
+def <SYNTAX>:TemplateMiddleList[0,0].SubstitutionEvaluation(
+  this: Ast:TemplateMiddleList[0,0],
+): Normal[List[ESValue]] | Abrupt {
+  sdo-call %0 = this[1]->Evaluation()
+  let subRef = %0
+  call %1 = clo<GetValue>(subRef)
+  let sub = [? %1]
+  return (new [sub])[#564]
+}

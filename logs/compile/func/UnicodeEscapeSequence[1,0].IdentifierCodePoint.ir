@@ -1,0 +1,5 @@
+def <SYNTAX>:UnicodeEscapeSequence[1,0].IdentifierCodePoint(
+  this: Ast:UnicodeEscapeSequence[1,0],
+): Unknown["CodePoint"] {
+  (yet "Return the code point whose numeric value is the MV of |CodePoint|.")
+}

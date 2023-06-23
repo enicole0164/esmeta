@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.Object.create(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let O = (pop < argumentsList) else let O = absent
+  if (< 0 argumentsList.length) let Properties = (pop < argumentsList) else let Properties = absent
+  if (! (|| (= (typeof O) @Object) (= (typeof O) @Null))) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#888])
+  } else {}
+  call %0 = clo<OrdinaryObjectCreate>(O)
+  let obj = %0
+  if (! (= Properties undefined)) {
+    call %1 = clo<ObjectDefineProperties>(obj, Properties)
+    return [? %1]
+  } else {}
+  return obj
+}

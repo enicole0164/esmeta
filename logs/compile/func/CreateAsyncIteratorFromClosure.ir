@@ -1,0 +1,22 @@
+def CreateAsyncIteratorFromClosure(
+  closure: Unknown["AbstractClosureWithNoParameters"],
+  generatorBrand: Unknown,
+  generatorPrototype: Object,
+): Unknown["AsyncGenerator"] {
+  nop
+  let internalSlotsList = (new ["AsyncGeneratorState", "AsyncGeneratorContext", "AsyncGeneratorQueue", "GeneratorBrand"])[#1336]
+  call %0 = clo<OrdinaryObjectCreate>(generatorPrototype, internalSlotsList)
+  let generator = %0
+  generator.GeneratorBrand = generatorBrand
+  generator.AsyncGeneratorState = undefined
+  let callerContext = @EXECUTION_STACK[0]
+  let calleeContext = (new ExecutionContext())[#1337]
+  calleeContext.Function = null
+  calleeContext.Realm = @EXECUTION_STACK[0].Realm
+  calleeContext.ScriptOrModule = callerContext.ScriptOrModule
+  nop
+  push calleeContext > @EXECUTION_STACK
+  call %1 = clo<AsyncGeneratorStart>(generator, closure)
+  (pop < @EXECUTION_STACK)
+  return generator
+}

@@ -1,0 +1,9 @@
+def CreateRealm(
+): RealmRecord {
+  let realmRec = @REALM
+  call %0 = clo<CreateIntrinsics>(realmRec)
+  realmRec.GlobalObject = undefined
+  realmRec.GlobalEnv = undefined
+  realmRec.TemplateMap = (new [])[#393]
+  return realmRec
+}

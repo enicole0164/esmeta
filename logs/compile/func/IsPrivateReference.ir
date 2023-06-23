@@ -1,0 +1,9 @@
+def IsPrivateReference(
+  V: ReferenceRecord,
+): Boolean {
+  if (? V.ReferencedName: "PrivateName") {
+    return true
+  } else {
+    return false
+  }
+}

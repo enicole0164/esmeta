@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1912 {
+    label = "def <SYNTAX>:ImportDeclaration[0,0].ImportEntries(this: Ast:ImportDeclaration[0,0]): Unknown["ListOfImportEntryRecords"]"
+    style = rounded
+    cluster1912_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1912_entry_name -> cluster1912_entry [arrowhead=none, color="black", style=dashed]
+    cluster1912_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1912_entry -> node10535 [color="black"]
+    cluster1912_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1912_exit_name -> cluster1912_exit [arrowhead=none, color="black", style=dashed]
+    cluster1912_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10535_name [shape=none, label=<<font color="black">Call[10535]</font>>]
+    node10535_name -> node10535 [arrowhead=none, color="black", style=dashed]
+    node10535 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;ModuleRequests()</font>> color="black" fillcolor="white", style=filled]
+    node10535 -> node10536 [color="black"]
+    node10536_name [shape=none, label=<<font color="black">Block[10536]</font>>]
+    node10536_name -> node10536 [arrowhead=none, color="black", style=dashed]
+    node10536 [shape=box, label=<<font color="black">[0] let module = %0[0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10536 -> node10537 [color="black"]
+    node10537_name [shape=none, label=<<font color="black">Call[10537]</font>>]
+    node10537_name -> node10537 [arrowhead=none, color="black", style=dashed]
+    node10537 [shape=cds, label=<<font color="black">%1 = this[0]-&gt;ImportEntriesForModule(module)</font>> color="black" fillcolor="white", style=filled]
+    node10537 -> node10538 [color="black"]
+    node10538_name [shape=none, label=<<font color="black">Block[10538]</font>>]
+    node10538_name -> node10538 [arrowhead=none, color="black", style=dashed]
+    node10538 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10538 -> cluster1912_exit [color="black"]
+  }
+}

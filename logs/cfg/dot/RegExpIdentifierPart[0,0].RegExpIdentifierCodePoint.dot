@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2236 {
+    label = "def <SYNTAX>:RegExpIdentifierPart[0,0].RegExpIdentifierCodePoint(this: Ast:RegExpIdentifierPart[0,0]): Unknown["CodePoint"]"
+    style = rounded
+    cluster2236_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2236_entry_name -> cluster2236_entry [arrowhead=none, color="black", style=dashed]
+    cluster2236_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2236_entry -> node13898 [color="black"]
+    cluster2236_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2236_exit_name -> cluster2236_exit [arrowhead=none, color="black", style=dashed]
+    cluster2236_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13898_name [shape=none, label=<<font color="black">Block[13898]</font>>]
+    node13898_name -> node13898 [arrowhead=none, color="black", style=dashed]
+    node13898 [shape=box, label=<<font color="black">[0] (yet &quot;Return the code point matched by |IdentifierPartChar|.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13898 -> cluster2236_exit [color="black"]
+  }
+}

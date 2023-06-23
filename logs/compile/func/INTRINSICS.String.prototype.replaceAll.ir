@@ -1,0 +1,75 @@
+def <BUILTIN>:INTRINSICS.String.prototype.replaceAll(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let searchValue = (pop < argumentsList) else let searchValue = absent
+  if (< 0 argumentsList.length) let replaceValue = (pop < argumentsList) else let replaceValue = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  if (! (|| (= searchValue undefined) (= searchValue null))) {
+    call %1 = clo<IsRegExp>(searchValue)
+    let isRegExp = [? %1]
+    if (= isRegExp true) {
+      call %2 = clo<Get>(searchValue, "flags")
+      let flags = [? %2]
+      call %3 = clo<RequireObjectCoercible>(flags)
+      [? %3]
+      call %4 = clo<ToString>(flags)
+      if (! (contains [? %4] "g")) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#959])
+      } else {}
+    } else {}
+    call %5 = clo<GetMethod>(searchValue, @SYMBOL.replace)
+    let replacer = [? %5]
+    if (! (= replacer undefined)) {
+      call %6 = clo<Call>(replacer, searchValue, (new [O, replaceValue])[#960])
+      return [? %6]
+    } else {}
+  } else {}
+  call %7 = clo<ToString>(O)
+  let string = [? %7]
+  call %8 = clo<ToString>(searchValue)
+  let searchString = [? %8]
+  call %9 = clo<IsCallable>(replaceValue)
+  let functionalReplace = %9
+  if (= functionalReplace false) {
+    call %10 = clo<ToString>(replaceValue)
+    replaceValue = [? %10]
+  } else {}
+  let searchLength = searchString.length
+  let advanceBy = (max 1 searchLength)
+  let matchPositions = (new [])[#961]
+  call %11 = clo<StringIndexOf>(string, searchString, 0)
+  let position = %11
+  loop[repeat] (! (= position (- 1))) {
+    push matchPositions < position
+    call %12 = clo<StringIndexOf>(string, searchString, (+ position advanceBy))
+    position = %12
+  }
+  let endOfLastMatch = 0
+  let result = ""
+  %14 = matchPositions
+  %13 = 0
+  loop[foreach] (< %13 %14.length) {
+    let p = %14[%13]
+    let preserved = (substring string endOfLastMatch p)
+    if (= functionalReplace true) {
+      call %15 = clo<Call>(replaceValue, undefined, (new [searchString, ([number] p), string])[#962])
+      call %16 = clo<ToString>([? %15])
+      let replacement = [? %16]
+    } else {
+      assert (= (typeof replaceValue) @String)
+      let captures = (new [])[#963]
+      call %17 = clo<GetSubstitution>(searchString, string, p, captures, undefined, replaceValue)
+      let replacement = [! %17]
+    }
+    result = (concat result preserved replacement)
+    endOfLastMatch = (+ p searchLength)
+    %13 = (+ %13 1)
+  }
+  if (< endOfLastMatch string.length) {
+    result = (concat result (substring string endOfLastMatch))
+  } else {}
+  return result
+}

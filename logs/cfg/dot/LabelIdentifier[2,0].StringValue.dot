@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1193 {
+    label = "def <SYNTAX>:LabelIdentifier[2,0].StringValue(this: Ast:LabelIdentifier[2,0]): String"
+    style = rounded
+    cluster1193_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1193_entry_name -> cluster1193_entry [arrowhead=none, color="black", style=dashed]
+    cluster1193_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1193_entry -> node5404 [color="black"]
+    cluster1193_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1193_exit_name -> cluster1193_exit [arrowhead=none, color="black", style=dashed]
+    cluster1193_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5404_name [shape=none, label=<<font color="black">Block[5404]</font>>]
+    node5404_name -> node5404 [arrowhead=none, color="black", style=dashed]
+    node5404 [shape=box, label=<<font color="black">[0] return &quot;await&quot;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5404 -> cluster1193_exit [color="black"]
+  }
+}

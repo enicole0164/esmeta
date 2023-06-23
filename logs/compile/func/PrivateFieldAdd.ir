@@ -1,0 +1,13 @@
+def PrivateFieldAdd(
+  O: Object,
+  P: PrivateName,
+  value: ESValue,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<PrivateElementFind>(O, P)
+  let entry = %0
+  if (! (= entry ~empty~)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#65])
+  } else {}
+  push O.PrivateElements < (new PrivateElement("Key" -> P, "Kind" -> ~field~, "Value" -> value))[#66]
+  return ~unused~
+}

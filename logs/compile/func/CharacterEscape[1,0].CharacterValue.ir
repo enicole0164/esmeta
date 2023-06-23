@@ -1,0 +1,7 @@
+def <SYNTAX>:CharacterEscape[1,0].CharacterValue(
+  this: Ast:CharacterEscape[1,0],
+): Unknown["NonnegativeInteger"] {
+  (yet "Let _ch_ be the code point matched by |ControlLetter|.")
+  let i = ([math] ch)
+  (yet "Return the remainder of dividing _i_ by 32.")
+}

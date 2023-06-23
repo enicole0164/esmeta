@@ -1,0 +1,10 @@
+def CreateMapIterator(
+  map: ESValue,
+  kind: Const[~key+value~, ~key~, ~value~],
+): Unknown["EitherANormalCompletionContainingAGeneratorOrAnAbruptCompletion"] {
+  call %0 = clo<RequireInternalSlot>(map, "MapData")
+  [? %0]
+  let closure = clo<CreateMapIterator:clo0, [map, kind]>
+  call %1 = clo<CreateIteratorFromClosure>(closure, "%MapIteratorPrototype%", @EXECUTION_STACK[0].Realm.Intrinsics["%MapIteratorPrototype%"])
+  return %1
+}

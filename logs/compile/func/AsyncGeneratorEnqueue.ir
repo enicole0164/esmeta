@@ -1,0 +1,9 @@
+def AsyncGeneratorEnqueue(
+  generator: Unknown["AsyncGenerator"],
+  completion: Normal,
+  promiseCapability: PromiseCapabilityRecord,
+): Const[~unused~] {
+  let request = (new AsyncGeneratorRequest("Completion" -> completion, "Capability" -> promiseCapability))[#1330]
+  push generator.AsyncGeneratorQueue < request
+  return ~unused~
+}

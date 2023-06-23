@@ -1,0 +1,5 @@
+def TypedArrayElementSize(
+  O: Unknown["TypedArray"],
+): Unknown["NonnegativeInteger"] {
+  (yet "Return the Element Size value specified in <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for _O_.[[TypedArrayName]].")
+}

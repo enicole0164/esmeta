@@ -1,0 +1,16 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<ToObject>(this)
+  let array = [? %0]
+  call %1 = clo<Get>(array, "join")
+  let func = [? %1]
+  call %2 = clo<IsCallable>(func)
+  if (= %2 false) {
+    func = @EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype.toString%"]
+  } else {}
+  call %3 = clo<Call>(func, array)
+  return [? %3]
+}

@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1549 {
+    label = "def <SYNTAX>:CoverCallExpressionAndAsyncArrowHead[0,0].IsSimpleParameterList(this: Ast:CoverCallExpressionAndAsyncArrowHead[0,0]): Boolean"
+    style = rounded
+    cluster1549_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1549_entry_name -> cluster1549_entry [arrowhead=none, color="black", style=dashed]
+    cluster1549_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1549_entry -> node8368 [color="black"]
+    cluster1549_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1549_exit_name -> cluster1549_exit [arrowhead=none, color="black", style=dashed]
+    cluster1549_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8368_name [shape=none, label=<<font color="black">Block[8368]</font>>]
+    node8368_name -> node8368 [arrowhead=none, color="black", style=dashed]
+    node8368 [shape=box, label=<<font color="black">[0] let head = (parse this (nt |AsyncArrowHead|[]))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8368 -> node8369 [color="black"]
+    node8369_name [shape=none, label=<<font color="black">Call[8369]</font>>]
+    node8369_name -> node8369 [arrowhead=none, color="black", style=dashed]
+    node8369 [shape=cds, label=<<font color="black">%0 = head-&gt;IsSimpleParameterList()</font>> color="black" fillcolor="white", style=filled]
+    node8369 -> node8370 [color="black"]
+    node8370_name [shape=none, label=<<font color="black">Block[8370]</font>>]
+    node8370_name -> node8370 [arrowhead=none, color="black", style=dashed]
+    node8370 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8370 -> cluster1549_exit [color="black"]
+  }
+}

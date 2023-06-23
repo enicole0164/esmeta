@@ -1,0 +1,6 @@
+def <SYNTAX>:ClassElement[5,0].ClassElementEvaluation(
+  this: Ast:ClassElement[5,0],
+  object: Unknown,
+): Normal[ClassFieldDefinitionRecord | ClassStaticBlockDefinitionRecord | PrivateName | Const[~unused~]] | Abrupt {
+  return ~unused~
+}

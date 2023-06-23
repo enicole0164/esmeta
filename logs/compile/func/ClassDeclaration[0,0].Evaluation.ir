@@ -1,0 +1,7 @@
+def <SYNTAX>:ClassDeclaration[0,0].Evaluation(
+  this: Ast:ClassDeclaration[0,0],
+): Unknown {
+  sdo-call %0 = this->BindingClassDeclarationEvaluation()
+  [? %0]
+  return ~empty~
+}

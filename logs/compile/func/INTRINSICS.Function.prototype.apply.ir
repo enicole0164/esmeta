@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.Function.prototype.apply(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let thisArg = (pop < argumentsList) else let thisArg = absent
+  if (< 0 argumentsList.length) let argArray = (pop < argumentsList) else let argArray = absent
+  let func = this
+  call %0 = clo<IsCallable>(func)
+  if (= %0 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#910])
+  } else {}
+  if (|| (= argArray undefined) (= argArray null)) {
+    call %1 = clo<PrepareForTailCall>()
+    call %2 = clo<Call>(func, thisArg)
+    return [? %2]
+  } else {}
+  call %3 = clo<CreateListFromArrayLike>(argArray)
+  let argList = [? %3]
+  call %4 = clo<PrepareForTailCall>()
+  call %5 = clo<Call>(func, thisArg, argList)
+  return [? %5]
+}

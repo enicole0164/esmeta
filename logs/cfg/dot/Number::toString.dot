@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster31 {
+    label = "def <NUM>:Number::toString(x: Number): String"
+    style = rounded
+    cluster31_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster31_entry_name -> cluster31_entry [arrowhead=none, color="black", style=dashed]
+    cluster31_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster31_entry -> node311 [color="black"]
+    cluster31_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster31_exit_name -> cluster31_exit [arrowhead=none, color="black", style=dashed]
+    cluster31_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node311_name [shape=none, label=<<font color="black">Block[311]</font>>]
+    node311_name -> node311 [arrowhead=none, color="black", style=dashed]
+    node311 [shape=box, label=<<font color="black">[0] return ([str] x)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node311 -> cluster31_exit [color="black"]
+  }
+}

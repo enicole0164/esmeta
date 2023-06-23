@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1605 {
+    label = "def <SYNTAX>:GeneratorExpression[0,0].Evaluation(this: Ast:GeneratorExpression[0,0]): Unknown"
+    style = rounded
+    cluster1605_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1605_entry_name -> cluster1605_entry [arrowhead=none, color="black", style=dashed]
+    cluster1605_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1605_entry -> node8623 [color="black"]
+    cluster1605_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1605_exit_name -> cluster1605_exit [arrowhead=none, color="black", style=dashed]
+    cluster1605_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8623_name [shape=none, label=<<font color="black">Call[8623]</font>>]
+    node8623_name -> node8623 [arrowhead=none, color="black", style=dashed]
+    node8623 [shape=cds, label=<<font color="black">%0 = this-&gt;InstantiateGeneratorFunctionExpression()</font>> color="black" fillcolor="white", style=filled]
+    node8623 -> node8624 [color="black"]
+    node8624_name [shape=none, label=<<font color="black">Block[8624]</font>>]
+    node8624_name -> node8624 [arrowhead=none, color="black", style=dashed]
+    node8624 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8624 -> cluster1605_exit [color="black"]
+  }
+}

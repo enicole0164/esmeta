@@ -1,0 +1,11 @@
+def ToPropertyKey(
+  argument: Unknown,
+): Normal[Symbol | String] | Abrupt {
+  call %0 = clo<ToPrimitive>(argument, ~string~)
+  let key = [? %0]
+  if (= (typeof key) @Symbol) {
+    return key
+  } else {}
+  call %1 = clo<ToString>(key)
+  return [! %1]
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:DecimalEscape[0,1].CapturingGroupNumber(
+  this: Ast:DecimalEscape[0,1],
+): Unknown["PositiveInteger"] {
+  (yet "Let _n_ be the number of code points in |DecimalDigits|.")
+  (yet "Return (the MV of |NonZeroDigit| × 10<sup>_n_</sup> plus the MV of |DecimalDigits|).")
+}

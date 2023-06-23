@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1919 {
+    label = "def <SYNTAX>:ImportsList[1,0].ImportEntriesForModule(this: Ast:ImportsList[1,0], module: Unknown): Unknown["ListOfImportEntryRecords"]"
+    style = rounded
+    cluster1919_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1919_entry_name -> cluster1919_entry [arrowhead=none, color="black", style=dashed]
+    cluster1919_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1919_entry -> node10553 [color="black"]
+    cluster1919_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1919_exit_name -> cluster1919_exit [arrowhead=none, color="black", style=dashed]
+    cluster1919_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10553_name [shape=none, label=<<font color="black">Call[10553]</font>>]
+    node10553_name -> node10553 [arrowhead=none, color="black", style=dashed]
+    node10553 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ImportEntriesForModule(module)</font>> color="black" fillcolor="white", style=filled]
+    node10553 -> node10554 [color="black"]
+    node10554_name [shape=none, label=<<font color="black">Block[10554]</font>>]
+    node10554_name -> node10554 [arrowhead=none, color="black", style=dashed]
+    node10554 [shape=box, label=<<font color="black">[0] let specs1 = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10554 -> node10555 [color="black"]
+    node10555_name [shape=none, label=<<font color="black">Call[10555]</font>>]
+    node10555_name -> node10555 [arrowhead=none, color="black", style=dashed]
+    node10555 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;ImportEntriesForModule(module)</font>> color="black" fillcolor="white", style=filled]
+    node10555 -> node10556 [color="black"]
+    node10556_name [shape=none, label=<<font color="black">Block[10556]</font>>]
+    node10556_name -> node10556 [arrowhead=none, color="black", style=dashed]
+    node10556 [shape=box, label=<<font color="black">[0] let specs2 = %1<BR ALIGN="LEFT"/>[1] return (list-concat specs1 specs2)[#815]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10556 -> cluster1919_exit [color="black"]
+  }
+}

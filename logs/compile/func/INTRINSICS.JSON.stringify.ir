@@ -1,0 +1,84 @@
+def <BUILTIN>:INTRINSICS.JSON.stringify(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let value = (pop < argumentsList) else let value = absent
+  if (< 0 argumentsList.length) let replacer = (pop < argumentsList) else let replacer = absent
+  if (< 0 argumentsList.length) let space = (pop < argumentsList) else let space = absent
+  let stack = (new [])[#1194]
+  let indent = ""
+  (yet "Let _PropertyList_ and _ReplacerFunction_ be *undefined*.")
+  if (= (typeof replacer) @Object) {
+    call %0 = clo<IsCallable>(replacer)
+    if (= %0 true) {
+      ReplacerFunction = replacer
+    } else {
+      call %1 = clo<IsArray>(replacer)
+      let isArray = [? %1]
+      if (= isArray true) {
+        PropertyList = (new [])[#1195]
+        call %2 = clo<LengthOfArrayLike>(replacer)
+        let len = [? %2]
+        let k = 0
+        loop[repeat] (< k len) {
+          call %3 = clo<ToString>(([number] k))
+          let prop = [! %3]
+          call %4 = clo<Get>(replacer, prop)
+          let v = [? %4]
+          let item = undefined
+          if (= (typeof v) @String) {
+            item = v
+          } else {
+            if (= (typeof v) @Number) {
+              call %5 = clo<ToString>(v)
+              item = [! %5]
+            } else {
+              if (= (typeof v) @Object) {
+                (yet "If _v_ has a [[StringData]] or [[NumberData]] internal slot, set _item_ to ? ToString(_v_).")
+              } else {}
+            }
+          }
+          if (&& (! (= item undefined)) (! (contains PropertyList item))) {
+            push PropertyList < item
+          } else {}
+          k = (+ k 1)
+        }
+      } else {}
+    }
+  } else {}
+  if (= (typeof space) @Object) {
+    if (! (= space.NumberData absent)) {
+      call %6 = clo<ToNumber>(space)
+      space = [? %6]
+    } else {
+      if (! (= space.StringData absent)) {
+        call %7 = clo<ToString>(space)
+        space = [? %7]
+      } else {}
+    }
+  } else {}
+  if (= (typeof space) @Number) {
+    call %8 = clo<ToIntegerOrInfinity>(space)
+    let spaceMV = [! %8]
+    spaceMV = (min 10 spaceMV)
+    if (< spaceMV 1) {
+      let gap = ""
+    } else {
+      (yet "let _gap_ be the String value containing _spaceMV_ occurrences of the code unit 0x0020 (SPACE).")
+    }
+  } else {
+    if (= (typeof space) @String) {
+      (yet "If the length of _space_ is 10 or less, let _gap_ be _space_; otherwise let _gap_ be the substring of _space_ from 0 to 10.")
+    } else {
+      let gap = ""
+    }
+  }
+  call %9 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let wrapper = %9
+  call %10 = clo<CreateDataPropertyOrThrow>(wrapper, "", value)
+  [! %10]
+  let state = (new Record("ReplacerFunction" -> ReplacerFunction, "Stack" -> stack, "Indent" -> indent, "Gap" -> gap, "PropertyList" -> PropertyList))[#1196]
+  call %11 = clo<SerializeJSONProperty>(state, "", wrapper)
+  return [? %11]
+}

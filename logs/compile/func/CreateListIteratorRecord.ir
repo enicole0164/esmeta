@@ -1,0 +1,8 @@
+def CreateListIteratorRecord(
+  list: Unknown["List"],
+): IteratorRecord {
+  let closure = clo<CreateListIteratorRecord:clo0, [list]>
+  call %0 = clo<CreateIteratorFromClosure>(closure, ~empty~, @EXECUTION_STACK[0].Realm.Intrinsics["%IteratorPrototype%"])
+  let iterator = %0
+  return (new IteratorRecord("Iterator" -> iterator, "NextMethod" -> @EXECUTION_STACK[0].Realm.Intrinsics["%GeneratorFunction.prototype.prototype.next%"], "Done" -> false))[#80]
+}

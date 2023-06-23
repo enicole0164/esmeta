@@ -1,0 +1,13 @@
+def ToUint8(
+  argument: Unknown,
+): Unknown["EitherANormalCompletionContainingAnIntegralNumberOrAnAbruptCompletion"] {
+  call %0 = clo<ToNumber>(argument)
+  let number = [? %0]
+  if (|| (|| (|| (|| (= number NaN) (= number 0.0f)) (= number -0.0f)) (= number +INF)) (= number -INF)) {
+    return 0.0f
+  } else {}
+  let int = (floor (abs ([math] number)))
+  if (< number 0.0f) int = (* -1 int) else {}
+  let int8bit = (% int (** 2 8))
+  return ([number] int8bit)
+}

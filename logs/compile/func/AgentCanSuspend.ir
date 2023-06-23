@@ -1,0 +1,5 @@
+def AgentCanSuspend(
+): Boolean {
+  (yet "Let _AR_ be the Agent Record of the surrounding agent.")
+  return AR.CanBlock
+}

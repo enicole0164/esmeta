@@ -1,0 +1,20 @@
+def PrivateGet(
+  O: Object,
+  P: PrivateName,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<PrivateElementFind>(O, P)
+  let entry = %0
+  if (= entry ~empty~) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#68])
+  } else {}
+  if (|| (= entry.Kind ~field~) (= entry.Kind ~method~)) {
+    return entry.Value
+  } else {}
+  assert (= entry.Kind ~accessor~)
+  if (= entry.Get undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#69])
+  } else {}
+  let getter = entry.Get
+  call %1 = clo<Call>(getter, O)
+  return [? %1]
+}

@@ -1,0 +1,8 @@
+def GetMatchString(
+  S: String,
+  match: MatchRecord,
+): String {
+  assert (yet "_match_.[[StartIndex]] is a non-negative integer less than or equal to the length of _S_.")
+  assert (yet "_match_.[[EndIndex]] is an integer between _match_.[[StartIndex]] and the length of _S_, inclusive.")
+  return (substring S match.StartIndex match.EndIndex)
+}

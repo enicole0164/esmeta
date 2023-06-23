@@ -1,0 +1,18 @@
+def <SYNTAX>:UnaryExpression[6,0].Evaluation(
+  this: Ast:UnaryExpression[6,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let expr = %0
+  call %1 = clo<GetValue>(expr)
+  call %2 = clo<ToNumeric>([? %1])
+  let oldValue = [? %2]
+  let T = (typeof oldValue)
+  if (= (typeof oldValue) @Number) {
+    call %3 = clo<Number::bitwiseNOT>(oldValue)
+    return %3
+  } else {
+    assert (= (typeof oldValue) @BigInt)
+    call %4 = clo<BigInt::bitwiseNOT>(oldValue)
+    return %4
+  }
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:Expression[1,0].IsFunctionDefinition(
+  this: Ast:Expression[1,0],
+): Boolean {
+  return false
+}

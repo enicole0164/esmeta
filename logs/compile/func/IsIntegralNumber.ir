@@ -1,0 +1,14 @@
+def IsIntegralNumber(
+  argument: Unknown,
+): Boolean {
+  if (! (= (typeof argument) @Number)) {
+    return false
+  } else {}
+  if (|| (|| (= argument NaN) (= argument +INF)) (= argument -INF)) {
+    return false
+  } else {}
+  if (! (== (floor (abs ([math] argument))) (abs ([math] argument)))) {
+    return false
+  } else {}
+  return true
+}

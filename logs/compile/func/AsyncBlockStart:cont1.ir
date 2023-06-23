@@ -1,0 +1,7 @@
+def <CONT>:AsyncBlockStart:cont1(
+  result: Unknown,
+): Const[~unused~] {
+  assert (&& (= runningContext @EXECUTION_STACK[0]) (! (= asyncContext @EXECUTION_STACK[0])))
+  assert (yet "_result_ is a normal completion with a value of ~unused~. The possible sources of this value are Await or, if the async function doesn't await anything, step <emu-xref href=\"#step-asyncblockstart-return-undefined\"></emu-xref> above.")
+  return ~unused~
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:ArrowParameters[1,0].ContainsExpression(
+  this: Ast:ArrowParameters[1,0],
+): Boolean {
+  let formals = (parse this[0] (nt |ArrowFormalParameters|[]))
+  sdo-call %0 = formals->ContainsExpression()
+  return %0
+}

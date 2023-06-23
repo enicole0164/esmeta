@@ -1,0 +1,6 @@
+def <SYNTAX>:ExportSpecifier[1,0].ReferencedBindings(
+  this: Ast:ExportSpecifier[1,0],
+): List[Ast] {
+  sdo-call %0 = this[0]->ReferencedBindings()
+  return %0
+}

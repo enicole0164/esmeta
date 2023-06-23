@@ -1,0 +1,13 @@
+def Invoke(
+  V: ESValue,
+  P: Symbol | String,
+  argumentsList?: List[ESValue],
+): Normal[ESValue] | Abrupt {
+  if (= argumentsList absent) {
+    argumentsList = (new [])[#58]
+  } else {}
+  call %0 = clo<GetV>(V, P)
+  let func = [? %0]
+  call %1 = clo<Call>(func, V, argumentsList)
+  return [? %1]
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:BindingElement[1,1].IsSimpleParameterList(
+  this: Ast:BindingElement[1,1],
+): Boolean {
+  return false
+}

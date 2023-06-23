@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2257 {
+    label = "def <SYNTAX>:Assertion[7,0].CompileAssertion(this: Ast:Assertion[7,0]): Unknown["Matcher"]"
+    style = rounded
+    cluster2257_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2257_entry_name -> cluster2257_entry [arrowhead=none, color="black", style=dashed]
+    cluster2257_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2257_entry -> node13962 [color="black"]
+    cluster2257_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2257_exit_name -> cluster2257_exit [arrowhead=none, color="black", style=dashed]
+    cluster2257_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13962_name [shape=none, label=<<font color="black">Call[13962]</font>>]
+    node13962_name -> node13962 [arrowhead=none, color="black", style=dashed]
+    node13962 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileSubpattern(~backward~)</font>> color="black" fillcolor="white", style=filled]
+    node13962 -> node13963 [color="black"]
+    node13963_name [shape=none, label=<<font color="black">Block[13963]</font>>]
+    node13963_name -> node13963 [arrowhead=none, color="black", style=dashed]
+    node13963 [shape=box, label=<<font color="black">[0] let m = %0<BR ALIGN="LEFT"/>[1] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called:\n    1. Assert: _y_ is a State.\n    1. Return _y_.\n  1. Let _r_ be _m_(_x_, _d_).\n  1. If _r_ is not ~failure~, return ~failure~.\n  1. Return _c_(_x_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13963 -> cluster2257_exit [color="black"]
+  }
+}

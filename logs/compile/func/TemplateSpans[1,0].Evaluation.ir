@@ -1,0 +1,10 @@
+def <SYNTAX>:TemplateSpans[1,0].Evaluation(
+  this: Ast:TemplateSpans[1,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let head = %0
+  [? head]
+  sdo-call %1 = this[1]->TV()
+  let tail = %1
+  return (concat head tail)
+}

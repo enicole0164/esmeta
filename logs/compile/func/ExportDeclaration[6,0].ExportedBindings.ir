@@ -1,0 +1,6 @@
+def <SYNTAX>:ExportDeclaration[6,0].ExportedBindings(
+  this: Ast:ExportDeclaration[6,0],
+): List[String] {
+  sdo-call %0 = this->BoundNames()
+  return %0
+}

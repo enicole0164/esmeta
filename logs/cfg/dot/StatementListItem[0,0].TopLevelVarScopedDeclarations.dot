@@ -1,0 +1,37 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster472 {
+    label = "def <SYNTAX>:StatementListItem[0,0].TopLevelVarScopedDeclarations(this: Ast:StatementListItem[0,0]): List[Ast]"
+    style = rounded
+    cluster472_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster472_entry_name -> cluster472_entry [arrowhead=none, color="black", style=dashed]
+    cluster472_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster472_entry -> node2304 [color="black"]
+    cluster472_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster472_exit_name -> cluster472_exit [arrowhead=none, color="black", style=dashed]
+    cluster472_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2304_name [shape=none, label=<<font color="black">Branch[2304]</font>>]
+    node2304_name -> node2304 [arrowhead=none, color="black", style=dashed]
+    node2304 [shape=diamond, label=<<font color="black">(? this[0]: &quot;Statement10&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node2304 -> node2305 [label=<<font color="black">true</font>> color="black"]
+    node2304 -> node2307 [label=<<font color="black">false</font>> color="black"]
+    node2305_name [shape=none, label=<<font color="black">Call[2305]</font>>]
+    node2305_name -> node2305 [arrowhead=none, color="black", style=dashed]
+    node2305 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;TopLevelVarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2305 -> node2306 [color="black"]
+    node2307_name [shape=none, label=<<font color="black">Call[2307]</font>>]
+    node2307_name -> node2307 [arrowhead=none, color="black", style=dashed]
+    node2307 [shape=cds, label=<<font color="black">%1 = this[0]-&gt;VarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2307 -> node2308 [color="black"]
+    node2306_name [shape=none, label=<<font color="black">Block[2306]</font>>]
+    node2306_name -> node2306 [arrowhead=none, color="black", style=dashed]
+    node2306 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2306 -> cluster472_exit [color="black"]
+    node2308_name [shape=none, label=<<font color="black">Block[2308]</font>>]
+    node2308_name -> node2308 [arrowhead=none, color="black", style=dashed]
+    node2308 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2308 -> cluster472_exit [color="black"]
+  }
+}

@@ -1,0 +1,8 @@
+def UTF16SurrogatePairToCodePoint(
+  lead: Unknown["CodeUnit"],
+  trail: Unknown["CodeUnit"],
+): Unknown["CodePoint"] {
+  assert (yet "_lead_ is a <emu-xref href=\"#leading-surrogate\"></emu-xref> and _trail_ is a <emu-xref href=\"#trailing-surrogate\"></emu-xref>.")
+  let cp = (+ (+ (* (- lead 55296) 1024) (- trail 56320)) 65536)
+  (yet "Return the code point _cp_.")
+}

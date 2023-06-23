@@ -1,0 +1,49 @@
+def <SYNTAX>:SingleNameBinding[0,1].IteratorBindingInitialization(
+  this: Ast:SingleNameBinding[0,1],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  let bindingId = %0
+  call %1 = clo<ResolveBinding>(bindingId, environment)
+  let lhs = [? %1]
+  let v = undefined
+  if (= iteratorRecord.Done false) {
+    call %2 = clo<IteratorStep>(iteratorRecord)
+    call %3 = clo<Completion>(%2)
+    let next = %3
+    if (&& (comp? next) (! (= next.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? next]
+    if (= next false) {
+      iteratorRecord.Done = true
+    } else {
+      call %4 = clo<IteratorValue>(next)
+      call %5 = clo<Completion>(%4)
+      v = %5
+      if (&& (comp? v) (! (= v.Type ~normal~))) {
+        iteratorRecord.Done = true
+      } else {}
+      [? v]
+    }
+  } else {}
+  if (&& (! (= this[1] absent)) (= v undefined)) {
+    call %6 = clo<IsAnonymousFunctionDefinition>(this[1])
+    if (= %6 true) {
+      sdo-call %7 = this[1]->NamedEvaluation(bindingId)
+      v = [? %7]
+    } else {
+      sdo-call %8 = this[1]->Evaluation()
+      let defaultValue = %8
+      call %9 = clo<GetValue>(defaultValue)
+      v = [? %9]
+    }
+  } else {}
+  if (= environment undefined) {
+    call %10 = clo<PutValue>(lhs, v)
+    return [? %10]
+  } else {}
+  call %11 = clo<InitializeReferencedBinding>(lhs, v)
+  return [? %11]
+}

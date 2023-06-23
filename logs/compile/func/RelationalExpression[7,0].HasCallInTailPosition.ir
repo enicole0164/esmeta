@@ -1,0 +1,6 @@
+def <SYNTAX>:RelationalExpression[7,0].HasCallInTailPosition(
+  this: Ast:RelationalExpression[7,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

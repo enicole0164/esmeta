@@ -1,0 +1,7 @@
+def <SYNTAX>:DoWhileStatement[0,0].ContainsUndefinedBreakTarget(
+  this: Ast:DoWhileStatement[0,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ContainsUndefinedBreakTarget(labelSet)
+  return %0
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster198 {
+    label = "def <SYNTAX>:BindingElisionElement[0,1].BoundNames(this: Ast:BindingElisionElement[0,1]): List[String]"
+    style = rounded
+    cluster198_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster198_entry_name -> cluster198_entry [arrowhead=none, color="black", style=dashed]
+    cluster198_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster198_entry -> node1570 [color="black"]
+    cluster198_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster198_exit_name -> cluster198_exit [arrowhead=none, color="black", style=dashed]
+    cluster198_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1570_name [shape=none, label=<<font color="black">Call[1570]</font>>]
+    node1570_name -> node1570 [arrowhead=none, color="black", style=dashed]
+    node1570 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;BoundNames()</font>> color="black" fillcolor="white", style=filled]
+    node1570 -> node1571 [color="black"]
+    node1571_name [shape=none, label=<<font color="black">Block[1571]</font>>]
+    node1571_name -> node1571 [arrowhead=none, color="black", style=dashed]
+    node1571 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1571 -> cluster198_exit [color="black"]
+  }
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:PropertyDefinitionList[0,0].PropertyNameList(
+  this: Ast:PropertyDefinitionList[0,0],
+): List[String] {
+  sdo-call %0 = this[0]->PropName()
+  let propName = %0
+  if (= propName ~empty~) {
+    return (new [])[#545]
+  } else {}
+  return (new [propName])[#546]
+}

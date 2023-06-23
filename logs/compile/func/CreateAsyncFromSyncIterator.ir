@@ -1,0 +1,11 @@
+def CreateAsyncFromSyncIterator(
+  syncIteratorRecord: Unknown,
+): IteratorRecord {
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%AsyncFromSyncIteratorPrototype%"], (new ["SyncIteratorRecord"])[#1214])
+  let asyncIterator = %0
+  asyncIterator.SyncIteratorRecord = syncIteratorRecord
+  call %1 = clo<Get>(asyncIterator, "next")
+  let nextMethod = [! %1]
+  let iteratorRecord = (new IteratorRecord("Iterator" -> asyncIterator, "NextMethod" -> nextMethod, "Done" -> false))[#1215]
+  return iteratorRecord
+}

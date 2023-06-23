@@ -1,0 +1,10 @@
+def <SYNTAX>:FormalParameterList[1,0].IsSimpleParameterList(
+  this: Ast:FormalParameterList[1,0],
+): Boolean {
+  sdo-call %0 = this[0]->IsSimpleParameterList()
+  if (= %0 false) {
+    return false
+  } else {}
+  sdo-call %1 = this[1]->IsSimpleParameterList()
+  return %1
+}

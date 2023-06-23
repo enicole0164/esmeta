@@ -1,0 +1,5 @@
+def <SYNTAX>:BitwiseANDExpression[1,0].IsFunctionDefinition(
+  this: Ast:BitwiseANDExpression[1,0],
+): Boolean {
+  return false
+}

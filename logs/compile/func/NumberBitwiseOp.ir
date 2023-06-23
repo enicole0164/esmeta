@@ -1,0 +1,22 @@
+def NumberBitwiseOp(
+  op: Unknown["`&`,`^`,Or``"],
+  x: Number,
+  y: Number,
+): Unknown["IntegralNumber"] {
+  call %0 = clo<ToInt32>(x)
+  let lnum = [! %0]
+  call %1 = clo<ToInt32>(y)
+  let rnum = [! %1]
+  let lbits = ([math] lnum)
+  let rbits = ([math] rnum)
+  if (= op "&") {
+    let result = (& lbits rbits)
+  } else {
+    if (= op "^") {
+      let result = (^ lbits rbits)
+    } else {
+      let result = (| lbits rbits)
+    }
+  }
+  return ([number] result)
+}

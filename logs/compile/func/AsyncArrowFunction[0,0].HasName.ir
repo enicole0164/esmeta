@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncArrowFunction[0,0].HasName(
+  this: Ast:AsyncArrowFunction[0,0],
+): Boolean {
+  return false
+}

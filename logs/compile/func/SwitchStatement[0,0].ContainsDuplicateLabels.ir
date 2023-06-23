@@ -1,0 +1,7 @@
+def <SYNTAX>:SwitchStatement[0,0].ContainsDuplicateLabels(
+  this: Ast:SwitchStatement[0,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->ContainsDuplicateLabels(labelSet)
+  return %0
+}

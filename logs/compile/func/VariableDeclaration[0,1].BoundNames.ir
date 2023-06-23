@@ -1,0 +1,6 @@
+def <SYNTAX>:VariableDeclaration[0,1].BoundNames(
+  this: Ast:VariableDeclaration[0,1],
+): List[String] {
+  sdo-call %0 = this[0]->BoundNames()
+  return %0
+}

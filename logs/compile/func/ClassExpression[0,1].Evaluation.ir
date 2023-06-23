@@ -1,0 +1,10 @@
+def <SYNTAX>:ClassExpression[0,1].Evaluation(
+  this: Ast:ClassExpression[0,1],
+): Unknown {
+  sdo-call %0 = this[0]->StringValue()
+  let className = %0
+  sdo-call %1 = this[1]->ClassDefinitionEvaluation(className, className)
+  let value = [? %1]
+  value.SourceText = (source-text this)
+  return value
+}

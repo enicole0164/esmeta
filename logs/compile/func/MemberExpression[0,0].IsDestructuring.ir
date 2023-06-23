@@ -1,0 +1,8 @@
+def <SYNTAX>:MemberExpression[0,0].IsDestructuring(
+  this: Ast:MemberExpression[0,0],
+): Boolean {
+  if (|| (? this[0]: "ObjectLiteral") (? this[0]: "ArrayLiteral")) {
+    return true
+  } else {}
+  return false
+}

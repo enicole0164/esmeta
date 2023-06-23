@@ -1,0 +1,5 @@
+def <SYNTAX>:ForBinding[0,0].IsDestructuring(
+  this: Ast:ForBinding[0,0],
+): Boolean {
+  return false
+}

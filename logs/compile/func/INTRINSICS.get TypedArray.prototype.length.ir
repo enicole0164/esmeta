@@ -1,0 +1,17 @@
+def <BUILTIN>:INTRINSICS.get TypedArray.prototype.length(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  call %0 = clo<RequireInternalSlot>(O, "TypedArrayName")
+  [? %0]
+  assert (yet "_O_ has [[ViewedArrayBuffer]] and [[ArrayLength]] internal slots.")
+  let buffer = O.ViewedArrayBuffer
+  call %1 = clo<IsDetachedBuffer>(buffer)
+  if (= %1 true) {
+    return 0.0f
+  } else {}
+  let length = O.ArrayLength
+  return ([number] length)
+}

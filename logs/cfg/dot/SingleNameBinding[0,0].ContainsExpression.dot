@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1527 {
+    label = "def <SYNTAX>:SingleNameBinding[0,0].ContainsExpression(this: Ast:SingleNameBinding[0,0]): Boolean"
+    style = rounded
+    cluster1527_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1527_entry_name -> cluster1527_entry [arrowhead=none, color="black", style=dashed]
+    cluster1527_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1527_entry -> node8328 [color="black"]
+    cluster1527_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1527_exit_name -> cluster1527_exit [arrowhead=none, color="black", style=dashed]
+    cluster1527_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8328_name [shape=none, label=<<font color="black">Block[8328]</font>>]
+    node8328_name -> node8328 [arrowhead=none, color="black", style=dashed]
+    node8328 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8328 -> cluster1527_exit [color="black"]
+  }
+}

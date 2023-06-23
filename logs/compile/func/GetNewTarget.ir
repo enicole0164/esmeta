@@ -1,0 +1,7 @@
+def GetNewTarget(
+): Object | Undefined {
+  call %0 = clo<GetThisEnvironment>()
+  let envRec = %0
+  assert (! (= envRec.NewTarget absent))
+  return envRec.NewTarget
+}

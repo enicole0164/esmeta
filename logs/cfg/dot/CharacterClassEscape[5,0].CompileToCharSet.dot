@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2296 {
+    label = "def <SYNTAX>:CharacterClassEscape[5,0].CompileToCharSet(this: Ast:CharacterClassEscape[5,0]): Unknown["CharSet"]"
+    style = rounded
+    cluster2296_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2296_entry_name -> cluster2296_entry [arrowhead=none, color="black", style=dashed]
+    cluster2296_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2296_entry -> node14067 [color="black"]
+    cluster2296_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2296_exit_name -> cluster2296_exit [arrowhead=none, color="black", style=dashed]
+    cluster2296_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14067_name [shape=none, label=<<font color="black">Block[14067]</font>>]
+    node14067_name -> node14067 [arrowhead=none, color="black", style=dashed]
+    node14067 [shape=box, label=<<font color="black">[0] (yet &quot;Return the CharSet containing all characters not in the CharSet returned by &lt;emu-grammar&gt;CharacterClassEscape :: `w`&lt;/emu-grammar&gt; .&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14067 -> cluster2296_exit [color="black"]
+  }
+}

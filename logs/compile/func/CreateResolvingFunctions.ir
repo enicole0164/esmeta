@@ -1,0 +1,18 @@
+def CreateResolvingFunctions(
+  promise: Unknown,
+): Unknown["RecordWithFields[[Resolve]](aFunctionObject)And[[Reject]](aFunctionObject)"] {
+  let alreadyResolved = (new Record("Value" -> false))[#1233]
+  let stepsResolve = clo<INTRINSICS.yet:PromiseResolveFunction>
+  let lengthResolve = 1
+  call %0 = clo<CreateBuiltinFunction>(stepsResolve, lengthResolve, "", (new ["Promise", "AlreadyResolved"])[#1234])
+  let resolve = %0
+  resolve.Promise = promise
+  resolve.AlreadyResolved = alreadyResolved
+  let stepsReject = clo<INTRINSICS.yet:PromiseRejectFunction>
+  let lengthReject = 1
+  call %1 = clo<CreateBuiltinFunction>(stepsReject, lengthReject, "", (new ["Promise", "AlreadyResolved"])[#1235])
+  let reject = %1
+  reject.Promise = promise
+  reject.AlreadyResolved = alreadyResolved
+  return (new Record("Resolve" -> resolve, "Reject" -> reject))[#1236]
+}

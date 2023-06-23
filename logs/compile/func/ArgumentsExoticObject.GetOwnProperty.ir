@@ -1,0 +1,18 @@
+def <INTERNAL>:ArgumentsExoticObject.GetOwnProperty(
+  args: ArgumentsExoticObject,
+  P: Symbol | String,
+): Normal[PropertyDescriptor | Undefined] {
+  call %0 = clo<OrdinaryGetOwnProperty>(args, P)
+  let desc = %0
+  if (= desc undefined) {
+    return desc
+  } else {}
+  let map = args.ParameterMap
+  call %1 = clo<HasOwnProperty>(map, P)
+  let isMapped = [! %1]
+  if (= isMapped true) {
+    call %2 = clo<Get>(map, P)
+    desc.Value = [! %2]
+  } else {}
+  return desc
+}

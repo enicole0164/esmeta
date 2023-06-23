@@ -1,0 +1,38 @@
+def <NUM>:Number::multiply(
+  x: Number,
+  y: Number,
+): Number {
+  if (|| (= x NaN) (= y NaN)) {
+    return NaN
+  } else {}
+  if (|| (= x +INF) (= x -INF)) {
+    if (|| (= y 0.0f) (= y -0.0f)) {
+      return NaN
+    } else {}
+    if (< 0.0f y) {
+      return x
+    } else {}
+    return (- x)
+  } else {}
+  if (|| (= y +INF) (= y -INF)) {
+    if (|| (= x 0.0f) (= x -0.0f)) {
+      return NaN
+    } else {}
+    if (< 0.0f x) {
+      return y
+    } else {}
+    return (- y)
+  } else {}
+  if (= x -0.0f) {
+    (yet "If _y_ is *-0*<sub>𝔽</sub> or _y_ < *-0*<sub>𝔽</sub>, return *+0*<sub>𝔽</sub>.")
+    (yet "Else, return *-0*<sub>𝔽</sub>.")
+  } else {}
+  if (= y -0.0f) {
+    if (< x -0.0f) {
+      return 0.0f
+    } else {
+      return -0.0f
+    }
+  } else {}
+  return (* x y)
+}

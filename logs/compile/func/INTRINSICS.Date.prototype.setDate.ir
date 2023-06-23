@@ -1,0 +1,27 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setDate(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let date = (pop < argumentsList) else let date = absent
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  call %1 = clo<ToNumber>(date)
+  let dt = [? %1]
+  if (= t NaN) {
+    return NaN
+  } else {}
+  call %2 = clo<LocalTime>(t)
+  t = %2
+  call %3 = clo<YearFromTime>(t)
+  call %4 = clo<MonthFromTime>(t)
+  call %5 = clo<MakeDay>(%3, %4, dt)
+  call %6 = clo<TimeWithinDay>(t)
+  call %7 = clo<MakeDate>(%5, %6)
+  let newDate = %7
+  call %8 = clo<UTC>(newDate)
+  call %9 = clo<TimeClip>(%8)
+  let u = %9
+  (yet "Set the [[DateValue]] internal slot of this Date object to _u_.")
+  return u
+}

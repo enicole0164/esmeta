@@ -1,0 +1,5 @@
+def <SYNTAX>:Script[0,0].VarScopedDeclarations(
+  this: Ast:Script[0,0],
+): List[Ast] {
+  return (new [])[#275]
+}

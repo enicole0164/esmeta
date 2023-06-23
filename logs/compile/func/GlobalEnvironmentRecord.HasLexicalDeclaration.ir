@@ -1,0 +1,8 @@
+def <CONC>:GlobalEnvironmentRecord.HasLexicalDeclaration(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+): Boolean {
+  let DclRec = envRec.DeclarativeRecord
+  method-call %0 = DclRec->HasBinding(N)
+  return [! %0]
+}

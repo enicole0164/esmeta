@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1073 {
+    label = "def OrdinaryCreateFromConstructor(constructor: Unknown, intrinsicDefaultProto: String, internalSlotsList?: Unknown["ListOfNamesOfInternalSlots"]): Normal[Object] | Abrupt"
+    style = rounded
+    cluster1073_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1073_entry_name -> cluster1073_entry [arrowhead=none, color="black", style=dashed]
+    cluster1073_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1073_entry -> node4210 [color="black"]
+    cluster1073_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1073_exit_name -> cluster1073_exit [arrowhead=none, color="black", style=dashed]
+    cluster1073_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4210_name [shape=none, label=<<font color="black">Block[4210]</font>>]
+    node4210_name -> node4210 [arrowhead=none, color="black", style=dashed]
+    node4210 [shape=box, label=<<font color="black">[0] assert (yet &quot;_intrinsicDefaultProto_ is this specification's name of an intrinsic object. The corresponding object must be an intrinsic that is intended to be used as the [[Prototype]] value of an object.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4210 -> node4211 [color="black"]
+    node4211_name [shape=none, label=<<font color="black">Call[4211]</font>>]
+    node4211_name -> node4211 [arrowhead=none, color="black", style=dashed]
+    node4211 [shape=cds, label=<<font color="black">%0 = clo&lt;GetPrototypeFromConstructor&gt;(constructor, intrinsicDefaultProto)</font>> color="black" fillcolor="white", style=filled]
+    node4211 -> node4212 [color="black"]
+    node4212_name [shape=none, label=<<font color="black">Block[4212]</font>>]
+    node4212_name -> node4212 [arrowhead=none, color="black", style=dashed]
+    node4212 [shape=box, label=<<font color="black">[0] let proto = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4212 -> node4213 [color="black"]
+    node4213_name [shape=none, label=<<font color="black">Call[4213]</font>>]
+    node4213_name -> node4213 [arrowhead=none, color="black", style=dashed]
+    node4213 [shape=cds, label=<<font color="black">%1 = clo&lt;OrdinaryObjectCreate&gt;(proto, internalSlotsList)</font>> color="black" fillcolor="white", style=filled]
+    node4213 -> node4214 [color="black"]
+    node4214_name [shape=none, label=<<font color="black">Block[4214]</font>>]
+    node4214_name -> node4214 [arrowhead=none, color="black", style=dashed]
+    node4214 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4214 -> cluster1073_exit [color="black"]
+  }
+}

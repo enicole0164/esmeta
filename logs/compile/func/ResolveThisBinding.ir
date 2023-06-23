@@ -1,0 +1,7 @@
+def ResolveThisBinding(
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<GetThisEnvironment>()
+  let envRec = %0
+  method-call %1 = envRec->GetThisBinding()
+  return [? %1]
+}

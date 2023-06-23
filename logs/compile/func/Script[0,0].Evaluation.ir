@@ -1,0 +1,5 @@
+def <SYNTAX>:Script[0,0].Evaluation(
+  this: Ast:Script[0,0],
+): Unknown {
+  return undefined
+}

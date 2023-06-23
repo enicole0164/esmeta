@@ -1,0 +1,35 @@
+def EvaluateCall(
+  func: ESValue,
+  ref: ESValue | ReferenceRecord,
+  arguments: Ast,
+  tailPosition: Boolean,
+): Normal[ESValue] | Abrupt {
+  if (? ref: "ReferenceRecord") {
+    call %0 = clo<IsPropertyReference>(ref)
+    if (= %0 true) {
+      call %1 = clo<GetThisValue>(ref)
+      let thisValue = %1
+    } else {
+      let refEnv = ref.Base
+      assert (? refEnv: "EnvironmentRecord")
+      method-call %2 = refEnv->WithBaseObject()
+      let thisValue = %2
+    }
+  } else {
+    let thisValue = undefined
+  }
+  sdo-call %3 = arguments->ArgumentListEvaluation()
+  let argList = [? %3]
+  if (! (= (typeof func) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#571])
+  } else {}
+  call %4 = clo<IsCallable>(func)
+  if (= %4 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#572])
+  } else {}
+  if (= tailPosition true) {
+    call %5 = clo<PrepareForTailCall>()
+  } else {}
+  call %6 = clo<Call>(func, thisValue, argList)
+  return [? %6]
+}

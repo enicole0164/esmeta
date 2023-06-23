@@ -1,0 +1,5 @@
+def <SYNTAX>:CoalesceExpression[0,0].IsFunctionDefinition(
+  this: Ast:CoalesceExpression[0,0],
+): Boolean {
+  return false
+}

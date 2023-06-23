@@ -1,0 +1,13 @@
+def <BUILTIN>:INTRINSICS.String.prototype[@@iterator](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let s = [? %1]
+  let closure = clo<INTRINSICS.String.prototype[@@iterator]:clo0, [s]>
+  call %2 = clo<CreateIteratorFromClosure>(closure, "%StringIteratorPrototype%", @EXECUTION_STACK[0].Realm.Intrinsics["%StringIteratorPrototype%"])
+  return %2
+}

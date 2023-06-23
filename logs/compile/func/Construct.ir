@@ -1,0 +1,14 @@
+def Construct(
+  F: Unknown["Constructor"],
+  argumentsList?: Unknown,
+  newTarget?: Unknown["Constructor"],
+): Normal[Object] | Abrupt {
+  if (= newTarget absent) {
+    newTarget = F
+  } else {}
+  if (= argumentsList absent) {
+    argumentsList = (new [])[#50]
+  } else {}
+  method-call %0 = F->Construct(argumentsList, newTarget)
+  return [? %0]
+}

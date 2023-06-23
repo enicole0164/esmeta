@@ -1,0 +1,12 @@
+def <SYNTAX>:ArrayBindingPattern[0,1].IteratorBindingInitialization(
+  this: Ast:ArrayBindingPattern[0,1],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+    [? %0]
+  } else {}
+  sdo-call %1 = this[1]->IteratorBindingInitialization(iteratorRecord, environment)
+  return [? %1]
+}

@@ -1,0 +1,7 @@
+def <CONT>:AsyncGeneratorYield:cont0(
+  resumptionValue: Unknown,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<AsyncGeneratorUnwrapYieldResumption>(resumptionValue)
+  return [? %0]
+  nop
+}

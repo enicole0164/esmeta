@@ -1,0 +1,17 @@
+def InitializeHostDefinedRealm(
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<CreateRealm>()
+  let realm = %0
+  let newContext = (new ExecutionContext())[#398]
+  newContext.Function = null
+  newContext.Realm = realm
+  newContext.ScriptOrModule = null
+  push newContext > @EXECUTION_STACK
+  let global = undefined
+  let thisValue = undefined
+  call %1 = clo<SetRealmGlobalObject>(realm, global, thisValue)
+  call %2 = clo<SetDefaultGlobalBindings>(realm)
+  let globalObj = [? %2]
+  nop
+  return ~unused~
+}

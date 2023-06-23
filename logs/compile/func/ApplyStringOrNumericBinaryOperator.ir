@@ -1,0 +1,72 @@
+def ApplyStringOrNumericBinaryOperator(
+  lval: ESValue,
+  opText: Unknown["`**`,`*`,`/`,`%`,`+`,``,`<<`,`>>`,`>>>`,`&`,`^`,Or``"],
+  rval: ESValue,
+): Normal[Number | BigInt | String] | Abrupt {
+  if (= opText "+") {
+    call %0 = clo<ToPrimitive>(lval)
+    let lprim = [? %0]
+    call %1 = clo<ToPrimitive>(rval)
+    let rprim = [? %1]
+    if (|| (= (typeof lprim) @String) (= (typeof rprim) @String)) {
+      call %2 = clo<ToString>(lprim)
+      let lstr = [? %2]
+      call %3 = clo<ToString>(rprim)
+      let rstr = [? %3]
+      return (concat lstr rstr)
+    } else {}
+    lval = lprim
+    rval = rprim
+  } else {}
+  nop
+  call %4 = clo<ToNumeric>(lval)
+  let lnum = [? %4]
+  call %5 = clo<ToNumeric>(rval)
+  let rnum = [? %5]
+  if (! (= (typeof lnum) (typeof rnum))) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#593])
+  } else {}
+  if (= (typeof lnum) @BigInt) {
+    if (= opText "**") {
+      call %6 = clo<BigInt::exponentiate>(lnum, rnum)
+      return [? %6]
+    } else {}
+    if (= opText "/") {
+      call %7 = clo<BigInt::divide>(lnum, rnum)
+      return [? %7]
+    } else {}
+    if (= opText "%") {
+      call %8 = clo<BigInt::remainder>(lnum, rnum)
+      return [? %8]
+    } else {}
+    if (= opText ">>>") {
+      call %9 = clo<BigInt::unsignedRightShift>(lnum, rnum)
+      return [? %9]
+    } else {}
+  } else {}
+  if (? lnum: "Number") {
+    if (= opText "**") let operation = clo<Number::exponentiate> else {}
+    if (= opText "*") let operation = clo<Number::multiply> else {}
+    if (= opText "/") let operation = clo<Number::divide> else {}
+    if (= opText "%") let operation = clo<Number::remainder> else {}
+    if (= opText "+") let operation = clo<Number::add> else {}
+    if (= opText "-") let operation = clo<Number::subtract> else {}
+    if (= opText "<<") let operation = clo<Number::leftShift> else {}
+    if (= opText ">>") let operation = clo<Number::signedRightShift> else {}
+    if (= opText ">>>") let operation = clo<Number::unsignedRightShift> else {}
+    if (= opText "&") let operation = clo<Number::bitwiseAND> else {}
+    if (= opText "^") let operation = clo<Number::bitwiseXOR> else {}
+    if (= opText "|") let operation = clo<Number::bitwiseOR> else {}
+  } else if (? lnum: "BigInt") {
+    if (= opText "*") let operation = clo<BigInt::multiply> else {}
+    if (= opText "+") let operation = clo<BigInt::add> else {}
+    if (= opText "-") let operation = clo<BigInt::subtract> else {}
+    if (= opText "<<") let operation = clo<BigInt::leftShift> else {}
+    if (= opText ">>") let operation = clo<BigInt::signedRightShift> else {}
+    if (= opText "&") let operation = clo<BigInt::bitwiseAND> else {}
+    if (= opText "^") let operation = clo<BigInt::bitwiseXOR> else {}
+    if (= opText "|") let operation = clo<BigInt::bitwiseOR> else {}
+  } else {}
+  call %10 = operation(lnum, rnum)
+  return %10
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1037 {
+    label = "def GetGlobalObject(): Object"
+    style = rounded
+    cluster1037_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1037_entry_name -> cluster1037_entry [arrowhead=none, color="black", style=dashed]
+    cluster1037_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1037_entry -> node3905 [color="black"]
+    cluster1037_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1037_exit_name -> cluster1037_exit [arrowhead=none, color="black", style=dashed]
+    cluster1037_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3905_name [shape=none, label=<<font color="black">Block[3905]</font>>]
+    node3905_name -> node3905 [arrowhead=none, color="black", style=dashed]
+    node3905 [shape=box, label=<<font color="black">[0] let currentRealm = @EXECUTION_STACK[0].Realm<BR ALIGN="LEFT"/>[1] return currentRealm.GlobalObject<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3905 -> cluster1037_exit [color="black"]
+  }
+}

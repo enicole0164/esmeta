@@ -1,0 +1,14 @@
+def <BUILTIN>:INTRINSICS.Symbol.for(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let key = (pop < argumentsList) else let key = absent
+  call %0 = clo<ToString>(key)
+  let stringKey = [? %0]
+  (yet "For each element _e_ of the GlobalSymbolRegistry List, do\n  1. If SameValue(_e_.[[Key]], _stringKey_) is *true*, return _e_.[[Symbol]].")
+  assert (yet "GlobalSymbolRegistry does not currently contain an entry for _stringKey_.")
+  (yet "Let _newSymbol_ be a new unique Symbol value whose [[Description]] value is _stringKey_.")
+  (yet "Append the Record { [[Key]]: _stringKey_, [[Symbol]]: _newSymbol_ } to the GlobalSymbolRegistry List.")
+  return newSymbol
+}

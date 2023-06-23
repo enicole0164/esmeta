@@ -1,0 +1,17 @@
+def NewPromiseResolveThenableJob(
+  promiseToResolve: Unknown,
+  thenable: Unknown,
+  then: Unknown,
+): Unknown["RecordWithFields[[Job]](aJobAbstractClosure)And[[Realm]](aRealmRecord)"] {
+  let job = clo<NewPromiseResolveThenableJob:clo0, [promiseToResolve, thenable, then]>
+  call %0 = clo<GetFunctionRealm>(then.Callback)
+  call %1 = clo<Completion>(%0)
+  let getThenRealmResult = %1
+  if (&& (comp? getThenRealmResult) (= getThenRealmResult.Type ~normal~)) {
+    let thenRealm = getThenRealmResult.Value
+  } else {
+    let thenRealm = @EXECUTION_STACK[0].Realm
+  }
+  nop
+  return (new Record("Job" -> job, "Realm" -> thenRealm))[#1252]
+}

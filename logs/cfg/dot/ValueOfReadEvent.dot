@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2666 {
+    label = "def ValueOfReadEvent(execution: Unknown["CandidateExecution"], R: Unknown["ReadSharedMemoryOrReadModifyWriteSharedMemoryEvent"]): Unknown["ListOfByteValues"]"
+    style = rounded
+    cluster2666_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2666_entry_name -> cluster2666_entry [arrowhead=none, color="black", style=dashed]
+    cluster2666_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2666_entry -> node19847 [color="black"]
+    cluster2666_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2666_exit_name -> cluster2666_exit [arrowhead=none, color="black", style=dashed]
+    cluster2666_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19847_name [shape=none, label=<<font color="black">Call[19847]</font>>]
+    node19847_name -> node19847 [arrowhead=none, color="black", style=dashed]
+    node19847 [shape=cds, label=<<font color="black">%0 = execution-&gt;ReadsBytesFrom(R)</font>> color="black" fillcolor="white", style=filled]
+    node19847 -> node19848 [color="black"]
+    node19848_name [shape=none, label=<<font color="black">Block[19848]</font>>]
+    node19848_name -> node19848 [arrowhead=none, color="black", style=dashed]
+    node19848 [shape=box, label=<<font color="black">[0] let Ws = %0<BR ALIGN="LEFT"/>[1] assert (yet &quot;_Ws_ is a List of WriteSharedMemory or ReadModifyWriteSharedMemory events with length equal to _R_.[[ElementSize]].&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19848 -> node19849 [color="black"]
+    node19849_name [shape=none, label=<<font color="black">Call[19849]</font>>]
+    node19849_name -> node19849 [arrowhead=none, color="black", style=dashed]
+    node19849 [shape=cds, label=<<font color="black">%1 = clo&lt;ComposeWriteEventBytes&gt;(execution, R.ByteIndex, Ws)</font>> color="black" fillcolor="white", style=filled]
+    node19849 -> node19850 [color="black"]
+    node19850_name [shape=none, label=<<font color="black">Block[19850]</font>>]
+    node19850_name -> node19850 [arrowhead=none, color="black", style=dashed]
+    node19850 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19850 -> cluster2666_exit [color="black"]
+  }
+}

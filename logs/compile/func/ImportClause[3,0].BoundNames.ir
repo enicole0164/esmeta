@@ -1,0 +1,9 @@
+def <SYNTAX>:ImportClause[3,0].BoundNames(
+  this: Ast:ImportClause[3,0],
+): List[String] {
+  sdo-call %0 = this[0]->BoundNames()
+  let names1 = %0
+  sdo-call %1 = this[1]->BoundNames()
+  let names2 = %1
+  return (list-concat names1 names2)[#104]
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1464 {
+    label = "def CreateForInIterator(object: Object): Unknown["ForInIterator"]"
+    style = rounded
+    cluster1464_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1464_entry_name -> cluster1464_entry [arrowhead=none, color="black", style=dashed]
+    cluster1464_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1464_entry -> node7818 [color="black"]
+    cluster1464_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1464_exit_name -> cluster1464_exit [arrowhead=none, color="black", style=dashed]
+    cluster1464_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7818_name [shape=none, label=<<font color="black">Call[7818]</font>>]
+    node7818_name -> node7818 [arrowhead=none, color="black", style=dashed]
+    node7818 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryObjectCreate&gt;(@EXECUTION_STACK[0].Realm.Intrinsics[&quot;%ForInIteratorPrototype%&quot;], (new [&quot;Object&quot;, &quot;ObjectWasVisited&quot;, &quot;VisitedKeys&quot;, &quot;RemainingKeys&quot;])[#628])</font>> color="black" fillcolor="white", style=filled]
+    node7818 -> node7819 [color="black"]
+    node7819_name [shape=none, label=<<font color="black">Block[7819]</font>>]
+    node7819_name -> node7819 [arrowhead=none, color="black", style=dashed]
+    node7819 [shape=box, label=<<font color="black">[0] let iterator = %0<BR ALIGN="LEFT"/>[1] iterator.Object = object<BR ALIGN="LEFT"/>[2] iterator.ObjectWasVisited = false<BR ALIGN="LEFT"/>[3] iterator.VisitedKeys = (new [])[#629]<BR ALIGN="LEFT"/>[4] iterator.RemainingKeys = (new [])[#630]<BR ALIGN="LEFT"/>[5] return iterator<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7819 -> cluster1464_exit [color="black"]
+  }
+}

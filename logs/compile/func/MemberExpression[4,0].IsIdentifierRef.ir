@@ -1,0 +1,5 @@
+def <SYNTAX>:MemberExpression[4,0].IsIdentifierRef(
+  this: Ast:MemberExpression[4,0],
+): Boolean {
+  return false
+}

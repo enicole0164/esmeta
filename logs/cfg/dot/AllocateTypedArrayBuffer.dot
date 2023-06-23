@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2431 {
+    label = "def AllocateTypedArrayBuffer(O: Unknown["TypedArray"], length: Unknown["NonnegativeInteger"]): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster2431_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2431_entry_name -> cluster2431_entry [arrowhead=none, color="black", style=dashed]
+    cluster2431_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2431_entry -> node16844 [color="black"]
+    cluster2431_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2431_exit_name -> cluster2431_exit [arrowhead=none, color="black", style=dashed]
+    cluster2431_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node16844_name [shape=none, label=<<font color="black">Block[16844]</font>>]
+    node16844_name -> node16844 [arrowhead=none, color="black", style=dashed]
+    node16844 [shape=box, label=<<font color="black">[0] assert (= O.ViewedArrayBuffer undefined)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16844 -> node16845 [color="black"]
+    node16845_name [shape=none, label=<<font color="black">Call[16845]</font>>]
+    node16845_name -> node16845 [arrowhead=none, color="black", style=dashed]
+    node16845 [shape=cds, label=<<font color="black">%0 = clo&lt;TypedArrayElementSize&gt;(O)</font>> color="black" fillcolor="white", style=filled]
+    node16845 -> node16846 [color="black"]
+    node16846_name [shape=none, label=<<font color="black">Block[16846]</font>>]
+    node16846_name -> node16846 [arrowhead=none, color="black", style=dashed]
+    node16846 [shape=box, label=<<font color="black">[0] let elementSize = %0<BR ALIGN="LEFT"/>[1] let byteLength = (* elementSize length)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16846 -> node16847 [color="black"]
+    node16847_name [shape=none, label=<<font color="black">Call[16847]</font>>]
+    node16847_name -> node16847 [arrowhead=none, color="black", style=dashed]
+    node16847 [shape=cds, label=<<font color="black">%1 = clo&lt;AllocateArrayBuffer&gt;(@EXECUTION_STACK[0].Realm.Intrinsics[&quot;%ArrayBuffer%&quot;], byteLength)</font>> color="black" fillcolor="white", style=filled]
+    node16847 -> node16848 [color="black"]
+    node16848_name [shape=none, label=<<font color="black">Block[16848]</font>>]
+    node16848_name -> node16848 [arrowhead=none, color="black", style=dashed]
+    node16848 [shape=box, label=<<font color="black">[0] let data = [? %1]<BR ALIGN="LEFT"/>[1] O.ViewedArrayBuffer = data<BR ALIGN="LEFT"/>[2] O.ByteLength = byteLength<BR ALIGN="LEFT"/>[3] O.ByteOffset = 0<BR ALIGN="LEFT"/>[4] O.ArrayLength = length<BR ALIGN="LEFT"/>[5] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16848 -> cluster2431_exit [color="black"]
+  }
+}

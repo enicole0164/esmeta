@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster985 {
+    label = "def <CONC>:ObjectEnvironmentRecord.CreateMutableBinding(envRec: ObjectEnvironmentRecord, N: String, D: Boolean): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster985_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster985_entry_name -> cluster985_entry [arrowhead=none, color="black", style=dashed]
+    cluster985_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster985_entry -> node3642 [color="black"]
+    cluster985_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster985_exit_name -> cluster985_exit [arrowhead=none, color="black", style=dashed]
+    cluster985_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3642_name [shape=none, label=<<font color="black">Block[3642]</font>>]
+    node3642_name -> node3642 [arrowhead=none, color="black", style=dashed]
+    node3642 [shape=box, label=<<font color="black">[0] let bindingObject = envRec.BindingObject<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3642 -> node3643 [color="black"]
+    node3643_name [shape=none, label=<<font color="black">Call[3643]</font>>]
+    node3643_name -> node3643 [arrowhead=none, color="black", style=dashed]
+    node3643 [shape=cds, label=<<font color="black">%0 = clo&lt;DefinePropertyOrThrow&gt;(bindingObject, N, (new PropertyDescriptor(&quot;Value&quot; -&gt; undefined, &quot;Writable&quot; -&gt; true, &quot;Enumerable&quot; -&gt; true, &quot;Configurable&quot; -&gt; D))[#372])</font>> color="black" fillcolor="white", style=filled]
+    node3643 -> node3644 [color="black"]
+    node3644_name [shape=none, label=<<font color="black">Block[3644]</font>>]
+    node3644_name -> node3644 [arrowhead=none, color="black", style=dashed]
+    node3644 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/>[1] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3644 -> cluster985_exit [color="black"]
+  }
+}

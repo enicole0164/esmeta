@@ -1,0 +1,22 @@
+def <SYNTAX>:ForDeclaration[0,0].ForDeclarationBindingInstantiation(
+  this: Ast:ForDeclaration[0,0],
+  environment: Unknown,
+): Const[~unused~] {
+  assert (? environment: "DeclarativeEnvironmentRecord")
+  sdo-call %2 = this[1]->BoundNames()
+  %1 = %2
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let name = %1[%0]
+    sdo-call %3 = this[0]->IsConstantDeclaration()
+    if (= %3 true) {
+      method-call %4 = environment->CreateImmutableBinding(name, true)
+      [! %4]
+    } else {
+      method-call %5 = environment->CreateMutableBinding(name, false)
+      [! %5]
+    }
+    %0 = (+ %0 1)
+  }
+  return ~unused~
+}

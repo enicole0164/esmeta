@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster504 {
+    label = "def <SYNTAX>:ForStatement[2,0].ContainsDuplicateLabels(this: Ast:ForStatement[2,0], labelSet: Unknown): Boolean"
+    style = rounded
+    cluster504_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster504_entry_name -> cluster504_entry [arrowhead=none, color="black", style=dashed]
+    cluster504_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster504_entry -> node2373 [color="black"]
+    cluster504_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster504_exit_name -> cluster504_exit [arrowhead=none, color="black", style=dashed]
+    cluster504_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2373_name [shape=none, label=<<font color="black">Call[2373]</font>>]
+    node2373_name -> node2373 [arrowhead=none, color="black", style=dashed]
+    node2373 [shape=cds, label=<<font color="black">%0 = this[3]-&gt;ContainsDuplicateLabels(labelSet)</font>> color="black" fillcolor="white", style=filled]
+    node2373 -> node2374 [color="black"]
+    node2374_name [shape=none, label=<<font color="black">Block[2374]</font>>]
+    node2374_name -> node2374 [arrowhead=none, color="black", style=dashed]
+    node2374 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2374 -> cluster504_exit [color="black"]
+  }
+}

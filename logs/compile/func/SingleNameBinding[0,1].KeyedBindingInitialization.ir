@@ -1,0 +1,31 @@
+def <SYNTAX>:SingleNameBinding[0,1].KeyedBindingInitialization(
+  this: Ast:SingleNameBinding[0,1],
+  value: Unknown,
+  environment: Unknown,
+  propertyName: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  let bindingId = %0
+  call %1 = clo<ResolveBinding>(bindingId, environment)
+  let lhs = [? %1]
+  call %2 = clo<GetV>(value, propertyName)
+  let v = [? %2]
+  if (&& (! (= this[1] absent)) (= v undefined)) {
+    call %3 = clo<IsAnonymousFunctionDefinition>(this[1])
+    if (= %3 true) {
+      sdo-call %4 = this[1]->NamedEvaluation(bindingId)
+      v = [? %4]
+    } else {
+      sdo-call %5 = this[1]->Evaluation()
+      let defaultValue = %5
+      call %6 = clo<GetValue>(defaultValue)
+      v = [? %6]
+    }
+  } else {}
+  if (= environment undefined) {
+    call %7 = clo<PutValue>(lhs, v)
+    return [? %7]
+  } else {}
+  call %8 = clo<InitializeReferencedBinding>(lhs, v)
+  return [? %8]
+}

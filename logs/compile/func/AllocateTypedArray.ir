@@ -1,0 +1,27 @@
+def AllocateTypedArray(
+  constructorName: Unknown["StringWhichIsTheNameOfATypedArrayConstructorIn<emuxrefHref="#tablethetypedarrayconstructors"></emuxref>"],
+  newTarget: Unknown,
+  defaultProto: Unknown,
+  length?: Unknown["NonnegativeInteger"],
+): Unknown["EitherANormalCompletionContainingATypedArrayOrAnAbruptCompletion"] {
+  call %0 = clo<GetPrototypeFromConstructor>(newTarget, defaultProto)
+  let proto = [? %0]
+  call %1 = clo<IntegerIndexedObjectCreate>(proto)
+  let obj = %1
+  assert (= obj.ViewedArrayBuffer undefined)
+  obj.TypedArrayName = constructorName
+  if (|| (= constructorName "BigInt64Array") (= constructorName "BigUint64Array")) {
+    obj.ContentType = ~BigInt~
+  } else {
+    obj.ContentType = ~Number~
+  }
+  if (= length absent) {
+    obj.ByteLength = 0
+    obj.ByteOffset = 0
+    obj.ArrayLength = 0
+  } else {
+    call %2 = clo<AllocateTypedArrayBuffer>(obj, length)
+    [? %2]
+  }
+  return obj
+}

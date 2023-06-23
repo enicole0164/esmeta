@@ -1,0 +1,5 @@
+def <SYNTAX>:CharacterClassEscape[0,0].CompileToCharSet(
+  this: Ast:CharacterClassEscape[0,0],
+): Unknown["CharSet"] {
+  (yet "Return the ten-element CharSet containing the characters `0` through `9` inclusive.")
+}

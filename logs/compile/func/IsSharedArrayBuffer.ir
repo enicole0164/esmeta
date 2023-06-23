@@ -1,0 +1,13 @@
+def IsSharedArrayBuffer(
+  obj: Unknown["ArrayBufferOrASharedArrayBuffer"],
+): Boolean {
+  let bufferData = obj.ArrayBufferData
+  if (= bufferData null) {
+    return false
+  } else {}
+  if (? bufferData: "DataBlock") {
+    return false
+  } else {}
+  assert (? bufferData: "SharedDataBlock")
+  return true
+}

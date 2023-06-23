@@ -1,0 +1,16 @@
+def <BUILTIN>:INTRINSICS.Reflect.setPrototypeOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  if (< 0 argumentsList.length) let proto = (pop < argumentsList) else let proto = absent
+  if (! (= (typeof target) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1356])
+  } else {}
+  if (&& (! (= (typeof proto) @Object)) (! (= proto null))) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1357])
+  } else {}
+  method-call %0 = target->SetPrototypeOf(proto)
+  return [? %0]
+}

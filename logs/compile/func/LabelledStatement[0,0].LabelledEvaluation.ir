@@ -1,0 +1,21 @@
+def <SYNTAX>:LabelledStatement[0,0].LabelledEvaluation(
+  this: Ast:LabelledStatement[0,0],
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  let label = %0
+  let newLabelSet = (list-concat labelSet (new [label])[#650])[#649]
+  sdo-call %1 = this[1]->LabelledEvaluation(newLabelSet)
+  call %2 = clo<Completion>(%1)
+  let stmtResult = %2
+  %3 = (= stmtResult.Type ~break~)
+  if %3 {
+    call %4 = clo<SameValue>(stmtResult.Target, label)
+    %3 = (= %4 true)
+  } else {}
+  if %3 {
+    call %5 = clo<NormalCompletion>(stmtResult.Value)
+    stmtResult = %5
+  } else {}
+  return [? stmtResult]
+}

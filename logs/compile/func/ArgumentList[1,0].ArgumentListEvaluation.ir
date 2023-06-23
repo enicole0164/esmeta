@@ -1,0 +1,21 @@
+def <SYNTAX>:ArgumentList[1,0].ArgumentListEvaluation(
+  this: Ast:ArgumentList[1,0],
+): Normal[List[ESValue]] | Abrupt {
+  let list = (new [])[#577]
+  sdo-call %0 = this[0]->Evaluation()
+  let spreadRef = %0
+  call %1 = clo<GetValue>(spreadRef)
+  let spreadObj = [? %1]
+  call %2 = clo<GetIterator>(spreadObj)
+  let iteratorRecord = [? %2]
+  loop[repeat] true {
+    call %3 = clo<IteratorStep>(iteratorRecord)
+    let next = [? %3]
+    if (= next false) {
+      return list
+    } else {}
+    call %4 = clo<IteratorValue>(next)
+    let nextArg = [? %4]
+    push list < nextArg
+  }
+}

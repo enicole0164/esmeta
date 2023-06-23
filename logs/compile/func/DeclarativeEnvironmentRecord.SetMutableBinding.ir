@@ -1,0 +1,30 @@
+def <CONC>:DeclarativeEnvironmentRecord.SetMutableBinding(
+  envRec: DeclarativeEnvironmentRecord,
+  N: String,
+  V: ESValue,
+  S: Boolean,
+): Normal[Const[~unused~]] | Abrupt {
+  let binding = envRec.SubMap[N]
+  if (= binding absent) {
+    if (= S true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#368])
+    } else {}
+    method-call %0 = envRec->CreateMutableBinding(N, true)
+    method-call %1 = envRec->InitializeBinding(N, V)
+    call %2 = clo<NormalCompletion>(~unused~)
+    return %2
+  } else {}
+  if (= binding.strict true) S = true else {}
+  if (! binding.initialized) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#369])
+  } else if (? binding: "MutableBinding") {
+    binding.BoundValue = V
+  } else {
+    assert (? binding: "ImmutableBinding")
+    if (= S true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#370])
+    } else {}
+  }
+  call %3 = clo<NormalCompletion>(~unused~)
+  return %3
+}

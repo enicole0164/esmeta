@@ -1,0 +1,5 @@
+def <SYNTAX>:RelationalExpression[5,0].IsFunctionDefinition(
+  this: Ast:RelationalExpression[5,0],
+): Boolean {
+  return false
+}

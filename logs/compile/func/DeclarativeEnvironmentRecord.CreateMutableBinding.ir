@@ -1,0 +1,10 @@
+def <CONC>:DeclarativeEnvironmentRecord.CreateMutableBinding(
+  envRec: DeclarativeEnvironmentRecord,
+  N: String,
+  D: Boolean,
+): Normal[Const[~unused~]] {
+  assert (= envRec.SubMap[N] absent)
+  envRec.SubMap[N] = (new MutableBinding("initialized" -> false))[#366]
+  if (= D true) envRec.SubMap[N].maybeDeleted = true else {}
+  return ~unused~
+}

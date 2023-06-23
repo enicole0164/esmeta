@@ -1,0 +1,18 @@
+def <CONC>:ObjectEnvironmentRecord.GetBindingValue(
+  envRec: ObjectEnvironmentRecord,
+  N: String,
+  S: Boolean,
+): Normal[ESValue] | Abrupt {
+  let bindingObject = envRec.BindingObject
+  call %0 = clo<HasProperty>(bindingObject, N)
+  let value = [? %0]
+  if (= value false) {
+    if (= S false) {
+      return undefined
+    } else {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#374])
+    }
+  } else {}
+  call %1 = clo<Get>(bindingObject, N)
+  return [? %1]
+}

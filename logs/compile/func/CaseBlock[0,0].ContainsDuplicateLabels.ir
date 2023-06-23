@@ -1,0 +1,6 @@
+def <SYNTAX>:CaseBlock[0,0].ContainsDuplicateLabels(
+  this: Ast:CaseBlock[0,0],
+  labelSet: Unknown,
+): Boolean {
+  return false
+}

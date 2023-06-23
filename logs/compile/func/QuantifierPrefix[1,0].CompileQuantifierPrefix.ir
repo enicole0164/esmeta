@@ -1,0 +1,5 @@
+def <SYNTAX>:QuantifierPrefix[1,0].CompileQuantifierPrefix(
+  this: Ast:QuantifierPrefix[1,0],
+): Unknown["RecordWithFields[[Min]](aNonnegativeInteger)And[[Max]](aNonnegativeIntegerOr+∞)"] {
+  return (new Record("Min" -> 1, "Max" -> +INF))[#978]
+}

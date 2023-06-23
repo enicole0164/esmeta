@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster844 {
+    label = "def <SYNTAX>:AsyncFunctionDeclaration[1,0].InstantiateFunctionObject(this: Ast:AsyncFunctionDeclaration[1,0], env: Unknown, privateEnv: Unknown): FunctionObject"
+    style = rounded
+    cluster844_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster844_entry_name -> cluster844_entry [arrowhead=none, color="black", style=dashed]
+    cluster844_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster844_entry -> node3179 [color="black"]
+    cluster844_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster844_exit_name -> cluster844_exit [arrowhead=none, color="black", style=dashed]
+    cluster844_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3179_name [shape=none, label=<<font color="black">Call[3179]</font>>]
+    node3179_name -> node3179 [arrowhead=none, color="black", style=dashed]
+    node3179 [shape=cds, label=<<font color="black">%0 = this-&gt;InstantiateAsyncFunctionObject(env, privateEnv)</font>> color="black" fillcolor="white", style=filled]
+    node3179 -> node3180 [color="black"]
+    node3180_name [shape=none, label=<<font color="black">Block[3180]</font>>]
+    node3180_name -> node3180 [arrowhead=none, color="black", style=dashed]
+    node3180 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3180 -> cluster844_exit [color="black"]
+  }
+}

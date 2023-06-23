@@ -1,0 +1,18 @@
+def <SYNTAX>:ExportDeclaration[6,0].Evaluation(
+  this: Ast:ExportDeclaration[6,0],
+): Unknown {
+  call %0 = clo<IsAnonymousFunctionDefinition>(this[0])
+  if (= %0 true) {
+    sdo-call %1 = this[0]->NamedEvaluation("default")
+    let value = [? %1]
+  } else {
+    sdo-call %2 = this[0]->Evaluation()
+    let rhs = %2
+    call %3 = clo<GetValue>(rhs)
+    let value = [? %3]
+  }
+  let env = @EXECUTION_STACK[0].LexicalEnvironment
+  call %4 = clo<InitializeBoundName>("*default*", value, env)
+  [? %4]
+  return ~empty~
+}

@@ -1,0 +1,36 @@
+def SortIndexedProperties(
+  obj: Object,
+  len: Unknown["NonnegativeInteger"],
+  SortCompare: Unknown["AbstractClosureWithTwoParameters"],
+): Normal[Object] | Abrupt {
+  let items = (new [])[#1047]
+  let k = 0
+  loop[repeat] (< k len) {
+    call %0 = clo<ToString>(([number] k))
+    let Pk = [! %0]
+    call %1 = clo<HasProperty>(obj, Pk)
+    let kPresent = [? %1]
+    if (= kPresent true) {
+      call %2 = clo<Get>(obj, Pk)
+      let kValue = [? %2]
+      push items < kValue
+    } else {}
+    k = (+ k 1)
+  }
+  let itemCount = items.length
+  (yet "Sort _items_ using an implementation-defined sequence of calls to _SortCompare_. If any such call returns an abrupt completion, stop before performing any further calls to _SortCompare_ and return that Completion Record.")
+  let j = 0
+  loop[repeat] (< j itemCount) {
+    call %3 = clo<ToString>(([number] j))
+    call %4 = clo<Set>(obj, [! %3], items[j], true)
+    [? %4]
+    j = (+ j 1)
+  }
+  loop[repeat] (< j len) {
+    call %5 = clo<ToString>(([number] j))
+    call %6 = clo<DeletePropertyOrThrow>(obj, [! %5])
+    [? %6]
+    j = (+ j 1)
+  }
+  return obj
+}

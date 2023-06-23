@@ -1,0 +1,7 @@
+def Get(
+  O: Object,
+  P: Symbol | String,
+): Normal[ESValue] | Abrupt {
+  method-call %0 = O->Get(P, O)
+  return [? %0]
+}

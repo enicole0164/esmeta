@@ -1,0 +1,698 @@
+<emu-not-ref>Record</emu-not-ref> that the binding for _N_ in _envRec_ has been initialized.
+Add _W_ to the end of the list of waiters in _WL_.
+Add _name_ as an element of the list _mappedNames_.
+Append (_leaveEvent_, _enterEvent_) to _eventsRecord_.[[AgentSynchronizesWith]].
+Append _key_ as an element of _targetConfigurableKeys_.
+Append _key_ as an element of _targetNonconfigurableKeys_.
+Append _nextValue_ to the end of the List _values_.
+Append in List order the elements of _captures_ to the end of the List _replacerArgs_.
+Append the Record { [[Key]]: _stringKey_, [[Symbol]]: _newSymbol_ } to the GlobalSymbolRegistry List.
+Append the code unit elements of _nextSeg_ to the end of _stringElements_.
+Append the code unit elements of _nextSub_ to the end of _stringElements_.
+Append the pair (a two element List) consisting of _nextKey_ and _desc_ to the end of _descriptors_.
+Append to _internalSlotsList_ the elements of _additionalInternalSlotsList_.
+Append to _moduleNames_ each element of _additionalNames_ that is not already an element of _moduleNames_.
+Append 𝔽(_position_) and _S_ to _replacerArgs_.
+Attempt to parse _sourceText_ using _goalSymbol_ as the goal symbol, and analyse the parse result for any early error conditions. Parsing and early error detection may be interleaved in an implementation-defined manner.
+Choose any such _cell_.
+Create a mutable binding in _envRec_ for _N_ and record that it is uninitialized. If _D_ is *true*, record that the newly created binding may be deleted by a subsequent DeleteBinding call.
+Create an immutable binding in _envRec_ for _N_ and record that it is uninitialized. If _S_ is *true*, record that the newly created binding is a strict binding.
+Create an immutable indirect binding in _envRec_ for _N_ that references _M_ and _N2_ as its target binding and record that the binding is initialized.
+Create an own accessor property named _P_ of object _O_ whose [[Get]], [[Set]], [[Enumerable]], and [[Configurable]] attributes are set to the value of the corresponding field in _Desc_ if _Desc_ has that field, or to the attribute's <emu-xref href="#table-object-property-attributes">default value</emu-xref> otherwise.
+Create an own data property named _P_ of object _O_ whose [[Value]], [[Writable]], [[Enumerable]], and [[Configurable]] attributes are set to the value of the corresponding field in _Desc_ if _Desc_ has that field, or to the attribute's <emu-xref href="#table-object-property-attributes">default value</emu-xref> otherwise.
+Create any host-defined global object properties on _globalObj_.
+Create own properties of _M_ corresponding to the definitions in <emu-xref href="#sec-module-namespace-objects"></emu-xref>.
+Discard all resources associated with the current execution context.
+Else if _C_ has a numeric value less than 0x0020 (SPACE), or if _C_ has the same numeric value as a <emu-xref href="#leading-surrogate"></emu-xref> or <emu-xref href="#trailing-surrogate"></emu-xref>, then [...]
+Else if _templateRemainder_ starts with *"$"* followed by 1 or more decimal digits, then [...]
+Else if _templateRemainder_ starts with *"$&"*, then [...]
+Else if _templateRemainder_ starts with *"$'"* (0x0024 (DOLLAR SIGN) followed by 0x0027 (APOSTROPHE)), then [...]
+Else if _templateRemainder_ starts with *"$<"*, then [...]
+Else if _templateRemainder_ starts with *"$`"*, then [...]
+Else if the binding for _N_ in _envRec_ is a mutable binding, change its bound value to _V_.
+Else, [...]
+Else, [...]
+Else, [...]
+Else, [...]
+Else, [...]
+Else, [...]
+Else, [...]
+Else, [...]
+Else, [...]
+Else, [...]
+Else, return *-0*<sub>𝔽</sub>.
+Find a finite time value _t_ such that YearFromTime(_t_) is _ym_ and MonthFromTime(_t_) is _mn_ and DateFromTime(_t_) is *1*<sub>𝔽</sub>; but if this is not possible (because some argument is out of range), return *NaN*.
+For each code point _C_ of StringToCodePoints(_value_), do [...]
+For each code point _cp_ of _text_, do [...]
+For each element _e_ of the GlobalSymbolRegistry List (see <emu-xref href="#sec-symbol.for"></emu-xref>), do [...]
+For each element _e_ of the GlobalSymbolRegistry List, do [...]
+For each event _E_ of EventSet(_execution_), do [...]
+For each event _E_ of EventSet(_execution_), do [...]
+For each event _E_ of _aer_.[[EventList]], do [...]
+For each field of _Desc_, set the corresponding attribute of the property named _P_ of object _O_ to the value of the field.
+For each index _i_ of _db_, do [...]
+For each integer _d_ of « 2, 1 », do [...]
+For each integer _i_ such that _i_ ≥ 1 and _i_ ≤ _n_, in ascending order, do [...]
+For each integer _k_ such that _parenIndex_ < _k_ and _k_ ≤ _parenIndex_ + _parenCount_, set _cap_[_k_] to *undefined*.
+For each own property key _P_ of _O_ such that Type(_P_) is String and _P_ is not an array index, in ascending chronological order of property creation, do [...]
+For each own property key _P_ of _O_ such that Type(_P_) is String and _P_ is not an array index, in ascending chronological order of property creation, do [...]
+For each own property key _P_ of _O_ such that Type(_P_) is String and _P_ is not an integer index, in ascending chronological order of property creation, do [...]
+For each own property key _P_ of _O_ such that Type(_P_) is Symbol, in ascending chronological order of property creation, do [...]
+For each own property key _P_ of _O_ such that Type(_P_) is Symbol, in ascending chronological order of property creation, do [...]
+For each own property key _P_ of _O_ such that Type(_P_) is Symbol, in ascending chronological order of property creation, do [...]
+For each own property key _P_ of _O_ such that _P_ is an array index and ! ToIntegerOrInfinity(_P_) ≥ _len_, in ascending numeric index order, do [...]
+For each own property key _P_ of _O_ such that _P_ is an array index, in ascending numeric index order, do [...]
+For each property of the Global Object specified in clause <emu-xref href="#sec-global-object"></emu-xref>, do [...]
+If -6 < _n_ ≤ 0, return the string-concatenation of: [...]
+If 0 < _n_ ≤ 21, return the string-concatenation of: [...]
+If 0 ≤ _yi_ ≤ 99, let _yr_ be *1900*<sub>𝔽</sub> + 𝔽(_yi_); otherwise, let _yr_ be _y_.
+If 0 ≤ _yi_ ≤ 99, let _yr_ be *1900*<sub>𝔽</sub> + 𝔽(_yi_); otherwise, let _yr_ be _y_.
+If FlagText of _literal_ contains any code points other than `g`, `i`, `m`, `s`, `u`, or `y`, or if it contains the same code point more than once, return *false*.
+If IsDataDescriptor(_existingProp_) is *true* and _existingProp_ has attribute values { [[Writable]]: *true*, [[Enumerable]]: *true* }, return *true*.
+If Type(_func_) is Object and _func_ has a [[SourceText]] internal slot and _func_.[[SourceText]] is a sequence of Unicode code points and HostHasSourceTextAvailable(_func_) is *true*, then [...]
+If UnicodeMatchPropertyValue(`General_Category`, _s_) is identical to a List of Unicode code points that is the name of a Unicode general category or general category alias listed in the “Property value and aliases” column of <emu-xref href="#table-unicode-general-category-values"></emu-xref>, then [...]
+If _C_ is in _unescapedSet_, then [...]
+If _C_ is listed in the “Code Point” column of <emu-xref href="#table-json-single-character-escapes"></emu-xref>, then [...]
+If _C_ is not in _reservedSet_, then [...]
+If _Desc_ does not have any fields, return *true*.
+If _E_ is not in SharedDataBlockEventSet(_execution_), add _E_ to _events_.
+If _F_ contains any code unit other than *"d"*, *"g"*, *"i"*, *"m"*, *"s"*, *"u"*, or *"y"* or if it contains the same code unit more than once, throw a *SyntaxError* exception.
+If _O_ does not have an own property with key _P_, return *undefined*.
+If _Octets_ does not contain a valid UTF-8 encoding of a Unicode code point, throw a *URIError* exception.
+If _R_ contains any |GroupName|, then [...]
+If _S_ contains a code unit that is not a radix-_R_ digit, let _end_ be the index within _S_ of the first such code unit; otherwise, let _end_ be the length of _S_.
+If _S_ is not empty and the first code unit of _S_ is the code unit 0x002B (PLUS SIGN) or the code unit 0x002D (HYPHEN-MINUS), remove the first code unit from _S_.
+If _S_ is not empty and the first code unit of _S_ is the code unit 0x002D (HYPHEN-MINUS), set _sign_ to -1.
+If _WL_ has a Synchronize event, then [...]
+If _W_ is a WriteSharedMemory event, then [...]
+If _W_ was notified explicitly by another agent calling NotifyWaiter with arguments _WL_ and _W_, return *true*.
+If _argumentList_ is a List of a single Number, then [...]
+If _body_ is the |FunctionBody| of a |GeneratorBody|, return *false*.
+If _body_ is the |FunctionBody| of an |AsyncFunctionBody|, return *false*.
+If _body_ is the |FunctionBody| of an |AsyncGeneratorBody|, return *false*.
+If _c_ is in _WordCharacters_, return *true*.
+If _call_ is not contained within a |FunctionBody|, |ConciseBody|, or |AsyncConciseBody|, return *false*.
+If _callerContext_ is not already suspended, suspend _callerContext_.
+If _callerContext_ is not already suspended, suspend _callerContext_.
+If _callerContext_ is not already suspended, suspend _callerContext_.
+If _callerContext_ is not already suspended, suspend _callerContext_.
+If _child_ is an instance of _symbol_, return *true*.
+If _declarationNames_ does not include the element *"\*default\*"*, append *"\*default\*"* to _declarationNames_.
+If _declarationNames_ does not include the element *"\*default\*"*, append *"\*default\*"* to _declarationNames_.
+If _e_ = 0, or if _Multiline_ is *true* and the character _Input_[_e_ - 1] is one of |LineTerminator|, then [...]
+If _e_ = _InputLength_, or if _Multiline_ is *true* and the character _Input_[_e_] is one of |LineTerminator|, then [...]
+If _envRec_ does not have a binding for _N_, then [...]
+If _envRec_ has a binding for the name that is the value of _N_, return *true*.
+If _exponent_ is an odd integral Number, return *-0*<sub>𝔽</sub>. Otherwise, return *+0*<sub>𝔽</sub>.
+If _exponent_ is an odd integral Number, return *-0*<sub>𝔽</sub>. Otherwise, return *+0*<sub>𝔽</sub>.
+If _exponent_ is an odd integral Number, return *-∞*<sub>𝔽</sub>. Otherwise, return *+∞*<sub>𝔽</sub>.
+If _exponent_ is an odd integral Number, return *-∞*<sub>𝔽</sub>. Otherwise, return *+∞*<sub>𝔽</sub>.
+If _f_ is odd, return 𝔽(_f_ + 1).
+If _first_ is a <emu-xref href="#trailing-surrogate"></emu-xref> or _position_ + 1 = _size_, then [...]
+If _first_ is not a <emu-xref href="#leading-surrogate"></emu-xref> or <emu-xref href="#trailing-surrogate"></emu-xref>, then [...]
+If _found_ is *false* and _templateRemainder_ starts with *"$"* followed by _d_ or more decimal digits, then [...]
+If _func_ is a <emu-xref href="#sec-built-in-function-objects">built-in function object</emu-xref>, return an implementation-defined String source code representation of _func_. The representation must have the syntax of a |NativeFunction|. Additionally, if _func_ has an [[InitialName]] internal slot and _func_.[[InitialName]] is a String, the portion of the returned String that would be matched by |NativeFunctionAccessor?| |PropertyName| must be the value of _func_.[[InitialName]].
+If _genContext_ does not have a Generator component, return ~non-generator~.
+If _hour_ is not finite or _min_ is not finite or _sec_ is not finite or _ms_ is not finite, return *NaN*.
+If _k_ ≤ _n_ ≤ 21, return the string-concatenation of: [...]
+If _min_ = 0 and _y_'s _endIndex_ = _x_'s _endIndex_, return ~failure~.
+If _new_.[[ArrayBufferData]] and _O_.[[ArrayBufferData]] are the same Shared Data Block values, throw a *TypeError* exception.
+If _parseResult_ is a Parse Node and _parseResult_ contains a |GroupName|, then [...]
+If _parseResult_ is a non-empty List of *SyntaxError* objects, throw a *SyntaxError* exception.
+If _runningContext_ is not already suspended, suspend _runningContext_.
+If _second_ is not a <emu-xref href="#trailing-surrogate"></emu-xref>, then [...]
+If _source_ is an Object that has a [[TypedArrayName]] internal slot, then [...]
+If _srcBuffer_.[[ArrayBufferData]] and _targetBuffer_.[[ArrayBufferData]] are the same Shared Data Block values, let _same_ be *true*; else let _same_ be *false*.
+If _symbol_ is the |ReservedWord| `super`, return *true*.
+If _templateRemainder_ starts with *"$$"*, then [...]
+If _uStr_ does not consist of a single code unit, return _ch_.
+If _v_ has a [[StringData]] or [[NumberData]] internal slot, set _item_ to ? ToString(_v_).
+If _value_ is an IEEE 754-2019 binary32 NaN value, return the *NaN* Number value.
+If _value_ is an IEEE 754-2019 binary64 NaN value, return the *NaN* Number value.
+If _xBytes_ and _yBytes_ do not have the same number of elements, return *false*.
+If _x_ and _y_ are both *true* or both *false*, return *true*; otherwise, return *false*.
+If _x_ and _y_ are exactly the same sequence of code units (same length and same code units at corresponding indices), return *true*; otherwise, return *false*.
+If _x_ or _y_ are any of *NaN*, *+∞*<sub>𝔽</sub>, or *-∞*<sub>𝔽</sub>, return *false*.
+If _y_ is *-0*<sub>𝔽</sub> or _y_ < *-0*<sub>𝔽</sub>, return *+0*<sub>𝔽</sub>.
+If _year_ is not finite or _month_ is not finite or _date_ is not finite, return *NaN*.
+If all Job Queues are empty, the result is implementation-defined.
+If an implementation-defined debugging facility is available and enabled, then [...]
+If neither _trimmedString_ nor any prefix of _trimmedString_ satisfies the syntax of a |StrDecimalLiteral| (see <emu-xref href="#sec-tonumber-applied-to-the-string-type"></emu-xref>), return *NaN*.
+If no such execution context exists, return *null*. Otherwise, return _ec_'s ScriptOrModule.
+If only one argument was passed, return _to_.
+If the Directive Prologue of |FunctionBody| contains a Use Strict Directive, return *true*; otherwise, return *false*.
+If the _i_<sup>th</sup> capture of _R_ was defined with a |GroupName|, then [...]
+If the binding for _N_ in _envRec_ cannot be deleted, return *false*.
+If the binding for _N_ in _envRec_ has not yet been initialized, throw a *ReferenceError* exception.
+If the binding for _N_ in _envRec_ is a strict binding, set _S_ to *true*.
+If the binding for _N_ in _envRec_ is an uninitialized binding, throw a *ReferenceError* exception.
+If the binding for _N_ in _envRec_ is an uninitialized binding, throw a *ReferenceError* exception.
+If the binding for _N_ is an indirect binding, then [...]
+If the code units at index (_k_ + 1) and (_k_ + 2) within _string_ do not represent hexadecimal digits, throw a *URIError* exception.
+If the code units at index (_k_ + 1) and (_k_ + 2) within _string_ do not represent hexadecimal digits, throw a *URIError* exception.
+If the decimal representation of _n_ has 20 or fewer significant digits, return 𝔽(_n_).
+If the execution context stack is empty, return *null*.
+If the file <a href="https://unicode.org/Public/UCD/latest/ucd/CaseFolding.txt"><code>CaseFolding.txt</code></a> of the Unicode Character Database provides a simple or common case folding mapping for _ch_, return the result of applying that mapping to _ch_.
+If the host requires that the `this` binding in _realm_'s global scope return an object other than the global object, let _thisValue_ be such an object created in a host-defined manner. Otherwise, let _thisValue_ be *undefined*, indicating that _realm_'s global `this` binding should be the global object.
+If the host requires use of an exotic object to serve as _realm_'s global object, let _global_ be such an object created in a host-defined manner. Otherwise, let _global_ be *undefined*, indicating that an ordinary object should be created as the global object.
+If the length of _S_ is at least 2 and the first two code units of _S_ are either *"0x"* or *"0X"*, then [...]
+If the length of _space_ is 10 or less, let _gap_ be _space_; otherwise let _gap_ be the substring of _space_ from 0 to 10.
+If the parse succeeded and no early errors were found, return the Parse Node (an instance of _goalSymbol_) at the root of the parse tree resulting from the parse.
+If the source text matched by _call_ is non-strict code, return *false*.
+If there exists a member _a_ of _A_ such that Canonicalize(_a_) is _cc_, let _found_ be *true*. Otherwise, let _found_ be *false*.
+If there exists an integer _i_ between 0 (inclusive) and _len_ (exclusive) such that Canonicalize(_Input_[_rs_ + _i_]) is not the same character value as Canonicalize(_Input_[_g_ + _i_]), return ~failure~.
+If this |IdentifierReference| is contained in strict mode code and StringValue of |Identifier| is *"eval"* or *"arguments"*, return ~invalid~.
+If |ExportDeclaration| is `export` |VariableStatement|, return BoundNames of |ExportDeclaration|.
+If |ExportDeclaration| is `export` |VariableStatement|, return VarScopedDeclarations of |VariableStatement|.
+If |ExportDeclaration| is `export` |VariableStatement|, return a new empty List.
+Insert _d_ as the first element of _functionsToInitialize_.
+Insert _d_ as the first element of _functionsToInitialize_.
+Insert _d_ as the first element of _functionsToInitialize_.
+Insert _fn_ as the first element of _functionNames_.
+Leave the critical section for _WL_.
+Let _AR_ be the Agent Record of the surrounding agent.
+Let _AR_ be the Agent Record of the surrounding agent.
+Let _AR_ be the Agent Record of the surrounding agent.
+Let _A_ be a one-element CharSet containing the character _ch_.
+Let _A_ be a one-element CharSet containing the character _ch_.
+Let _A_ be the CharSet of all characters.
+Let _B_ be the 8-bit value represented by the two hexadecimal digits at index (_k_ + 1) and (_k_ + 2).
+Let _B_ be the 8-bit value represented by the two hexadecimal digits at index (_k_ + 1) and (_k_ + 2).
+Let _C_ be the code unit whose value is _B_.
+Let _InputLength_ be the number of characters contained in _Input_. This alias will be used throughout the algorithms in <emu-xref href="#sec-pattern-semantics"></emu-xref>.
+Let _Input_ be _inputChars_. This alias will be used throughout the algorithms in <emu-xref href="#sec-pattern-semantics"></emu-xref>.
+Let _M_ and _N2_ be the indirection values provided when this binding for _N_ was created.
+Let _O_ be ? OrdinaryCreateFromConstructor(_newTarget_, <code>"%<var>NativeError</var>.prototype%"</code>, « [[ErrorData]] »).
+Let _O_ be this Date object.
+Let _O_ be this Date object.
+Let _O_ be this Date object.
+Let _Octets_ be the List of octets resulting by applying the UTF-8 transformation to _cp_.[[CodePoint]].
+Let _PropertyList_ and _ReplacerFunction_ be *undefined*.
+Let _S_ be a String in the form of a |Pattern[~UnicodeMode]| (|Pattern[+UnicodeMode]| if _F_ contains *"u"*) equivalent to _P_ interpreted as UTF-16 encoded Unicode code points (<emu-xref href="#sec-ecmascript-language-types-string-type"></emu-xref>), in which certain code points are escaped as described below. _S_ may or may not be identical to _P_; however, the Abstract Closure that would result from evaluating _S_ as a |Pattern[~UnicodeMode]| (|Pattern[+UnicodeMode]| if _F_ contains *"u"*) must behave identically to the Abstract Closure given by the constructed object's [[RegExpMatcher]] internal slot. Multiple calls to this abstract operation using the same values for _P_ and _F_ must produce identical results.
+Let _S_ be a reference to the list of waiters in _WL_.
+Let _S_ be the String representation of _n_, formatted as a decimal number.
+Let _S_ be the String value containing only the code unit _C_.
+Let _S_ be the String value containing only the code unit _C_.
+Let _T_ be the String value that is a copy of _S_ with both leading and trailing white space removed.
+Let _V_ be the code point obtained by applying the UTF-8 transformation to _Octets_, that is, from a List of octets into a 21-bit value.
+Let _W_ be the first agent in _S_.
+Let _W_ be the first waiter in _S_.
+Let _X_ be _O_'s own property whose key is _P_.
+Let _a_ be the first _k_ - _f_ code units of _m_.
+Let _a_ be the first code unit of _m_.
+Let _a_ be the first code unit of _m_.
+Let _a_ be the one character in CharSet _A_.
+Let _add_ be a new read-modify-write modification function with parameters (_xBytes_, _yBytes_) that captures _type_ and _isLittleEndian_ and performs the following steps atomically when called: [...]
+Let _agentRecord_ be the surrounding agent's Agent Record.
+Let _agentRecord_ be the surrounding agent's Agent Record.
+Let _and_ be a new read-modify-write modification function with parameters (_xBytes_, _yBytes_) that captures nothing and performs the following steps atomically when called: [...]
+Let _args_ be the List of arguments that was passed to this function by [[Call]] or [[Construct]].
+Let _args_ be the List of arguments that was passed to this function by [[Call]] or [[Construct]].
+Let _args_ be the List of arguments that was passed to this function by [[Call]] or [[Construct]].
+Let _args_ be the List of arguments that was passed to this function by [[Call]] or [[Construct]].
+Let _args_ be the _argumentsList_ that was passed to this function by [[Call]] or [[Construct]].
+Let _args_ be the _argumentsList_ that was passed to this function by [[Call]] or [[Construct]].
+Let _args_ be the _argumentsList_ that was passed to this function by [[Call]] or [[Construct]].
+Let _args_ be the _argumentsList_ that was passed to this function by [[Call]] or [[Construct]].
+Let _asyncContext_ be a copy of _runningContext_.
+Let _b_ be the one character in CharSet _B_.
+Let _b_ be the other _f_ code units of _m_.
+Let _b_ be the other _f_ code units of _m_.
+Let _b_ be the other _p_ - 1 code units of _m_.
+Let _body_ be the |FunctionBody|, |ConciseBody|, or |AsyncConciseBody| that most closely contains _call_.
+Let _bytes_ be a List whose sole element is a nondeterministically chosen byte value.
+Let _c_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called: [...]
+Let _c_ be the canonical <emu-not-ref>property name</emu-not-ref> of _p_ as given in the “Canonical <emu-not-ref>property name</emu-not-ref>” column of the corresponding row.
+Let _c_ be the character _Input_[_e_].
+Let _c_ be the character whose character value is _cv_.
+Let _c_ be the character whose character value is _cv_.
+Let _c_ be the character whose character value is _cv_.
+Let _c_ be the code unit 0x002D (HYPHEN-MINUS).
+Let _cap_ be _x_'s _captures_ List.
+Let _cap_ be _x_'s _captures_ List.
+Let _cap_ be _y_'s _captures_ List.
+Let _cap_ be _y_'s _captures_ List.
+Let _cap_ be a List of _NcapturingParens_ *undefined* values, indexed 1 through _NcapturingParens_.
+Let _cap_ be a copy of _x_'s _captures_ List.
+Let _cap_ be a copy of _y_'s _captures_ List.
+Let _captureEnd_ be _captureI_'s _endIndex_.
+Let _captureI_ be _i_<sup>th</sup> element of _r_'s _captures_ List.
+Let _captureStart_ be _captureI_'s _startIndex_.
+Let _ch_ be the character _Input_[_index_].
+Let _ch_ be the character matched by |PatternCharacter|.
+Let _ch_ be the character whose character value is _cv_.
+Let _ch_ be the code point matched by |ControlLetter|.
+Let _ch_ be the code point matched by |IdentityEscape|.
+Let _ch_ be the code point matched by |SourceCharacter|.
+Let _chosen_ be an implementation-defined choice of either _option1_ or _option2_.
+Let _codeUnits_ be a List consisting of the sequence of code units that are the elements of _head_.
+Let _completion_ be the result of <emu-meta suppress-effects="user-code">evaluating _script_</emu-meta>.
+Let _constructorName_ be the String value of the Constructor Name value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for this <var>TypedArray</var> constructor.
+Let _contained_ be the result of _child_ Contains _symbol_.
+Let _convOp_ be the abstract operation named in the Conversion Operation column in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _cp_ be the code point whose numeric value is that of _ch_.
+Let _cp_ be the code point whose numeric value is that of _first_.
+Let _cps_ be IdentifierCodePoints of the derived |IdentifierName|.
+Let _cps_ be RegExpIdentifierCodePoints of the derived |RegExpIdentifierName|.
+Let _cu1_ be the code unit whose value is floor((_cp_ - 0x10000) / 0x400) + 0xD800.
+Let _cu2_ be the code unit whose value is ((_cp_ - 0x10000) modulo 0x400) + 0xDC00.
+Let _cu_ be _uStr_'s single code unit element.
+Let _d_ be a new Continuation with parameters (_y_) that captures _c_ and _m1_ and performs the following steps when called: [...]
+Let _d_ be a new Continuation with parameters (_y_) that captures _c_ and _m2_ and performs the following steps when called: [...]
+Let _d_ be a new Continuation with parameters (_y_) that captures _m_, _min_, _max_, _greedy_, _x_, _c_, _parenIndex_, and _parenCount_ and performs the following steps when called: [...]
+Let _d_ be a new Continuation with parameters (_y_) that captures _x_, _c_, _direction_, and _parenIndex_ and performs the following steps when called: [...]
+Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called: [...]
+Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called: [...]
+Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called: [...]
+Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called: [...]
+Let _d_ be the String value consisting of the digits of the decimal representation of _e_ (in order, with no leading zeroes).
+Let _d_ be the String value consisting of the digits of the decimal representation of _e_ (in order, with no leading zeroes).
+Let _db_ be a new Data Block value consisting of _size_ bytes. If it is impossible to create such a Data Block, throw a *RangeError* exception.
+Let _db_ be a new Shared Data Block value consisting of _size_ bytes. If it is impossible to create such a Shared Data Block, throw a *RangeError* exception.
+Let _defaultConstructor_ be the intrinsic object listed in column one of <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for _exemplar_.[[TypedArrayName]].
+Let _desc_ be the fully populated data Property Descriptor for the property, containing the specified attributes for the property. For properties listed in <emu-xref href="#sec-function-properties-of-the-global-object"></emu-xref>, <emu-xref href="#sec-constructor-properties-of-the-global-object"></emu-xref>, or <emu-xref href="#sec-other-properties-of-the-global-object"></emu-xref> the value of the [[Value]] attribute is the corresponding intrinsic object from _realmRec_.
+Let _dv_ be the time value (UTC) identifying the current time.
+Let _eUTF_ be the smallest index into _S_ that corresponds to the character at element _e_ of _codepoints_. If _e_ is greater than or equal to the number of elements in _codepoints_, then _eUTF_ is the number of code units in _S_.
+Let _e_ and _n_ be integers such that 10<sup>_f_</sup> ≤ _n_ < 10<sup>_f_ + 1</sup> and for which _n_ × 10<sup>_e_ - _f_</sup> - _x_ is as close to zero as possible. If there are two such sets of _e_ and _n_, pick the _e_ and _n_ for which _n_ × 10<sup>_e_ - _f_</sup> is larger.
+Let _e_ and _n_ be integers such that 10<sup>_p_ - 1</sup> ≤ _n_ < 10<sup>_p_</sup> and for which _n_ × 10<sup>_e_ - _p_ + 1</sup> - _x_ is as close to zero as possible. If there are two such sets of _e_ and _n_, pick the _e_ and _n_ for which _n_ × 10<sup>_e_ - _p_ + 1</sup> is larger.
+Let _e_ be _r_'s _endIndex_ value.
+Let _e_ be _x_'s _endIndex_.
+Let _e_ be _x_'s _endIndex_.
+Let _e_ be _x_'s _endIndex_.
+Let _e_ be _x_'s _endIndex_.
+Let _e_ be _x_'s _endIndex_.
+Let _e_ be _x_'s _endIndex_.
+Let _e_ be _x_'s _endIndex_.
+Let _e_, _n_, and _f_ be integers such that _f_ ≥ 0, 10<sup>_f_</sup> ≤ _n_ < 10<sup>_f_ + 1</sup>, 𝔽(_n_ × 10<sup>_e_ - _f_</sup>) is 𝔽(_x_), and _f_ is as small as possible. Note that the decimal representation of _n_ has _f_ + 1 digits, _n_ is not divisible by 10, and the least significant digit of _n_ is not necessarily uniquely determined by these criteria.
+Let _ec_ be the topmost execution context on the execution context stack whose ScriptOrModule component is not *null*.
+Let _elementSize_ be the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _elementSize_ be the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _elementSize_ be the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _elementSize_ be the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _elementSize_ be the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _elementSize_ be the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _enterEvent_ be a new Synchronize event.
+Let _entry_ be that PrivateElement.
+Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _eventsRecord_ be the Agent Events Record in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _eventsRecord_ be the Agent Events Record in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().
+Let _events_ be an empty Set.
+Let _events_ be an empty Set.
+Let _events_ be an empty Set.
+Let _execution_ be the [[CandidateExecution]] field of the calling surrounding's Agent Record.
+Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.
+Let _existing_ be that PrivateElement.
+Let _existing_ be that PrivateElement.
+Let _existing_ be that PrivateElement.
+Let _existing_ be that PrivateElement.
+Let _fromSize_ be the number of bytes in _fromBlock_.
+Let _func_ be a new built-in function object that, when called, performs the action described by _behaviour_ using the provided arguments as the values of the corresponding parameters specified by _behaviour_. The new function object has internal slots whose names are the elements of _internalSlotsList_, and an [[InitialName]] internal slot.
+Let _i_ be the character value of character _a_.
+Let _ie_ be the element of _importEntries_ whose [[LocalName]] is the same as _ee_.[[LocalName]].
+Let _inputIndex_ be the index into _input_ of the character that was obtained from element _lastIndex_ of _S_.
+Let _instantiatedVarNames_ be a copy of the List _parameterBindings_.
+Let _intValue_ be the byte elements of _rawBytes_ concatenated and interpreted as a bit string encoding of a binary little-endian two's complement number of bit length _elementSize_ × 8.
+Let _intValue_ be the byte elements of _rawBytes_ concatenated and interpreted as a bit string encoding of an unsigned little-endian binary number.
+Let _int_ be the mathematical value whose sign is the sign of _number_ and whose magnitude is floor(abs(ℝ(_number_))).
+Let _int_ be the mathematical value whose sign is the sign of _number_ and whose magnitude is floor(abs(ℝ(_number_))).
+Let _int_ be the mathematical value whose sign is the sign of _number_ and whose magnitude is floor(abs(ℝ(_number_))).
+Let _int_ be the mathematical value whose sign is the sign of _number_ and whose magnitude is floor(abs(ℝ(_number_))).
+Let _int_ be the mathematical value whose sign is the sign of _number_ and whose magnitude is floor(abs(ℝ(_number_))).
+Let _int_ be the mathematical value whose sign is the sign of _number_ and whose magnitude is floor(abs(ℝ(_number_))).
+Let _internalSlotsList_ be a List containing the names of all the internal slots that <emu-xref href="#sec-built-in-function-objects"></emu-xref> requires for the built-in function object that is about to be created.
+Let _isLittleEndian_ be the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.
+Let _isLittleEndian_ be the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.
+Let _isLittleEndian_ be the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.
+Let _j_ be the character value of character _b_.
+Let _kValue_ be the first element of _values_ and remove that element from _values_.
+Let _kValue_ be the first element of _values_ and remove that element from _values_.
+Let _k_ be the smallest non-negative integer such that the code unit at index _k_ within _px_ is different from the code unit at index _k_ within _py_. (There must be such a _k_, for neither String is a prefix of the other.)
+Let _lead_ be the code unit whose numeric value is that of the code point matched by |UnicodeLeadSurrogate|.
+Let _lead_ be the code unit whose numeric value is that of the code point matched by |UnicodeLeadSurrogate|.
+Let _leaveEvent_ be a new Synchronize event.
+Let _leaveEvent_ be the Synchronize event in _WL_.
+Let _lowerText_ be the result of toLowercase(_sText_), according to the Unicode Default Case Conversion algorithm.
+Let _m_ be the String value consisting of _f_ + 1 occurrences of the code unit 0x0030 (DIGIT ZERO).
+Let _m_ be the String value consisting of _p_ occurrences of the code unit 0x0030 (DIGIT ZERO).
+Let _m_ be the String value consisting of the digits of the decimal representation of _n_ (in order, with no leading zeroes).
+Let _m_ be the String value consisting of the digits of the decimal representation of _n_ (in order, with no leading zeroes).
+Let _mathInt_ be the integer value that is represented by _Z_ in radix-_R_ notation, using the letters <b>A</b>-<b>Z</b> and <b>a</b>-<b>z</b> for digits with values 10 through 35. (However, if _R_ is 10 and _Z_ contains more than 20 significant digits, every significant digit after the 20th may be replaced by a 0 digit, at the option of the implementation; and if _R_ is not 2, 4, 8, 10, 16, or 32, then _mathInt_ may be an implementation-approximated integer representing the integer value denoted by _Z_ in radix-_R_ notation.)
+Let _month_ be the Name of the entry in <emu-xref href="#sec-todatestring-month-names"></emu-xref> with the Number MonthFromTime(_tv_).
+Let _month_ be the Name of the entry in <emu-xref href="#sec-todatestring-month-names"></emu-xref> with the Number MonthFromTime(_tv_).
+Let _mv_ be (the MV of |NonZeroDigit| × 10<sup>_n_</sup>) plus the MV of |DecimalDigits|.
+Let _mv_ be (the MV of |NonZeroDigit| × 10<sup>_n_</sup>) plus the MV of |DecimalDigits|.
+Let _n32_ be the result of converting _n_ to a value in IEEE 754-2019 binary32 format using roundTiesToEven mode.
+Let _n64_ be the result of converting _n32_ to a value in IEEE 754-2019 binary64 format.
+Let _n_ be an integer for which _n_ / 10<sup>_f_</sup> - _x_ is as close to zero as possible. If there are two such _n_, pick the larger _n_.
+Let _n_ be the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for Element Type _type_.
+Let _n_ be the number of code points in the second |DecimalDigits|.
+Let _n_ be the number of code points in the second |DecimalDigits|.
+Let _n_ be the number of code points in the second |DecimalDigits|.
+Let _n_ be the number of code points in the second |DecimalDigits|.
+Let _n_ be the number of code points in |DecimalDigits|, excluding all occurrences of |NumericLiteralSeparator|.
+Let _n_ be the number of code points in |DecimalDigits|, excluding all occurrences of |NumericLiteralSeparator|.
+Let _n_ be the number of code points in |DecimalDigits|.
+Let _n_ be the number of code points in |DecimalDigits|.
+Let _n_ be the number of code points in |DecimalDigits|.
+Let _n_ be the number of elements in _r_'s _captures_ List. (This is the same value as <emu-xref href="#sec-notation"></emu-xref>'s _NcapturingParens_.)
+Let _n_ be the number of leading 1 bits in _B_.
+Let _name_ be a new Private Name whose [[Description]] value is _dn_.
+Let _name_ be a new Private Name whose [[Description]] value is _dn_.
+Let _name_ be a new Private Name whose [[Description]] value is _dn_.
+Let _name_ be a new Private Name whose [[Description]] value is _dn_.
+Let _name_ be that Private Name.
+Let _name_ be the String value of the property name.
+Let _newLenDesc_ be a copy of _Desc_.
+Let _newSymbol_ be a new unique Symbol value whose [[Description]] value is _stringKey_.
+Let _nextPending_ be the PendingJob record at the front of _nextQueue_. Remove that record from _nextQueue_.
+Let _nextQueue_ be a non-empty Job Queue chosen in an implementation-defined manner.
+Let _now_ be the time value (UTC) identifying the current time.
+Let _ns_ be the String value that is the result of normalizing _S_ into the normalization form named by _f_ as specified in <a href="https://unicode.org/reports/tr15/">https://unicode.org/reports/tr15/</a>.
+Let _numberString_ be the longest prefix of _trimmedString_, which might be _trimmedString_ itself, that satisfies the syntax of a |StrDecimalLiteral|.
+Let _obj_ be a newly created object with an internal slot for each name in _internalSlotsList_.
+Let _opText_ be the sequence of Unicode code points associated with _assignmentOpText_ in the following table: [...]
+Let _operation_ be the abstract operation associated with _opText_ and Type(_lnum_) in the following table: [...]
+Let _option1_ be the mathematical value denoted by the result of replacing each significant digit in the decimal representation of _n_ after the 20th with a 0 digit.
+Let _option2_ be the mathematical value denoted by the result of replacing each significant digit in the decimal representation of _n_ after the 20th with a 0 digit and then incrementing it at the 20th position (with carrying as necessary).
+Let _or_ be a new read-modify-write modification function with parameters (_xBytes_, _yBytes_) that captures nothing and performs the following steps atomically when called: [...]
+Let _p_ be the number of leading zero bits in the unsigned 32-bit binary representation of _n_.
+Let _parenCount_ be the number of left-capturing parentheses in |Atom|. This is the total number of <emu-grammar>Atom :: `(` GroupSpecifier Disjunction `)`</emu-grammar> Parse Nodes enclosed by |Atom|.
+Let _parenIndex_ be the number of left-capturing parentheses in the entire regular expression that occur to the left of the located |GroupSpecifier|. This is the total number of <emu-grammar>Atom :: `(` GroupSpecifier Disjunction `)`</emu-grammar> Parse Nodes prior to or enclosing the located |GroupSpecifier|, including its immediately enclosing |Atom|.
+Let _parenIndex_ be the number of left-capturing parentheses in the entire regular expression that occur to the left of this |Atom|. This is the total number of <emu-grammar>Atom :: `(` GroupSpecifier Disjunction `)`</emu-grammar> Parse Nodes prior to or enclosing this |Atom|.
+Let _parenIndex_ be the number of left-capturing parentheses in the entire regular expression that occur to the left of this |Term|. This is the total number of <emu-grammar>Atom :: `(` GroupSpecifier Disjunction `)`</emu-grammar> Parse Nodes prior to or enclosing this |Term|.
+Let _parseResult_ be ParseText(_patternText_, |Pattern[+UnicodeMode, +N]|).
+Let _parseResult_ be ParseText(_patternText_, |Pattern[~UnicodeMode, ~N]|).
+Let _patternText_ be the result of interpreting each of _P_'s 16-bit elements as a Unicode BMP code point. UTF-16 decoding is not applied to the elements.
+Let _privateName_ be the Private Name in _names_ whose [[Description]] is _privateIdentifier_.
+Let _product_ be the String value consisting solely of the code unit 0x0022 (QUOTATION MARK).
+Let _properties_ be the String value formed by concatenating all the element Strings of _partial_ with each adjacent pair of Strings separated with _separator_. The _separator_ String is not inserted either before the first String or after the last String.
+Let _properties_ be the String value formed by concatenating all the element Strings of _partial_ with each adjacent pair of Strings separated with _separator_. The _separator_ String is not inserted either before the first String or after the last String.
+Let _properties_ be the String value formed by concatenating all the element Strings of _partial_ with each adjacent pair of Strings separated with the code unit 0x002C (COMMA). A comma is not inserted either before the first String or after the last String.
+Let _properties_ be the String value formed by concatenating all the element Strings of _partial_ with each adjacent pair of Strings separated with the code unit 0x002C (COMMA). A comma is not inserted either before the first String or after the last String.
+Let _proto_ be <code>"%<var>TypedArray</var>.prototype%"</code>.
+Let _r_ be the BigInt defined by the mathematical relation _r_ = _n_ - (_d_ × _q_) where _q_ is a BigInt that is negative only if _n_/_d_ is negative and positive only if _n_/_d_ is positive, and whose magnitude is as large as possible without exceeding the magnitude of the true mathematical quotient of _n_ and _d_.
+Let _r_ be the Range (_xe_, _ye_).
+Let _r_ be the Range (_ye_, _xe_).
+Let _r_ be ℝ(_n_) - (ℝ(_d_) × _q_) where _q_ is an integer that is negative if and only if _n_ and _d_ have opposite sign, and whose magnitude is as large as possible without exceeding the magnitude of ℝ(_n_) / ℝ(_d_).
+Let _rawBytesRead_ be a List of length _elementSize_ whose elements are nondeterministically chosen byte values.
+Let _rawBytesRead_ be a List of length _elementSize_ whose elements are nondeterministically chosen byte values.
+Let _rawBytesRead_ be a List of length _elementSize_ whose elements are the sequence of _elementSize_ bytes starting with _block_[_byteIndex_].
+Let _rawBytesRead_ be a List of length _elementSize_ whose elements are the sequence of _elementSize_ bytes starting with _block_[_indexedPosition_].
+Let _rawBytes_ be a List whose elements are the 4 bytes that are the result of converting _value_ to IEEE 754-2019 binary32 format using roundTiesToEven mode. If _isLittleEndian_ is *false*, the bytes are arranged in big endian order. Otherwise, the bytes are arranged in little endian order. If _value_ is *NaN*, _rawBytes_ may be set to any implementation chosen IEEE 754-2019 binary32 format Not-a-Number encoding. An implementation must always choose the same encoding for each implementation distinguishable *NaN* value.
+Let _rawBytes_ be a List whose elements are the 8 bytes that are the IEEE 754-2019 binary64 format encoding of _value_. If _isLittleEndian_ is *false*, the bytes are arranged in big endian order. Otherwise, the bytes are arranged in little endian order. If _value_ is *NaN*, _rawBytes_ may be set to any implementation chosen IEEE 754-2019 binary64 format Not-a-Number encoding. An implementation must always choose the same encoding for each implementation distinguishable *NaN* value.
+Let _rawBytes_ be a List whose elements are the _n_-byte binary encoding of _intValue_. If _isLittleEndian_ is *false*, the bytes are ordered in big endian order. Otherwise, the bytes are ordered in little endian order.
+Let _rawBytes_ be a List whose elements are the _n_-byte binary two's complement encoding of _intValue_. If _isLittleEndian_ is *false*, the bytes are ordered in big endian order. Otherwise, the bytes are ordered in little endian order.
+Let _rawValue_ be a List of length _elementSize_ whose elements are nondeterministically chosen byte values.
+Let _rawValue_ be the String value _rawStrings_[_index_].
+Let _re_ be _r_'s _endIndex_.
+Let _realmRec_ be a new Realm Record.
+Let _requiredModule_ be the last element in _stack_.
+Let _requiredModule_ be the last element in _stack_.
+Let _reservedURISet_ be a String containing one instance of each code unit valid in |uriReserved| plus *"#"*.
+Let _result_ be the Completion Record that is the result of evaluating _F_ in a manner that conforms to the specification of _F_. The *this* value is uninitialized, _argumentsList_ provides the named parameters, and _newTarget_ provides the NewTarget value.
+Let _result_ be the Completion Record that is the result of evaluating _F_ in a manner that conforms to the specification of _F_. _thisArgument_ is the *this* value, _argumentsList_ provides the named parameters, and the NewTarget value is *undefined*.
+Let _rs_ be _r_'s _startIndex_.
+Let _s_ be the CapturingGroupName of the corresponding |RegExpIdentifierName|.
+Let _second_ be a new read-modify-write modification function with parameters (_oldBytes_, _newBytes_) that captures nothing and performs the following steps atomically when called: [...]
+Let _second_ be a new read-modify-write modification function with parameters (_oldBytes_, _newBytes_) that captures nothing and performs the following steps atomically when called: [...]
+Let _separator_ be the implementation-defined list-separator String value appropriate for the host environment's current locale (such as *", "*).
+Let _sortedExecList_ be a List whose elements are the elements of _execList_, in the order in which they had their [[AsyncEvaluation]] fields set to *true* in InnerModuleEvaluation.
+Let _sortedExports_ be a List whose elements are the elements of _exports_ ordered as if an Array of the same values had been sorted using %Array.prototype.sort% using *undefined* as _comparefn_.
+Let _sourceText_ be the source code of a script.
+Let _subtract_ be a new read-modify-write modification function with parameters (_xBytes_, _yBytes_) that captures _type_ and _isLittleEndian_ and performs the following steps atomically when called: [...]
+Let _t_ be ((_h_ `*` msPerHour `+` _m_ `*` msPerMinute) `+` _s_ `*` msPerSecond) `+` _milli_, performing the arithmetic according to IEEE 754-2019 rules (that is, as if using the ECMAScript operators `*` and `+`).
+Let _toSize_ be the number of bytes in _toBlock_.
+Let _trail_ be the code unit whose numeric value is that of the code point matched by |UnicodeTrailSurrogate|.
+Let _trail_ be the code unit whose numeric value is that of the code point matched by |UnicodeTrailSurrogate|.
+Let _truncatedStringFiller_ be the String value consisting of repeated concatenations of _filler_ truncated to length _fillLen_.
+Let _tv_ be _day_ × msPerDay + _time_.
+Let _tv_ be the result of parsing _v_ as a date, in exactly the same manner as for the `parse` method (<emu-xref href="#sec-date.parse"></emu-xref>).
+Let _tzName_ be an implementation-defined string that is either the empty String or the string-concatenation of the code unit 0x0020 (SPACE), the code unit 0x0028 (LEFT PARENTHESIS), an implementation-defined timezone name, and the code unit 0x0029 (RIGHT PARENTHESIS).
+Let _u_ be the result of toUppercase(« _cp_ »), according to the Unicode Default Case Conversion algorithm.
+Let _uncheckedResultKeys_ be a List whose elements are the elements of _trapResult_.
+Let _unescapedURIComponentSet_ be a String containing one instance of each code unit valid in |uriUnescaped|.
+Let _unescapedURISet_ be a String containing one instance of each code unit valid in |uriReserved| and |uriUnescaped| plus *"#"*.
+Let _unit_ be the code unit whose numeric value is that of _C_.
+Let _value_ be the byte elements of _rawBytes_ concatenated and interpreted as a little-endian bit string encoding of an IEEE 754-2019 binary32 value.
+Let _value_ be the byte elements of _rawBytes_ concatenated and interpreted as a little-endian bit string encoding of an IEEE 754-2019 binary64 value.
+Let _value_ be the canonical property value of _v_ as given in the “Canonical property value” column of the corresponding row.
+Let _weekday_ be the Name of the entry in <emu-xref href="#sec-todatestring-day-names"></emu-xref> with the Number WeekDay(_tv_).
+Let _weekday_ be the Name of the entry in <emu-xref href="#sec-todatestring-day-names"></emu-xref> with the Number WeekDay(_tv_).
+Let _x_ be the State (_index_, _cap_).
+Let _xe_ be _x_'s _endIndex_.
+Let _xe_ be _x_'s _endIndex_.
+Let _xe_ be _x_'s _endIndex_.
+Let _xor_ be a new read-modify-write modification function with parameters (_xBytes_, _yBytes_) that captures nothing and performs the following steps atomically when called: [...]
+Let _xr_ be the State (_e_, _cap_).
+Let _y_ be the State (_f_, _cap_).
+Let _y_ be the State (_f_, _cap_).
+Let _ye_ be _y_'s _endIndex_.
+Let _z_ be the State (_xe_, _cap_).
+Let _z_ be the State (_xe_, _cap_).
+Let _z_ be the State (_ye_, _cap_).
+Let _z_ be the String value consisting of _f_ + 1 - _k_ occurrences of the code unit 0x0030 (DIGIT ZERO).
+No action is required.
+Notify the agent _W_.
+Once a generator enters the ~completed~ state it never leaves it and its associated execution context is never resumed. Any execution state associated with _generator_ can be discarded at this point.
+Once a generator enters the ~completed~ state it never leaves it and its associated execution context is never resumed. Any execution state associated with _generator_ can be discarded at this point.
+Optionally, set _F_.[[InitialName]] to _name_.
+Otherwise, if _k_ = 1, return the string-concatenation of: [...]
+Otherwise, return a List of one or more *SyntaxError* objects representing the parsing errors and/or early errors. If more than one parsing error or early error is present, the number and ordering of error objects in the list is implementation-defined, but at least one must be present.
+Parse StringToCodePoints(_jsonString_) as a JSON text as specified in ECMA-404. Throw a *SyntaxError* exception if it is not a valid JSON text as defined in that specification.
+Perform LeaveCriticalSection(_WL_) and suspend _W_ for up to _timeout_ milliseconds, performing the combined operation in such a way that a notification that arrives after the critical section is exited but before the suspension takes effect is not lost. _W_ can notify either because the timeout expired or because it was notified explicitly by another agent calling NotifyWaiter with arguments _WL_ and _W_, and not for any other reasons at all.
+Perform an implementation-defined debugging action.
+Perform any necessary implementation-defined initialization of _calleeContext_.
+Remove _W_ from _S_.
+Remove _W_ from the front of _S_.
+Remove _W_ from the list of waiters in _WL_.
+Remove _asyncContext_ from the execution context stack and restore the execution context that is at the top of the execution context stack as the running execution context.
+Remove _asyncContext_ from the execution context stack and restore the execution context that is at the top of the execution context stack as the running execution context.
+Remove _calleeContext_ from the execution context stack and restore _callerContext_ as the running execution context.
+Remove _calleeContext_ from the execution context stack and restore _callerContext_ as the running execution context.
+Remove _calleeContext_ from the execution context stack and restore _callerContext_ as the running execution context.
+Remove _calleeContext_ from the execution context stack and restore _callerContext_ as the running execution context.
+Remove _calleeContext_ from the execution context stack and restore _callerContext_ as the running execution context.
+Remove _calleeContext_ from the execution context stack and restore _callerContext_ as the running execution context.
+Remove _calleeContext_ from the execution context stack and restore _callerContext_ as the running execution context.
+Remove _cell_ from _finalizationRegistry_.[[Cells]].
+Remove _cell_ from _finalizationRegistry_.[[Cells]].
+Remove _genContext_ from the execution context stack and restore the execution context that is at the top of the execution context stack as the running execution context.
+Remove _genContext_ from the execution context stack and restore the execution context that is at the top of the execution context stack as the running execution context.
+Remove _genContext_ from the execution context stack and restore the execution context that is at the top of the execution context stack as the running execution context.
+Remove _genContext_ from the execution context stack and restore the execution context that is at the top of the execution context stack as the running execution context.
+Remove _key_ from _uncheckedResultKeys_.
+Remove _key_ from _uncheckedResultKeys_.
+Remove _moduleContext_ from the execution context stack.
+Remove from _A_ all characters corresponding to a code point on the right-hand side of the |LineTerminator| production.
+Remove the binding for _N_ from _envRec_.
+Remove the first element from _queue_.
+Remove the first element from _remaining_.
+Remove the first two code units from _S_.
+Remove the last element of _stack_.
+Remove the last element of _stack_.
+Remove the last element of _state_.[[Stack]].
+Remove the last element of _state_.[[Stack]].
+Remove the own property with name _P_ from _O_.
+Repeat, until (_x_ = 0 or _x_ = -1) and (_y_ = 0 or _y_ = -1), [...]
+Replace _existing_ in _container_ with _combined_.
+Replace _existing_ in _container_ with _combined_.
+Replace _existing_ in _container_ with _combined_.
+Replace _existing_ in _container_ with _combined_.
+Replace the element of _entries_ whose value is _e_ with an element whose value is ~empty~.
+Replace the element of _entries_ whose value is _e_ with an element whose value is ~empty~.
+Replace the element of _entries_ whose value is _e_ with an element whose value is ~empty~.
+Replace the property named _P_ of object _O_ with a data property whose [[Configurable]] and [[Enumerable]] attributes are set to _configurable_ and _enumerable_, respectively, and whose [[Value]] and [[Writable]] attributes are set to the value of the corresponding field in _Desc_ if _Desc_ has that field, or to the attribute's <emu-xref href="#table-object-property-attributes">default value</emu-xref> otherwise.
+Replace the property named _P_ of object _O_ with an accessor property whose [[Configurable]] and [[Enumerable]] attributes are set to _configurable_ and _enumerable_, respectively, and whose [[Get]] and [[Set]] attributes are set to the value of the corresponding field in _Desc_ if _Desc_ has that field, or to the attribute's <emu-xref href="#table-object-property-attributes">default value</emu-xref> otherwise.
+Resume the context that is now on the top of the execution context stack as the running execution context.
+Resume the context that is now on the top of the execution context stack as the running execution context.
+Resume the context that is now on the top of the execution context stack as the running execution context.
+Return (_t_ - LocalTime(_t_)) / msPerMinute.
+Return (the MV of |NonZeroDigit| × 10<sup>_n_</sup> plus the MV of |DecimalDigits|).
+Return Day(_t_) + _dt_ - *1*<sub>𝔽</sub>.
+Return FunctionBodyContainsUseStrict of |AsyncFunctionBody|.
+Return FunctionBodyContainsUseStrict of |FunctionBody|.
+Return _t_ + LocalTZA(_t_, *true*).
+Return _t_ - LocalTZA(_t_, *false*).
+Return a String according to <emu-xref href="#table-typeof-operator-results"></emu-xref>.
+Return a new Matcher with parameters (_x_, _c_) that captures _A_, _invert_, and _direction_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _direction_, _m_, and _parenIndex_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m1_ and _m2_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m1_ and _m2_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m1_ and _m2_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _m_, _q_, _parenIndex_, and _parenCount_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures _n_ and _direction_ and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called: [...]
+Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called: [...]
+Return a new implementation-defined Completion Record.
+Return a new unique Symbol value whose [[Description]] value is _descString_.
+Return an Iterator object (<emu-xref href="#sec-iterator-interface"></emu-xref>) whose `next` method iterates over all the String-valued keys of enumerable properties of _O_. The iterator object is never directly accessible to ECMAScript code. The mechanics and order of enumerating the properties is not specified but must conform to the rules specified below.
+Return msFromTime(LocalTime(_t_)).
+Return msFromTime(_t_).
+Return the CharSet containing all Unicode code points included in CompileToCharSet of |UnicodePropertyValueExpression|.
+Return the CharSet containing all Unicode code points not included in CompileToCharSet of |UnicodePropertyValueExpression|.
+Return the CharSet containing all Unicode code points whose character database definition includes the property _p_ with value _v_.
+Return the CharSet containing all Unicode code points whose character database definition includes the property _p_ with value “True”.
+Return the CharSet containing all Unicode code points whose character database definition includes the property “General_Category” with value _s_.
+Return the CharSet containing all characters corresponding to a code point on the right-hand side of the |WhiteSpace| or |LineTerminator| productions.
+Return the CharSet containing all characters not in the CharSet returned by <emu-grammar>CharacterClassEscape :: `d`</emu-grammar> .
+Return the CharSet containing all characters not in the CharSet returned by <emu-grammar>CharacterClassEscape :: `s`</emu-grammar> .
+Return the CharSet containing all characters not in the CharSet returned by <emu-grammar>CharacterClassEscape :: `w`</emu-grammar> .
+Return the CharSet containing all characters with a character value greater than or equal to _i_ and less than or equal to _j_.
+Return the CharSet containing the character matched by |SourceCharacter|.
+Return the CharSet containing the single character _c_.
+Return the CharSet containing the single character _c_.
+Return the CharSet containing the single character _c_.
+Return the CharSet containing the single character `-` U+002D (HYPHEN-MINUS).
+Return the ECMAScript Number value corresponding to _n64_.
+Return the Element Size value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for _O_.[[TypedArrayName]].
+Return the Element Type value specified in <emu-xref href="#table-the-typedarray-constructors"></emu-xref> for _O_.[[TypedArrayName]].
+Return the List of Unicode code points _c_.
+Return the List of Unicode code points _value_.
+Return the List, in source text order, of Unicode code points in the source text matched by this production.
+Return the List, in source text order, of Unicode code points in the source text matched by this production.
+Return the List, in source text order, of Unicode code points in the source text matched by this production.
+Return the List, in source text order, of Unicode code points in the source text matched by this production.
+Return the Number value for the integer represented by the 32-bit two's complement bit string _result_.
+Return the Number value that corresponds to _value_.
+Return the Number value that corresponds to _value_.
+Return the String representation of this Number value using the radix specified by _radixMV_. Letters `a`-`z` are used for digits with values 10 through 35. The precise algorithm is implementation-defined, however the algorithm should be a generalization of that specified in <emu-xref href="#sec-numeric-types-bigint-tostring"></emu-xref>.
+Return the String representation of this Number value using the radix specified by _radixMV_. Letters `a`-`z` are used for digits with values 10 through 35. The precise algorithm is implementation-defined, however the algorithm should be a generalization of that specified in <emu-xref href="#sec-numeric-types-number-tostring"></emu-xref>.
+Return the String value consisting of the code units of the digits of the decimal representation of _x_.
+Return the String value that is made from _n_ copies of _S_ appended together.
+Return the String value whose code units are the elements in the List _elements_. If _codeUnits_ is empty, the empty String is returned.
+Return the String value whose code units are the elements in the List _stringElements_. If _stringElements_ has no elements, the empty String is returned.
+Return the WaiterList that is referenced by the pair (_block_, _i_).
+Return the code point _cp_.
+Return the code point matched by |IdentifierPartChar|.
+Return the code point matched by |IdentifierPartChar|.
+Return the code point matched by |IdentifierStartChar|.
+Return the code point matched by |IdentifierStartChar|.
+Return the code point whose numeric value is the CharacterValue of |RegExpUnicodeEscapeSequence|.
+Return the code point whose numeric value is the CharacterValue of |RegExpUnicodeEscapeSequence|.
+Return the code point whose numeric value is the MV of |CodePoint|.
+Return the code point whose numeric value is the MV of |Hex4Digits|.
+Return the empty CharSet.
+Return the greatest (closest to +∞) integral Number value that is not greater than _n_.
+Return the integral Number closest to _n_, preferring the Number closer to +∞ in the case of a tie.
+Return the integral Number nearest _n_ in the direction of *+0*<sub>𝔽</sub>.
+Return the numeric value according to <emu-xref href="#table-controlescape-code-point-values"></emu-xref>.
+Return the numeric value of U+0000 (NULL).
+Return the numeric value of U+0008 (BACKSPACE).
+Return the numeric value of U+002D (HYPHEN-MINUS).
+Return the numeric value of U+002D (HYPHEN-MINUS).
+Return the remainder of dividing _i_ by 32.
+Return the result of applying bitwise complement to _oldValue_. The mathematical value of the result is exactly representable as a 32-bit two's complement bit string.
+Return the result of left shifting _lnum_ by _shiftCount_ bits. The mathematical value of the result is exactly representable as a 32-bit two's complement bit string.
+Return the result of performing a sign-extending right shift of _lnum_ by _shiftCount_ bits. The most significant bit is propagated. The mathematical value of the result is exactly representable as a 32-bit two's complement bit string.
+Return the result of performing a zero-filling right shift of _lnum_ by _shiftCount_ bits. Vacated bits are filled with zero. The mathematical value of the result is exactly representable as a 32-bit unsigned bit string.
+Return the result of |ComputedPropertyName| Contains _symbol_.
+Return the smallest (closest to -∞) integral Number value that is not less than _n_.
+Return the source text that was recognized as |RegularExpressionBody|.
+Return the source text that was recognized as |RegularExpressionFlags|.
+Return the string-concatenation of: [...]
+Return the string-concatenation of: [...]
+Return the ten-element CharSet containing the characters `0` through `9` inclusive.
+Return the union of CharSets _A_ and _B_.
+Return the union of CharSets _A_ and _B_.
+Return the union of _D_ and _C_.
+Return the union of _D_ and _C_.
+Return the value currently bound to _N_ in _envRec_.
+Return the value currently bound to _N_ in _envRec_.
+Return the value that _prim_ corresponds to in <emu-xref href="#table-tobigint"></emu-xref>.
+Search the enclosing |Pattern| for an instance of a |GroupSpecifier| containing a |RegExpIdentifierName| which has a CapturingGroupName equal to the CapturingGroupName of the |RegExpIdentifierName| contained in |GroupName|.
+Set _M_'s essential internal methods to the definitions specified in <emu-xref href="#sec-module-namespace-exotic-objects"></emu-xref>.
+Set _P_'s essential internal methods, except for [[Call]] and [[Construct]], to the definitions specified in <emu-xref href="#sec-proxy-object-internal-methods-and-internal-slots"></emu-xref>.
+Set _R_ to the string-concatenation of: [...]
+Set _m_ to the string-concatenation of the code unit 0x0030 (DIGIT ZERO), the code unit 0x002E (FULL STOP), -(_e_ + 1) occurrences of the code unit 0x0030 (DIGIT ZERO), and the String _m_.
+Set _m_ to the string-concatenation of the first _e_ + 1 code units of _m_, the code unit 0x002E (FULL STOP), and the remaining _p_ - (_e_ + 1) code units of _m_.
+Set _newArgDesc_ to a copy of _Desc_.
+Set _obj_'s essential internal methods to the default ordinary object definitions specified in <emu-xref href="#sec-ordinary-object-internal-methods-and-internal-slots"></emu-xref>.
+Set _parseResult_ to ParseText(_patternText_, |Pattern[~UnicodeMode, +N]|).
+Set _patternText_ to the sequence of code points resulting from interpreting each of the 16-bit elements of _stringValue_ as a Unicode BMP code point. UTF-16 decoding is not applied to the elements.
+Set _product_ to the string-concatenation of _product_ and the escape sequence for _C_ as specified in the “Escape Sequence” column of the corresponding row.
+Set _result_ to _result_ + 2<sup>_shift_</sup> × BinaryXor(_xDigit_, _yDigit_).
+Set _s_ to the code unit 0x002D (HYPHEN-MINUS).
+Set all of the bytes of _db_ to 0.
+Set the Synchronize event in _WL_ to _leaveEvent_.
+Set the [[DateValue]] internal slot of this Date object to _u_.
+Set the [[DateValue]] internal slot of this Date object to _u_.
+Set the [[DateValue]] internal slot of this Date object to _u_.
+Set the [[DateValue]] internal slot of this Date object to _u_.
+Set the [[DateValue]] internal slot of this Date object to _u_.
+Set the [[DateValue]] internal slot of this Date object to _u_.
+Set the [[DateValue]] internal slot of this Date object to _u_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the [[DateValue]] internal slot of this Date object to _v_.
+Set the bound value for _N_ in _envRec_ to _V_.
+Sort _items_ using an implementation-defined sequence of calls to _SortCompare_. If any such call returns an abrupt completion, stop before performing any further calls to _SortCompare_ and return that Completion Record.
+Store the individual bytes of _rawBytesModified_ into _block_, starting at _block_[_byteIndex_].
+Store the individual bytes of _replacementBytes_ into _block_, starting at _block_[_indexedPosition_].
+The code points `/` or any |LineTerminator| occurring in the pattern shall be escaped in _S_ as necessary to ensure that the string-concatenation of *"/"*, _S_, *"/"*, and _F_ can be parsed (in an appropriate lexical context) as a |RegularExpressionLiteral| that behaves identically to the constructed regular expression. For example, if _P_ is *"/"*, then _S_ could be *"\\/"* or *"\\u002F"*, among other possibilities, but not *"/"*, because `///` followed by _F_ would be parsed as a |SingleLineComment| rather than a |RegularExpressionLiteral|. If _P_ is the empty String, this specification can be met by letting _S_ be *"(?:)"*.
+Wait until no agent is in the critical section for _WL_, then enter the critical section for _WL_ (without allowing any other agent to enter).
+While _finalizationRegistry_.[[Cells]] contains a Record _cell_ such that _cell_.[[WeakRefTarget]] is ~empty~, an implementation may perform the following steps: [...]
+WriteSharedMemory, or ReadModifyWriteSharedMemory event, add _E_ to _events_.
+_op_ is `|`. Let _resultByte_ be the result of applying the bitwise inclusive OR operation to _xByte_ and _yByte_.
+_op_ is `|`. Let _result_ be the result of applying the bitwise inclusive OR operation to _lbits_ and _rbits_.
+and _Desc_.[[Writable]] is *false*, then [...]
+append each of its elements to _internalSlotsList_.
+append the code unit 0x0064 (LATIN SMALL LETTER D) as the last code unit of _result_.
+append the code unit 0x0067 (LATIN SMALL LETTER G) as the last code unit of _result_.
+append the code unit 0x0069 (LATIN SMALL LETTER I) as the last code unit of _result_.
+append the code unit 0x006D (LATIN SMALL LETTER M) as the last code unit of _result_.
+append the code unit 0x0073 (LATIN SMALL LETTER S) as the last code unit of _result_.
+append the code unit 0x0075 (LATIN SMALL LETTER U) as the last code unit of _result_.
+append the code unit 0x0079 (LATIN SMALL LETTER Y) as the last code unit of _result_.
+let _T_ be the String value that is a copy of _S_ with leading white space removed.
+let _T_ be the String value that is a copy of _S_ with trailing white space removed.
+let _filler_ be the String value consisting solely of the code unit 0x0020 (SPACE).
+let _gap_ be the String value containing _spaceMV_ occurrences of the code unit 0x0020 (SPACE).
+let _input_ be a List whose elements are the code units that are the elements of _S_.
+let _m_ be the String value consisting of the digits of the decimal representation of _n_ (in order, with no leading zeroes).
+let _milli_ be msFromTime(_t_).
+let _milli_ be msFromTime(_t_).
+let _milli_ be msFromTime(_t_).
+let _milli_ be msFromTime(_t_).
+let _milli_ be msFromTime(_t_).
+let _milli_ be msFromTime(_t_).
+let _n_, _k_, and _s_ be integers such that _k_ ≥ 1, 10<sup>_k_ - 1</sup> ≤ _s_ < 10<sup>_k_</sup>, 𝔽(_s_ × 10<sup>_n_ - _k_</sup>) is _x_, and _k_ is as small as possible. Note that _k_ is the number of digits in the decimal representation of _s_, that _s_ is not divisible by 10, and that the least significant digit of _s_ is not necessarily uniquely determined by these criteria.
+let _rawValue_ be a List whose elements are bytes from _block_ at indices _byteIndex_ (inclusive) through _byteIndex_ + _elementSize_ (exclusive).
+or an integral Number, return _n_.
+perform any host-defined steps for reporting the error.
+remove that element from the _varNames_.
+return an implementation-defined String source code representation of _func_. The representation must have the syntax of a |NativeFunction|.
+return the BigInt value that corresponds to _intValue_.
+return the Number value that corresponds to _intValue_.
+return the String value consisting of the code unit whose value is _cp_.
+reverse the order of the elements of _rawBytes_.
+set _isLittleEndian_ to the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.
+set _isLittleEndian_ to the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.
+set _isLittleEndian_ to the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.
+set _result_ to _result_ + 2<sup>_shift_</sup> × BinaryAnd(_xDigit_, _yDigit_).
+set _result_ to _result_ + 2<sup>_shift_</sup> × BinaryOr(_xDigit_, _yDigit_).
+store the individual bytes of _rawBytes_ into _block_, starting at _block_[_byteIndex_].
+throw a *TypeError* exception because the structure is cyclical.
+throw a *TypeError* exception because the structure is cyclical.

@@ -1,0 +1,15 @@
+def <INTERNAL>:IntegerIndexedExoticObject.HasProperty(
+  O: IntegerIndexedExoticObject,
+  P: Symbol | String,
+): Normal[Boolean] | Abrupt {
+  if (= (typeof P) @String) {
+    call %0 = clo<CanonicalNumericIndexString>(P)
+    let numericIndex = %0
+    if (! (= numericIndex undefined)) {
+      call %1 = clo<IsValidIntegerIndex>(O, numericIndex)
+      return %1
+    } else {}
+  } else {}
+  call %2 = clo<OrdinaryHasProperty>(O, P)
+  return [? %2]
+}

@@ -1,0 +1,11 @@
+def <SYNTAX>:Elision[0,0].ArrayAccumulation(
+  this: Ast:Elision[0,0],
+  array: Unknown["Array"],
+  nextIndex: Unknown["Integer"],
+): Unknown["EitherANormalCompletionContainingAnIntegerOrAnAbruptCompletion"] {
+  let len = (+ nextIndex 1)
+  call %0 = clo<Set>(array, "length", ([number] len), true)
+  [? %0]
+  nop
+  return len
+}

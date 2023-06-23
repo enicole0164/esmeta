@@ -1,0 +1,20 @@
+def <BUILTIN>:INTRINSICS.Object.prototype.__defineSetter__(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let P = (pop < argumentsList) else let P = absent
+  if (< 0 argumentsList.length) let setter = (pop < argumentsList) else let setter = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<IsCallable>(setter)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#903])
+  } else {}
+  let desc = (new PropertyDescriptor("Set" -> setter, "Enumerable" -> true, "Configurable" -> true))[#904]
+  call %2 = clo<ToPropertyKey>(P)
+  let key = [? %2]
+  call %3 = clo<DefinePropertyOrThrow>(O, key, desc)
+  [? %3]
+  return undefined
+}

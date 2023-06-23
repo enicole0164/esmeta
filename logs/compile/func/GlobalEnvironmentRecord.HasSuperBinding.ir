@@ -1,0 +1,5 @@
+def <CONC>:GlobalEnvironmentRecord.HasSuperBinding(
+  envRec: GlobalEnvironmentRecord,
+): False {
+  return false
+}

@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.encodeURIComponent(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let uriComponent = (pop < argumentsList) else let uriComponent = absent
+  call %0 = clo<ToString>(uriComponent)
+  let componentString = [? %0]
+  (yet "Let _unescapedURIComponentSet_ be a String containing one instance of each code unit valid in |uriUnescaped|.")
+  call %1 = clo<Encode>(componentString, unescapedURIComponentSet)
+  return [? %1]
+}

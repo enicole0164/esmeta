@@ -1,0 +1,10 @@
+def <SYNTAX>:BindingIdentifier[0,0].BindingInitialization(
+  this: Ast:BindingIdentifier[0,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  let name = %0
+  call %1 = clo<InitializeBoundName>(name, value, environment)
+  return [? %1]
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1203 {
+    label = "def <SYNTAX>:Literal[2,0].Evaluation(this: Ast:Literal[2,0]): Unknown"
+    style = rounded
+    cluster1203_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1203_entry_name -> cluster1203_entry [arrowhead=none, color="black", style=dashed]
+    cluster1203_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1203_entry -> node5425 [color="black"]
+    cluster1203_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1203_exit_name -> cluster1203_exit [arrowhead=none, color="black", style=dashed]
+    cluster1203_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5425_name [shape=none, label=<<font color="black">Call[5425]</font>>]
+    node5425_name -> node5425 [arrowhead=none, color="black", style=dashed]
+    node5425 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;NumericValue()</font>> color="black" fillcolor="white", style=filled]
+    node5425 -> node5426 [color="black"]
+    node5426_name [shape=none, label=<<font color="black">Block[5426]</font>>]
+    node5426_name -> node5426 [arrowhead=none, color="black", style=dashed]
+    node5426 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5426 -> cluster1203_exit [color="black"]
+  }
+}

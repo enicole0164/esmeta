@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2300 {
+    label = "def <SYNTAX>:UnicodePropertyValueExpression[1,0].CompileToCharSet(this: Ast:UnicodePropertyValueExpression[1,0]): Unknown["CharSet"]"
+    style = rounded
+    cluster2300_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2300_entry_name -> cluster2300_entry [arrowhead=none, color="black", style=dashed]
+    cluster2300_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2300_entry -> node14078 [color="black"]
+    cluster2300_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2300_exit_name -> cluster2300_exit [arrowhead=none, color="black", style=dashed]
+    cluster2300_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14078_name [shape=none, label=<<font color="black">Call[14078]</font>>]
+    node14078_name -> node14078 [arrowhead=none, color="black", style=dashed]
+    node14078 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;SourceText()</font>> color="black" fillcolor="white", style=filled]
+    node14078 -> node14079 [color="black"]
+    node14079_name [shape=none, label=<<font color="black">Block[14079]</font>>]
+    node14079_name -> node14079 [arrowhead=none, color="black", style=dashed]
+    node14079 [shape=box, label=<<font color="black">[0] let s = %0<BR ALIGN="LEFT"/>[1] (yet &quot;If UnicodeMatchPropertyValue(`General_Category`, _s_) is identical to a List of Unicode code points that is the name of a Unicode general category or general category alias listed in the &ldquo;Property value and aliases&rdquo; column of &lt;emu-xref href=\&quot;#table-unicode-general-category-values\&quot;&gt;&lt;/emu-xref&gt;, then\n  1. Return the CharSet containing all Unicode code points whose character database definition includes the property &ldquo;General_Category&rdquo; with value _s_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14079 -> node14080 [color="black"]
+    node14080_name [shape=none, label=<<font color="black">Call[14080]</font>>]
+    node14080_name -> node14080 [arrowhead=none, color="black", style=dashed]
+    node14080 [shape=cds, label=<<font color="black">%1 = clo&lt;UnicodeMatchProperty&gt;(s)</font>> color="black" fillcolor="white", style=filled]
+    node14080 -> node14081 [color="black"]
+    node14081_name [shape=none, label=<<font color="black">Block[14081]</font>>]
+    node14081_name -> node14081 [arrowhead=none, color="black", style=dashed]
+    node14081 [shape=box, label=<<font color="black">[0] let p = %1<BR ALIGN="LEFT"/>[1] assert (yet &quot;_p_ is a binary Unicode property or binary property alias listed in the &ldquo;Property name and aliases&rdquo; column of &lt;emu-xref href=\&quot;#table-binary-unicode-properties\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Return the CharSet containing all Unicode code points whose character database definition includes the property _p_ with value &ldquo;True&rdquo;.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14081 -> cluster2300_exit [color="black"]
+  }
+}

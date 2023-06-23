@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2184 {
+    label = "def ToZeroPaddedDecimalString(n: Unknown["NonnegativeInteger"], minLength: Unknown["NonnegativeInteger"]): String"
+    style = rounded
+    cluster2184_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2184_entry_name -> cluster2184_entry [arrowhead=none, color="black", style=dashed]
+    cluster2184_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2184_entry -> node13543 [color="black"]
+    cluster2184_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2184_exit_name -> cluster2184_exit [arrowhead=none, color="black", style=dashed]
+    cluster2184_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13543_name [shape=none, label=<<font color="black">Block[13543]</font>>]
+    node13543_name -> node13543 [arrowhead=none, color="black", style=dashed]
+    node13543 [shape=box, label=<<font color="black">[0] (yet &quot;Let _S_ be the String representation of _n_, formatted as a decimal number.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13543 -> node13544 [color="black"]
+    node13544_name [shape=none, label=<<font color="black">Call[13544]</font>>]
+    node13544_name -> node13544 [arrowhead=none, color="black", style=dashed]
+    node13544 [shape=cds, label=<<font color="black">%0 = clo&lt;StringPad&gt;(S, ([number] minLength), &quot;0&quot;, ~start~)</font>> color="black" fillcolor="white", style=filled]
+    node13544 -> node13545 [color="black"]
+    node13545_name [shape=none, label=<<font color="black">Block[13545]</font>>]
+    node13545_name -> node13545 [arrowhead=none, color="black", style=dashed]
+    node13545 [shape=box, label=<<font color="black">[0] return [! %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13545 -> cluster2184_exit [color="black"]
+  }
+}

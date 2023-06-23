@@ -1,0 +1,5 @@
+def <SYNTAX>:ConciseBody[1,0].ConciseBodyContainsUseStrict(
+  this: Ast:ConciseBody[1,0],
+): Boolean {
+  (yet "Return FunctionBodyContainsUseStrict of |FunctionBody|.")
+}

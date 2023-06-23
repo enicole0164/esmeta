@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1563 {
+    label = "def <SYNTAX>:AsyncArrowBindingIdentifier[0,0].ExpectedArgumentCount(this: Ast:AsyncArrowBindingIdentifier[0,0]): Unknown["Integer"]"
+    style = rounded
+    cluster1563_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1563_entry_name -> cluster1563_entry [arrowhead=none, color="black", style=dashed]
+    cluster1563_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1563_entry -> node8406 [color="black"]
+    cluster1563_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1563_exit_name -> cluster1563_exit [arrowhead=none, color="black", style=dashed]
+    cluster1563_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8406_name [shape=none, label=<<font color="black">Block[8406]</font>>]
+    node8406_name -> node8406 [arrowhead=none, color="black", style=dashed]
+    node8406 [shape=box, label=<<font color="black">[0] return 1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8406 -> cluster1563_exit [color="black"]
+  }
+}

@@ -1,0 +1,12 @@
+def <SYNTAX>:FunctionDeclaration[1,0].InstantiateOrdinaryFunctionObject(
+  this: Ast:FunctionDeclaration[1,0],
+  env: Unknown,
+  privateEnv: Unknown,
+): FunctionObject {
+  let sourceText = (source-text this)
+  call %0 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Function.prototype%"], sourceText, this[0], this[1], ~non-lexical-this~, env, privateEnv)
+  let F = %0
+  call %1 = clo<SetFunctionName>(F, "default")
+  call %2 = clo<MakeConstructor>(F)
+  return F
+}

@@ -1,0 +1,16 @@
+def <BUILTIN>:INTRINSICS.get TypedArray.prototype[@@toStringTag](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  if (! (= (typeof O) @Object)) {
+    return undefined
+  } else {}
+  if (= O.TypedArrayName absent) {
+    return undefined
+  } else {}
+  let name = O.TypedArrayName
+  assert (= (typeof name) @String)
+  return name
+}

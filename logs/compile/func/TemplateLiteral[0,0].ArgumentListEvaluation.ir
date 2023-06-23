@@ -1,0 +1,8 @@
+def <SYNTAX>:TemplateLiteral[0,0].ArgumentListEvaluation(
+  this: Ast:TemplateLiteral[0,0],
+): Normal[List[ESValue]] | Abrupt {
+  let templateLiteral = this
+  call %0 = clo<GetTemplateObject>(templateLiteral)
+  let siteObj = %0
+  return (new [siteObj])[#580]
+}

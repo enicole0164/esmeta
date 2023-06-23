@@ -1,0 +1,19 @@
+def IsArray(
+  argument: Unknown,
+): Normal[Boolean] | Abrupt {
+  if (! (= (typeof argument) @Object)) {
+    return false
+  } else {}
+  if (? argument: "ArrayExoticObject") {
+    return true
+  } else {}
+  if (? argument: "ProxyExoticObject") {
+    if (= argument.ProxyHandler null) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#38])
+    } else {}
+    let target = argument.ProxyTarget
+    call %0 = clo<IsArray>(target)
+    return [? %0]
+  } else {}
+  return false
+}

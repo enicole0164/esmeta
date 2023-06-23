@@ -1,0 +1,30 @@
+def OrdinaryCallBindThis(
+  F: FunctionObject,
+  calleeContext: ExecutionContext,
+  thisArgument: ESValue,
+): Const[~unused~] {
+  let thisMode = F.ThisMode
+  if (= thisMode ~lexical~) {
+    return ~unused~
+  } else {}
+  let calleeRealm = F.Realm
+  let localEnv = calleeContext.LexicalEnvironment
+  if (= thisMode ~strict~) {
+    let thisValue = thisArgument
+  } else {
+    if (|| (= thisArgument undefined) (= thisArgument null)) {
+      let globalEnv = calleeRealm.GlobalEnv
+      assert (? globalEnv: "GlobalEnvironmentRecord")
+      let thisValue = globalEnv.GlobalThisValue
+    } else {
+      call %0 = clo<ToObject>(thisArgument)
+      let thisValue = [! %0]
+      nop
+    }
+  }
+  assert (? localEnv: "FunctionEnvironmentRecord")
+  assert (yet "The next step never returns an abrupt completion because _localEnv_.[[ThisBindingStatus]] is not ~initialized~.")
+  method-call %1 = localEnv->BindThisValue(thisValue)
+  [! %1]
+  return ~unused~
+}

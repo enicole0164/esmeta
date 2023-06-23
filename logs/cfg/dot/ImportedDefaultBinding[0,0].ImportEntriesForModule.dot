@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1916 {
+    label = "def <SYNTAX>:ImportedDefaultBinding[0,0].ImportEntriesForModule(this: Ast:ImportedDefaultBinding[0,0], module: Unknown): Unknown["ListOfImportEntryRecords"]"
+    style = rounded
+    cluster1916_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1916_entry_name -> cluster1916_entry [arrowhead=none, color="black", style=dashed]
+    cluster1916_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1916_entry -> node10548 [color="black"]
+    cluster1916_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1916_exit_name -> cluster1916_exit [arrowhead=none, color="black", style=dashed]
+    cluster1916_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10548_name [shape=none, label=<<font color="black">Call[10548]</font>>]
+    node10548_name -> node10548 [arrowhead=none, color="black", style=dashed]
+    node10548 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;BoundNames()</font>> color="black" fillcolor="white", style=filled]
+    node10548 -> node10549 [color="black"]
+    node10549_name [shape=none, label=<<font color="black">Block[10549]</font>>]
+    node10549_name -> node10549 [arrowhead=none, color="black", style=dashed]
+    node10549 [shape=box, label=<<font color="black">[0] let localName = %0[0]<BR ALIGN="LEFT"/>[1] let defaultEntry = (new ImportEntryRecord(&quot;ModuleRequest&quot; -&gt; module, &quot;ImportName&quot; -&gt; &quot;default&quot;, &quot;LocalName&quot; -&gt; localName))[#810]<BR ALIGN="LEFT"/>[2] return (new [defaultEntry])[#811]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10549 -> cluster1916_exit [color="black"]
+  }
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:CharacterClass[0,0].CompileCharacterClass(
+  this: Ast:CharacterClass[0,0],
+): Unknown["RecordWithFields[[CharSet]](aCharSet)And[[Invert]](aBoolean)"] {
+  sdo-call %0 = this[0]->CompileToCharSet()
+  let A = %0
+  return (new Record("CharSet" -> A, "Invert" -> false))[#983]
+}

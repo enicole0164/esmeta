@@ -1,0 +1,1951 @@
+P/F/T = 2283/336/2619 (87.17%)
+  - sec-scope:
+  - sec-conformance:
+    - sec-conformance-normative-optional:
+    - sec-conformance-legacy:
+    - sec-conformance-legacy-normative-optional:
+  - sec-normative-references:
+  - sec-overview:
+    - sec-web-scripting:
+    - sec-hosts-and-implementations:
+    - sec-ecmascript-overview:
+      - sec-objects:
+      - sec-strict-variant-of-ecmascript:
+    - sec-terms-and-definitions:
+      - sec-terms-and-definitions-implementation-approximated:
+      - sec-terms-and-definitions-implementation-defined:
+      - sec-terms-and-definitions-host-defined:
+      - sec-type:
+      - sec-primitive-value:
+      - sec-terms-and-definitions-object:
+      - sec-constructor:
+      - sec-terms-and-definitions-prototype:
+      - sec-ordinary-object:
+      - sec-exotic-object:
+      - sec-standard-object:
+      - sec-built-in-object:
+      - sec-undefined-value:
+      - sec-terms-and-definitions-undefined-type:
+      - sec-null-value:
+      - sec-terms-and-definitions-null-type:
+      - sec-terms-and-definitions-boolean-value:
+      - sec-terms-and-definitions-boolean-type:
+      - sec-boolean-object:
+      - sec-terms-and-definitions-string-value:
+      - sec-terms-and-definitions-string-type:
+      - sec-string-object:
+      - sec-terms-and-definitions-number-value:
+      - sec-terms-and-definitions-number-type:
+      - sec-number-object:
+      - sec-terms-and-definitions-infinity:
+      - sec-terms-and-definitions-nan:
+      - sec-terms-and-definitions-bigint-value:
+      - sec-terms-and-definitions-bigint-type:
+      - sec-bigint-object:
+      - sec-symbol-value:
+      - sec-terms-and-definitions-symbol-type:
+      - sec-symbol-object:
+      - sec-terms-and-definitions-function:
+      - sec-built-in-function:
+      - sec-property:
+      - sec-method:
+      - sec-built-in-method:
+      - sec-attribute:
+      - sec-own-property:
+      - sec-inherited-property:
+    - sec-organization-of-this-specification:
+  - sec-notational-conventions:P/F/T = 1/0/1 (100.00%)
+    - sec-syntactic-and-lexical-grammars:
+      - sec-context-free-grammars:
+      - sec-lexical-and-regexp-grammars:
+      - sec-numeric-string-grammar:
+      - sec-syntactic-grammar:
+      - sec-grammar-notation:
+    - sec-algorithm-conventions:P/F/T = 1/0/1 (100.00%)
+      - sec-algorithm-conventions-abstract-operations:
+      - sec-algorithm-conventions-syntax-directed-operations:
+      - sec-runtime-semantics:P/F/T = 1/0/1 (100.00%)
+        - sec-completion-ao:P/F/T = 1/0/1 (100.00%)
+        - sec-throw-an-exception:
+        - sec-returnifabrupt:
+        - sec-returnifabrupt-shorthands:
+        - sec-implicit-normal-completion:
+      - sec-static-semantic-rules:
+      - sec-mathematical-operations:
+      - sec-value-notation:
+  - sec-ecmascript-data-types-and-values:P/F/T = 50/15/65 (76.92%)
+    - sec-ecmascript-language-types:P/F/T = 32/12/44 (72.73%)
+      - sec-ecmascript-language-types-undefined-type:
+      - sec-ecmascript-language-types-null-type:
+      - sec-ecmascript-language-types-boolean-type:
+      - sec-ecmascript-language-types-string-type:P/F/T = 1/0/1 (100.00%)
+        - sec-stringindexof:P/F/T = 1/0/1 (100.00%)
+      - sec-ecmascript-language-types-symbol-type:
+        - sec-well-known-symbols:
+      - sec-numeric-types:P/F/T = 31/12/43 (72.09%)
+        - sec-ecmascript-language-types-number-type:P/F/T = 11/9/20 (55.00%)
+          - sec-numeric-types-number-unaryMinus:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-bitwiseNOT:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-exponentiate:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-multiply:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-divide:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-remainder:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-add:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-subtract:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-leftShift:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-signedRightShift:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-unsignedRightShift:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-lessThan:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-equal:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-sameValue:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-sameValueZero:P/F/T = 1/0/1 (100.00%)
+          - sec-numberbitwiseop:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-number-bitwiseAND:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-bitwiseXOR:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-bitwiseOR:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-number-tostring:P/F/T = 0/1/1 (0.00%)
+        - sec-ecmascript-language-types-bigint-type:P/F/T = 20/3/23 (86.96%)
+          - sec-numeric-types-bigint-unaryMinus:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-bitwiseNOT:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-exponentiate:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-multiply:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-divide:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-remainder:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-bigint-add:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-subtract:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-leftShift:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-signedRightShift:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-unsignedRightShift:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-lessThan:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-equal:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-sameValue:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-sameValueZero:P/F/T = 1/0/1 (100.00%)
+          - sec-binaryand:P/F/T = 1/0/1 (100.00%)
+          - sec-binaryor:P/F/T = 1/0/1 (100.00%)
+          - sec-binaryxor:P/F/T = 1/0/1 (100.00%)
+          - sec-bigintbitwiseop:P/F/T = 0/1/1 (0.00%)
+          - sec-numeric-types-bigint-bitwiseAND:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-bitwiseXOR:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-bitwiseOR:P/F/T = 1/0/1 (100.00%)
+          - sec-numeric-types-bigint-tostring:P/F/T = 0/1/1 (0.00%)
+      - sec-object-type:
+        - sec-property-attributes:
+        - sec-object-internal-methods-and-internal-slots:
+        - sec-invariants-of-the-essential-internal-methods:
+        - sec-well-known-intrinsic-objects:
+    - sec-ecmascript-specification-types:P/F/T = 18/3/21 (85.71%)
+      - sec-list-and-record-specification-type:
+      - sec-set-and-relation-specification-type:
+      - sec-completion-record-specification-type:P/F/T = 3/0/3 (100.00%)
+        - await:
+        - sec-normalcompletion:P/F/T = 1/0/1 (100.00%)
+        - sec-throwcompletion:P/F/T = 1/0/1 (100.00%)
+        - sec-updateempty:P/F/T = 1/0/1 (100.00%)
+      - sec-reference-record-specification-type:P/F/T = 9/0/9 (100.00%)
+        - sec-ispropertyreference:P/F/T = 1/0/1 (100.00%)
+        - sec-isunresolvablereference:P/F/T = 1/0/1 (100.00%)
+        - sec-issuperreference:P/F/T = 1/0/1 (100.00%)
+        - sec-isprivatereference:P/F/T = 1/0/1 (100.00%)
+        - sec-getvalue:P/F/T = 1/0/1 (100.00%)
+        - sec-putvalue:P/F/T = 1/0/1 (100.00%)
+        - sec-getthisvalue:P/F/T = 1/0/1 (100.00%)
+        - sec-initializereferencedbinding:P/F/T = 1/0/1 (100.00%)
+        - sec-makeprivatereference:P/F/T = 1/0/1 (100.00%)
+      - sec-property-descriptor-specification-type:P/F/T = 6/0/6 (100.00%)
+        - sec-isaccessordescriptor:P/F/T = 1/0/1 (100.00%)
+        - sec-isdatadescriptor:P/F/T = 1/0/1 (100.00%)
+        - sec-isgenericdescriptor:P/F/T = 1/0/1 (100.00%)
+        - sec-frompropertydescriptor:P/F/T = 1/0/1 (100.00%)
+        - sec-topropertydescriptor:P/F/T = 1/0/1 (100.00%)
+        - sec-completepropertydescriptor:P/F/T = 1/0/1 (100.00%)
+      - sec-lexical-environment-and-environment-record-specification-types:
+      - sec-abstract-closure:
+      - sec-data-blocks:P/F/T = 0/3/3 (0.00%)
+        - sec-createbytedatablock:P/F/T = 0/1/1 (0.00%)
+        - sec-createsharedbytedatablock:P/F/T = 0/1/1 (0.00%)
+        - sec-copydatablockbytes:P/F/T = 0/1/1 (0.00%)
+      - sec-privateelement-specification-type:
+      - sec-classfielddefinition-record-specification-type:
+      - sec-private-names:
+      - sec-classstaticblockdefinition-record-specification-type:
+  - sec-abstract-operations:P/F/T = 76/21/97 (78.35%)
+    - sec-type-conversion:P/F/T = 23/15/38 (60.53%)
+      - sec-toprimitive:P/F/T = 2/0/2 (100.00%)
+        - sec-ordinarytoprimitive:P/F/T = 1/0/1 (100.00%)
+      - sec-toboolean:
+      - sec-tonumeric:P/F/T = 1/0/1 (100.00%)
+      - sec-tonumber:P/F/T = 12/7/19 (63.16%)
+        - sec-tonumber-applied-to-the-string-type:P/F/T = 12/7/19 (63.16%)
+          - sec-stringtonumber:P/F/T = 1/0/1 (100.00%)
+          - sec-runtime-semantics-stringnumericvalue:P/F/T = 11/6/17 (64.71%)
+          - sec-roundmvresult:P/F/T = 0/1/1 (0.00%)
+      - sec-tointegerorinfinity:P/F/T = 1/0/1 (100.00%)
+      - sec-toint32:P/F/T = 0/1/1 (0.00%)
+      - sec-touint32:P/F/T = 0/1/1 (0.00%)
+      - sec-toint16:P/F/T = 0/1/1 (0.00%)
+      - sec-touint16:P/F/T = 0/1/1 (0.00%)
+      - sec-toint8:P/F/T = 0/1/1 (0.00%)
+      - sec-touint8:P/F/T = 0/1/1 (0.00%)
+      - sec-touint8clamp:P/F/T = 0/1/1 (0.00%)
+      - sec-tobigint:P/F/T = 0/1/1 (0.00%)
+      - sec-stringtobigint:P/F/T = 1/0/1 (100.00%)
+        - sec-stringintegerliteral-grammar:
+        - sec-runtime-semantics-mv-for-stringintegerliteral:
+      - sec-tobigint64:P/F/T = 1/0/1 (100.00%)
+      - sec-tobiguint64:P/F/T = 1/0/1 (100.00%)
+      - sec-tostring:
+      - sec-toobject:
+      - sec-topropertykey:P/F/T = 1/0/1 (100.00%)
+      - sec-tolength:P/F/T = 1/0/1 (100.00%)
+      - sec-canonicalnumericindexstring:P/F/T = 1/0/1 (100.00%)
+      - sec-toindex:P/F/T = 1/0/1 (100.00%)
+    - sec-testing-and-comparison-operations:P/F/T = 12/3/15 (80.00%)
+      - sec-requireobjectcoercible:
+      - sec-isarray:P/F/T = 1/0/1 (100.00%)
+      - sec-iscallable:P/F/T = 1/0/1 (100.00%)
+      - sec-isconstructor:P/F/T = 1/0/1 (100.00%)
+      - sec-isextensible-o:P/F/T = 1/0/1 (100.00%)
+      - sec-isintegralnumber:P/F/T = 1/0/1 (100.00%)
+      - sec-ispropertykey:P/F/T = 1/0/1 (100.00%)
+      - sec-isregexp:P/F/T = 1/0/1 (100.00%)
+      - sec-isstringprefix:P/F/T = 1/0/1 (100.00%)
+      - sec-isstringwellformedunicode:P/F/T = 1/0/1 (100.00%)
+      - sec-samevalue:P/F/T = 1/0/1 (100.00%)
+      - sec-samevaluezero:P/F/T = 1/0/1 (100.00%)
+      - sec-samevaluenonnumeric:P/F/T = 0/1/1 (0.00%)
+      - sec-islessthan:P/F/T = 0/1/1 (0.00%)
+      - sec-islooselyequal:P/F/T = 0/1/1 (0.00%)
+      - sec-isstrictlyequal:P/F/T = 1/0/1 (100.00%)
+    - sec-operations-on-objects:P/F/T = 31/2/33 (93.94%)
+      - sec-makebasicobject:P/F/T = 0/1/1 (0.00%)
+      - sec-get-o-p:P/F/T = 1/0/1 (100.00%)
+      - sec-getv:P/F/T = 1/0/1 (100.00%)
+      - sec-set-o-p-v-throw:P/F/T = 1/0/1 (100.00%)
+      - sec-createdataproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-createmethodproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-createdatapropertyorthrow:P/F/T = 1/0/1 (100.00%)
+      - sec-createnonenumerabledatapropertyorthrow:P/F/T = 1/0/1 (100.00%)
+      - sec-definepropertyorthrow:P/F/T = 1/0/1 (100.00%)
+      - sec-deletepropertyorthrow:P/F/T = 1/0/1 (100.00%)
+      - sec-getmethod:P/F/T = 1/0/1 (100.00%)
+      - sec-hasproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-hasownproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-call:P/F/T = 1/0/1 (100.00%)
+      - sec-construct:P/F/T = 1/0/1 (100.00%)
+      - sec-setintegritylevel:P/F/T = 1/0/1 (100.00%)
+      - sec-testintegritylevel:P/F/T = 1/0/1 (100.00%)
+      - sec-createarrayfromlist:P/F/T = 1/0/1 (100.00%)
+      - sec-lengthofarraylike:P/F/T = 1/0/1 (100.00%)
+      - sec-createlistfromarraylike:P/F/T = 1/0/1 (100.00%)
+      - sec-invoke:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinaryhasinstance:P/F/T = 1/0/1 (100.00%)
+      - sec-speciesconstructor:P/F/T = 1/0/1 (100.00%)
+      - sec-enumerableownpropertynames:P/F/T = 1/0/1 (100.00%)
+      - sec-getfunctionrealm:P/F/T = 1/0/1 (100.00%)
+      - sec-copydataproperties:P/F/T = 1/0/1 (100.00%)
+      - sec-privateelementfind:P/F/T = 0/1/1 (0.00%)
+      - sec-privatefieldadd:P/F/T = 1/0/1 (100.00%)
+      - sec-privatemethodoraccessoradd:P/F/T = 1/0/1 (100.00%)
+      - sec-privateget:P/F/T = 1/0/1 (100.00%)
+      - sec-privateset:P/F/T = 1/0/1 (100.00%)
+      - sec-definefield:P/F/T = 1/0/1 (100.00%)
+      - sec-initializeinstanceelements:P/F/T = 1/0/1 (100.00%)
+    - sec-operations-on-iterator-objects:P/F/T = 10/1/11 (90.91%)
+      - sec-iterator-records:
+      - sec-getiterator:P/F/T = 1/0/1 (100.00%)
+      - sec-iteratornext:P/F/T = 1/0/1 (100.00%)
+      - sec-iteratorcomplete:P/F/T = 1/0/1 (100.00%)
+      - sec-iteratorvalue:P/F/T = 1/0/1 (100.00%)
+      - sec-iteratorstep:P/F/T = 1/0/1 (100.00%)
+      - sec-iteratorclose:P/F/T = 1/0/1 (100.00%)
+      - sec-ifabruptcloseiterator:P/F/T = 1/0/1 (100.00%)
+      - sec-asynciteratorclose:P/F/T = 1/0/1 (100.00%)
+      - sec-createiterresultobject:P/F/T = 1/0/1 (100.00%)
+      - sec-createlistiteratorRecord:P/F/T = 1/0/1 (100.00%)
+      - sec-iterabletolist:P/F/T = 0/1/1 (0.00%)
+  - sec-syntax-directed-operations:P/F/T = 792/9/801 (98.88%)
+    - sec-syntax-directed-operations-scope-analysis:P/F/T = 299/5/304 (98.36%)
+      - sec-static-semantics-boundnames:P/F/T = 59/2/61 (96.72%)
+      - sec-static-semantics-declarationpart:P/F/T = 6/0/6 (100.00%)
+      - sec-static-semantics-isconstantdeclaration:P/F/T = 16/0/16 (100.00%)
+      - sec-static-semantics-lexicallydeclarednames:P/F/T = 28/1/29 (96.55%)
+      - sec-static-semantics-lexicallyscopeddeclarations:P/F/T = 34/0/34 (100.00%)
+      - sec-static-semantics-vardeclarednames:P/F/T = 68/1/69 (98.55%)
+      - sec-static-semantics-varscopeddeclarations:P/F/T = 70/1/71 (98.59%)
+      - sec-static-semantics-toplevellexicallydeclarednames:P/F/T = 3/0/3 (100.00%)
+      - sec-static-semantics-toplevellexicallyscopeddeclarations:P/F/T = 3/0/3 (100.00%)
+      - sec-static-semantics-toplevelvardeclarednames:P/F/T = 6/0/6 (100.00%)
+      - sec-static-semantics-toplevelvarscopeddeclarations:P/F/T = 6/0/6 (100.00%)
+    - sec-syntax-directed-operations-labels:P/F/T = 193/0/193 (100.00%)
+      - sec-static-semantics-containsduplicatelabels:P/F/T = 63/0/63 (100.00%)
+      - sec-static-semantics-containsundefinedbreaktarget:P/F/T = 64/0/64 (100.00%)
+      - sec-static-semantics-containsundefinedcontinuetarget:P/F/T = 66/0/66 (100.00%)
+    - sec-syntax-directed-operations-function-name-inference:P/F/T = 122/0/122 (100.00%)
+      - sec-static-semantics-hasname:P/F/T = 14/0/14 (100.00%)
+      - sec-static-semantics-isfunctiondefinition:P/F/T = 74/0/74 (100.00%)
+      - sec-isanonymousfunctiondefinition:P/F/T = 1/0/1 (100.00%)
+      - sec-static-semantics-isidentifierref:P/F/T = 23/0/23 (100.00%)
+      - sec-runtime-semantics-namedevaluation:P/F/T = 10/0/10 (100.00%)
+    - sec-syntax-directed-operations-contains:P/F/T = 42/3/45 (93.33%)
+      - sec-static-semantics-contains:P/F/T = 29/2/31 (93.55%)
+      - sec-static-semantics-computedpropertycontains:P/F/T = 13/1/14 (92.86%)
+    - sec-syntax-directed-operations-miscellaneous:P/F/T = 136/1/137 (99.27%)
+      - sec-runtime-semantics-instantiatefunctionobject:P/F/T = 8/0/8 (100.00%)
+      - sec-runtime-semantics-bindinginitialization:P/F/T = 11/0/11 (100.00%)
+        - sec-initializeboundname:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-iteratorbindinginitialization:P/F/T = 21/0/21 (100.00%)
+      - sec-static-semantics-assignmenttargettype:P/F/T = 78/1/79 (98.73%)
+      - sec-static-semantics-propname:P/F/T = 18/0/18 (100.00%)
+  - sec-executable-code-and-execution-contexts:P/F/T = 51/22/73 (69.86%)
+    - sec-environment-records:P/F/T = 41/11/52 (78.85%)
+      - sec-the-environment-record-type-hierarchy:P/F/T = 35/11/46 (76.09%)
+        - sec-declarative-environment-records:P/F/T = 3/7/10 (30.00%)
+          - sec-declarative-environment-records-hasbinding-n:P/F/T = 0/1/1 (0.00%)
+          - sec-declarative-environment-records-createmutablebinding-n-d:P/F/T = 0/1/1 (0.00%)
+          - sec-declarative-environment-records-createimmutablebinding-n-s:P/F/T = 0/1/1 (0.00%)
+          - sec-declarative-environment-records-initializebinding-n-v:P/F/T = 0/1/1 (0.00%)
+          - sec-declarative-environment-records-setmutablebinding-n-v-s:P/F/T = 0/1/1 (0.00%)
+          - sec-declarative-environment-records-getbindingvalue-n-s:P/F/T = 0/1/1 (0.00%)
+          - sec-declarative-environment-records-deletebinding-n:P/F/T = 0/1/1 (0.00%)
+          - sec-declarative-environment-records-hasthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-declarative-environment-records-hassuperbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-declarative-environment-records-withbaseobject:P/F/T = 1/0/1 (100.00%)
+        - sec-object-environment-records:P/F/T = 9/0/9 (100.00%)
+          - sec-object-environment-records-hasbinding-n:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-createmutablebinding-n-d:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-createimmutablebinding-n-s:
+          - sec-object-environment-records-initializebinding-n-v:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-setmutablebinding-n-v-s:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-getbindingvalue-n-s:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-deletebinding-n:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-hasthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-hassuperbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-object-environment-records-withbaseobject:P/F/T = 1/0/1 (100.00%)
+        - sec-function-environment-records:P/F/T = 5/0/5 (100.00%)
+          - sec-bindthisvalue:P/F/T = 1/0/1 (100.00%)
+          - sec-function-environment-records-hasthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-function-environment-records-hassuperbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-function-environment-records-getthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-getsuperbase:P/F/T = 1/0/1 (100.00%)
+        - sec-global-environment-records:P/F/T = 16/2/18 (88.89%)
+          - sec-global-environment-records-hasbinding-n:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-createmutablebinding-n-d:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-createimmutablebinding-n-s:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-initializebinding-n-v:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-setmutablebinding-n-v-s:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-getbindingvalue-n-s:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-deletebinding-n:P/F/T = 0/1/1 (0.00%)
+          - sec-global-environment-records-hasthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-hassuperbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-withbaseobject:P/F/T = 1/0/1 (100.00%)
+          - sec-global-environment-records-getthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-hasvardeclaration:P/F/T = 1/0/1 (100.00%)
+          - sec-haslexicaldeclaration:P/F/T = 1/0/1 (100.00%)
+          - sec-hasrestrictedglobalproperty:P/F/T = 1/0/1 (100.00%)
+          - sec-candeclareglobalvar:P/F/T = 1/0/1 (100.00%)
+          - sec-candeclareglobalfunction:P/F/T = 0/1/1 (0.00%)
+          - sec-createglobalvarbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-createglobalfunctionbinding:P/F/T = 1/0/1 (100.00%)
+        - sec-module-environment-records:P/F/T = 2/2/4 (50.00%)
+          - sec-module-environment-records-getbindingvalue-n-s:P/F/T = 0/1/1 (0.00%)
+          - sec-module-environment-records-deletebinding-n:
+          - sec-module-environment-records-hasthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-module-environment-records-getthisbinding:P/F/T = 1/0/1 (100.00%)
+          - sec-createimportbinding:P/F/T = 0/1/1 (0.00%)
+      - sec-environment-record-operations:P/F/T = 6/0/6 (100.00%)
+        - sec-getidentifierreference:P/F/T = 1/0/1 (100.00%)
+        - sec-newdeclarativeenvironment:P/F/T = 1/0/1 (100.00%)
+        - sec-newobjectenvironment:P/F/T = 1/0/1 (100.00%)
+        - sec-newfunctionenvironment:P/F/T = 1/0/1 (100.00%)
+        - sec-newglobalenvironment:P/F/T = 1/0/1 (100.00%)
+        - sec-newmoduleenvironment:P/F/T = 1/0/1 (100.00%)
+    - sec-privateenvironment-records:P/F/T = 1/1/2 (50.00%)
+      - sec-privateenvironment-record-operations:P/F/T = 1/1/2 (50.00%)
+        - sec-newprivateenvironment:P/F/T = 1/0/1 (100.00%)
+        - sec-resolve-private-identifier:P/F/T = 0/1/1 (0.00%)
+    - sec-code-realms:P/F/T = 2/2/4 (50.00%)
+      - sec-createrealm:P/F/T = 0/1/1 (0.00%)
+      - sec-createintrinsics:P/F/T = 1/0/1 (100.00%)
+      - sec-setrealmglobalobject:P/F/T = 1/0/1 (100.00%)
+      - sec-setdefaultglobalbindings:P/F/T = 0/1/1 (0.00%)
+    - sec-execution-contexts:P/F/T = 5/1/6 (83.33%)
+      - sec-getactivescriptormodule:P/F/T = 0/1/1 (0.00%)
+      - sec-resolvebinding:P/F/T = 1/0/1 (100.00%)
+      - sec-getthisenvironment:P/F/T = 1/0/1 (100.00%)
+      - sec-resolvethisbinding:P/F/T = 1/0/1 (100.00%)
+      - sec-getnewtarget:P/F/T = 1/0/1 (100.00%)
+      - sec-getglobalobject:P/F/T = 1/0/1 (100.00%)
+    - sec-jobs:P/F/T = 2/0/2 (100.00%)
+      - sec-jobcallback-records:
+      - sec-hostmakejobcallback:P/F/T = 1/0/1 (100.00%)
+      - sec-hostcalljobcallback:P/F/T = 1/0/1 (100.00%)
+      - sec-hostenqueuepromisejob:
+    - sec-initializehostdefinedrealm:P/F/T = 0/1/1 (0.00%)
+    - sec-agents:P/F/T = 0/2/2 (0.00%)
+      - sec-agentsignifier:P/F/T = 0/1/1 (0.00%)
+      - sec-agentcansuspend:P/F/T = 0/1/1 (0.00%)
+    - sec-agent-clusters:
+    - sec-forward-progress:
+    - sec-weakref-processing-model:P/F/T = 0/1/1 (0.00%)
+      - sec-weakref-invariants:
+      - sec-liveness:
+      - sec-weakref-execution:
+      - sec-weakref-host-hooks:P/F/T = 0/1/1 (0.00%)
+        - sec-host-cleanup-finalization-registry:P/F/T = 0/1/1 (0.00%)
+    - sec-clear-kept-objects:P/F/T = 0/1/1 (0.00%)
+    - sec-addtokeptobjects:P/F/T = 0/1/1 (0.00%)
+    - sec-cleanup-finalization-registry:P/F/T = 0/1/1 (0.00%)
+  - sec-ordinary-and-exotic-objects-behaviours:P/F/T = 94/21/115 (81.74%)
+    - sec-ordinary-object-internal-methods-and-internal-slots:P/F/T = 24/5/29 (82.76%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-getprototypeof:P/F/T = 2/0/2 (100.00%)
+        - sec-ordinarygetprototypeof:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-setprototypeof-v:P/F/T = 2/0/2 (100.00%)
+        - sec-ordinarysetprototypeof:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-isextensible:P/F/T = 2/0/2 (100.00%)
+        - sec-ordinaryisextensible:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-preventextensions:P/F/T = 2/0/2 (100.00%)
+        - sec-ordinarypreventextensions:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p:P/F/T = 1/1/2 (50.00%)
+        - sec-ordinarygetownproperty:P/F/T = 0/1/1 (0.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc:P/F/T = 3/1/4 (75.00%)
+        - sec-ordinarydefineownproperty:P/F/T = 1/0/1 (100.00%)
+        - sec-iscompatiblepropertydescriptor:P/F/T = 1/0/1 (100.00%)
+        - sec-validateandapplypropertydescriptor:P/F/T = 0/1/1 (0.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-hasproperty-p:P/F/T = 2/0/2 (100.00%)
+        - sec-ordinaryhasproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver:P/F/T = 2/0/2 (100.00%)
+        - sec-ordinaryget:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver:P/F/T = 3/0/3 (100.00%)
+        - sec-ordinaryset:P/F/T = 1/0/1 (100.00%)
+        - sec-ordinarysetwithowndescriptor:P/F/T = 1/0/1 (100.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-delete-p:P/F/T = 1/1/2 (50.00%)
+        - sec-ordinarydelete:P/F/T = 0/1/1 (0.00%)
+      - sec-ordinary-object-internal-methods-and-internal-slots-ownpropertykeys:P/F/T = 1/1/2 (50.00%)
+        - sec-ordinaryownpropertykeys:P/F/T = 0/1/1 (0.00%)
+      - sec-ordinaryobjectcreate:P/F/T = 0/1/1 (0.00%)
+      - sec-ordinarycreatefromconstructor:P/F/T = 1/0/1 (100.00%)
+      - sec-getprototypefromconstructor:P/F/T = 1/0/1 (100.00%)
+      - sec-requireinternalslot:P/F/T = 1/0/1 (100.00%)
+    - sec-ecmascript-function-objects:P/F/T = 18/5/23 (78.26%)
+      - sec-ecmascript-function-objects-call-thisargument-argumentslist:P/F/T = 10/2/12 (83.33%)
+        - sec-prepareforordinarycall:P/F/T = 0/1/1 (0.00%)
+        - sec-ordinarycallbindthis:P/F/T = 1/0/1 (100.00%)
+        - sec-runtime-semantics-evaluatebody:P/F/T = 8/0/8 (100.00%)
+        - sec-ordinarycallevaluatebody:P/F/T = 1/0/1 (100.00%)
+      - sec-ecmascript-function-objects-construct-argumentslist-newtarget:P/F/T = 0/1/1 (0.00%)
+      - sec-ordinaryfunctioncreate:P/F/T = 1/0/1 (100.00%)
+      - sec-addrestrictedfunctionproperties:P/F/T = 2/0/2 (100.00%)
+        - sec-%throwtypeerror%:P/F/T = 1/0/1 (100.00%)
+      - sec-makeconstructor:P/F/T = 1/0/1 (100.00%)
+      - sec-makeclassconstructor:P/F/T = 1/0/1 (100.00%)
+      - sec-makemethod:P/F/T = 1/0/1 (100.00%)
+      - sec-definemethodproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-setfunctionname:P/F/T = 0/1/1 (0.00%)
+      - sec-setfunctionlength:P/F/T = 1/0/1 (100.00%)
+      - sec-functiondeclarationinstantiation:P/F/T = 0/1/1 (0.00%)
+    - sec-built-in-function-objects:P/F/T = 0/3/3 (0.00%)
+      - sec-built-in-function-objects-call-thisargument-argumentslist:P/F/T = 0/1/1 (0.00%)
+      - sec-built-in-function-objects-construct-argumentslist-newtarget:P/F/T = 0/1/1 (0.00%)
+      - sec-createbuiltinfunction:P/F/T = 0/1/1 (0.00%)
+    - sec-built-in-exotic-object-internal-methods-and-slots:P/F/T = 40/6/46 (86.96%)
+      - sec-bound-function-exotic-objects:P/F/T = 3/0/3 (100.00%)
+        - sec-bound-function-exotic-objects-call-thisargument-argumentslist:P/F/T = 1/0/1 (100.00%)
+        - sec-bound-function-exotic-objects-construct-argumentslist-newtarget:P/F/T = 1/0/1 (100.00%)
+        - sec-boundfunctioncreate:P/F/T = 1/0/1 (100.00%)
+      - sec-array-exotic-objects:P/F/T = 3/1/4 (75.00%)
+        - sec-array-exotic-objects-defineownproperty-p-desc:P/F/T = 1/0/1 (100.00%)
+        - sec-arraycreate:P/F/T = 1/0/1 (100.00%)
+        - sec-arrayspeciescreate:P/F/T = 1/0/1 (100.00%)
+        - sec-arraysetlength:P/F/T = 0/1/1 (0.00%)
+      - sec-string-exotic-objects:P/F/T = 4/1/5 (80.00%)
+        - sec-string-exotic-objects-getownproperty-p:P/F/T = 1/0/1 (100.00%)
+        - sec-string-exotic-objects-defineownproperty-p-desc:P/F/T = 1/0/1 (100.00%)
+        - sec-string-exotic-objects-ownpropertykeys:P/F/T = 0/1/1 (0.00%)
+        - sec-stringcreate:P/F/T = 1/0/1 (100.00%)
+        - sec-stringgetownproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-arguments-exotic-objects:P/F/T = 7/2/9 (77.78%)
+        - sec-arguments-exotic-objects-getownproperty-p:P/F/T = 1/0/1 (100.00%)
+        - sec-arguments-exotic-objects-defineownproperty-p-desc:P/F/T = 0/1/1 (0.00%)
+        - sec-arguments-exotic-objects-get-p-receiver:P/F/T = 1/0/1 (100.00%)
+        - sec-arguments-exotic-objects-set-p-v-receiver:P/F/T = 1/0/1 (100.00%)
+        - sec-arguments-exotic-objects-delete-p:P/F/T = 1/0/1 (100.00%)
+        - sec-createunmappedargumentsobject:P/F/T = 1/0/1 (100.00%)
+        - sec-createmappedargumentsobject:P/F/T = 2/1/3 (66.67%)
+          - sec-makearggetter:P/F/T = 1/0/1 (100.00%)
+          - sec-makeargsetter:P/F/T = 1/0/1 (100.00%)
+      - sec-integer-indexed-exotic-objects:P/F/T = 10/1/11 (90.91%)
+        - sec-integer-indexed-exotic-objects-getownproperty-p:P/F/T = 1/0/1 (100.00%)
+        - sec-integer-indexed-exotic-objects-hasproperty-p:P/F/T = 1/0/1 (100.00%)
+        - sec-integer-indexed-exotic-objects-defineownproperty-p-desc:P/F/T = 1/0/1 (100.00%)
+        - sec-integer-indexed-exotic-objects-get-p-receiver:P/F/T = 1/0/1 (100.00%)
+        - sec-integer-indexed-exotic-objects-set-p-v-receiver:P/F/T = 1/0/1 (100.00%)
+        - sec-integer-indexed-exotic-objects-delete-p:P/F/T = 1/0/1 (100.00%)
+        - sec-integer-indexed-exotic-objects-ownpropertykeys:P/F/T = 0/1/1 (0.00%)
+        - sec-integerindexedobjectcreate:P/F/T = 1/0/1 (100.00%)
+        - sec-isvalidintegerindex:P/F/T = 1/0/1 (100.00%)
+        - sec-integerindexedelementget:P/F/T = 1/0/1 (100.00%)
+        - sec-integerindexedelementset:P/F/T = 1/0/1 (100.00%)
+      - sec-module-namespace-exotic-objects:P/F/T = 11/1/12 (91.67%)
+        - sec-module-namespace-exotic-objects-getprototypeof:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-setprototypeof-v:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-isextensible:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-preventextensions:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-getownproperty-p:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-defineownproperty-p-desc:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-hasproperty-p:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-get-p-receiver:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-set-p-v-receiver:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-delete-p:P/F/T = 1/0/1 (100.00%)
+        - sec-module-namespace-exotic-objects-ownpropertykeys:P/F/T = 1/0/1 (100.00%)
+        - sec-modulenamespacecreate:P/F/T = 0/1/1 (0.00%)
+      - sec-immutable-prototype-exotic-objects:P/F/T = 2/0/2 (100.00%)
+        - sec-immutable-prototype-exotic-objects-setprototypeof-v:P/F/T = 1/0/1 (100.00%)
+        - sec-set-immutable-prototype:P/F/T = 1/0/1 (100.00%)
+    - sec-proxy-object-internal-methods-and-internal-slots:P/F/T = 12/2/14 (85.71%)
+      - sec-proxy-object-internal-methods-and-internal-slots-getprototypeof:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-setprototypeof-v:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-isextensible:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-preventextensions:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-getownproperty-p:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-defineownproperty-p-desc:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-hasproperty-p:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-get-p-receiver:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-set-p-v-receiver:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-delete-p:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-ownpropertykeys:P/F/T = 0/1/1 (0.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-call-thisargument-argumentslist:P/F/T = 1/0/1 (100.00%)
+      - sec-proxy-object-internal-methods-and-internal-slots-construct-argumentslist-newtarget:P/F/T = 1/0/1 (100.00%)
+      - sec-proxycreate:P/F/T = 0/1/1 (0.00%)
+  - sec-ecmascript-language-source-code:P/F/T = 1/5/6 (16.67%)
+    - sec-source-text:P/F/T = 1/5/6 (16.67%)
+      - sec-utf16encodecodepoint:P/F/T = 0/1/1 (0.00%)
+      - sec-codepointstostring:P/F/T = 0/1/1 (0.00%)
+      - sec-utf16decodesurrogatepair:P/F/T = 0/1/1 (0.00%)
+      - sec-codepointat:P/F/T = 0/1/1 (0.00%)
+      - sec-stringtocodepoints:P/F/T = 1/0/1 (100.00%)
+      - sec-parsetext:P/F/T = 0/1/1 (0.00%)
+    - sec-types-of-source-code:
+      - sec-directive-prologues-and-the-use-strict-directive:
+      - sec-strict-mode-code:
+      - sec-non-ecmascript-functions:
+  - sec-ecmascript-language-lexical-grammar:P/F/T = 7/9/16 (43.75%)
+    - sec-unicode-format-control-characters:
+    - sec-white-space:
+    - sec-line-terminators:
+    - sec-comments:
+    - sec-tokens:
+    - sec-names-and-keywords:P/F/T = 1/5/6 (16.67%)
+      - sec-identifier-names:P/F/T = 1/5/6 (16.67%)
+        - sec-identifier-names-static-semantics-early-errors:
+        - sec-identifiercodepoints:P/F/T = 1/1/2 (50.00%)
+        - sec-identifiercodepoint:P/F/T = 0/4/4 (0.00%)
+      - sec-keywords-and-reserved-words:
+    - sec-punctuators:
+    - sec-ecmascript-language-lexical-grammar-literals:P/F/T = 6/4/10 (60.00%)
+      - sec-null-literals:
+      - sec-boolean-literals:
+      - sec-literals-numeric-literals:P/F/T = 6/2/8 (75.00%)
+        - sec-numeric-literals-early-errors:
+        - sec-static-semantics-mv:
+        - sec-numericvalue:P/F/T = 6/2/8 (75.00%)
+      - sec-literals-string-literals:
+        - sec-string-literals-early-errors:
+        - sec-static-semantics-sv:
+        - sec-string-literals-static-semantics-mv:
+      - sec-literals-regular-expression-literals:P/F/T = 0/2/2 (0.00%)
+        - sec-static-semantics-bodytext:P/F/T = 0/1/1 (0.00%)
+        - sec-static-semantics-flagtext:P/F/T = 0/1/1 (0.00%)
+      - sec-template-literal-lexical-components:
+        - sec-static-semantics-tv:
+        - sec-static-semantics-trv:
+    - sec-automatic-semicolon-insertion:
+      - sec-rules-of-automatic-semicolon-insertion:
+      - sec-examples-of-automatic-semicolon-insertion:
+      - sec-interesting-cases-of-automatic-semicolon-insertion:
+        - sec-asi-interesting-cases-in-statement-lists:
+        - sec-asi-cases-with-no-lineterminator-here:
+          - sec-no-lineterminator-here-automatic-semicolon-insertion-list:
+  - sec-ecmascript-language-expressions:P/F/T = 185/5/190 (97.37%)
+    - sec-identifiers:P/F/T = 14/0/14 (100.00%)
+      - sec-identifiers-static-semantics-early-errors:
+      - sec-static-semantics-stringvalue:P/F/T = 11/0/11 (100.00%)
+      - sec-identifiers-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+    - sec-primary-expression:P/F/T = 56/2/58 (96.55%)
+      - sec-this-keyword:P/F/T = 1/0/1 (100.00%)
+        - sec-this-keyword-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-identifier-reference:
+      - sec-primary-expression-literals:P/F/T = 4/0/4 (100.00%)
+        - sec-literals-runtime-semantics-evaluation:P/F/T = 4/0/4 (100.00%)
+      - sec-array-initializer:P/F/T = 16/0/16 (100.00%)
+        - sec-runtime-semantics-arrayaccumulation:P/F/T = 11/0/11 (100.00%)
+        - sec-array-initializer-runtime-semantics-evaluation:P/F/T = 5/0/5 (100.00%)
+      - sec-object-initializer:P/F/T = 16/0/16 (100.00%)
+        - sec-object-initializer-static-semantics-early-errors:
+        - sec-static-semantics-iscomputedpropertykey:P/F/T = 2/0/2 (100.00%)
+        - sec-static-semantics-propertynamelist:P/F/T = 2/0/2 (100.00%)
+        - sec-object-initializer-runtime-semantics-evaluation:P/F/T = 7/0/7 (100.00%)
+        - sec-runtime-semantics-propertydefinitionevaluation:P/F/T = 5/0/5 (100.00%)
+      - sec-function-defining-expressions:
+      - sec-primary-expression-regular-expression-literals:P/F/T = 1/1/2 (50.00%)
+        - sec-primary-expression-regular-expression-literals-static-semantics-early-errors:
+        - sec-isvalidregularexpressionliteral:P/F/T = 0/1/1 (0.00%)
+        - sec-regular-expression-literals-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-template-literals:P/F/T = 16/1/17 (94.12%)
+        - sec-static-semantics-template-early-errors:
+        - sec-static-semantics-templatestrings:P/F/T = 6/0/6 (100.00%)
+        - sec-gettemplateobject:P/F/T = 0/1/1 (0.00%)
+        - sec-runtime-semantics-substitutionevaluation:P/F/T = 4/0/4 (100.00%)
+        - sec-template-literals-runtime-semantics-evaluation:P/F/T = 6/0/6 (100.00%)
+      - sec-grouping-operator:P/F/T = 2/0/2 (100.00%)
+        - sec-grouping-operator-static-semantics-early-errors:
+        - sec-grouping-operator-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-left-hand-side-expressions:P/F/T = 43/0/43 (100.00%)
+      - sec-static-semantics:
+        - sec-left-hand-side-expressions-static-semantics-early-errors:
+      - sec-property-accessors:P/F/T = 6/0/6 (100.00%)
+        - sec-property-accessors-runtime-semantics-evaluation:P/F/T = 6/0/6 (100.00%)
+      - sec-evaluate-property-access-with-expression-key:P/F/T = 1/0/1 (100.00%)
+      - sec-evaluate-property-access-with-identifier-key:P/F/T = 1/0/1 (100.00%)
+      - sec-new-operator:P/F/T = 3/0/3 (100.00%)
+        - sec-new-operator-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+          - sec-evaluatenew:P/F/T = 1/0/1 (100.00%)
+      - sec-function-calls:P/F/T = 3/0/3 (100.00%)
+        - sec-function-calls-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+        - sec-evaluatecall:P/F/T = 1/0/1 (100.00%)
+      - sec-super-keyword:P/F/T = 5/0/5 (100.00%)
+        - sec-super-keyword-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+        - sec-getsuperconstructor:P/F/T = 1/0/1 (100.00%)
+        - sec-makesuperpropertyreference:P/F/T = 1/0/1 (100.00%)
+      - sec-argument-lists:P/F/T = 8/0/8 (100.00%)
+        - sec-runtime-semantics-argumentlistevaluation:P/F/T = 8/0/8 (100.00%)
+      - sec-optional-chains:P/F/T = 11/0/11 (100.00%)
+        - sec-optional-chaining-evaluation:P/F/T = 3/0/3 (100.00%)
+        - sec-optional-chaining-chain-evaluation:P/F/T = 8/0/8 (100.00%)
+      - sec-import-calls:P/F/T = 1/0/1 (100.00%)
+        - sec-import-call-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-tagged-templates:P/F/T = 2/0/2 (100.00%)
+        - sec-tagged-templates-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+      - sec-meta-properties:P/F/T = 2/0/2 (100.00%)
+        - sec-meta-properties-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+          - sec-hostgetimportmetaproperties:
+          - sec-hostfinalizeimportmeta:
+    - sec-update-expressions:P/F/T = 4/0/4 (100.00%)
+      - sec-update-expressions-static-semantics-early-errors:
+      - sec-postfix-increment-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-postfix-increment-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-postfix-decrement-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-postfix-decrement-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-prefix-increment-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-prefix-increment-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-prefix-decrement-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-prefix-decrement-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-unary-operators:P/F/T = 6/1/7 (85.71%)
+      - sec-delete-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-delete-operator-static-semantics-early-errors:
+        - sec-delete-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-void-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-void-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-typeof-operator:P/F/T = 0/1/1 (0.00%)
+        - sec-typeof-operator-runtime-semantics-evaluation:P/F/T = 0/1/1 (0.00%)
+      - sec-unary-plus-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-unary-plus-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-unary-minus-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-unary-minus-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-bitwise-not-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-bitwise-not-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-logical-not-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-logical-not-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-exp-operator:P/F/T = 1/0/1 (100.00%)
+      - sec-exp-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-multiplicative-operators:P/F/T = 1/0/1 (100.00%)
+      - sec-multiplicative-operators-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-additive-operators:P/F/T = 2/0/2 (100.00%)
+      - sec-addition-operator-plus:P/F/T = 1/0/1 (100.00%)
+        - sec-addition-operator-plus-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-subtraction-operator-minus:P/F/T = 1/0/1 (100.00%)
+        - sec-subtraction-operator-minus-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-bitwise-shift-operators:P/F/T = 3/0/3 (100.00%)
+      - sec-left-shift-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-left-shift-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-signed-right-shift-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-signed-right-shift-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-unsigned-right-shift-operator:P/F/T = 1/0/1 (100.00%)
+        - sec-unsigned-right-shift-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-relational-operators:P/F/T = 8/0/8 (100.00%)
+      - sec-relational-operators-runtime-semantics-evaluation:P/F/T = 7/0/7 (100.00%)
+      - sec-instanceofoperator:P/F/T = 1/0/1 (100.00%)
+    - sec-equality-operators:P/F/T = 4/0/4 (100.00%)
+      - sec-equality-operators-runtime-semantics-evaluation:P/F/T = 4/0/4 (100.00%)
+    - sec-binary-bitwise-operators:P/F/T = 3/0/3 (100.00%)
+      - sec-binary-bitwise-operators-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+    - sec-binary-logical-operators:P/F/T = 3/0/3 (100.00%)
+      - sec-binary-logical-operators-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+    - sec-conditional-operator:P/F/T = 1/0/1 (100.00%)
+      - sec-conditional-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-assignment-operators:P/F/T = 35/2/37 (94.59%)
+      - sec-assignment-operators-static-semantics-early-errors:
+      - sec-assignment-operators-runtime-semantics-evaluation:P/F/T = 4/1/5 (80.00%)
+      - sec-applystringornumericbinaryoperator:P/F/T = 0/1/1 (0.00%)
+      - sec-evaluatestringornumericbinaryexpression:P/F/T = 1/0/1 (100.00%)
+      - sec-destructuring-assignment:P/F/T = 30/0/30 (100.00%)
+        - sec-destructuring-assignment-static-semantics-early-errors:
+        - sec-runtime-semantics-destructuringassignmentevaluation:P/F/T = 14/0/14 (100.00%)
+        - sec-runtime-semantics-propertydestructuringassignmentevaluation:P/F/T = 4/0/4 (100.00%)
+        - sec-runtime-semantics-restdestructuringassignmentevaluation:P/F/T = 1/0/1 (100.00%)
+        - sec-runtime-semantics-iteratordestructuringassignmentevaluation:P/F/T = 9/0/9 (100.00%)
+        - sec-runtime-semantics-keyeddestructuringassignmentevaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-comma-operator:P/F/T = 1/0/1 (100.00%)
+      - sec-comma-operator-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+  - sec-ecmascript-language-statements-and-declarations:P/F/T = 131/3/134 (97.76%)
+    - sec-statement-semantics:P/F/T = 6/0/6 (100.00%)
+      - sec-statement-semantics-runtime-semantics-evaluation:P/F/T = 6/0/6 (100.00%)
+    - sec-block:P/F/T = 4/0/4 (100.00%)
+      - sec-block-static-semantics-early-errors:
+      - sec-block-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+      - sec-blockdeclarationinstantiation:P/F/T = 1/0/1 (100.00%)
+    - sec-declarations-and-the-variable-statement:P/F/T = 18/0/18 (100.00%)
+      - sec-let-and-const-declarations:P/F/T = 5/0/5 (100.00%)
+        - sec-let-and-const-declarations-static-semantics-early-errors:
+        - sec-let-and-const-declarations-runtime-semantics-evaluation:P/F/T = 5/0/5 (100.00%)
+      - sec-variable-statement:P/F/T = 5/0/5 (100.00%)
+        - sec-variable-statement-runtime-semantics-evaluation:P/F/T = 5/0/5 (100.00%)
+      - sec-destructuring-binding-patterns:P/F/T = 8/0/8 (100.00%)
+        - sec-destructuring-binding-patterns-runtime-semantics-propertybindinginitialization:P/F/T = 3/0/3 (100.00%)
+        - sec-destructuring-binding-patterns-runtime-semantics-restbindinginitialization:P/F/T = 1/0/1 (100.00%)
+        - sec-runtime-semantics-keyedbindinginitialization:P/F/T = 4/0/4 (100.00%)
+    - sec-empty-statement:P/F/T = 1/0/1 (100.00%)
+      - sec-empty-statement-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-expression-statement:P/F/T = 1/0/1 (100.00%)
+      - sec-expression-statement-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-if-statement:P/F/T = 2/0/2 (100.00%)
+      - sec-if-statement-static-semantics-early-errors:
+      - sec-if-statement-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-iteration-statements:P/F/T = 56/2/58 (96.55%)
+      - sec-iteration-statements-semantics:P/F/T = 5/0/5 (100.00%)
+        - sec-loopcontinues:P/F/T = 1/0/1 (100.00%)
+        - sec-runtime-semantics-loopevaluation:P/F/T = 4/0/4 (100.00%)
+      - sec-do-while-statement:P/F/T = 1/0/1 (100.00%)
+        - sec-do-while-statement-static-semantics-early-errors:
+        - sec-runtime-semantics-dowhileloopevaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-while-statement:P/F/T = 1/0/1 (100.00%)
+        - sec-while-statement-static-semantics-early-errors:
+        - sec-runtime-semantics-whileloopevaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-for-statement:P/F/T = 18/0/18 (100.00%)
+        - sec-for-statement-static-semantics-early-errors:
+        - sec-runtime-semantics-forloopevaluation:P/F/T = 16/0/16 (100.00%)
+        - sec-forbodyevaluation:P/F/T = 1/0/1 (100.00%)
+        - sec-createperiterationenvironment:P/F/T = 1/0/1 (100.00%)
+      - sec-for-in-and-for-of-statements:P/F/T = 31/2/33 (93.94%)
+        - sec-for-in-and-for-of-statements-static-semantics-early-errors:
+        - sec-static-semantics-isdestructuring:P/F/T = 14/0/14 (100.00%)
+        - sec-runtime-semantics-fordeclarationbindinginitialization:P/F/T = 1/0/1 (100.00%)
+        - sec-runtime-semantics-fordeclarationbindinginstantiation:P/F/T = 1/0/1 (100.00%)
+        - sec-runtime-semantics-forinofloopevaluation:P/F/T = 9/0/9 (100.00%)
+        - sec-runtime-semantics-forinofheadevaluation:P/F/T = 1/0/1 (100.00%)
+        - sec-runtime-semantics-forin-div-ofbodyevaluation-lhs-stmt-iterator-lhskind-labelset:P/F/T = 1/0/1 (100.00%)
+        - sec-for-in-and-for-of-statements-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+        - sec-enumerate-object-properties:P/F/T = 0/1/1 (0.00%)
+        - sec-for-in-iterator-objects:P/F/T = 1/1/2 (50.00%)
+          - sec-createforiniterator:P/F/T = 1/0/1 (100.00%)
+          - sec-%foriniteratorprototype%-object:P/F/T = 0/1/1 (0.00%)
+            - sec-%foriniteratorprototype%.next:P/F/T = 0/1/1 (0.00%)
+          - sec-properties-of-for-in-iterator-instances:
+    - sec-continue-statement:P/F/T = 2/0/2 (100.00%)
+      - sec-continue-statement-static-semantics-early-errors:
+      - sec-continue-statement-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-break-statement:P/F/T = 2/0/2 (100.00%)
+      - sec-break-statement-static-semantics-early-errors:
+      - sec-break-statement-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-return-statement:P/F/T = 2/0/2 (100.00%)
+      - sec-return-statement-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-with-statement:P/F/T = 1/0/1 (100.00%)
+      - sec-with-statement-static-semantics-early-errors:
+      - sec-with-statement-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-switch-statement:P/F/T = 12/0/12 (100.00%)
+      - sec-switch-statement-static-semantics-early-errors:
+      - sec-runtime-semantics-caseblockevaluation:P/F/T = 6/0/6 (100.00%)
+      - sec-runtime-semantics-caseclauseisselected:P/F/T = 1/0/1 (100.00%)
+      - sec-switch-statement-runtime-semantics-evaluation:P/F/T = 5/0/5 (100.00%)
+    - sec-labelled-statements:P/F/T = 18/0/18 (100.00%)
+      - sec-labelled-statements-static-semantics-early-errors:
+      - sec-islabelledfunction:P/F/T = 1/0/1 (100.00%)
+      - sec-labelled-statements-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-labelledevaluation:P/F/T = 16/0/16 (100.00%)
+    - sec-throw-statement:P/F/T = 1/0/1 (100.00%)
+      - sec-throw-statement-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+    - sec-try-statement:P/F/T = 5/0/5 (100.00%)
+      - sec-try-statement-static-semantics-early-errors:
+      - sec-runtime-semantics-catchclauseevaluation:P/F/T = 2/0/2 (100.00%)
+      - sec-try-statement-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+    - sec-debugger-statement:P/F/T = 0/1/1 (0.00%)
+      - sec-debugger-statement-runtime-semantics-evaluation:P/F/T = 0/1/1 (0.00%)
+  - sec-ecmascript-language-functions-and-classes:P/F/T = 341/10/351 (97.15%)
+    - sec-parameter-lists:P/F/T = 54/0/54 (100.00%)
+      - sec-parameter-lists-static-semantics-early-errors:
+      - sec-static-semantics-containsexpression:P/F/T = 27/0/27 (100.00%)
+      - sec-static-semantics-issimpleparameterlist:P/F/T = 13/0/13 (100.00%)
+      - sec-static-semantics-hasinitializer:P/F/T = 5/0/5 (100.00%)
+      - sec-static-semantics-expectedargumentcount:P/F/T = 9/0/9 (100.00%)
+    - sec-function-definitions:P/F/T = 10/1/11 (90.91%)
+      - sec-function-definitions-static-semantics-early-errors:
+      - sec-static-semantics-functionbodycontainsusestrict:P/F/T = 0/1/1 (0.00%)
+      - sec-runtime-semantics-evaluatefunctionbody:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-instantiateordinaryfunctionobject:P/F/T = 2/0/2 (100.00%)
+      - sec-runtime-semantics-instantiateordinaryfunctionexpression:P/F/T = 2/0/2 (100.00%)
+      - sec-function-definitions-runtime-semantics-evaluation:P/F/T = 5/0/5 (100.00%)
+    - sec-arrow-function-definitions:P/F/T = 5/1/6 (83.33%)
+      - sec-arrow-function-definitions-static-semantics-early-errors:
+      - sec-static-semantics-concisebodycontainsusestrict:P/F/T = 1/1/2 (50.00%)
+      - sec-runtime-semantics-evaluateconcisebody:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-instantiatearrowfunctionexpression:P/F/T = 1/0/1 (100.00%)
+      - sec-arrow-function-definitions-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-method-definitions:P/F/T = 19/0/19 (100.00%)
+      - sec-method-definitions-static-semantics-early-errors:
+      - sec-static-semantics-hasdirectsuper:P/F/T = 6/0/6 (100.00%)
+      - sec-static-semantics-specialmethod:P/F/T = 6/0/6 (100.00%)
+      - sec-runtime-semantics-definemethod:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-methoddefinitionevaluation:P/F/T = 6/0/6 (100.00%)
+    - sec-generator-function-definitions:P/F/T = 10/0/10 (100.00%)
+      - sec-generator-function-definitions-static-semantics-early-errors:
+      - sec-runtime-semantics-evaluategeneratorbody:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-instantiategeneratorfunctionobject:P/F/T = 2/0/2 (100.00%)
+      - sec-runtime-semantics-instantiategeneratorfunctionexpression:P/F/T = 2/0/2 (100.00%)
+      - sec-generator-function-definitions-runtime-semantics-evaluation:P/F/T = 5/0/5 (100.00%)
+    - sec-async-generator-function-definitions:P/F/T = 7/0/7 (100.00%)
+      - sec-async-generator-function-definitions-static-semantics-early-errors:
+      - sec-runtime-semantics-evaluateasyncgeneratorbody:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-instantiateasyncgeneratorfunctionobject:P/F/T = 2/0/2 (100.00%)
+      - sec-runtime-semantics-instantiateasyncgeneratorfunctionexpression:P/F/T = 2/0/2 (100.00%)
+      - sec-asyncgenerator-definitions-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-class-definitions:P/F/T = 78/5/83 (93.98%)
+      - sec-class-definitions-static-semantics-early-errors:
+      - sec-static-semantics-classelementkind:P/F/T = 6/0/6 (100.00%)
+      - sec-static-semantics-constructormethod:P/F/T = 2/0/2 (100.00%)
+      - sec-static-semantics-isstatic:P/F/T = 6/0/6 (100.00%)
+      - sec-static-semantics-nonconstructorelements:P/F/T = 2/0/2 (100.00%)
+      - sec-static-semantics-prototypepropertynamelist:P/F/T = 2/0/2 (100.00%)
+      - sec-static-semantics-allprivateidentifiersvalid:P/F/T = 7/0/7 (100.00%)
+      - sec-static-semantics-privateboundidentifiers:P/F/T = 13/0/13 (100.00%)
+      - sec-static-semantics-containsarguments:P/F/T = 24/0/24 (100.00%)
+      - sec-runtime-semantics-classfielddefinitionevaluation:P/F/T = 2/0/2 (100.00%)
+      - sec-runtime-semantics-classstaticblockdefinitionevaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-evaluateclassstaticblockbody:P/F/T = 1/0/1 (100.00%)
+      - sec-static-semantics-classelementevaluation:P/F/T = 6/0/6 (100.00%)
+      - sec-runtime-semantics-classdefinitionevaluation:P/F/T = 0/4/4 (0.00%)
+      - sec-runtime-semantics-bindingclassdeclarationevaluation:P/F/T = 2/0/2 (100.00%)
+      - sec-class-definitions-runtime-semantics-evaluation:P/F/T = 4/1/5 (80.00%)
+    - sec-async-function-definitions:P/F/T = 8/0/8 (100.00%)
+      - sec-async-function-definitions-static-semantics-early-errors:
+      - sec-runtime-semantics-instantiateasyncfunctionobject:P/F/T = 2/0/2 (100.00%)
+      - sec-runtime-semantics-instantiateasyncfunctionexpression:P/F/T = 2/0/2 (100.00%)
+      - sec-runtime-semantics-evaluateasyncfunctionbody:P/F/T = 1/0/1 (100.00%)
+      - sec-async-function-definitions-runtime-semantics-evaluation:P/F/T = 3/0/3 (100.00%)
+    - sec-async-arrow-function-definitions:P/F/T = 6/1/7 (85.71%)
+      - sec-async-arrow-function-definitions-static-semantics-early-errors:
+      - sec-static-semantics-asyncconcisebodycontainsusestrict:P/F/T = 1/1/2 (50.00%)
+      - sec-runtime-semantics-evaluateasyncconcisebody:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-instantiateasyncarrowfunctionexpression:P/F/T = 2/0/2 (100.00%)
+      - sec-async-arrow-function-definitions-runtime-semantics-evaluation:P/F/T = 2/0/2 (100.00%)
+    - sec-tail-position-calls:P/F/T = 144/2/146 (98.63%)
+      - sec-isintailposition:P/F/T = 0/1/1 (0.00%)
+      - sec-static-semantics-hascallintailposition:P/F/T = 144/0/144 (100.00%)
+        - sec-statement-rules:P/F/T = 57/0/57 (100.00%)
+        - sec-expression-rules:P/F/T = 87/0/87 (100.00%)
+      - sec-preparefortailcall:P/F/T = 0/1/1 (0.00%)
+  - sec-ecmascript-language-scripts-and-modules:P/F/T = 104/9/113 (92.04%)
+    - sec-scripts:P/F/T = 4/2/6 (66.67%)
+      - sec-scripts-static-semantics-early-errors:
+      - sec-static-semantics-isstrict:P/F/T = 2/0/2 (100.00%)
+      - sec-script-semantics-runtime-semantics-evaluation:P/F/T = 1/0/1 (100.00%)
+      - sec-script-records:
+      - sec-parse-script:P/F/T = 1/0/1 (100.00%)
+      - sec-runtime-semantics-scriptevaluation:P/F/T = 0/1/1 (0.00%)
+      - sec-globaldeclarationinstantiation:P/F/T = 0/1/1 (0.00%)
+    - sec-modules:P/F/T = 100/7/107 (93.46%)
+      - sec-module-semantics:P/F/T = 26/7/33 (78.79%)
+        - sec-module-semantics-static-semantics-early-errors:
+        - sec-importedlocalnames:P/F/T = 1/0/1 (100.00%)
+        - sec-static-semantics-modulerequests:P/F/T = 12/1/13 (92.31%)
+        - sec-abstract-module-records:
+        - sec-cyclic-module-records:P/F/T = 5/3/8 (62.50%)
+          - sec-moduledeclarationlinking:P/F/T = 1/1/2 (50.00%)
+            - sec-InnerModuleLinking:P/F/T = 0/1/1 (0.00%)
+          - sec-moduleevaluation:P/F/T = 4/2/6 (66.67%)
+            - sec-innermoduleevaluation:P/F/T = 0/1/1 (0.00%)
+            - sec-execute-async-module:P/F/T = 1/0/1 (100.00%)
+            - sec-gather-available-ancestors:P/F/T = 1/0/1 (100.00%)
+            - sec-async-module-execution-fulfilled:P/F/T = 0/1/1 (0.00%)
+            - sec-async-module-execution-rejected:P/F/T = 1/0/1 (100.00%)
+          - sec-example-cyclic-module-record-graphs:
+        - sec-source-text-module-records:P/F/T = 2/3/5 (40.00%)
+          - sec-parsemodule:P/F/T = 0/1/1 (0.00%)
+          - sec-getexportednames:P/F/T = 1/0/1 (100.00%)
+          - sec-resolveexport:P/F/T = 1/0/1 (100.00%)
+          - sec-source-text-module-record-initialize-environment:P/F/T = 0/1/1 (0.00%)
+          - sec-source-text-module-record-execute-module:P/F/T = 0/1/1 (0.00%)
+        - sec-hostresolveimportedmodule:
+        - sec-hostimportmoduledynamically:
+        - sec-finishdynamicimport:P/F/T = 1/0/1 (100.00%)
+        - sec-getmodulenamespace:P/F/T = 1/0/1 (100.00%)
+        - sec-module-semantics-runtime-semantics-evaluation:P/F/T = 4/0/4 (100.00%)
+      - sec-imports:P/F/T = 14/0/14 (100.00%)
+        - sec-imports-static-semantics-early-errors:
+        - sec-static-semantics-importentries:P/F/T = 6/0/6 (100.00%)
+        - sec-static-semantics-importentriesformodule:P/F/T = 8/0/8 (100.00%)
+      - sec-exports:P/F/T = 60/0/60 (100.00%)
+        - sec-exports-static-semantics-early-errors:
+        - sec-static-semantics-exportedbindings:P/F/T = 14/0/14 (100.00%)
+        - sec-static-semantics-exportednames:P/F/T = 17/0/17 (100.00%)
+        - sec-static-semantics-exportentries:P/F/T = 11/0/11 (100.00%)
+        - sec-static-semantics-exportentriesformodule:P/F/T = 6/0/6 (100.00%)
+        - sec-static-semantics-referencedbindings:P/F/T = 5/0/5 (100.00%)
+        - sec-exports-runtime-semantics-evaluation:P/F/T = 7/0/7 (100.00%)
+  - sec-error-handling-and-language-extensions:
+    - sec-forbidden-extensions:
+  - sec-ecmascript-standard-built-in-objects:
+  - sec-global-object:P/F/T = 4/9/13 (30.77%)
+    - sec-value-properties-of-the-global-object:
+      - sec-globalthis:
+      - sec-value-properties-of-the-global-object-infinity:
+      - sec-value-properties-of-the-global-object-nan:
+      - sec-undefined:
+    - sec-function-properties-of-the-global-object:P/F/T = 4/9/13 (30.77%)
+      - sec-eval-x:P/F/T = 1/2/3 (33.33%)
+        - sec-performeval:P/F/T = 0/1/1 (0.00%)
+        - sec-hostensurecancompilestrings:
+        - sec-evaldeclarationinstantiation:P/F/T = 0/1/1 (0.00%)
+      - sec-isfinite-number:P/F/T = 1/0/1 (100.00%)
+      - sec-isnan-number:P/F/T = 1/0/1 (100.00%)
+      - sec-parsefloat-string:P/F/T = 0/1/1 (0.00%)
+      - sec-parseint-string-radix:P/F/T = 0/1/1 (0.00%)
+      - sec-uri-handling-functions:P/F/T = 1/5/6 (16.67%)
+        - sec-uri-syntax-and-semantics:P/F/T = 0/2/2 (0.00%)
+          - sec-encode:P/F/T = 0/1/1 (0.00%)
+          - sec-decode:P/F/T = 0/1/1 (0.00%)
+        - sec-decodeuri-encodeduri:P/F/T = 0/1/1 (0.00%)
+        - sec-decodeuricomponent-encodeduricomponent:P/F/T = 1/0/1 (100.00%)
+        - sec-encodeuri-uri:P/F/T = 0/1/1 (0.00%)
+        - sec-encodeuricomponent-uricomponent:P/F/T = 0/1/1 (0.00%)
+    - sec-constructor-properties-of-the-global-object:
+      - sec-constructor-properties-of-the-global-object-aggregate-error:
+      - sec-constructor-properties-of-the-global-object-array:
+      - sec-constructor-properties-of-the-global-object-arraybuffer:
+      - sec-constructor-properties-of-the-global-object-bigint:
+      - sec-constructor-properties-of-the-global-object-bigint64array:
+      - sec-constructor-properties-of-the-global-object-biguint64array:
+      - sec-constructor-properties-of-the-global-object-boolean:
+      - sec-constructor-properties-of-the-global-object-dataview:
+      - sec-constructor-properties-of-the-global-object-date:
+      - sec-constructor-properties-of-the-global-object-error:
+      - sec-constructor-properties-of-the-global-object-evalerror:
+      - sec-constructor-properties-of-the-global-object-finnalization-registry:
+      - sec-float32array:
+      - sec-float64array:
+      - sec-constructor-properties-of-the-global-object-function:
+      - sec-int8array:
+      - sec-int16array:
+      - sec-int32array:
+      - sec-map:
+      - sec-constructor-properties-of-the-global-object-number:
+      - sec-constructor-properties-of-the-global-object-object:
+      - sec-constructor-properties-of-the-global-object-promise:
+      - sec-constructor-properties-of-the-global-object-proxy:
+      - sec-constructor-properties-of-the-global-object-rangeerror:
+      - sec-constructor-properties-of-the-global-object-referenceerror:
+      - sec-constructor-properties-of-the-global-object-regexp:
+      - sec-set:
+      - sec-constructor-properties-of-the-global-object-sharedarraybuffer:
+      - sec-constructor-properties-of-the-global-object-string:
+      - sec-constructor-properties-of-the-global-object-symbol:
+      - sec-constructor-properties-of-the-global-object-syntaxerror:
+      - sec-constructor-properties-of-the-global-object-typeerror:
+      - sec-uint8array:
+      - sec-uint8clampedarray:
+      - sec-uint16array:
+      - sec-uint32array:
+      - sec-constructor-properties-of-the-global-object-urierror:
+      - sec-constructor-properties-of-the-global-object-weakmap:
+      - sec-constructor-properties-of-the-global-object-weakref:
+      - sec-constructor-properties-of-the-global-object-weakset:
+    - sec-other-properties-of-the-global-object:
+      - sec-atomics:
+      - sec-json:
+      - sec-math:
+      - sec-reflect:
+  - sec-fundamental-objects:P/F/T = 54/8/62 (87.10%)
+    - sec-object-objects:P/F/T = 35/2/37 (94.59%)
+      - sec-object-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-object-value:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-object-constructor:P/F/T = 22/2/24 (91.67%)
+        - sec-object.assign:P/F/T = 0/1/1 (0.00%)
+        - sec-object.create:P/F/T = 1/0/1 (100.00%)
+        - sec-object.defineproperties:P/F/T = 1/1/2 (50.00%)
+          - sec-objectdefineproperties:P/F/T = 0/1/1 (0.00%)
+        - sec-object.defineproperty:P/F/T = 1/0/1 (100.00%)
+        - sec-object.entries:P/F/T = 1/0/1 (100.00%)
+        - sec-object.freeze:P/F/T = 1/0/1 (100.00%)
+        - sec-object.fromentries:P/F/T = 1/0/1 (100.00%)
+        - sec-object.getownpropertydescriptor:P/F/T = 1/0/1 (100.00%)
+        - sec-object.getownpropertydescriptors:P/F/T = 1/0/1 (100.00%)
+        - sec-object.getownpropertynames:P/F/T = 1/0/1 (100.00%)
+        - sec-object.getownpropertysymbols:P/F/T = 2/0/2 (100.00%)
+          - sec-getownpropertykeys:P/F/T = 1/0/1 (100.00%)
+        - sec-object.getprototypeof:P/F/T = 1/0/1 (100.00%)
+        - sec-object.hasown:P/F/T = 1/0/1 (100.00%)
+        - sec-object.is:P/F/T = 1/0/1 (100.00%)
+        - sec-object.isextensible:P/F/T = 1/0/1 (100.00%)
+        - sec-object.isfrozen:P/F/T = 1/0/1 (100.00%)
+        - sec-object.issealed:P/F/T = 1/0/1 (100.00%)
+        - sec-object.keys:P/F/T = 1/0/1 (100.00%)
+        - sec-object.preventextensions:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype:
+        - sec-object.seal:P/F/T = 1/0/1 (100.00%)
+        - sec-object.setprototypeof:P/F/T = 1/0/1 (100.00%)
+        - sec-object.values:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-object-prototype-object:P/F/T = 12/0/12 (100.00%)
+        - sec-object.prototype.constructor:
+        - sec-object.prototype.hasownproperty:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype.isprototypeof:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype.propertyisenumerable:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype.tolocalestring:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype.tostring:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype.valueof:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype.__proto__:P/F/T = 2/0/2 (100.00%)
+          - sec-get-object.prototype.__proto__:P/F/T = 1/0/1 (100.00%)
+          - sec-set-object.prototype.__proto__:P/F/T = 1/0/1 (100.00%)
+        - sec-object.prototype-legacy-accessor-methods:P/F/T = 4/0/4 (100.00%)
+          - sec-object.prototype.__defineGetter__:P/F/T = 1/0/1 (100.00%)
+          - sec-object.prototype.__defineSetter__:P/F/T = 1/0/1 (100.00%)
+          - sec-object.prototype.__lookupGetter__:P/F/T = 1/0/1 (100.00%)
+          - sec-object.prototype.__lookupSetter__:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-object-instances:
+    - sec-function-objects:P/F/T = 5/2/7 (71.43%)
+      - sec-function-constructor:P/F/T = 1/1/2 (50.00%)
+        - sec-function-p1-p2-pn-body:P/F/T = 1/1/2 (50.00%)
+          - sec-createdynamicfunction:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-function-constructor:
+        - sec-function.length:
+        - sec-function.prototype:
+      - sec-properties-of-the-function-prototype-object:P/F/T = 4/1/5 (80.00%)
+        - sec-function.prototype.apply:P/F/T = 1/0/1 (100.00%)
+        - sec-function.prototype.bind:P/F/T = 1/0/1 (100.00%)
+        - sec-function.prototype.call:P/F/T = 1/0/1 (100.00%)
+        - sec-function.prototype.constructor:
+        - sec-function.prototype.tostring:P/F/T = 0/1/1 (0.00%)
+        - sec-function.prototype-@@hasinstance:P/F/T = 1/0/1 (100.00%)
+      - sec-function-instances:
+        - sec-function-instances-length:
+        - sec-function-instances-name:
+        - sec-function-instances-prototype:
+      - sec-hosthassourcetextavailable:
+    - sec-boolean-objects:P/F/T = 4/0/4 (100.00%)
+      - sec-boolean-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-boolean-constructor-boolean-value:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-boolean-constructor:
+        - sec-boolean.prototype:
+      - sec-properties-of-the-boolean-prototype-object:P/F/T = 3/0/3 (100.00%)
+        - sec-boolean.prototype.constructor:
+        - sec-boolean.prototype.tostring:P/F/T = 1/0/1 (100.00%)
+        - sec-boolean.prototype.valueof:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-boolean-instances:
+    - sec-symbol-objects:P/F/T = 6/3/9 (66.67%)
+      - sec-symbol-constructor:P/F/T = 0/1/1 (0.00%)
+        - sec-symbol-description:P/F/T = 0/1/1 (0.00%)
+      - sec-properties-of-the-symbol-constructor:P/F/T = 0/2/2 (0.00%)
+        - sec-symbol.asynciterator:
+        - sec-symbol.for:P/F/T = 0/1/1 (0.00%)
+        - sec-symbol.hasinstance:
+        - sec-symbol.isconcatspreadable:
+        - sec-symbol.iterator:
+        - sec-symbol.keyfor:P/F/T = 0/1/1 (0.00%)
+        - sec-symbol.match:
+        - sec-symbol.matchall:
+        - sec-symbol.prototype:
+        - sec-symbol.replace:
+        - sec-symbol.search:
+        - sec-symbol.species:
+        - sec-symbol.split:
+        - sec-symbol.toprimitive:
+        - sec-symbol.tostringtag:
+        - sec-symbol.unscopables:
+      - sec-properties-of-the-symbol-prototype-object:P/F/T = 6/0/6 (100.00%)
+        - sec-symbol.prototype.constructor:
+        - sec-symbol.prototype.description:P/F/T = 1/0/1 (100.00%)
+        - sec-symbol.prototype.tostring:P/F/T = 2/0/2 (100.00%)
+          - sec-symboldescriptivestring:P/F/T = 1/0/1 (100.00%)
+        - sec-symbol.prototype.valueof:P/F/T = 1/0/1 (100.00%)
+        - sec-symbol.prototype-@@toprimitive:P/F/T = 1/0/1 (100.00%)
+        - sec-symbol.prototype-@@tostringtag:
+      - sec-properties-of-symbol-instances:
+    - sec-error-objects:P/F/T = 4/1/5 (80.00%)
+      - sec-error-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-error-message:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-error-constructor:
+        - sec-error.prototype:
+      - sec-properties-of-the-error-prototype-object:P/F/T = 1/0/1 (100.00%)
+        - sec-error.prototype.constructor:
+        - sec-error.prototype.message:
+        - sec-error.prototype.name:
+        - sec-error.prototype.tostring:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-error-instances:
+      - sec-native-error-types-used-in-this-standard:
+        - sec-native-error-types-used-in-this-standard-evalerror:
+        - sec-native-error-types-used-in-this-standard-rangeerror:
+        - sec-native-error-types-used-in-this-standard-referenceerror:
+        - sec-native-error-types-used-in-this-standard-syntaxerror:
+        - sec-native-error-types-used-in-this-standard-typeerror:
+        - sec-native-error-types-used-in-this-standard-urierror:
+      - sec-nativeerror-object-structure:P/F/T = 0/1/1 (0.00%)
+        - sec-nativeerror-constructors:P/F/T = 0/1/1 (0.00%)
+          - sec-nativeerror:P/F/T = 0/1/1 (0.00%)
+        - sec-properties-of-the-nativeerror-constructors:
+          - sec-nativeerror.prototype:
+        - sec-properties-of-the-nativeerror-prototype-objects:
+          - sec-nativeerror.prototype.constructor:
+          - sec-nativeerror.prototype.message:
+          - sec-nativeerror.prototype.name:
+        - sec-properties-of-nativeerror-instances:
+      - sec-aggregate-error-objects:P/F/T = 1/0/1 (100.00%)
+        - sec-aggregate-error-constructor:P/F/T = 1/0/1 (100.00%)
+          - sec-aggregate-error:P/F/T = 1/0/1 (100.00%)
+        - sec-properties-of-the-aggregate-error-constructors:
+          - sec-aggregate-error.prototype:
+        - sec-properties-of-the-aggregate-error-prototype-objects:
+          - sec-aggregate-error.prototype.constructor:
+          - sec-aggregate-error.prototype.message:
+          - sec-aggregate-error.prototype.name:
+        - sec-properties-of-aggregate-error-instances:
+      - sec-abstract-operations-for-error-objects:P/F/T = 1/0/1 (100.00%)
+        - sec-installerrorcause:P/F/T = 1/0/1 (100.00%)
+  - sec-numbers-and-dates:P/F/T = 64/41/105 (60.95%)
+    - sec-number-objects:P/F/T = 7/4/11 (63.64%)
+      - sec-number-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-number-constructor-number-value:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-number-constructor:P/F/T = 4/0/4 (100.00%)
+        - sec-number.epsilon:
+        - sec-number.isfinite:P/F/T = 1/0/1 (100.00%)
+        - sec-number.isinteger:P/F/T = 1/0/1 (100.00%)
+        - sec-number.isnan:P/F/T = 1/0/1 (100.00%)
+        - sec-number.issafeinteger:P/F/T = 1/0/1 (100.00%)
+        - sec-number.max_safe_integer:
+        - sec-number.max_value:
+        - sec-number.min_safe_integer:
+        - sec-number.min_value:
+        - sec-number.nan:
+        - sec-number.negative_infinity:
+        - sec-number.parsefloat:
+        - sec-number.parseint:
+        - sec-number.positive_infinity:
+        - sec-number.prototype:
+      - sec-properties-of-the-number-prototype-object:P/F/T = 2/4/6 (33.33%)
+        - sec-number.prototype.constructor:
+        - sec-number.prototype.toexponential:P/F/T = 0/1/1 (0.00%)
+        - sec-number.prototype.tofixed:P/F/T = 0/1/1 (0.00%)
+        - sec-number.prototype.tolocalestring:
+        - sec-number.prototype.toprecision:P/F/T = 0/1/1 (0.00%)
+        - sec-number.prototype.tostring:P/F/T = 0/1/1 (0.00%)
+        - sec-number.prototype.valueof:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-number-instances:
+    - sec-bigint-objects:P/F/T = 6/1/7 (85.71%)
+      - sec-bigint-constructor:P/F/T = 2/0/2 (100.00%)
+        - sec-bigint-constructor-number-value:P/F/T = 2/0/2 (100.00%)
+          - sec-numbertobigint:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-bigint-constructor:P/F/T = 2/0/2 (100.00%)
+        - sec-bigint.asintn:P/F/T = 1/0/1 (100.00%)
+        - sec-bigint.asuintn:P/F/T = 1/0/1 (100.00%)
+        - sec-bigint.prototype:
+      - sec-properties-of-the-bigint-prototype-object:P/F/T = 2/1/3 (66.67%)
+        - sec-bigint.prototype.constructor:
+        - sec-bigint.prototype.tolocalestring:
+        - sec-bigint.prototype.tostring:P/F/T = 0/1/1 (0.00%)
+        - sec-bigint.prototype.valueof:P/F/T = 1/0/1 (100.00%)
+        - sec-bigint.prototype-@@tostringtag:
+    - sec-math-object:P/F/T = 28/6/34 (82.35%)
+      - sec-value-properties-of-the-math-object:
+        - sec-math.e:
+        - sec-math.ln10:
+        - sec-math.ln2:
+        - sec-math.log10e:
+        - sec-math.log2e:
+        - sec-math.pi:
+        - sec-math.sqrt1_2:
+        - sec-math.sqrt2:
+        - sec-math-@@tostringtag:
+      - sec-function-properties-of-the-math-object:P/F/T = 28/6/34 (82.35%)
+        - sec-math.abs:P/F/T = 1/0/1 (100.00%)
+        - sec-math.acos:P/F/T = 1/0/1 (100.00%)
+        - sec-math.acosh:P/F/T = 1/0/1 (100.00%)
+        - sec-math.asin:P/F/T = 1/0/1 (100.00%)
+        - sec-math.asinh:P/F/T = 1/0/1 (100.00%)
+        - sec-math.atan:P/F/T = 1/0/1 (100.00%)
+        - sec-math.atanh:P/F/T = 1/0/1 (100.00%)
+        - sec-math.atan2:P/F/T = 1/0/1 (100.00%)
+        - sec-math.cbrt:P/F/T = 1/0/1 (100.00%)
+        - sec-math.ceil:P/F/T = 0/1/1 (0.00%)
+        - sec-math.clz32:P/F/T = 0/1/1 (0.00%)
+        - sec-math.cos:P/F/T = 1/0/1 (100.00%)
+        - sec-math.cosh:P/F/T = 1/0/1 (100.00%)
+        - sec-math.exp:P/F/T = 1/0/1 (100.00%)
+        - sec-math.expm1:P/F/T = 1/0/1 (100.00%)
+        - sec-math.floor:P/F/T = 0/1/1 (0.00%)
+        - sec-math.fround:P/F/T = 0/1/1 (0.00%)
+        - sec-math.hypot:P/F/T = 1/0/1 (100.00%)
+        - sec-math.imul:P/F/T = 1/0/1 (100.00%)
+        - sec-math.log:P/F/T = 1/0/1 (100.00%)
+        - sec-math.log1p:P/F/T = 1/0/1 (100.00%)
+        - sec-math.log10:P/F/T = 1/0/1 (100.00%)
+        - sec-math.log2:P/F/T = 1/0/1 (100.00%)
+        - sec-math.max:P/F/T = 1/0/1 (100.00%)
+        - sec-math.min:P/F/T = 1/0/1 (100.00%)
+        - sec-math.pow:P/F/T = 1/0/1 (100.00%)
+        - sec-math.random:
+        - sec-math.round:P/F/T = 0/1/1 (0.00%)
+        - sec-math.sign:P/F/T = 1/0/1 (100.00%)
+        - sec-math.sin:P/F/T = 1/0/1 (100.00%)
+        - sec-math.sinh:P/F/T = 1/0/1 (100.00%)
+        - sec-math.sqrt:P/F/T = 1/0/1 (100.00%)
+        - sec-math.tan:P/F/T = 1/0/1 (100.00%)
+        - sec-math.tanh:P/F/T = 1/0/1 (100.00%)
+        - sec-math.trunc:P/F/T = 0/1/1 (0.00%)
+    - sec-date-objects:P/F/T = 23/30/53 (43.40%)
+      - sec-overview-of-date-objects-and-definitions-of-abstract-operations:P/F/T = 1/5/6 (16.67%)
+        - sec-time-values-and-time-range:
+        - sec-day-number-and-time-within-day:
+        - sec-year-number:
+        - sec-month-number:
+        - sec-date-number:
+        - sec-week-day:
+        - sec-local-time-zone-adjustment:
+        - sec-localtime:P/F/T = 0/1/1 (0.00%)
+        - sec-utc-t:P/F/T = 0/1/1 (0.00%)
+        - sec-hours-minutes-second-and-milliseconds:
+        - sec-maketime:P/F/T = 0/1/1 (0.00%)
+        - sec-makeday:P/F/T = 0/1/1 (0.00%)
+        - sec-makedate:P/F/T = 0/1/1 (0.00%)
+        - sec-timeclip:P/F/T = 1/0/1 (100.00%)
+        - sec-date-time-string-format:
+          - sec-expanded-years:
+      - sec-date-constructor:P/F/T = 0/1/1 (0.00%)
+        - sec-date:P/F/T = 0/1/1 (0.00%)
+      - sec-properties-of-the-date-constructor:P/F/T = 0/1/1 (0.00%)
+        - sec-date.now:
+        - sec-date.parse:
+        - sec-date.prototype:
+        - sec-date.utc:P/F/T = 0/1/1 (0.00%)
+      - sec-properties-of-the-date-prototype-object:P/F/T = 22/23/45 (48.89%)
+        - sec-date.prototype.constructor:
+        - sec-date.prototype.getdate:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getday:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getfullyear:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.gethours:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getmilliseconds:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.getminutes:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getmonth:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getseconds:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.gettime:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.gettimezoneoffset:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.getutcdate:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getutcday:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getutcfullyear:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getutchours:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getutcmilliseconds:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.getutcminutes:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getutcmonth:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.getutcseconds:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.setdate:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setfullyear:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.sethours:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setmilliseconds:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setminutes:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setmonth:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setseconds:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.settime:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setutcdate:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setutcfullyear:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setutchours:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setutcmilliseconds:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setutcminutes:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setutcmonth:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.setutcseconds:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.todatestring:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.toisostring:
+        - sec-date.prototype.tojson:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.tolocaledatestring:
+        - sec-date.prototype.tolocalestring:
+        - sec-date.prototype.tolocaletimestring:
+        - sec-date.prototype.tostring:P/F/T = 3/2/5 (60.00%)
+          - sec-timestring:P/F/T = 1/0/1 (100.00%)
+          - sec-datestring:P/F/T = 0/1/1 (0.00%)
+          - sec-timezoneestring:P/F/T = 0/1/1 (0.00%)
+          - sec-todatestring:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype.totimestring:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.toutcstring:P/F/T = 0/1/1 (0.00%)
+        - sec-date.prototype.valueof:P/F/T = 1/0/1 (100.00%)
+        - sec-date.prototype-@@toprimitive:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-date-instances:
+  - sec-text-processing:P/F/T = 91/82/173 (52.60%)
+    - sec-string-objects:P/F/T = 30/10/40 (75.00%)
+      - sec-string-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-string-constructor-string-value:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-string-constructor:P/F/T = 1/2/3 (33.33%)
+        - sec-string.fromcharcode:P/F/T = 0/1/1 (0.00%)
+        - sec-string.fromcodepoint:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype:
+        - sec-string.raw:P/F/T = 0/1/1 (0.00%)
+      - sec-properties-of-the-string-prototype-object:P/F/T = 27/8/35 (77.14%)
+        - sec-string.prototype.at:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.charat:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.charcodeat:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.codepointat:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.concat:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.constructor:
+        - sec-string.prototype.endswith:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.includes:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.indexof:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.lastindexof:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.localecompare:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.match:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.matchall:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.normalize:P/F/T = 0/1/1 (0.00%)
+        - sec-string.prototype.padend:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.padstart:P/F/T = 1/2/3 (33.33%)
+          - sec-stringpad:P/F/T = 0/1/1 (0.00%)
+          - sec-tozeropaddeddecimalstring:P/F/T = 0/1/1 (0.00%)
+        - sec-string.prototype.repeat:P/F/T = 0/1/1 (0.00%)
+        - sec-string.prototype.replace:P/F/T = 1/1/2 (50.00%)
+          - sec-getsubstitution:P/F/T = 0/1/1 (0.00%)
+        - sec-string.prototype.replaceall:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.search:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.slice:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.split:P/F/T = 0/1/1 (0.00%)
+        - sec-string.prototype.startswith:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.substring:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.tolocalelowercase:
+        - sec-string.prototype.tolocaleuppercase:
+        - sec-string.prototype.tolowercase:P/F/T = 0/1/1 (0.00%)
+        - sec-string.prototype.tostring:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.touppercase:
+        - sec-string.prototype.trim:P/F/T = 1/1/2 (50.00%)
+          - sec-trimstring:P/F/T = 0/1/1 (0.00%)
+        - sec-string.prototype.trimend:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.trimstart:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype.valueof:P/F/T = 1/0/1 (100.00%)
+        - sec-string.prototype-@@iterator:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-string-instances:
+        - sec-properties-of-string-instances-length:
+      - sec-string-iterator-objects:P/F/T = 1/0/1 (100.00%)
+        - sec-%stringiteratorprototype%-object:P/F/T = 1/0/1 (100.00%)
+          - sec-%stringiteratorprototype%.next:P/F/T = 1/0/1 (100.00%)
+          - sec-%stringiteratorprototype%-@@tostringtag:
+    - sec-regexp-regular-expression-objects:P/F/T = 61/72/133 (45.86%)
+      - sec-patterns:P/F/T = 17/20/37 (45.95%)
+        - sec-patterns-static-semantics-early-errors:
+        - sec-patterns-static-semantics-capturing-group-number:P/F/T = 1/1/2 (50.00%)
+        - sec-patterns-static-semantics-is-character-class:P/F/T = 6/0/6 (100.00%)
+        - sec-patterns-static-semantics-character-value:P/F/T = 7/8/15 (46.67%)
+        - sec-static-semantics-sourcetext:P/F/T = 0/4/4 (0.00%)
+        - sec-static-semantics-capturinggroupname:P/F/T = 2/0/2 (100.00%)
+        - sec-regexpidentifiercodepoints:P/F/T = 1/1/2 (50.00%)
+        - sec-regexpidentifiercodepoint:P/F/T = 0/6/6 (0.00%)
+      - sec-pattern-semantics:P/F/T = 17/45/62 (27.42%)
+        - sec-notation:
+        - sec-compilepattern:P/F/T = 0/1/1 (0.00%)
+        - sec-compilesubpattern:P/F/T = 2/5/7 (28.57%)
+          - sec-runtime-semantics-repeatmatcher-abstract-operation:P/F/T = 0/1/1 (0.00%)
+        - sec-compileassertion:P/F/T = 0/9/9 (0.00%)
+          - sec-runtime-semantics-iswordchar-abstract-operation:P/F/T = 0/1/1 (0.00%)
+        - sec-compilequantifier:P/F/T = 2/0/2 (100.00%)
+        - sec-compilequantifierprefix:P/F/T = 6/0/6 (100.00%)
+        - sec-compileatom:P/F/T = 4/8/12 (33.33%)
+          - sec-runtime-semantics-charactersetmatcher-abstract-operation:P/F/T = 0/1/1 (0.00%)
+          - sec-backreference-matcher:P/F/T = 0/1/1 (0.00%)
+          - sec-runtime-semantics-canonicalize-ch:P/F/T = 0/1/1 (0.00%)
+        - sec-compilecharacterclass:P/F/T = 2/0/2 (100.00%)
+        - sec-compiletocharset:P/F/T = 1/22/23 (4.35%)
+          - sec-runtime-semantics-characterrange-abstract-operation:P/F/T = 0/1/1 (0.00%)
+          - sec-runtime-semantics-unicodematchproperty-p:P/F/T = 0/1/1 (0.00%)
+          - sec-runtime-semantics-unicodematchpropertyvalue-p-v:P/F/T = 0/1/1 (0.00%)
+      - sec-regexp-constructor:P/F/T = 3/3/6 (50.00%)
+        - sec-regexp-pattern-flags:P/F/T = 1/0/1 (100.00%)
+        - sec-abstract-operations-for-the-regexp-constructor:P/F/T = 2/3/5 (40.00%)
+          - sec-regexpalloc:P/F/T = 1/0/1 (100.00%)
+          - sec-regexpinitialize:P/F/T = 0/1/1 (0.00%)
+          - sec-parsepattern:P/F/T = 0/1/1 (0.00%)
+          - sec-regexpcreate:P/F/T = 1/0/1 (100.00%)
+          - sec-escaperegexppattern:P/F/T = 0/1/1 (0.00%)
+      - sec-properties-of-the-regexp-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-regexp.prototype:
+        - sec-get-regexp-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-regexp-prototype-object:P/F/T = 21/4/25 (84.00%)
+        - sec-regexp.prototype.constructor:
+        - sec-regexp.prototype.exec:P/F/T = 6/2/8 (75.00%)
+          - sec-regexpexec:P/F/T = 1/0/1 (100.00%)
+          - sec-regexpbuiltinexec:P/F/T = 0/1/1 (0.00%)
+          - sec-advancestringindex:P/F/T = 1/0/1 (100.00%)
+          - sec-getstringindex:P/F/T = 0/1/1 (0.00%)
+          - sec-match-records:
+          - sec-getmatchstring:P/F/T = 1/0/1 (100.00%)
+          - sec-getmatchindexpair:P/F/T = 1/0/1 (100.00%)
+          - sec-makematchindicesindexpairarray:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.dotAll:P/F/T = 2/0/2 (100.00%)
+          - sec-regexphasflag:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.flags:P/F/T = 0/1/1 (0.00%)
+        - sec-get-regexp.prototype.global:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.hasIndices:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.ignorecase:P/F/T = 1/0/1 (100.00%)
+        - sec-regexp.prototype-@@match:P/F/T = 1/0/1 (100.00%)
+        - sec-regexp-prototype-matchall:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.multiline:P/F/T = 1/0/1 (100.00%)
+        - sec-regexp.prototype-@@replace:P/F/T = 0/1/1 (0.00%)
+        - sec-regexp.prototype-@@search:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.source:P/F/T = 1/0/1 (100.00%)
+        - sec-regexp.prototype-@@split:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.sticky:P/F/T = 1/0/1 (100.00%)
+        - sec-regexp.prototype.test:P/F/T = 1/0/1 (100.00%)
+        - sec-regexp.prototype.tostring:P/F/T = 1/0/1 (100.00%)
+        - sec-get-regexp.prototype.unicode:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-regexp-instances:
+        - sec-lastindex:
+      - sec-regexp-string-iterator-objects:P/F/T = 2/0/2 (100.00%)
+        - sec-createregexpstringiterator:P/F/T = 1/0/1 (100.00%)
+        - sec-%regexpstringiteratorprototype%-object:P/F/T = 1/0/1 (100.00%)
+          - sec-%regexpstringiteratorprototype%.next:P/F/T = 1/0/1 (100.00%)
+          - sec-%regexpstringiteratorprototype%-@@tostringtag:
+  - sec-indexed-collections:P/F/T = 78/12/90 (86.67%)
+    - sec-array-objects:P/F/T = 40/3/43 (93.02%)
+      - sec-array-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-array:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-array-constructor:P/F/T = 4/0/4 (100.00%)
+        - sec-array.from:P/F/T = 1/0/1 (100.00%)
+        - sec-array.isarray:P/F/T = 1/0/1 (100.00%)
+        - sec-array.of:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype:
+        - sec-get-array-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-array-prototype-object:P/F/T = 33/3/36 (91.67%)
+        - sec-array.prototype.at:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.concat:P/F/T = 2/0/2 (100.00%)
+          - sec-isconcatspreadable:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.constructor:
+        - sec-array.prototype.copywithin:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.entries:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.every:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.fill:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.filter:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.find:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.findindex:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.flat:P/F/T = 2/0/2 (100.00%)
+          - sec-flattenintoarray:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.flatmap:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.foreach:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.includes:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.indexof:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.join:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.keys:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.lastindexof:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.map:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.pop:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.push:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.reduce:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.reduceright:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.reverse:P/F/T = 0/1/1 (0.00%)
+        - sec-array.prototype.shift:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.slice:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.some:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.sort:P/F/T = 1/1/2 (50.00%)
+          - sec-sortindexedproperties:P/F/T = 0/1/1 (0.00%)
+        - sec-array.prototype.splice:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.tolocalestring:P/F/T = 0/1/1 (0.00%)
+        - sec-array.prototype.tostring:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.unshift:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype.values:P/F/T = 1/0/1 (100.00%)
+        - sec-array.prototype-@@iterator:
+        - sec-array.prototype-@@unscopables:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-array-instances:
+        - sec-properties-of-array-instances-length:
+      - sec-array-iterator-objects:P/F/T = 2/0/2 (100.00%)
+        - sec-createarrayiterator:P/F/T = 1/0/1 (100.00%)
+        - sec-%arrayiteratorprototype%-object:P/F/T = 1/0/1 (100.00%)
+          - sec-%arrayiteratorprototype%.next:P/F/T = 1/0/1 (100.00%)
+          - sec-%arrayiteratorprototype%-@@tostringtag:
+    - sec-typedarray-objects:P/F/T = 38/9/47 (80.85%)
+      - sec-%typedarray%-intrinsic-object:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-%typedarray%-intrinsic-object:P/F/T = 2/1/3 (66.67%)
+        - sec-%typedarray%.from:P/F/T = 0/1/1 (0.00%)
+        - sec-%typedarray%.of:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype:
+        - sec-get-%typedarray%-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-%typedarrayprototype%-object:P/F/T = 29/2/31 (93.55%)
+        - sec-%typedarray%.prototype.at:P/F/T = 1/0/1 (100.00%)
+        - sec-get-%typedarray%.prototype.buffer:P/F/T = 1/0/1 (100.00%)
+        - sec-get-%typedarray%.prototype.bytelength:P/F/T = 1/0/1 (100.00%)
+        - sec-get-%typedarray%.prototype.byteoffset:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.constructor:
+        - sec-%typedarray%.prototype.copywithin:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.entries:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.every:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.fill:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.filter:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.find:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.findindex:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.foreach:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.includes:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.indexof:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.join:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.keys:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.lastindexof:P/F/T = 1/0/1 (100.00%)
+        - sec-get-%typedarray%.prototype.length:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.map:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.reduce:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.reduceright:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.reverse:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.set:P/F/T = 1/2/3 (33.33%)
+          - sec-settypedarrayfromtypedarray:P/F/T = 0/1/1 (0.00%)
+          - sec-settypedarrayfromarraylike:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.slice:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.some:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.sort:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.subarray:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype.tolocalestring:
+        - sec-%typedarray%.prototype.tostring:
+        - sec-%typedarray%.prototype.values:P/F/T = 1/0/1 (100.00%)
+        - sec-%typedarray%.prototype-@@iterator:
+        - sec-get-%typedarray%.prototype-@@tostringtag:P/F/T = 1/0/1 (100.00%)
+      - sec-abstract-operations-for-typedarray-objects:P/F/T = 1/4/5 (20.00%)
+        - typedarray-species-create:P/F/T = 0/1/1 (0.00%)
+        - typedarray-create:P/F/T = 0/1/1 (0.00%)
+        - sec-validatetypedarray:P/F/T = 1/0/1 (100.00%)
+        - sec-typedarrayelementsize:P/F/T = 0/1/1 (0.00%)
+        - sec-typedarrayelementtype:P/F/T = 0/1/1 (0.00%)
+      - sec-typedarray-constructors:P/F/T = 5/2/7 (71.43%)
+        - sec-typedarray:P/F/T = 5/2/7 (71.43%)
+          - sec-allocatetypedarray:P/F/T = 1/0/1 (100.00%)
+          - sec-initializetypedarrayfromtypedarray:P/F/T = 1/0/1 (100.00%)
+          - sec-initializetypedarrayfromarraybuffer:P/F/T = 1/0/1 (100.00%)
+          - sec-initializetypedarrayfromlist:P/F/T = 0/1/1 (0.00%)
+          - sec-initializetypedarrayfromarraylike:P/F/T = 1/0/1 (100.00%)
+          - sec-allocatetypedarraybuffer:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-typedarray-constructors:
+        - sec-typedarray.bytes_per_element:
+        - sec-typedarray.prototype:
+      - sec-properties-of-typedarray-prototype-objects:
+        - sec-typedarray.prototype.bytes_per_element:
+        - sec-typedarray.prototype.constructor:
+      - sec-properties-of-typedarray-instances:
+  - sec-keyed-collections:P/F/T = 33/3/36 (91.67%)
+    - sec-map-objects:P/F/T = 15/0/15 (100.00%)
+      - sec-map-constructor:P/F/T = 2/0/2 (100.00%)
+        - sec-map-iterable:P/F/T = 1/0/1 (100.00%)
+        - sec-add-entries-from-iterable:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-map-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype:
+        - sec-get-map-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-map-prototype-object:P/F/T = 10/0/10 (100.00%)
+        - sec-map.prototype.clear:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.constructor:
+        - sec-map.prototype.delete:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.entries:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.foreach:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.get:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.has:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.keys:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.set:P/F/T = 1/0/1 (100.00%)
+        - sec-get-map.prototype.size:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype.values:P/F/T = 1/0/1 (100.00%)
+        - sec-map.prototype-@@iterator:
+        - sec-map.prototype-@@tostringtag:
+      - sec-properties-of-map-instances:
+      - sec-map-iterator-objects:P/F/T = 2/0/2 (100.00%)
+        - sec-createmapiterator:P/F/T = 1/0/1 (100.00%)
+        - sec-%mapiteratorprototype%-object:P/F/T = 1/0/1 (100.00%)
+          - sec-%mapiteratorprototype%.next:P/F/T = 1/0/1 (100.00%)
+          - sec-%mapiteratorprototype%-@@tostringtag:
+    - sec-set-objects:P/F/T = 10/2/12 (83.33%)
+      - sec-set-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-set-iterable:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-set-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-set.prototype:
+        - sec-get-set-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-set-prototype-object:P/F/T = 6/2/8 (75.00%)
+        - sec-set.prototype.add:P/F/T = 1/0/1 (100.00%)
+        - sec-set.prototype.clear:P/F/T = 0/1/1 (0.00%)
+        - sec-set.prototype.constructor:
+        - sec-set.prototype.delete:P/F/T = 0/1/1 (0.00%)
+        - sec-set.prototype.entries:P/F/T = 1/0/1 (100.00%)
+        - sec-set.prototype.foreach:P/F/T = 1/0/1 (100.00%)
+        - sec-set.prototype.has:P/F/T = 1/0/1 (100.00%)
+        - sec-set.prototype.keys:
+        - sec-get-set.prototype.size:P/F/T = 1/0/1 (100.00%)
+        - sec-set.prototype.values:P/F/T = 1/0/1 (100.00%)
+        - sec-set.prototype-@@iterator:
+        - sec-set.prototype-@@tostringtag:
+      - sec-properties-of-set-instances:
+      - sec-set-iterator-objects:P/F/T = 2/0/2 (100.00%)
+        - sec-createsetiterator:P/F/T = 1/0/1 (100.00%)
+        - sec-%setiteratorprototype%-object:P/F/T = 1/0/1 (100.00%)
+          - sec-%setiteratorprototype%.next:P/F/T = 1/0/1 (100.00%)
+          - sec-%setiteratorprototype%-@@tostringtag:
+    - sec-weakmap-objects:P/F/T = 5/0/5 (100.00%)
+      - sec-weakmap-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-weakmap-iterable:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-weakmap-constructor:
+        - sec-weakmap.prototype:
+      - sec-properties-of-the-weakmap-prototype-object:P/F/T = 4/0/4 (100.00%)
+        - sec-weakmap.prototype.constructor:
+        - sec-weakmap.prototype.delete:P/F/T = 1/0/1 (100.00%)
+        - sec-weakmap.prototype.get:P/F/T = 1/0/1 (100.00%)
+        - sec-weakmap.prototype.has:P/F/T = 1/0/1 (100.00%)
+        - sec-weakmap.prototype.set:P/F/T = 1/0/1 (100.00%)
+        - sec-weakmap.prototype-@@tostringtag:
+      - sec-properties-of-weakmap-instances:
+    - sec-weakset-objects:P/F/T = 3/1/4 (75.00%)
+      - sec-weakset-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-weakset-iterable:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-weakset-constructor:
+        - sec-weakset.prototype:
+      - sec-properties-of-the-weakset-prototype-object:P/F/T = 2/1/3 (66.67%)
+        - sec-weakset.prototype.add:P/F/T = 1/0/1 (100.00%)
+        - sec-weakset.prototype.constructor:
+        - sec-weakset.prototype.delete:P/F/T = 0/1/1 (0.00%)
+        - sec-weakset.prototype.has:P/F/T = 1/0/1 (100.00%)
+        - sec-weakset.prototype-@@tostringtag:
+      - sec-properties-of-weakset-instances:
+  - sec-structured-data:P/F/T = 50/33/83 (60.24%)
+    - sec-arraybuffer-objects:P/F/T = 13/5/18 (72.22%)
+      - sec-arraybuffer-notation:
+      - sec-abstract-operations-for-arraybuffer-objects:P/F/T = 8/5/13 (61.54%)
+        - sec-allocatearraybuffer:P/F/T = 1/0/1 (100.00%)
+        - sec-isdetachedbuffer:P/F/T = 1/0/1 (100.00%)
+        - sec-detacharraybuffer:P/F/T = 1/0/1 (100.00%)
+        - sec-clonearraybuffer:P/F/T = 1/0/1 (100.00%)
+        - sec-isunsignedelementtype:P/F/T = 1/0/1 (100.00%)
+        - sec-isunclampedintegerelementtype:P/F/T = 1/0/1 (100.00%)
+        - sec-isbigintelementtype:P/F/T = 1/0/1 (100.00%)
+        - sec-isnotearconfiguration:P/F/T = 1/0/1 (100.00%)
+        - sec-rawbytestonumeric:P/F/T = 0/1/1 (0.00%)
+        - sec-getvaluefrombuffer:P/F/T = 0/1/1 (0.00%)
+        - sec-numerictorawbytes:P/F/T = 0/1/1 (0.00%)
+        - sec-setvalueinbuffer:P/F/T = 0/1/1 (0.00%)
+        - sec-getmodifysetvalueinbuffer:P/F/T = 0/1/1 (0.00%)
+      - sec-arraybuffer-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-arraybuffer-length:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-arraybuffer-constructor:P/F/T = 2/0/2 (100.00%)
+        - sec-arraybuffer.isview:P/F/T = 1/0/1 (100.00%)
+        - sec-arraybuffer.prototype:
+        - sec-get-arraybuffer-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-arraybuffer-prototype-object:P/F/T = 2/0/2 (100.00%)
+        - sec-get-arraybuffer.prototype.bytelength:P/F/T = 1/0/1 (100.00%)
+        - sec-arraybuffer.prototype.constructor:
+        - sec-arraybuffer.prototype.slice:P/F/T = 1/0/1 (100.00%)
+        - sec-arraybuffer.prototype-@@tostringtag:
+      - sec-properties-of-the-arraybuffer-instances:
+    - sec-sharedarraybuffer-objects:P/F/T = 5/1/6 (83.33%)
+      - sec-abstract-operations-for-sharedarraybuffer-objects:P/F/T = 2/0/2 (100.00%)
+        - sec-allocatesharedarraybuffer:P/F/T = 1/0/1 (100.00%)
+        - sec-issharedarraybuffer:P/F/T = 1/0/1 (100.00%)
+      - sec-sharedarraybuffer-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-sharedarraybuffer-length:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-sharedarraybuffer-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-sharedarraybuffer.prototype:
+        - sec-sharedarraybuffer-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-sharedarraybuffer-prototype-object:P/F/T = 1/1/2 (50.00%)
+        - sec-get-sharedarraybuffer.prototype.bytelength:P/F/T = 1/0/1 (100.00%)
+        - sec-sharedarraybuffer.prototype.constructor:
+        - sec-sharedarraybuffer.prototype.slice:P/F/T = 0/1/1 (0.00%)
+        - sec-sharedarraybuffer.prototype.toString:
+      - sec-properties-of-the-sharedarraybuffer-instances:
+    - sec-dataview-objects:P/F/T = 24/2/26 (92.31%)
+      - sec-abstract-operations-for-dataview-objects:P/F/T = 0/2/2 (0.00%)
+        - sec-getviewvalue:P/F/T = 0/1/1 (0.00%)
+        - sec-setviewvalue:P/F/T = 0/1/1 (0.00%)
+      - sec-dataview-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview-buffer-byteoffset-bytelength:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-dataview-constructor:
+        - sec-dataview.prototype:
+      - sec-properties-of-the-dataview-prototype-object:P/F/T = 23/0/23 (100.00%)
+        - sec-get-dataview.prototype.buffer:P/F/T = 1/0/1 (100.00%)
+        - sec-get-dataview.prototype.bytelength:P/F/T = 1/0/1 (100.00%)
+        - sec-get-dataview.prototype.byteoffset:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.constructor:
+        - sec-dataview.prototype.getbigint64:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getbiguint64:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getfloat32:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getfloat64:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getint8:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getint16:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getint32:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getuint8:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getuint16:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.getuint32:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setbigint64:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setbiguint64:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setfloat32:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setfloat64:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setint8:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setint16:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setint32:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setuint8:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setuint16:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype.setuint32:P/F/T = 1/0/1 (100.00%)
+        - sec-dataview.prototype-@@tostringtag:
+      - sec-properties-of-dataview-instances:
+    - sec-atomics-object:P/F/T = 6/19/25 (24.00%)
+      - sec-waiterlist-objects:
+      - sec-abstract-operations-for-atomics:P/F/T = 3/10/13 (23.08%)
+        - sec-validateintegertypedarray:P/F/T = 1/0/1 (100.00%)
+        - sec-validateatomicaccess:P/F/T = 1/0/1 (100.00%)
+        - sec-getwaiterlist:P/F/T = 0/1/1 (0.00%)
+        - sec-entercriticalsection:P/F/T = 0/1/1 (0.00%)
+        - sec-leavecriticalsection:P/F/T = 0/1/1 (0.00%)
+        - sec-addwaiter:P/F/T = 0/1/1 (0.00%)
+        - sec-removewaiter:P/F/T = 0/1/1 (0.00%)
+        - sec-removewaiters:P/F/T = 0/1/1 (0.00%)
+        - sec-suspendagent:P/F/T = 0/1/1 (0.00%)
+        - sec-notifywaiter:P/F/T = 0/1/1 (0.00%)
+        - sec-atomicreadmodifywrite:P/F/T = 1/0/1 (100.00%)
+        - sec-bytelistbitwiseop:P/F/T = 0/1/1 (0.00%)
+        - sec-bytelistequal:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.add:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.and:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.compareexchange:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.exchange:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.islockfree:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.load:P/F/T = 1/0/1 (100.00%)
+      - sec-atomics.or:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.store:P/F/T = 1/0/1 (100.00%)
+      - sec-atomics.sub:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.wait:P/F/T = 1/0/1 (100.00%)
+      - sec-atomics.notify:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics.xor:P/F/T = 0/1/1 (0.00%)
+      - sec-atomics-@@tostringtag:
+    - sec-json-object:P/F/T = 2/6/8 (25.00%)
+      - sec-json.parse:P/F/T = 1/1/2 (50.00%)
+        - sec-internalizejsonproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-json.stringify:P/F/T = 1/5/6 (16.67%)
+        - sec-serializejsonproperty:P/F/T = 1/0/1 (100.00%)
+        - sec-quotejsonstring:P/F/T = 0/1/1 (0.00%)
+        - sec-unicodeescape:P/F/T = 0/1/1 (0.00%)
+        - sec-serializejsonobject:P/F/T = 0/1/1 (0.00%)
+        - sec-serializejsonarray:P/F/T = 0/1/1 (0.00%)
+      - sec-json-@@tostringtag:
+  - sec-managing-memory:P/F/T = 5/1/6 (83.33%)
+    - sec-weak-ref-objects:P/F/T = 3/0/3 (100.00%)
+      - sec-weak-ref-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-weak-ref-target:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-weak-ref-constructor:
+        - sec-weak-ref.prototype:
+      - sec-properties-of-the-weak-ref-prototype-object:P/F/T = 1/0/1 (100.00%)
+        - sec-weak-ref.prototype.constructor:
+        - sec-weak-ref.prototype.deref:P/F/T = 1/0/1 (100.00%)
+        - sec-weak-ref.prototype-@@tostringtag:
+      - sec-weakref-abstract-operations:P/F/T = 1/0/1 (100.00%)
+        - sec-weakrefderef:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-weak-ref-instances:
+    - sec-finalization-registry-objects:P/F/T = 2/1/3 (66.67%)
+      - sec-finalization-registry-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-finalization-registry-cleanup-callback:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-finalization-registry-constructor:
+        - sec-finalization-registry.prototype:
+      - sec-properties-of-the-finalization-registry-prototype-object:P/F/T = 1/1/2 (50.00%)
+        - sec-finalization-registry.prototype.constructor:
+        - sec-finalization-registry.prototype.register:P/F/T = 1/0/1 (100.00%)
+        - sec-finalization-registry.prototype.unregister:P/F/T = 0/1/1 (0.00%)
+        - sec-finalization-registry.prototype-@@tostringtag:
+      - sec-properties-of-finalization-registry-instances:
+  - sec-control-abstraction-objects:P/F/T = 55/14/69 (79.71%)
+    - sec-iteration:P/F/T = 7/0/7 (100.00%)
+      - sec-common-iteration-interfaces:
+        - sec-iterable-interface:
+        - sec-iterator-interface:
+        - sec-asynciterable-interface:
+        - sec-asynciterator-interface:
+        - sec-iteratorresult-interface:
+      - sec-%iteratorprototype%-object:P/F/T = 1/0/1 (100.00%)
+        - sec-%iteratorprototype%-@@iterator:P/F/T = 1/0/1 (100.00%)
+      - sec-asynciteratorprototype:P/F/T = 1/0/1 (100.00%)
+        - sec-asynciteratorprototype-asynciterator:P/F/T = 1/0/1 (100.00%)
+      - sec-async-from-sync-iterator-objects:P/F/T = 5/0/5 (100.00%)
+        - sec-createasyncfromsynciterator:P/F/T = 1/0/1 (100.00%)
+        - sec-%asyncfromsynciteratorprototype%-object:P/F/T = 3/0/3 (100.00%)
+          - sec-%asyncfromsynciteratorprototype%.next:P/F/T = 1/0/1 (100.00%)
+          - sec-%asyncfromsynciteratorprototype%.return:P/F/T = 1/0/1 (100.00%)
+          - sec-%asyncfromsynciteratorprototype%.throw:P/F/T = 1/0/1 (100.00%)
+        - sec-properties-of-async-from-sync-iterator-instances:
+        - sec-asyncfromsynciteratorcontinuation:P/F/T = 1/0/1 (100.00%)
+    - sec-promise-objects:P/F/T = 33/0/33 (100.00%)
+      - sec-promise-abstract-operations:P/F/T = 9/0/9 (100.00%)
+        - sec-promisecapability-records:P/F/T = 1/0/1 (100.00%)
+          - sec-ifabruptrejectpromise:P/F/T = 1/0/1 (100.00%)
+        - sec-promisereaction-records:
+        - sec-createresolvingfunctions:P/F/T = 3/0/3 (100.00%)
+          - sec-promise-reject-functions:P/F/T = 1/0/1 (100.00%)
+          - sec-promise-resolve-functions:P/F/T = 1/0/1 (100.00%)
+        - sec-fulfillpromise:P/F/T = 1/0/1 (100.00%)
+        - sec-newpromisecapability:P/F/T = 1/0/1 (100.00%)
+        - sec-ispromise:P/F/T = 1/0/1 (100.00%)
+        - sec-rejectpromise:P/F/T = 1/0/1 (100.00%)
+        - sec-triggerpromisereactions:P/F/T = 1/0/1 (100.00%)
+        - sec-host-promise-rejection-tracker:
+      - sec-promise-jobs:P/F/T = 2/0/2 (100.00%)
+        - sec-newpromisereactionjob:P/F/T = 1/0/1 (100.00%)
+        - sec-newpromiseresolvethenablejob:P/F/T = 1/0/1 (100.00%)
+      - sec-promise-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-promise-executor:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-promise-constructor:P/F/T = 17/0/17 (100.00%)
+        - sec-promise.all:P/F/T = 4/0/4 (100.00%)
+          - sec-getpromiseresolve:P/F/T = 1/0/1 (100.00%)
+          - sec-performpromiseall:P/F/T = 1/0/1 (100.00%)
+          - sec-promise.all-resolve-element-functions:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.allsettled:P/F/T = 4/0/4 (100.00%)
+          - sec-performpromiseallsettled:P/F/T = 1/0/1 (100.00%)
+          - sec-promise.allsettled-resolve-element-functions:P/F/T = 1/0/1 (100.00%)
+          - sec-promise.allsettled-reject-element-functions:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.any:P/F/T = 3/0/3 (100.00%)
+          - sec-performpromiseany:P/F/T = 1/0/1 (100.00%)
+          - sec-promise.any-reject-element-functions:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.prototype:
+        - sec-promise.race:P/F/T = 2/0/2 (100.00%)
+          - sec-performpromiserace:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.reject:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.resolve:P/F/T = 2/0/2 (100.00%)
+          - sec-promise-resolve:P/F/T = 1/0/1 (100.00%)
+        - sec-get-promise-@@species:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-promise-prototype-object:P/F/T = 4/0/4 (100.00%)
+        - sec-promise.prototype.catch:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.prototype.constructor:
+        - sec-promise.prototype.finally:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.prototype.then:P/F/T = 2/0/2 (100.00%)
+          - sec-performpromisethen:P/F/T = 1/0/1 (100.00%)
+        - sec-promise.prototype-@@tostringtag:
+      - sec-properties-of-promise-instances:
+    - sec-generatorfunction-objects:P/F/T = 0/1/1 (0.00%)
+      - sec-generatorfunction-constructor:P/F/T = 0/1/1 (0.00%)
+        - sec-generatorfunction:P/F/T = 0/1/1 (0.00%)
+      - sec-properties-of-the-generatorfunction-constructor:
+        - sec-generatorfunction.length:
+        - sec-generatorfunction.prototype:
+      - sec-properties-of-the-generatorfunction-prototype-object:
+        - sec-generatorfunction.prototype.constructor:
+        - sec-generatorfunction.prototype.prototype:
+        - sec-generatorfunction.prototype-@@tostringtag:
+      - sec-generatorfunction-instances:
+        - sec-generatorfunction-instances-length:
+        - sec-generatorfunction-instances-name:
+        - sec-generatorfunction-instances-prototype:
+    - sec-asyncgeneratorfunction-objects:P/F/T = 0/1/1 (0.00%)
+      - sec-asyncgeneratorfunction-constructor:P/F/T = 0/1/1 (0.00%)
+        - sec-asyncgeneratorfunction:P/F/T = 0/1/1 (0.00%)
+      - sec-properties-of-asyncgeneratorfunction:
+        - sec-asyncgeneratorfunction-length:
+        - sec-asyncgeneratorfunction-prototype:
+      - sec-properties-of-asyncgeneratorfunction-prototype:
+        - sec-asyncgeneratorfunction-prototype-constructor:
+        - sec-asyncgeneratorfunction-prototype-prototype:
+        - sec-asyncgeneratorfunction-prototype-tostringtag:
+      - sec-asyncgeneratorfunction-instances:
+        - sec-asyncgeneratorfunction-instance-length:
+        - sec-asyncgeneratorfunction-instance-name:
+        - sec-asyncgeneratorfunction-instance-prototype:
+    - sec-generator-objects:P/F/T = 6/5/11 (54.55%)
+      - sec-properties-of-generator-prototype:P/F/T = 3/0/3 (100.00%)
+        - sec-generator.prototype.constructor:
+        - sec-generator.prototype.next:P/F/T = 1/0/1 (100.00%)
+        - sec-generator.prototype.return:P/F/T = 1/0/1 (100.00%)
+        - sec-generator.prototype.throw:P/F/T = 1/0/1 (100.00%)
+        - sec-generator.prototype-@@tostringtag:
+      - sec-properties-of-generator-instances:
+      - sec-generator-abstract-operations:P/F/T = 3/5/8 (37.50%)
+        - sec-generatorstart:P/F/T = 0/1/1 (0.00%)
+        - sec-generatorvalidate:P/F/T = 1/0/1 (100.00%)
+        - sec-generatorresume:P/F/T = 1/0/1 (100.00%)
+        - sec-generatorresumeabrupt:P/F/T = 0/1/1 (0.00%)
+        - sec-getgeneratorkind:P/F/T = 0/1/1 (0.00%)
+        - sec-generatoryield:P/F/T = 0/1/1 (0.00%)
+        - sec-yield:P/F/T = 1/0/1 (100.00%)
+        - sec-createiteratorfromclosure:P/F/T = 0/1/1 (0.00%)
+    - sec-asyncgenerator-objects:P/F/T = 9/4/13 (69.23%)
+      - sec-properties-of-asyncgenerator-prototype:P/F/T = 3/0/3 (100.00%)
+        - sec-asyncgenerator-prototype-constructor:
+        - sec-asyncgenerator-prototype-next:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgenerator-prototype-return:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgenerator-prototype-throw:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgenerator-prototype-tostringtag:
+      - sec-properties-of-asyncgenerator-intances:
+      - sec-asyncgenerator-abstract-operations:P/F/T = 6/4/10 (60.00%)
+        - sec-asyncgeneratorrequest-records:
+        - sec-asyncgeneratorstart:P/F/T = 0/1/1 (0.00%)
+        - sec-asyncgeneratorvalidate:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgeneratorenqueue:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgeneratorcompletestep:P/F/T = 0/1/1 (0.00%)
+        - sec-asyncgeneratorresume:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgeneratorunwrapyieldresumption:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgeneratoryield:P/F/T = 0/1/1 (0.00%)
+        - sec-asyncgeneratorawaitreturn:P/F/T = 1/0/1 (100.00%)
+        - sec-asyncgeneratordrainqueue:P/F/T = 1/0/1 (100.00%)
+        - sec-createasynciteratorfromclosure:P/F/T = 0/1/1 (0.00%)
+    - sec-async-function-objects:P/F/T = 0/3/3 (0.00%)
+      - sec-async-function-constructor:P/F/T = 0/1/1 (0.00%)
+        - sec-async-function-constructor-arguments:P/F/T = 0/1/1 (0.00%)
+      - sec-async-function-constructor-properties:
+        - sec-async-function-constructor-length:
+        - sec-async-function-constructor-prototype:
+      - sec-async-function-prototype-properties:
+        - sec-async-function-prototype-properties-constructor:
+        - sec-async-function-prototype-properties-toStringTag:
+      - sec-async-function-instances:
+        - sec-async-function-instances-length:
+        - sec-async-function-instances-name:
+      - sec-async-functions-abstract-operations:P/F/T = 0/2/2 (0.00%)
+        - sec-async-functions-abstract-operations-async-function-start:P/F/T = 0/1/1 (0.00%)
+        - sec-asyncblockstart:P/F/T = 0/1/1 (0.00%)
+  - sec-reflection:P/F/T = 15/0/15 (100.00%)
+    - sec-reflect-object:P/F/T = 13/0/13 (100.00%)
+      - sec-reflect.apply:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.construct:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.defineproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.deleteproperty:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.get:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.getownpropertydescriptor:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.getprototypeof:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.has:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.isextensible:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.ownkeys:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.preventextensions:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.set:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect.setprototypeof:P/F/T = 1/0/1 (100.00%)
+      - sec-reflect-@@tostringtag:
+    - sec-proxy-objects:P/F/T = 2/0/2 (100.00%)
+      - sec-proxy-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-proxy-target-handler:P/F/T = 1/0/1 (100.00%)
+      - sec-properties-of-the-proxy-constructor:P/F/T = 1/0/1 (100.00%)
+        - sec-proxy.revocable:P/F/T = 1/0/1 (100.00%)
+    - sec-module-namespace-objects:
+      - sec-@@tostringtag:
+  - sec-memory-model:P/F/T = 1/4/5 (20.00%)
+    - sec-memory-model-fundamentals:
+    - sec-agent-event-records:
+    - sec-chosen-value-records:
+    - sec-candidate-executions:
+    - sec-abstract-operations-for-the-memory-model:P/F/T = 1/4/5 (20.00%)
+      - sec-event-set:P/F/T = 0/1/1 (0.00%)
+      - sec-sharedatablockeventset:P/F/T = 0/1/1 (0.00%)
+      - sec-hosteventset:P/F/T = 0/1/1 (0.00%)
+      - sec-composewriteeventbytes:P/F/T = 0/1/1 (0.00%)
+      - sec-valueofreadevent:P/F/T = 1/0/1 (100.00%)
+    - sec-relations-of-candidate-executions:
+      - sec-agent-order:
+      - sec-reads-bytes-from:
+      - sec-reads-from:
+      - sec-host-synchronizes-with:
+      - sec-synchronizes-with:
+      - sec-happens-before:
+    - sec-properties-of-valid-executions:
+      - sec-valid-chosen-reads:
+      - sec-coherent-reads:
+      - sec-tear-free-aligned-reads:
+      - sec-memory-order:
+      - sec-valid-executions:
+    - sec-races:
+    - sec-data-races:
+    - sec-data-race-freedom:
+    - sec-shared-memory-guidelines:

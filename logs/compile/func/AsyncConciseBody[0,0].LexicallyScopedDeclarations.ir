@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncConciseBody[0,0].LexicallyScopedDeclarations(
+  this: Ast:AsyncConciseBody[0,0],
+): List[Ast] {
+  return (new [])[#165]
+}

@@ -1,0 +1,16 @@
+def PrivateElementFind(
+  O: Object,
+  P: PrivateName,
+): PrivateElement | Const[~empty~] {
+  if (contains O.PrivateElements P: Unknown["PrivateElement"] Key) {
+    let elems = O.PrivateElements
+    let idx = 0
+    loop[repeat] (< idx elems.length) {
+      let elem = elems[idx]
+      if (= elem.Key P) let entry = elem else {}
+      idx = (+ idx 1)
+    }
+    return entry
+  } else {}
+  return ~empty~
+}

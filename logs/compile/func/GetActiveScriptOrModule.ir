@@ -1,0 +1,11 @@
+def GetActiveScriptOrModule(
+): ModuleRecord | ScriptRecord | Null {
+  if (= @EXECUTION_STACK.length 0) return null else {}
+  let ec = absent
+  let idx = 0
+  loop[repeat] (&& (< idx @EXECUTION_STACK.length) (= ec absent)) {
+    if (! (= @EXECUTION_STACK[idx].ScriptOrModule null)) ec = @EXECUTION_STACK[idx] else {}
+    idx = (+ idx 1)
+  }
+  if (= ec absent) return null else return ec.ScriptOrModule
+}

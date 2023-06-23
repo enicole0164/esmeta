@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1447 {
+    label = "def <SYNTAX>:ForDeclaration[0,0].ForDeclarationBindingInitialization(this: Ast:ForDeclaration[0,0], value: Unknown, environment: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster1447_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1447_entry_name -> cluster1447_entry [arrowhead=none, color="black", style=dashed]
+    cluster1447_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1447_entry -> node7634 [color="black"]
+    cluster1447_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1447_exit_name -> cluster1447_exit [arrowhead=none, color="black", style=dashed]
+    cluster1447_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7634_name [shape=none, label=<<font color="black">Call[7634]</font>>]
+    node7634_name -> node7634 [arrowhead=none, color="black", style=dashed]
+    node7634 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;BindingInitialization(value, environment)</font>> color="black" fillcolor="white", style=filled]
+    node7634 -> node7635 [color="black"]
+    node7635_name [shape=none, label=<<font color="black">Block[7635]</font>>]
+    node7635_name -> node7635 [arrowhead=none, color="black", style=dashed]
+    node7635 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7635 -> cluster1447_exit [color="black"]
+  }
+}

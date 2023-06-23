@@ -1,0 +1,68 @@
+def IsLooselyEqual(
+  x: ESValue,
+  y: ESValue,
+): Normal[Boolean] | Abrupt {
+  if (= (typeof x) (typeof y)) {
+    call %0 = clo<IsStrictlyEqual>(x, y)
+    return %0
+  } else {}
+  if (&& (= x null) (= y undefined)) {
+    return true
+  } else {}
+  if (&& (= x undefined) (= y null)) {
+    return true
+  } else {}
+  nop
+  if (&& (= (typeof x) @Number) (= (typeof y) @String)) {
+    call %1 = clo<ToNumber>(y)
+    call %2 = clo<IsLooselyEqual>(x, [! %1])
+    return [! %2]
+  } else {}
+  if (&& (= (typeof x) @String) (= (typeof y) @Number)) {
+    call %3 = clo<ToNumber>(x)
+    call %4 = clo<IsLooselyEqual>([! %3], y)
+    return [! %4]
+  } else {}
+  if (&& (= (typeof x) @BigInt) (= (typeof y) @String)) {
+    call %5 = clo<StringToBigInt>(y)
+    let n = %5
+    if (= n undefined) {
+      return false
+    } else {}
+    call %6 = clo<IsLooselyEqual>(x, n)
+    return [! %6]
+  } else {}
+  if (&& (= (typeof x) @String) (= (typeof y) @BigInt)) {
+    call %7 = clo<IsLooselyEqual>(y, x)
+    return [! %7]
+  } else {}
+  if (= (typeof x) @Boolean) {
+    call %8 = clo<ToNumber>(x)
+    call %9 = clo<IsLooselyEqual>([! %8], y)
+    return [! %9]
+  } else {}
+  if (= (typeof y) @Boolean) {
+    call %10 = clo<ToNumber>(y)
+    call %11 = clo<IsLooselyEqual>(x, [! %10])
+    return [! %11]
+  } else {}
+  if (&& (|| (|| (|| (= (typeof x) @String) (= (typeof x) @Number)) (= (typeof x) @BigInt)) (= (typeof x) @Symbol)) (= (typeof y) @Object)) {
+    call %12 = clo<ToPrimitive>(y)
+    call %13 = clo<IsLooselyEqual>(x, [? %12])
+    return [! %13]
+  } else {}
+  if (&& (= (typeof x) @Object) (|| (|| (|| (= (typeof y) @String) (= (typeof y) @Number)) (= (typeof y) @BigInt)) (= (typeof y) @Symbol))) {
+    call %14 = clo<ToPrimitive>(x)
+    call %15 = clo<IsLooselyEqual>([? %14], y)
+    return [! %15]
+  } else {}
+  if (|| (&& (= (typeof x) @BigInt) (= (typeof y) @Number)) (&& (= (typeof x) @Number) (= (typeof y) @BigInt))) {
+    (yet "If _x_ or _y_ are any of *NaN*, *+∞*<sub>𝔽</sub>, or *-∞*<sub>𝔽</sub>, return *false*.")
+    if (== ([math] x) ([math] y)) {
+      return true
+    } else {
+      return false
+    }
+  } else {}
+  return false
+}

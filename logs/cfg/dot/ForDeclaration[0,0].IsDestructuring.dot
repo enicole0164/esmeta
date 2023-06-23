@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1444 {
+    label = "def <SYNTAX>:ForDeclaration[0,0].IsDestructuring(this: Ast:ForDeclaration[0,0]): Boolean"
+    style = rounded
+    cluster1444_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1444_entry_name -> cluster1444_entry [arrowhead=none, color="black", style=dashed]
+    cluster1444_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1444_entry -> node7630 [color="black"]
+    cluster1444_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1444_exit_name -> cluster1444_exit [arrowhead=none, color="black", style=dashed]
+    cluster1444_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7630_name [shape=none, label=<<font color="black">Call[7630]</font>>]
+    node7630_name -> node7630 [arrowhead=none, color="black", style=dashed]
+    node7630 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;IsDestructuring()</font>> color="black" fillcolor="white", style=filled]
+    node7630 -> node7631 [color="black"]
+    node7631_name [shape=none, label=<<font color="black">Block[7631]</font>>]
+    node7631_name -> node7631 [arrowhead=none, color="black", style=dashed]
+    node7631 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7631 -> cluster1444_exit [color="black"]
+  }
+}

@@ -1,0 +1,8 @@
+def <BUILTIN-CLO>:INTRINSICS.Promise.prototype.finally:clo1:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  call %0 = clo<ThrowCompletion>(reason)
+  return %0
+}

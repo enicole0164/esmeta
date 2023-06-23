@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster583 {
+    label = "def <SYNTAX>:CaseBlock[0,0].ContainsUndefinedBreakTarget(this: Ast:CaseBlock[0,0], labelSet: Unknown): Boolean"
+    style = rounded
+    cluster583_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster583_entry_name -> cluster583_entry [arrowhead=none, color="black", style=dashed]
+    cluster583_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster583_entry -> node2596 [color="black"]
+    cluster583_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster583_exit_name -> cluster583_exit [arrowhead=none, color="black", style=dashed]
+    cluster583_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2596_name [shape=none, label=<<font color="black">Block[2596]</font>>]
+    node2596_name -> node2596 [arrowhead=none, color="black", style=dashed]
+    node2596 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2596 -> cluster583_exit [color="black"]
+  }
+}

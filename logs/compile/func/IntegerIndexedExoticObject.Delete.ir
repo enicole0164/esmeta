@@ -1,0 +1,19 @@
+def <INTERNAL>:IntegerIndexedExoticObject.Delete(
+  O: IntegerIndexedExoticObject,
+  P: Symbol | String,
+): Normal[Boolean] {
+  if (= (typeof P) @String) {
+    call %0 = clo<CanonicalNumericIndexString>(P)
+    let numericIndex = %0
+    if (! (= numericIndex undefined)) {
+      call %1 = clo<IsValidIntegerIndex>(O, numericIndex)
+      if (= %1 false) {
+        return true
+      } else {
+        return false
+      }
+    } else {}
+  } else {}
+  call %2 = clo<OrdinaryDelete>(O, P)
+  return [! %2]
+}

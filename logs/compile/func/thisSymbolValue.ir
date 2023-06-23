@@ -1,0 +1,13 @@
+def thisSymbolValue(
+  value: Unknown,
+): Unknown {
+  if (= (typeof value) @Symbol) {
+    return value
+  } else {}
+  if (&& (= (typeof value) @Object) (! (= value.SymbolData absent))) {
+    let s = value.SymbolData
+    assert (= (typeof s) @Symbol)
+    return s
+  } else {}
+  return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#919])
+}

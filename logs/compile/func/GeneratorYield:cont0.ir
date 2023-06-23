@@ -1,0 +1,6 @@
+def <CONT>:GeneratorYield:cont0(
+  resumptionValue: Unknown,
+): Normal[ESValue] | Abrupt {
+  return resumptionValue
+  nop
+}

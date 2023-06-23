@@ -1,0 +1,5 @@
+def <SYNTAX>:ExportDeclaration[0,0].ExportedBindings(
+  this: Ast:ExportDeclaration[0,0],
+): List[String] {
+  return (new [])[#823]
+}

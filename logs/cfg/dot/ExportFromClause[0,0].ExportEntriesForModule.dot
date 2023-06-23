@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1964 {
+    label = "def <SYNTAX>:ExportFromClause[0,0].ExportEntriesForModule(this: Ast:ExportFromClause[0,0], module: Unknown): Unknown["ListOfExportEntryRecords"]"
+    style = rounded
+    cluster1964_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1964_entry_name -> cluster1964_entry [arrowhead=none, color="black", style=dashed]
+    cluster1964_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1964_entry -> node10652 [color="black"]
+    cluster1964_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1964_exit_name -> cluster1964_exit [arrowhead=none, color="black", style=dashed]
+    cluster1964_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10652_name [shape=none, label=<<font color="black">Block[10652]</font>>]
+    node10652_name -> node10652 [arrowhead=none, color="black", style=dashed]
+    node10652 [shape=box, label=<<font color="black">[0] let entry = (new ExportEntryRecord(&quot;ModuleRequest&quot; -&gt; module, &quot;ImportName&quot; -&gt; ~all-but-default~, &quot;LocalName&quot; -&gt; null, &quot;ExportName&quot; -&gt; null))[#854]<BR ALIGN="LEFT"/>[1] return (new [entry])[#855]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10652 -> cluster1964_exit [color="black"]
+  }
+}

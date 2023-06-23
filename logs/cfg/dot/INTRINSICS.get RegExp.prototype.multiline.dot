@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2327 {
+    label = "def <BUILTIN>:INTRINSICS.get RegExp.prototype.multiline(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2327_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2327_entry_name -> cluster2327_entry [arrowhead=none, color="black", style=dashed]
+    cluster2327_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2327_entry -> node14420 [color="black"]
+    cluster2327_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2327_exit_name -> cluster2327_exit [arrowhead=none, color="black", style=dashed]
+    cluster2327_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14420_name [shape=none, label=<<font color="black">Block[14420]</font>>]
+    node14420_name -> node14420 [arrowhead=none, color="black", style=dashed]
+    node14420 [shape=box, label=<<font color="black">[0] let R = this<BR ALIGN="LEFT"/>[1] let cu = 109cu<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14420 -> node14421 [color="black"]
+    node14421_name [shape=none, label=<<font color="black">Call[14421]</font>>]
+    node14421_name -> node14421 [arrowhead=none, color="black", style=dashed]
+    node14421 [shape=cds, label=<<font color="black">%0 = clo&lt;RegExpHasFlag&gt;(R, cu)</font>> color="black" fillcolor="white", style=filled]
+    node14421 -> node14422 [color="black"]
+    node14422_name [shape=none, label=<<font color="black">Block[14422]</font>>]
+    node14422_name -> node14422 [arrowhead=none, color="black", style=dashed]
+    node14422 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14422 -> cluster2327_exit [color="black"]
+  }
+}

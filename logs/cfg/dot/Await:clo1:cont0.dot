@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2 {
+    label = "def <CONT>:Await:clo1:cont0(): Unknown"
+    style = rounded
+    cluster2_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2_entry_name -> cluster2_entry [arrowhead=none, color="black", style=dashed]
+    cluster2_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2_entry -> node10 [color="black"]
+    cluster2_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2_exit_name -> cluster2_exit [arrowhead=none, color="black", style=dashed]
+    cluster2_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10_name [shape=none, label=<<font color="black">Block[10]</font>>]
+    node10_name -> node10 [arrowhead=none, color="black", style=dashed]
+    node10 [shape=box, label=<<font color="black">[0] assert (&amp;&amp; (= prevContext @EXECUTION_STACK[0]) (! (= asyncContext @EXECUTION_STACK[0])))<BR ALIGN="LEFT"/>[1] return undefined<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10 -> cluster2_exit [color="black"]
+  }
+}

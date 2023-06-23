@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } { } throw new Test262Error ( message ) ; } assert . _isSameValue = x => { } ; assert . sameValue = x => 0 ; assert = async function * ( ) { } ; assert . _toString = [ 0 ] ; function Test262Error ( message ) { this . message = message || "" ; } ; function x ( ) { } var replaceValue = { toString : { writable : '' } , } ; var newString = "" . replace ( "a" , replaceValue ) ; assert ( newString , "" ) ; 

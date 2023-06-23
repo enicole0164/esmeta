@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster719 {
+    label = "def <SYNTAX>:ShiftExpression[2,0].IsFunctionDefinition(this: Ast:ShiftExpression[2,0]): Boolean"
+    style = rounded
+    cluster719_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster719_entry_name -> cluster719_entry [arrowhead=none, color="black", style=dashed]
+    cluster719_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster719_entry -> node2951 [color="black"]
+    cluster719_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster719_exit_name -> cluster719_exit [arrowhead=none, color="black", style=dashed]
+    cluster719_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2951_name [shape=none, label=<<font color="black">Block[2951]</font>>]
+    node2951_name -> node2951 [arrowhead=none, color="black", style=dashed]
+    node2951 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2951 -> cluster719_exit [color="black"]
+  }
+}

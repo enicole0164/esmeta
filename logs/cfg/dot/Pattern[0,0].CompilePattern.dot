@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2242 {
+    label = "def <SYNTAX>:Pattern[0,0].CompilePattern(this: Ast:Pattern[0,0]): Unknown["AbstractClosureThatTakesAListOfCharactersAndANonnegativeIntegerAndReturnsAMatchResult"]"
+    style = rounded
+    cluster2242_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2242_entry_name -> cluster2242_entry [arrowhead=none, color="black", style=dashed]
+    cluster2242_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2242_entry -> node13910 [color="black"]
+    cluster2242_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2242_exit_name -> cluster2242_exit [arrowhead=none, color="black", style=dashed]
+    cluster2242_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13910_name [shape=none, label=<<font color="black">Call[13910]</font>>]
+    node13910_name -> node13910 [arrowhead=none, color="black", style=dashed]
+    node13910 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileSubpattern(~forward~)</font>> color="black" fillcolor="white", style=filled]
+    node13910 -> node13911 [color="black"]
+    node13911_name [shape=none, label=<<font color="black">Block[13911]</font>>]
+    node13911_name -> node13911 [arrowhead=none, color="black", style=dashed]
+    node13911 [shape=box, label=<<font color="black">[0] let m = %0<BR ALIGN="LEFT"/>[1] return clo&lt;Pattern[0,0].CompilePattern:clo0, [m]&gt;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13911 -> cluster2242_exit [color="black"]
+  }
+}

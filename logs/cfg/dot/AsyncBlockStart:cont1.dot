@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2644 {
+    label = "def <CONT>:AsyncBlockStart:cont1(result: Unknown): Const[~unused~]"
+    style = rounded
+    cluster2644_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2644_entry_name -> cluster2644_entry [arrowhead=none, color="black", style=dashed]
+    cluster2644_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2644_entry -> node19629 [color="black"]
+    cluster2644_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2644_exit_name -> cluster2644_exit [arrowhead=none, color="black", style=dashed]
+    cluster2644_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19629_name [shape=none, label=<<font color="black">Block[19629]</font>>]
+    node19629_name -> node19629 [arrowhead=none, color="black", style=dashed]
+    node19629 [shape=box, label=<<font color="black">[0] assert (&amp;&amp; (= runningContext @EXECUTION_STACK[0]) (! (= asyncContext @EXECUTION_STACK[0])))<BR ALIGN="LEFT"/>[1] assert (yet &quot;_result_ is a normal completion with a value of ~unused~. The possible sources of this value are Await or, if the async function doesn't await anything, step &lt;emu-xref href=\&quot;#step-asyncblockstart-return-undefined\&quot;&gt;&lt;/emu-xref&gt; above.&quot;)<BR ALIGN="LEFT"/>[2] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19629 -> cluster2644_exit [color="black"]
+  }
+}

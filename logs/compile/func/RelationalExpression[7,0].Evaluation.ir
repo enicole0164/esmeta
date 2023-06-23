@@ -1,0 +1,21 @@
+def <SYNTAX>:RelationalExpression[7,0].Evaluation(
+  this: Ast:RelationalExpression[7,0],
+): Unknown {
+  sdo-call %0 = this[0]->StringValue()
+  let privateIdentifier = %0
+  sdo-call %1 = this[1]->Evaluation()
+  let rref = %1
+  call %2 = clo<GetValue>(rref)
+  let rval = [? %2]
+  if (! (= (typeof rval) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#589])
+  } else {}
+  let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  call %3 = clo<ResolvePrivateIdentifier>(privateEnv, privateIdentifier)
+  let privateName = %3
+  call %4 = clo<PrivateElementFind>(rval, privateName)
+  if (! (= %4 ~empty~)) {
+    return true
+  } else {}
+  return false
+}

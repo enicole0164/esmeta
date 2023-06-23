@@ -1,0 +1,10 @@
+def <SYNTAX>:ConciseBody[0,0].EvaluateConciseBody(
+  this: Ast:ConciseBody[0,0],
+  functionObject: Unknown,
+  argumentsList: Unknown["List"],
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<FunctionDeclarationInstantiation>(functionObject, argumentsList)
+  [? %0]
+  sdo-call %1 = this[0]->Evaluation()
+  return %1
+}

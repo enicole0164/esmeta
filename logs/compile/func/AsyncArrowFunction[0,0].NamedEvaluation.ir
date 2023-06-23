@@ -1,0 +1,7 @@
+def <SYNTAX>:AsyncArrowFunction[0,0].NamedEvaluation(
+  this: Ast:AsyncArrowFunction[0,0],
+  name: Unknown,
+): Normal[FunctionObject] | Abrupt {
+  sdo-call %0 = this->InstantiateAsyncArrowFunctionExpression(name)
+  return %0
+}

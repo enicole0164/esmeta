@@ -1,0 +1,18 @@
+def CreateArrayFromList(
+  elements: List[ESValue],
+): Unknown["Array"] {
+  call %0 = clo<ArrayCreate>(0)
+  let array = [! %0]
+  let n = 0
+  %2 = elements
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let e = %2[%1]
+    call %3 = clo<ToString>(([number] n))
+    call %4 = clo<CreateDataPropertyOrThrow>(array, [! %3], e)
+    [! %4]
+    n = (+ n 1)
+    %1 = (+ %1 1)
+  }
+  return array
+}

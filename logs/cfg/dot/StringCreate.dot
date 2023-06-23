@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1112 {
+    label = "def StringCreate(value: String, prototype: Unknown): StringExoticObject"
+    style = rounded
+    cluster1112_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1112_entry_name -> cluster1112_entry [arrowhead=none, color="black", style=dashed]
+    cluster1112_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1112_entry -> node4667 [color="black"]
+    cluster1112_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1112_exit_name -> cluster1112_exit [arrowhead=none, color="black", style=dashed]
+    cluster1112_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4667_name [shape=none, label=<<font color="black">Call[4667]</font>>]
+    node4667_name -> node4667 [arrowhead=none, color="black", style=dashed]
+    node4667 [shape=cds, label=<<font color="black">%0 = clo&lt;MakeBasicObject&gt;((new [&quot;Prototype&quot;, &quot;Extensible&quot;, &quot;StringData&quot;])[#458])</font>> color="black" fillcolor="white", style=filled]
+    node4667 -> node4668 [color="black"]
+    node4668_name [shape=none, label=<<font color="black">Block[4668]</font>>]
+    node4668_name -> node4668 [arrowhead=none, color="black", style=dashed]
+    node4668 [shape=box, label=<<font color="black">[0] let S = %0<BR ALIGN="LEFT"/>[1] S.Prototype = prototype<BR ALIGN="LEFT"/>[2] S.StringData = value<BR ALIGN="LEFT"/>[3] S.GetOwnProperty = clo&lt;StringExoticObject.GetOwnProperty&gt;<BR ALIGN="LEFT"/>[4] S.DefineOwnProperty = clo&lt;StringExoticObject.DefineOwnProperty&gt;<BR ALIGN="LEFT"/>[5] S.OwnPropertyKeys = clo&lt;StringExoticObject.OwnPropertyKeys&gt;<BR ALIGN="LEFT"/>[6] let length = value.length<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4668 -> node4669 [color="black"]
+    node4669_name [shape=none, label=<<font color="black">Call[4669]</font>>]
+    node4669_name -> node4669 [arrowhead=none, color="black", style=dashed]
+    node4669 [shape=cds, label=<<font color="black">%1 = clo&lt;DefinePropertyOrThrow&gt;(S, &quot;length&quot;, (new PropertyDescriptor(&quot;Value&quot; -&gt; ([number] length), &quot;Writable&quot; -&gt; false, &quot;Enumerable&quot; -&gt; false, &quot;Configurable&quot; -&gt; false))[#459])</font>> color="black" fillcolor="white", style=filled]
+    node4669 -> node4670 [color="black"]
+    node4670_name [shape=none, label=<<font color="black">Block[4670]</font>>]
+    node4670_name -> node4670 [arrowhead=none, color="black", style=dashed]
+    node4670 [shape=box, label=<<font color="black">[0] [! %1]<BR ALIGN="LEFT"/>[1] return S<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4670 -> cluster1112_exit [color="black"]
+  }
+}

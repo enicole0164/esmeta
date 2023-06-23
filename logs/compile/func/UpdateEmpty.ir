@@ -1,0 +1,10 @@
+def UpdateEmpty(
+  completionRecord: Normal,
+  value: Unknown,
+): Normal {
+  assert (|| (! (|| (= completionRecord.Type ~return~) (= completionRecord.Type ~throw~))) (! (= completionRecord.Value ~empty~)))
+  if (! (= completionRecord.Value ~empty~)) {
+    return [? completionRecord]
+  } else {}
+  return comp[completionRecord.Type/completionRecord.Target](value)
+}

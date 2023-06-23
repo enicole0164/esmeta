@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1673 {
+    label = "def <SYNTAX>:MethodDefinition[0,0].ContainsArguments(this: Ast:MethodDefinition[0,0]): Boolean"
+    style = rounded
+    cluster1673_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1673_entry_name -> cluster1673_entry [arrowhead=none, color="black", style=dashed]
+    cluster1673_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1673_entry -> node8926 [color="black"]
+    cluster1673_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1673_exit_name -> cluster1673_exit [arrowhead=none, color="black", style=dashed]
+    cluster1673_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8926_name [shape=none, label=<<font color="black">Call[8926]</font>>]
+    node8926_name -> node8926 [arrowhead=none, color="black", style=dashed]
+    node8926 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ContainsArguments()</font>> color="black" fillcolor="white", style=filled]
+    node8926 -> node8927 [color="black"]
+    node8927_name [shape=none, label=<<font color="black">Block[8927]</font>>]
+    node8927_name -> node8927 [arrowhead=none, color="black", style=dashed]
+    node8927 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8927 -> cluster1673_exit [color="black"]
+  }
+}

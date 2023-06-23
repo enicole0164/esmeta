@@ -1,0 +1,10 @@
+def <SYNTAX>:DefaultClause[0,1].ContainsUndefinedBreakTarget(
+  this: Ast:DefaultClause[0,1],
+  labelSet: Unknown,
+): Boolean {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->ContainsUndefinedBreakTarget(labelSet)
+    return %0
+  } else {}
+  return false
+}

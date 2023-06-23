@@ -1,0 +1,10 @@
+def <SYNTAX>:PropertyDefinitionList[1,0].PropertyDefinitionEvaluation(
+  this: Ast:PropertyDefinitionList[1,0],
+  object: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->PropertyDefinitionEvaluation(object)
+  [? %0]
+  sdo-call %1 = this[1]->PropertyDefinitionEvaluation(object)
+  [? %1]
+  return ~unused~
+}

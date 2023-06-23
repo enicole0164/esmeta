@@ -1,0 +1,2 @@
+"use strict";
+async function * x ( ) { } ; try { } catch { } 0 | 0 ; try { } catch { } finally { } 0 ? 0 : 0 ; function Test262Error ( message ) { this . message = message || "" ; } x => 0 ; x : ; async function x ( ) { } var hits = 0 ; var value ; var _this_ ; function Pack ( ) { Object . defineProperty ( this , "length" , { } ) ; } var result = Array . of . call ( Pack , 'wolves' , 'cards' , 'cigarettes' , 'lies' ) ; assert . sameValue ( hits , 1 , { 1 : async function ( x ) { } } ) ; ; ; 

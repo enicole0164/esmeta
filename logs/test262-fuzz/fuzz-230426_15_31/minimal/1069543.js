@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } ; } assert . _isSameValue = function ( a , b ) { if ( a === b ) { ; } } ; async x => { } ; switch ( 0 ) { } try { } catch { } finally { } function Test262Error ( message ) { this . message = message || "" ; } if ( 0 ) ; class x { } class A { #x = 'Avalue' ; x ( ) { return this . #x ; } } class B extends A { #x = 'Bvalue' ; } var b = new B ( ) ; assert . sameValue ( b . x ( ) , 'Avalue' ) ; 

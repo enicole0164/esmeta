@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1185 {
+    label = "def <SYNTAX>:RegularExpressionLiteral[0,0].FlagText(this: Ast:RegularExpressionLiteral[0,0]): Unknown["SourceText"]"
+    style = rounded
+    cluster1185_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1185_entry_name -> cluster1185_entry [arrowhead=none, color="black", style=dashed]
+    cluster1185_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1185_entry -> node5390 [color="black"]
+    cluster1185_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1185_exit_name -> cluster1185_exit [arrowhead=none, color="black", style=dashed]
+    cluster1185_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5390_name [shape=none, label=<<font color="black">Block[5390]</font>>]
+    node5390_name -> node5390 [arrowhead=none, color="black", style=dashed]
+    node5390 [shape=box, label=<<font color="black">[0] (yet &quot;Return the source text that was recognized as |RegularExpressionFlags|.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5390 -> cluster1185_exit [color="black"]
+  }
+}

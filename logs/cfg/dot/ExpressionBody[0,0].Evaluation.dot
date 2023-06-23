@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1580 {
+    label = "def <SYNTAX>:ExpressionBody[0,0].Evaluation(this: Ast:ExpressionBody[0,0]): Unknown"
+    style = rounded
+    cluster1580_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1580_entry_name -> cluster1580_entry [arrowhead=none, color="black", style=dashed]
+    cluster1580_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1580_entry -> node8468 [color="black"]
+    cluster1580_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1580_exit_name -> cluster1580_exit [arrowhead=none, color="black", style=dashed]
+    cluster1580_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8468_name [shape=none, label=<<font color="black">Call[8468]</font>>]
+    node8468_name -> node8468 [arrowhead=none, color="black", style=dashed]
+    node8468 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node8468 -> node8469 [color="black"]
+    node8469_name [shape=none, label=<<font color="black">Block[8469]</font>>]
+    node8469_name -> node8469 [arrowhead=none, color="black", style=dashed]
+    node8469 [shape=box, label=<<font color="black">[0] let exprRef = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8469 -> node8470 [color="black"]
+    node8470_name [shape=none, label=<<font color="black">Call[8470]</font>>]
+    node8470_name -> node8470 [arrowhead=none, color="black", style=dashed]
+    node8470 [shape=cds, label=<<font color="black">%1 = clo&lt;GetValue&gt;(exprRef)</font>> color="black" fillcolor="white", style=filled]
+    node8470 -> node8471 [color="black"]
+    node8471_name [shape=none, label=<<font color="black">Block[8471]</font>>]
+    node8471_name -> node8471 [arrowhead=none, color="black", style=dashed]
+    node8471 [shape=box, label=<<font color="black">[0] let exprValue = [? %1]<BR ALIGN="LEFT"/>[1] return comp[~return~/~empty~](exprValue)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8471 -> cluster1580_exit [color="black"]
+  }
+}

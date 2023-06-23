@@ -1,0 +1,11 @@
+def <BUILTIN>:INTRINSICS.Object.prototype.toLocaleString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let reserved1 = (pop < argumentsList) else let reserved1 = absent
+  if (< 0 argumentsList.length) let reserved2 = (pop < argumentsList) else let reserved2 = absent
+  let O = this
+  call %0 = clo<Invoke>(O, "toString")
+  return [? %0]
+}

@@ -1,0 +1,7 @@
+def LengthOfArrayLike(
+  obj: Object,
+): Unknown["EitherANormalCompletionContainingANonnegativeIntegerOrAnAbruptCompletion"] {
+  call %0 = clo<Get>(obj, "length")
+  call %1 = clo<ToLength>([? %0])
+  return ([math] [? %1])
+}

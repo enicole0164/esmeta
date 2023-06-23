@@ -1,0 +1,5 @@
+def <SYNTAX>:IdentifierStart[0,0].IdentifierCodePoint(
+  this: Ast:IdentifierStart[0,0],
+): Unknown["CodePoint"] {
+  (yet "Return the code point matched by |IdentifierStartChar|.")
+}

@@ -1,0 +1,12 @@
+def IteratorStep(
+  iteratorRecord: IteratorRecord,
+): Normal[Object | False] | Abrupt {
+  call %0 = clo<IteratorNext>(iteratorRecord)
+  let result = [? %0]
+  call %1 = clo<IteratorComplete>(result)
+  let done = [? %1]
+  if (= done true) {
+    return false
+  } else {}
+  return result
+}

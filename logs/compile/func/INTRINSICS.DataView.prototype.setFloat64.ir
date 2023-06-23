@@ -1,0 +1,15 @@
+def <BUILTIN>:INTRINSICS.DataView.prototype.setFloat64(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let byteOffset = (pop < argumentsList) else let byteOffset = absent
+  if (< 0 argumentsList.length) let value = (pop < argumentsList) else let value = absent
+  if (< 0 argumentsList.length) let littleEndian = (pop < argumentsList) else let littleEndian = absent
+  let v = this
+  if (= littleEndian absent) {
+    littleEndian = false
+  } else {}
+  call %0 = clo<SetViewValue>(v, byteOffset, littleEndian, ~Float64~, value)
+  return [? %0]
+}

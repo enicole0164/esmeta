@@ -1,0 +1,37 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2341 {
+    label = "def <BUILTIN>:INTRINSICS.Array.isArray(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2341_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2341_entry_name -> cluster2341_entry [arrowhead=none, color="black", style=dashed]
+    cluster2341_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2341_entry -> node14797 [color="black"]
+    cluster2341_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2341_exit_name -> cluster2341_exit [arrowhead=none, color="black", style=dashed]
+    cluster2341_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14797_name [shape=none, label=<<font color="black">Branch[14797]</font>>]
+    node14797_name -> node14797 [arrowhead=none, color="black", style=dashed]
+    node14797 [shape=diamond, label=<<font color="black">(&lt; 0 argumentsList.length)</font>> color="black" fillcolor="white", style=filled]
+    node14797 -> node14798 [label=<<font color="black">true</font>> color="black"]
+    node14797 -> node14799 [label=<<font color="black">false</font>> color="black"]
+    node14798_name [shape=none, label=<<font color="black">Block[14798]</font>>]
+    node14798_name -> node14798 [arrowhead=none, color="black", style=dashed]
+    node14798 [shape=box, label=<<font color="black">[0] let arg = (pop &lt; argumentsList)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14798 -> node14800 [color="black"]
+    node14799_name [shape=none, label=<<font color="black">Block[14799]</font>>]
+    node14799_name -> node14799 [arrowhead=none, color="black", style=dashed]
+    node14799 [shape=box, label=<<font color="black">[0] let arg = absent<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14799 -> node14800 [color="black"]
+    node14800_name [shape=none, label=<<font color="black">Call[14800]</font>>]
+    node14800_name -> node14800 [arrowhead=none, color="black", style=dashed]
+    node14800 [shape=cds, label=<<font color="black">%0 = clo&lt;IsArray&gt;(arg)</font>> color="black" fillcolor="white", style=filled]
+    node14800 -> node14801 [color="black"]
+    node14801_name [shape=none, label=<<font color="black">Block[14801]</font>>]
+    node14801_name -> node14801 [arrowhead=none, color="black", style=dashed]
+    node14801 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14801 -> cluster2341_exit [color="black"]
+  }
+}

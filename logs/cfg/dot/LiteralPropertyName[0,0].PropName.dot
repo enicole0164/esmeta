@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster959 {
+    label = "def <SYNTAX>:LiteralPropertyName[0,0].PropName(this: Ast:LiteralPropertyName[0,0]): Const[~empty~] | String"
+    style = rounded
+    cluster959_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster959_entry_name -> cluster959_entry [arrowhead=none, color="black", style=dashed]
+    cluster959_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster959_entry -> node3558 [color="black"]
+    cluster959_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster959_exit_name -> cluster959_exit [arrowhead=none, color="black", style=dashed]
+    cluster959_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3558_name [shape=none, label=<<font color="black">Call[3558]</font>>]
+    node3558_name -> node3558 [arrowhead=none, color="black", style=dashed]
+    node3558 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;StringValue()</font>> color="black" fillcolor="white", style=filled]
+    node3558 -> node3559 [color="black"]
+    node3559_name [shape=none, label=<<font color="black">Block[3559]</font>>]
+    node3559_name -> node3559 [arrowhead=none, color="black", style=dashed]
+    node3559 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3559 -> cluster959_exit [color="black"]
+  }
+}

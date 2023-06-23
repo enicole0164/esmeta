@@ -1,0 +1,18 @@
+def <SYNTAX>:WithStatement[0,0].Evaluation(
+  this: Ast:WithStatement[0,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let val = %0
+  call %1 = clo<GetValue>(val)
+  call %2 = clo<ToObject>([? %1])
+  let obj = [? %2]
+  let oldEnv = @EXECUTION_STACK[0].LexicalEnvironment
+  call %3 = clo<NewObjectEnvironment>(obj, true, oldEnv)
+  let newEnv = %3
+  @EXECUTION_STACK[0].LexicalEnvironment = newEnv
+  sdo-call %4 = this[1]->Evaluation()
+  let C = %4
+  @EXECUTION_STACK[0].LexicalEnvironment = oldEnv
+  call %5 = clo<UpdateEmpty>(C, undefined)
+  return [? %5]
+}

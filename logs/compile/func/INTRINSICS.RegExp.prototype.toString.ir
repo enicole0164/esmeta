@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.RegExp.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let R = this
+  if (! (= (typeof R) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1009])
+  } else {}
+  call %0 = clo<Get>(R, "source")
+  call %1 = clo<ToString>([? %0])
+  let pattern = [? %1]
+  call %2 = clo<Get>(R, "flags")
+  call %3 = clo<ToString>([? %2])
+  let flags = [? %3]
+  let result = (concat "/" pattern "/" flags)
+  return result
+}

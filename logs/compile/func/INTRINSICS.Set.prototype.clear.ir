@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.Set.prototype.clear(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let S = this
+  call %0 = clo<RequireInternalSlot>(S, "SetData")
+  [? %0]
+  let entries = S.SetData
+  %2 = entries
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let e = %2[%1]
+    (yet "Replace the element of _entries_ whose value is _e_ with an element whose value is ~empty~.")
+    %1 = (+ %1 1)
+  }
+  return undefined
+}

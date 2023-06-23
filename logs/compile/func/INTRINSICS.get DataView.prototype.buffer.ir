@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.get DataView.prototype.buffer(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  call %0 = clo<RequireInternalSlot>(O, "DataView")
+  [? %0]
+  assert (! (= O.ViewedArrayBuffer absent))
+  let buffer = O.ViewedArrayBuffer
+  return buffer
+}

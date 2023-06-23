@@ -1,0 +1,19 @@
+def <BUILTIN>:INTRINSICS.Math.trunc(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  call %0 = clo<ToNumber>(x)
+  let n = [? %0]
+  if (|| (= n NaN) (|| (= n 0.0f) (|| (= n -0.0f) (|| (= n +INF) (= n -INF))))) {
+    return n
+  } else {}
+  if (&& (< n 1.0f) (< 0.0f n)) {
+    return 0.0f
+  } else {}
+  if (&& (< n -0.0f) (< -1.0f n)) {
+    return -0.0f
+  } else {}
+  (yet "Return the integral Number nearest _n_ in the direction of *+0*<sub>𝔽</sub>.")
+}

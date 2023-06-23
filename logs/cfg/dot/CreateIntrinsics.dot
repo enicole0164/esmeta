@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1029 {
+    label = "def CreateIntrinsics(realmRec: Unknown): Const[~unused~]"
+    style = rounded
+    cluster1029_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1029_entry_name -> cluster1029_entry [arrowhead=none, color="black", style=dashed]
+    cluster1029_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1029_entry -> node3857 [color="black"]
+    cluster1029_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1029_exit_name -> cluster1029_exit [arrowhead=none, color="black", style=dashed]
+    cluster1029_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3857_name [shape=none, label=<<font color="black">Block[3857]</font>>]
+    node3857_name -> node3857 [arrowhead=none, color="black", style=dashed]
+    node3857 [shape=box, label=<<font color="black">[0] realmRec.Intrinsics = (new Record())[#394]<BR ALIGN="LEFT"/>[1] realmRec.Intrinsics = @INTRINSICS<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3857 -> node3858 [color="black"]
+    node3858_name [shape=none, label=<<font color="black">Call[3858]</font>>]
+    node3858_name -> node3858 [arrowhead=none, color="black", style=dashed]
+    node3858 [shape=cds, label=<<font color="black">%0 = clo&lt;AddRestrictedFunctionProperties&gt;(realmRec.Intrinsics[&quot;%Function.prototype%&quot;], realmRec)</font>> color="black" fillcolor="white", style=filled]
+    node3858 -> node3859 [color="black"]
+    node3859_name [shape=none, label=<<font color="black">Block[3859]</font>>]
+    node3859_name -> node3859 [arrowhead=none, color="black", style=dashed]
+    node3859 [shape=box, label=<<font color="black">[0] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3859 -> cluster1029_exit [color="black"]
+  }
+}

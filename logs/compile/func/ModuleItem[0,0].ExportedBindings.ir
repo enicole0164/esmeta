@@ -1,0 +1,5 @@
+def <SYNTAX>:ModuleItem[0,0].ExportedBindings(
+  this: Ast:ModuleItem[0,0],
+): List[String] {
+  return (new [])[#821]
+}

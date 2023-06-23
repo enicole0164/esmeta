@@ -1,0 +1,6 @@
+def <SYNTAX>:FunctionStatementList[0,0].HasCallInTailPosition(
+  this: Ast:FunctionStatementList[0,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

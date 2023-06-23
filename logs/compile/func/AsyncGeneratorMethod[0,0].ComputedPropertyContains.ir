@@ -1,0 +1,7 @@
+def <SYNTAX>:AsyncGeneratorMethod[0,0].ComputedPropertyContains(
+  this: Ast:AsyncGeneratorMethod[0,0],
+  symbol: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ComputedPropertyContains(symbol)
+  return %0
+}

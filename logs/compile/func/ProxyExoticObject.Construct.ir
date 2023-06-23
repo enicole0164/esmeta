@@ -1,0 +1,28 @@
+def <INTERNAL>:ProxyExoticObject.Construct(
+  O: ProxyExoticObject,
+  argumentsList: List[ESValue],
+  newTarget: Unknown["Constructor"],
+): Normal[Object] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#535])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<IsConstructor>(target)
+  assert (= %0 true)
+  call %1 = clo<GetMethod>(handler, "construct")
+  let trap = [? %1]
+  if (= trap undefined) {
+    call %2 = clo<Construct>(target, argumentsList, newTarget)
+    return [? %2]
+  } else {}
+  call %3 = clo<CreateArrayFromList>(argumentsList)
+  let argArray = %3
+  call %4 = clo<Call>(trap, handler, (new [target, argArray, newTarget])[#536])
+  let newObj = [? %4]
+  if (! (= (typeof newObj) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#537])
+  } else {}
+  return newObj
+}

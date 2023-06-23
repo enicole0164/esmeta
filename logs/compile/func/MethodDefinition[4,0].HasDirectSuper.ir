@@ -1,0 +1,6 @@
+def <SYNTAX>:MethodDefinition[4,0].HasDirectSuper(
+  this: Ast:MethodDefinition[4,0],
+): Boolean {
+  sdo-call %0 = this[1]->Contains((nt |SuperCall|[]))
+  return %0
+}

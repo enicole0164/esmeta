@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1019 {
+    label = "def <CONC>:ModuleEnvironmentRecord.CreateImportBinding(envRec: ModuleEnvironmentRecord, N: String, M: ModuleRecord, N2: String): Const[~unused~]"
+    style = rounded
+    cluster1019_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1019_entry_name -> cluster1019_entry [arrowhead=none, color="black", style=dashed]
+    cluster1019_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1019_entry -> node3821 [color="black"]
+    cluster1019_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1019_exit_name -> cluster1019_exit [arrowhead=none, color="black", style=dashed]
+    cluster1019_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3821_name [shape=none, label=<<font color="black">Block[3821]</font>>]
+    node3821_name -> node3821 [arrowhead=none, color="black", style=dashed]
+    node3821 [shape=box, label=<<font color="black">[0] assert (= envRec.SubMap[N] absent)<BR ALIGN="LEFT"/>[1] assert (yet &quot;When _M_.[[Environment]] is instantiated it will have a direct binding for _N2_.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Create an immutable indirect binding in _envRec_ for _N_ that references _M_ and _N2_ as its target binding and record that the binding is initialized.&quot;)<BR ALIGN="LEFT"/>[3] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3821 -> cluster1019_exit [color="black"]
+  }
+}

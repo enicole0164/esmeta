@@ -1,0 +1,16 @@
+def Encode(
+  string: String,
+  unescapedSet: String,
+): Normal[String] | Abrupt {
+  let strLen = string.length
+  let R = ""
+  let k = 0
+  loop[repeat] true {
+    if (== k strLen) {
+      return R
+    } else {}
+    let C = string[k]
+    (yet "If _C_ is in _unescapedSet_, then\n  1. Set _k_ to _k_ + 1.\n  1. Set _R_ to the string-concatenation of _R_ and _C_.")
+    (yet "Else,\n  1. Let _cp_ be CodePointAt(_string_, _k_).\n  1. If _cp_.[[IsUnpairedSurrogate]] is *true*, throw a newly created *URIError* object.\n  1. Set _k_ to _k_ + _cp_.[[CodeUnitCount]].\n  1. Let _Octets_ be the List of octets resulting by applying the UTF-8 transformation to _cp_.[[CodePoint]].\n  1. For each _octet_ of _Octets_, do\n    1. Set _R_ to the string-concatenation of:\n      * _R_\n      * *\"%\"*\n      * the String representation of _octet_, formatted as a two-digit uppercase hexadecimal number, padded to the left with a zero if necessary")
+  }
+}

@@ -1,0 +1,9 @@
+def <SYNTAX>:ObjectBindingPattern[1,0].BindingInitialization(
+  this: Ast:ObjectBindingPattern[1,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  let excludedNames = (new [])[#365]
+  sdo-call %0 = this[0]->RestBindingInitialization(value, environment, excludedNames)
+  return [? %0]
+}

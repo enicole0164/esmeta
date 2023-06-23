@@ -1,0 +1,9 @@
+def SetFunctionLength(
+  F: FunctionObject,
+  length: Unknown["NonnegativeIntegerOr+∞"],
+): Const[~unused~] {
+  assert (&& F.Extensible (= F.SubMap.length absent))
+  call %0 = clo<DefinePropertyOrThrow>(F, "length", (new PropertyDescriptor("Value" -> ([number] length), "Writable" -> false, "Enumerable" -> false, "Configurable" -> true))[#431])
+  [! %0]
+  return ~unused~
+}

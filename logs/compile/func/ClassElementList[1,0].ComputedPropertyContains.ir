@@ -1,0 +1,12 @@
+def <SYNTAX>:ClassElementList[1,0].ComputedPropertyContains(
+  this: Ast:ClassElementList[1,0],
+  symbol: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ComputedPropertyContains(symbol)
+  let inList = %0
+  if (= inList true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->ComputedPropertyContains(symbol)
+  return %1
+}

@@ -1,0 +1,7 @@
+def HostEventSet(
+  execution: Unknown["CandidateExecution"],
+): Unknown["SetOfEvents"] {
+  (yet "Let _events_ be an empty Set.")
+  (yet "For each event _E_ of EventSet(_execution_), do\n  1. If _E_ is not in SharedDataBlockEventSet(_execution_), add _E_ to _events_.")
+  return events
+}

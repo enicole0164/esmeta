@@ -1,0 +1,10 @@
+def <SYNTAX>:PropertyDefinition[3,0].Contains(
+  this: Ast:PropertyDefinition[3,0],
+  symbol: Unknown,
+): Boolean {
+  if (= symbol this[0]) {
+    return true
+  } else {}
+  sdo-call %0 = this[0]->ComputedPropertyContains(symbol)
+  return %0
+}

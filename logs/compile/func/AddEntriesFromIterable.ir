@@ -1,0 +1,60 @@
+def AddEntriesFromIterable(
+  target: Unknown,
+  iterable: Unknown["ECMAScriptLanguageValue,ButNot*undefined*Or*null*"],
+  adder: FunctionObject,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<IsCallable>(adder)
+  if (= %0 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1116])
+  } else {}
+  call %1 = clo<GetIterator>(iterable)
+  let iteratorRecord = [? %1]
+  loop[repeat] true {
+    call %2 = clo<IteratorStep>(iteratorRecord)
+    let next = [? %2]
+    if (= next false) {
+      return target
+    } else {}
+    call %3 = clo<IteratorValue>(next)
+    let nextItem = [? %3]
+    if (! (= (typeof nextItem) @Object)) {
+      call %4 = clo<ThrowCompletion>((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1117])
+      let error = %4
+      call %5 = clo<IteratorClose>(iteratorRecord, error)
+      return [? %5]
+    } else {}
+    call %6 = clo<Get>(nextItem, "0")
+    call %7 = clo<Completion>(%6)
+    let k = %7
+    if (&& (comp? k) (! (= k.Type ~normal~))) {
+      call %8 = clo<IteratorClose>(iteratorRecord, k)
+      return [? %8]
+    } else {
+      if (? k: "CompletionRecord") {
+        k = k.Value
+      } else {}
+    }
+    call %9 = clo<Get>(nextItem, "1")
+    call %10 = clo<Completion>(%9)
+    let v = %10
+    if (&& (comp? v) (! (= v.Type ~normal~))) {
+      call %11 = clo<IteratorClose>(iteratorRecord, v)
+      return [? %11]
+    } else {
+      if (? v: "CompletionRecord") {
+        v = v.Value
+      } else {}
+    }
+    call %12 = clo<Call>(adder, target, (new [k, v])[#1118])
+    call %13 = clo<Completion>(%12)
+    let status = %13
+    if (&& (comp? status) (! (= status.Type ~normal~))) {
+      call %14 = clo<IteratorClose>(iteratorRecord, status)
+      return [? %14]
+    } else {
+      if (? status: "CompletionRecord") {
+        status = status.Value
+      } else {}
+    }
+  }
+}

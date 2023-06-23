@@ -1,0 +1,23 @@
+def DefineField(
+  receiver: Object,
+  fieldRecord: ClassFieldDefinitionRecord,
+): Normal[Const[~unused~]] | Abrupt {
+  let fieldName = fieldRecord.Name
+  let initializer = fieldRecord.Initializer
+  if (! (= initializer ~empty~)) {
+    call %0 = clo<Call>(initializer, receiver)
+    let initValue = [? %0]
+  } else {
+    let initValue = undefined
+  }
+  if (? fieldName: "PrivateName") {
+    call %1 = clo<PrivateFieldAdd>(receiver, fieldName, initValue)
+    [? %1]
+  } else {
+    call %2 = clo<IsPropertyKey>(fieldName)
+    assert (= %2 true)
+    call %3 = clo<CreateDataPropertyOrThrow>(receiver, fieldName, initValue)
+    [? %3]
+  }
+  return ~unused~
+}

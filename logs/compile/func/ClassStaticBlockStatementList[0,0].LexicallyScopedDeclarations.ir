@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassStaticBlockStatementList[0,0].LexicallyScopedDeclarations(
+  this: Ast:ClassStaticBlockStatementList[0,0],
+): List[Ast] {
+  return (new [])[#163]
+}

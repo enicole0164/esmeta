@@ -1,0 +1,14 @@
+def SetDefaultGlobalBindings(
+  realmRec: Unknown,
+): Normal[Object] | Abrupt {
+  let global = realmRec.GlobalObject
+  let keys = (keys @GLOBAL.SubMap)[#395]
+  let idx = 0
+  loop[repeat] (< idx keys.length) {
+    let name = keys[idx]
+    global.SubMap[name] = @GLOBAL.SubMap[name]
+    idx = (+ idx 1)
+  }
+  global.SubMap.globalThis = (new PropertyDescriptor("Value" -> global, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#396]
+  return global
+}

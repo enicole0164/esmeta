@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster908 {
+    label = "def <SYNTAX>:ImportMeta[0,0].AssignmentTargetType(this: Ast:ImportMeta[0,0]): Const[~invalid~, ~simple~]"
+    style = rounded
+    cluster908_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster908_entry_name -> cluster908_entry [arrowhead=none, color="black", style=dashed]
+    cluster908_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster908_entry -> node3505 [color="black"]
+    cluster908_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster908_exit_name -> cluster908_exit [arrowhead=none, color="black", style=dashed]
+    cluster908_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3505_name [shape=none, label=<<font color="black">Block[3505]</font>>]
+    node3505_name -> node3505 [arrowhead=none, color="black", style=dashed]
+    node3505 [shape=box, label=<<font color="black">[0] return ~invalid~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3505 -> cluster908_exit [color="black"]
+  }
+}

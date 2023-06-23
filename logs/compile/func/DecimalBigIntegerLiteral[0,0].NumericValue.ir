@@ -1,0 +1,5 @@
+def <SYNTAX>:DecimalBigIntegerLiteral[0,0].NumericValue(
+  this: Ast:DecimalBigIntegerLiteral[0,0],
+): Number | BigInt {
+  return 0n
+}

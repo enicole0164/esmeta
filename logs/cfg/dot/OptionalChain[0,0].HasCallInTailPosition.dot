@@ -1,0 +1,29 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1859 {
+    label = "def <SYNTAX>:OptionalChain[0,0].HasCallInTailPosition(this: Ast:OptionalChain[0,0], call: Unknown): Boolean"
+    style = rounded
+    cluster1859_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1859_entry_name -> cluster1859_entry [arrowhead=none, color="black", style=dashed]
+    cluster1859_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1859_entry -> node9951 [color="black"]
+    cluster1859_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1859_exit_name -> cluster1859_exit [arrowhead=none, color="black", style=dashed]
+    cluster1859_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node9951_name [shape=none, label=<<font color="black">Branch[9951]</font>>]
+    node9951_name -> node9951 [arrowhead=none, color="black", style=dashed]
+    node9951 [shape=diamond, label=<<font color="black">(= this call)</font>> color="black" fillcolor="white", style=filled]
+    node9951 -> node9952 [label=<<font color="black">true</font>> color="black"]
+    node9951 -> node9953 [label=<<font color="black">false</font>> color="black"]
+    node9952_name [shape=none, label=<<font color="black">Block[9952]</font>>]
+    node9952_name -> node9952 [arrowhead=none, color="black", style=dashed]
+    node9952 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9952 -> cluster1859_exit [color="black"]
+    node9953_name [shape=none, label=<<font color="black">Block[9953]</font>>]
+    node9953_name -> node9953 [arrowhead=none, color="black", style=dashed]
+    node9953 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9953 -> cluster1859_exit [color="black"]
+  }
+}

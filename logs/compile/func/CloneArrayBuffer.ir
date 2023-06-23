@@ -1,0 +1,17 @@
+def CloneArrayBuffer(
+  srcBuffer: Unknown["ArrayBufferOrASharedArrayBuffer"],
+  srcByteOffset: Unknown["NonnegativeInteger"],
+  srcLength: Unknown["NonnegativeInteger"],
+  cloneConstructor: Unknown["Constructor"],
+): Unknown["EitherANormalCompletionContainingAnArrayBufferOrAnAbruptCompletion"] {
+  call %0 = clo<AllocateArrayBuffer>(cloneConstructor, srcLength)
+  let targetBuffer = [? %0]
+  call %1 = clo<IsDetachedBuffer>(srcBuffer)
+  if (= %1 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1144])
+  } else {}
+  let srcBlock = srcBuffer.ArrayBufferData
+  let targetBlock = targetBuffer.ArrayBufferData
+  call %2 = clo<CopyDataBlockBytes>(targetBlock, 0, srcBlock, srcByteOffset, srcLength)
+  return targetBuffer
+}

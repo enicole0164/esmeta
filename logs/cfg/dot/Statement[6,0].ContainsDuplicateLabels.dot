@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster480 {
+    label = "def <SYNTAX>:Statement[6,0].ContainsDuplicateLabels(this: Ast:Statement[6,0], labelSet: Unknown): Boolean"
+    style = rounded
+    cluster480_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster480_entry_name -> cluster480_entry [arrowhead=none, color="black", style=dashed]
+    cluster480_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster480_entry -> node2324 [color="black"]
+    cluster480_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster480_exit_name -> cluster480_exit [arrowhead=none, color="black", style=dashed]
+    cluster480_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2324_name [shape=none, label=<<font color="black">Block[2324]</font>>]
+    node2324_name -> node2324 [arrowhead=none, color="black", style=dashed]
+    node2324 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2324 -> cluster480_exit [color="black"]
+  }
+}

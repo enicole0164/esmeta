@@ -1,0 +1,6 @@
+def <SYNTAX>:LexicalDeclaration[0,0].IsConstantDeclaration(
+  this: Ast:LexicalDeclaration[0,0],
+): Boolean {
+  sdo-call %0 = this[0]->IsConstantDeclaration()
+  return %0
+}

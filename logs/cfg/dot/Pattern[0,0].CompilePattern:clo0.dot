@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2241 {
+    label = "def <CLO>:Pattern[0,0].CompilePattern:clo0(inputChars: Unknown, index: Unknown): Unknown"
+    style = rounded
+    cluster2241_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2241_entry_name -> cluster2241_entry [arrowhead=none, color="black", style=dashed]
+    cluster2241_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2241_entry -> node13907 [color="black"]
+    cluster2241_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2241_exit_name -> cluster2241_exit [arrowhead=none, color="black", style=dashed]
+    cluster2241_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13907_name [shape=none, label=<<font color="black">Block[13907]</font>>]
+    node13907_name -> node13907 [arrowhead=none, color="black", style=dashed]
+    node13907 [shape=box, label=<<font color="black">[0] assert (? inputChars: &quot;ListOfCharacters&quot;)<BR ALIGN="LEFT"/>[1] assert (yet &quot;_index_ is a non-negative integer which is &le; the number of characters in _inputChars_.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Let _Input_ be _inputChars_. This alias will be used throughout the algorithms in &lt;emu-xref href=\&quot;#sec-pattern-semantics\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[3] (yet &quot;Let _InputLength_ be the number of characters contained in _Input_. This alias will be used throughout the algorithms in &lt;emu-xref href=\&quot;#sec-pattern-semantics\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[4] (yet &quot;Let _c_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called:\n  1. Assert: _y_ is a State.\n  1. Return _y_.&quot;)<BR ALIGN="LEFT"/>[5] (yet &quot;Let _cap_ be a List of _NcapturingParens_ *undefined* values, indexed 1 through _NcapturingParens_.&quot;)<BR ALIGN="LEFT"/>[6] (yet &quot;Let _x_ be the State (_index_, _cap_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13907 -> node13908 [color="black"]
+    node13908_name [shape=none, label=<<font color="black">Call[13908]</font>>]
+    node13908_name -> node13908 [arrowhead=none, color="black", style=dashed]
+    node13908 [shape=cds, label=<<font color="black">%0 = m(x, c)</font>> color="black" fillcolor="white", style=filled]
+    node13908 -> node13909 [color="black"]
+    node13909_name [shape=none, label=<<font color="black">Block[13909]</font>>]
+    node13909_name -> node13909 [arrowhead=none, color="black", style=dashed]
+    node13909 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13909 -> cluster2241_exit [color="black"]
+  }
+}

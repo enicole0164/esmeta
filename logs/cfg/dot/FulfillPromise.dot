@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2570 {
+    label = "def FulfillPromise(promise: Unknown, value: Unknown): Const[~unused~]"
+    style = rounded
+    cluster2570_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2570_entry_name -> cluster2570_entry [arrowhead=none, color="black", style=dashed]
+    cluster2570_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2570_entry -> node18736 [color="black"]
+    cluster2570_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2570_exit_name -> cluster2570_exit [arrowhead=none, color="black", style=dashed]
+    cluster2570_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node18736_name [shape=none, label=<<font color="black">Block[18736]</font>>]
+    node18736_name -> node18736 [arrowhead=none, color="black", style=dashed]
+    node18736 [shape=box, label=<<font color="black">[0] assert (= promise.PromiseState ~pending~)<BR ALIGN="LEFT"/>[1] let reactions = promise.PromiseFulfillReactions<BR ALIGN="LEFT"/>[2] promise.PromiseResult = value<BR ALIGN="LEFT"/>[3] promise.PromiseFulfillReactions = undefined<BR ALIGN="LEFT"/>[4] promise.PromiseRejectReactions = undefined<BR ALIGN="LEFT"/>[5] promise.PromiseState = ~fulfilled~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18736 -> node18737 [color="black"]
+    node18737_name [shape=none, label=<<font color="black">Call[18737]</font>>]
+    node18737_name -> node18737 [arrowhead=none, color="black", style=dashed]
+    node18737 [shape=cds, label=<<font color="black">%0 = clo&lt;TriggerPromiseReactions&gt;(reactions, value)</font>> color="black" fillcolor="white", style=filled]
+    node18737 -> node18738 [color="black"]
+    node18738_name [shape=none, label=<<font color="black">Block[18738]</font>>]
+    node18738_name -> node18738 [arrowhead=none, color="black", style=dashed]
+    node18738 [shape=box, label=<<font color="black">[0] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18738 -> cluster2570_exit [color="black"]
+  }
+}

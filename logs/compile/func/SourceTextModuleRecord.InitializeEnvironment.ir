@@ -1,0 +1,121 @@
+def <CONC>:SourceTextModuleRecord.InitializeEnvironment(
+  module: SourceTextModuleRecord,
+): Normal[Const[~unused~]] | Abrupt {
+  %1 = module.IndirectExportEntries
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let e = %1[%0]
+    method-call %2 = module->ResolveExport(e.ExportName)
+    let resolution = [? %2]
+    if (|| (= resolution null) (= resolution ~ambiguous~)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#792])
+    } else {}
+    assert (? resolution: "ResolvedBindingRecord")
+    %0 = (+ %0 1)
+  }
+  assert (yet "All named exports from _module_ are resolvable.")
+  let realm = module.Realm
+  assert (! (= realm undefined))
+  call %3 = clo<NewModuleEnvironment>(realm.GlobalEnv)
+  let env = %3
+  module.Environment = env
+  %5 = module.ImportEntries
+  %4 = 0
+  loop[foreach] (< %4 %5.length) {
+    let in = %5[%4]
+    call %6 = clo<HostResolveImportedModule>(module, in.ModuleRequest)
+    let importedModule = [! %6]
+    nop
+    if (= in.ImportName ~namespace-object~) {
+      call %7 = clo<GetModuleNamespace>(importedModule)
+      let namespace = [? %7]
+      method-call %8 = env->CreateImmutableBinding(in.LocalName, true)
+      [! %8]
+      method-call %9 = env->InitializeBinding(in.LocalName, namespace)
+      [! %9]
+    } else {
+      method-call %10 = importedModule->ResolveExport(in.ImportName)
+      let resolution = [? %10]
+      if (|| (= resolution null) (= resolution ~ambiguous~)) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#793])
+      } else {}
+      if (= resolution.BindingName ~namespace~) {
+        call %11 = clo<GetModuleNamespace>(resolution.Module)
+        let namespace = [? %11]
+        method-call %12 = env->CreateImmutableBinding(in.LocalName, true)
+        [! %12]
+        method-call %13 = env->InitializeBinding(in.LocalName, namespace)
+        [! %13]
+      } else {
+        method-call %14 = env->CreateImportBinding(in.LocalName, resolution.Module, resolution.BindingName)
+      }
+    }
+    %4 = (+ %4 1)
+  }
+  let moduleContext = (new ExecutionContext())[#794]
+  moduleContext.Function = null
+  assert (! (= module.Realm undefined))
+  moduleContext.Realm = module.Realm
+  moduleContext.ScriptOrModule = module
+  moduleContext.VariableEnvironment = module.Environment
+  moduleContext.LexicalEnvironment = module.Environment
+  moduleContext.PrivateEnvironment = null
+  module.Context = moduleContext
+  push moduleContext > @EXECUTION_STACK
+  let code = module.ECMAScriptCode
+  sdo-call %15 = code->VarScopedDeclarations()
+  let varDeclarations = %15
+  let declaredVarNames = (new [])[#795]
+  %17 = varDeclarations
+  %16 = 0
+  loop[foreach] (< %16 %17.length) {
+    let d = %17[%16]
+    sdo-call %20 = d->BoundNames()
+    %19 = %20
+    %18 = 0
+    loop[foreach] (< %18 %19.length) {
+      let dn = %19[%18]
+      if (! (contains declaredVarNames dn)) {
+        method-call %21 = env->CreateMutableBinding(dn, false)
+        [! %21]
+        method-call %22 = env->InitializeBinding(dn, undefined)
+        [! %22]
+        push declaredVarNames < dn
+      } else {}
+      %18 = (+ %18 1)
+    }
+    %16 = (+ %16 1)
+  }
+  sdo-call %23 = code->LexicallyScopedDeclarations()
+  let lexDeclarations = %23
+  let privateEnv = null
+  %25 = lexDeclarations
+  %24 = 0
+  loop[foreach] (< %24 %25.length) {
+    let d = %25[%24]
+    sdo-call %28 = d->BoundNames()
+    %27 = %28
+    %26 = 0
+    loop[foreach] (< %26 %27.length) {
+      let dn = %27[%26]
+      sdo-call %29 = d->IsConstantDeclaration()
+      if (= %29 true) {
+        method-call %30 = env->CreateImmutableBinding(dn, true)
+        [! %30]
+      } else {
+        method-call %31 = env->CreateMutableBinding(dn, false)
+        [! %31]
+      }
+      if (|| (|| (|| (? d: "FunctionDeclaration") (? d: "GeneratorDeclaration")) (? d: "AsyncFunctionDeclaration")) (? d: "AsyncGeneratorDeclaration")) {
+        sdo-call %32 = d->InstantiateFunctionObject(env, privateEnv)
+        let fo = %32
+        method-call %33 = env->InitializeBinding(dn, fo)
+        [! %33]
+      } else {}
+      %26 = (+ %26 1)
+    }
+    %24 = (+ %24 1)
+  }
+  (yet "Remove _moduleContext_ from the execution context stack.")
+  return ~unused~
+}

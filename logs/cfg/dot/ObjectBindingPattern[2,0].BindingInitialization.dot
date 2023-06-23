@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster851 {
+    label = "def <SYNTAX>:ObjectBindingPattern[2,0].BindingInitialization(this: Ast:ObjectBindingPattern[2,0], value: Unknown, environment: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster851_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster851_entry_name -> cluster851_entry [arrowhead=none, color="black", style=dashed]
+    cluster851_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster851_entry -> node3203 [color="black"]
+    cluster851_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster851_exit_name -> cluster851_exit [arrowhead=none, color="black", style=dashed]
+    cluster851_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3203_name [shape=none, label=<<font color="black">Call[3203]</font>>]
+    node3203_name -> node3203 [arrowhead=none, color="black", style=dashed]
+    node3203 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;PropertyBindingInitialization(value, environment)</font>> color="black" fillcolor="white", style=filled]
+    node3203 -> node3204 [color="black"]
+    node3204_name [shape=none, label=<<font color="black">Block[3204]</font>>]
+    node3204_name -> node3204 [arrowhead=none, color="black", style=dashed]
+    node3204 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/>[1] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3204 -> cluster851_exit [color="black"]
+  }
+}

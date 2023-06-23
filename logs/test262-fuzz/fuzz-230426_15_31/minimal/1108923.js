@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } { } } assert . _isSameValue = { source : 0 } ; var x ; assert . throws = `` ; try { } finally { } function Test262Error ( message ) { this . message = message || "" ; } Test262Error = { unicode : '' } ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; function $DONOTEVALUATE ( ) { throw { source : null } ; } assert . sameValue ( `${ 0 }` . indexOf ( 1 , 0 ) , '[].indexOf(1, 0)' ) ; 

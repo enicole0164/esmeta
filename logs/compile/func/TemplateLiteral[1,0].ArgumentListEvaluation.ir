@@ -1,0 +1,10 @@
+def <SYNTAX>:TemplateLiteral[1,0].ArgumentListEvaluation(
+  this: Ast:TemplateLiteral[1,0],
+): Normal[List[ESValue]] | Abrupt {
+  let templateLiteral = this
+  call %0 = clo<GetTemplateObject>(templateLiteral)
+  let siteObj = %0
+  sdo-call %1 = this[0]->ArgumentListEvaluation()
+  let remaining = [? %1]
+  return (list-concat (new [siteObj])[#582] remaining)[#581]
+}

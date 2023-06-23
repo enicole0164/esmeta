@@ -1,0 +1,37 @@
+def SetViewValue(
+  view: Unknown,
+  requestIndex: Unknown,
+  isLittleEndian: Unknown,
+  type: Unknown,
+  value: Unknown,
+): Normal[Undefined] | Abrupt {
+  call %0 = clo<RequireInternalSlot>(view, "DataView")
+  [? %0]
+  assert (! (= view.ViewedArrayBuffer absent))
+  call %1 = clo<ToIndex>(requestIndex)
+  let getIndex = [? %1]
+  call %2 = clo<IsBigIntElementType>(type)
+  if (= %2 true) {
+    call %3 = clo<ToBigInt>(value)
+    let numberValue = [? %3]
+  } else {
+    call %4 = clo<ToNumber>(value)
+    let numberValue = [? %4]
+  }
+  call %5 = clo<ToBoolean>(isLittleEndian)
+  isLittleEndian = %5
+  let buffer = view.ViewedArrayBuffer
+  call %6 = clo<IsDetachedBuffer>(buffer)
+  if (= %6 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1169])
+  } else {}
+  let viewOffset = view.ByteOffset
+  let viewSize = view.ByteLength
+  (yet "Let _elementSize_ be the Element Size value specified in <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for Element Type _type_.")
+  if (< viewSize (+ getIndex elementSize)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1170])
+  } else {}
+  let bufferIndex = (+ getIndex viewOffset)
+  call %7 = clo<SetValueInBuffer>(buffer, bufferIndex, type, numberValue, false, ~Unordered~, isLittleEndian)
+  return undefined
+}

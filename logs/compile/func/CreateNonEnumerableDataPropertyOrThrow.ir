@@ -1,0 +1,11 @@
+def CreateNonEnumerableDataPropertyOrThrow(
+  O: Object,
+  P: Symbol | String,
+  V: ESValue,
+): Const[~unused~] {
+  assert (&& (? O: "OrdinaryObject") O.Extensible)
+  let newDesc = (new PropertyDescriptor("Value" -> V, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#44]
+  call %0 = clo<DefinePropertyOrThrow>(O, P, newDesc)
+  [! %0]
+  return ~unused~
+}

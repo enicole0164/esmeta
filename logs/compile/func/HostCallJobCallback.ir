@@ -1,0 +1,10 @@
+def HostCallJobCallback(
+  jobCallback: JobCallbackRecord,
+  V: ESValue,
+  argumentsList: List[ESValue],
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<IsCallable>(jobCallback.Callback)
+  assert (= %0 true)
+  call %1 = clo<Call>(jobCallback.Callback, V, argumentsList)
+  return [? %1]
+}

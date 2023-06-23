@@ -1,0 +1,6 @@
+def <SYNTAX>:FunctionStatementList[0,1].VarDeclaredNames(
+  this: Ast:FunctionStatementList[0,1],
+): List[String] {
+  sdo-call %0 = this[0]->TopLevelVarDeclaredNames()
+  return %0
+}

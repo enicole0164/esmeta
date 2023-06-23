@@ -1,0 +1,10 @@
+def <SYNTAX>:VariableDeclaration[1,0].Evaluation(
+  this: Ast:VariableDeclaration[1,0],
+): Unknown {
+  sdo-call %0 = this[1]->Evaluation()
+  let rhs = %0
+  call %1 = clo<GetValue>(rhs)
+  let rval = [? %1]
+  sdo-call %2 = this[0]->BindingInitialization(rval, undefined)
+  return [? %2]
+}

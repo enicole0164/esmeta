@@ -1,0 +1,28 @@
+def <BUILTIN>:INTRINSICS.Object.getOwnPropertyDescriptors(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let O = (pop < argumentsList) else let O = absent
+  call %0 = clo<ToObject>(O)
+  let obj = [? %0]
+  method-call %1 = obj->OwnPropertyKeys()
+  let ownKeys = [? %1]
+  call %2 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let descriptors = %2
+  %4 = ownKeys
+  %3 = 0
+  loop[foreach] (< %3 %4.length) {
+    let key = %4[%3]
+    method-call %5 = obj->GetOwnProperty(key)
+    let desc = [? %5]
+    call %6 = clo<FromPropertyDescriptor>(desc)
+    let descriptor = %6
+    if (! (= descriptor undefined)) {
+      call %7 = clo<CreateDataPropertyOrThrow>(descriptors, key, descriptor)
+      [! %7]
+    } else {}
+    %3 = (+ %3 1)
+  }
+  return descriptors
+}

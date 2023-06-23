@@ -1,0 +1,3 @@
+// [EXIT] throw-error: TypeError(thisStringValue ((step 3, 7:12-42))<BUILTIN>:INTRINSICS.String.prototype.toString)
+"use strict";
+String . prototype . toString . call ( 0 ) ; 

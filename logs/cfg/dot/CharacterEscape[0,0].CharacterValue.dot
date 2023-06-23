@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2216 {
+    label = "def <SYNTAX>:CharacterEscape[0,0].CharacterValue(this: Ast:CharacterEscape[0,0]): Unknown["NonnegativeInteger"]"
+    style = rounded
+    cluster2216_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2216_entry_name -> cluster2216_entry [arrowhead=none, color="black", style=dashed]
+    cluster2216_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2216_entry -> node13858 [color="black"]
+    cluster2216_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2216_exit_name -> cluster2216_exit [arrowhead=none, color="black", style=dashed]
+    cluster2216_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13858_name [shape=none, label=<<font color="black">Block[13858]</font>>]
+    node13858_name -> node13858 [arrowhead=none, color="black", style=dashed]
+    node13858 [shape=box, label=<<font color="black">[0] (yet &quot;Return the numeric value according to &lt;emu-xref href=\&quot;#table-controlescape-code-point-values\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13858 -> cluster2216_exit [color="black"]
+  }
+}

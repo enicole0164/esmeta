@@ -1,0 +1,9 @@
+def <SYNTAX>:ArrowParameters[1,0].IteratorBindingInitialization(
+  this: Ast:ArrowParameters[1,0],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  let formals = (parse this[0] (nt |ArrowFormalParameters|[]))
+  sdo-call %0 = formals->IteratorBindingInitialization(iteratorRecord, environment)
+  return [? %0]
+}

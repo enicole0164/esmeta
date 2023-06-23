@@ -1,0 +1,11 @@
+def <NUM>:Number::signedRightShift(
+  x: Number,
+  y: Number,
+): Unknown["IntegralNumber"] {
+  call %0 = clo<ToInt32>(x)
+  let lnum = [! %0]
+  call %1 = clo<ToUint32>(y)
+  let rnum = [! %1]
+  let shiftCount = (% ([math] rnum) 32)
+  return ([number] (>> ([math] lnum) shiftCount))
+}

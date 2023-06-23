@@ -1,0 +1,43 @@
+def <INTERNAL>:ArgumentsExoticObject.DefineOwnProperty(
+  args: ArgumentsExoticObject,
+  P: Symbol | String,
+  Desc: PropertyDescriptor,
+): Normal[Boolean] {
+  let map = args.ParameterMap
+  call %0 = clo<HasOwnProperty>(map, P)
+  let isMapped = [! %0]
+  let newArgDesc = Desc
+  %1 = (= isMapped true)
+  if %1 {
+    call %2 = clo<IsDataDescriptor>(Desc)
+    %1 = (= %2 true)
+  } else {}
+  if %1 {
+    if (&& (= Desc.Value absent) (! (= Desc.Writable absent))) {
+      (yet "and _Desc_.[[Writable]] is *false*, then\n  1. Set _newArgDesc_ to a copy of _Desc_.\n  1. Set _newArgDesc_.[[Value]] to ! Get(_map_, _P_).")
+    } else {}
+  } else {}
+  call %3 = clo<OrdinaryDefineOwnProperty>(args, P, newArgDesc)
+  let allowed = [! %3]
+  if (= allowed false) {
+    return false
+  } else {}
+  if (= isMapped true) {
+    call %4 = clo<IsAccessorDescriptor>(Desc)
+    if (= %4 true) {
+      method-call %5 = map->Delete(P)
+      [! %5]
+    } else {
+      if (! (= Desc.Value absent)) {
+        assert (yet "The following Set will succeed, since formal parameters mapped by arguments objects are always writable.")
+        call %6 = clo<Set>(map, P, Desc.Value, false)
+        [! %6]
+      } else {}
+      if (&& (! (= Desc.Writable absent)) (= Desc.Writable false)) {
+        method-call %7 = map->Delete(P)
+        [! %7]
+      } else {}
+    }
+  } else {}
+  return true
+}

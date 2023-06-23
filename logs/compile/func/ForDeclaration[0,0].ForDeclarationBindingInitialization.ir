@@ -1,0 +1,8 @@
+def <SYNTAX>:ForDeclaration[0,0].ForDeclarationBindingInitialization(
+  this: Ast:ForDeclaration[0,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[1]->BindingInitialization(value, environment)
+  return [? %0]
+}

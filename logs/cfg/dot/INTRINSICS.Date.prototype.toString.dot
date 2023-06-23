@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2154 {
+    label = "def <BUILTIN>:INTRINSICS.Date.prototype.toString(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2154_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2154_entry_name -> cluster2154_entry [arrowhead=none, color="black", style=dashed]
+    cluster2154_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2154_entry -> node13124 [color="black"]
+    cluster2154_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2154_exit_name -> cluster2154_exit [arrowhead=none, color="black", style=dashed]
+    cluster2154_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13124_name [shape=none, label=<<font color="black">Call[13124]</font>>]
+    node13124_name -> node13124 [arrowhead=none, color="black", style=dashed]
+    node13124 [shape=cds, label=<<font color="black">%0 = clo&lt;thisTimeValue&gt;(this)</font>> color="black" fillcolor="white", style=filled]
+    node13124 -> node13125 [color="black"]
+    node13125_name [shape=none, label=<<font color="black">Block[13125]</font>>]
+    node13125_name -> node13125 [arrowhead=none, color="black", style=dashed]
+    node13125 [shape=box, label=<<font color="black">[0] let tv = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13125 -> node13126 [color="black"]
+    node13126_name [shape=none, label=<<font color="black">Call[13126]</font>>]
+    node13126_name -> node13126 [arrowhead=none, color="black", style=dashed]
+    node13126 [shape=cds, label=<<font color="black">%1 = clo&lt;ToDateString&gt;(tv)</font>> color="black" fillcolor="white", style=filled]
+    node13126 -> node13127 [color="black"]
+    node13127_name [shape=none, label=<<font color="black">Block[13127]</font>>]
+    node13127_name -> node13127 [arrowhead=none, color="black", style=dashed]
+    node13127 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13127 -> cluster2154_exit [color="black"]
+  }
+}

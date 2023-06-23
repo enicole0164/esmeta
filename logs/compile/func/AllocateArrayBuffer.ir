@@ -1,0 +1,12 @@
+def AllocateArrayBuffer(
+  constructor: Unknown,
+  byteLength: Unknown["NonnegativeInteger"],
+): Unknown["EitherANormalCompletionContainingAnArrayBufferOrAnAbruptCompletion"] {
+  call %0 = clo<OrdinaryCreateFromConstructor>(constructor, "%ArrayBuffer.prototype%", (new ["ArrayBufferData", "ArrayBufferByteLength", "ArrayBufferDetachKey"])[#1142])
+  let obj = [? %0]
+  call %1 = clo<CreateByteDataBlock>(byteLength)
+  let block = [? %1]
+  obj.ArrayBufferData = block
+  obj.ArrayBufferByteLength = byteLength
+  return obj
+}

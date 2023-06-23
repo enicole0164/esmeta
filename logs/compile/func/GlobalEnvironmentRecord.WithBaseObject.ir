@@ -1,0 +1,5 @@
+def <CONC>:GlobalEnvironmentRecord.WithBaseObject(
+  envRec: GlobalEnvironmentRecord,
+): Undefined {
+  return undefined
+}

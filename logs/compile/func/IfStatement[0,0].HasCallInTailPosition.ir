@@ -1,0 +1,12 @@
+def <SYNTAX>:IfStatement[0,0].HasCallInTailPosition(
+  this: Ast:IfStatement[0,0],
+  call: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->HasCallInTailPosition(call)
+  let has = %0
+  if (= has true) {
+    return true
+  } else {}
+  sdo-call %1 = this[2]->HasCallInTailPosition(call)
+  return %1
+}

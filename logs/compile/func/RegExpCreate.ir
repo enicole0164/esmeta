@@ -1,0 +1,9 @@
+def RegExpCreate(
+  P: Unknown,
+  F: Unknown,
+): Normal[Object] | Abrupt {
+  call %0 = clo<RegExpAlloc>(@EXECUTION_STACK[0].Realm.Intrinsics["%RegExp%"])
+  let obj = [! %0]
+  call %1 = clo<RegExpInitialize>(obj, P, F)
+  return [? %1]
+}

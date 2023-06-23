@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster73 {
+    label = "def CreateByteDataBlock(size: Unknown["NonnegativeInteger"]): Unknown["EitherANormalCompletionContainingADataBlockOrAnAbruptCompletion"]"
+    style = rounded
+    cluster73_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster73_entry_name -> cluster73_entry [arrowhead=none, color="black", style=dashed]
+    cluster73_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster73_entry -> node575 [color="black"]
+    cluster73_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster73_exit_name -> cluster73_exit [arrowhead=none, color="black", style=dashed]
+    cluster73_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node575_name [shape=none, label=<<font color="black">Block[575]</font>>]
+    node575_name -> node575 [arrowhead=none, color="black", style=dashed]
+    node575 [shape=box, label=<<font color="black">[0] (yet &quot;Let _db_ be a new Data Block value consisting of _size_ bytes. If it is impossible to create such a Data Block, throw a *RangeError* exception.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;Set all of the bytes of _db_ to 0.&quot;)<BR ALIGN="LEFT"/>[2] return db<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node575 -> cluster73_exit [color="black"]
+  }
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1022 {
+    label = "def NewObjectEnvironment(O: Object, W: Boolean, E: EnvironmentRecord | Null): ObjectEnvironmentRecord"
+    style = rounded
+    cluster1022_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1022_entry_name -> cluster1022_entry [arrowhead=none, color="black", style=dashed]
+    cluster1022_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1022_entry -> node3832 [color="black"]
+    cluster1022_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1022_exit_name -> cluster1022_exit [arrowhead=none, color="black", style=dashed]
+    cluster1022_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3832_name [shape=none, label=<<font color="black">Block[3832]</font>>]
+    node3832_name -> node3832 [arrowhead=none, color="black", style=dashed]
+    node3832 [shape=box, label=<<font color="black">[0] let env = (new ObjectEnvironmentRecord())[#385]<BR ALIGN="LEFT"/>[1] env.BindingObject = O<BR ALIGN="LEFT"/>[2] env.IsWithEnvironment = W<BR ALIGN="LEFT"/>[3] env.OuterEnv = E<BR ALIGN="LEFT"/>[4] return env<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3832 -> cluster1022_exit [color="black"]
+  }
+}

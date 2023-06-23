@@ -1,0 +1,31 @@
+def PerformPromiseRace(
+  iteratorRecord: Unknown,
+  constructor: Unknown["Constructor"],
+  resultCapability: PromiseCapabilityRecord,
+  promiseResolve: FunctionObject,
+): Normal[ESValue] | Abrupt {
+  loop[repeat] true {
+    call %0 = clo<IteratorStep>(iteratorRecord)
+    call %1 = clo<Completion>(%0)
+    let next = %1
+    if (&& (comp? next) (! (= next.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? next]
+    if (= next false) {
+      iteratorRecord.Done = true
+      return resultCapability.Promise
+    } else {}
+    call %2 = clo<IteratorValue>(next)
+    call %3 = clo<Completion>(%2)
+    let nextValue = %3
+    if (&& (comp? nextValue) (! (= nextValue.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? nextValue]
+    call %4 = clo<Call>(promiseResolve, constructor, (new [nextValue])[#1300])
+    let nextPromise = [? %4]
+    call %5 = clo<Invoke>(nextPromise, "then", (new [resultCapability.Resolve, resultCapability.Reject])[#1301])
+    [? %5]
+  }
+}

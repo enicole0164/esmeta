@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncFunctionDeclaration[1,0].BoundNames(
+  this: Ast:AsyncFunctionDeclaration[1,0],
+): List[String] {
+  return (new ["*default*"])[#102]
+}

@@ -1,0 +1,10 @@
+def AsyncFunctionStart(
+  promiseCapability: PromiseCapabilityRecord,
+  asyncFunctionBody: Unknown,
+): Const[~unused~] {
+  let runningContext = @EXECUTION_STACK[0]
+  let asyncContext = (copy runningContext)[#1338]
+  nop
+  call %0 = clo<AsyncBlockStart>(promiseCapability, asyncFunctionBody, asyncContext)
+  return ~unused~
+}

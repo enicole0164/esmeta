@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue ) { return ; } throw new Test262Error ( message ) ; } ; ; ; this ; assert . _toString = { name : null } ; function Test262Error ( message ) { this . message = message || "" ; } var x , x ; 0 ; function $DONOTEVALUATE ( ) { throw x ; } var sample = [ ] ; assert . sameValue ( sample . includes ( 43 , Infinity ) , "includes(43, Infinity)" ) ; 0 ; 

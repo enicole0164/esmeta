@@ -1,0 +1,5 @@
+def <SYNTAX>:SingleNameBinding[0,1].ContainsExpression(
+  this: Ast:SingleNameBinding[0,1],
+): Boolean {
+  return true
+}

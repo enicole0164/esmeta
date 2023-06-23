@@ -1,0 +1,29 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2475 {
+    label = "def IsUnclampedIntegerElementType(type: Unknown): Boolean"
+    style = rounded
+    cluster2475_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2475_entry_name -> cluster2475_entry [arrowhead=none, color="black", style=dashed]
+    cluster2475_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2475_entry -> node17376 [color="black"]
+    cluster2475_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2475_exit_name -> cluster2475_exit [arrowhead=none, color="black", style=dashed]
+    cluster2475_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node17376_name [shape=none, label=<<font color="black">Branch[17376]</font>>]
+    node17376_name -> node17376 [arrowhead=none, color="black", style=dashed]
+    node17376 [shape=diamond, label=<<font color="black">(|| (|| (|| (|| (|| (= type ~Int8~) (= type ~Uint8~)) (= type ~Int16~)) (= type ~Uint16~)) (= type ~Int32~)) (= type ~Uint32~))</font>> color="black" fillcolor="white", style=filled]
+    node17376 -> node17377 [label=<<font color="black">true</font>> color="black"]
+    node17376 -> node17378 [label=<<font color="black">false</font>> color="black"]
+    node17377_name [shape=none, label=<<font color="black">Block[17377]</font>>]
+    node17377_name -> node17377 [arrowhead=none, color="black", style=dashed]
+    node17377 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17377 -> cluster2475_exit [color="black"]
+    node17378_name [shape=none, label=<<font color="black">Block[17378]</font>>]
+    node17378_name -> node17378 [arrowhead=none, color="black", style=dashed]
+    node17378 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17378 -> cluster2475_exit [color="black"]
+  }
+}

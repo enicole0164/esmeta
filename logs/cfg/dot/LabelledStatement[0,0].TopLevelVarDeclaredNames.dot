@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster468 {
+    label = "def <SYNTAX>:LabelledStatement[0,0].TopLevelVarDeclaredNames(this: Ast:LabelledStatement[0,0]): List[String]"
+    style = rounded
+    cluster468_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster468_entry_name -> cluster468_entry [arrowhead=none, color="black", style=dashed]
+    cluster468_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster468_entry -> node2291 [color="black"]
+    cluster468_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster468_exit_name -> cluster468_exit [arrowhead=none, color="black", style=dashed]
+    cluster468_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2291_name [shape=none, label=<<font color="black">Call[2291]</font>>]
+    node2291_name -> node2291 [arrowhead=none, color="black", style=dashed]
+    node2291 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;TopLevelVarDeclaredNames()</font>> color="black" fillcolor="white", style=filled]
+    node2291 -> node2292 [color="black"]
+    node2292_name [shape=none, label=<<font color="black">Block[2292]</font>>]
+    node2292_name -> node2292 [arrowhead=none, color="black", style=dashed]
+    node2292 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2292 -> cluster468_exit [color="black"]
+  }
+}

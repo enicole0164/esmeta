@@ -1,0 +1,10 @@
+def <SYNTAX>:LabelledItem[0,0].TopLevelVarScopedDeclarations(
+  this: Ast:LabelledItem[0,0],
+): List[Ast] {
+  if (? this[0]: "Statement10") {
+    sdo-call %0 = this[0]->TopLevelVarScopedDeclarations()
+    return %0
+  } else {}
+  sdo-call %1 = this[0]->VarScopedDeclarations()
+  return %1
+}

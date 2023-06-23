@@ -1,0 +1,6 @@
+def NewPrivateEnvironment(
+  outerPrivEnv: PrivateEnvironmentRecord | Null,
+): PrivateEnvironmentRecord {
+  let names = (new [])[#391]
+  return (new PrivateEnvironmentRecord("OuterPrivateEnvironment" -> outerPrivEnv, "Names" -> names))[#392]
+}

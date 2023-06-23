@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1873 {
+    label = "def <SYNTAX>:ModuleItemList[0,0].ModuleRequests(this: Ast:ModuleItemList[0,0]): List[String]"
+    style = rounded
+    cluster1873_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1873_entry_name -> cluster1873_entry [arrowhead=none, color="black", style=dashed]
+    cluster1873_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1873_entry -> node10080 [color="black"]
+    cluster1873_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1873_exit_name -> cluster1873_exit [arrowhead=none, color="black", style=dashed]
+    cluster1873_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10080_name [shape=none, label=<<font color="black">Call[10080]</font>>]
+    node10080_name -> node10080 [arrowhead=none, color="black", style=dashed]
+    node10080 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ModuleRequests()</font>> color="black" fillcolor="white", style=filled]
+    node10080 -> node10081 [color="black"]
+    node10081_name [shape=none, label=<<font color="black">Block[10081]</font>>]
+    node10081_name -> node10081 [arrowhead=none, color="black", style=dashed]
+    node10081 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10081 -> cluster1873_exit [color="black"]
+  }
+}

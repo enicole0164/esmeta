@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message ) { message = 'Expected true but got ' + assert ( mustBeTrue ) ; } throw Test262Error ; } x => 0 ; assert . sameValue = { next : true } ; x : ; async x => 0 ; function Test262Error ( message ) { message || "" ; } 0 ? 0 : 0 ; var str = 'The future is cool!' ; assert . sameValue ( str . startsWith ( 'The future' ) , false , { 0 : '' } ) ; 

@@ -1,0 +1,31 @@
+def AsyncGeneratorDrainQueue(
+  generator: Unknown["AsyncGenerator"],
+): Const[~unused~] {
+  assert (= generator.AsyncGeneratorState ~completed~)
+  let queue = generator.AsyncGeneratorQueue
+  if (= queue.length 0) {
+    return ~unused~
+  } else {}
+  let done = false
+  loop[repeat] (= done false) {
+    let next = queue[0]
+    call %0 = clo<Completion>(next.Completion)
+    let completion = %0
+    if (= completion.Type ~return~) {
+      generator.AsyncGeneratorState = ~awaiting-return~
+      call %1 = clo<AsyncGeneratorAwaitReturn>(generator)
+      [! %1]
+      done = true
+    } else {
+      if (= completion.Type ~normal~) {
+        call %2 = clo<NormalCompletion>(undefined)
+        completion = %2
+      } else {}
+      call %3 = clo<AsyncGeneratorCompleteStep>(generator, completion, true)
+      if (= queue.length 0) {
+        done = true
+      } else {}
+    }
+  }
+  return ~unused~
+}

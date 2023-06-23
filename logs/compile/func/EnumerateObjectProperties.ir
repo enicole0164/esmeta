@@ -1,0 +1,6 @@
+def EnumerateObjectProperties(
+  O: Object,
+): Unknown["Iterator"] {
+  call %0 = clo<CreateForInIterator>(O)
+  return %0
+}

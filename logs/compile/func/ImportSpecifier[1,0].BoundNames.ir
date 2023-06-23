@@ -1,0 +1,6 @@
+def <SYNTAX>:ImportSpecifier[1,0].BoundNames(
+  this: Ast:ImportSpecifier[1,0],
+): List[String] {
+  sdo-call %0 = this[1]->BoundNames()
+  return %0
+}

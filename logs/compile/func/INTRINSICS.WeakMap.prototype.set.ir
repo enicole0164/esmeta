@@ -1,0 +1,33 @@
+def <BUILTIN>:INTRINSICS.WeakMap.prototype.set(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let key = (pop < argumentsList) else let key = absent
+  if (< 0 argumentsList.length) let value = (pop < argumentsList) else let value = absent
+  let M = this
+  call %0 = clo<RequireInternalSlot>(M, "WeakMapData")
+  [? %0]
+  let entries = M.WeakMapData
+  if (! (= (typeof key) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1134])
+  } else {}
+  %2 = entries
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let p = %2[%1]
+    %3 = (! (= p.Key ~empty~))
+    if %3 {
+      call %4 = clo<SameValue>(p.Key, key)
+      %3 = (= %4 true)
+    } else {}
+    if %3 {
+      p.Value = value
+      return M
+    } else {}
+    %1 = (+ %1 1)
+  }
+  let p = (new Record("Key" -> key, "Value" -> value))[#1135]
+  push entries < p
+  return M
+}

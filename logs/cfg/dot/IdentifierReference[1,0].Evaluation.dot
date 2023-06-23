@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1198 {
+    label = "def <SYNTAX>:IdentifierReference[1,0].Evaluation(this: Ast:IdentifierReference[1,0]): Unknown"
+    style = rounded
+    cluster1198_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1198_entry_name -> cluster1198_entry [arrowhead=none, color="black", style=dashed]
+    cluster1198_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1198_entry -> node5414 [color="black"]
+    cluster1198_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1198_exit_name -> cluster1198_exit [arrowhead=none, color="black", style=dashed]
+    cluster1198_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5414_name [shape=none, label=<<font color="black">Call[5414]</font>>]
+    node5414_name -> node5414 [arrowhead=none, color="black", style=dashed]
+    node5414 [shape=cds, label=<<font color="black">%0 = clo&lt;ResolveBinding&gt;(&quot;yield&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node5414 -> node5415 [color="black"]
+    node5415_name [shape=none, label=<<font color="black">Block[5415]</font>>]
+    node5415_name -> node5415 [arrowhead=none, color="black", style=dashed]
+    node5415 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5415 -> cluster1198_exit [color="black"]
+  }
+}

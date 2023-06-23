@@ -1,0 +1,19 @@
+def <SYNTAX>:CaseBlock[1,1].LexicallyDeclaredNames(
+  this: Ast:CaseBlock[1,1],
+): List[String] {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->LexicallyDeclaredNames()
+    let names1 = %0
+  } else {
+    let names1 = (new [])[#118]
+  }
+  sdo-call %1 = this[1]->LexicallyDeclaredNames()
+  let names2 = %1
+  if (! (= this[2] absent)) {
+    sdo-call %2 = this[2]->LexicallyDeclaredNames()
+    let names3 = %2
+  } else {
+    let names3 = (new [])[#119]
+  }
+  return (list-concat names1 names2 names3)[#120]
+}

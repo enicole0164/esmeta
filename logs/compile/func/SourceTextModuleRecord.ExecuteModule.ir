@@ -1,0 +1,28 @@
+def <CONC>:SourceTextModuleRecord.ExecuteModule(
+  module: SourceTextModuleRecord,
+  capability?: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  let moduleContext = (new ExecutionContext())[#796]
+  moduleContext.Function = null
+  moduleContext.Realm = module.Realm
+  moduleContext.ScriptOrModule = module
+  assert (yet "_module_ has been linked and declarations in its module environment have been instantiated.")
+  moduleContext.VariableEnvironment = module.Environment
+  moduleContext.LexicalEnvironment = module.Environment
+  nop
+  if (= module.HasTLA false) {
+    assert (= capability absent)
+    push moduleContext > @EXECUTION_STACK
+    sdo-call %0 = module.ECMAScriptCode->Evaluation()
+    let result = %0
+    (pop < @EXECUTION_STACK)
+    nop
+    if (&& (comp? result) (! (= result.Type ~normal~))) {
+      return [? result]
+    } else {}
+  } else {
+    assert (? capability: "PromiseCapabilityRecord")
+    call %1 = clo<AsyncBlockStart>(capability, module.ECMAScriptCode, moduleContext)
+  }
+  return ~unused~
+}

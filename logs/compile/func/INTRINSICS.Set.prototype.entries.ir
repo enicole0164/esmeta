@@ -1,0 +1,9 @@
+def <BUILTIN>:INTRINSICS.Set.prototype.entries(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let S = this
+  call %0 = clo<CreateSetIterator>(S, ~key+value~)
+  return [? %0]
+}

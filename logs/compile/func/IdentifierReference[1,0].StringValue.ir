@@ -1,0 +1,5 @@
+def <SYNTAX>:IdentifierReference[1,0].StringValue(
+  this: Ast:IdentifierReference[1,0],
+): String {
+  return "yield"
+}

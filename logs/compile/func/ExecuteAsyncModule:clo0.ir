@@ -1,0 +1,8 @@
+def <BUILTIN-CLO>:ExecuteAsyncModule:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  call %0 = clo<AsyncModuleExecutionFulfilled>(module)
+  return undefined
+}

@@ -1,0 +1,26 @@
+def <NUM>:Number::remainder(
+  n: Number,
+  d: Number,
+): Number {
+  if (|| (= n NaN) (= d NaN)) {
+    return NaN
+  } else {}
+  if (|| (= n +INF) (= n -INF)) {
+    return NaN
+  } else {}
+  if (|| (= d +INF) (= d -INF)) {
+    return n
+  } else {}
+  if (|| (= d 0.0f) (= d -0.0f)) {
+    return NaN
+  } else {}
+  if (|| (= n 0.0f) (= n -0.0f)) {
+    return n
+  } else {}
+  assert (yet "_n_ and _d_ are finite and non-zero.")
+  (yet "Let _r_ be ℝ(_n_) - (ℝ(_d_) × _q_) where _q_ is an integer that is negative if and only if _n_ and _d_ have opposite sign, and whose magnitude is as large as possible without exceeding the magnitude of ℝ(_n_) / ℝ(_d_).")
+  if (&& (= r 0) (< n -0.0f)) {
+    return -0.0f
+  } else {}
+  return ([number] r)
+}

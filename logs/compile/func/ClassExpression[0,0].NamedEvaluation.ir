@@ -1,0 +1,9 @@
+def <SYNTAX>:ClassExpression[0,0].NamedEvaluation(
+  this: Ast:ClassExpression[0,0],
+  name: Unknown,
+): Normal[FunctionObject] | Abrupt {
+  sdo-call %0 = this[1]->ClassDefinitionEvaluation(undefined, name)
+  let value = [? %0]
+  value.SourceText = (source-text this)
+  return value
+}

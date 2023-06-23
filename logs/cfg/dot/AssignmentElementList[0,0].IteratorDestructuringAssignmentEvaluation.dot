@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1364 {
+    label = "def <SYNTAX>:AssignmentElementList[0,0].IteratorDestructuringAssignmentEvaluation(this: Ast:AssignmentElementList[0,0], iteratorRecord: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster1364_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1364_entry_name -> cluster1364_entry [arrowhead=none, color="black", style=dashed]
+    cluster1364_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1364_entry -> node6935 [color="black"]
+    cluster1364_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1364_exit_name -> cluster1364_exit [arrowhead=none, color="black", style=dashed]
+    cluster1364_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6935_name [shape=none, label=<<font color="black">Call[6935]</font>>]
+    node6935_name -> node6935 [arrowhead=none, color="black", style=dashed]
+    node6935 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;IteratorDestructuringAssignmentEvaluation(iteratorRecord)</font>> color="black" fillcolor="white", style=filled]
+    node6935 -> node6936 [color="black"]
+    node6936_name [shape=none, label=<<font color="black">Block[6936]</font>>]
+    node6936_name -> node6936 [arrowhead=none, color="black", style=dashed]
+    node6936 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6936 -> cluster1364_exit [color="black"]
+  }
+}

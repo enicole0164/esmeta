@@ -1,0 +1,9 @@
+def IsSuperReference(
+  V: ReferenceRecord,
+): Boolean {
+  if (! (= V.ThisValue ~empty~)) {
+    return true
+  } else {
+    return false
+  }
+}

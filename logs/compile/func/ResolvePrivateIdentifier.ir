@@ -1,0 +1,20 @@
+def ResolvePrivateIdentifier(
+  privEnv: PrivateEnvironmentRecord,
+  identifier: String,
+): PrivateName {
+  let names = privEnv.Names
+  if (contains names identifier: Unknown["PrivateName"] Description) {
+    let idx = 0
+    loop[repeat] (< idx names.length) {
+      let elem = names[idx]
+      if (= elem.Description identifier) let name = elem else {}
+      idx = (+ idx 1)
+    }
+    return name
+  } else {
+    let outerPrivEnv = privEnv.OuterPrivateEnvironment
+    assert (! (= outerPrivEnv null))
+    call %0 = clo<ResolvePrivateIdentifier>(outerPrivEnv, identifier)
+    return %0
+  }
+}

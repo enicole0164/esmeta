@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster736 {
+    label = "def <SYNTAX>:LogicalORExpression[1,0].IsFunctionDefinition(this: Ast:LogicalORExpression[1,0]): Boolean"
+    style = rounded
+    cluster736_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster736_entry_name -> cluster736_entry [arrowhead=none, color="black", style=dashed]
+    cluster736_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster736_entry -> node2968 [color="black"]
+    cluster736_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster736_exit_name -> cluster736_exit [arrowhead=none, color="black", style=dashed]
+    cluster736_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2968_name [shape=none, label=<<font color="black">Block[2968]</font>>]
+    node2968_name -> node2968 [arrowhead=none, color="black", style=dashed]
+    node2968 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2968 -> cluster736_exit [color="black"]
+  }
+}

@@ -1,0 +1,117 @@
+def CreateDynamicFunction(
+  constructor: Unknown["Constructor"],
+  newTarget: Unknown["Constructor"],
+  kind: Const[~asyncGenerator~, ~async~, ~generator~, ~normal~],
+  args: List[ESValue],
+): Normal[FunctionObject] | Abrupt {
+  assert (< 1 @EXECUTION_STACK.length)
+  let callerContext = @EXECUTION_STACK[1]
+  let callerRealm = callerContext.Realm
+  let calleeRealm = @EXECUTION_STACK[0].Realm
+  call %0 = clo<HostEnsureCanCompileStrings>(callerRealm, calleeRealm)
+  [? %0]
+  if (= newTarget undefined) {
+    newTarget = constructor
+  } else {}
+  if (= kind ~normal~) {
+    let prefix = "function"
+    let exprSym = (nt |FunctionExpression|[])
+    let bodySym = (nt |FunctionBody|[FF])
+    let parameterSym = (nt |FormalParameters|[FF])
+    let fallbackProto = "%Function.prototype%"
+  } else {
+    if (= kind ~generator~) {
+      let prefix = "function*"
+      let exprSym = (nt |GeneratorExpression|[])
+      let bodySym = (nt |GeneratorBody|[])
+      let parameterSym = (nt |FormalParameters|[TF])
+      let fallbackProto = "%GeneratorFunction.prototype%"
+    } else {
+      if (= kind ~async~) {
+        let prefix = "async function"
+        let exprSym = (nt |AsyncFunctionExpression|[])
+        let bodySym = (nt |AsyncFunctionBody|[])
+        let parameterSym = (nt |FormalParameters|[FT])
+        let fallbackProto = "%AsyncFunction.prototype%"
+      } else {
+        assert (= kind ~asyncGenerator~)
+        let prefix = "async function*"
+        let exprSym = (nt |AsyncGeneratorExpression|[])
+        let bodySym = (nt |AsyncGeneratorBody|[])
+        let parameterSym = (nt |FormalParameters|[TT])
+        let fallbackProto = "%AsyncGeneratorFunction.prototype%"
+      }
+    }
+  }
+  let argCount = args.length
+  let P = ""
+  if (== argCount 0) {
+    let bodyArg = ""
+  } else {
+    if (== argCount 1) {
+      let bodyArg = args[0]
+    } else {
+      assert (< 1 argCount)
+      let firstArg = args[0]
+      call %1 = clo<ToString>(firstArg)
+      P = [? %1]
+      let k = 1
+      loop[repeat] (< k (- argCount 1)) {
+        let nextArg = args[k]
+        call %2 = clo<ToString>(nextArg)
+        let nextArgString = [? %2]
+        P = (concat P "," nextArgString)
+        k = (+ k 1)
+      }
+      let bodyArg = args[k]
+    }
+  }
+  call %3 = clo<ToString>(bodyArg)
+  let bodyString = (concat 10cu [? %3] 10cu)
+  let sourceString = (concat prefix " anonymous(" P 10cu ") {" bodyString "}")
+  call %4 = clo<StringToCodePoints>(sourceString)
+  let sourceText = %4
+  call %5 = clo<StringToCodePoints>(P)
+  let parameters = (parse %5 parameterSym)
+  if (? parameters: "ListOfErrors") {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#905])
+  } else {}
+  call %6 = clo<StringToCodePoints>(bodyString)
+  let body = (parse %6 bodySym)
+  if (? body: "ListOfErrors") {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#906])
+  } else {}
+  nop
+  nop
+  let expr = (parse sourceText exprSym)
+  if (? expr: "ListOfErrors") {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#907])
+  } else {}
+  call %7 = clo<GetPrototypeFromConstructor>(newTarget, fallbackProto)
+  let proto = [? %7]
+  let realmF = @EXECUTION_STACK[0].Realm
+  let env = realmF.GlobalEnv
+  let privateEnv = null
+  call %8 = clo<OrdinaryFunctionCreate>(proto, sourceText, parameters, body, ~non-lexical-this~, env, privateEnv)
+  let F = %8
+  call %9 = clo<SetFunctionName>(F, "anonymous")
+  if (= kind ~generator~) {
+    call %10 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%GeneratorFunction.prototype.prototype%"])
+    let prototype = %10
+    call %11 = clo<DefinePropertyOrThrow>(F, "prototype", (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false))[#908])
+    [! %11]
+  } else {
+    if (= kind ~asyncGenerator~) {
+      call %12 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%AsyncGeneratorFunction.prototype.prototype%"])
+      let prototype = %12
+      call %13 = clo<DefinePropertyOrThrow>(F, "prototype", (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false))[#909])
+      [! %13]
+    } else {
+      if (= kind ~normal~) {
+        call %14 = clo<MakeConstructor>(F)
+      } else {}
+    }
+  }
+  nop
+  return F
+}

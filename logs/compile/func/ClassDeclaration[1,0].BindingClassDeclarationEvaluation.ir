@@ -1,0 +1,8 @@
+def <SYNTAX>:ClassDeclaration[1,0].BindingClassDeclarationEvaluation(
+  this: Ast:ClassDeclaration[1,0],
+): Normal[FunctionObject] | Abrupt {
+  sdo-call %0 = this[0]->ClassDefinitionEvaluation(undefined, "default")
+  let value = [? %0]
+  value.SourceText = (source-text this)
+  return value
+}

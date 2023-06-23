@@ -1,0 +1,21 @@
+def RegExpHasFlag(
+  R: ESValue,
+  codeUnit: Unknown["CodeUnit"],
+): Normal[Boolean | Undefined] | Abrupt {
+  if (! (= (typeof R) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#993])
+  } else {}
+  if (= R.OriginalFlags absent) {
+    call %0 = clo<SameValue>(R, @EXECUTION_STACK[0].Realm.Intrinsics["%RegExp.prototype%"])
+    if (= %0 true) {
+      return undefined
+    } else {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#994])
+    }
+  } else {}
+  let flags = R.OriginalFlags
+  if (contains flags codeUnit) {
+    return true
+  } else {}
+  return false
+}

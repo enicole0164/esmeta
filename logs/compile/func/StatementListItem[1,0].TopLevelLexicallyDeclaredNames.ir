@@ -1,0 +1,9 @@
+def <SYNTAX>:StatementListItem[1,0].TopLevelLexicallyDeclaredNames(
+  this: Ast:StatementListItem[1,0],
+): List[String] {
+  if (? this[0]: "Declaration0") {
+    return (new [])[#282]
+  } else {}
+  sdo-call %0 = this[0]->BoundNames()
+  return %0
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1172 {
+    label = "def <SYNTAX>:IdentifierStart[0,0].IdentifierCodePoint(this: Ast:IdentifierStart[0,0]): Unknown["CodePoint"]"
+    style = rounded
+    cluster1172_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1172_entry_name -> cluster1172_entry [arrowhead=none, color="black", style=dashed]
+    cluster1172_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1172_entry -> node5371 [color="black"]
+    cluster1172_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1172_exit_name -> cluster1172_exit [arrowhead=none, color="black", style=dashed]
+    cluster1172_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5371_name [shape=none, label=<<font color="black">Block[5371]</font>>]
+    node5371_name -> node5371 [arrowhead=none, color="black", style=dashed]
+    node5371 [shape=box, label=<<font color="black">[0] (yet &quot;Return the code point matched by |IdentifierStartChar|.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5371 -> cluster1172_exit [color="black"]
+  }
+}

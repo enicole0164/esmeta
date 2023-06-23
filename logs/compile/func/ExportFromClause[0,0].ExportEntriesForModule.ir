@@ -1,0 +1,7 @@
+def <SYNTAX>:ExportFromClause[0,0].ExportEntriesForModule(
+  this: Ast:ExportFromClause[0,0],
+  module: Unknown,
+): Unknown["ListOfExportEntryRecords"] {
+  let entry = (new ExportEntryRecord("ModuleRequest" -> module, "ImportName" -> ~all-but-default~, "LocalName" -> null, "ExportName" -> null))[#854]
+  return (new [entry])[#855]
+}

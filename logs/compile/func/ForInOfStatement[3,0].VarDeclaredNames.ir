@@ -1,0 +1,6 @@
+def <SYNTAX>:ForInOfStatement[3,0].VarDeclaredNames(
+  this: Ast:ForInOfStatement[3,0],
+): List[String] {
+  sdo-call %0 = this[2]->VarDeclaredNames()
+  return %0
+}

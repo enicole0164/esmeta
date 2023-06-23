@@ -1,0 +1,5 @@
+def <SYNTAX>:CharacterClassEscape[6,0].CompileToCharSet(
+  this: Ast:CharacterClassEscape[6,0],
+): Unknown["CharSet"] {
+  (yet "Return the CharSet containing all Unicode code points included in CompileToCharSet of |UnicodePropertyValueExpression|.")
+}

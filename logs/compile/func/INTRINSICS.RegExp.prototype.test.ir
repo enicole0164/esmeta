@@ -1,0 +1,20 @@
+def <BUILTIN>:INTRINSICS.RegExp.prototype.test(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let S = (pop < argumentsList) else let S = absent
+  let R = this
+  if (! (= (typeof R) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1008])
+  } else {}
+  call %0 = clo<ToString>(S)
+  let string = [? %0]
+  call %1 = clo<RegExpExec>(R, string)
+  let match = [? %1]
+  if (! (= match null)) {
+    return true
+  } else {
+    return false
+  }
+}

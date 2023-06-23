@@ -1,0 +1,51 @@
+def SetTypedArrayFromArrayLike(
+  target: Unknown["TypedArray"],
+  targetOffset: Unknown["NonnegativeIntegerOr+∞"],
+  source: Unknown["ECMAScriptLanguageValue,ButNotATypedArray"],
+): Normal[Const[~unused~]] | Abrupt {
+  let targetBuffer = target.ViewedArrayBuffer
+  call %0 = clo<IsDetachedBuffer>(targetBuffer)
+  if (= %0 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1090])
+  } else {}
+  let targetLength = target.ArrayLength
+  call %1 = clo<TypedArrayElementSize>(target)
+  let targetElementSize = %1
+  call %2 = clo<TypedArrayElementType>(target)
+  let targetType = %2
+  let targetByteOffset = target.ByteOffset
+  call %3 = clo<ToObject>(source)
+  let src = [? %3]
+  call %4 = clo<LengthOfArrayLike>(src)
+  let srcLength = [? %4]
+  if (= targetOffset +INF) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1091])
+  } else {}
+  if (< targetLength (+ srcLength targetOffset)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1092])
+  } else {}
+  let targetByteIndex = (+ (* targetOffset targetElementSize) targetByteOffset)
+  let k = 0
+  let limit = (+ targetByteIndex (* targetElementSize srcLength))
+  loop[repeat] (< targetByteIndex limit) {
+    call %5 = clo<ToString>(([number] k))
+    let Pk = [! %5]
+    call %6 = clo<Get>(src, Pk)
+    let value = [? %6]
+    if (= target.ContentType ~BigInt~) {
+      call %7 = clo<ToBigInt>(value)
+      value = [? %7]
+    } else {
+      call %8 = clo<ToNumber>(value)
+      value = [? %8]
+    }
+    call %9 = clo<IsDetachedBuffer>(targetBuffer)
+    if (= %9 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1093])
+    } else {}
+    call %10 = clo<SetValueInBuffer>(targetBuffer, targetByteIndex, targetType, value, true, ~Unordered~)
+    k = (+ k 1)
+    targetByteIndex = (+ targetByteIndex targetElementSize)
+  }
+  return ~unused~
+}

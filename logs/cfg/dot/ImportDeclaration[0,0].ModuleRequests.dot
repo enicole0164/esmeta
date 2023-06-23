@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1876 {
+    label = "def <SYNTAX>:ImportDeclaration[0,0].ModuleRequests(this: Ast:ImportDeclaration[0,0]): List[String]"
+    style = rounded
+    cluster1876_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1876_entry_name -> cluster1876_entry [arrowhead=none, color="black", style=dashed]
+    cluster1876_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1876_entry -> node10087 [color="black"]
+    cluster1876_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1876_exit_name -> cluster1876_exit [arrowhead=none, color="black", style=dashed]
+    cluster1876_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10087_name [shape=none, label=<<font color="black">Call[10087]</font>>]
+    node10087_name -> node10087 [arrowhead=none, color="black", style=dashed]
+    node10087 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;ModuleRequests()</font>> color="black" fillcolor="white", style=filled]
+    node10087 -> node10088 [color="black"]
+    node10088_name [shape=none, label=<<font color="black">Block[10088]</font>>]
+    node10088_name -> node10088 [arrowhead=none, color="black", style=dashed]
+    node10088 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10088 -> cluster1876_exit [color="black"]
+  }
+}

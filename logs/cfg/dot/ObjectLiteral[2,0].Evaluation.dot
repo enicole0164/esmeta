@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1227 {
+    label = "def <SYNTAX>:ObjectLiteral[2,0].Evaluation(this: Ast:ObjectLiteral[2,0]): Unknown"
+    style = rounded
+    cluster1227_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1227_entry_name -> cluster1227_entry [arrowhead=none, color="black", style=dashed]
+    cluster1227_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1227_entry -> node5570 [color="black"]
+    cluster1227_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1227_exit_name -> cluster1227_exit [arrowhead=none, color="black", style=dashed]
+    cluster1227_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5570_name [shape=none, label=<<font color="black">Call[5570]</font>>]
+    node5570_name -> node5570 [arrowhead=none, color="black", style=dashed]
+    node5570 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryObjectCreate&gt;(@EXECUTION_STACK[0].Realm.Intrinsics[&quot;%Object.prototype%&quot;])</font>> color="black" fillcolor="white", style=filled]
+    node5570 -> node5571 [color="black"]
+    node5571_name [shape=none, label=<<font color="black">Block[5571]</font>>]
+    node5571_name -> node5571 [arrowhead=none, color="black", style=dashed]
+    node5571 [shape=box, label=<<font color="black">[0] let obj = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5571 -> node5572 [color="black"]
+    node5572_name [shape=none, label=<<font color="black">Call[5572]</font>>]
+    node5572_name -> node5572 [arrowhead=none, color="black", style=dashed]
+    node5572 [shape=cds, label=<<font color="black">%1 = this[0]-&gt;PropertyDefinitionEvaluation(obj)</font>> color="black" fillcolor="white", style=filled]
+    node5572 -> node5573 [color="black"]
+    node5573_name [shape=none, label=<<font color="black">Block[5573]</font>>]
+    node5573_name -> node5573 [arrowhead=none, color="black", style=dashed]
+    node5573 [shape=box, label=<<font color="black">[0] [? %1]<BR ALIGN="LEFT"/>[1] return obj<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5573 -> cluster1227_exit [color="black"]
+  }
+}

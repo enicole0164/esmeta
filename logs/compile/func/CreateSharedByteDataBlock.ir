@@ -1,0 +1,10 @@
+def CreateSharedByteDataBlock(
+  size: Unknown["NonnegativeInteger"],
+): Unknown["EitherANormalCompletionContainingASharedDataBlockOrAnAbruptCompletion"] {
+  (yet "Let _db_ be a new Shared Data Block value consisting of _size_ bytes. If it is impossible to create such a Shared Data Block, throw a *RangeError* exception.")
+  (yet "Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.")
+  (yet "Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().")
+  let zero = (new [0])[#23]
+  (yet "For each index _i_ of _db_, do\n  1. Append WriteSharedMemory { [[Order]]: ~Init~, [[NoTear]]: *true*, [[Block]]: _db_, [[ByteIndex]]: _i_, [[ElementSize]]: 1, [[Payload]]: _zero_ } to _eventList_.")
+  return db
+}

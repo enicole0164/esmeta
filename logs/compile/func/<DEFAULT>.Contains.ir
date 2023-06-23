@@ -1,0 +1,21 @@
+def <SYNTAX>:<DEFAULT>.Contains(
+  this: Ast,
+  symbol: Unknown,
+): Boolean {
+  %1 = (get-children this)[#364]
+  %0 = 0
+  %2 = %1.length
+  loop[foreach-node] (< %0 %2) {
+    let child = %1[%0]
+    if (? child: symbol) return true else {}
+    if (? child: "Nonterminal") {
+      sdo-call result = child->Contains(symbol)
+      let contained = result
+      if (= contained true) {
+        return true
+      } else {}
+    } else {}
+    %0 = (+ %0 1)
+  }
+  return false
+}

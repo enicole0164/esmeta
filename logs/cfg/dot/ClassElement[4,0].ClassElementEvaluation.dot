@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1687 {
+    label = "def <SYNTAX>:ClassElement[4,0].ClassElementEvaluation(this: Ast:ClassElement[4,0], object: Unknown): Normal[ClassFieldDefinitionRecord | ClassStaticBlockDefinitionRecord | PrivateName | Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster1687_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1687_entry_name -> cluster1687_entry [arrowhead=none, color="black", style=dashed]
+    cluster1687_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1687_entry -> node8975 [color="black"]
+    cluster1687_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1687_exit_name -> cluster1687_exit [arrowhead=none, color="black", style=dashed]
+    cluster1687_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8975_name [shape=none, label=<<font color="black">Call[8975]</font>>]
+    node8975_name -> node8975 [arrowhead=none, color="black", style=dashed]
+    node8975 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ClassStaticBlockDefinitionEvaluation(object)</font>> color="black" fillcolor="white", style=filled]
+    node8975 -> node8976 [color="black"]
+    node8976_name [shape=none, label=<<font color="black">Block[8976]</font>>]
+    node8976_name -> node8976 [arrowhead=none, color="black", style=dashed]
+    node8976 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8976 -> cluster1687_exit [color="black"]
+  }
+}

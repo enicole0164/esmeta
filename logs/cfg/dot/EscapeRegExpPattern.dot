@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2309 {
+    label = "def EscapeRegExpPattern(P: Unknown, F: Unknown): String"
+    style = rounded
+    cluster2309_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2309_entry_name -> cluster2309_entry [arrowhead=none, color="black", style=dashed]
+    cluster2309_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2309_entry -> node14153 [color="black"]
+    cluster2309_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2309_exit_name -> cluster2309_exit [arrowhead=none, color="black", style=dashed]
+    cluster2309_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14153_name [shape=none, label=<<font color="black">Block[14153]</font>>]
+    node14153_name -> node14153 [arrowhead=none, color="black", style=dashed]
+    node14153 [shape=box, label=<<font color="black">[0] (yet &quot;Let _S_ be a String in the form of a |Pattern[~UnicodeMode]| (|Pattern[+UnicodeMode]| if _F_ contains *\&quot;u\&quot;*) equivalent to _P_ interpreted as UTF-16 encoded Unicode code points (&lt;emu-xref href=\&quot;#sec-ecmascript-language-types-string-type\&quot;&gt;&lt;/emu-xref&gt;), in which certain code points are escaped as described below. _S_ may or may not be identical to _P_; however, the Abstract Closure that would result from evaluating _S_ as a |Pattern[~UnicodeMode]| (|Pattern[+UnicodeMode]| if _F_ contains *\&quot;u\&quot;*) must behave identically to the Abstract Closure given by the constructed object's [[RegExpMatcher]] internal slot. Multiple calls to this abstract operation using the same values for _P_ and _F_ must produce identical results.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;The code points `/` or any |LineTerminator| occurring in the pattern shall be escaped in _S_ as necessary to ensure that the string-concatenation of *\&quot;/\&quot;*, _S_, *\&quot;/\&quot;*, and _F_ can be parsed (in an appropriate lexical context) as a |RegularExpressionLiteral| that behaves identically to the constructed regular expression. For example, if _P_ is *\&quot;/\&quot;*, then _S_ could be *\&quot;\\\\/\&quot;* or *\&quot;\\\\u002F\&quot;*, among other possibilities, but not *\&quot;/\&quot;*, because `///` followed by _F_ would be parsed as a |SingleLineComment| rather than a |RegularExpressionLiteral|. If _P_ is the empty String, this specification can be met by letting _S_ be *\&quot;(?:)\&quot;*.&quot;)<BR ALIGN="LEFT"/>[2] return S<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14153 -> cluster2309_exit [color="black"]
+  }
+}

@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1359 {
+    label = "def <SYNTAX>:AssignmentPropertyList[1,0].PropertyDestructuringAssignmentEvaluation(this: Ast:AssignmentPropertyList[1,0], value: Unknown): Normal[List[Symbol | String]] | Abrupt"
+    style = rounded
+    cluster1359_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1359_entry_name -> cluster1359_entry [arrowhead=none, color="black", style=dashed]
+    cluster1359_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1359_entry -> node6885 [color="black"]
+    cluster1359_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1359_exit_name -> cluster1359_exit [arrowhead=none, color="black", style=dashed]
+    cluster1359_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6885_name [shape=none, label=<<font color="black">Call[6885]</font>>]
+    node6885_name -> node6885 [arrowhead=none, color="black", style=dashed]
+    node6885 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;PropertyDestructuringAssignmentEvaluation(value)</font>> color="black" fillcolor="white", style=filled]
+    node6885 -> node6886 [color="black"]
+    node6886_name [shape=none, label=<<font color="black">Block[6886]</font>>]
+    node6886_name -> node6886 [arrowhead=none, color="black", style=dashed]
+    node6886 [shape=box, label=<<font color="black">[0] let propertyNames = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6886 -> node6887 [color="black"]
+    node6887_name [shape=none, label=<<font color="black">Call[6887]</font>>]
+    node6887_name -> node6887 [arrowhead=none, color="black", style=dashed]
+    node6887 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;PropertyDestructuringAssignmentEvaluation(value)</font>> color="black" fillcolor="white", style=filled]
+    node6887 -> node6888 [color="black"]
+    node6888_name [shape=none, label=<<font color="black">Block[6888]</font>>]
+    node6888_name -> node6888 [arrowhead=none, color="black", style=dashed]
+    node6888 [shape=box, label=<<font color="black">[0] let nextNames = [? %1]<BR ALIGN="LEFT"/>[1] return (list-concat propertyNames nextNames)[#595]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6888 -> cluster1359_exit [color="black"]
+  }
+}

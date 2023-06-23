@@ -1,0 +1,3 @@
+"use strict";
+
+0 in 0 >= 0;

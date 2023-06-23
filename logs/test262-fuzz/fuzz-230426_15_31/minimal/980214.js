@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message === undefined ) { message = 'Expected true but got ' + assert . _toString ( mustBeTrue ) ; } throw new Test262Error ( message ) ; } var x ; assert . notSameValue = '' ; assert . throws = { } ; assert . _toString = `` ; function Test262Error ( message ) { message || "" ; } var x ; Test262Error = ( message ) => { throw new Test262Error ( message ) ; } ; Object . seal ( new ( Object . getPrototypeOf ( async function * ( ) { } ) . constructor ) ( ) ) ; 

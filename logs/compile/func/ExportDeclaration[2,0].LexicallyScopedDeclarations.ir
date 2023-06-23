@@ -1,0 +1,5 @@
+def <SYNTAX>:ExportDeclaration[2,0].LexicallyScopedDeclarations(
+  this: Ast:ExportDeclaration[2,0],
+): List[Ast] {
+  return (new [])[#172]
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:RegExpIdentifierPart[0,0].RegExpIdentifierCodePoint(
+  this: Ast:RegExpIdentifierPart[0,0],
+): Unknown["CodePoint"] {
+  (yet "Return the code point matched by |IdentifierPartChar|.")
+}

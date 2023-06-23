@@ -1,0 +1,9 @@
+def <SYNTAX>:DefaultClause[0,1].LexicallyDeclaredNames(
+  this: Ast:DefaultClause[0,1],
+): List[String] {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->LexicallyDeclaredNames()
+    return %0
+  } else {}
+  return (new [])[#131]
+}

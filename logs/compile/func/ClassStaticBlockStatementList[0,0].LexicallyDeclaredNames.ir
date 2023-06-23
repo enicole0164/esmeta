@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassStaticBlockStatementList[0,0].LexicallyDeclaredNames(
+  this: Ast:ClassStaticBlockStatementList[0,0],
+): List[String] {
+  return (new [])[#134]
+}

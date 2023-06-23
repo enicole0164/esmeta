@@ -1,0 +1,16 @@
+def EvaluateStringOrNumericBinaryExpression(
+  leftOperand: Ast,
+  opText: Unknown["SequenceOfUnicodeCodePoints"],
+  rightOperand: Ast,
+): Normal[Number | BigInt | String] | Abrupt {
+  sdo-call %0 = leftOperand->Evaluation()
+  let lref = %0
+  call %1 = clo<GetValue>(lref)
+  let lval = [? %1]
+  sdo-call %2 = rightOperand->Evaluation()
+  let rref = %2
+  call %3 = clo<GetValue>(rref)
+  let rval = [? %3]
+  call %4 = clo<ApplyStringOrNumericBinaryOperator>(lval, opText, rval)
+  return [? %4]
+}

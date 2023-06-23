@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster444 {
+    label = "def <SYNTAX>:TryStatement[1,0].VarScopedDeclarations(this: Ast:TryStatement[1,0]): List[Ast]"
+    style = rounded
+    cluster444_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster444_entry_name -> cluster444_entry [arrowhead=none, color="black", style=dashed]
+    cluster444_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster444_entry -> node2231 [color="black"]
+    cluster444_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster444_exit_name -> cluster444_exit [arrowhead=none, color="black", style=dashed]
+    cluster444_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2231_name [shape=none, label=<<font color="black">Call[2231]</font>>]
+    node2231_name -> node2231 [arrowhead=none, color="black", style=dashed]
+    node2231 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;VarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2231 -> node2232 [color="black"]
+    node2232_name [shape=none, label=<<font color="black">Block[2232]</font>>]
+    node2232_name -> node2232 [arrowhead=none, color="black", style=dashed]
+    node2232 [shape=box, label=<<font color="black">[0] let declarations1 = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2232 -> node2233 [color="black"]
+    node2233_name [shape=none, label=<<font color="black">Call[2233]</font>>]
+    node2233_name -> node2233 [arrowhead=none, color="black", style=dashed]
+    node2233 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;VarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2233 -> node2234 [color="black"]
+    node2234_name [shape=none, label=<<font color="black">Block[2234]</font>>]
+    node2234_name -> node2234 [arrowhead=none, color="black", style=dashed]
+    node2234 [shape=box, label=<<font color="black">[0] let declarations2 = %1<BR ALIGN="LEFT"/>[1] return (list-concat declarations1 declarations2)[#269]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2234 -> cluster444_exit [color="black"]
+  }
+}

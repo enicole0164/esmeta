@@ -1,0 +1,5 @@
+def <SYNTAX>:CallExpression[1,0].AssignmentTargetType(
+  this: Ast:CallExpression[1,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

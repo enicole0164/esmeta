@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncArrowBindingIdentifier[0,0].IsSimpleParameterList(
+  this: Ast:AsyncArrowBindingIdentifier[0,0],
+): Boolean {
+  return true
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:ModuleItem[0,0].Evaluation(
+  this: Ast:ModuleItem[0,0],
+): Unknown {
+  return ~empty~
+}

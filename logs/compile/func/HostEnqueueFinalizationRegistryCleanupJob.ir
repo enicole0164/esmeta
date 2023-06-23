@@ -1,0 +1,11 @@
+def HostEnqueueFinalizationRegistryCleanupJob(
+  finalizationRegistry: Unknown["FinalizationRegistry"],
+): Const[~unused~] {
+  call %0 = clo<CleanupFinalizationRegistry>(finalizationRegistry)
+  call %1 = clo<Completion>(%0)
+  let cleanupResult = %1
+  if (&& (comp? cleanupResult) (! (= cleanupResult.Type ~normal~))) {
+    (yet "perform any host-defined steps for reporting the error.")
+  } else {}
+  return ~unused~
+}

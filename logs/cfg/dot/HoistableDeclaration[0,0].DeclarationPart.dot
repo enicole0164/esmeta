@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster234 {
+    label = "def <SYNTAX>:HoistableDeclaration[0,0].DeclarationPart(this: Ast:HoistableDeclaration[0,0]): Ast"
+    style = rounded
+    cluster234_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster234_entry_name -> cluster234_entry [arrowhead=none, color="black", style=dashed]
+    cluster234_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster234_entry -> node1643 [color="black"]
+    cluster234_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster234_exit_name -> cluster234_exit [arrowhead=none, color="black", style=dashed]
+    cluster234_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1643_name [shape=none, label=<<font color="black">Block[1643]</font>>]
+    node1643_name -> node1643 [arrowhead=none, color="black", style=dashed]
+    node1643 [shape=box, label=<<font color="black">[0] return this[0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1643 -> cluster234_exit [color="black"]
+  }
+}

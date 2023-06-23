@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2240 {
+    label = "def <SYNTAX>:RegExpIdentifierPart[2,0].RegExpIdentifierCodePoint(this: Ast:RegExpIdentifierPart[2,0]): Unknown["CodePoint"]"
+    style = rounded
+    cluster2240_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2240_entry_name -> cluster2240_entry [arrowhead=none, color="black", style=dashed]
+    cluster2240_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2240_entry -> node13904 [color="black"]
+    cluster2240_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2240_exit_name -> cluster2240_exit [arrowhead=none, color="black", style=dashed]
+    cluster2240_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13904_name [shape=none, label=<<font color="black">Block[13904]</font>>]
+    node13904_name -> node13904 [arrowhead=none, color="black", style=dashed]
+    node13904 [shape=box, label=<<font color="black">[0] (yet &quot;Let _lead_ be the code unit whose numeric value is that of the code point matched by |UnicodeLeadSurrogate|.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;Let _trail_ be the code unit whose numeric value is that of the code point matched by |UnicodeTrailSurrogate|.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13904 -> node13905 [color="black"]
+    node13905_name [shape=none, label=<<font color="black">Call[13905]</font>>]
+    node13905_name -> node13905 [arrowhead=none, color="black", style=dashed]
+    node13905 [shape=cds, label=<<font color="black">%0 = clo&lt;UTF16SurrogatePairToCodePoint&gt;(lead, trail)</font>> color="black" fillcolor="white", style=filled]
+    node13905 -> node13906 [color="black"]
+    node13906_name [shape=none, label=<<font color="black">Block[13906]</font>>]
+    node13906_name -> node13906 [arrowhead=none, color="black", style=dashed]
+    node13906 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13906 -> cluster2240_exit [color="black"]
+  }
+}

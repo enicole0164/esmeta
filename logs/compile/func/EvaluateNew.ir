@@ -1,0 +1,21 @@
+def EvaluateNew(
+  constructExpr: Ast[MemberExpression, NewExpression],
+  arguments: Ast[Arguments] | Const[~empty~],
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = constructExpr->Evaluation()
+  let ref = %0
+  call %1 = clo<GetValue>(ref)
+  let constructor = [? %1]
+  if (= arguments ~empty~) {
+    let argList = (new [])[#569]
+  } else {
+    sdo-call %2 = arguments->ArgumentListEvaluation()
+    let argList = [? %2]
+  }
+  call %3 = clo<IsConstructor>(constructor)
+  if (= %3 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#570])
+  } else {}
+  call %4 = clo<Construct>(constructor, argList)
+  return [? %4]
+}

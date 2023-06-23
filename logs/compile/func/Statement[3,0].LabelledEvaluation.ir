@@ -1,0 +1,7 @@
+def <SYNTAX>:Statement[3,0].LabelledEvaluation(
+  this: Ast:Statement[3,0],
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this->Evaluation()
+  return %0
+}

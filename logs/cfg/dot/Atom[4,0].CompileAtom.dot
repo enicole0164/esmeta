@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2270 {
+    label = "def <SYNTAX>:Atom[4,0].CompileAtom(this: Ast:Atom[4,0], direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2270_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2270_entry_name -> cluster2270_entry [arrowhead=none, color="black", style=dashed]
+    cluster2270_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2270_entry -> node13994 [color="black"]
+    cluster2270_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2270_exit_name -> cluster2270_exit [arrowhead=none, color="black", style=dashed]
+    cluster2270_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13994_name [shape=none, label=<<font color="black">Call[13994]</font>>]
+    node13994_name -> node13994 [arrowhead=none, color="black", style=dashed]
+    node13994 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;CompileSubpattern(direction)</font>> color="black" fillcolor="white", style=filled]
+    node13994 -> node13995 [color="black"]
+    node13995_name [shape=none, label=<<font color="black">Block[13995]</font>>]
+    node13995_name -> node13995 [arrowhead=none, color="black", style=dashed]
+    node13995 [shape=box, label=<<font color="black">[0] let m = %0<BR ALIGN="LEFT"/>[1] (yet &quot;Let _parenIndex_ be the number of left-capturing parentheses in the entire regular expression that occur to the left of this |Atom|. This is the total number of &lt;emu-grammar&gt;Atom :: `(` GroupSpecifier Disjunction `)`&lt;/emu-grammar&gt; Parse Nodes prior to or enclosing this |Atom|.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures _direction_, _m_, and _parenIndex_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _d_ be a new Continuation with parameters (_y_) that captures _x_, _c_, _direction_, and _parenIndex_ and performs the following steps when called:\n    1. Assert: _y_ is a State.\n    1. Let _cap_ be a copy of _y_'s _captures_ List.\n    1. Let _xe_ be _x_'s _endIndex_.\n    1. Let _ye_ be _y_'s _endIndex_.\n    1. If _direction_ is ~forward~, then\n      1. Assert: _xe_ &le; _ye_.\n      1. Let _r_ be the Range (_xe_, _ye_).\n    1. Else,\n      1. Assert: _direction_ is ~backward~.\n      1. Assert: _ye_ &le; _xe_.\n      1. Let _r_ be the Range (_ye_, _xe_).\n    1. Set _cap_[_parenIndex_ + 1] to _r_.\n    1. Let _z_ be the State (_ye_, _cap_).\n    1. Return _c_(_z_).\n  1. Return _m_(_x_, _d_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13995 -> cluster2270_exit [color="black"]
+  }
+}

@@ -1,0 +1,27 @@
+def <INTERNAL>:ECMAScriptFunctionObject.Call(
+  F: ECMAScriptFunctionObject,
+  thisArgument: ESValue,
+  argumentsList: List[ESValue],
+): Normal[ESValue] | Abrupt {
+  let callerContext = @EXECUTION_STACK[0]
+  call %0 = clo<PrepareForOrdinaryCall>(F, undefined)
+  let calleeContext = %0
+  assert (= calleeContext @EXECUTION_STACK[0])
+  if (= F.IsClassConstructor true) {
+    let error = (new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#417]
+    nop
+    (pop < @EXECUTION_STACK)
+    call %1 = clo<ThrowCompletion>(error)
+    return %1
+  } else {}
+  call %2 = clo<OrdinaryCallBindThis>(F, calleeContext, thisArgument)
+  call %3 = clo<OrdinaryCallEvaluateBody>(F, argumentsList)
+  call %4 = clo<Completion>(%3)
+  let result = %4
+  (pop < @EXECUTION_STACK)
+  if (= result.Type ~return~) {
+    return result.Value
+  } else {}
+  [? result]
+  return undefined
+}

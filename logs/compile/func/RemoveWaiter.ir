@@ -1,0 +1,9 @@
+def RemoveWaiter(
+  WL: Unknown["WaiterList"],
+  W: Unknown["AgentSignifier"],
+): Const[~unused~] {
+  assert (yet "The calling agent is in the critical section for _WL_.")
+  assert (yet "_W_ is on the list of waiters in _WL_.")
+  (yet "Remove _W_ from the list of waiters in _WL_.")
+  return ~unused~
+}

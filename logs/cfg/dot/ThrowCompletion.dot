@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster56 {
+    label = "def ThrowCompletion(value: ESValue): Abrupt[throw]"
+    style = rounded
+    cluster56_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster56_entry_name -> cluster56_entry [arrowhead=none, color="black", style=dashed]
+    cluster56_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster56_entry -> node380 [color="black"]
+    cluster56_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster56_exit_name -> cluster56_exit [arrowhead=none, color="black", style=dashed]
+    cluster56_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node380_name [shape=none, label=<<font color="black">Block[380]</font>>]
+    node380_name -> node380 [arrowhead=none, color="black", style=dashed]
+    node380 [shape=box, label=<<font color="black">[0] return comp[~throw~/~empty~](value)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node380 -> cluster56_exit [color="black"]
+  }
+}

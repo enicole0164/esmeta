@@ -1,0 +1,10 @@
+def <SYNTAX>:YieldExpression[1,0].Evaluation(
+  this: Ast:YieldExpression[1,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let exprRef = %0
+  call %1 = clo<GetValue>(exprRef)
+  let value = [? %1]
+  call %2 = clo<Yield>(value)
+  return [? %2]
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster778 {
+    label = "def <SYNTAX>:MemberExpression[7,0].IsIdentifierRef(this: Ast:MemberExpression[7,0]): Boolean"
+    style = rounded
+    cluster778_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster778_entry_name -> cluster778_entry [arrowhead=none, color="black", style=dashed]
+    cluster778_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster778_entry -> node3017 [color="black"]
+    cluster778_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster778_exit_name -> cluster778_exit [arrowhead=none, color="black", style=dashed]
+    cluster778_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3017_name [shape=none, label=<<font color="black">Block[3017]</font>>]
+    node3017_name -> node3017 [arrowhead=none, color="black", style=dashed]
+    node3017 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3017 -> cluster778_exit [color="black"]
+  }
+}

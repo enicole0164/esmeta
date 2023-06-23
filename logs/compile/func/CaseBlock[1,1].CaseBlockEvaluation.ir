@@ -1,0 +1,91 @@
+def <SYNTAX>:CaseBlock[1,1].CaseBlockEvaluation(
+  this: Ast:CaseBlock[1,1],
+  input: Unknown,
+): Normal[ESValue] | Abrupt {
+  let V = undefined
+  if (! (= this[0] absent)) {
+    let A = (get-children (nt |CaseClause|[]) this[0])[#636]
+  } else {
+    let A = (new [])[#637]
+  }
+  let found = false
+  %1 = A
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let C = %1[%0]
+    if (= found false) {
+      call %2 = clo<CaseClauseIsSelected>(C, input)
+      found = [? %2]
+    } else {}
+    if (= found true) {
+      sdo-call %3 = C->Evaluation()
+      let R = %3
+      if (! (= R.Value ~empty~)) {
+        V = R.Value
+      } else {}
+      if (&& (comp? R) (! (= R.Type ~normal~))) {
+        call %4 = clo<UpdateEmpty>(R, V)
+        return [? %4]
+      } else {}
+    } else {}
+    %0 = (+ %0 1)
+  }
+  let foundInB = false
+  if (! (= this[2] absent)) {
+    let B = (get-children (nt |CaseClause|[]) this[2])[#638]
+  } else {
+    let B = (new [])[#639]
+  }
+  if (= found false) {
+    %6 = B
+    %5 = 0
+    loop[foreach] (< %5 %6.length) {
+      let C = %6[%5]
+      if (= foundInB false) {
+        call %7 = clo<CaseClauseIsSelected>(C, input)
+        foundInB = [? %7]
+      } else {}
+      if (= foundInB true) {
+        sdo-call %8 = C->Evaluation()
+        let R = %8
+        if (! (= R.Value ~empty~)) {
+          V = R.Value
+        } else {}
+        if (&& (comp? R) (! (= R.Type ~normal~))) {
+          call %9 = clo<UpdateEmpty>(R, V)
+          return [? %9]
+        } else {}
+      } else {}
+      %5 = (+ %5 1)
+    }
+  } else {}
+  if (= foundInB true) {
+    return V
+  } else {}
+  sdo-call %10 = this[1]->Evaluation()
+  let R = %10
+  if (! (= R.Value ~empty~)) {
+    V = R.Value
+  } else {}
+  if (&& (comp? R) (! (= R.Type ~normal~))) {
+    call %11 = clo<UpdateEmpty>(R, V)
+    return [? %11]
+  } else {}
+  nop
+  %13 = B
+  %12 = 0
+  loop[foreach] (< %12 %13.length) {
+    let C = %13[%12]
+    sdo-call %14 = C->Evaluation()
+    let R = %14
+    if (! (= R.Value ~empty~)) {
+      V = R.Value
+    } else {}
+    if (&& (comp? R) (! (= R.Type ~normal~))) {
+      call %15 = clo<UpdateEmpty>(R, V)
+      return [? %15]
+    } else {}
+    %12 = (+ %12 1)
+  }
+  return V
+}

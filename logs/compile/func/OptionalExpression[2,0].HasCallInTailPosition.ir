@@ -1,0 +1,7 @@
+def <SYNTAX>:OptionalExpression[2,0].HasCallInTailPosition(
+  this: Ast:OptionalExpression[2,0],
+  call: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->HasCallInTailPosition(call)
+  return %0
+}

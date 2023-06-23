@@ -1,0 +1,38 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster58 {
+    label = "def IsPropertyReference(V: ReferenceRecord): Boolean"
+    style = rounded
+    cluster58_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster58_entry_name -> cluster58_entry [arrowhead=none, color="black", style=dashed]
+    cluster58_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster58_entry -> node385 [color="black"]
+    cluster58_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster58_exit_name -> cluster58_exit [arrowhead=none, color="black", style=dashed]
+    cluster58_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node385_name [shape=none, label=<<font color="black">Branch[385]</font>>]
+    node385_name -> node385 [arrowhead=none, color="black", style=dashed]
+    node385 [shape=diamond, label=<<font color="black">(= V.Base ~unresolvable~)</font>> color="black" fillcolor="white", style=filled]
+    node385 -> node386 [label=<<font color="black">true</font>> color="black"]
+    node385 -> node387 [label=<<font color="black">false</font>> color="black"]
+    node386_name [shape=none, label=<<font color="black">Block[386]</font>>]
+    node386_name -> node386 [arrowhead=none, color="black", style=dashed]
+    node386 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node386 -> cluster58_exit [color="black"]
+    node387_name [shape=none, label=<<font color="black">Branch[387]</font>>]
+    node387_name -> node387 [arrowhead=none, color="black", style=dashed]
+    node387 [shape=diamond, label=<<font color="black">(? V.Base: &quot;EnvironmentRecord&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node387 -> node388 [label=<<font color="black">true</font>> color="black"]
+    node387 -> node389 [label=<<font color="black">false</font>> color="black"]
+    node388_name [shape=none, label=<<font color="black">Block[388]</font>>]
+    node388_name -> node388 [arrowhead=none, color="black", style=dashed]
+    node388 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node388 -> cluster58_exit [color="black"]
+    node389_name [shape=none, label=<<font color="black">Block[389]</font>>]
+    node389_name -> node389 [arrowhead=none, color="black", style=dashed]
+    node389 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node389 -> cluster58_exit [color="black"]
+  }
+}

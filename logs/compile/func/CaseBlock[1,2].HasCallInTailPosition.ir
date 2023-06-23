@@ -1,0 +1,23 @@
+def <SYNTAX>:CaseBlock[1,2].HasCallInTailPosition(
+  this: Ast:CaseBlock[1,2],
+  call: Unknown,
+): Boolean {
+  let has = false
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->HasCallInTailPosition(call)
+    let has = %0
+  } else {}
+  if (= has true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->HasCallInTailPosition(call)
+  let has = %1
+  if (= has true) {
+    return true
+  } else {}
+  if (! (= this[2] absent)) {
+    sdo-call %2 = this[2]->HasCallInTailPosition(call)
+    let has = %2
+  } else {}
+  return has
+}

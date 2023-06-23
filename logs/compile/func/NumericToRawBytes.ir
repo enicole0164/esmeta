@@ -1,0 +1,24 @@
+def NumericToRawBytes(
+  type: Unknown["TypedArrayElementType"],
+  value: Number | BigInt,
+  isLittleEndian: Boolean,
+): Unknown["ListOfByteValues"] {
+  if (= type ~Float32~) {
+    (yet "Let _rawBytes_ be a List whose elements are the 4 bytes that are the result of converting _value_ to IEEE 754-2019 binary32 format using roundTiesToEven mode. If _isLittleEndian_ is *false*, the bytes are arranged in big endian order. Otherwise, the bytes are arranged in little endian order. If _value_ is *NaN*, _rawBytes_ may be set to any implementation chosen IEEE 754-2019 binary32 format Not-a-Number encoding. An implementation must always choose the same encoding for each implementation distinguishable *NaN* value.")
+  } else {
+    if (= type ~Float64~) {
+      (yet "Let _rawBytes_ be a List whose elements are the 8 bytes that are the IEEE 754-2019 binary64 format encoding of _value_. If _isLittleEndian_ is *false*, the bytes are arranged in big endian order. Otherwise, the bytes are arranged in little endian order. If _value_ is *NaN*, _rawBytes_ may be set to any implementation chosen IEEE 754-2019 binary64 format Not-a-Number encoding. An implementation must always choose the same encoding for each implementation distinguishable *NaN* value.")
+    } else {
+      (yet "Let _n_ be the Element Size value specified in <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for Element Type _type_.")
+      (yet "Let _convOp_ be the abstract operation named in the Conversion Operation column in <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for Element Type _type_.")
+      call %0 = convOp(value)
+      let intValue = ([math] %0)
+      if (! (< intValue 0)) {
+        (yet "Let _rawBytes_ be a List whose elements are the _n_-byte binary encoding of _intValue_. If _isLittleEndian_ is *false*, the bytes are ordered in big endian order. Otherwise, the bytes are ordered in little endian order.")
+      } else {
+        (yet "Let _rawBytes_ be a List whose elements are the _n_-byte binary two's complement encoding of _intValue_. If _isLittleEndian_ is *false*, the bytes are ordered in big endian order. Otherwise, the bytes are ordered in little endian order.")
+      }
+    }
+  }
+  return rawBytes
+}

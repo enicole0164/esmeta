@@ -1,0 +1,5 @@
+def <SYNTAX>:Declaration[2,0].DeclarationPart(
+  this: Ast:Declaration[2,0],
+): Ast {
+  return this[0]
+}

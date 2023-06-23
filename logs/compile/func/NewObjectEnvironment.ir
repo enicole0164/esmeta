@@ -1,0 +1,11 @@
+def NewObjectEnvironment(
+  O: Object,
+  W: Boolean,
+  E: EnvironmentRecord | Null,
+): ObjectEnvironmentRecord {
+  let env = (new ObjectEnvironmentRecord())[#385]
+  env.BindingObject = O
+  env.IsWithEnvironment = W
+  env.OuterEnv = E
+  return env
+}

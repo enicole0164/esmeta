@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1205 {
+    label = "def <SYNTAX>:Elision[0,0].ArrayAccumulation(this: Ast:Elision[0,0], array: Unknown["Array"], nextIndex: Unknown["Integer"]): Unknown["EitherANormalCompletionContainingAnIntegerOrAnAbruptCompletion"]"
+    style = rounded
+    cluster1205_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1205_entry_name -> cluster1205_entry [arrowhead=none, color="black", style=dashed]
+    cluster1205_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1205_entry -> node5429 [color="black"]
+    cluster1205_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1205_exit_name -> cluster1205_exit [arrowhead=none, color="black", style=dashed]
+    cluster1205_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5429_name [shape=none, label=<<font color="black">Block[5429]</font>>]
+    node5429_name -> node5429 [arrowhead=none, color="black", style=dashed]
+    node5429 [shape=box, label=<<font color="black">[0] let len = (+ nextIndex 1)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5429 -> node5430 [color="black"]
+    node5430_name [shape=none, label=<<font color="black">Call[5430]</font>>]
+    node5430_name -> node5430 [arrowhead=none, color="black", style=dashed]
+    node5430 [shape=cds, label=<<font color="black">%0 = clo&lt;Set&gt;(array, &quot;length&quot;, ([number] len), true)</font>> color="black" fillcolor="white", style=filled]
+    node5430 -> node5431 [color="black"]
+    node5431_name [shape=none, label=<<font color="black">Block[5431]</font>>]
+    node5431_name -> node5431 [arrowhead=none, color="black", style=dashed]
+    node5431 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/>[1] nop<BR ALIGN="LEFT"/>[2] return len<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5431 -> cluster1205_exit [color="black"]
+  }
+}

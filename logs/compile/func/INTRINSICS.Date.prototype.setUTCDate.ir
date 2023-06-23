@@ -1,0 +1,24 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setUTCDate(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let date = (pop < argumentsList) else let date = absent
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  call %1 = clo<ToNumber>(date)
+  let dt = [? %1]
+  if (= t NaN) {
+    return NaN
+  } else {}
+  call %2 = clo<YearFromTime>(t)
+  call %3 = clo<MonthFromTime>(t)
+  call %4 = clo<MakeDay>(%2, %3, dt)
+  call %5 = clo<TimeWithinDay>(t)
+  call %6 = clo<MakeDate>(%4, %5)
+  let newDate = %6
+  call %7 = clo<TimeClip>(newDate)
+  let v = %7
+  (yet "Set the [[DateValue]] internal slot of this Date object to _v_.")
+  return v
+}

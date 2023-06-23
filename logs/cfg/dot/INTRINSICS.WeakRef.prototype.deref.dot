@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2554 {
+    label = "def <BUILTIN>:INTRINSICS.WeakRef.prototype.deref(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2554_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2554_entry_name -> cluster2554_entry [arrowhead=none, color="black", style=dashed]
+    cluster2554_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2554_entry -> node18497 [color="black"]
+    cluster2554_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2554_exit_name -> cluster2554_exit [arrowhead=none, color="black", style=dashed]
+    cluster2554_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node18497_name [shape=none, label=<<font color="black">Block[18497]</font>>]
+    node18497_name -> node18497 [arrowhead=none, color="black", style=dashed]
+    node18497 [shape=box, label=<<font color="black">[0] let weakRef = this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18497 -> node18498 [color="black"]
+    node18498_name [shape=none, label=<<font color="black">Call[18498]</font>>]
+    node18498_name -> node18498 [arrowhead=none, color="black", style=dashed]
+    node18498 [shape=cds, label=<<font color="black">%0 = clo&lt;RequireInternalSlot&gt;(weakRef, &quot;WeakRefTarget&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node18498 -> node18499 [color="black"]
+    node18499_name [shape=none, label=<<font color="black">Block[18499]</font>>]
+    node18499_name -> node18499 [arrowhead=none, color="black", style=dashed]
+    node18499 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18499 -> node18500 [color="black"]
+    node18500_name [shape=none, label=<<font color="black">Call[18500]</font>>]
+    node18500_name -> node18500 [arrowhead=none, color="black", style=dashed]
+    node18500 [shape=cds, label=<<font color="black">%1 = clo&lt;WeakRefDeref&gt;(weakRef)</font>> color="black" fillcolor="white", style=filled]
+    node18500 -> node18501 [color="black"]
+    node18501_name [shape=none, label=<<font color="black">Block[18501]</font>>]
+    node18501_name -> node18501 [arrowhead=none, color="black", style=dashed]
+    node18501 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18501 -> cluster2554_exit [color="black"]
+  }
+}

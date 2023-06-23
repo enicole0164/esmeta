@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1018 {
+    label = "def <CONC>:ModuleEnvironmentRecord.GetThisBinding(envRec: ModuleEnvironmentRecord): Normal[Undefined]"
+    style = rounded
+    cluster1018_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1018_entry_name -> cluster1018_entry [arrowhead=none, color="black", style=dashed]
+    cluster1018_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1018_entry -> node3820 [color="black"]
+    cluster1018_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1018_exit_name -> cluster1018_exit [arrowhead=none, color="black", style=dashed]
+    cluster1018_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3820_name [shape=none, label=<<font color="black">Block[3820]</font>>]
+    node3820_name -> node3820 [arrowhead=none, color="black", style=dashed]
+    node3820 [shape=box, label=<<font color="black">[0] return undefined<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3820 -> cluster1018_exit [color="black"]
+  }
+}

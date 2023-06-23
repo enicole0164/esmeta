@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } { } } assert . _isSameValue = function ( a ) { if ( a ) { return a !== 0 || 1 / a === 1 ; } return a && b ; } ; assert = x => 0 ; x => 0 ; x : try { } finally { } assert . _toString = { apply : 0 } ; function Test262Error ( message ) { this . message = message ; } Test262Error = function ( ) { return "Test262Error: " ; } ; function $DONOTEVALUATE ( ) { throw "Test262: This statement should not be evaluated." ; } assert ( [ 0 , , 2 ] . lastIndexOf ( undefined ) , - 1 ) ; 

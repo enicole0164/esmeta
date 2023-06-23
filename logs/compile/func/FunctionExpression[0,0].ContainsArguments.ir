@@ -1,0 +1,5 @@
+def <SYNTAX>:FunctionExpression[0,0].ContainsArguments(
+  this: Ast:FunctionExpression[0,0],
+): Boolean {
+  return false
+}

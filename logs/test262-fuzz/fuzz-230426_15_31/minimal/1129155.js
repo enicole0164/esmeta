@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } { } throw new Test262Error ( message ) ; } async x => { } ; assert = x => 0 ; 0 || 0 ? 0 : 0 ; { } x : ; function Test262Error ( message ) { message || "" ; } Test262Error . prototype . toString = { construct : async function ( x ) { } } ; Test262Error = ( message ) => { throw new Test262Error ( message ) ; } ; let x ; var s = new Set ( true ) ; assert . sameValue ( s . size , 7 , "The value of `s.size` is `7`" ) ; 

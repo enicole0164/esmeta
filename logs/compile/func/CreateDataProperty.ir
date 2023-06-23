@@ -1,0 +1,9 @@
+def CreateDataProperty(
+  O: Object,
+  P: Symbol | String,
+  V: ESValue,
+): Normal[Boolean] | Abrupt {
+  let newDesc = (new PropertyDescriptor("Value" -> V, "Writable" -> true, "Enumerable" -> true, "Configurable" -> true))[#41]
+  method-call %0 = O->DefineOwnProperty(P, newDesc)
+  return [? %0]
+}

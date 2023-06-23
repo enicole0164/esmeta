@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2254 {
+    label = "def <SYNTAX>:Assertion[4,0].CompileAssertion(this: Ast:Assertion[4,0]): Unknown["Matcher"]"
+    style = rounded
+    cluster2254_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2254_entry_name -> cluster2254_entry [arrowhead=none, color="black", style=dashed]
+    cluster2254_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2254_entry -> node13956 [color="black"]
+    cluster2254_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2254_exit_name -> cluster2254_exit [arrowhead=none, color="black", style=dashed]
+    cluster2254_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13956_name [shape=none, label=<<font color="black">Call[13956]</font>>]
+    node13956_name -> node13956 [arrowhead=none, color="black", style=dashed]
+    node13956 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileSubpattern(~forward~)</font>> color="black" fillcolor="white", style=filled]
+    node13956 -> node13957 [color="black"]
+    node13957_name [shape=none, label=<<font color="black">Block[13957]</font>>]
+    node13957_name -> node13957 [arrowhead=none, color="black", style=dashed]
+    node13957 [shape=box, label=<<font color="black">[0] let m = %0<BR ALIGN="LEFT"/>[1] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called:\n    1. Assert: _y_ is a State.\n    1. Return _y_.\n  1. Let _r_ be _m_(_x_, _d_).\n  1. If _r_ is ~failure~, return ~failure~.\n  1. Let _y_ be _r_.State.\n  1. Let _cap_ be _y_'s _captures_ List.\n  1. Let _xe_ be _x_'s _endIndex_.\n  1. Let _z_ be the State (_xe_, _cap_).\n  1. Return _c_(_z_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13957 -> cluster2254_exit [color="black"]
+  }
+}

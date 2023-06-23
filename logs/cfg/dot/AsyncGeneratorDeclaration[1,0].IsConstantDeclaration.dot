@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster248 {
+    label = "def <SYNTAX>:AsyncGeneratorDeclaration[1,0].IsConstantDeclaration(this: Ast:AsyncGeneratorDeclaration[1,0]): Boolean"
+    style = rounded
+    cluster248_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster248_entry_name -> cluster248_entry [arrowhead=none, color="black", style=dashed]
+    cluster248_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster248_entry -> node1658 [color="black"]
+    cluster248_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster248_exit_name -> cluster248_exit [arrowhead=none, color="black", style=dashed]
+    cluster248_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1658_name [shape=none, label=<<font color="black">Block[1658]</font>>]
+    node1658_name -> node1658 [arrowhead=none, color="black", style=dashed]
+    node1658 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1658 -> cluster248_exit [color="black"]
+  }
+}

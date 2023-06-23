@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2222 {
+    label = "def <SYNTAX>:RegExpUnicodeEscapeSequence[5,0].CharacterValue(this: Ast:RegExpUnicodeEscapeSequence[5,0]): Unknown["NonnegativeInteger"]"
+    style = rounded
+    cluster2222_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2222_entry_name -> cluster2222_entry [arrowhead=none, color="black", style=dashed]
+    cluster2222_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2222_entry -> node13871 [color="black"]
+    cluster2222_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2222_exit_name -> cluster2222_exit [arrowhead=none, color="black", style=dashed]
+    cluster2222_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13871_name [shape=none, label=<<font color="black">Call[13871]</font>>]
+    node13871_name -> node13871 [arrowhead=none, color="black", style=dashed]
+    node13871 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;MV()</font>> color="black" fillcolor="white", style=filled]
+    node13871 -> node13872 [color="black"]
+    node13872_name [shape=none, label=<<font color="black">Block[13872]</font>>]
+    node13872_name -> node13872 [arrowhead=none, color="black", style=dashed]
+    node13872 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13872 -> cluster2222_exit [color="black"]
+  }
+}

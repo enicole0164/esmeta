@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster134 {
+    label = "def CreateMethodProperty(O: Object, P: Symbol | String, V: ESValue): Const[~unused~]"
+    style = rounded
+    cluster134_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster134_entry_name -> cluster134_entry [arrowhead=none, color="black", style=dashed]
+    cluster134_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster134_entry -> node1108 [color="black"]
+    cluster134_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster134_exit_name -> cluster134_exit [arrowhead=none, color="black", style=dashed]
+    cluster134_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1108_name [shape=none, label=<<font color="black">Block[1108]</font>>]
+    node1108_name -> node1108 [arrowhead=none, color="black", style=dashed]
+    node1108 [shape=box, label=<<font color="black">[0] assert (&amp;&amp; (? O: &quot;OrdinaryObject&quot;) O.Extensible)<BR ALIGN="LEFT"/>[1] let newDesc = (new PropertyDescriptor(&quot;Value&quot; -&gt; V, &quot;Writable&quot; -&gt; true, &quot;Enumerable&quot; -&gt; false, &quot;Configurable&quot; -&gt; true))[#42]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1108 -> node1109 [color="black"]
+    node1109_name [shape=none, label=<<font color="black">Call[1109]</font>>]
+    node1109_name -> node1109 [arrowhead=none, color="black", style=dashed]
+    node1109 [shape=cds, label=<<font color="black">%0 = O-&gt;DefineOwnProperty(P, newDesc)</font>> color="black" fillcolor="white", style=filled]
+    node1109 -> node1110 [color="black"]
+    node1110_name [shape=none, label=<<font color="black">Block[1110]</font>>]
+    node1110_name -> node1110 [arrowhead=none, color="black", style=dashed]
+    node1110 [shape=box, label=<<font color="black">[0] [! %0]<BR ALIGN="LEFT"/>[1] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1110 -> cluster134_exit [color="black"]
+  }
+}

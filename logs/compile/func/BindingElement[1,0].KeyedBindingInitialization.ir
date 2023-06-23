@@ -1,0 +1,17 @@
+def <SYNTAX>:BindingElement[1,0].KeyedBindingInitialization(
+  this: Ast:BindingElement[1,0],
+  value: Unknown,
+  environment: Unknown,
+  propertyName: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<GetV>(value, propertyName)
+  let v = [? %0]
+  if (&& (! (= this[1] absent)) (= v undefined)) {
+    sdo-call %1 = this[1]->Evaluation()
+    let defaultValue = %1
+    call %2 = clo<GetValue>(defaultValue)
+    v = [? %2]
+  } else {}
+  sdo-call %3 = this[0]->BindingInitialization(v, environment)
+  return [? %3]
+}

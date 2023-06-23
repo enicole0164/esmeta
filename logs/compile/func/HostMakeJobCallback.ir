@@ -1,0 +1,5 @@
+def HostMakeJobCallback(
+  callback: FunctionObject,
+): JobCallbackRecord {
+  return (new JobCallbackRecord("Callback" -> callback, "HostDefined" -> ~empty~))[#397]
+}

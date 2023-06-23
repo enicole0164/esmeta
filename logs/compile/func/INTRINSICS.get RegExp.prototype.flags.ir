@@ -1,0 +1,54 @@
+def <BUILTIN>:INTRINSICS.get RegExp.prototype.flags(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let R = this
+  if (! (= (typeof R) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#995])
+  } else {}
+  let result = ""
+  call %0 = clo<Get>(R, "hasIndices")
+  call %1 = clo<ToBoolean>([? %0])
+  let hasIndices = %1
+  if (= hasIndices true) {
+    (yet "append the code unit 0x0064 (LATIN SMALL LETTER D) as the last code unit of _result_.")
+  } else {}
+  call %2 = clo<Get>(R, "global")
+  call %3 = clo<ToBoolean>([? %2])
+  let global = %3
+  if (= global true) {
+    (yet "append the code unit 0x0067 (LATIN SMALL LETTER G) as the last code unit of _result_.")
+  } else {}
+  call %4 = clo<Get>(R, "ignoreCase")
+  call %5 = clo<ToBoolean>([? %4])
+  let ignoreCase = %5
+  if (= ignoreCase true) {
+    (yet "append the code unit 0x0069 (LATIN SMALL LETTER I) as the last code unit of _result_.")
+  } else {}
+  call %6 = clo<Get>(R, "multiline")
+  call %7 = clo<ToBoolean>([? %6])
+  let multiline = %7
+  if (= multiline true) {
+    (yet "append the code unit 0x006D (LATIN SMALL LETTER M) as the last code unit of _result_.")
+  } else {}
+  call %8 = clo<Get>(R, "dotAll")
+  call %9 = clo<ToBoolean>([? %8])
+  let dotAll = %9
+  if (= dotAll true) {
+    (yet "append the code unit 0x0073 (LATIN SMALL LETTER S) as the last code unit of _result_.")
+  } else {}
+  call %10 = clo<Get>(R, "unicode")
+  call %11 = clo<ToBoolean>([? %10])
+  let unicode = %11
+  if (= unicode true) {
+    (yet "append the code unit 0x0075 (LATIN SMALL LETTER U) as the last code unit of _result_.")
+  } else {}
+  call %12 = clo<Get>(R, "sticky")
+  call %13 = clo<ToBoolean>([? %12])
+  let sticky = %13
+  if (= sticky true) {
+    (yet "append the code unit 0x0079 (LATIN SMALL LETTER Y) as the last code unit of _result_.")
+  } else {}
+  return result
+}

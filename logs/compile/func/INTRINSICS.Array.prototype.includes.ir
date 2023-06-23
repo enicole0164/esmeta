@@ -1,0 +1,44 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.includes(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let searchElement = (pop < argumentsList) else let searchElement = absent
+  if (< 0 argumentsList.length) let fromIndex = (pop < argumentsList) else let fromIndex = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  if (= len 0) {
+    return false
+  } else {}
+  call %2 = clo<ToIntegerOrInfinity>(fromIndex)
+  let n = [? %2]
+  assert (|| (! (= fromIndex undefined)) (= n 0))
+  if (= n +INF) {
+    return false
+  } else {
+    if (= n -INF) {
+      n = 0
+    } else {}
+  }
+  if (! (< n 0)) {
+    let k = n
+  } else {
+    let k = (+ len n)
+    if (< k 0) {
+      k = 0
+    } else {}
+  }
+  loop[repeat] (< k len) {
+    call %3 = clo<ToString>(([number] k))
+    call %4 = clo<Get>(O, [! %3])
+    let elementK = [? %4]
+    call %5 = clo<SameValueZero>(searchElement, elementK)
+    if (= %5 true) {
+      return true
+    } else {}
+    k = (+ k 1)
+  }
+  return false
+}

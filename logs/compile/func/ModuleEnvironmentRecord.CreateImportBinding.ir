@@ -1,0 +1,11 @@
+def <CONC>:ModuleEnvironmentRecord.CreateImportBinding(
+  envRec: ModuleEnvironmentRecord,
+  N: String,
+  M: ModuleRecord,
+  N2: String,
+): Const[~unused~] {
+  assert (= envRec.SubMap[N] absent)
+  assert (yet "When _M_.[[Environment]] is instantiated it will have a direct binding for _N2_.")
+  (yet "Create an immutable indirect binding in _envRec_ for _N_ that references _M_ and _N2_ as its target binding and record that the binding is initialized.")
+  return ~unused~
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:VariableDeclarationList[0,0].VarScopedDeclarations(
+  this: Ast:VariableDeclarationList[0,0],
+): List[Ast] {
+  return (new [this[0]])[#235]
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:BindingElisionElement[0,1].IteratorBindingInitialization(
+  this: Ast:BindingElisionElement[0,1],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+  [? %0]
+  sdo-call %1 = this[1]->IteratorBindingInitialization(iteratorRecord, environment)
+  return [? %1]
+}

@@ -1,0 +1,8 @@
+def <SYNTAX>:IdentifierName[1,0].StringValue(
+  this: Ast:IdentifierName[1,0],
+): String {
+  sdo-call %0 = this[0]->IdentifierCodePoints()
+  let idTextUnescaped = %0
+  call %1 = clo<CodePointsToString>(idTextUnescaped)
+  return %1
+}

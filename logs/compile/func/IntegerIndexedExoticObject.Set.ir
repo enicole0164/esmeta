@@ -1,0 +1,18 @@
+def <INTERNAL>:IntegerIndexedExoticObject.Set(
+  O: IntegerIndexedExoticObject,
+  P: Symbol | String,
+  V: ESValue,
+  Receiver: ESValue,
+): Normal[Boolean] | Abrupt {
+  if (= (typeof P) @String) {
+    call %0 = clo<CanonicalNumericIndexString>(P)
+    let numericIndex = %0
+    if (! (= numericIndex undefined)) {
+      call %1 = clo<IntegerIndexedElementSet>(O, numericIndex, V)
+      [? %1]
+      return true
+    } else {}
+  } else {}
+  call %2 = clo<OrdinarySet>(O, P, V, Receiver)
+  return [? %2]
+}

@@ -1,0 +1,13 @@
+def <BUILTIN>:INTRINSICS.Object.keys(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let O = (pop < argumentsList) else let O = absent
+  call %0 = clo<ToObject>(O)
+  let obj = [? %0]
+  call %1 = clo<EnumerableOwnPropertyNames>(obj, ~key~)
+  let nameList = [? %1]
+  call %2 = clo<CreateArrayFromList>(nameList)
+  return %2
+}

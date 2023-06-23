@@ -1,0 +1,19 @@
+def <SYNTAX>:<DEFAULT>.AllPrivateIdentifiersValid(
+  this: Ast,
+  names: Unknown,
+): Boolean {
+  %1 = (get-children this)[#682]
+  %0 = 0
+  %2 = %1.length
+  loop[foreach-node] (< %0 %2) {
+    let child = %1[%0]
+    if (? child: "Nonterminal") {
+      sdo-call %3 = child->AllPrivateIdentifiersValid(names)
+      if (= %3 false) {
+        return false
+      } else {}
+    } else {}
+    %0 = (+ %0 1)
+  }
+  return true
+}

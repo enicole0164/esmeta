@@ -1,0 +1,20 @@
+def IsValidIntegerIndex(
+  O: IntegerIndexedExoticObject,
+  index: Number,
+): Boolean {
+  call %0 = clo<IsDetachedBuffer>(O.ViewedArrayBuffer)
+  if (= %0 true) {
+    return false
+  } else {}
+  call %1 = clo<IsIntegralNumber>(index)
+  if (= %1 false) {
+    return false
+  } else {}
+  if (= index -0.0f) {
+    return false
+  } else {}
+  if (|| (< ([math] index) 0) (! (< ([math] index) O.ArrayLength))) {
+    return false
+  } else {}
+  return true
+}

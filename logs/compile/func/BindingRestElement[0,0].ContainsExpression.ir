@@ -1,0 +1,5 @@
+def <SYNTAX>:BindingRestElement[0,0].ContainsExpression(
+  this: Ast:BindingRestElement[0,0],
+): Boolean {
+  return false
+}

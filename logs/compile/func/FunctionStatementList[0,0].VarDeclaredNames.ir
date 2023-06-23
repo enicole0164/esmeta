@@ -1,0 +1,5 @@
+def <SYNTAX>:FunctionStatementList[0,0].VarDeclaredNames(
+  this: Ast:FunctionStatementList[0,0],
+): List[String] {
+  return (new [])[#217]
+}

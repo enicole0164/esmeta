@@ -1,0 +1,6 @@
+def <SYNTAX>:ClassStaticBlockStatementList[0,1].VarDeclaredNames(
+  this: Ast:ClassStaticBlockStatementList[0,1],
+): List[String] {
+  sdo-call %0 = this[0]->TopLevelVarDeclaredNames()
+  return %0
+}

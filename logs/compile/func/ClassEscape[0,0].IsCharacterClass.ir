@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassEscape[0,0].IsCharacterClass(
+  this: Ast:ClassEscape[0,0],
+): Boolean {
+  return false
+}

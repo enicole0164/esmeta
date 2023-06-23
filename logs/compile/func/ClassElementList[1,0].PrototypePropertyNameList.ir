@@ -1,0 +1,16 @@
+def <SYNTAX>:ClassElementList[1,0].PrototypePropertyNameList(
+  this: Ast:ClassElementList[1,0],
+): List[Symbol | String] {
+  sdo-call %0 = this[0]->PrototypePropertyNameList()
+  let list = %0
+  sdo-call %1 = this[1]->PropName()
+  let propName = %1
+  if (= propName ~empty~) {
+    return list
+  } else {}
+  sdo-call %2 = this[1]->IsStatic()
+  if (= %2 true) {
+    return list
+  } else {}
+  return (list-concat list (new [propName])[#681])[#680]
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2460 {
+    label = "def <BUILTIN>:INTRINSICS.SetIteratorPrototype.next(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2460_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2460_entry_name -> cluster2460_entry [arrowhead=none, color="black", style=dashed]
+    cluster2460_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2460_entry -> node17175 [color="black"]
+    cluster2460_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2460_exit_name -> cluster2460_exit [arrowhead=none, color="black", style=dashed]
+    cluster2460_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node17175_name [shape=none, label=<<font color="black">Call[17175]</font>>]
+    node17175_name -> node17175 [arrowhead=none, color="black", style=dashed]
+    node17175 [shape=cds, label=<<font color="black">%0 = clo&lt;GeneratorResume&gt;(this, ~empty~, &quot;%SetIteratorPrototype%&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node17175 -> node17176 [color="black"]
+    node17176_name [shape=none, label=<<font color="black">Block[17176]</font>>]
+    node17176_name -> node17176 [arrowhead=none, color="black", style=dashed]
+    node17176 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17176 -> cluster2460_exit [color="black"]
+  }
+}

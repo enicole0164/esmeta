@@ -1,0 +1,131 @@
+def ForIn/OfBodyEvaluation(
+  lhs: Unknown,
+  stmt: Unknown,
+  iteratorRecord: Unknown,
+  iterationKind: Unknown,
+  lhsKind: Const[~assignment~, ~lexicalBinding~, ~varBinding~],
+  labelSet: Unknown,
+  iteratorKind?: Const[~async~, ~sync~],
+): Normal[ESValue] | Abrupt {
+  if (= iteratorKind absent) {
+    iteratorKind = ~sync~
+  } else {}
+  let oldEnv = @EXECUTION_STACK[0].LexicalEnvironment
+  let V = undefined
+  sdo-call %0 = lhs->IsDestructuring()
+  let destructuring = %0
+  if (&& (= destructuring true) (= lhsKind ~assignment~)) {
+    assert (? lhs: "LeftHandSideExpression")
+    let assignmentPattern = (parse lhs (nt |AssignmentPattern|[]))
+  } else {}
+  loop[repeat] true {
+    call %1 = clo<Call>(iteratorRecord.NextMethod, iteratorRecord.Iterator)
+    let nextResult = [? %1]
+    if (= iteratorKind ~async~) {
+      call %2 = clo<Await>(nextResult)
+      nextResult = [? %2]
+    } else {}
+    if (! (= (typeof nextResult) @Object)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#627])
+    } else {}
+    call %3 = clo<IteratorComplete>(nextResult)
+    let done = [? %3]
+    if (= done true) {
+      return V
+    } else {}
+    call %4 = clo<IteratorValue>(nextResult)
+    let nextValue = [? %4]
+    if (|| (= lhsKind ~assignment~) (= lhsKind ~varBinding~)) {
+      if (= destructuring false) {
+        sdo-call %5 = lhs->Evaluation()
+        let lhsRef = %5
+      } else {}
+    } else {
+      assert (= lhsKind ~lexicalBinding~)
+      assert (? lhs: "ForDeclaration")
+      call %6 = clo<NewDeclarativeEnvironment>(oldEnv)
+      let iterationEnv = %6
+      sdo-call %7 = lhs->ForDeclarationBindingInstantiation(iterationEnv)
+      @EXECUTION_STACK[0].LexicalEnvironment = iterationEnv
+      if (= destructuring false) {
+        assert (yet "_lhs_ binds a single name.")
+        sdo-call %8 = lhs->BoundNames()
+        let lhsName = %8[0]
+        call %9 = clo<ResolveBinding>(lhsName)
+        let lhsRef = [! %9]
+      } else {}
+    }
+    if (= destructuring false) {
+      if (&& (comp? lhsRef) (! (= lhsRef.Type ~normal~))) {
+        let status = lhsRef
+      } else {
+        if (= lhsKind ~lexicalBinding~) {
+          call %10 = clo<InitializeReferencedBinding>(lhsRef, nextValue)
+          call %11 = clo<Completion>(%10)
+          let status = %11
+        } else {
+          call %12 = clo<PutValue>(lhsRef, nextValue)
+          call %13 = clo<Completion>(%12)
+          let status = %13
+        }
+      }
+    } else {
+      if (= lhsKind ~assignment~) {
+        sdo-call %14 = assignmentPattern->DestructuringAssignmentEvaluation(nextValue)
+        call %15 = clo<Completion>(%14)
+        let status = %15
+      } else {
+        if (= lhsKind ~varBinding~) {
+          assert (? lhs: "ForBinding")
+          sdo-call %16 = lhs->BindingInitialization(nextValue, undefined)
+          call %17 = clo<Completion>(%16)
+          let status = %17
+        } else {
+          assert (= lhsKind ~lexicalBinding~)
+          assert (? lhs: "ForDeclaration")
+          sdo-call %18 = lhs->ForDeclarationBindingInitialization(nextValue, iterationEnv)
+          call %19 = clo<Completion>(%18)
+          let status = %19
+        }
+      }
+    }
+    if (&& (comp? status) (! (= status.Type ~normal~))) {
+      @EXECUTION_STACK[0].LexicalEnvironment = oldEnv
+      if (= iteratorKind ~async~) {
+        call %20 = clo<AsyncIteratorClose>(iteratorRecord, status)
+        return [? %20]
+      } else {}
+      if (= iterationKind ~enumerate~) {
+        return [? status]
+      } else {
+        assert (= iterationKind ~iterate~)
+        call %21 = clo<IteratorClose>(iteratorRecord, status)
+        return [? %21]
+      }
+    } else {}
+    sdo-call %22 = stmt->Evaluation()
+    let result = %22
+    @EXECUTION_STACK[0].LexicalEnvironment = oldEnv
+    call %23 = clo<LoopContinues>(result, labelSet)
+    if (= %23 false) {
+      if (= iterationKind ~enumerate~) {
+        call %24 = clo<UpdateEmpty>(result, V)
+        return [? %24]
+      } else {
+        assert (= iterationKind ~iterate~)
+        call %25 = clo<UpdateEmpty>(result, V)
+        call %26 = clo<Completion>(%25)
+        status = %26
+        if (= iteratorKind ~async~) {
+          call %27 = clo<AsyncIteratorClose>(iteratorRecord, status)
+          return [? %27]
+        } else {}
+        call %28 = clo<IteratorClose>(iteratorRecord, status)
+        return [? %28]
+      }
+    } else {}
+    if (! (= result.Value ~empty~)) {
+      V = result.Value
+    } else {}
+  }
+}

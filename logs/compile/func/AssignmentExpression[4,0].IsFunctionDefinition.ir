@@ -1,0 +1,5 @@
+def <SYNTAX>:AssignmentExpression[4,0].IsFunctionDefinition(
+  this: Ast:AssignmentExpression[4,0],
+): Boolean {
+  return false
+}

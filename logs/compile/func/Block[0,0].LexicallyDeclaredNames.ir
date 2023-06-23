@@ -1,0 +1,5 @@
+def <SYNTAX>:Block[0,0].LexicallyDeclaredNames(
+  this: Ast:Block[0,0],
+): List[String] {
+  return (new [])[#111]
+}

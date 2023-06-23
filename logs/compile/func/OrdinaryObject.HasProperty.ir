@@ -1,0 +1,7 @@
+def <INTERNAL>:OrdinaryObject.HasProperty(
+  O: OrdinaryObject,
+  P: Symbol | String,
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<OrdinaryHasProperty>(O, P)
+  return [? %0]
+}

@@ -1,0 +1,90 @@
+def <BUILTIN>:INTRINSICS.Date(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let values = argumentsList
+  if (= NewTarget undefined) {
+    (yet "Let _now_ be the time value (UTC) identifying the current time.")
+    call %0 = clo<ToDateString>(now)
+    return %0
+  } else {}
+  let numberOfArgs = values.length
+  if (== numberOfArgs 0) {
+    (yet "Let _dv_ be the time value (UTC) identifying the current time.")
+  } else {
+    if (== numberOfArgs 1) {
+      let value = values[0]
+      if (&& (= (typeof value) @Object) (! (= value.DateValue absent))) {
+        call %1 = clo<thisTimeValue>(value)
+        let tv = [! %1]
+      } else {
+        call %2 = clo<ToPrimitive>(value)
+        let v = [? %2]
+        if (= (typeof v) @String) {
+          assert (yet "The next step never returns an abrupt completion because Type(_v_) is String.")
+          (yet "Let _tv_ be the result of parsing _v_ as a date, in exactly the same manner as for the `parse` method (<emu-xref href=\"#sec-date.parse\"></emu-xref>).")
+        } else {
+          call %3 = clo<ToNumber>(v)
+          let tv = [? %3]
+        }
+      }
+      call %4 = clo<TimeClip>(tv)
+      let dv = %4
+    } else {
+      assert (! (< numberOfArgs 2))
+      call %5 = clo<ToNumber>(values[0])
+      let y = [? %5]
+      call %6 = clo<ToNumber>(values[1])
+      let m = [? %6]
+      if (< 2 numberOfArgs) {
+        call %7 = clo<ToNumber>(values[2])
+        let dt = [? %7]
+      } else {
+        let dt = 1.0f
+      }
+      if (< 3 numberOfArgs) {
+        call %8 = clo<ToNumber>(values[3])
+        let h = [? %8]
+      } else {
+        let h = 0.0f
+      }
+      if (< 4 numberOfArgs) {
+        call %9 = clo<ToNumber>(values[4])
+        let min = [? %9]
+      } else {
+        let min = 0.0f
+      }
+      if (< 5 numberOfArgs) {
+        call %10 = clo<ToNumber>(values[5])
+        let s = [? %10]
+      } else {
+        let s = 0.0f
+      }
+      if (< 6 numberOfArgs) {
+        call %11 = clo<ToNumber>(values[6])
+        let milli = [? %11]
+      } else {
+        let milli = 0.0f
+      }
+      if (= y NaN) {
+        let yr = NaN
+      } else {
+        call %12 = clo<ToIntegerOrInfinity>(y)
+        let yi = [! %12]
+        (yet "If 0 ≤ _yi_ ≤ 99, let _yr_ be *1900*<sub>𝔽</sub> + 𝔽(_yi_); otherwise, let _yr_ be _y_.")
+      }
+      call %13 = clo<MakeDay>(yr, m, dt)
+      call %14 = clo<MakeTime>(h, min, s, milli)
+      call %15 = clo<MakeDate>(%13, %14)
+      let finalDate = %15
+      call %16 = clo<UTC>(finalDate)
+      call %17 = clo<TimeClip>(%16)
+      let dv = %17
+    }
+  }
+  call %18 = clo<OrdinaryCreateFromConstructor>(NewTarget, "%Date.prototype%", (new ["DateValue"])[#938])
+  let O = [? %18]
+  O.DateValue = dv
+  return O
+}

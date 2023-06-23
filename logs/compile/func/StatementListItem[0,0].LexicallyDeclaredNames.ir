@@ -1,0 +1,9 @@
+def <SYNTAX>:StatementListItem[0,0].LexicallyDeclaredNames(
+  this: Ast:StatementListItem[0,0],
+): List[String] {
+  if (? this[0]: "Statement10") {
+    sdo-call %0 = this[0][0]->LexicallyDeclaredNames()
+    return %0
+  } else {}
+  return (new [])[#113]
+}

@@ -1,0 +1,19 @@
+def <SYNTAX>:CaseBlock[1,0].LexicallyScopedDeclarations(
+  this: Ast:CaseBlock[1,0],
+): List[Ast] {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->LexicallyScopedDeclarations()
+    let declarations1 = %0
+  } else {
+    let declarations1 = (new [])[#143]
+  }
+  sdo-call %1 = this[1]->LexicallyScopedDeclarations()
+  let declarations2 = %1
+  if (! (= this[2] absent)) {
+    sdo-call %2 = this[2]->LexicallyScopedDeclarations()
+    let declarations3 = %2
+  } else {
+    let declarations3 = (new [])[#144]
+  }
+  return (list-concat declarations1 declarations2 declarations3)[#145]
+}

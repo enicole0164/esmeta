@@ -1,0 +1,11 @@
+def <CONC>:FunctionEnvironmentRecord.GetSuperBase(
+  envRec: FunctionEnvironmentRecord,
+): Normal[Object | Undefined | Null] | Abrupt {
+  let home = envRec.FunctionObject.HomeObject
+  if (= home undefined) {
+    return undefined
+  } else {}
+  assert (= (typeof home) @Object)
+  method-call %0 = home->GetPrototypeOf()
+  return [? %0]
+}

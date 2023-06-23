@@ -1,0 +1,24 @@
+def InitializeInstanceElements(
+  O: Object,
+  constructor: ECMAScriptFunctionObject,
+): Normal[Const[~unused~]] | Abrupt {
+  let methods = constructor.PrivateMethods
+  %1 = methods
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let method = %1[%0]
+    call %2 = clo<PrivateMethodOrAccessorAdd>(O, method)
+    [? %2]
+    %0 = (+ %0 1)
+  }
+  let fields = constructor.Fields
+  %4 = fields
+  %3 = 0
+  loop[foreach] (< %3 %4.length) {
+    let fieldRecord = %4[%3]
+    call %5 = clo<DefineField>(O, fieldRecord)
+    [? %5]
+    %3 = (+ %3 1)
+  }
+  return ~unused~
+}

@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.parseFloat(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let string = (pop < argumentsList) else let string = absent
+  call %0 = clo<ToString>(string)
+  let inputString = [? %0]
+  call %1 = clo<TrimString>(inputString, ~start~)
+  let trimmedString = [! %1]
+  (yet "If neither _trimmedString_ nor any prefix of _trimmedString_ satisfies the syntax of a |StrDecimalLiteral| (see <emu-xref href=\"#sec-tonumber-applied-to-the-string-type\"></emu-xref>), return *NaN*.")
+  (yet "Let _numberString_ be the longest prefix of _trimmedString_, which might be _trimmedString_ itself, that satisfies the syntax of a |StrDecimalLiteral|.")
+  call %2 = clo<StringToCodePoints>(numberString)
+  let parsedNumber = (parse %2 (nt |StrDecimalLiteral|[]))
+  assert (? parsedNumber: "ParseNode")
+  sdo-call %3 = parsedNumber->StringNumericValue()
+  return %3
+}

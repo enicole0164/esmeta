@@ -1,0 +1,19 @@
+def DateString(
+  tv: Unknown["Number,ButNot*NaN*"],
+): String {
+  (yet "Let _weekday_ be the Name of the entry in <emu-xref href=\"#sec-todatestring-day-names\"></emu-xref> with the Number WeekDay(_tv_).")
+  (yet "Let _month_ be the Name of the entry in <emu-xref href=\"#sec-todatestring-month-names\"></emu-xref> with the Number MonthFromTime(_tv_).")
+  call %0 = clo<DateFromTime>(tv)
+  call %1 = clo<ToZeroPaddedDecimalString>(([math] %0), 2)
+  let day = %1
+  call %2 = clo<YearFromTime>(tv)
+  let yv = %2
+  if (|| (= yv 0.0f) (< 0.0f yv)) {
+    let yearSign = ""
+  } else {
+    let yearSign = "-"
+  }
+  call %3 = clo<ToZeroPaddedDecimalString>((abs ([math] yv)), 4)
+  let paddedYear = %3
+  return (concat weekday 32cu month 32cu day 32cu yearSign paddedYear)
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue ) { return ; } debugger ; throw new Test262Error ( message ) ; } { ; } assert . sameValue = 0 ; assert . notSameValue = 0 || 0 ; assert = this ; x : ; function x ( ) { } 0 ; async function * x ( ) { } var __instance = new String ( "ABC" ) ; if ( __instance . charAt ( { ownKeys : '' } ) !== "" ) try { ; } catch { } finally { } 

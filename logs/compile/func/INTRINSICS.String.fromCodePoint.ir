@@ -1,0 +1,27 @@
+def <BUILTIN>:INTRINSICS.String.fromCodePoint(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let codePoints = argumentsList
+  let result = ""
+  %1 = codePoints
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let next = %1[%0]
+    call %2 = clo<ToNumber>(next)
+    let nextCP = [? %2]
+    call %3 = clo<IsIntegralNumber>(nextCP)
+    if (= %3 false) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#943])
+    } else {}
+    if (|| (< ([math] nextCP) 0) (< 1114111 ([math] nextCP))) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#944])
+    } else {}
+    call %4 = clo<UTF16EncodeCodePoint>(([math] nextCP))
+    result = (concat result %4)
+    %0 = (+ %0 1)
+  }
+  assert (|| (! (= codePoints.length 0)) (= result ""))
+  return result
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:LabelledStatement[0,0].LexicallyScopedDeclarations(
+  this: Ast:LabelledStatement[0,0],
+): List[Ast] {
+  sdo-call %0 = this[1]->LexicallyScopedDeclarations()
+  return %0
+}

@@ -1,0 +1,92 @@
+def InnerModuleEvaluation(
+  module: ModuleRecord,
+  stack: Unknown,
+  index: Unknown["NonnegativeInteger"],
+): Unknown["EitherANormalCompletionContainingANonnegativeIntegerOrAnAbruptCompletion"] {
+  if (! (? module: "CyclicModuleRecord")) {
+    method-call %0 = module->Evaluate()
+    let promise = [! %0]
+    assert (! (= promise.PromiseState ~pending~))
+    if (= promise.PromiseState ~rejected~) {
+      call %1 = clo<ThrowCompletion>(promise.PromiseResult)
+      return %1
+    } else {}
+    return index
+  } else {}
+  if (|| (= module.Status ~evaluating-async~) (= module.Status ~evaluated~)) {
+    if (= module.EvaluationError ~empty~) {
+      return index
+    } else {
+      return [? module.EvaluationError]
+    }
+  } else {}
+  if (= module.Status ~evaluating~) {
+    return index
+  } else {}
+  assert (= module.Status ~linked~)
+  module.Status = ~evaluating~
+  module.DFSIndex = index
+  module.DFSAncestorIndex = index
+  module.PendingAsyncDependencies = 0
+  index = (+ index 1)
+  push stack < module
+  %3 = module.RequestedModules
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let required = %3[%2]
+    call %4 = clo<HostResolveImportedModule>(module, required)
+    let requiredModule = [! %4]
+    nop
+    call %5 = clo<InnerModuleEvaluation>(requiredModule, stack, index)
+    index = [? %5]
+    if (? requiredModule: "CyclicModuleRecord") {
+      assert (|| (|| (= requiredModule.Status ~evaluating~) (= requiredModule.Status ~evaluating-async~)) (= requiredModule.Status ~evaluated~))
+      assert (yet "_requiredModule_.[[Status]] is ~evaluating~ if and only if _requiredModule_ is in _stack_.")
+      if (= requiredModule.Status ~evaluating~) {
+        module.DFSAncestorIndex = (min module.DFSAncestorIndex requiredModule.DFSAncestorIndex)
+      } else {
+        requiredModule = requiredModule.CycleRoot
+        assert (|| (= requiredModule.Status ~evaluating-async~) (= requiredModule.Status ~evaluated~))
+        if (! (= requiredModule.EvaluationError ~empty~)) {
+          return [? requiredModule.EvaluationError]
+        } else {}
+      }
+      if (= requiredModule.AsyncEvaluation true) {
+        module.PendingAsyncDependencies = (+ module.PendingAsyncDependencies 1)
+        push requiredModule.AsyncParentModules < module
+      } else {}
+    } else {}
+    %2 = (+ %2 1)
+  }
+  if (|| (< 0 module.PendingAsyncDependencies) (= module.HasTLA true)) {
+    assert (yet "_module_.[[AsyncEvaluation]] is *false* and was never previously set to *true*.")
+    module.AsyncEvaluation = true
+    nop
+    if (= module.PendingAsyncDependencies 0) {
+      call %6 = clo<ExecuteAsyncModule>(module)
+    } else {}
+  } else {
+    method-call %7 = module->ExecuteModule()
+    [? %7]
+  }
+  assert (yet "_module_ occurs exactly once in _stack_.")
+  assert (! (< module.DFSIndex module.DFSAncestorIndex))
+  if (== module.DFSAncestorIndex module.DFSIndex) {
+    let done = false
+    loop[repeat] (= done false) {
+      (yet "Let _requiredModule_ be the last element in _stack_.")
+      (yet "Remove the last element of _stack_.")
+      assert (? requiredModule: "CyclicModuleRecord")
+      if (= requiredModule.AsyncEvaluation false) {
+        requiredModule.Status = ~evaluated~
+      } else {
+        requiredModule.Status = ~evaluating-async~
+      }
+      if (= requiredModule module) {
+        done = true
+      } else {}
+      requiredModule.CycleRoot = module
+    }
+  } else {}
+  return index
+}

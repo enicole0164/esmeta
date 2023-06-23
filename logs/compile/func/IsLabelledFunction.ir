@@ -1,0 +1,14 @@
+def IsLabelledFunction(
+  stmt: Unknown,
+): Boolean {
+  if (! (? stmt: "LabelledStatement")) {
+    return false
+  } else {}
+  let item = stmt.LabelledItem
+  if (? item: "LabelledItem1") {
+    return true
+  } else {}
+  let subStmt = item.Statement
+  call %0 = clo<IsLabelledFunction>(subStmt)
+  return %0
+}

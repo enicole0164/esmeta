@@ -1,0 +1,9 @@
+def EvaluatePropertyAccessWithIdentifierKey(
+  baseValue: ESValue,
+  identifierName: Ast[IdentifierName],
+  strict: Boolean,
+): ReferenceRecord {
+  sdo-call %0 = identifierName->StringValue()
+  let propertyNameString = %0
+  return (new ReferenceRecord("Base" -> baseValue, "ReferencedName" -> propertyNameString, "Strict" -> strict, "ThisValue" -> ~empty~))[#568]
+}

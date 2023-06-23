@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2384 {
+    label = "def <BUILTIN>:INTRINSICS.TypedArray(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2384_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2384_entry_name -> cluster2384_entry [arrowhead=none, color="black", style=dashed]
+    cluster2384_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2384_entry -> node15872 [color="black"]
+    cluster2384_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2384_exit_name -> cluster2384_exit [arrowhead=none, color="black", style=dashed]
+    cluster2384_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node15872_name [shape=none, label=<<font color="black">Block[15872]</font>>]
+    node15872_name -> node15872 [arrowhead=none, color="black", style=dashed]
+    node15872 [shape=box, label=<<font color="black">[0] return comp[~throw~/~empty~]((new OrdinaryObject(&quot;Prototype&quot; -&gt; @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%TypeError.prototype%&quot;], &quot;ErrorData&quot; -&gt; undefined))[#1052])<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node15872 -> cluster2384_exit [color="black"]
+  }
+}

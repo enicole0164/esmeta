@@ -1,0 +1,20 @@
+def ToIntegerOrInfinity(
+  argument: ESValue,
+): Unknown["EitherANormalCompletionContainingEitherAnInteger,+∞,Or∞,OrAnAbruptCompletion"] {
+  call %0 = clo<ToNumber>(argument)
+  let number = [? %0]
+  if (|| (|| (= number NaN) (= number 0.0f)) (= number -0.0f)) {
+    return 0
+  } else {}
+  if (= number +INF) {
+    return +INF
+  } else {}
+  if (= number -INF) {
+    return -INF
+  } else {}
+  let integer = (floor (abs ([math] number)))
+  if (< number -0.0f) {
+    integer = (- integer)
+  } else {}
+  return integer
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster192 {
+    label = "def <SYNTAX>:ArrayBindingPattern[2,2].BoundNames(this: Ast:ArrayBindingPattern[2,2]): List[String]"
+    style = rounded
+    cluster192_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster192_entry_name -> cluster192_entry [arrowhead=none, color="black", style=dashed]
+    cluster192_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster192_entry -> node1550 [color="black"]
+    cluster192_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster192_exit_name -> cluster192_exit [arrowhead=none, color="black", style=dashed]
+    cluster192_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1550_name [shape=none, label=<<font color="black">Call[1550]</font>>]
+    node1550_name -> node1550 [arrowhead=none, color="black", style=dashed]
+    node1550 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;BoundNames()</font>> color="black" fillcolor="white", style=filled]
+    node1550 -> node1551 [color="black"]
+    node1551_name [shape=none, label=<<font color="black">Block[1551]</font>>]
+    node1551_name -> node1551 [arrowhead=none, color="black", style=dashed]
+    node1551 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1551 -> cluster192_exit [color="black"]
+  }
+}

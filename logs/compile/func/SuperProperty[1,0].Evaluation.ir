@@ -1,0 +1,17 @@
+def <SYNTAX>:SuperProperty[1,0].Evaluation(
+  this: Ast:SuperProperty[1,0],
+): Unknown {
+  call %0 = clo<GetThisEnvironment>()
+  let env = %0
+  method-call %1 = env->GetThisBinding()
+  let actualThis = [? %1]
+  sdo-call %2 = this[0]->StringValue()
+  let propertyKey = %2
+  if true {
+    let strict = true
+  } else {
+    let strict = false
+  }
+  call %3 = clo<MakeSuperPropertyReference>(actualThis, propertyKey, strict)
+  return [? %3]
+}

@@ -1,0 +1,15 @@
+def <SYNTAX>:TemplateSpans[1,0].TemplateStrings(
+  this: Ast:TemplateSpans[1,0],
+  raw: Unknown,
+): List[String] {
+  sdo-call %0 = this[0]->TemplateStrings(raw)
+  let middle = %0
+  if (= raw false) {
+    sdo-call %1 = this[1]->TV()
+    let tail = %1
+  } else {
+    sdo-call %2 = this[1]->TRV()
+    let tail = %2
+  }
+  return (list-concat middle (new [tail])[#555])[#554]
+}

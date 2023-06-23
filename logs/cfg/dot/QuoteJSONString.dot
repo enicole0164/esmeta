@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2549 {
+    label = "def QuoteJSONString(value: String): String"
+    style = rounded
+    cluster2549_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2549_entry_name -> cluster2549_entry [arrowhead=none, color="black", style=dashed]
+    cluster2549_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2549_entry -> node18440 [color="black"]
+    cluster2549_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2549_exit_name -> cluster2549_exit [arrowhead=none, color="black", style=dashed]
+    cluster2549_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node18440_name [shape=none, label=<<font color="black">Block[18440]</font>>]
+    node18440_name -> node18440 [arrowhead=none, color="black", style=dashed]
+    node18440 [shape=box, label=<<font color="black">[0] (yet &quot;Let _product_ be the String value consisting solely of the code unit 0x0022 (QUOTATION MARK).&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;For each code point _C_ of StringToCodePoints(_value_), do\n  1. If _C_ is listed in the &ldquo;Code Point&rdquo; column of &lt;emu-xref href=\&quot;#table-json-single-character-escapes\&quot;&gt;&lt;/emu-xref&gt;, then\n    1. Set _product_ to the string-concatenation of _product_ and the escape sequence for _C_ as specified in the &ldquo;Escape Sequence&rdquo; column of the corresponding row.\n  1. Else if _C_ has a numeric value less than 0x0020 (SPACE), or if _C_ has the same numeric value as a &lt;emu-xref href=\&quot;#leading-surrogate\&quot;&gt;&lt;/emu-xref&gt; or &lt;emu-xref href=\&quot;#trailing-surrogate\&quot;&gt;&lt;/emu-xref&gt;, then\n    1. Let _unit_ be the code unit whose numeric value is that of _C_.\n    1. Set _product_ to the string-concatenation of _product_ and UnicodeEscape(_unit_).\n  1. Else,\n    1. Set _product_ to the string-concatenation of _product_ and UTF16EncodeCodePoint(_C_).&quot;)<BR ALIGN="LEFT"/>[2] product = (concat product 34cu)<BR ALIGN="LEFT"/>[3] return product<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18440 -> cluster2549_exit [color="black"]
+  }
+}

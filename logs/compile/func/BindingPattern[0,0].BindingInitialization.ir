@@ -1,0 +1,10 @@
+def <SYNTAX>:BindingPattern[0,0].BindingInitialization(
+  this: Ast:BindingPattern[0,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<RequireObjectCoercible>(value)
+  [? %0]
+  sdo-call %1 = this[0]->BindingInitialization(value, environment)
+  return [? %1]
+}

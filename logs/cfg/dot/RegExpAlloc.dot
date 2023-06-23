@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2305 {
+    label = "def RegExpAlloc(newTarget: Unknown): Normal[Object] | Abrupt"
+    style = rounded
+    cluster2305_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2305_entry_name -> cluster2305_entry [arrowhead=none, color="black", style=dashed]
+    cluster2305_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2305_entry -> node14119 [color="black"]
+    cluster2305_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2305_exit_name -> cluster2305_exit [arrowhead=none, color="black", style=dashed]
+    cluster2305_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14119_name [shape=none, label=<<font color="black">Call[14119]</font>>]
+    node14119_name -> node14119 [arrowhead=none, color="black", style=dashed]
+    node14119 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryCreateFromConstructor&gt;(newTarget, &quot;%RegExp.prototype%&quot;, (new [&quot;RegExpMatcher&quot;, &quot;OriginalSource&quot;, &quot;OriginalFlags&quot;])[#985])</font>> color="black" fillcolor="white", style=filled]
+    node14119 -> node14120 [color="black"]
+    node14120_name [shape=none, label=<<font color="black">Block[14120]</font>>]
+    node14120_name -> node14120 [arrowhead=none, color="black", style=dashed]
+    node14120 [shape=box, label=<<font color="black">[0] let obj = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14120 -> node14121 [color="black"]
+    node14121_name [shape=none, label=<<font color="black">Call[14121]</font>>]
+    node14121_name -> node14121 [arrowhead=none, color="black", style=dashed]
+    node14121 [shape=cds, label=<<font color="black">%1 = clo&lt;DefinePropertyOrThrow&gt;(obj, &quot;lastIndex&quot;, (new PropertyDescriptor(&quot;Writable&quot; -&gt; true, &quot;Enumerable&quot; -&gt; false, &quot;Configurable&quot; -&gt; false))[#986])</font>> color="black" fillcolor="white", style=filled]
+    node14121 -> node14122 [color="black"]
+    node14122_name [shape=none, label=<<font color="black">Block[14122]</font>>]
+    node14122_name -> node14122 [arrowhead=none, color="black", style=dashed]
+    node14122 [shape=box, label=<<font color="black">[0] [! %1]<BR ALIGN="LEFT"/>[1] return obj<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14122 -> cluster2305_exit [color="black"]
+  }
+}

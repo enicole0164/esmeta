@@ -1,0 +1,29 @@
+def ValidateIntegerTypedArray(
+  typedArray: Unknown,
+  waitable?: Boolean,
+): Unknown["EitherANormalCompletionContainingEitherAnArrayBufferOrASharedArrayBuffer,OrAnAbruptCompletion"] {
+  if (= waitable absent) {
+    waitable = false
+  } else {}
+  call %0 = clo<ValidateTypedArray>(typedArray)
+  [? %0]
+  let buffer = typedArray.ViewedArrayBuffer
+  if (= waitable true) {
+    if (! (|| (= typedArray.TypedArrayName "Int32Array") (= typedArray.TypedArrayName "BigInt64Array"))) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1179])
+    } else {}
+  } else {
+    call %1 = clo<TypedArrayElementType>(typedArray)
+    let type = %1
+    call %3 = clo<IsUnclampedIntegerElementType>(type)
+    %2 = (= %3 false)
+    if %2 {
+      call %4 = clo<IsBigIntElementType>(type)
+      %2 = (= %4 false)
+    } else {}
+    if %2 {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1180])
+    } else {}
+  }
+  return buffer
+}

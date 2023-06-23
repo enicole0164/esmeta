@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1576 {
+    label = "def <SYNTAX>:ConciseBody[1,0].ConciseBodyContainsUseStrict(this: Ast:ConciseBody[1,0]): Boolean"
+    style = rounded
+    cluster1576_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1576_entry_name -> cluster1576_entry [arrowhead=none, color="black", style=dashed]
+    cluster1576_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1576_entry -> node8454 [color="black"]
+    cluster1576_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1576_exit_name -> cluster1576_exit [arrowhead=none, color="black", style=dashed]
+    cluster1576_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8454_name [shape=none, label=<<font color="black">Block[8454]</font>>]
+    node8454_name -> node8454 [arrowhead=none, color="black", style=dashed]
+    node8454 [shape=box, label=<<font color="black">[0] (yet &quot;Return FunctionBodyContainsUseStrict of |FunctionBody|.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8454 -> cluster1576_exit [color="black"]
+  }
+}

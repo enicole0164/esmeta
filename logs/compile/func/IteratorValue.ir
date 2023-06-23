@@ -1,0 +1,6 @@
+def IteratorValue(
+  iterResult: Object,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<Get>(iterResult, "value")
+  return [? %0]
+}

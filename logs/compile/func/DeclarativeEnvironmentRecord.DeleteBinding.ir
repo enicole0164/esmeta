@@ -1,0 +1,9 @@
+def <CONC>:DeclarativeEnvironmentRecord.DeleteBinding(
+  envRec: DeclarativeEnvironmentRecord,
+  N: String,
+): Normal[Boolean] {
+  assert (yet "_envRec_ has a binding for the name that is the value of _N_.")
+  (yet "If the binding for _N_ in _envRec_ cannot be deleted, return *false*.")
+  (yet "Remove the binding for _N_ from _envRec_.")
+  return true
+}

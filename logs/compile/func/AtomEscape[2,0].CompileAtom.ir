@@ -1,0 +1,11 @@
+def <SYNTAX>:AtomEscape[2,0].CompileAtom(
+  this: Ast:AtomEscape[2,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CharacterValue()
+  let cv = %0
+  (yet "Let _ch_ be the character whose character value is _cv_.")
+  (yet "Let _A_ be a one-element CharSet containing the character _ch_.")
+  call %1 = clo<CharacterSetMatcher>(A, false, direction)
+  return %1
+}

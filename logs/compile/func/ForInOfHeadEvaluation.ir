@@ -1,0 +1,47 @@
+def ForIn/OfHeadEvaluation(
+  uninitializedBoundNames: Unknown,
+  expr: Unknown,
+  iterationKind: Const[~async-iterate~, ~enumerate~, ~iterate~],
+): Normal[IteratorRecord] | Abrupt {
+  let oldEnv = @EXECUTION_STACK[0].LexicalEnvironment
+  if (! (= uninitializedBoundNames.length 0)) {
+    assert (! (duplicated uninitializedBoundNames))
+    call %0 = clo<NewDeclarativeEnvironment>(oldEnv)
+    let newEnv = %0
+    %2 = uninitializedBoundNames
+    %1 = 0
+    loop[foreach] (< %1 %2.length) {
+      let name = %2[%1]
+      method-call %3 = newEnv->CreateMutableBinding(name, false)
+      [! %3]
+      %1 = (+ %1 1)
+    }
+    @EXECUTION_STACK[0].LexicalEnvironment = newEnv
+  } else {}
+  sdo-call %4 = expr->Evaluation()
+  let exprRef = %4
+  @EXECUTION_STACK[0].LexicalEnvironment = oldEnv
+  call %5 = clo<GetValue>(exprRef)
+  let exprValue = [? %5]
+  if (= iterationKind ~enumerate~) {
+    if (|| (= exprValue undefined) (= exprValue null)) {
+      return comp[~break~/~empty~](~empty~)
+    } else {}
+    call %6 = clo<ToObject>(exprValue)
+    let obj = [! %6]
+    call %7 = clo<EnumerateObjectProperties>(obj)
+    let iterator = %7
+    call %8 = clo<GetV>(iterator, "next")
+    let nextMethod = [! %8]
+    return (new IteratorRecord("Iterator" -> iterator, "NextMethod" -> nextMethod, "Done" -> false))[#626]
+  } else {
+    assert (|| (= iterationKind ~iterate~) (= iterationKind ~async-iterate~))
+    if (= iterationKind ~async-iterate~) {
+      let iteratorHint = ~async~
+    } else {
+      let iteratorHint = ~sync~
+    }
+    call %9 = clo<GetIterator>(exprValue, iteratorHint)
+    return [? %9]
+  }
+}

@@ -1,0 +1,13 @@
+def <SYNTAX>:CallExpression[3,0].Evaluation(
+  this: Ast:CallExpression[3,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let ref = [? %0]
+  call %1 = clo<GetValue>(ref)
+  let func = [? %1]
+  let thisCall = this[0]
+  call %2 = clo<IsInTailPosition>(thisCall)
+  let tailCall = %2
+  call %3 = clo<EvaluateCall>(func, ref, this[1], tailCall)
+  return [? %3]
+}

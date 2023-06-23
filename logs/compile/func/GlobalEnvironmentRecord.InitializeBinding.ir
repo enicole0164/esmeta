@@ -1,0 +1,16 @@
+def <CONC>:GlobalEnvironmentRecord.InitializeBinding(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+  V: ESValue,
+): Normal[Const[~unused~]] | Abrupt {
+  let DclRec = envRec.DeclarativeRecord
+  method-call %0 = DclRec->HasBinding(N)
+  if (= [! %0] true) {
+    method-call %1 = DclRec->InitializeBinding(N, V)
+    return [! %1]
+  } else {}
+  assert (yet "If the binding exists, it must be in the object Environment Record.")
+  let ObjRec = envRec.ObjectRecord
+  method-call %2 = ObjRec->InitializeBinding(N, V)
+  return [? %2]
+}

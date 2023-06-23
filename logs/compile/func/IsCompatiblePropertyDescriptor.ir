@@ -1,0 +1,8 @@
+def IsCompatiblePropertyDescriptor(
+  Extensible: Boolean,
+  Desc: PropertyDescriptor,
+  Current: PropertyDescriptor,
+): Boolean {
+  call %0 = clo<ValidateAndApplyPropertyDescriptor>(undefined, "", Extensible, Desc, Current)
+  return %0
+}

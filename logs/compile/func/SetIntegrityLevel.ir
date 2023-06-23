@@ -1,0 +1,43 @@
+def SetIntegrityLevel(
+  O: Object,
+  level: Const[~frozen~, ~sealed~],
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->PreventExtensions()
+  let status = [? %0]
+  if (= status false) {
+    return false
+  } else {}
+  method-call %1 = O->OwnPropertyKeys()
+  let keys = [? %1]
+  if (= level ~sealed~) {
+    %3 = keys
+    %2 = 0
+    loop[foreach] (< %2 %3.length) {
+      let k = %3[%2]
+      call %4 = clo<DefinePropertyOrThrow>(O, k, (new PropertyDescriptor("Configurable" -> false))[#51])
+      [? %4]
+      %2 = (+ %2 1)
+    }
+  } else {
+    assert (= level ~frozen~)
+    %6 = keys
+    %5 = 0
+    loop[foreach] (< %5 %6.length) {
+      let k = %6[%5]
+      method-call %7 = O->GetOwnProperty(k)
+      let currentDesc = [? %7]
+      if (! (= currentDesc undefined)) {
+        call %8 = clo<IsAccessorDescriptor>(currentDesc)
+        if (= %8 true) {
+          let desc = (new PropertyDescriptor("Configurable" -> false))[#52]
+        } else {
+          let desc = (new PropertyDescriptor("Configurable" -> false, "Writable" -> false))[#53]
+        }
+        call %9 = clo<DefinePropertyOrThrow>(O, k, desc)
+        [? %9]
+      } else {}
+      %5 = (+ %5 1)
+    }
+  }
+  return true
+}

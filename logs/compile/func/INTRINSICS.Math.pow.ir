@@ -1,0 +1,14 @@
+def <BUILTIN>:INTRINSICS.Math.pow(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let base = (pop < argumentsList) else let base = absent
+  if (< 0 argumentsList.length) let exponent = (pop < argumentsList) else let exponent = absent
+  call %0 = clo<ToNumber>(base)
+  base = [? %0]
+  call %1 = clo<ToNumber>(exponent)
+  exponent = [? %1]
+  call %2 = clo<Number::exponentiate>(base, exponent)
+  return %2
+}

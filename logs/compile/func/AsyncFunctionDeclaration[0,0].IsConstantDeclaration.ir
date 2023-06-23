@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncFunctionDeclaration[0,0].IsConstantDeclaration(
+  this: Ast:AsyncFunctionDeclaration[0,0],
+): Boolean {
+  return false
+}

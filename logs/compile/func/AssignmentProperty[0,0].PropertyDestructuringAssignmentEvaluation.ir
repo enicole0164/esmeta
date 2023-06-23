@@ -1,0 +1,26 @@
+def <SYNTAX>:AssignmentProperty[0,0].PropertyDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentProperty[0,0],
+  value: Unknown,
+): Normal[List[Symbol | String]] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  let P = %0
+  call %1 = clo<ResolveBinding>(P)
+  let lref = [? %1]
+  call %2 = clo<GetV>(value, P)
+  let v = [? %2]
+  if (&& (! (= this[1] absent)) (= v undefined)) {
+    call %3 = clo<IsAnonymousFunctionDefinition>(this[1])
+    if (= %3 true) {
+      sdo-call %4 = this[1]->NamedEvaluation(P)
+      v = [? %4]
+    } else {
+      sdo-call %5 = this[1]->Evaluation()
+      let defaultValue = %5
+      call %6 = clo<GetValue>(defaultValue)
+      v = [? %6]
+    }
+  } else {}
+  call %7 = clo<PutValue>(lref, v)
+  [? %7]
+  return (new [P])[#596]
+}

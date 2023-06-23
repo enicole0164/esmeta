@@ -1,0 +1,25 @@
+def <NUM>:Number::add(
+  x: Number,
+  y: Number,
+): Number {
+  if (|| (= x NaN) (= y NaN)) {
+    return NaN
+  } else {}
+  if (&& (= x +INF) (= y -INF)) {
+    return NaN
+  } else {}
+  if (&& (= x -INF) (= y +INF)) {
+    return NaN
+  } else {}
+  if (|| (= x +INF) (= x -INF)) {
+    return x
+  } else {}
+  if (|| (= y +INF) (= y -INF)) {
+    return y
+  } else {}
+  assert (&& (! (|| (= x +INF) (= x -INF))) (! (|| (= y +INF) (= y -INF))))
+  if (&& (= x -0.0f) (= y -0.0f)) {
+    return -0.0f
+  } else {}
+  return ([number] (+ ([math] x) ([math] y)))
+}

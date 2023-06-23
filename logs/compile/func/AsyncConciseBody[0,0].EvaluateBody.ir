@@ -1,0 +1,8 @@
+def <SYNTAX>:AsyncConciseBody[0,0].EvaluateBody(
+  this: Ast:AsyncConciseBody[0,0],
+  functionObject: Unknown,
+  argumentsList: Unknown["List"],
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this->EvaluateAsyncConciseBody(functionObject, argumentsList)
+  return [? %0]
+}

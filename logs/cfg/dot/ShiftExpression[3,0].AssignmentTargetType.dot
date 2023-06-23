@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster928 {
+    label = "def <SYNTAX>:ShiftExpression[3,0].AssignmentTargetType(this: Ast:ShiftExpression[3,0]): Const[~invalid~, ~simple~]"
+    style = rounded
+    cluster928_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster928_entry_name -> cluster928_entry [arrowhead=none, color="black", style=dashed]
+    cluster928_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster928_entry -> node3525 [color="black"]
+    cluster928_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster928_exit_name -> cluster928_exit [arrowhead=none, color="black", style=dashed]
+    cluster928_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3525_name [shape=none, label=<<font color="black">Block[3525]</font>>]
+    node3525_name -> node3525 [arrowhead=none, color="black", style=dashed]
+    node3525 [shape=box, label=<<font color="black">[0] return ~invalid~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3525 -> cluster928_exit [color="black"]
+  }
+}

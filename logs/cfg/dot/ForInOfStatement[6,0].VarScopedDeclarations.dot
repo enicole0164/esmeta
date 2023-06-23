@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster424 {
+    label = "def <SYNTAX>:ForInOfStatement[6,0].VarScopedDeclarations(this: Ast:ForInOfStatement[6,0]): List[Ast]"
+    style = rounded
+    cluster424_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster424_entry_name -> cluster424_entry [arrowhead=none, color="black", style=dashed]
+    cluster424_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster424_entry -> node2142 [color="black"]
+    cluster424_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster424_exit_name -> cluster424_exit [arrowhead=none, color="black", style=dashed]
+    cluster424_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2142_name [shape=none, label=<<font color="black">Call[2142]</font>>]
+    node2142_name -> node2142 [arrowhead=none, color="black", style=dashed]
+    node2142 [shape=cds, label=<<font color="black">%0 = this[2]-&gt;VarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2142 -> node2143 [color="black"]
+    node2143_name [shape=none, label=<<font color="black">Block[2143]</font>>]
+    node2143_name -> node2143 [arrowhead=none, color="black", style=dashed]
+    node2143 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2143 -> cluster424_exit [color="black"]
+  }
+}

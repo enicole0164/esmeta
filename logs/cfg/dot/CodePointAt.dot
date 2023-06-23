@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1167 {
+    label = "def CodePointAt(string: String, position: Unknown["NonnegativeInteger"]): Unknown["RecordWithFields[[CodePoint]](aCodePoint),[[CodeUnitCount]](aPositiveInteger),And[[IsUnpairedSurrogate]](aBoolean)"]"
+    style = rounded
+    cluster1167_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1167_entry_name -> cluster1167_entry [arrowhead=none, color="black", style=dashed]
+    cluster1167_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1167_entry -> node5361 [color="black"]
+    cluster1167_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1167_exit_name -> cluster1167_exit [arrowhead=none, color="black", style=dashed]
+    cluster1167_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5361_name [shape=none, label=<<font color="black">Block[5361]</font>>]
+    node5361_name -> node5361 [arrowhead=none, color="black", style=dashed]
+    node5361 [shape=box, label=<<font color="black">[0] let size = string.length<BR ALIGN="LEFT"/>[1] assert (&amp;&amp; (! (&lt; position 0)) (&lt; position size))<BR ALIGN="LEFT"/>[2] let first = string[position]<BR ALIGN="LEFT"/>[3] (yet &quot;Let _cp_ be the code point whose numeric value is that of _first_.&quot;)<BR ALIGN="LEFT"/>[4] (yet &quot;If _first_ is not a &lt;emu-xref href=\&quot;#leading-surrogate\&quot;&gt;&lt;/emu-xref&gt; or &lt;emu-xref href=\&quot;#trailing-surrogate\&quot;&gt;&lt;/emu-xref&gt;, then\n  1. Return Record { [[CodePoint]]: _cp_, [[CodeUnitCount]]: 1, [[IsUnpairedSurrogate]]: *false* }.&quot;)<BR ALIGN="LEFT"/>[5] (yet &quot;If _first_ is a &lt;emu-xref href=\&quot;#trailing-surrogate\&quot;&gt;&lt;/emu-xref&gt; or _position_ + 1 = _size_, then\n  1. Return Record { [[CodePoint]]: _cp_, [[CodeUnitCount]]: 1, [[IsUnpairedSurrogate]]: *true* }.&quot;)<BR ALIGN="LEFT"/>[6] let second = string[(+ position 1)]<BR ALIGN="LEFT"/>[7] (yet &quot;If _second_ is not a &lt;emu-xref href=\&quot;#trailing-surrogate\&quot;&gt;&lt;/emu-xref&gt;, then\n  1. Return Record { [[CodePoint]]: _cp_, [[CodeUnitCount]]: 1, [[IsUnpairedSurrogate]]: *true* }.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5361 -> node5362 [color="black"]
+    node5362_name [shape=none, label=<<font color="black">Call[5362]</font>>]
+    node5362_name -> node5362 [arrowhead=none, color="black", style=dashed]
+    node5362 [shape=cds, label=<<font color="black">%0 = clo&lt;UTF16SurrogatePairToCodePoint&gt;(first, second)</font>> color="black" fillcolor="white", style=filled]
+    node5362 -> node5363 [color="black"]
+    node5363_name [shape=none, label=<<font color="black">Block[5363]</font>>]
+    node5363_name -> node5363 [arrowhead=none, color="black", style=dashed]
+    node5363 [shape=box, label=<<font color="black">[0] cp = %0<BR ALIGN="LEFT"/>[1] return (new Record(&quot;CodePoint&quot; -&gt; cp, &quot;CodeUnitCount&quot; -&gt; 2, &quot;IsUnpairedSurrogate&quot; -&gt; false))[#541]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5363 -> cluster1167_exit [color="black"]
+  }
+}

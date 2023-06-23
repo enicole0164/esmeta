@@ -1,0 +1,14 @@
+def TimeString(
+  tv: Unknown["Number,ButNot*NaN*"],
+): String {
+  call %0 = clo<HourFromTime>(tv)
+  call %1 = clo<ToZeroPaddedDecimalString>(([math] %0), 2)
+  let hour = %1
+  call %2 = clo<MinFromTime>(tv)
+  call %3 = clo<ToZeroPaddedDecimalString>(([math] %2), 2)
+  let minute = %3
+  call %4 = clo<SecFromTime>(tv)
+  call %5 = clo<ToZeroPaddedDecimalString>(([math] %4), 2)
+  let second = %5
+  return (concat hour ":" minute ":" second 32cu "GMT")
+}

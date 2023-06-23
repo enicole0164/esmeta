@@ -1,0 +1,32 @@
+def <BUILTIN>:INTRINSICS.yet:`Promise.allSettled`ResolveElementFunction(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  let F = @EXECUTION_STACK[0].Function
+  let alreadyCalled = F.AlreadyCalled
+  if (= alreadyCalled.Value true) {
+    return undefined
+  } else {}
+  alreadyCalled.Value = true
+  let index = F.Index
+  let values = F.Values
+  let promiseCapability = F.Capability
+  let remainingElementsCount = F.RemainingElements
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let obj = %0
+  call %1 = clo<CreateDataPropertyOrThrow>(obj, "status", "fulfilled")
+  [! %1]
+  call %2 = clo<CreateDataPropertyOrThrow>(obj, "value", x)
+  [! %2]
+  values[index] = obj
+  remainingElementsCount.Value = (- remainingElementsCount.Value 1)
+  if (= remainingElementsCount.Value 0) {
+    call %3 = clo<CreateArrayFromList>(values)
+    let valuesArray = %3
+    call %4 = clo<Call>(promiseCapability.Resolve, undefined, (new [valuesArray])[#1282])
+    return [? %4]
+  } else {}
+  return undefined
+}

@@ -1,0 +1,193 @@
+Script Name, Function Name, Location, Expression, Boolean
+18.js,"CallExpression[4,0].Evaluation","Some((step 2, 3:33-60))","[? %1]", true
+266.js,"OptionalChain[0,0].ChainEvaluation","Some((step 3, 4:21-90))","[? %1]", true
+200426.js,"INTRINSICS.Error","Some((step 4, 7:22-57))","[? %3]", true
+198852.js,"ForStatement[1,3].ForLoopEvaluation","Some((step 2, 3:14-38))","[? varDcl]", true
+394544.js,"ArrayAssignmentPattern[2,2].DestructuringAssignmentEvaluation","Some((step 3.b, 6:23-33))","[? status]", true
+214812.js,"ElementList[1,1].ArrayAccumulation","Some((step 2, 4:21-98))","[? %1]", true
+250457.js,"AsyncGeneratorAwaitReturn","Some((step 6, 7:31-82))","[? %1]", true
+222460.js,"BindingElisionElement[0,1].IteratorBindingInitialization","Some((step 1, 2:20-107))","[? %0]", false
+295522.js,"FormalParameters[4,0].IteratorBindingInitialization","Some((step 1, 2:20-126))","[? %0]", true
+257736.js,"ClassTail[0,3].ClassDefinitionEvaluation","Some((step 31.a, 104:17-65))","(? elementRecord: "ClassFieldDefinitionRecord")", true
+79974.js,"ForInOfStatement[7,0].ForInOfLoopEvaluation","Some((step 1, 2:33-103))","[? %0]", true
+286156.js,"UpdateExpression[4,0].Evaluation","Some((step 5, 9:22-52))","[? %5]", true
+362471.js,"OptionalChain[1,0].ChainEvaluation","Some((step 2, 3:21-99))","[? %0]", true
+28109.js,"ObjectBindingPattern[3,1].BindingInitialization","Some((step 1, 2:35-132))","[? %0]", true
+165047.js,"UpdateExpression[2,0].Evaluation","Some((step 5, 9:22-51))","[? %5]", true
+195231.js,"CaseBlock[1,1].HasCallInTailPosition","Some((step 5, 6:17-32))","(= has true)", false
+63774.js,"AssignmentExpression[5,0].Evaluation","Some((step 7, 26:23-85))","[? %4]", true
+371399.js,"LabelledItem[0,0].TopLevelVarDeclaredNames","Some((step 1, 2:15-86))","(? this[0]: "Statement10")", true
+200426.js,"InstallErrorCause","Some((step 1.a, 3:31-58))","[? %2]", true
+204507.js,"TemplateMiddleList[1,0].Evaluation","Some((step 2, 3:14-36))","[? rest]", true
+79093.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 13, 31:15-42))","(&& (comp? R) (! (= R.Type ~normal~)))", false
+174344.js,"CaseBlock[1,0].HasCallInTailPosition","Some((step 2, 3:17-51))","(! (= this[0] absent))", false
+250457.js,"INTRINSICS.AsyncGeneratorFunction.prototype.prototype.return","Some((step 8.b, 11:24-64))","[? %5]", true
+200380.js,"INTRINSICS.Array.prototype.splice","Some((step 3, 4:37-67))","[? %2]", true
+254017.js,"IsInTailPosition","None","(? body: "AsyncConciseBody")", true
+213278.js,"BindingElement[1,1].KeyedBindingInitialization","Some((step 2.b, 5:27-53))","[? %2]", true
+63154.js,"ElementList[2,1].ArrayAccumulation","Some((step 1, 2:33-108))","[? %0]", true
+350368.js,"ArrayAssignmentPattern[2,1].DestructuringAssignmentEvaluation","Some((step 1, 2:38-60))","[? %0]", true
+278632.js,"PropertyDefinition[2,0].PropertyDefinitionEvaluation","Some((step 7.b, 14:35-61))","[? %6]", true
+343722.js,"BindingElementList[1,0].IteratorBindingInitialization","Some((step 1, 2:20-125))","[? %0]", true
+341769.js,"INTRINSICS.Array.prototype.findIndex","Some((step 3, 4:17-51))","(= %2 false)", true
+343496.js,"ArrayAssignmentPattern[2,1].DestructuringAssignmentEvaluation","Some((step 3.b, 6:23-33))","[? status]", true
+76477.js,"Number::multiply","Some((step 5.a, 15:21-44))","(< x -0.0f)", false
+176265.js,"INTRINSICS.Error","Some((step 3.a, 5:29-50))","[? %1]", true
+343496.js,"ArrayAssignmentPattern[2,1].DestructuringAssignmentEvaluation","Some((step 3.a, 5:19-55))","(= iteratorRecord.Done false)", false
+130780.js,"ClassTail[0,3].ClassDefinitionEvaluation","Some((step 8.g, 27:22-60))","(= %8 false)", true
+321962.js,"ConditionalExpression[1,0].HasCallInTailPosition","Some((step 2, 3:17-32))","(= has true)", false
+76477.js,"Number::multiply","Some((step 5, 14:19-43))","(= y -0.0f)", true
+324045.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 12, 30:15-43))","(! (= R.Value ~empty~))", false
+222460.js,"BindingElisionElement[0,1].IteratorBindingInitialization","Some((step 2, 3:19-120))","[? %1]", false
+371399.js,"LabelledItem[0,0].TopLevelVarScopedDeclarations","Some((step 1, 2:15-86))","(? this[0]: "Statement10")", true
+221288.js,"ClassTail[0,1].ClassDefinitionEvaluation:clo0","Some((step 14.a.ii, 40:19-43))","(= NewTarget undefined)", true
+116798.js,"AssignmentExpression[4,0].Evaluation","Some((step 1.c.i, 6:30-113))","[? %3]", true
+395732.js,"ClassTail[0,3].ClassDefinitionEvaluation","Some((step 30, 101:12 - 102:66))","(< %29 %30.length)", true
+74559.js,"ElementList[3,1].ArrayAccumulation","Some((step 2.a, 4:35-106))","[? %1]", false
+156113.js,"RelationalExpression[6,0].Evaluation","Some((step 6, 7:41-64))","[? %4]", true
+264990.js,"INTRINSICS.Promise.allSettled","Some((step 1.a, 3:26-93))","[? %6]", true
+101760.js,"MemberExpression[3,0].Evaluation","Some((step 2, 3:31-51))","[? %1]", true
+243547.js,"ElementList[3,0].ArrayAccumulation","Some((step 1, 2:33-108))","[? %0]", true
+74559.js,"ElementList[3,1].ArrayAccumulation","Some((step 1, 2:33-108))","[? %0]", false
+366148.js,"ObjectAssignmentPattern[3,0].DestructuringAssignmentEvaluation","Some((step 2, 3:22-115))","[? %1]", true
+15699.js,"INTRINSICS.Set","Some((step 7, 8:38-63))","[? %3]", true
+318451.js,"ObjectBindingPattern[3,1].BindingInitialization","Some((step 2, 3:19-130))","[? %1]", true
+229495.js,"AssignmentExpression[4,0].Evaluation","Some((step 4, 14:26-44))","[? %8]", true
+237086.js,"BindingElementList[1,0].IteratorBindingInitialization","Some((step 2, 3:19-127))","[? %1]", true
+294432.js,"AsyncGeneratorAwaitReturn:clo1","None","(< 0 argumentsList.length)", true
+391150.js,"BigInt::remainder","Some((step 2, 3:19-41))","(= n 0n)", true
+186642.js,"Number::divide","Some((step 7.a, 18:21-44))","(< 0.0f x)", false
+172525.js,"ArrayBindingPattern[2,1].IteratorBindingInitialization","Some((step 2, 3:15-35))","(! (= this[1] absent))", false
+195231.js,"CaseBlock[1,1].HasCallInTailPosition","Some((step 2, 3:17-51))","(! (= this[0] absent))", false
+359874.js,"AsyncGeneratorDrainQueue","Some((step 5.c.ii, 11:26-66))","[! %1]", false
+205289.js,"CaseBlock[1,2].HasCallInTailPosition","Some((step 5, 6:17-32))","(= has true)", false
+325717.js,"BindingElisionElement[0,1].IteratorBindingInitialization","Some((step 2, 3:19-120))","[? %1]", true
+253120.js,"VariableDeclarationList[1,0].Evaluation","Some((step 2, 3:14-36))","[? next]", true
+257736.js,"ClassTail[0,3].ClassDefinitionEvaluation","Some((step 25.f.i, 92:19-45))","(= %27 false)", false
+161614.js,"BindingRestElement[1,0].IteratorBindingInitialization","Some((step 3.a, 5:17-53))","(= iteratorRecord.Done false)", false
+383700.js,"ForInOfStatement[8,0].ForInOfLoopEvaluation","Some((step 1, 2:33-130))","[? %1]", true
+288.js,"OptionalExpression[2,0].Evaluation","Some((step 1, 2:37-73))","[? %0]", true
+136963.js,"CaseBlock[1,2].CaseBlockEvaluation","Some((step 5.a.i, 10:31-67))","[? %2]", true
+25075.js,"AsyncIteratorClose","Some((step 7, 12:15-58))","(! (= (typeof innerResult.Value) @Object))", true
+229626.js,"SwitchStatement[0,0].Evaluation","Some((step 2, 3:33-54))","[? %1]", true
+318451.js,"BindingRestProperty[0,0].RestBindingInitialization","Some((step 3, 4:22-79))","[? %3]", true
+93774.js,"BindingList[1,0].Evaluation","Some((step 2, 3:14-36))","[? next]", true
+105356.js,"OptionalChain[6,0].ChainEvaluation","Some((step 5, 6:21-98))","[? %2]", true
+193669.js,"INTRINSICS.print","None","(< 0 argumentsList.length)", false
+324045.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 15.b, 35:17-45))","(! (= R.Value ~empty~))", false
+23999.js,"ElementList[2,1].ArrayAccumulation","Some((step 4, 6:33-57))","[? %3]", true
+195231.js,"CaseBlock[1,1].HasCallInTailPosition","Some((step 3, 4:17-32))","(= has true)", false
+205289.js,"CaseBlock[1,2].HasCallInTailPosition","Some((step 3, 4:17-32))","(= has true)", false
+185201.js,"ObjectLiteral[2,0].Evaluation","Some((step 2, 3:22-100))","[? %1]", true
+315051.js,"ElementList[2,0].ArrayAccumulation","Some((step 4, 6:33-57))","[? %3]", true
+186740.js,"CaseClause[0,0].HasCallInTailPosition","Some((step 1, 2:17-43))","(! (= this[1] absent))", false
+141211.js,"AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization","Some((step 8, 12:19-102))","[? %4]", false
+174344.js,"CaseBlock[1,0].HasCallInTailPosition","Some((step 3, 4:17-32))","(= has true)", false
+373630.js,"MemberExpression[3,0].HasCallInTailPosition","Some((step 1, 2:17-50))","(= this[0] call)", false
+237086.js,"BindingElement[1,0].IteratorBindingInitialization","Some((step 2, 3:15-51))","(= iteratorRecord.Done false)", false
+31136.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 5.a.i, 10:31-67))","[? %2]", true
+4675.js,"PropertyDefinition[2,0].PropertyDefinitionEvaluation","Some((step 2, 3:14-39))","[? propKey]", true
+300436.js,"ArrayBindingPattern[2,2].IteratorBindingInitialization","Some((step 1, 2:20-125))","[? %0]", true
+141211.js,"AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization","Some((step 4, 5:15-45))","(&& (comp? next) (! (= next.Type ~normal~)))", false
+308366.js,"CallExpression[6,0].HasCallInTailPosition","Some((step 1, 2:17-48))","(= this[0] call)", false
+141211.js,"AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization","Some((step 5, 6:12-34))","[? next]", false
+285484.js,"Elision[0,0].IteratorDestructuringAssignmentEvaluation","Some((step 1, 2:17-53))","(= iteratorRecord.Done false)", false
+84557.js,"BoundFunctionExoticObject.Construct","Some((step 6, 7:21-63))","[? %2]", true
+221455.js,"FormalParameters[4,0].ContainsExpression","Some((step 1, 2:15-68))","(= %0 true)", true
+374274.js,"ForStatement[2,2].ForLoopEvaluation","Some((step 8.b, 15:23-33))","[? forDcl]", true
+17123.js,"OptionalChain[6,0].ChainEvaluation","Some((step 3, 4:32-58))","[? %1]", true
+111242.js,"ElementList[0,1].ArrayAccumulation","Some((step 3, 5:33-57))","[? %2]", true
+394544.js,"ArrayAssignmentPattern[2,2].DestructuringAssignmentEvaluation","Some((step 3.a, 5:19-55))","(= iteratorRecord.Done false)", false
+379602.js,"ArgumentList[3,0].ArgumentListEvaluation","Some((step 1, 2:37-79))","[? %0]", true
+113491.js,"OptionalExpression[2,0].Evaluation","Some((step 2, 3:33-60))","[? %1]", true
+174344.js,"CaseBlock[1,0].HasCallInTailPosition","Some((step 6, 7:17-52))","(! (= this[2] absent))", false
+60332.js,"INTRINSICS.Object.defineProperty","None","(< 0 argumentsList.length)", false
+205289.js,"CaseBlock[1,2].HasCallInTailPosition","Some((step 6, 7:17-52))","(! (= this[2] absent))", false
+285484.js,"ArrayBindingPattern[2,2].IteratorBindingInitialization","Some((step 1, 2:20-125))","[? %0]", false
+248884.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 5.b.ii, 13:19-47))","(! (= R.Value ~empty~))", false
+180492.js,"FormalParameterList[1,0].IteratorBindingInitialization","Some((step 2, 3:19-121))","[? %1]", true
+174344.js,"CaseBlock[1,0].HasCallInTailPosition","Some((step 5, 6:17-32))","(= has true)", false
+79093.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 15.c, 36:17-44))","(&& (comp? R) (! (= R.Type ~normal~)))", true
+374274.js,"ForStatement[2,2].ForLoopEvaluation","Some((step 8, 13:17-49))","(&& (comp? forDcl) (! (= forDcl.Type ~normal~)))", true
+141211.js,"AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization","Some((step 7.b, 10:17-44))","(&& (comp? v) (! (= v.Type ~normal~)))", false
+181227.js,"Number::multiply","Some((step 5.a, 15:21-44))","(< x -0.0f)", true
+90590.js,"CaseBlock[0,1].CaseBlockEvaluation","Some((step 4.a.i, 7:31-67))","[? %2]", true
+155090.js,"ArrayLiteral[2,1].Evaluation","Some((step 2, 3:33-98))","[? %1]", true
+83072.js,"ElementList[3,1].ArrayAccumulation","Some((step 1, 2:33-108))","[? %0]", true
+214812.js,"ElementList[1,1].ArrayAccumulation","Some((step 1.a, 3:35-106))","[? %0]", false
+38989.js,"OptionalChain[5,0].ChainEvaluation","Some((step 3, 4:32-58))","[? %1]", true
+286329.js,"INTRINSICS.Array.prototype.find","Some((step 3, 4:17-51))","(= %2 false)", true
+353460.js,"BindingElement[1,1].IteratorBindingInitialization","Some((step 2, 3:15-51))","(= iteratorRecord.Done false)", false
+394544.js,"ArrayAssignmentPattern[2,2].DestructuringAssignmentEvaluation","Some((step 3, 4:17-49))","(&& (comp? status) (! (= status.Type ~normal~)))", true
+359874.js,"AsyncGeneratorDrainQueue","Some((step 5.c, 9:19-52))","(= completion.Type ~return~)", true
+354779.js,"AsyncIteratorClose","Some((step 4.d, 9:17-51))","(= innerResult.Type ~normal~)", false
+205289.js,"CaseBlock[1,2].HasCallInTailPosition","Some((step 2, 3:17-51))","(! (= this[0] absent))", true
+27021.js,"VariableDeclaration[1,0].Evaluation","Some((step 2, 3:28-45))","[? %1]", true
+299324.js,"ForStatement[1,0].ForLoopEvaluation","Some((step 2, 3:14-38))","[? varDcl]", true
+280793.js,"ArrayAssignmentPattern[2,2].DestructuringAssignmentEvaluation","Some((step 1, 2:38-60))","[? %0]", true
+395732.js,"ClassTail[0,3].ClassDefinitionEvaluation","Some((step 25.e.ii, 79:19-45))","(= %26 false)", false
+174344.js,"DefaultClause[0,0].HasCallInTailPosition","Some((step 1, 2:17-43))","(! (= this[0] absent))", false
+23999.js,"ArrayLiteral[2,0].Evaluation","Some((step 2, 3:33-98))","[? %1]", true
+195231.js,"CaseBlock[1,1].HasCallInTailPosition","Some((step 6, 7:17-52))","(! (= this[2] absent))", true
+291.js,"OptionalExpression[0,0].Evaluation","Some((step 1, 2:37-71))","[? %0]", true
+240991.js,"AsyncArrowFunction[0,0].InstantiateAsyncArrowFunctionExpression","Some((step 1, 2:15-36))","(= name absent)", false
+181927.js,"BindingIdentifier[2,0].BindingInitialization","Some((step 1, 2:19-75))","[? %0]", false
+262872.js,"ArrayBindingPattern[2,3].ContainsExpression","Some((step 2, 3:15-30))","(= has true)", true
+62589.js,"OptionalChain[6,0].ChainEvaluation","Some((step 2, 3:36-119))","[? %0]", true
+141211.js,"AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization","Some((step 6, 7:15-32))","(= next false)", false
+340831.js,"INTRINSICS.Array.prototype.splice","Some((step 10.a, 14:28-64))","[? %3]", true
+71481.js,"CaseBlock[1,1].CaseBlockEvaluation","Some((step 13, 31:15-42))","(&& (comp? R) (! (= R.Type ~normal~)))", true
+242876.js,"ElementList[2,0].ArrayAccumulation","Some((step 1, 2:33-108))","[? %0]", true
+180492.js,"BindingElement[1,0].KeyedBindingInitialization","Some((step 3, 6:21-101))","[? %3]", true
+79093.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 15.c, 36:53-76))","[? %15]", true
+289752.js,"FormalParameters[4,0].IteratorBindingInitialization","Some((step 2, 3:19-127))","[? %1]", true
+201263.js,"ArrayBindingPattern[2,3].ContainsExpression","Some((step 2, 3:15-30))","(= has true)", false
+378111.js,"LexicalBinding[1,0].Evaluation","Some((step 2, 3:29-46))","[? %1]", true
+275.js,"OptionalChain[5,0].ChainEvaluation","Some((step 6, 7:21-88))","[? %3]", true
+79093.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 15.c, 36:17-44))","(&& (comp? R) (! (= R.Type ~normal~)))", false
+255395.js,"ArrayBindingPattern[2,1].IteratorBindingInitialization","Some((step 1, 2:20-125))","[? %0]", true
+79093.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 15, 33:12 - 36:77))","(< %12 %13.length)", true
+278016.js,"SingleNameBinding[0,1].KeyedBindingInitialization","Some((step 4.a.i, 7:29-89))","[? %4]", true
+286302.js,"Elision[1,0].IteratorDestructuringAssignmentEvaluation","Some((step 2, 3:17-53))","(= iteratorRecord.Done false)", false
+269.js,"OptionalExpression[1,0].Evaluation","Some((step 1, 2:37-69))","[? %0]", true
+74559.js,"ElementList[3,1].ArrayAccumulation","Some((step 2, 3:17-37))","(! (= this[1] absent))", true
+79093.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 15.b, 35:17-45))","(! (= R.Value ~empty~))", true
+312395.js,"AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization","Some((step 6, 7:15-32))","(= next false)", true
+223901.js,"ArrayBindingPattern[2,1].ContainsExpression","Some((step 2, 3:15-30))","(= has true)", false
+343770.js,"ClassTail[0,3].ClassDefinitionEvaluation","Some((step 8.e, 23:34-61))","[? %7]", true
+156027.js,"OptionalChain[7,0].ChainEvaluation","Some((step 2, 3:36-119))","[? %0]", true
+360778.js,"CallExpression[6,0].Evaluation","Some((step 2, 3:31-51))","[? %1]", true
+340073.js,"INTRINSICS.String.prototype.replaceAll","Some((step 2.b.i, 6:33-64))","[? %2]", true
+325717.js,"ArrayBindingPattern[2,1].IteratorBindingInitialization","Some((step 3, 5:19-124))","[? %2]", true
+1.js,"CallExpression[3,0].Evaluation","Some((step 1, 2:27-59))","[? %0]", true
+105295.js,"CaseBlock[1,1].CaseBlockEvaluation","Some((step 9.a.i.1, 23:36-72))","[? %7]", true
+324045.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 15, 33:12 - 36:77))","(< %12 %13.length)", false
+287536.js,"Elision[1,0].IteratorDestructuringAssignmentEvaluation","Some((step 2.d, 7:19-36))","(= next false)", true
+395732.js,"ClassTail[0,3].ClassDefinitionEvaluation","Some((step 30.a, 102:22-65))","[! %31]", false
+74559.js,"ElementList[3,1].ArrayAccumulation","Some((step 3, 5:21-98))","[? %2]", true
+217247.js,"CaseClauseIsSelected","Some((step 3, 4:36-57))","[? %1]", true
+16598.js,"OptionalChain[5,0].ChainEvaluation","Some((step 2, 3:36-119))","[? %0]", true
+319870.js,"INTRINSICS.Promise.allSettled","Some((step 1.a, 3:26-93))","[? %3]", true
+2032.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 9.a.i.1, 23:36-72))","[? %7]", true
+285484.js,"ArrayBindingPattern[2,2].IteratorBindingInitialization","Some((step 2, 3:19-106))","[? %1]", false
+172525.js,"ArrayBindingPattern[2,1].IteratorBindingInitialization","Some((step 3, 5:19-124))","[? %2]", false
+71481.js,"CaseBlock[1,1].CaseBlockEvaluation","Some((step 13, 31:51-74))","[? %11]", true
+266.js,"OptionalExpression[0,0].Evaluation","Some((step 4, 6:21-104))","[? %2]", true
+107816.js,"BindingElement[1,1].IteratorBindingInitialization","Some((step 3.b, 14:25-51))","[? %5]", true
+191039.js,"ArrayBindingPattern[2,1].ContainsExpression","Some((step 2, 3:15-30))","(= has true)", true
+214812.js,"ElementList[1,1].ArrayAccumulation","Some((step 1, 2:17-37))","(! (= this[0] absent))", true
+96548.js,"ArrayAssignmentPattern[2,1].DestructuringAssignmentEvaluation","Some((step 3, 4:17-49))","(&& (comp? status) (! (= status.Type ~normal~)))", true
+125870.js,"PropertyDefinitionList[1,0].PropertyDefinitionEvaluation","Some((step 1, 2:22-103))","[? %0]", true
+264989.js,"INTRINSICS.Promise.allSettled","Some((step 1.a, 3:26-93))","[? %11]", true
+270.js,"OptionalExpression[0,0].Evaluation","Some((step 2, 3:33-60))","[? %1]", true
+237086.js,"BindingRestElement[1,0].IteratorBindingInitialization","Some((step 3.b.i, 11:23-103))","[? %3]", true
+350831.js,"ImportCall[0,0].Evaluation","Some((step 3, 4:33-53))","[? %2]", true
+382425.js,"INTRINSICS.Object.getOwnPropertyDescriptor","None","(< 0 argumentsList.length)", false
+372645.js,"ArrayBindingPattern[0,3].IteratorBindingInitialization","Some((step 2, 4:19-124))","[? %1]", true
+75400.js,"OptionalChain[7,0].ChainEvaluation","Some((step 3, 4:32-58))","[? %1]", true
+334259.js,"INTRINSICS.Array.from","Some((step 12.c.i, 44:39-88))","[? %25]", true
+180492.js,"ObjectBindingPattern[3,0].BindingInitialization","Some((step 1, 2:20-117))","[? %0]", true
+195231.js,"CaseBlock[1,3].CaseBlockEvaluation","Some((step 9.a.ii.2, 26:21-49))","(! (= R.Value ~empty~))", false
+141211.js,"AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization","Some((step 7.c, 11:14-33))","[? v]", false
+78568.js,"PropertyDefinition[2,0].PropertyDefinitionEvaluation","Some((step 6.a, 11:35-102))","[? %4]", true
+172525.js,"ArrayBindingPattern[2,1].IteratorBindingInitialization","Some((step 1, 2:20-125))","[? %0]", false

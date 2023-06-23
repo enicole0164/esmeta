@@ -1,0 +1,13 @@
+def PrivateMethodOrAccessorAdd(
+  O: Object,
+  method: PrivateElement,
+): Normal[Const[~unused~]] | Abrupt {
+  assert (|| (= method.Kind ~method~) (= method.Kind ~accessor~))
+  call %0 = clo<PrivateElementFind>(O, method.Key)
+  let entry = %0
+  if (! (= entry ~empty~)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#67])
+  } else {}
+  push O.PrivateElements < method
+  return ~unused~
+}

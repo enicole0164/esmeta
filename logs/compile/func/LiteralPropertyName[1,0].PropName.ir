@@ -1,0 +1,6 @@
+def <SYNTAX>:LiteralPropertyName[1,0].PropName(
+  this: Ast:LiteralPropertyName[1,0],
+): Const[~empty~] | String {
+  sdo-call %0 = this[0]->SV()
+  return %0
+}

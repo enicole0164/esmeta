@@ -1,0 +1,45 @@
+def GetTemplateObject(
+  templateLiteral: Ast,
+): Unknown["Array"] {
+  let realm = @EXECUTION_STACK[0].Realm
+  let templateRegistry = realm.TemplateMap
+  %1 = templateRegistry
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let e = %1[%0]
+    if (= e.Site templateLiteral) {
+      return e.Array
+    } else {}
+    %0 = (+ %0 1)
+  }
+  sdo-call %2 = templateLiteral->TemplateStrings(true)
+  let rawStrings = %2
+  sdo-call %3 = templateLiteral->TemplateStrings(false)
+  let cookedStrings = %3
+  let count = cookedStrings.length
+  assert (! (< (- (** 2 32) 1) count))
+  call %4 = clo<ArrayCreate>(count)
+  let template = [! %4]
+  call %5 = clo<ArrayCreate>(count)
+  let rawObj = [! %5]
+  let index = 0
+  loop[repeat] (< index count) {
+    call %6 = clo<ToString>(([number] index))
+    let prop = [! %6]
+    let cookedValue = cookedStrings[index]
+    call %7 = clo<DefinePropertyOrThrow>(template, prop, (new PropertyDescriptor("Value" -> cookedValue, "Writable" -> false, "Enumerable" -> true, "Configurable" -> false))[#559])
+    [! %7]
+    (yet "Let _rawValue_ be the String value _rawStrings_[_index_].")
+    call %8 = clo<DefinePropertyOrThrow>(rawObj, prop, (new PropertyDescriptor("Value" -> rawValue, "Writable" -> false, "Enumerable" -> true, "Configurable" -> false))[#560])
+    [! %8]
+    index = (+ index 1)
+  }
+  call %9 = clo<SetIntegrityLevel>(rawObj, ~frozen~)
+  [! %9]
+  call %10 = clo<DefinePropertyOrThrow>(template, "raw", (new PropertyDescriptor("Value" -> rawObj, "Writable" -> false, "Enumerable" -> false, "Configurable" -> false))[#561])
+  [! %10]
+  call %11 = clo<SetIntegrityLevel>(template, ~frozen~)
+  [! %11]
+  push templateRegistry < (new Record("Site" -> templateLiteral, "Array" -> template))[#562]
+  return template
+}

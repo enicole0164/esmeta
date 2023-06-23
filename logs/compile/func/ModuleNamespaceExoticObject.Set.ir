@@ -1,0 +1,8 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.Set(
+  this: ModuleNamespaceExoticObject,
+  P: Symbol | String,
+  V: ESValue,
+  Receiver: ESValue,
+): Normal[False] {
+  return false
+}

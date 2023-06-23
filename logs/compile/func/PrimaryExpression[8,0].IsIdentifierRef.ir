@@ -1,0 +1,5 @@
+def <SYNTAX>:PrimaryExpression[8,0].IsIdentifierRef(
+  this: Ast:PrimaryExpression[8,0],
+): Boolean {
+  return false
+}

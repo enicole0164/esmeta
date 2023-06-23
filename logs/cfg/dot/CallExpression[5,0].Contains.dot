@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster820 {
+    label = "def <SYNTAX>:CallExpression[5,0].Contains(this: Ast:CallExpression[5,0], symbol: Unknown): Boolean"
+    style = rounded
+    cluster820_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster820_entry_name -> cluster820_entry [arrowhead=none, color="black", style=dashed]
+    cluster820_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster820_entry -> node3129 [color="black"]
+    cluster820_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster820_exit_name -> cluster820_exit [arrowhead=none, color="black", style=dashed]
+    cluster820_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3129_name [shape=none, label=<<font color="black">Call[3129]</font>>]
+    node3129_name -> node3129 [arrowhead=none, color="black", style=dashed]
+    node3129 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Contains(symbol)</font>> color="black" fillcolor="white", style=filled]
+    node3129 -> node3130 [color="black"]
+    node3130_name [shape=none, label=<<font color="black">Branch[3130]</font>>]
+    node3130_name -> node3130 [arrowhead=none, color="black", style=dashed]
+    node3130 [shape=diamond, label=<<font color="black">(= %0 true)</font>> color="black" fillcolor="white", style=filled]
+    node3130 -> node3131 [label=<<font color="black">true</font>> color="black"]
+    node3130 -> node3132 [label=<<font color="black">false</font>> color="black"]
+    node3131_name [shape=none, label=<<font color="black">Block[3131]</font>>]
+    node3131_name -> node3131 [arrowhead=none, color="black", style=dashed]
+    node3131 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3131 -> cluster820_exit [color="black"]
+    node3132_name [shape=none, label=<<font color="black">Block[3132]</font>>]
+    node3132_name -> node3132 [arrowhead=none, color="black", style=dashed]
+    node3132 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3132 -> cluster820_exit [color="black"]
+  }
+}

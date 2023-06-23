@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster821 {
+    label = "def <SYNTAX>:OptionalChain[2,0].Contains(this: Ast:OptionalChain[2,0], symbol: Unknown): Boolean"
+    style = rounded
+    cluster821_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster821_entry_name -> cluster821_entry [arrowhead=none, color="black", style=dashed]
+    cluster821_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster821_entry -> node3133 [color="black"]
+    cluster821_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster821_exit_name -> cluster821_exit [arrowhead=none, color="black", style=dashed]
+    cluster821_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3133_name [shape=none, label=<<font color="black">Block[3133]</font>>]
+    node3133_name -> node3133 [arrowhead=none, color="black", style=dashed]
+    node3133 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3133 -> cluster821_exit [color="black"]
+  }
+}

@@ -1,0 +1,20 @@
+def <SYNTAX>:BreakableStatement[0,0].LabelledEvaluation(
+  this: Ast:BreakableStatement[0,0],
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this[0]->LoopEvaluation(labelSet)
+  call %1 = clo<Completion>(%0)
+  let stmtResult = %1
+  if (= stmtResult.Type ~break~) {
+    if (= stmtResult.Target ~empty~) {
+      if (= stmtResult.Value ~empty~) {
+        call %2 = clo<NormalCompletion>(undefined)
+        stmtResult = %2
+      } else {
+        call %3 = clo<NormalCompletion>(stmtResult.Value)
+        stmtResult = %3
+      }
+    } else {}
+  } else {}
+  return [? stmtResult]
+}

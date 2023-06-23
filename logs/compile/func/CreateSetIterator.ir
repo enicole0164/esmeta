@@ -1,0 +1,10 @@
+def CreateSetIterator(
+  set: ESValue,
+  kind: Const[~key+value~, ~value~],
+): Unknown["EitherANormalCompletionContainingAGeneratorOrAnAbruptCompletion"] {
+  call %0 = clo<RequireInternalSlot>(set, "SetData")
+  [? %0]
+  let closure = clo<CreateSetIterator:clo0, [set, kind]>
+  call %1 = clo<CreateIteratorFromClosure>(closure, "%SetIteratorPrototype%", @EXECUTION_STACK[0].Realm.Intrinsics["%SetIteratorPrototype%"])
+  return %1
+}

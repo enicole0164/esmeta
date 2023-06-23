@@ -1,0 +1,16 @@
+def ModuleNamespaceCreate(
+  module: ModuleRecord,
+  exports: List[String],
+): ModuleNamespaceExoticObject {
+  assert (= module.Namespace ~empty~)
+  let internalSlotsList = (new ["Module", "Exports"])[#479]
+  call %0 = clo<MakeBasicObject>(internalSlotsList)
+  let M = %0
+  (yet "Set _M_'s essential internal methods to the definitions specified in <emu-xref href=\"#sec-module-namespace-exotic-objects\"></emu-xref>.")
+  M.Module = module
+  (yet "Let _sortedExports_ be a List whose elements are the elements of _exports_ ordered as if an Array of the same values had been sorted using %Array.prototype.sort% using *undefined* as _comparefn_.")
+  M.Exports = sortedExports
+  (yet "Create own properties of _M_ corresponding to the definitions in <emu-xref href=\"#sec-module-namespace-objects\"></emu-xref>.")
+  module.Namespace = M
+  return M
+}

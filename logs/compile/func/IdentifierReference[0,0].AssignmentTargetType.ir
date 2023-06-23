@@ -1,0 +1,6 @@
+def <SYNTAX>:IdentifierReference[0,0].AssignmentTargetType(
+  this: Ast:IdentifierReference[0,0],
+): Const[~invalid~, ~simple~] {
+  (yet "If this |IdentifierReference| is contained in strict mode code and StringValue of |Identifier| is *\"eval\"* or *\"arguments\"*, return ~invalid~.")
+  return ~simple~
+}

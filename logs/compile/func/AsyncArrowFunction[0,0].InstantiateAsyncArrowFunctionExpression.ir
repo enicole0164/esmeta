@@ -1,0 +1,16 @@
+def <SYNTAX>:AsyncArrowFunction[0,0].InstantiateAsyncArrowFunctionExpression(
+  this: Ast:AsyncArrowFunction[0,0],
+  name?: Unknown,
+): FunctionObject {
+  if (= name absent) {
+    name = ""
+  } else {}
+  let env = @EXECUTION_STACK[0].LexicalEnvironment
+  let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  let sourceText = (source-text this)
+  let parameters = this[0]
+  call %0 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%AsyncFunction.prototype%"], sourceText, parameters, this[1], ~lexical-this~, env, privateEnv)
+  let closure = %0
+  call %1 = clo<SetFunctionName>(closure, name)
+  return closure
+}

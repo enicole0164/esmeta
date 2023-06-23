@@ -1,0 +1,15 @@
+def Call(
+  F: ESValue,
+  V: ESValue,
+  argumentsList?: List[ESValue],
+): Normal[ESValue] | Abrupt {
+  if (= argumentsList absent) {
+    argumentsList = (new [])[#48]
+  } else {}
+  call %0 = clo<IsCallable>(F)
+  if (= %0 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#49])
+  } else {}
+  method-call %1 = F->Call(V, argumentsList)
+  return [? %1]
+}

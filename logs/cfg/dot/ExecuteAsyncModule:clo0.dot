@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1889 {
+    label = "def <BUILTIN-CLO>:ExecuteAsyncModule:clo0(this: Unknown, argumentsList: Unknown, NewTarget: Unknown): Unknown"
+    style = rounded
+    cluster1889_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1889_entry_name -> cluster1889_entry [arrowhead=none, color="black", style=dashed]
+    cluster1889_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1889_entry -> node10208 [color="black"]
+    cluster1889_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1889_exit_name -> cluster1889_exit [arrowhead=none, color="black", style=dashed]
+    cluster1889_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10208_name [shape=none, label=<<font color="black">Call[10208]</font>>]
+    node10208_name -> node10208 [arrowhead=none, color="black", style=dashed]
+    node10208 [shape=cds, label=<<font color="black">%0 = clo&lt;AsyncModuleExecutionFulfilled&gt;(module)</font>> color="black" fillcolor="white", style=filled]
+    node10208 -> node10209 [color="black"]
+    node10209_name [shape=none, label=<<font color="black">Block[10209]</font>>]
+    node10209_name -> node10209 [arrowhead=none, color="black", style=dashed]
+    node10209 [shape=box, label=<<font color="black">[0] return undefined<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10209 -> cluster1889_exit [color="black"]
+  }
+}

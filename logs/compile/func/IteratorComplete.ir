@@ -1,0 +1,7 @@
+def IteratorComplete(
+  iterResult: Object,
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<Get>(iterResult, "done")
+  call %1 = clo<ToBoolean>([? %0])
+  return %1
+}

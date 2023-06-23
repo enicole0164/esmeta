@@ -1,0 +1,63 @@
+def <BUILTIN>:INTRINSICS._TypedArray_(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let args = argumentsList
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1104])
+  } else {}
+  (yet "Let _constructorName_ be the String value of the Constructor Name value specified in <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for this <var>TypedArray</var> constructor.")
+  (yet "Let _proto_ be <code>\"%<var>TypedArray</var>.prototype%\"</code>.")
+  let numberOfArgs = args.length
+  if (== numberOfArgs 0) {
+    call %0 = clo<AllocateTypedArray>(constructorName, NewTarget, proto, 0)
+    return [? %0]
+  } else {
+    let firstArgument = args[0]
+    if (= (typeof firstArgument) @Object) {
+      call %1 = clo<AllocateTypedArray>(constructorName, NewTarget, proto)
+      let O = [? %1]
+      if (! (= firstArgument.TypedArrayName absent)) {
+        call %2 = clo<InitializeTypedArrayFromTypedArray>(O, firstArgument)
+        [? %2]
+      } else {
+        if (! (= firstArgument.ArrayBufferData absent)) {
+          if (< 1 numberOfArgs) {
+            let byteOffset = args[1]
+          } else {
+            let byteOffset = undefined
+          }
+          if (< 2 numberOfArgs) {
+            let length = args[2]
+          } else {
+            let length = undefined
+          }
+          call %3 = clo<InitializeTypedArrayFromArrayBuffer>(O, firstArgument, byteOffset, length)
+          [? %3]
+        } else {
+          assert (yet "Type(_firstArgument_) is Object and _firstArgument_ does not have either a [[TypedArrayName]] or an [[ArrayBufferData]] internal slot.")
+          call %4 = clo<GetMethod>(firstArgument, @SYMBOL.iterator)
+          let usingIterator = [? %4]
+          if (! (= usingIterator undefined)) {
+            call %5 = clo<IterableToList>(firstArgument, usingIterator)
+            let values = [? %5]
+            call %6 = clo<InitializeTypedArrayFromList>(O, values)
+            [? %6]
+          } else {
+            nop
+            call %7 = clo<InitializeTypedArrayFromArrayLike>(O, firstArgument)
+            [? %7]
+          }
+        }
+      }
+      return O
+    } else {
+      assert (! (? firstArgument: "Object"))
+      call %8 = clo<ToIndex>(firstArgument)
+      let elementLength = [? %8]
+      call %9 = clo<AllocateTypedArray>(constructorName, NewTarget, proto, elementLength)
+      return [? %9]
+    }
+  }
+}

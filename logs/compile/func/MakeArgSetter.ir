@@ -1,0 +1,10 @@
+def MakeArgSetter(
+  name: String,
+  env: EnvironmentRecord,
+): FunctionObject {
+  let setterClosure = clo<MakeArgSetter:clo0, [name, env]>
+  call %0 = clo<CreateBuiltinFunction>(setterClosure, 1, "", (new [])[#472])
+  let setter = %0
+  nop
+  return setter
+}

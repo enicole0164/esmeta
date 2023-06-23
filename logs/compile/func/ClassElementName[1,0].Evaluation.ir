@@ -1,0 +1,16 @@
+def <SYNTAX>:ClassElementName[1,0].Evaluation(
+  this: Ast:ClassElementName[1,0],
+): Unknown {
+  sdo-call %0 = this[0]->StringValue()
+  let privateIdentifier = %0
+  let privateEnvRec = @EXECUTION_STACK[0].PrivateEnvironment
+  let names = privateEnvRec.Names
+  assert (yet "Exactly one element of _names_ is a Private Name whose [[Description]] is _privateIdentifier_.")
+  let idx = 0
+  loop[repeat] (< idx names.length) {
+    let elem = names[idx]
+    if (= elem.Description privateIdentifier) let privateName = elem else {}
+    idx = (+ idx 1)
+  }
+  return privateName
+}

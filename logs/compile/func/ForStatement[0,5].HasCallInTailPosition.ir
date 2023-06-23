@@ -1,0 +1,7 @@
+def <SYNTAX>:ForStatement[0,5].HasCallInTailPosition(
+  this: Ast:ForStatement[0,5],
+  call: Unknown,
+): Boolean {
+  sdo-call %0 = this[3]->HasCallInTailPosition(call)
+  return %0
+}

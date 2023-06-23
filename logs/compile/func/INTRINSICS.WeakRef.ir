@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.WeakRef(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1202])
+  } else {}
+  if (! (= (typeof target) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1203])
+  } else {}
+  call %0 = clo<OrdinaryCreateFromConstructor>(NewTarget, "%WeakRef.prototype%", (new ["WeakRefTarget"])[#1204])
+  let weakRef = [? %0]
+  call %1 = clo<AddToKeptObjects>(target)
+  weakRef.WeakRefTarget = target
+  return weakRef
+}

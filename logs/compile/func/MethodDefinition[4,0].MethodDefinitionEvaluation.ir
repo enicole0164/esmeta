@@ -1,0 +1,25 @@
+def <SYNTAX>:MethodDefinition[4,0].MethodDefinitionEvaluation(
+  this: Ast:MethodDefinition[4,0],
+  object: Unknown,
+  enumerable: Unknown,
+): Normal[PrivateElement | Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  let propKey = %0
+  [? propKey]
+  let env = @EXECUTION_STACK[0].LexicalEnvironment
+  let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  let sourceText = (source-text this)
+  let formalParameterList = |FormalParameters|[TT]<0>
+  call %1 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Function.prototype%"], sourceText, formalParameterList, this[1], ~non-lexical-this~, env, privateEnv)
+  let closure = %1
+  call %2 = clo<MakeMethod>(closure, object)
+  call %3 = clo<SetFunctionName>(closure, propKey, "get")
+  if (? propKey: "PrivateName") {
+    return (new PrivateElement("Key" -> propKey, "Kind" -> ~accessor~, "Get" -> closure, "Set" -> undefined))[#652]
+  } else {
+    let desc = (new PropertyDescriptor("Get" -> closure, "Enumerable" -> enumerable, "Configurable" -> true))[#653]
+    call %4 = clo<DefinePropertyOrThrow>(object, propKey, desc)
+    [? %4]
+    return ~unused~
+  }
+}

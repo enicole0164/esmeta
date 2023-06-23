@@ -1,0 +1,7 @@
+def <SYNTAX>:Assertion[5,0].CompileAssertion(
+  this: Ast:Assertion[5,0],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CompileSubpattern(~forward~)
+  let m = %0
+  (yet "Return a new Matcher with parameters (_x_, _c_) that captures _m_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _d_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called:\n    1. Assert: _y_ is a State.\n    1. Return _y_.\n  1. Let _r_ be _m_(_x_, _d_).\n  1. If _r_ is not ~failure~, return ~failure~.\n  1. Return _c_(_x_).")
+}

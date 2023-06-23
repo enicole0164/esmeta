@@ -1,0 +1,9 @@
+def <SYNTAX>:AtomEscape[1,0].CompileAtom(
+  this: Ast:AtomEscape[1,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CompileToCharSet()
+  let A = %0
+  call %1 = clo<CharacterSetMatcher>(A, false, direction)
+  return %1
+}

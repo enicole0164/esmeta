@@ -1,0 +1,10 @@
+def <SYNTAX>:AtomEscape[3,0].CompileAtom(
+  this: Ast:AtomEscape[3,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  (yet "Search the enclosing |Pattern| for an instance of a |GroupSpecifier| containing a |RegExpIdentifierName| which has a CapturingGroupName equal to the CapturingGroupName of the |RegExpIdentifierName| contained in |GroupName|.")
+  assert (yet "A unique such |GroupSpecifier| is found.")
+  (yet "Let _parenIndex_ be the number of left-capturing parentheses in the entire regular expression that occur to the left of the located |GroupSpecifier|. This is the total number of <emu-grammar>Atom :: `(` GroupSpecifier Disjunction `)`</emu-grammar> Parse Nodes prior to or enclosing the located |GroupSpecifier|, including its immediately enclosing |Atom|.")
+  call %0 = clo<BackreferenceMatcher>(parenIndex, direction)
+  return %0
+}

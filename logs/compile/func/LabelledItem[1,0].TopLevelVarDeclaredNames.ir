@@ -1,0 +1,6 @@
+def <SYNTAX>:LabelledItem[1,0].TopLevelVarDeclaredNames(
+  this: Ast:LabelledItem[1,0],
+): List[String] {
+  sdo-call %0 = this[0]->BoundNames()
+  return %0
+}

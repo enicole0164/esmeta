@@ -1,0 +1,10 @@
+def <SYNTAX>:ThrowStatement[0,0].Evaluation(
+  this: Ast:ThrowStatement[0,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let exprRef = %0
+  call %1 = clo<GetValue>(exprRef)
+  let exprValue = [? %1]
+  call %2 = clo<ThrowCompletion>(exprValue)
+  return %2
+}

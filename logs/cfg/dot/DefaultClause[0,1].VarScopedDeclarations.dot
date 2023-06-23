@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster440 {
+    label = "def <SYNTAX>:DefaultClause[0,1].VarScopedDeclarations(this: Ast:DefaultClause[0,1]): List[Ast]"
+    style = rounded
+    cluster440_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster440_entry_name -> cluster440_entry [arrowhead=none, color="black", style=dashed]
+    cluster440_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster440_entry -> node2220 [color="black"]
+    cluster440_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster440_exit_name -> cluster440_exit [arrowhead=none, color="black", style=dashed]
+    cluster440_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2220_name [shape=none, label=<<font color="black">Branch[2220]</font>>]
+    node2220_name -> node2220 [arrowhead=none, color="black", style=dashed]
+    node2220 [shape=diamond, label=<<font color="black">(! (= this[0] absent))</font>> color="black" fillcolor="white", style=filled]
+    node2220 -> node2221 [label=<<font color="black">true</font>> color="black"]
+    node2220 -> node2223 [label=<<font color="black">false</font>> color="black"]
+    node2221_name [shape=none, label=<<font color="black">Call[2221]</font>>]
+    node2221_name -> node2221 [arrowhead=none, color="black", style=dashed]
+    node2221 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;VarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2221 -> node2222 [color="black"]
+    node2223_name [shape=none, label=<<font color="black">Block[2223]</font>>]
+    node2223_name -> node2223 [arrowhead=none, color="black", style=dashed]
+    node2223 [shape=box, label=<<font color="black">[0] return (new [])[#266]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2223 -> cluster440_exit [color="black"]
+    node2222_name [shape=none, label=<<font color="black">Block[2222]</font>>]
+    node2222_name -> node2222 [arrowhead=none, color="black", style=dashed]
+    node2222 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2222 -> cluster440_exit [color="black"]
+  }
+}

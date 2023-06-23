@@ -1,0 +1,11 @@
+def UTF16EncodeCodePoint(
+  cp: Unknown["UnicodeCodePoint"],
+): String {
+  assert (yet "0 ≤ _cp_ ≤ 0x10FFFF.")
+  if (! (< 65535 cp)) {
+    (yet "return the String value consisting of the code unit whose value is _cp_.")
+  } else {}
+  (yet "Let _cu1_ be the code unit whose value is floor((_cp_ - 0x10000) / 0x400) + 0xD800.")
+  (yet "Let _cu2_ be the code unit whose value is ((_cp_ - 0x10000) modulo 0x400) + 0xDC00.")
+  return (concat cu1 cu2)
+}

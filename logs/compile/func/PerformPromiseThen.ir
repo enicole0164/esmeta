@@ -1,0 +1,54 @@
+def PerformPromiseThen(
+  promise: Unknown,
+  onFulfilled: Unknown,
+  onRejected: Unknown,
+  resultCapability?: PromiseCapabilityRecord,
+): ESValue {
+  call %0 = clo<IsPromise>(promise)
+  assert (= %0 true)
+  if (= resultCapability absent) {
+    resultCapability = undefined
+  } else {}
+  call %1 = clo<IsCallable>(onFulfilled)
+  if (= %1 false) {
+    let onFulfilledJobCallback = ~empty~
+  } else {
+    call %2 = clo<HostMakeJobCallback>(onFulfilled)
+    let onFulfilledJobCallback = %2
+  }
+  call %3 = clo<IsCallable>(onRejected)
+  if (= %3 false) {
+    let onRejectedJobCallback = ~empty~
+  } else {
+    call %4 = clo<HostMakeJobCallback>(onRejected)
+    let onRejectedJobCallback = %4
+  }
+  let fulfillReaction = (new PromiseReaction("Capability" -> resultCapability, "Type" -> ~Fulfill~, "Handler" -> onFulfilledJobCallback))[#1315]
+  let rejectReaction = (new PromiseReaction("Capability" -> resultCapability, "Type" -> ~Reject~, "Handler" -> onRejectedJobCallback))[#1316]
+  if (= promise.PromiseState ~pending~) {
+    push promise.PromiseFulfillReactions < fulfillReaction
+    push promise.PromiseRejectReactions < rejectReaction
+  } else {
+    if (= promise.PromiseState ~fulfilled~) {
+      let value = promise.PromiseResult
+      call %5 = clo<NewPromiseReactionJob>(fulfillReaction, value)
+      let fulfillJob = %5
+      call %6 = clo<HostEnqueuePromiseJob>(fulfillJob.Job, fulfillJob.Realm)
+    } else {
+      assert (= promise.PromiseState ~rejected~)
+      let reason = promise.PromiseResult
+      if (= promise.PromiseIsHandled false) {
+        call %7 = clo<HostPromiseRejectionTracker>(promise, "handle")
+      } else {}
+      call %8 = clo<NewPromiseReactionJob>(rejectReaction, reason)
+      let rejectJob = %8
+      call %9 = clo<HostEnqueuePromiseJob>(rejectJob.Job, rejectJob.Realm)
+    }
+  }
+  promise.PromiseIsHandled = true
+  if (= resultCapability undefined) {
+    return undefined
+  } else {
+    return resultCapability.Promise
+  }
+}

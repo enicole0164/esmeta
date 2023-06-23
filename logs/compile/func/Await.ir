@@ -1,0 +1,18 @@
+def Await(
+  value: Unknown,
+): Unknown {
+  let asyncContext = @EXECUTION_STACK[0]
+  call %0 = clo<PromiseResolve>(@EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"], value)
+  let promise = [? %0]
+  let fulfilledClosure = clo<Await:clo0, [asyncContext]>
+  call %1 = clo<CreateBuiltinFunction>(fulfilledClosure, 1, "", (new [])[#2])
+  let onFulfilled = %1
+  let rejectedClosure = clo<Await:clo1, [asyncContext]>
+  call %2 = clo<CreateBuiltinFunction>(rejectedClosure, 1, "", (new [])[#3])
+  let onRejected = %2
+  call %3 = clo<PerformPromiseThen>(promise, onFulfilled, onRejected)
+  (pop < @EXECUTION_STACK)
+  asyncContext.ResumeCont = cont<Await:cont2>
+  call %4 = clo<NormalCompletion>(~unused~)
+  call %5 = (pop < asyncContext.ReturnCont)(%4)
+}

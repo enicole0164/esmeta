@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1921 {
+    label = "def <SYNTAX>:ImportSpecifier[1,0].ImportEntriesForModule(this: Ast:ImportSpecifier[1,0], module: Unknown): Unknown["ListOfImportEntryRecords"]"
+    style = rounded
+    cluster1921_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1921_entry_name -> cluster1921_entry [arrowhead=none, color="black", style=dashed]
+    cluster1921_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1921_entry -> node10559 [color="black"]
+    cluster1921_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1921_exit_name -> cluster1921_exit [arrowhead=none, color="black", style=dashed]
+    cluster1921_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10559_name [shape=none, label=<<font color="black">Call[10559]</font>>]
+    node10559_name -> node10559 [arrowhead=none, color="black", style=dashed]
+    node10559 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;StringValue()</font>> color="black" fillcolor="white", style=filled]
+    node10559 -> node10560 [color="black"]
+    node10560_name [shape=none, label=<<font color="black">Block[10560]</font>>]
+    node10560_name -> node10560 [arrowhead=none, color="black", style=dashed]
+    node10560 [shape=box, label=<<font color="black">[0] let importName = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10560 -> node10561 [color="black"]
+    node10561_name [shape=none, label=<<font color="black">Call[10561]</font>>]
+    node10561_name -> node10561 [arrowhead=none, color="black", style=dashed]
+    node10561 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;StringValue()</font>> color="black" fillcolor="white", style=filled]
+    node10561 -> node10562 [color="black"]
+    node10562_name [shape=none, label=<<font color="black">Block[10562]</font>>]
+    node10562_name -> node10562 [arrowhead=none, color="black", style=dashed]
+    node10562 [shape=box, label=<<font color="black">[0] let localName = %1<BR ALIGN="LEFT"/>[1] let entry = (new ImportEntryRecord(&quot;ModuleRequest&quot; -&gt; module, &quot;ImportName&quot; -&gt; importName, &quot;LocalName&quot; -&gt; localName))[#818]<BR ALIGN="LEFT"/>[2] return (new [entry])[#819]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10562 -> cluster1921_exit [color="black"]
+  }
+}

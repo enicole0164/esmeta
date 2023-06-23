@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1100 {
+    label = "def <INTERNAL>:BuiltinFunctionObject.Construct(F: BuiltinFunctionObject, argumentsList: List[ESValue], newTarget: Constructor): Unknown"
+    style = rounded
+    cluster1100_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1100_entry_name -> cluster1100_entry [arrowhead=none, color="black", style=dashed]
+    cluster1100_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1100_entry -> node4511 [color="black"]
+    cluster1100_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1100_exit_name -> cluster1100_exit [arrowhead=none, color="black", style=dashed]
+    cluster1100_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4511_name [shape=none, label=<<font color="black">Block[4511]</font>>]
+    node4511_name -> node4511 [arrowhead=none, color="black", style=dashed]
+    node4511 [shape=box, label=<<font color="black">[0] let callerContext = @EXECUTION_STACK[0]<BR ALIGN="LEFT"/>[1] nop<BR ALIGN="LEFT"/>[2] let calleeContext = (new ExecutionContext())[#439]<BR ALIGN="LEFT"/>[3] calleeContext.Function = F<BR ALIGN="LEFT"/>[4] let calleeRealm = F.Realm<BR ALIGN="LEFT"/>[5] calleeContext.Realm = calleeRealm<BR ALIGN="LEFT"/>[6] calleeContext.ScriptOrModule = null<BR ALIGN="LEFT"/>[7] nop<BR ALIGN="LEFT"/>[8] push calleeContext &gt; @EXECUTION_STACK<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4511 -> node4512 [color="black"]
+    node4512_name [shape=none, label=<<font color="black">Call[4512]</font>>]
+    node4512_name -> node4512 [arrowhead=none, color="black", style=dashed]
+    node4512 [shape=cds, label=<<font color="black">result = F.Code(undefined, argumentsList, newTarget)</font>> color="black" fillcolor="white", style=filled]
+    node4512 -> node4513 [color="black"]
+    node4513_name [shape=none, label=<<font color="black">Block[4513]</font>>]
+    node4513_name -> node4513 [arrowhead=none, color="black", style=dashed]
+    node4513 [shape=box, label=<<font color="black">[0] remove-elem @EXECUTION_STACK calleeContext<BR ALIGN="LEFT"/>[1] return result<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4513 -> cluster1100_exit [color="black"]
+  }
+}

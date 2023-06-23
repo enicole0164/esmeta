@@ -1,0 +1,20 @@
+def InitializeTypedArrayFromArrayLike(
+  O: Unknown["TypedArray"],
+  arrayLike: Unknown["Object,ButNotATypedArrayOrAnArrayBuffer"],
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<LengthOfArrayLike>(arrayLike)
+  let len = [? %0]
+  call %1 = clo<AllocateTypedArrayBuffer>(O, len)
+  [? %1]
+  let k = 0
+  loop[repeat] (< k len) {
+    call %2 = clo<ToString>(([number] k))
+    let Pk = [! %2]
+    call %3 = clo<Get>(arrayLike, Pk)
+    let kValue = [? %3]
+    call %4 = clo<Set>(O, Pk, kValue, true)
+    [? %4]
+    k = (+ k 1)
+  }
+  return ~unused~
+}

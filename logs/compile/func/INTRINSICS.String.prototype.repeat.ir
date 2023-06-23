@@ -1,0 +1,20 @@
+def <BUILTIN>:INTRINSICS.String.prototype.repeat(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let count = (pop < argumentsList) else let count = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  call %2 = clo<ToIntegerOrInfinity>(count)
+  let n = [? %2]
+  if (|| (< n 0) (= n +INF)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#955])
+  } else {}
+  if (= n 0) {
+    return ""
+  } else {}
+  (yet "Return the String value that is made from _n_ copies of _S_ appended together.")
+}

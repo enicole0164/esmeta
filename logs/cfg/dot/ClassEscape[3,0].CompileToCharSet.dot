@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2290 {
+    label = "def <SYNTAX>:ClassEscape[3,0].CompileToCharSet(this: Ast:ClassEscape[3,0]): Unknown["CharSet"]"
+    style = rounded
+    cluster2290_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2290_entry_name -> cluster2290_entry [arrowhead=none, color="black", style=dashed]
+    cluster2290_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2290_entry -> node14060 [color="black"]
+    cluster2290_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2290_exit_name -> cluster2290_exit [arrowhead=none, color="black", style=dashed]
+    cluster2290_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14060_name [shape=none, label=<<font color="black">Call[14060]</font>>]
+    node14060_name -> node14060 [arrowhead=none, color="black", style=dashed]
+    node14060 [shape=cds, label=<<font color="black">%0 = this-&gt;CharacterValue()</font>> color="black" fillcolor="white", style=filled]
+    node14060 -> node14061 [color="black"]
+    node14061_name [shape=none, label=<<font color="black">Block[14061]</font>>]
+    node14061_name -> node14061 [arrowhead=none, color="black", style=dashed]
+    node14061 [shape=box, label=<<font color="black">[0] let cv = %0<BR ALIGN="LEFT"/>[1] (yet &quot;Let _c_ be the character whose character value is _cv_.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Return the CharSet containing the single character _c_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14061 -> cluster2290_exit [color="black"]
+  }
+}

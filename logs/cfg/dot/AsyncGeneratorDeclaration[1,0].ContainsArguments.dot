@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1666 {
+    label = "def <SYNTAX>:AsyncGeneratorDeclaration[1,0].ContainsArguments(this: Ast:AsyncGeneratorDeclaration[1,0]): Boolean"
+    style = rounded
+    cluster1666_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1666_entry_name -> cluster1666_entry [arrowhead=none, color="black", style=dashed]
+    cluster1666_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1666_entry -> node8919 [color="black"]
+    cluster1666_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1666_exit_name -> cluster1666_exit [arrowhead=none, color="black", style=dashed]
+    cluster1666_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8919_name [shape=none, label=<<font color="black">Block[8919]</font>>]
+    node8919_name -> node8919 [arrowhead=none, color="black", style=dashed]
+    node8919 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8919 -> cluster1666_exit [color="black"]
+  }
+}

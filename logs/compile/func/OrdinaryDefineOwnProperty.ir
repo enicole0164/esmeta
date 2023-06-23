@@ -1,0 +1,12 @@
+def OrdinaryDefineOwnProperty(
+  O: Object,
+  P: Symbol | String,
+  Desc: PropertyDescriptor,
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->GetOwnProperty(P)
+  let current = [? %0]
+  call %1 = clo<IsExtensible>(O)
+  let extensible = [? %1]
+  call %2 = clo<ValidateAndApplyPropertyDescriptor>(O, P, extensible, Desc, current)
+  return %2
+}

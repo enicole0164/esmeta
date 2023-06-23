@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster946 {
+    label = "def <SYNTAX>:ConditionalExpression[1,0].AssignmentTargetType(this: Ast:ConditionalExpression[1,0]): Const[~invalid~, ~simple~]"
+    style = rounded
+    cluster946_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster946_entry_name -> cluster946_entry [arrowhead=none, color="black", style=dashed]
+    cluster946_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster946_entry -> node3543 [color="black"]
+    cluster946_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster946_exit_name -> cluster946_exit [arrowhead=none, color="black", style=dashed]
+    cluster946_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3543_name [shape=none, label=<<font color="black">Block[3543]</font>>]
+    node3543_name -> node3543 [arrowhead=none, color="black", style=dashed]
+    node3543 [shape=box, label=<<font color="black">[0] return ~invalid~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3543 -> cluster946_exit [color="black"]
+  }
+}

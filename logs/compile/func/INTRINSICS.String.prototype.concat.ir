@@ -1,0 +1,22 @@
+def <BUILTIN>:INTRINSICS.String.prototype.concat(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let args = argumentsList
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  let R = S
+  %3 = args
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let next = %3[%2]
+    call %4 = clo<ToString>(next)
+    let nextString = [? %4]
+    R = (concat R nextString)
+    %2 = (+ %2 1)
+  }
+  return R
+}

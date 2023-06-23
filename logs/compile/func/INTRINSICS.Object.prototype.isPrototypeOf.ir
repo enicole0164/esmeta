@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.Object.prototype.isPrototypeOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let V = (pop < argumentsList) else let V = absent
+  if (! (= (typeof V) @Object)) {
+    return false
+  } else {}
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  loop[repeat] true {
+    method-call %1 = V->GetPrototypeOf()
+    V = [? %1]
+    if (= V null) {
+      return false
+    } else {}
+    call %2 = clo<SameValue>(O, V)
+    if (= %2 true) {
+      return true
+    } else {}
+  }
+}

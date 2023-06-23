@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1978 {
+    label = "def <SYNTAX>:ExportDeclaration[3,0].Evaluation(this: Ast:ExportDeclaration[3,0]): Unknown"
+    style = rounded
+    cluster1978_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1978_entry_name -> cluster1978_entry [arrowhead=none, color="black", style=dashed]
+    cluster1978_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1978_entry -> node10687 [color="black"]
+    cluster1978_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1978_exit_name -> cluster1978_exit [arrowhead=none, color="black", style=dashed]
+    cluster1978_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10687_name [shape=none, label=<<font color="black">Call[10687]</font>>]
+    node10687_name -> node10687 [arrowhead=none, color="black", style=dashed]
+    node10687 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node10687 -> node10688 [color="black"]
+    node10688_name [shape=none, label=<<font color="black">Block[10688]</font>>]
+    node10688_name -> node10688 [arrowhead=none, color="black", style=dashed]
+    node10688 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10688 -> cluster1978_exit [color="black"]
+  }
+}

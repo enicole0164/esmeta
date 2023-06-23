@@ -1,0 +1,29 @@
+def <BUILTIN-CLO>:ClassTail[0,3].ClassDefinitionEvaluation:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  let args = argumentsList
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#733])
+  } else {}
+  let F = @EXECUTION_STACK[0].Function
+  if (= F.ConstructorKind ~derived~) {
+    nop
+    method-call %0 = F->GetPrototypeOf()
+    let func = [! %0]
+    call %1 = clo<IsConstructor>(func)
+    if (= %1 false) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#734])
+    } else {}
+    call %2 = clo<Construct>(func, args, NewTarget)
+    let result = [? %2]
+  } else {
+    nop
+    call %3 = clo<OrdinaryCreateFromConstructor>(NewTarget, "%Object.prototype%")
+    let result = [? %3]
+  }
+  call %4 = clo<InitializeInstanceElements>(result, F)
+  [? %4]
+  return result
+}

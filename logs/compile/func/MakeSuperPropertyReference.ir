@@ -1,0 +1,13 @@
+def MakeSuperPropertyReference(
+  actualThis: Unknown,
+  propertyKey: Unknown,
+  strict: Unknown,
+): Unknown["EitherANormalCompletionContainingASuperReferenceRecordOrAnAbruptCompletion"] {
+  call %0 = clo<GetThisEnvironment>()
+  let env = %0
+  method-call %1 = env->HasSuperBinding()
+  assert (= %1 true)
+  method-call %2 = env->GetSuperBase()
+  let baseValue = [? %2]
+  return (new ReferenceRecord("Base" -> baseValue, "ReferencedName" -> propertyKey, "Strict" -> strict, "ThisValue" -> actualThis))[#574]
+}

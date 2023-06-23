@@ -1,0 +1,11 @@
+def GetSuperConstructor(
+): ESValue {
+  call %0 = clo<GetThisEnvironment>()
+  let envRec = %0
+  assert (? envRec: "FunctionEnvironmentRecord")
+  let activeFunction = envRec.FunctionObject
+  assert (? activeFunction: "ECMAScriptFunctionObject")
+  method-call %1 = activeFunction->GetPrototypeOf()
+  let superConstructor = [! %1]
+  return superConstructor
+}

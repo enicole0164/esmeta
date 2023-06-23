@@ -1,0 +1,5 @@
+def <SYNTAX>:Module[0,0].VarScopedDeclarations(
+  this: Ast:Module[0,0],
+): List[Ast] {
+  return (new [])[#276]
+}

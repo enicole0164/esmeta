@@ -1,0 +1,24 @@
+def <CONC>:CyclicModuleRecord.Link(
+  module: CyclicModuleRecord,
+): Normal[Const[~unused~]] | Abrupt {
+  assert (! (|| (= module.Status ~linking~) (= module.Status ~evaluating~)))
+  let stack = (new [])[#769]
+  call %0 = clo<InnerModuleLinking>(module, stack, 0)
+  call %1 = clo<Completion>(%0)
+  let result = %1
+  if (&& (comp? result) (! (= result.Type ~normal~))) {
+    %3 = stack
+    %2 = 0
+    loop[foreach] (< %2 %3.length) {
+      let m = %3[%2]
+      assert (= m.Status ~linking~)
+      m.Status = ~unlinked~
+      %2 = (+ %2 1)
+    }
+    assert (= module.Status ~unlinked~)
+    return [? result]
+  } else {}
+  assert (|| (|| (= module.Status ~linked~) (= module.Status ~evaluating-async~)) (= module.Status ~evaluated~))
+  assert (= stack.length 0)
+  return ~unused~
+}

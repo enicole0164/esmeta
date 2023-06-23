@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1396 {
+    label = "def <SYNTAX>:BindingPropertyList[1,0].PropertyBindingInitialization(this: Ast:BindingPropertyList[1,0], value: Unknown, environment: Unknown): Normal[List[Symbol | String]] | Abrupt"
+    style = rounded
+    cluster1396_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1396_entry_name -> cluster1396_entry [arrowhead=none, color="black", style=dashed]
+    cluster1396_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1396_entry -> node7239 [color="black"]
+    cluster1396_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1396_exit_name -> cluster1396_exit [arrowhead=none, color="black", style=dashed]
+    cluster1396_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7239_name [shape=none, label=<<font color="black">Call[7239]</font>>]
+    node7239_name -> node7239 [arrowhead=none, color="black", style=dashed]
+    node7239 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;PropertyBindingInitialization(value, environment)</font>> color="black" fillcolor="white", style=filled]
+    node7239 -> node7240 [color="black"]
+    node7240_name [shape=none, label=<<font color="black">Block[7240]</font>>]
+    node7240_name -> node7240 [arrowhead=none, color="black", style=dashed]
+    node7240 [shape=box, label=<<font color="black">[0] let boundNames = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7240 -> node7241 [color="black"]
+    node7241_name [shape=none, label=<<font color="black">Call[7241]</font>>]
+    node7241_name -> node7241 [arrowhead=none, color="black", style=dashed]
+    node7241 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;PropertyBindingInitialization(value, environment)</font>> color="black" fillcolor="white", style=filled]
+    node7241 -> node7242 [color="black"]
+    node7242_name [shape=none, label=<<font color="black">Block[7242]</font>>]
+    node7242_name -> node7242 [arrowhead=none, color="black", style=dashed]
+    node7242 [shape=box, label=<<font color="black">[0] let nextNames = [? %1]<BR ALIGN="LEFT"/>[1] return (list-concat boundNames nextNames)[#601]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7242 -> cluster1396_exit [color="black"]
+  }
+}

@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2282 {
+    label = "def <SYNTAX>:NonemptyClassRanges[1,0].CompileToCharSet(this: Ast:NonemptyClassRanges[1,0]): Unknown["CharSet"]"
+    style = rounded
+    cluster2282_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2282_entry_name -> cluster2282_entry [arrowhead=none, color="black", style=dashed]
+    cluster2282_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2282_entry -> node14030 [color="black"]
+    cluster2282_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2282_exit_name -> cluster2282_exit [arrowhead=none, color="black", style=dashed]
+    cluster2282_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14030_name [shape=none, label=<<font color="black">Call[14030]</font>>]
+    node14030_name -> node14030 [arrowhead=none, color="black", style=dashed]
+    node14030 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileToCharSet()</font>> color="black" fillcolor="white", style=filled]
+    node14030 -> node14031 [color="black"]
+    node14031_name [shape=none, label=<<font color="black">Block[14031]</font>>]
+    node14031_name -> node14031 [arrowhead=none, color="black", style=dashed]
+    node14031 [shape=box, label=<<font color="black">[0] let A = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14031 -> node14032 [color="black"]
+    node14032_name [shape=none, label=<<font color="black">Call[14032]</font>>]
+    node14032_name -> node14032 [arrowhead=none, color="black", style=dashed]
+    node14032 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;CompileToCharSet()</font>> color="black" fillcolor="white", style=filled]
+    node14032 -> node14033 [color="black"]
+    node14033_name [shape=none, label=<<font color="black">Block[14033]</font>>]
+    node14033_name -> node14033 [arrowhead=none, color="black", style=dashed]
+    node14033 [shape=box, label=<<font color="black">[0] let B = %1<BR ALIGN="LEFT"/>[1] (yet &quot;Return the union of CharSets _A_ and _B_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14033 -> cluster2282_exit [color="black"]
+  }
+}

@@ -1,0 +1,16 @@
+def IntegerIndexedObjectCreate(
+  prototype: Unknown,
+): IntegerIndexedExoticObject {
+  let internalSlotsList = (new ["Prototype", "Extensible", "ViewedArrayBuffer", "TypedArrayName", "ContentType", "ByteLength", "ByteOffset", "ArrayLength"])[#475]
+  call %0 = clo<MakeBasicObject>(internalSlotsList)
+  let A = %0
+  A.GetOwnProperty = clo<IntegerIndexedExoticObject.GetOwnProperty>
+  A.HasProperty = clo<IntegerIndexedExoticObject.HasProperty>
+  A.DefineOwnProperty = clo<IntegerIndexedExoticObject.DefineOwnProperty>
+  A.Get = clo<IntegerIndexedExoticObject.Get>
+  A.Set = clo<IntegerIndexedExoticObject.Set>
+  A.Delete = clo<IntegerIndexedExoticObject.Delete>
+  A.OwnPropertyKeys = clo<IntegerIndexedExoticObject.OwnPropertyKeys>
+  A.Prototype = prototype
+  return A
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:AsyncMethod[0,0].ComputedPropertyContains(
+  this: Ast:AsyncMethod[0,0],
+  symbol: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ComputedPropertyContains(symbol)
+  return %0
+}

@@ -1,0 +1,27 @@
+def CreateListFromArrayLike(
+  obj: Unknown,
+  elementTypes?: Unknown["ListOfNamesOfECMAScriptLanguageTypes"],
+): Unknown["EitherANormalCompletionContainingAListOrAnAbruptCompletion"] {
+  if (= elementTypes absent) {
+    elementTypes = (new [@Undefined, @Null, @Boolean, @String, @Symbol, @Number, @BigInt, @Object])[#54]
+  } else {}
+  if (! (= (typeof obj) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#55])
+  } else {}
+  call %0 = clo<LengthOfArrayLike>(obj)
+  let len = [? %0]
+  let list = (new [])[#56]
+  let index = 0
+  loop[repeat] (< index len) {
+    call %1 = clo<ToString>(([number] index))
+    let indexName = [! %1]
+    call %2 = clo<Get>(obj, indexName)
+    let next = [? %2]
+    if (! (contains elementTypes (typeof next))) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#57])
+    } else {}
+    push list < next
+    index = (+ index 1)
+  }
+  return list
+}

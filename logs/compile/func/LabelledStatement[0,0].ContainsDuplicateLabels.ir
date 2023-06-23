@@ -1,0 +1,13 @@
+def <SYNTAX>:LabelledStatement[0,0].ContainsDuplicateLabels(
+  this: Ast:LabelledStatement[0,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->StringValue()
+  let label = %0
+  if (contains labelSet label) {
+    return true
+  } else {}
+  let newLabelSet = (list-concat labelSet (new [label])[#294])[#293]
+  sdo-call %1 = this[1]->ContainsDuplicateLabels(newLabelSet)
+  return %1
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassEscape[1,0].CharacterValue(
+  this: Ast:ClassEscape[1,0],
+): Unknown["NonnegativeInteger"] {
+  (yet "Return the numeric value of U+002D (HYPHEN-MINUS).")
+}

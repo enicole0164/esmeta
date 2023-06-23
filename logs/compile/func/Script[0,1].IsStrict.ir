@@ -1,0 +1,9 @@
+def <SYNTAX>:Script[0,1].IsStrict(
+  this: Ast:Script[0,1],
+): Boolean {
+  if (&& (! (= this[0] absent)) true) {
+    return true
+  } else {
+    return false
+  }
+}

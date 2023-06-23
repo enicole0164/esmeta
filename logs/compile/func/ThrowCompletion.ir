@@ -1,0 +1,5 @@
+def ThrowCompletion(
+  value: ESValue,
+): Abrupt[throw] {
+  return comp[~throw~/~empty~](value)
+}

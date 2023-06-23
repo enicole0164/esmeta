@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1082 {
+    label = "def <SYNTAX>:AsyncGeneratorBody[0,0].EvaluateBody(this: Ast:AsyncGeneratorBody[0,0], functionObject: Unknown, argumentsList: Unknown["List"]): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1082_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1082_entry_name -> cluster1082_entry [arrowhead=none, color="black", style=dashed]
+    cluster1082_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1082_entry -> node4263 [color="black"]
+    cluster1082_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1082_exit_name -> cluster1082_exit [arrowhead=none, color="black", style=dashed]
+    cluster1082_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4263_name [shape=none, label=<<font color="black">Call[4263]</font>>]
+    node4263_name -> node4263 [arrowhead=none, color="black", style=dashed]
+    node4263 [shape=cds, label=<<font color="black">%0 = this-&gt;EvaluateAsyncGeneratorBody(functionObject, argumentsList)</font>> color="black" fillcolor="white", style=filled]
+    node4263 -> node4264 [color="black"]
+    node4264_name [shape=none, label=<<font color="black">Block[4264]</font>>]
+    node4264_name -> node4264 [arrowhead=none, color="black", style=dashed]
+    node4264 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4264 -> cluster1082_exit [color="black"]
+  }
+}

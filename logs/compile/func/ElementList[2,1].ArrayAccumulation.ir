@@ -1,0 +1,20 @@
+def <SYNTAX>:ElementList[2,1].ArrayAccumulation(
+  this: Ast:ElementList[2,1],
+  array: Unknown["Array"],
+  nextIndex: Unknown["Integer"],
+): Unknown["EitherANormalCompletionContainingAnIntegerOrAnAbruptCompletion"] {
+  sdo-call %0 = this[0]->ArrayAccumulation(array, nextIndex)
+  nextIndex = [? %0]
+  if (! (= this[1] absent)) {
+    sdo-call %1 = this[1]->ArrayAccumulation(array, nextIndex)
+    nextIndex = [? %1]
+  } else {}
+  sdo-call %2 = this[2]->Evaluation()
+  let initResult = %2
+  call %3 = clo<GetValue>(initResult)
+  let initValue = [? %3]
+  call %4 = clo<ToString>(([number] nextIndex))
+  call %5 = clo<CreateDataPropertyOrThrow>(array, [! %4], initValue)
+  let created = [! %5]
+  return (+ nextIndex 1)
+}

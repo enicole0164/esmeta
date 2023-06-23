@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1025 {
+    label = "def NewModuleEnvironment(E: EnvironmentRecord): ModuleEnvironmentRecord"
+    style = rounded
+    cluster1025_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1025_entry_name -> cluster1025_entry [arrowhead=none, color="black", style=dashed]
+    cluster1025_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1025_entry -> node3840 [color="black"]
+    cluster1025_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1025_exit_name -> cluster1025_exit [arrowhead=none, color="black", style=dashed]
+    cluster1025_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3840_name [shape=none, label=<<font color="black">Block[3840]</font>>]
+    node3840_name -> node3840 [arrowhead=none, color="black", style=dashed]
+    node3840 [shape=box, label=<<font color="black">[0] let env = (new ModuleEnvironmentRecord())[#390]<BR ALIGN="LEFT"/>[1] env.OuterEnv = E<BR ALIGN="LEFT"/>[2] return env<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3840 -> cluster1025_exit [color="black"]
+  }
+}

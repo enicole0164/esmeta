@@ -1,0 +1,6 @@
+def <SYNTAX>:FunctionExpression[0,1].Evaluation(
+  this: Ast:FunctionExpression[0,1],
+): Unknown {
+  sdo-call %0 = this->InstantiateOrdinaryFunctionExpression()
+  return %0
+}

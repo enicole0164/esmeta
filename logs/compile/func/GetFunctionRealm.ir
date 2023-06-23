@@ -1,0 +1,21 @@
+def GetFunctionRealm(
+  obj: FunctionObject,
+): Normal[RealmRecord] | Abrupt {
+  if (! (= obj.Realm absent)) {
+    return obj.Realm
+  } else {}
+  if (? obj: "BoundFunctionExoticObject") {
+    let target = obj.BoundTargetFunction
+    call %0 = clo<GetFunctionRealm>(target)
+    return [? %0]
+  } else {}
+  if (? obj: "ProxyExoticObject") {
+    if (= obj.ProxyHandler null) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#64])
+    } else {}
+    let proxyTarget = obj.ProxyTarget
+    call %1 = clo<GetFunctionRealm>(proxyTarget)
+    return [? %1]
+  } else {}
+  return @EXECUTION_STACK[0].Realm
+}

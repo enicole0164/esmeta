@@ -1,0 +1,5 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.IsExtensible(
+  this: ModuleNamespaceExoticObject,
+): Normal[False] {
+  return false
+}

@@ -1,0 +1,9 @@
+def <SYNTAX>:ClassBody[0,0].AllPrivateIdentifiersValid(
+  this: Ast:ClassBody[0,0],
+  names: Unknown,
+): Boolean {
+  sdo-call %0 = this->PrivateBoundIdentifiers()
+  let newNames = (list-concat names %0)[#683]
+  sdo-call %1 = this[0]->AllPrivateIdentifiersValid(newNames)
+  return %1
+}

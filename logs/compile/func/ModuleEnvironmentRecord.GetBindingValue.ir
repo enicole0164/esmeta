@@ -1,0 +1,11 @@
+def <CONC>:ModuleEnvironmentRecord.GetBindingValue(
+  envRec: ModuleEnvironmentRecord,
+  N: String,
+  S: Boolean,
+): Normal[ESValue] | Abrupt {
+  assert (= S true)
+  assert (! (= envRec.SubMap[N] absent))
+  (yet "If the binding for _N_ is an indirect binding, then\n  1. Let _M_ and _N2_ be the indirection values provided when this binding for _N_ was created.\n  1. Let _targetEnv_ be _M_.[[Environment]].\n  1. If _targetEnv_ is ~empty~, throw a newly created *ReferenceError* object.\n  1. Return ? _targetEnv_.GetBindingValue(_N2_, *true*).")
+  if (! envRec.SubMap[N].initialized) return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#381]) else {}
+  return envRec.SubMap[N].BoundValue
+}

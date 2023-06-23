@@ -1,0 +1,15 @@
+def IsStringWellFormedUnicode(
+  string: String,
+): Boolean {
+  let strLen = string.length
+  let k = 0
+  loop[repeat] (! (== k strLen)) {
+    call %0 = clo<CodePointAt>(string, k)
+    let cp = %0
+    if (= cp.IsUnpairedSurrogate true) {
+      return false
+    } else {}
+    k = (+ k cp.CodeUnitCount)
+  }
+  return true
+}

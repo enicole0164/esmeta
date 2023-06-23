@@ -1,0 +1,7 @@
+def <SYNTAX>:VariableDeclarationList[1,0].VarScopedDeclarations(
+  this: Ast:VariableDeclarationList[1,0],
+): List[Ast] {
+  sdo-call %0 = this[0]->VarScopedDeclarations()
+  let declarations1 = %0
+  return (list-concat declarations1 (new [this[1]])[#237])[#236]
+}

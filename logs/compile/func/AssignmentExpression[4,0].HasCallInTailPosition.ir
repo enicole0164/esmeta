@@ -1,0 +1,6 @@
+def <SYNTAX>:AssignmentExpression[4,0].HasCallInTailPosition(
+  this: Ast:AssignmentExpression[4,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

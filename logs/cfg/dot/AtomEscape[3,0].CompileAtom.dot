@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2275 {
+    label = "def <SYNTAX>:AtomEscape[3,0].CompileAtom(this: Ast:AtomEscape[3,0], direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2275_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2275_entry_name -> cluster2275_entry [arrowhead=none, color="black", style=dashed]
+    cluster2275_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2275_entry -> node14010 [color="black"]
+    cluster2275_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2275_exit_name -> cluster2275_exit [arrowhead=none, color="black", style=dashed]
+    cluster2275_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14010_name [shape=none, label=<<font color="black">Block[14010]</font>>]
+    node14010_name -> node14010 [arrowhead=none, color="black", style=dashed]
+    node14010 [shape=box, label=<<font color="black">[0] (yet &quot;Search the enclosing |Pattern| for an instance of a |GroupSpecifier| containing a |RegExpIdentifierName| which has a CapturingGroupName equal to the CapturingGroupName of the |RegExpIdentifierName| contained in |GroupName|.&quot;)<BR ALIGN="LEFT"/>[1] assert (yet &quot;A unique such |GroupSpecifier| is found.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Let _parenIndex_ be the number of left-capturing parentheses in the entire regular expression that occur to the left of the located |GroupSpecifier|. This is the total number of &lt;emu-grammar&gt;Atom :: `(` GroupSpecifier Disjunction `)`&lt;/emu-grammar&gt; Parse Nodes prior to or enclosing the located |GroupSpecifier|, including its immediately enclosing |Atom|.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14010 -> node14011 [color="black"]
+    node14011_name [shape=none, label=<<font color="black">Call[14011]</font>>]
+    node14011_name -> node14011 [arrowhead=none, color="black", style=dashed]
+    node14011 [shape=cds, label=<<font color="black">%0 = clo&lt;BackreferenceMatcher&gt;(parenIndex, direction)</font>> color="black" fillcolor="white", style=filled]
+    node14011 -> node14012 [color="black"]
+    node14012_name [shape=none, label=<<font color="black">Block[14012]</font>>]
+    node14012_name -> node14012 [arrowhead=none, color="black", style=dashed]
+    node14012 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14012 -> cluster2275_exit [color="black"]
+  }
+}

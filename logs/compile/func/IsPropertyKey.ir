@@ -1,0 +1,11 @@
+def IsPropertyKey(
+  argument: ESValue,
+): Boolean {
+  if (= (typeof argument) @String) {
+    return true
+  } else {}
+  if (= (typeof argument) @Symbol) {
+    return true
+  } else {}
+  return false
+}

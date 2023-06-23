@@ -1,0 +1,12 @@
+def GetThisValue(
+  V: Unknown,
+): ESValue {
+  call %0 = clo<IsPropertyReference>(V)
+  assert (= %0 true)
+  call %1 = clo<IsSuperReference>(V)
+  if (= %1 true) {
+    return V.ThisValue
+  } else {
+    return V.Base
+  }
+}

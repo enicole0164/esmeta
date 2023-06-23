@@ -1,0 +1,35 @@
+def <INTERNAL>:ProxyExoticObject.SetPrototypeOf(
+  O: ProxyExoticObject,
+  V: Object | Null,
+): Normal[Boolean] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#484])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<GetMethod>(handler, "setPrototypeOf")
+  let trap = [? %0]
+  if (= trap undefined) {
+    method-call %1 = target->SetPrototypeOf(V)
+    return [? %1]
+  } else {}
+  call %2 = clo<Call>(trap, handler, (new [target, V])[#485])
+  call %3 = clo<ToBoolean>([? %2])
+  let booleanTrapResult = %3
+  if (= booleanTrapResult false) {
+    return false
+  } else {}
+  call %4 = clo<IsExtensible>(target)
+  let extensibleTarget = [? %4]
+  if (= extensibleTarget true) {
+    return true
+  } else {}
+  method-call %5 = target->GetPrototypeOf()
+  let targetProto = [? %5]
+  call %6 = clo<SameValue>(V, targetProto)
+  if (= %6 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#486])
+  } else {}
+  return true
+}

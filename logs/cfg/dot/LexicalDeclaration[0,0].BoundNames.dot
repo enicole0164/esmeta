@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster176 {
+    label = "def <SYNTAX>:LexicalDeclaration[0,0].BoundNames(this: Ast:LexicalDeclaration[0,0]): List[String]"
+    style = rounded
+    cluster176_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster176_entry_name -> cluster176_entry [arrowhead=none, color="black", style=dashed]
+    cluster176_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster176_entry -> node1515 [color="black"]
+    cluster176_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster176_exit_name -> cluster176_exit [arrowhead=none, color="black", style=dashed]
+    cluster176_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1515_name [shape=none, label=<<font color="black">Call[1515]</font>>]
+    node1515_name -> node1515 [arrowhead=none, color="black", style=dashed]
+    node1515 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;BoundNames()</font>> color="black" fillcolor="white", style=filled]
+    node1515 -> node1516 [color="black"]
+    node1516_name [shape=none, label=<<font color="black">Block[1516]</font>>]
+    node1516_name -> node1516 [arrowhead=none, color="black", style=dashed]
+    node1516 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1516 -> cluster176_exit [color="black"]
+  }
+}

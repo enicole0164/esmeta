@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( 0 , 0 ) ; else ; throw new Test262Error ( message ) ; } do ; while ( 0 ) ; assert . sameValue = class { } ; if ( 0 ) ; else ; ; x : ; function Test262Error ( message ) { this . message = message || "" ; } 0 ? 0 : 0 ; var x ; function $DONOTEVALUATE ( ) { throw "Test262: This statement should not be evaluated." ; } var foo = class { } ?? 0 ; var s = new WeakSet ( [ foo ] ) ; x => 0 ; 

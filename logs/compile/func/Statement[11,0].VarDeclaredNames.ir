@@ -1,0 +1,5 @@
+def <SYNTAX>:Statement[11,0].VarDeclaredNames(
+  this: Ast:Statement[11,0],
+): List[String] {
+  return (new [])[#182]
+}

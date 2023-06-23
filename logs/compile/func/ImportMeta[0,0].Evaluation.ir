@@ -1,0 +1,28 @@
+def <SYNTAX>:ImportMeta[0,0].Evaluation(
+  this: Ast:ImportMeta[0,0],
+): Unknown {
+  call %0 = clo<GetActiveScriptOrModule>()
+  let module = %0
+  assert (? module: "SourceTextModuleRecord")
+  let importMeta = module.ImportMeta
+  if (= importMeta ~empty~) {
+    call %1 = clo<OrdinaryObjectCreate>(null)
+    importMeta = %1
+    call %2 = clo<HostGetImportMetaProperties>(module)
+    let importMetaValues = %2
+    %4 = importMetaValues
+    %3 = 0
+    loop[foreach] (< %3 %4.length) {
+      let p = %4[%3]
+      call %5 = clo<CreateDataPropertyOrThrow>(importMeta, p.Key, p.Value)
+      [! %5]
+      %3 = (+ %3 1)
+    }
+    call %6 = clo<HostFinalizeImportMeta>(importMeta, module)
+    module.ImportMeta = importMeta
+    return importMeta
+  } else {
+    assert (= (typeof importMeta) @Object)
+    return importMeta
+  }
+}

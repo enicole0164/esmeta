@@ -1,0 +1,13 @@
+def <SYNTAX>:Block[0,1].Evaluation(
+  this: Ast:Block[0,1],
+): Unknown {
+  let oldEnv = @EXECUTION_STACK[0].LexicalEnvironment
+  call %0 = clo<NewDeclarativeEnvironment>(oldEnv)
+  let blockEnv = %0
+  call %1 = clo<BlockDeclarationInstantiation>(this[0], blockEnv)
+  @EXECUTION_STACK[0].LexicalEnvironment = blockEnv
+  sdo-call %2 = this[0]->Evaluation()
+  let blockValue = %2
+  @EXECUTION_STACK[0].LexicalEnvironment = oldEnv
+  return blockValue
+}

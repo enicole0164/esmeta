@@ -1,0 +1,11 @@
+def IsCallable(
+  argument: ESValue,
+): Boolean {
+  if (! (= (typeof argument) @Object)) {
+    return false
+  } else {}
+  if (! (= argument.Call absent)) {
+    return true
+  } else {}
+  return false
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:TemplateLiteral[0,0].Evaluation(
+  this: Ast:TemplateLiteral[0,0],
+): Unknown {
+  sdo-call %0 = this[0]->TV()
+  return %0
+}

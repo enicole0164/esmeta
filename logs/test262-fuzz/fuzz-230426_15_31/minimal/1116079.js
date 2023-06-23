@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message === undefined ) { message = 'Expected true but got ' ; } throw Test262Error ; } assert . _isSameValue = this ; assert . sameValue = class { } ; { } assert . throws = 0 ?? 0 ?? 0 ; assert . _toString = function ( value ) { ; } ; function Test262Error ( message ) { this . message = message || "" ; } ; 0 ; class x { } var s = new WeakSet ( ) ; while ( 0 ) ; 0 || 0 ; assert ( s . has ( null ) , false ) ; x => 0 ; assert . sameValue ( s . has ( true ) , false ) ; { } 

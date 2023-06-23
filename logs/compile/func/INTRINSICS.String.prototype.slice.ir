@@ -1,0 +1,43 @@
+def <BUILTIN>:INTRINSICS.String.prototype.slice(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let start = (pop < argumentsList) else let start = absent
+  if (< 0 argumentsList.length) let end = (pop < argumentsList) else let end = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  let len = S.length
+  call %2 = clo<ToIntegerOrInfinity>(start)
+  let intStart = [? %2]
+  if (= intStart -INF) {
+    let from = 0
+  } else {
+    if (< intStart 0) {
+      let from = (max (+ len intStart) 0)
+    } else {
+      let from = (min intStart len)
+    }
+  }
+  if (= end undefined) {
+    let intEnd = len
+  } else {
+    call %3 = clo<ToIntegerOrInfinity>(end)
+    let intEnd = [? %3]
+  }
+  if (= intEnd -INF) {
+    let to = 0
+  } else {
+    if (< intEnd 0) {
+      let to = (max (+ len intEnd) 0)
+    } else {
+      let to = (min intEnd len)
+    }
+  }
+  if (! (< from to)) {
+    return ""
+  } else {}
+  return (substring S from to)
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } var x ; throw new Test262Error ( message ) ; } x => 0 ; try { } catch ( x ) { } finally { } 0 ; assert . throws = { } ; try { } catch { } function Test262Error ( message ) { this . message = message || "" ; } x => { } ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; class x { } assert ( ! Object . isSealed ( `${ 0 }` ) ) ; 

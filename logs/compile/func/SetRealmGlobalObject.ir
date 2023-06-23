@@ -1,0 +1,20 @@
+def SetRealmGlobalObject(
+  realmRec: Unknown,
+  globalObj: Object | Undefined,
+  thisValue: Unknown,
+): Const[~unused~] {
+  if (= globalObj undefined) {
+    let intrinsics = realmRec.Intrinsics
+    call %0 = clo<OrdinaryObjectCreate>(intrinsics["%Object.prototype%"])
+    globalObj = %0
+  } else {}
+  assert (= (typeof globalObj) @Object)
+  if (= thisValue undefined) {
+    thisValue = globalObj
+  } else {}
+  realmRec.GlobalObject = globalObj
+  call %1 = clo<NewGlobalEnvironment>(globalObj, thisValue)
+  let newGlobalEnv = %1
+  realmRec.GlobalEnv = newGlobalEnv
+  return ~unused~
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1482 {
+    label = "def <SYNTAX>:CaseClause[0,1].Evaluation(this: Ast:CaseClause[0,1]): Unknown"
+    style = rounded
+    cluster1482_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1482_entry_name -> cluster1482_entry [arrowhead=none, color="black", style=dashed]
+    cluster1482_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1482_entry -> node8149 [color="black"]
+    cluster1482_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1482_exit_name -> cluster1482_exit [arrowhead=none, color="black", style=dashed]
+    cluster1482_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8149_name [shape=none, label=<<font color="black">Call[8149]</font>>]
+    node8149_name -> node8149 [arrowhead=none, color="black", style=dashed]
+    node8149 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node8149 -> node8150 [color="black"]
+    node8150_name [shape=none, label=<<font color="black">Block[8150]</font>>]
+    node8150_name -> node8150 [arrowhead=none, color="black", style=dashed]
+    node8150 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8150 -> cluster1482_exit [color="black"]
+  }
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassAtom[0,0].IsCharacterClass(
+  this: Ast:ClassAtom[0,0],
+): Boolean {
+  return false
+}

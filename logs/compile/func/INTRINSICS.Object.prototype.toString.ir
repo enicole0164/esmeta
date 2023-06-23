@@ -1,0 +1,59 @@
+def <BUILTIN>:INTRINSICS.Object.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (= this undefined) {
+    return "[object Undefined]"
+  } else {}
+  if (= this null) {
+    return "[object Null]"
+  } else {}
+  call %0 = clo<ToObject>(this)
+  let O = [! %0]
+  call %1 = clo<IsArray>(O)
+  let isArray = [? %1]
+  if (= isArray true) {
+    let builtinTag = "Array"
+  } else {
+    if (! (= O.ParameterMap absent)) {
+      let builtinTag = "Arguments"
+    } else {
+      if (! (= O.Call absent)) {
+        let builtinTag = "Function"
+      } else {
+        if (! (= O.ErrorData absent)) {
+          let builtinTag = "Error"
+        } else {
+          if (! (= O.BooleanData absent)) {
+            let builtinTag = "Boolean"
+          } else {
+            if (! (= O.NumberData absent)) {
+              let builtinTag = "Number"
+            } else {
+              if (! (= O.StringData absent)) {
+                let builtinTag = "String"
+              } else {
+                if (! (= O.DateValue absent)) {
+                  let builtinTag = "Date"
+                } else {
+                  if (! (= O.RegExpMatcher absent)) {
+                    let builtinTag = "RegExp"
+                  } else {
+                    let builtinTag = "Object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  call %2 = clo<Get>(O, @SYMBOL.toStringTag)
+  let tag = [? %2]
+  if (! (= (typeof tag) @String)) {
+    tag = builtinTag
+  } else {}
+  return (concat "[object " tag "]")
+}

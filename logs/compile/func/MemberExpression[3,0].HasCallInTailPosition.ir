@@ -1,0 +1,9 @@
+def <SYNTAX>:MemberExpression[3,0].HasCallInTailPosition(
+  this: Ast:MemberExpression[3,0],
+  call: Unknown,
+): Boolean {
+  if (= this[0] call) {
+    return true
+  } else {}
+  return false
+}

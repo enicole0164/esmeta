@@ -1,0 +1,43 @@
+def <BUILTIN>:INTRINSICS.DataView(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let buffer = (pop < argumentsList) else let buffer = absent
+  if (< 0 argumentsList.length) let byteOffset = (pop < argumentsList) else let byteOffset = absent
+  if (< 0 argumentsList.length) let byteLength = (pop < argumentsList) else let byteLength = absent
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1171])
+  } else {}
+  call %0 = clo<RequireInternalSlot>(buffer, "ArrayBufferData")
+  [? %0]
+  call %1 = clo<ToIndex>(byteOffset)
+  let offset = [? %1]
+  call %2 = clo<IsDetachedBuffer>(buffer)
+  if (= %2 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1172])
+  } else {}
+  let bufferByteLength = buffer.ArrayBufferByteLength
+  if (< bufferByteLength offset) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1173])
+  } else {}
+  if (= byteLength undefined) {
+    let viewByteLength = (- bufferByteLength offset)
+  } else {
+    call %3 = clo<ToIndex>(byteLength)
+    let viewByteLength = [? %3]
+    if (< bufferByteLength (+ offset viewByteLength)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1174])
+    } else {}
+  }
+  call %4 = clo<OrdinaryCreateFromConstructor>(NewTarget, "%DataView.prototype%", (new ["DataView", "ViewedArrayBuffer", "ByteLength", "ByteOffset"])[#1175])
+  let O = [? %4]
+  call %5 = clo<IsDetachedBuffer>(buffer)
+  if (= %5 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1176])
+  } else {}
+  O.ViewedArrayBuffer = buffer
+  O.ByteLength = viewByteLength
+  O.ByteOffset = offset
+  return O
+}

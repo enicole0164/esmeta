@@ -1,0 +1,7 @@
+def <SYNTAX>:RegExpIdentifierName[0,0].RegExpIdentifierCodePoints(
+  this: Ast:RegExpIdentifierName[0,0],
+): Unknown["ListOfCodePoints"] {
+  sdo-call %0 = this[0]->RegExpIdentifierCodePoint()
+  let cp = %0
+  return (new [cp])[#972]
+}

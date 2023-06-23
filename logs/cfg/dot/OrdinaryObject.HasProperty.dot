@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1061 {
+    label = "def <INTERNAL>:OrdinaryObject.HasProperty(O: OrdinaryObject, P: Symbol | String): Normal[Boolean] | Abrupt"
+    style = rounded
+    cluster1061_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1061_entry_name -> cluster1061_entry [arrowhead=none, color="black", style=dashed]
+    cluster1061_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1061_entry -> node4104 [color="black"]
+    cluster1061_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1061_exit_name -> cluster1061_exit [arrowhead=none, color="black", style=dashed]
+    cluster1061_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4104_name [shape=none, label=<<font color="black">Call[4104]</font>>]
+    node4104_name -> node4104 [arrowhead=none, color="black", style=dashed]
+    node4104 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryHasProperty&gt;(O, P)</font>> color="black" fillcolor="white", style=filled]
+    node4104 -> node4105 [color="black"]
+    node4105_name [shape=none, label=<<font color="black">Block[4105]</font>>]
+    node4105_name -> node4105 [arrowhead=none, color="black", style=dashed]
+    node4105 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4105 -> cluster1061_exit [color="black"]
+  }
+}

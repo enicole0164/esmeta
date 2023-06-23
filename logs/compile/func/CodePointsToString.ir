@@ -1,0 +1,7 @@
+def CodePointsToString(
+  text: Unknown["SequenceOfUnicodeCodePoints"],
+): String {
+  let result = ""
+  (yet "For each code point _cp_ of _text_, do\n  1. Set _result_ to the string-concatenation of _result_ and UTF16EncodeCodePoint(_cp_).")
+  return result
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:Literal[1,0].Evaluation(
+  this: Ast:Literal[1,0],
+): Unknown {
+  if (= (source-text this[0]) "false") {
+    return false
+  } else {}
+  if (= (source-text this[0]) "true") {
+    return true
+  } else {}
+}

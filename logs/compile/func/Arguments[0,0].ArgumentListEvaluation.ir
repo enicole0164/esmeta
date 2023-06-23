@@ -1,0 +1,5 @@
+def <SYNTAX>:Arguments[0,0].ArgumentListEvaluation(
+  this: Ast:Arguments[0,0],
+): Normal[List[ESValue]] | Abrupt {
+  return (new [])[#575]
+}

@@ -1,0 +1,15 @@
+def <INTERNAL>:StringExoticObject.DefineOwnProperty(
+  S: StringExoticObject,
+  P: Symbol | String,
+  Desc: PropertyDescriptor,
+): Normal[Boolean] {
+  call %0 = clo<StringGetOwnProperty>(S, P)
+  let stringDesc = %0
+  if (! (= stringDesc undefined)) {
+    let extensible = S.Extensible
+    call %1 = clo<IsCompatiblePropertyDescriptor>(extensible, Desc, stringDesc)
+    return %1
+  } else {}
+  call %2 = clo<OrdinaryDefineOwnProperty>(S, P, Desc)
+  return [! %2]
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:IdentifierReference[2,0].Evaluation(
+  this: Ast:IdentifierReference[2,0],
+): Unknown {
+  call %0 = clo<ResolveBinding>("await")
+  return [? %0]
+}

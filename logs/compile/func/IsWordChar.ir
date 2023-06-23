@@ -1,0 +1,10 @@
+def IsWordChar(
+  e: Unknown["Integer"],
+): Boolean {
+  if (|| (== e (- 1)) (= e InputLength)) {
+    return false
+  } else {}
+  (yet "Let _c_ be the character _Input_[_e_].")
+  (yet "If _c_ is in _WordCharacters_, return *true*.")
+  return false
+}

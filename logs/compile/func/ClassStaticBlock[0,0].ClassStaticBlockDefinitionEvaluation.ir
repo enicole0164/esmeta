@@ -1,0 +1,13 @@
+def <SYNTAX>:ClassStaticBlock[0,0].ClassStaticBlockDefinitionEvaluation(
+  this: Ast:ClassStaticBlock[0,0],
+  homeObject: Unknown,
+): ClassStaticBlockDefinitionRecord {
+  let lex = @EXECUTION_STACK[0].LexicalEnvironment
+  let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  let sourceText = ""
+  let formalParameters = |FormalParameters|[TT]<0>
+  call %0 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Function.prototype%"], sourceText, formalParameters, this[0], ~non-lexical-this~, lex, privateEnv)
+  let bodyFunction = %0
+  call %1 = clo<MakeMethod>(bodyFunction, homeObject)
+  return (new ClassStaticBlockDefinitionRecord("BodyFunction" -> bodyFunction))[#692]
+}

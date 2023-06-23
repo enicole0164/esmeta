@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.AsyncGeneratorFunction(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let C = @EXECUTION_STACK[0].Function
+  let args = argumentsList
+  call %0 = clo<CreateDynamicFunction>(C, NewTarget, ~asyncGenerator~, args)
+  return [? %0]
+}

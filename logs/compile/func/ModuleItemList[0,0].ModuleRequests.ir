@@ -1,0 +1,6 @@
+def <SYNTAX>:ModuleItemList[0,0].ModuleRequests(
+  this: Ast:ModuleItemList[0,0],
+): List[String] {
+  sdo-call %0 = this[0]->ModuleRequests()
+  return %0
+}

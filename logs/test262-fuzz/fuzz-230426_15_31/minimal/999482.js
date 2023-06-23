@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue ) { if ( mustBeTrue === true ) { return ; } throw new Test262Error ( message ) ; } ; if ( 0 ) ; assert . throws = function ( ) { } ; function Test262Error ( message ) { this . message = message ; } Test262Error . prototype . toString = function ( ) { return x => { } ; } ; async x => 0 ; let x ; [ undefined , null , 1 , true , 'string' , Symbol ( ) ] . forEach ( ( v ) => { assert . throws ( TypeError , ( ) => { Error . prototype . call ( v ) ; } , `Error.prototype.toString.call(${ String ( v ) })` ) ; } ) ; 

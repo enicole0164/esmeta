@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1312 {
+    label = "def <SYNTAX>:ExponentiationExpression[1,0].Evaluation(this: Ast:ExponentiationExpression[1,0]): Unknown"
+    style = rounded
+    cluster1312_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1312_entry_name -> cluster1312_entry [arrowhead=none, color="black", style=dashed]
+    cluster1312_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1312_entry -> node6292 [color="black"]
+    cluster1312_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1312_exit_name -> cluster1312_exit [arrowhead=none, color="black", style=dashed]
+    cluster1312_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6292_name [shape=none, label=<<font color="black">Call[6292]</font>>]
+    node6292_name -> node6292 [arrowhead=none, color="black", style=dashed]
+    node6292 [shape=cds, label=<<font color="black">%0 = clo&lt;EvaluateStringOrNumericBinaryExpression&gt;(this[0], &quot;**&quot;, this[1])</font>> color="black" fillcolor="white", style=filled]
+    node6292 -> node6293 [color="black"]
+    node6293_name [shape=none, label=<<font color="black">Block[6293]</font>>]
+    node6293_name -> node6293 [arrowhead=none, color="black", style=dashed]
+    node6293 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6293 -> cluster1312_exit [color="black"]
+  }
+}

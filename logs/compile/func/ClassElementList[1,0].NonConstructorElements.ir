@@ -1,0 +1,11 @@
+def <SYNTAX>:ClassElementList[1,0].NonConstructorElements(
+  this: Ast:ClassElementList[1,0],
+): List[Ast[ClassElement]] {
+  sdo-call %0 = this[0]->NonConstructorElements()
+  let list = %0
+  sdo-call %1 = this[1]->ClassElementKind()
+  if (= %1 ~NonConstructorMethod~) {
+    push list < this[1]
+  } else {}
+  return list
+}

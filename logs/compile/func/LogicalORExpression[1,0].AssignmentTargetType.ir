@@ -1,0 +1,5 @@
+def <SYNTAX>:LogicalORExpression[1,0].AssignmentTargetType(
+  this: Ast:LogicalORExpression[1,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

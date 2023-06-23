@@ -1,0 +1,14 @@
+def <CLO>:Pattern[0,0].CompilePattern:clo0(
+  inputChars: Unknown,
+  index: Unknown,
+): Unknown {
+  assert (? inputChars: "ListOfCharacters")
+  assert (yet "_index_ is a non-negative integer which is ≤ the number of characters in _inputChars_.")
+  (yet "Let _Input_ be _inputChars_. This alias will be used throughout the algorithms in <emu-xref href=\"#sec-pattern-semantics\"></emu-xref>.")
+  (yet "Let _InputLength_ be the number of characters contained in _Input_. This alias will be used throughout the algorithms in <emu-xref href=\"#sec-pattern-semantics\"></emu-xref>.")
+  (yet "Let _c_ be a new Continuation with parameters (_y_) that captures nothing and performs the following steps when called:\n  1. Assert: _y_ is a State.\n  1. Return _y_.")
+  (yet "Let _cap_ be a List of _NcapturingParens_ *undefined* values, indexed 1 through _NcapturingParens_.")
+  (yet "Let _x_ be the State (_index_, _cap_).")
+  call %0 = m(x, c)
+  return %0
+}

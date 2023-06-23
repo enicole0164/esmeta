@@ -1,0 +1,13 @@
+def AsyncBlockStart(
+  promiseCapability: PromiseCapabilityRecord,
+  asyncBody: Ast,
+  asyncContext: ExecutionContext,
+): Const[~unused~] {
+  assert (? promiseCapability: "PromiseCapabilityRecord")
+  let runningContext = @EXECUTION_STACK[0]
+  asyncContext.ResumeCont = cont<AsyncBlockStart:cont0>
+  push asyncContext > @EXECUTION_STACK
+  if (= asyncContext.ReturnCont absent) asyncContext.ReturnCont = (new [])[#1342] else {}
+  push cont<AsyncBlockStart:cont1> > asyncContext.ReturnCont
+  call %0 = asyncContext.ResumeCont()
+}

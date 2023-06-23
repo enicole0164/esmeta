@@ -1,0 +1,32 @@
+def AsyncGeneratorCompleteStep(
+  generator: Unknown["AsyncGenerator"],
+  completion: Normal,
+  done: Boolean,
+  realm?: RealmRecord,
+): Const[~unused~] {
+  let queue = generator.AsyncGeneratorQueue
+  assert (! (= queue.length 0))
+  let next = queue[0]
+  (pop < queue)
+  let promiseCapability = next.Capability
+  let value = completion.Value
+  if (= completion.Type ~throw~) {
+    call %0 = clo<Call>(promiseCapability.Reject, undefined, (new [value])[#1331])
+    [! %0]
+  } else {
+    assert (= completion.Type ~normal~)
+    if (! (= realm absent)) {
+      let oldRealm = @EXECUTION_STACK[0].Realm
+      @EXECUTION_STACK[0].Realm = realm
+      call %1 = clo<CreateIterResultObject>(value, done)
+      let iteratorResult = %1
+      @EXECUTION_STACK[0].Realm = oldRealm
+    } else {
+      call %2 = clo<CreateIterResultObject>(value, done)
+      let iteratorResult = %2
+    }
+    call %3 = clo<Call>(promiseCapability.Resolve, undefined, (new [iteratorResult])[#1332])
+    [! %3]
+  }
+  return ~unused~
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:ModuleItem[1,0].VarScopedDeclarations(
+  this: Ast:ModuleItem[1,0],
+): List[Ast] {
+  (yet "If |ExportDeclaration| is `export` |VariableStatement|, return VarScopedDeclarations of |VariableStatement|.")
+  return (new [])[#279]
+}

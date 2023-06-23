@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.Math.fround(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  call %0 = clo<ToNumber>(x)
+  let n = [? %0]
+  if (= n NaN) {
+    return NaN
+  } else {}
+  if (|| (|| (|| (= n 0.0f) (= n -0.0f)) (= n +INF)) (= n -INF)) {
+    return n
+  } else {}
+  (yet "Let _n32_ be the result of converting _n_ to a value in IEEE 754-2019 binary32 format using roundTiesToEven mode.")
+  (yet "Let _n64_ be the result of converting _n32_ to a value in IEEE 754-2019 binary64 format.")
+  (yet "Return the ECMAScript Number value corresponding to _n64_.")
+}

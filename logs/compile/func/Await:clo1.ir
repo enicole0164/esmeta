@@ -1,0 +1,14 @@
+def <BUILTIN-CLO>:Await:clo1(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let reason = (pop < argumentsList) else let reason = absent
+  let prevContext = @EXECUTION_STACK[0]
+  nop
+  push asyncContext > @EXECUTION_STACK
+  call %1 = clo<ThrowCompletion>(reason)
+  if (= asyncContext.ReturnCont absent) asyncContext.ReturnCont = (new [])[#1] else {}
+  push cont<Await:clo1:cont0> > asyncContext.ReturnCont
+  call %0 = asyncContext.ResumeCont(%1)
+}

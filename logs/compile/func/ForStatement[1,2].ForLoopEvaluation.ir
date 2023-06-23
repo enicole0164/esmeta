@@ -1,0 +1,10 @@
+def <SYNTAX>:ForStatement[1,2].ForLoopEvaluation(
+  this: Ast:ForStatement[1,2],
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  let varDcl = %0
+  [? varDcl]
+  call %1 = clo<ForBodyEvaluation>(this[1], this[2], this[3], (new [])[#614], labelSet)
+  return [? %1]
+}

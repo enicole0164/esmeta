@@ -1,0 +1,17 @@
+def <BUILTIN>:INTRINSICS.Object.fromEntries(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let iterable = (pop < argumentsList) else let iterable = absent
+  call %0 = clo<RequireObjectCoercible>(iterable)
+  [? %0]
+  call %1 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let obj = %1
+  assert (yet "_obj_ is an extensible ordinary object with no own properties.")
+  let closure = clo<INTRINSICS.Object.fromEntries:clo0, [obj]>
+  call %2 = clo<CreateBuiltinFunction>(closure, 2, "", (new [])[#894])
+  let adder = %2
+  call %3 = clo<AddEntriesFromIterable>(obj, iterable, adder)
+  return [? %3]
+}

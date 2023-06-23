@@ -1,0 +1,7 @@
+def <BUILTIN>:INTRINSICS.IteratorPrototype[@@iterator](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  return this
+}

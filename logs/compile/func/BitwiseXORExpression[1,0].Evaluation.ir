@@ -1,0 +1,6 @@
+def <SYNTAX>:BitwiseXORExpression[1,0].Evaluation(
+  this: Ast:BitwiseXORExpression[1,0],
+): Unknown {
+  call %0 = clo<EvaluateStringOrNumericBinaryExpression>(this[0], "^", this[1])
+  return [? %0]
+}

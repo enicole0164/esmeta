@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2667 {
+    label = "def HostEnqueuePromiseJob(job: Clo, realm: Unknown): Unknown"
+    style = rounded
+    cluster2667_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2667_entry_name -> cluster2667_entry [arrowhead=none, color="black", style=dashed]
+    cluster2667_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2667_entry -> node19851 [color="black"]
+    cluster2667_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2667_exit_name -> cluster2667_exit [arrowhead=none, color="black", style=dashed]
+    cluster2667_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19851_name [shape=none, label=<<font color="black">Call[19851]</font>>]
+    node19851_name -> node19851 [arrowhead=none, color="black", style=dashed]
+    node19851 [shape=cds, label=<<font color="black">%0 = clo&lt;GetActiveScriptOrModule&gt;()</font>> color="black" fillcolor="white", style=filled]
+    node19851 -> node19852 [color="black"]
+    node19852_name [shape=none, label=<<font color="black">Block[19852]</font>>]
+    node19852_name -> node19852 [arrowhead=none, color="black", style=dashed]
+    node19852 [shape=box, label=<<font color="black">[0] let newJob = (new PendingJob(&quot;Job&quot; -&gt; job, &quot;Realm&quot; -&gt; realm, &quot;ScriptOrModule&quot; -&gt; %0))[#1361]<BR ALIGN="LEFT"/>[1] push @JOB_QUEUE &lt; newJob<BR ALIGN="LEFT"/>[2] return undefined<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19852 -> cluster2667_exit [color="black"]
+  }
+}

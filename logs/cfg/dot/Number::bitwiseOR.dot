@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster30 {
+    label = "def <NUM>:Number::bitwiseOR(x: Number, y: Number): Unknown["IntegralNumber"]"
+    style = rounded
+    cluster30_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster30_entry_name -> cluster30_entry [arrowhead=none, color="black", style=dashed]
+    cluster30_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster30_entry -> node309 [color="black"]
+    cluster30_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster30_exit_name -> cluster30_exit [arrowhead=none, color="black", style=dashed]
+    cluster30_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node309_name [shape=none, label=<<font color="black">Call[309]</font>>]
+    node309_name -> node309 [arrowhead=none, color="black", style=dashed]
+    node309 [shape=cds, label=<<font color="black">%0 = clo&lt;NumberBitwiseOp&gt;(&quot;|&quot;, x, y)</font>> color="black" fillcolor="white", style=filled]
+    node309 -> node310 [color="black"]
+    node310_name [shape=none, label=<<font color="black">Block[310]</font>>]
+    node310_name -> node310 [arrowhead=none, color="black", style=dashed]
+    node310 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node310 -> cluster30_exit [color="black"]
+  }
+}

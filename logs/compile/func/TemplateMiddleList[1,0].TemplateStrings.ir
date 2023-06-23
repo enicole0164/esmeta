@@ -1,0 +1,15 @@
+def <SYNTAX>:TemplateMiddleList[1,0].TemplateStrings(
+  this: Ast:TemplateMiddleList[1,0],
+  raw: Unknown,
+): List[String] {
+  sdo-call %0 = this[0]->TemplateStrings(raw)
+  let front = %0
+  if (= raw false) {
+    sdo-call %1 = this[1]->TV()
+    let last = %1
+  } else {
+    sdo-call %2 = this[1]->TRV()
+    let last = %2
+  }
+  return (list-concat front (new [last])[#558])[#557]
+}

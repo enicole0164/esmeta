@@ -1,0 +1,21 @@
+def TimeZoneString(
+  tv: Unknown["Number,ButNot*NaN*"],
+): String {
+  call %0 = clo<LocalTZA>(tv, true)
+  let offset = %0
+  if (|| (= offset 0.0f) (< 0.0f offset)) {
+    let offsetSign = "+"
+    let absOffset = offset
+  } else {
+    let offsetSign = "-"
+    let absOffset = (- offset)
+  }
+  call %1 = clo<MinFromTime>(absOffset)
+  call %2 = clo<ToZeroPaddedDecimalString>(([math] %1), 2)
+  let offsetMin = %2
+  call %3 = clo<HourFromTime>(absOffset)
+  call %4 = clo<ToZeroPaddedDecimalString>(([math] %3), 2)
+  let offsetHour = %4
+  (yet "Let _tzName_ be an implementation-defined string that is either the empty String or the string-concatenation of the code unit 0x0020 (SPACE), the code unit 0x0028 (LEFT PARENTHESIS), an implementation-defined timezone name, and the code unit 0x0029 (RIGHT PARENTHESIS).")
+  return (concat offsetSign offsetHour offsetMin tzName)
+}

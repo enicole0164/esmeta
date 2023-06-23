@@ -1,0 +1,14 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.HasProperty(
+  O: ModuleNamespaceExoticObject,
+  P: Symbol | String,
+): Normal[Boolean] {
+  if (= (typeof P) @Symbol) {
+    call %0 = clo<OrdinaryHasProperty>(O, P)
+    return [! %0]
+  } else {}
+  let exports = O.Exports
+  if (contains exports P) {
+    return true
+  } else {}
+  return false
+}

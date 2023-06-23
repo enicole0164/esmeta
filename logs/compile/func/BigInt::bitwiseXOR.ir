@@ -1,0 +1,7 @@
+def <NUM>:BigInt::bitwiseXOR(
+  x: BigInt,
+  y: BigInt,
+): BigInt {
+  call %0 = clo<BigIntBitwiseOp>("^", x, y)
+  return %0
+}

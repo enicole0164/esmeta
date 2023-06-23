@@ -1,0 +1,41 @@
+def MakeMatchIndicesIndexPairArray(
+  S: String,
+  indices: Unknown["ListOfEitherMatchRecordsOr*undefined*"],
+  groupNames: List[String | Undefined],
+  hasGroups: Boolean,
+): Unknown["Array"] {
+  let n = indices.length
+  assert (< n (- (** 2 32) 1))
+  assert (yet "_groupNames_ has _n_ - 1 elements.")
+  nop
+  call %0 = clo<ArrayCreate>(n)
+  let A = [! %0]
+  if (= hasGroups true) {
+    call %1 = clo<OrdinaryObjectCreate>(null)
+    let groups = %1
+  } else {
+    let groups = undefined
+  }
+  call %2 = clo<CreateDataPropertyOrThrow>(A, "groups", groups)
+  [! %2]
+  let i = 0
+  loop[foreach-int] (< i n) {
+    let matchIndices = indices[i]
+    if (! (= matchIndices undefined)) {
+      call %3 = clo<GetMatchIndexPair>(S, matchIndices)
+      let matchIndexPair = %3
+    } else {
+      let matchIndexPair = undefined
+    }
+    call %4 = clo<ToString>(([number] i))
+    call %5 = clo<CreateDataPropertyOrThrow>(A, [! %4], matchIndexPair)
+    [! %5]
+    if (&& (< 0 i) (! (= groupNames[(- i 1)] undefined))) {
+      assert (! (= groups undefined))
+      call %6 = clo<CreateDataPropertyOrThrow>(groups, groupNames[(- i 1)], matchIndexPair)
+      [! %6]
+    } else {}
+    i = (+ i 1)
+  }
+  return A
+}

@@ -1,0 +1,8 @@
+def CleanupFinalizationRegistry(
+  finalizationRegistry: Unknown["FinalizationRegistry"],
+): Normal[Const[~unused~]] | Abrupt {
+  assert (yet "_finalizationRegistry_ has [[Cells]] and [[CleanupCallback]] internal slots.")
+  let callback = finalizationRegistry.CleanupCallback
+  (yet "While _finalizationRegistry_.[[Cells]] contains a Record _cell_ such that _cell_.[[WeakRefTarget]] is ~empty~, an implementation may perform the following steps:\n  1. Choose any such _cell_.\n  1. Remove _cell_ from _finalizationRegistry_.[[Cells]].\n  1. Perform ? HostCallJobCallback(_callback_, *undefined*, « _cell_.[[HeldValue]] »).")
+  return ~unused~
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } throw new Test262Error ( message ) ; } var x ; assert . sameValue = x => 0 ; assert . notSameValue = { getPrototypeOf : null } ; 0 ; var x ; function Test262Error ( message ) { this . message = message || "" ; } ; 0 ; async function * x ( ) { } var a = { get length ( ) { return await ; } , splice : Array . prototype . splice } ; try { a . splice ( 0 , 2 , 4 ) ; throw new Test262Error ( "Expected a TypeError" ) ; } catch ( e ) { if ( ! ( e instanceof TypeError ) ) { throw e ; } } 

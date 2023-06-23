@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster714 {
+    label = "def <SYNTAX>:ExponentiationExpression[1,0].IsFunctionDefinition(this: Ast:ExponentiationExpression[1,0]): Boolean"
+    style = rounded
+    cluster714_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster714_entry_name -> cluster714_entry [arrowhead=none, color="black", style=dashed]
+    cluster714_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster714_entry -> node2946 [color="black"]
+    cluster714_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster714_exit_name -> cluster714_exit [arrowhead=none, color="black", style=dashed]
+    cluster714_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2946_name [shape=none, label=<<font color="black">Block[2946]</font>>]
+    node2946_name -> node2946 [arrowhead=none, color="black", style=dashed]
+    node2946 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2946 -> cluster714_exit [color="black"]
+  }
+}

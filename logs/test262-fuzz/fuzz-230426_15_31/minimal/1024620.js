@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } x : ; } try { } catch { } x => 0 ; switch ( 0 ) { } function Test262Error ( message ) { this . message = message || "" ; } try { } finally { } ( message ) => { throw new Test262Error ( message ) ; } ; function $DONOTEVALUATE ( ) { throw "Test262: This statement should not be evaluated." ; } var res = false ; var a = Array ; x : ; var srcArr = [ 1 ] ; var resArr = srcArr . filter ( async function ( ) { } ) ; assert . sameValue ( resArr , 1 , 'resArr.length' ) ; 

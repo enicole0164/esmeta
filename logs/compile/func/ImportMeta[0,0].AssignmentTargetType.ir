@@ -1,0 +1,5 @@
+def <SYNTAX>:ImportMeta[0,0].AssignmentTargetType(
+  this: Ast:ImportMeta[0,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

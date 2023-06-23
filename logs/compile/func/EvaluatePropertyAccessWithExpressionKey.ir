@@ -1,0 +1,13 @@
+def EvaluatePropertyAccessWithExpressionKey(
+  baseValue: ESValue,
+  expression: Ast,
+  strict: Boolean,
+): Normal[ReferenceRecord] | Abrupt {
+  sdo-call %0 = expression->Evaluation()
+  let propertyNameReference = %0
+  call %1 = clo<GetValue>(propertyNameReference)
+  let propertyNameValue = [? %1]
+  call %2 = clo<ToPropertyKey>(propertyNameValue)
+  let propertyKey = [? %2]
+  return (new ReferenceRecord("Base" -> baseValue, "ReferencedName" -> propertyKey, "Strict" -> strict, "ThisValue" -> ~empty~))[#567]
+}

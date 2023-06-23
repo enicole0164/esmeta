@@ -1,0 +1,24 @@
+def IntegerIndexedElementSet(
+  O: IntegerIndexedExoticObject,
+  index: Number,
+  value: ESValue,
+): Normal[Const[~unused~]] | Abrupt {
+  if (= O.ContentType ~BigInt~) {
+    call %0 = clo<ToBigInt>(value)
+    let numValue = [? %0]
+  } else {
+    call %1 = clo<ToNumber>(value)
+    let numValue = [? %1]
+  }
+  call %2 = clo<IsValidIntegerIndex>(O, index)
+  if (= %2 true) {
+    let offset = O.ByteOffset
+    call %3 = clo<TypedArrayElementSize>(O)
+    let elementSize = %3
+    let indexedPosition = (+ (* ([math] index) elementSize) offset)
+    call %4 = clo<TypedArrayElementType>(O)
+    let elementType = %4
+    call %5 = clo<SetValueInBuffer>(O.ViewedArrayBuffer, indexedPosition, elementType, numValue, true, ~Unordered~)
+  } else {}
+  return ~unused~
+}

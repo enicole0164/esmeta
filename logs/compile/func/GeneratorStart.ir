@@ -1,0 +1,12 @@
+def GeneratorStart(
+  generator: Unknown,
+  generatorBody: Unknown["FunctionBodyParseNodeOrAnAbstractClosureWithNoParameters"],
+): Const[~unused~] {
+  assert (= generator.GeneratorState undefined)
+  let genContext = @EXECUTION_STACK[0]
+  genContext.Generator = generator
+  genContext.ResumeCont = cont<GeneratorStart:cont0>
+  generator.GeneratorContext = genContext
+  generator.GeneratorState = ~suspendedStart~
+  return ~unused~
+}

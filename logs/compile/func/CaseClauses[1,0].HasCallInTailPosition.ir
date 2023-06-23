@@ -1,0 +1,12 @@
+def <SYNTAX>:CaseClauses[1,0].HasCallInTailPosition(
+  this: Ast:CaseClauses[1,0],
+  call: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->HasCallInTailPosition(call)
+  let has = %0
+  if (= has true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->HasCallInTailPosition(call)
+  return %1
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1024 {
+    label = "def NewGlobalEnvironment(G: Unknown, thisValue: Unknown): GlobalEnvironmentRecord"
+    style = rounded
+    cluster1024_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1024_entry_name -> cluster1024_entry [arrowhead=none, color="black", style=dashed]
+    cluster1024_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1024_entry -> node3838 [color="black"]
+    cluster1024_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1024_exit_name -> cluster1024_exit [arrowhead=none, color="black", style=dashed]
+    cluster1024_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3838_name [shape=none, label=<<font color="black">Call[3838]</font>>]
+    node3838_name -> node3838 [arrowhead=none, color="black", style=dashed]
+    node3838 [shape=cds, label=<<font color="black">%0 = clo&lt;NewObjectEnvironment&gt;(G, false, null)</font>> color="black" fillcolor="white", style=filled]
+    node3838 -> node3839 [color="black"]
+    node3839_name [shape=none, label=<<font color="black">Block[3839]</font>>]
+    node3839_name -> node3839 [arrowhead=none, color="black", style=dashed]
+    node3839 [shape=box, label=<<font color="black">[0] let objRec = %0<BR ALIGN="LEFT"/>[1] let dclRec = (new DeclarativeEnvironmentRecord())[#387]<BR ALIGN="LEFT"/>[2] let env = (new GlobalEnvironmentRecord())[#388]<BR ALIGN="LEFT"/>[3] env.ObjectRecord = objRec<BR ALIGN="LEFT"/>[4] env.GlobalThisValue = thisValue<BR ALIGN="LEFT"/>[5] env.DeclarativeRecord = dclRec<BR ALIGN="LEFT"/>[6] env.VarNames = (new [])[#389]<BR ALIGN="LEFT"/>[7] env.OuterEnv = null<BR ALIGN="LEFT"/>[8] return env<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3839 -> cluster1024_exit [color="black"]
+  }
+}

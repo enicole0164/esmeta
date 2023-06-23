@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassDeclaration[0,0].IsConstantDeclaration(
+  this: Ast:ClassDeclaration[0,0],
+): Boolean {
+  return false
+}

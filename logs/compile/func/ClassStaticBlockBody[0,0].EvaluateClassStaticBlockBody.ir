@@ -1,0 +1,9 @@
+def <SYNTAX>:ClassStaticBlockBody[0,0].EvaluateClassStaticBlockBody(
+  this: Ast:ClassStaticBlockBody[0,0],
+  functionObject: Unknown,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<FunctionDeclarationInstantiation>(functionObject, (new [])[#693])
+  [? %0]
+  sdo-call %1 = this[0]->Evaluation()
+  return %1
+}

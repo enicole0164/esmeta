@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message ) { message = 'Expected true but got ' + assert . _toString ( mustBeTrue ) ; } throw new Test262Error ( message ) ; } 0 ; assert . sameValue = x => 0 ; assert . notSameValue = { multiline : true } ; assert . throws = async x => 0 ; function Test262Error ( message ) { this . message = message || "" ; } 0 ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; let x ; assert . sameValue ( 'abc' . codePointAt ( - 0n ) , undefined ) ; 

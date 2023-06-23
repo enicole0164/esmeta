@@ -1,0 +1,8 @@
+def <SYNTAX>:VariableStatement[0,0].Evaluation(
+  this: Ast:VariableStatement[0,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let next = %0
+  [? next]
+  return ~empty~
+}

@@ -1,0 +1,51 @@
+def ParseModule(
+  sourceText: Unknown["ECMAScriptSourceText"],
+  realm: Unknown,
+  hostDefined: Unknown,
+): Unknown["SourceTextModuleRecordOrANonemptyListOf*SyntaxError*Objects"] {
+  let body = (parse sourceText (nt |Module|[]))
+  if (? body: "ListOfErrors") {
+    return body
+  } else {}
+  sdo-call %0 = body->ModuleRequests()
+  let requestedModules = %0
+  sdo-call %1 = body->ImportEntries()
+  let importEntries = %1
+  call %2 = clo<ImportedLocalNames>(importEntries)
+  let importedBoundNames = %2
+  let indirectExportEntries = (new [])[#779]
+  let localExportEntries = (new [])[#780]
+  let starExportEntries = (new [])[#781]
+  sdo-call %3 = body->ExportEntries()
+  let exportEntries = %3
+  %5 = exportEntries
+  %4 = 0
+  loop[foreach] (< %4 %5.length) {
+    let ee = %5[%4]
+    if (= ee.ModuleRequest null) {
+      if (! (contains importedBoundNames ee.LocalName)) {
+        push localExportEntries < ee
+      } else {
+        (yet "Let _ie_ be the element of _importEntries_ whose [[LocalName]] is the same as _ee_.[[LocalName]].")
+        if (= ie.ImportName ~namespace-object~) {
+          nop
+          push localExportEntries < ee
+        } else {
+          nop
+          push indirectExportEntries < (new ExportEntryRecord("ModuleRequest" -> ie.ModuleRequest, "ImportName" -> ie.ImportName, "LocalName" -> null, "ExportName" -> ee.ExportName))[#782]
+        }
+      }
+    } else {
+      if (= ee.ImportName ~all-but-default~) {
+        assert (= ee.ExportName null)
+        push starExportEntries < ee
+      } else {
+        push indirectExportEntries < ee
+      }
+    }
+    %4 = (+ %4 1)
+  }
+  sdo-call %6 = body->Contains("await")
+  let async = %6
+  return (new SourceTextModuleRecord("Realm" -> realm, "Environment" -> ~empty~, "Namespace" -> ~empty~, "CycleRoot" -> ~empty~, "HasTLA" -> async, "AsyncEvaluation" -> false, "TopLevelCapability" -> ~empty~, "AsyncParentModules" -> (new [])[#784], "PendingAsyncDependencies" -> ~empty~, "Status" -> ~unlinked~, "EvaluationError" -> ~empty~, "HostDefined" -> hostDefined, "ECMAScriptCode" -> body, "Context" -> ~empty~, "ImportMeta" -> ~empty~, "RequestedModules" -> requestedModules, "ImportEntries" -> importEntries, "LocalExportEntries" -> localExportEntries, "IndirectExportEntries" -> indirectExportEntries, "StarExportEntries" -> starExportEntries, "DFSIndex" -> ~empty~, "DFSAncestorIndex" -> ~empty~))[#783]
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } var x ; throw new Test262Error ( message ) ; } x => 0 ; assert . notSameValue = { prototype : '' } ; assert . throws = async x => 0 ; assert . _toString = async function x ( ) { } ; function Test262Error ( message ) { message || "" ; } if ( 0 ) { ; } else ; 0 ? 0 : 0 ; class x { } { } new WeakSet ( ) ; new WeakSet ( async x => 0 ) ; assert . throws ( Test262Error , function ( ) { WeakSet ; } ) ; 

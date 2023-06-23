@@ -1,0 +1,21 @@
+def <BUILTIN>:INTRINSICS.get Set.prototype.size(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let S = this
+  call %0 = clo<RequireInternalSlot>(S, "SetData")
+  [? %0]
+  let entries = S.SetData
+  let count = 0
+  %2 = entries
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let e = %2[%1]
+    if (! (= e ~empty~)) {
+      count = (+ count 1)
+    } else {}
+    %1 = (+ %1 1)
+  }
+  return ([number] count)
+}

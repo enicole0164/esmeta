@@ -1,0 +1,23 @@
+def <BUILTIN>:INTRINSICS.Atomics.isLockFree(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let size = (pop < argumentsList) else let size = absent
+  call %0 = clo<ToIntegerOrInfinity>(size)
+  let n = [? %0]
+  (yet "Let _AR_ be the Agent Record of the surrounding agent.")
+  if (== n 1) {
+    return AR.IsLockFree1
+  } else {}
+  if (== n 2) {
+    return AR.IsLockFree2
+  } else {}
+  if (== n 4) {
+    return true
+  } else {}
+  if (== n 8) {
+    return AR.IsLockFree8
+  } else {}
+  return false
+}

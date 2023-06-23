@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1308 {
+    label = "def <SYNTAX>:UnaryExpression[4,0].Evaluation(this: Ast:UnaryExpression[4,0]): Unknown"
+    style = rounded
+    cluster1308_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1308_entry_name -> cluster1308_entry [arrowhead=none, color="black", style=dashed]
+    cluster1308_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1308_entry -> node6257 [color="black"]
+    cluster1308_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1308_exit_name -> cluster1308_exit [arrowhead=none, color="black", style=dashed]
+    cluster1308_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6257_name [shape=none, label=<<font color="black">Call[6257]</font>>]
+    node6257_name -> node6257 [arrowhead=none, color="black", style=dashed]
+    node6257 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node6257 -> node6258 [color="black"]
+    node6258_name [shape=none, label=<<font color="black">Block[6258]</font>>]
+    node6258_name -> node6258 [arrowhead=none, color="black", style=dashed]
+    node6258 [shape=box, label=<<font color="black">[0] let expr = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6258 -> node6259 [color="black"]
+    node6259_name [shape=none, label=<<font color="black">Call[6259]</font>>]
+    node6259_name -> node6259 [arrowhead=none, color="black", style=dashed]
+    node6259 [shape=cds, label=<<font color="black">%1 = clo&lt;GetValue&gt;(expr)</font>> color="black" fillcolor="white", style=filled]
+    node6259 -> node6260 [color="black"]
+    node6260_name [shape=none, label=<<font color="black">Call[6260]</font>>]
+    node6260_name -> node6260 [arrowhead=none, color="black", style=dashed]
+    node6260 [shape=cds, label=<<font color="black">%2 = clo&lt;ToNumber&gt;([? %1])</font>> color="black" fillcolor="white", style=filled]
+    node6260 -> node6261 [color="black"]
+    node6261_name [shape=none, label=<<font color="black">Block[6261]</font>>]
+    node6261_name -> node6261 [arrowhead=none, color="black", style=dashed]
+    node6261 [shape=box, label=<<font color="black">[0] return [? %2]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6261 -> cluster1308_exit [color="black"]
+  }
+}

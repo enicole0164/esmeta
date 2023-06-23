@@ -1,0 +1,38 @@
+def <NUM>:Number::lessThan(
+  x: Number,
+  y: Number,
+): Boolean | Undefined {
+  if (= x NaN) {
+    return undefined
+  } else {}
+  if (= y NaN) {
+    return undefined
+  } else {}
+  if (= x y) {
+    return false
+  } else {}
+  if (&& (= x 0.0f) (= y -0.0f)) {
+    return false
+  } else {}
+  if (&& (= x -0.0f) (= y 0.0f)) {
+    return false
+  } else {}
+  if (= x +INF) {
+    return false
+  } else {}
+  if (= y +INF) {
+    return true
+  } else {}
+  if (= y -INF) {
+    return false
+  } else {}
+  if (= x -INF) {
+    return true
+  } else {}
+  assert (yet "_x_ and _y_ are finite and non-zero.")
+  if (< ([math] x) ([math] y)) {
+    return true
+  } else {
+    return false
+  }
+}

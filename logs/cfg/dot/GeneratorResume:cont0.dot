@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2614 {
+    label = "def <CONT>:GeneratorResume:cont0(result: Unknown): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster2614_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2614_entry_name -> cluster2614_entry [arrowhead=none, color="black", style=dashed]
+    cluster2614_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2614_entry -> node19350 [color="black"]
+    cluster2614_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2614_exit_name -> cluster2614_exit [arrowhead=none, color="black", style=dashed]
+    cluster2614_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19350_name [shape=none, label=<<font color="black">Block[19350]</font>>]
+    node19350_name -> node19350 [arrowhead=none, color="black", style=dashed]
+    node19350 [shape=box, label=<<font color="black">[0] assert (= methodContext @EXECUTION_STACK[0])<BR ALIGN="LEFT"/>[1] return [? result]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19350 -> cluster2614_exit [color="black"]
+  }
+}

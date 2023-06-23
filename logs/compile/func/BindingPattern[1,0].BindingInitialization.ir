@@ -1,0 +1,16 @@
+def <SYNTAX>:BindingPattern[1,0].BindingInitialization(
+  this: Ast:BindingPattern[1,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<GetIterator>(value)
+  let iteratorRecord = [? %0]
+  sdo-call %1 = this[0]->IteratorBindingInitialization(iteratorRecord, environment)
+  call %2 = clo<Completion>(%1)
+  let result = %2
+  if (= iteratorRecord.Done false) {
+    call %3 = clo<IteratorClose>(iteratorRecord, result)
+    return [? %3]
+  } else {}
+  return [? result]
+}

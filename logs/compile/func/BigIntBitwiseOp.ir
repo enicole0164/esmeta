@@ -1,0 +1,29 @@
+def BigIntBitwiseOp(
+  op: Unknown["`&`,`^`,Or``"],
+  x: BigInt,
+  y: BigInt,
+): BigInt {
+  x = ([math] x)
+  y = ([math] y)
+  let result = 0
+  let shift = 0
+  (yet "Repeat, until (_x_ = 0 or _x_ = -1) and (_y_ = 0 or _y_ = -1),\n  1. Let _xDigit_ be _x_ modulo 2.\n  1. Let _yDigit_ be _y_ modulo 2.\n  1. If _op_ is `&`, set _result_ to _result_ + 2<sup>_shift_</sup> × BinaryAnd(_xDigit_, _yDigit_).\n  1. Else if _op_ is `|`, set _result_ to _result_ + 2<sup>_shift_</sup> × BinaryOr(_xDigit_, _yDigit_).\n  1. Else,\n    1. Assert: _op_ is `^`.\n    1. Set _result_ to _result_ + 2<sup>_shift_</sup> × BinaryXor(_xDigit_, _yDigit_).\n  1. Set _shift_ to _shift_ + 1.\n  1. Set _x_ to (_x_ - _xDigit_) / 2.\n  1. Set _y_ to (_y_ - _yDigit_) / 2.")
+  if (= op "&") {
+    call %0 = clo<BinaryAnd>((% x 2), (% y 2))
+    let tmp = %0
+  } else {
+    if (= op "|") {
+      call %1 = clo<BinaryOr>((% x 2), (% y 2))
+      let tmp = %1
+    } else {
+      assert (= op "^")
+      call %2 = clo<BinaryXor>((% x 2), (% y 2))
+      let tmp = %2
+    }
+  }
+  if (! (== tmp 0)) {
+    result = (- result (** 2 shift))
+    nop
+  } else {}
+  return ([bigInt] result)
+}

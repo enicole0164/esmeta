@@ -1,0 +1,21 @@
+def <SYNTAX>:CaseBlock[1,2].ContainsUndefinedContinueTarget(
+  this: Ast:CaseBlock[1,2],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#340])
+    if (= %0 true) {
+      return true
+    } else {}
+  } else {}
+  sdo-call %1 = this[1]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#341])
+  if (= %1 true) {
+    return true
+  } else {}
+  if (= this[2] absent) {
+    return false
+  } else {}
+  sdo-call %2 = this[2]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#342])
+  return %2
+}

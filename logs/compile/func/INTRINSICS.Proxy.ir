@@ -1,0 +1,13 @@
+def <BUILTIN>:INTRINSICS.Proxy(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  if (< 0 argumentsList.length) let handler = (pop < argumentsList) else let handler = absent
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1358])
+  } else {}
+  call %0 = clo<ProxyCreate>(target, handler)
+  return [? %0]
+}

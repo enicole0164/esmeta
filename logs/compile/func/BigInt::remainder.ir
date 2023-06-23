@@ -1,0 +1,13 @@
+def <NUM>:BigInt::remainder(
+  n: BigInt,
+  d: BigInt,
+): Normal[BigInt] | Abrupt {
+  if (= d 0n) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#10])
+  } else {}
+  if (= n 0n) {
+    return 0n
+  } else {}
+  let r = (% n d)
+  return r
+}

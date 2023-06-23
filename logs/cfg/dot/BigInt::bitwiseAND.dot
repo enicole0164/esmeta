@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster51 {
+    label = "def <NUM>:BigInt::bitwiseAND(x: BigInt, y: BigInt): BigInt"
+    style = rounded
+    cluster51_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster51_entry_name -> cluster51_entry [arrowhead=none, color="black", style=dashed]
+    cluster51_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster51_entry -> node370 [color="black"]
+    cluster51_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster51_exit_name -> cluster51_exit [arrowhead=none, color="black", style=dashed]
+    cluster51_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node370_name [shape=none, label=<<font color="black">Call[370]</font>>]
+    node370_name -> node370 [arrowhead=none, color="black", style=dashed]
+    node370 [shape=cds, label=<<font color="black">%0 = clo&lt;BigIntBitwiseOp&gt;(&quot;&amp;&quot;, x, y)</font>> color="black" fillcolor="white", style=filled]
+    node370 -> node371 [color="black"]
+    node371_name [shape=none, label=<<font color="black">Block[371]</font>>]
+    node371_name -> node371 [arrowhead=none, color="black", style=dashed]
+    node371 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node371 -> cluster51_exit [color="black"]
+  }
+}

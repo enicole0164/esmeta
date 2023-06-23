@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2048 {
+    label = "def <BUILTIN>:INTRINSICS.get Symbol.prototype.description(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2048_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2048_entry_name -> cluster2048_entry [arrowhead=none, color="black", style=dashed]
+    cluster2048_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2048_entry -> node11673 [color="black"]
+    cluster2048_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2048_exit_name -> cluster2048_exit [arrowhead=none, color="black", style=dashed]
+    cluster2048_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node11673_name [shape=none, label=<<font color="black">Block[11673]</font>>]
+    node11673_name -> node11673 [arrowhead=none, color="black", style=dashed]
+    node11673 [shape=box, label=<<font color="black">[0] let s = this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node11673 -> node11674 [color="black"]
+    node11674_name [shape=none, label=<<font color="black">Call[11674]</font>>]
+    node11674_name -> node11674 [arrowhead=none, color="black", style=dashed]
+    node11674 [shape=cds, label=<<font color="black">%0 = clo&lt;thisSymbolValue&gt;(s)</font>> color="black" fillcolor="white", style=filled]
+    node11674 -> node11675 [color="black"]
+    node11675_name [shape=none, label=<<font color="black">Block[11675]</font>>]
+    node11675_name -> node11675 [arrowhead=none, color="black", style=dashed]
+    node11675 [shape=box, label=<<font color="black">[0] let sym = [? %0]<BR ALIGN="LEFT"/>[1] return sym.Description<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node11675 -> cluster2048_exit [color="black"]
+  }
+}

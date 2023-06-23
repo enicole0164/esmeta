@@ -1,0 +1,7 @@
+def <SYNTAX>:DoWhileStatement[0,0].ContainsDuplicateLabels(
+  this: Ast:DoWhileStatement[0,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ContainsDuplicateLabels(labelSet)
+  return %0
+}

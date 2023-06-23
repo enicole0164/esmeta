@@ -1,0 +1,6 @@
+def <SYNTAX>:PropertyName[0,0].ComputedPropertyContains(
+  this: Ast:PropertyName[0,0],
+  symbol: Unknown,
+): Boolean {
+  return false
+}

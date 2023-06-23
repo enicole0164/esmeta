@@ -1,0 +1,9 @@
+def <SYNTAX>:DefaultClause[0,0].VarScopedDeclarations(
+  this: Ast:DefaultClause[0,0],
+): List[Ast] {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->VarScopedDeclarations()
+    return %0
+  } else {}
+  return (new [])[#265]
+}

@@ -1,0 +1,12 @@
+def <CONC>:FunctionEnvironmentRecord.HasSuperBinding(
+  envRec: FunctionEnvironmentRecord,
+): Boolean {
+  if (= envRec.ThisBindingStatus ~lexical~) {
+    return false
+  } else {}
+  if (= envRec.FunctionObject.HomeObject undefined) {
+    return false
+  } else {
+    return true
+  }
+}

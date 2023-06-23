@@ -1,0 +1,45 @@
+def <BUILTIN>:INTRINSICS.Function.prototype.bind(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let thisArg = (pop < argumentsList) else let thisArg = absent
+  let args = argumentsList
+  let Target = this
+  call %0 = clo<IsCallable>(Target)
+  if (= %0 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#911])
+  } else {}
+  call %1 = clo<BoundFunctionCreate>(Target, thisArg, args)
+  let F = [? %1]
+  let L = 0
+  call %2 = clo<HasOwnProperty>(Target, "length")
+  let targetHasLength = [? %2]
+  if (= targetHasLength true) {
+    call %3 = clo<Get>(Target, "length")
+    let targetLen = [? %3]
+    if (= (typeof targetLen) @Number) {
+      if (= targetLen +INF) {
+        L = +INF
+      } else {
+        if (= targetLen -INF) {
+          L = 0
+        } else {
+          call %4 = clo<ToIntegerOrInfinity>(targetLen)
+          let targetLenAsInt = [! %4]
+          assert (! (|| (= targetLenAsInt NaN) (|| (= targetLenAsInt +INF) (= targetLenAsInt -INF))))
+          let argCount = args.length
+          L = (max (- targetLenAsInt argCount) 0)
+        }
+      }
+    } else {}
+  } else {}
+  call %5 = clo<SetFunctionLength>(F, L)
+  call %6 = clo<Get>(Target, "name")
+  let targetName = [? %6]
+  if (! (= (typeof targetName) @String)) {
+    targetName = ""
+  } else {}
+  call %7 = clo<SetFunctionName>(F, targetName, "bound")
+  return F
+}

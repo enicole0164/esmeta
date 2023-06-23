@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassAtom[0,0].CompileToCharSet(
+  this: Ast:ClassAtom[0,0],
+): Unknown["CharSet"] {
+  (yet "Return the CharSet containing the single character `-` U+002D (HYPHEN-MINUS).")
+}

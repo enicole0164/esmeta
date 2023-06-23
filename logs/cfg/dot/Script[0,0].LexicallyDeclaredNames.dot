@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster279 {
+    label = "def <SYNTAX>:Script[0,0].LexicallyDeclaredNames(this: Ast:Script[0,0]): List[String]"
+    style = rounded
+    cluster279_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster279_entry_name -> cluster279_entry [arrowhead=none, color="black", style=dashed]
+    cluster279_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster279_entry -> node1755 [color="black"]
+    cluster279_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster279_exit_name -> cluster279_exit [arrowhead=none, color="black", style=dashed]
+    cluster279_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1755_name [shape=none, label=<<font color="black">Block[1755]</font>>]
+    node1755_name -> node1755 [arrowhead=none, color="black", style=dashed]
+    node1755 [shape=box, label=<<font color="black">[0] return (new [])[#137]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1755 -> cluster279_exit [color="black"]
+  }
+}

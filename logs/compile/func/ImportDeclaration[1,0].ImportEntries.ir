@@ -1,0 +1,5 @@
+def <SYNTAX>:ImportDeclaration[1,0].ImportEntries(
+  this: Ast:ImportDeclaration[1,0],
+): Unknown["ListOfImportEntryRecords"] {
+  return (new [])[#807]
+}

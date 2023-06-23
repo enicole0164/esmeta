@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message === undefined ) { debugger ; } throw new Test262Error ( message ) ; } ; var x ; assert . throws = x => 0 ; 0 ; function Test262Error ( message ) { this . message = message || "" ; } 0 ?? 0 ?? 0 ? 0 : 0 ; switch ( 0 ) { } function $DONOTEVALUATE ( ) { throw { getPrototypeOf : false } ; } var s = new Set ( ) ; s . add ( NaN ) ; assert . sameValue ( s . has ( NaN ) , true , "`s.has(NaN)` returns `true`" ) ; 

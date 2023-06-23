@@ -1,0 +1,6 @@
+def <SYNTAX>:GeneratorDeclaration[0,0].BoundNames(
+  this: Ast:GeneratorDeclaration[0,0],
+): List[String] {
+  sdo-call %0 = this[0]->BoundNames()
+  return %0
+}

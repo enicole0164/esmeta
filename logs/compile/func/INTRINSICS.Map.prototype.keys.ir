@@ -1,0 +1,9 @@
+def <BUILTIN>:INTRINSICS.Map.prototype.keys(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let M = this
+  call %0 = clo<CreateMapIterator>(M, ~key~)
+  return [? %0]
+}

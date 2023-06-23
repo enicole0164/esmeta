@@ -1,0 +1,5 @@
+def <SYNTAX>:MemberExpression[2,0].IsDestructuring(
+  this: Ast:MemberExpression[2,0],
+): Boolean {
+  return false
+}

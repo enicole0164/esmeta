@@ -1,0 +1,10 @@
+def <CONC>:DeclarativeEnvironmentRecord.CreateImmutableBinding(
+  envRec: DeclarativeEnvironmentRecord,
+  N: String,
+  S: Boolean,
+): Normal[Const[~unused~]] {
+  assert (= envRec.SubMap[N] absent)
+  envRec.SubMap[N] = (new ImmutableBinding("initialized" -> false, "strict" -> S))[#367]
+  call %0 = clo<NormalCompletion>(~unused~)
+  return %0
+}

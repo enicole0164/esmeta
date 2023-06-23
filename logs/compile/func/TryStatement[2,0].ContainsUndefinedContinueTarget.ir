@@ -1,0 +1,16 @@
+def <SYNTAX>:TryStatement[2,0].ContainsUndefinedContinueTarget(
+  this: Ast:TryStatement[2,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#358])
+  if (= %0 true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#359])
+  if (= %1 true) {
+    return true
+  } else {}
+  sdo-call %2 = this[2]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#360])
+  return %2
+}

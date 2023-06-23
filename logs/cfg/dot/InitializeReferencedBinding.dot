@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster65 {
+    label = "def InitializeReferencedBinding(V: Unknown, W: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster65_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster65_entry_name -> cluster65_entry [arrowhead=none, color="black", style=dashed]
+    cluster65_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster65_entry -> node453 [color="black"]
+    cluster65_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster65_exit_name -> cluster65_exit [arrowhead=none, color="black", style=dashed]
+    cluster65_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node453_name [shape=none, label=<<font color="black">Block[453]</font>>]
+    node453_name -> node453 [arrowhead=none, color="black", style=dashed]
+    node453 [shape=box, label=<<font color="black">[0] [? V]<BR ALIGN="LEFT"/>[1] [? W]<BR ALIGN="LEFT"/>[2] assert (? V: &quot;ReferenceRecord&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node453 -> node454 [color="black"]
+    node454_name [shape=none, label=<<font color="black">Call[454]</font>>]
+    node454_name -> node454 [arrowhead=none, color="black", style=dashed]
+    node454 [shape=cds, label=<<font color="black">%0 = clo&lt;IsUnresolvableReference&gt;(V)</font>> color="black" fillcolor="white", style=filled]
+    node454 -> node455 [color="black"]
+    node455_name [shape=none, label=<<font color="black">Block[455]</font>>]
+    node455_name -> node455 [arrowhead=none, color="black", style=dashed]
+    node455 [shape=box, label=<<font color="black">[0] assert (= %0 false)<BR ALIGN="LEFT"/>[1] let base = V.Base<BR ALIGN="LEFT"/>[2] assert (? base: &quot;EnvironmentRecord&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node455 -> node456 [color="black"]
+    node456_name [shape=none, label=<<font color="black">Call[456]</font>>]
+    node456_name -> node456 [arrowhead=none, color="black", style=dashed]
+    node456 [shape=cds, label=<<font color="black">%1 = base-&gt;InitializeBinding(V.ReferencedName, W)</font>> color="black" fillcolor="white", style=filled]
+    node456 -> node457 [color="black"]
+    node457_name [shape=none, label=<<font color="black">Block[457]</font>>]
+    node457_name -> node457 [arrowhead=none, color="black", style=dashed]
+    node457 [shape=box, label=<<font color="black">[0] return [? %1]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node457 -> cluster65_exit [color="black"]
+  }
+}

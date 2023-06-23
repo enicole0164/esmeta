@@ -1,0 +1,8 @@
+def <SYNTAX>:RegExpIdentifierStart[2,0].RegExpIdentifierCodePoint(
+  this: Ast:RegExpIdentifierStart[2,0],
+): Unknown["CodePoint"] {
+  (yet "Let _lead_ be the code unit whose numeric value is that of the code point matched by |UnicodeLeadSurrogate|.")
+  (yet "Let _trail_ be the code unit whose numeric value is that of the code point matched by |UnicodeTrailSurrogate|.")
+  call %0 = clo<UTF16SurrogatePairToCodePoint>(lead, trail)
+  return %0
+}

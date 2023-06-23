@@ -1,0 +1,51 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setHours(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let hour = (pop < argumentsList) else let hour = absent
+  if (< 0 argumentsList.length) let min = (pop < argumentsList) else let min = absent
+  if (< 0 argumentsList.length) let sec = (pop < argumentsList) else let sec = absent
+  if (< 0 argumentsList.length) let ms = (pop < argumentsList) else let ms = absent
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  call %1 = clo<ToNumber>(hour)
+  let h = [? %1]
+  if (! (= min absent)) {
+    call %2 = clo<ToNumber>(min)
+    let m = [? %2]
+  } else {}
+  if (! (= sec absent)) {
+    call %3 = clo<ToNumber>(sec)
+    let s = [? %3]
+  } else {}
+  if (! (= ms absent)) {
+    call %4 = clo<ToNumber>(ms)
+    let milli = [? %4]
+  } else {}
+  if (= t NaN) {
+    return NaN
+  } else {}
+  call %5 = clo<LocalTime>(t)
+  t = %5
+  if (= min absent) {
+    call %6 = clo<MinFromTime>(t)
+    let m = %6
+  } else {}
+  if (= sec absent) {
+    call %7 = clo<SecFromTime>(t)
+    let s = %7
+  } else {}
+  if (= ms absent) {
+    (yet "let _milli_ be msFromTime(_t_).")
+  } else {}
+  call %8 = clo<Day>(t)
+  call %9 = clo<MakeTime>(h, m, s, milli)
+  call %10 = clo<MakeDate>(%8, %9)
+  let date = %10
+  call %11 = clo<UTC>(date)
+  call %12 = clo<TimeClip>(%11)
+  let u = %12
+  (yet "Set the [[DateValue]] internal slot of this Date object to _u_.")
+  return u
+}

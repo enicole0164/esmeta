@@ -1,0 +1,9 @@
+def <CONC>:ObjectEnvironmentRecord.WithBaseObject(
+  envRec: ObjectEnvironmentRecord,
+): Object | Undefined {
+  if (= envRec.IsWithEnvironment true) {
+    return envRec.BindingObject
+  } else {
+    return undefined
+  }
+}

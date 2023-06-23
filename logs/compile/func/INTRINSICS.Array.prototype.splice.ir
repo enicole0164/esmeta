@@ -1,0 +1,120 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.splice(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let start = (pop < argumentsList) else let start = absent
+  if (< 0 argumentsList.length) let deleteCount = (pop < argumentsList) else let deleteCount = absent
+  let items = argumentsList
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  call %2 = clo<ToIntegerOrInfinity>(start)
+  let relativeStart = [? %2]
+  if (= relativeStart -INF) {
+    let actualStart = 0
+  } else {
+    if (< relativeStart 0) {
+      let actualStart = (max (+ len relativeStart) 0)
+    } else {
+      let actualStart = (min relativeStart len)
+    }
+  }
+  let insertCount = items.length
+  if (= start absent) {
+    let actualDeleteCount = 0
+  } else {
+    if (= deleteCount absent) {
+      let actualDeleteCount = (- len actualStart)
+    } else {
+      call %3 = clo<ToIntegerOrInfinity>(deleteCount)
+      let dc = [? %3]
+      let actualDeleteCount = (clamp dc 0 (- len actualStart))
+    }
+  }
+  if (< (- (** 2 53) 1) (- (+ len insertCount) actualDeleteCount)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1048])
+  } else {}
+  call %4 = clo<ArraySpeciesCreate>(O, actualDeleteCount)
+  let A = [? %4]
+  let k = 0
+  loop[repeat] (< k actualDeleteCount) {
+    call %5 = clo<ToString>(([number] (+ actualStart k)))
+    let from = [! %5]
+    call %6 = clo<HasProperty>(O, from)
+    if (= [? %6] true) {
+      call %7 = clo<Get>(O, from)
+      let fromValue = [? %7]
+      call %8 = clo<ToString>(([number] k))
+      call %9 = clo<CreateDataPropertyOrThrow>(A, [! %8], fromValue)
+      [? %9]
+    } else {}
+    k = (+ k 1)
+  }
+  call %10 = clo<Set>(A, "length", ([number] actualDeleteCount), true)
+  [? %10]
+  let itemCount = items.length
+  if (< itemCount actualDeleteCount) {
+    k = actualStart
+    loop[repeat] (< k (- len actualDeleteCount)) {
+      call %11 = clo<ToString>(([number] (+ k actualDeleteCount)))
+      let from = [! %11]
+      call %12 = clo<ToString>(([number] (+ k itemCount)))
+      let to = [! %12]
+      call %13 = clo<HasProperty>(O, from)
+      if (= [? %13] true) {
+        call %14 = clo<Get>(O, from)
+        let fromValue = [? %14]
+        call %15 = clo<Set>(O, to, fromValue, true)
+        [? %15]
+      } else {
+        call %16 = clo<DeletePropertyOrThrow>(O, to)
+        [? %16]
+      }
+      k = (+ k 1)
+    }
+    k = len
+    loop[repeat] (< (+ (- len actualDeleteCount) itemCount) k) {
+      call %17 = clo<ToString>(([number] (- k 1)))
+      call %18 = clo<DeletePropertyOrThrow>(O, [! %17])
+      [? %18]
+      k = (- k 1)
+    }
+  } else {
+    if (< actualDeleteCount itemCount) {
+      k = (- len actualDeleteCount)
+      loop[repeat] (< actualStart k) {
+        call %19 = clo<ToString>(([number] (- (+ k actualDeleteCount) 1)))
+        let from = [! %19]
+        call %20 = clo<ToString>(([number] (- (+ k itemCount) 1)))
+        let to = [! %20]
+        call %21 = clo<HasProperty>(O, from)
+        if (= [? %21] true) {
+          call %22 = clo<Get>(O, from)
+          let fromValue = [? %22]
+          call %23 = clo<Set>(O, to, fromValue, true)
+          [? %23]
+        } else {
+          call %24 = clo<DeletePropertyOrThrow>(O, to)
+          [? %24]
+        }
+        k = (- k 1)
+      }
+    } else {}
+  }
+  k = actualStart
+  %26 = items
+  %25 = 0
+  loop[foreach] (< %25 %26.length) {
+    let E = %26[%25]
+    call %27 = clo<ToString>(([number] k))
+    call %28 = clo<Set>(O, [! %27], E, true)
+    [? %28]
+    k = (+ k 1)
+    %25 = (+ %25 1)
+  }
+  call %29 = clo<Set>(O, "length", ([number] (+ (- len actualDeleteCount) itemCount)), true)
+  [? %29]
+  return A
+}

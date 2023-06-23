@@ -1,0 +1,7 @@
+def <SYNTAX>:ForInOfStatement[5,0].ContainsDuplicateLabels(
+  this: Ast:ForInOfStatement[5,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[2]->ContainsDuplicateLabels(labelSet)
+  return %0
+}

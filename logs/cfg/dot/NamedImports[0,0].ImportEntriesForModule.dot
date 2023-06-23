@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1918 {
+    label = "def <SYNTAX>:NamedImports[0,0].ImportEntriesForModule(this: Ast:NamedImports[0,0], module: Unknown): Unknown["ListOfImportEntryRecords"]"
+    style = rounded
+    cluster1918_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1918_entry_name -> cluster1918_entry [arrowhead=none, color="black", style=dashed]
+    cluster1918_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1918_entry -> node10552 [color="black"]
+    cluster1918_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1918_exit_name -> cluster1918_exit [arrowhead=none, color="black", style=dashed]
+    cluster1918_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10552_name [shape=none, label=<<font color="black">Block[10552]</font>>]
+    node10552_name -> node10552 [arrowhead=none, color="black", style=dashed]
+    node10552 [shape=box, label=<<font color="black">[0] return (new [])[#814]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10552 -> cluster1918_exit [color="black"]
+  }
+}

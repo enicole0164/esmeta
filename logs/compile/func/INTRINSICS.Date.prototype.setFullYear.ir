@@ -1,0 +1,42 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setFullYear(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let year = (pop < argumentsList) else let year = absent
+  if (< 0 argumentsList.length) let month = (pop < argumentsList) else let month = absent
+  if (< 0 argumentsList.length) let date = (pop < argumentsList) else let date = absent
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  call %1 = clo<ToNumber>(year)
+  let y = [? %1]
+  if (= t NaN) {
+    t = 0.0f
+  } else {
+    call %2 = clo<LocalTime>(t)
+    t = %2
+  }
+  if (= month absent) {
+    call %3 = clo<MonthFromTime>(t)
+    let m = %3
+  } else {
+    call %4 = clo<ToNumber>(month)
+    let m = [? %4]
+  }
+  if (= date absent) {
+    call %5 = clo<DateFromTime>(t)
+    let dt = %5
+  } else {
+    call %6 = clo<ToNumber>(date)
+    let dt = [? %6]
+  }
+  call %7 = clo<MakeDay>(y, m, dt)
+  call %8 = clo<TimeWithinDay>(t)
+  call %9 = clo<MakeDate>(%7, %8)
+  let newDate = %9
+  call %10 = clo<UTC>(newDate)
+  call %11 = clo<TimeClip>(%10)
+  let u = %11
+  (yet "Set the [[DateValue]] internal slot of this Date object to _u_.")
+  return u
+}

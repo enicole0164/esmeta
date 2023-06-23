@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster684 {
+    label = "def <SYNTAX>:PrimaryExpression[12,0].IsFunctionDefinition(this: Ast:PrimaryExpression[12,0]): Boolean"
+    style = rounded
+    cluster684_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster684_entry_name -> cluster684_entry [arrowhead=none, color="black", style=dashed]
+    cluster684_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster684_entry -> node2914 [color="black"]
+    cluster684_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster684_exit_name -> cluster684_exit [arrowhead=none, color="black", style=dashed]
+    cluster684_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2914_name [shape=none, label=<<font color="black">Block[2914]</font>>]
+    node2914_name -> node2914 [arrowhead=none, color="black", style=dashed]
+    node2914 [shape=box, label=<<font color="black">[0] let expr = (parse this[0] (nt |ParenthesizedExpression|[]))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2914 -> node2915 [color="black"]
+    node2915_name [shape=none, label=<<font color="black">Call[2915]</font>>]
+    node2915_name -> node2915 [arrowhead=none, color="black", style=dashed]
+    node2915 [shape=cds, label=<<font color="black">%0 = expr-&gt;IsFunctionDefinition()</font>> color="black" fillcolor="white", style=filled]
+    node2915 -> node2916 [color="black"]
+    node2916_name [shape=none, label=<<font color="black">Block[2916]</font>>]
+    node2916_name -> node2916 [arrowhead=none, color="black", style=dashed]
+    node2916 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2916 -> cluster684_exit [color="black"]
+  }
+}

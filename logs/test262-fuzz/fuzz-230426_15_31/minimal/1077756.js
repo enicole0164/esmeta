@@ -1,0 +1,2 @@
+"use strict";
+async function * x ( ) { } ; try { } catch { } 0 | 0 ; try { } catch { } finally { } 0 ? 0 : 0 ; function Test262Error ( message ) { this . message = message || "" ; } x => 0 ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; async function x ( ) { } var hits = 0 ; var value ; var _this_ ; function Pack ( ) { try { } finally { } } var result = Array . of . call ( Pack , 'wolves' , 'cards' , 'cigarettes' , 'lies' ) ; assert . sameValue ( hits , 1 , { 1 : async function ( x ) { } } ) ; ; ; 

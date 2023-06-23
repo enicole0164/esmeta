@@ -1,0 +1,8 @@
+def <CONC>:ObjectEnvironmentRecord.DeleteBinding(
+  envRec: ObjectEnvironmentRecord,
+  N: String,
+): Normal[Boolean] | Abrupt {
+  let bindingObject = envRec.BindingObject
+  method-call %0 = bindingObject->Delete(N)
+  return [? %0]
+}

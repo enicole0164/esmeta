@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.StringIteratorPrototype.next(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<GeneratorResume>(this, ~empty~, "%StringIteratorPrototype%")
+  return [? %0]
+}

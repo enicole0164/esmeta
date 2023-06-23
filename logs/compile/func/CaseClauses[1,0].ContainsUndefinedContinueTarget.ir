@@ -1,0 +1,13 @@
+def <SYNTAX>:CaseClauses[1,0].ContainsUndefinedContinueTarget(
+  this: Ast:CaseClauses[1,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#346])
+  let hasUndefinedLabels = %0
+  if (= hasUndefinedLabels true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#347])
+  return %1
+}

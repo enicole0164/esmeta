@@ -1,0 +1,9 @@
+def <INTERNAL>:OrdinaryObject.Set(
+  O: OrdinaryObject,
+  P: Symbol | String,
+  V: ESValue,
+  Receiver: ESValue,
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<OrdinarySet>(O, P, V, Receiver)
+  return [? %0]
+}

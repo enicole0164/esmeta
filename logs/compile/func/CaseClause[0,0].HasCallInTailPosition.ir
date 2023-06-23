@@ -1,0 +1,10 @@
+def <SYNTAX>:CaseClause[0,0].HasCallInTailPosition(
+  this: Ast:CaseClause[0,0],
+  call: Unknown,
+): Boolean {
+  if (! (= this[1] absent)) {
+    sdo-call %0 = this[1]->HasCallInTailPosition(call)
+    return %0
+  } else {}
+  return false
+}

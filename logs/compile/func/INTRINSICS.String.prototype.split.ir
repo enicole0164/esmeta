@@ -1,0 +1,66 @@
+def <BUILTIN>:INTRINSICS.String.prototype.split(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let separator = (pop < argumentsList) else let separator = absent
+  if (< 0 argumentsList.length) let limit = (pop < argumentsList) else let limit = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  if (! (|| (= separator undefined) (= separator null))) {
+    call %1 = clo<GetMethod>(separator, @SYMBOL.split)
+    let splitter = [? %1]
+    if (! (= splitter undefined)) {
+      call %2 = clo<Call>(splitter, separator, (new [O, limit])[#966])
+      return [? %2]
+    } else {}
+  } else {}
+  call %3 = clo<ToString>(O)
+  let S = [? %3]
+  if (= limit undefined) {
+    let lim = (- (** 2 32) 1)
+  } else {
+    call %4 = clo<ToUint32>(limit)
+    let lim = ([math] [? %4])
+  }
+  call %5 = clo<ToString>(separator)
+  let R = [? %5]
+  if (== lim 0) {
+    call %6 = clo<CreateArrayFromList>((new [])[#967])
+    return %6
+  } else {}
+  if (= separator undefined) {
+    call %7 = clo<CreateArrayFromList>((new [S])[#968])
+    return %7
+  } else {}
+  let separatorLength = R.length
+  if (= separatorLength 0) {
+    let head = (substring S 0 lim)
+    (yet "Let _codeUnits_ be a List consisting of the sequence of code units that are the elements of _head_.")
+    call %8 = clo<CreateArrayFromList>(codeUnits)
+    return %8
+  } else {}
+  if (= S "") {
+    call %9 = clo<CreateArrayFromList>((new [S])[#969])
+    return %9
+  } else {}
+  let substrings = (new [])[#970]
+  let i = 0
+  call %10 = clo<StringIndexOf>(S, R, 0)
+  let j = %10
+  loop[repeat] (! (= j (- 1))) {
+    let T = (substring S i j)
+    push substrings < T
+    if (= substrings.length lim) {
+      call %11 = clo<CreateArrayFromList>(substrings)
+      return %11
+    } else {}
+    i = (+ j separatorLength)
+    call %12 = clo<StringIndexOf>(S, R, i)
+    j = %12
+  }
+  let T = (substring S i)
+  push substrings < T
+  call %13 = clo<CreateArrayFromList>(substrings)
+  return %13
+}

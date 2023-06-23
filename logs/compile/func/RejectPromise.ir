@@ -1,0 +1,16 @@
+def RejectPromise(
+  promise: Unknown,
+  reason: Unknown,
+): Const[~unused~] {
+  assert (= promise.PromiseState ~pending~)
+  let reactions = promise.PromiseRejectReactions
+  promise.PromiseResult = reason
+  promise.PromiseFulfillReactions = undefined
+  promise.PromiseRejectReactions = undefined
+  promise.PromiseState = ~rejected~
+  if (= promise.PromiseIsHandled false) {
+    call %0 = clo<HostPromiseRejectionTracker>(promise, "reject")
+  } else {}
+  call %1 = clo<TriggerPromiseReactions>(reactions, reason)
+  return ~unused~
+}

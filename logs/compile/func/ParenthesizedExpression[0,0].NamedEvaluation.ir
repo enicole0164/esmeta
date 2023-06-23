@@ -1,0 +1,9 @@
+def <SYNTAX>:ParenthesizedExpression[0,0].NamedEvaluation(
+  this: Ast:ParenthesizedExpression[0,0],
+  name: Unknown,
+): Normal[FunctionObject] | Abrupt {
+  call %0 = clo<IsAnonymousFunctionDefinition>(this[0])
+  assert (= %0 true)
+  sdo-call %1 = this[0]->NamedEvaluation(name)
+  return [? %1]
+}

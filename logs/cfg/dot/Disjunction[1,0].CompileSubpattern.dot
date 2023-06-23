@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2243 {
+    label = "def <SYNTAX>:Disjunction[1,0].CompileSubpattern(this: Ast:Disjunction[1,0], direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2243_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2243_entry_name -> cluster2243_entry [arrowhead=none, color="black", style=dashed]
+    cluster2243_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2243_entry -> node13912 [color="black"]
+    cluster2243_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2243_exit_name -> cluster2243_exit [arrowhead=none, color="black", style=dashed]
+    cluster2243_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13912_name [shape=none, label=<<font color="black">Call[13912]</font>>]
+    node13912_name -> node13912 [arrowhead=none, color="black", style=dashed]
+    node13912 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileSubpattern(direction)</font>> color="black" fillcolor="white", style=filled]
+    node13912 -> node13913 [color="black"]
+    node13913_name [shape=none, label=<<font color="black">Block[13913]</font>>]
+    node13913_name -> node13913 [arrowhead=none, color="black", style=dashed]
+    node13913 [shape=box, label=<<font color="black">[0] let m1 = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13913 -> node13914 [color="black"]
+    node13914_name [shape=none, label=<<font color="black">Call[13914]</font>>]
+    node13914_name -> node13914 [arrowhead=none, color="black", style=dashed]
+    node13914 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;CompileSubpattern(direction)</font>> color="black" fillcolor="white", style=filled]
+    node13914 -> node13915 [color="black"]
+    node13915_name [shape=none, label=<<font color="black">Block[13915]</font>>]
+    node13915_name -> node13915 [arrowhead=none, color="black", style=dashed]
+    node13915 [shape=box, label=<<font color="black">[0] let m2 = %1<BR ALIGN="LEFT"/>[1] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures _m1_ and _m2_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _r_ be _m1_(_x_, _c_).\n  1. If _r_ is not ~failure~, return _r_.\n  1. Return _m2_(_x_, _c_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13915 -> cluster2243_exit [color="black"]
+  }
+}

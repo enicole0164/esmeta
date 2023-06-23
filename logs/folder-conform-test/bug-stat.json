@@ -1,0 +1,41 @@
+{
+  "d8" : {
+    "DELETE-SUPER" : 2,
+    "YET-REMOVED-REF-ERR" : 1,
+    "ECM-STRICT-X-THIS-X" : 2,
+    "ALL-TO-PRIMITIVE" : 4,
+    "V8-03" : 1
+  },
+  "js" : {
+    "GRL-RETURN-VOID-AWAIT-THIS" : 1,
+    "DELETE-SUPER" : 2,
+    "GRL-NORMALIZE" : 1,
+    "BECOME-CONSTRUCTABLE" : 4,
+    "GRL-07" : 1,
+    "YET-REMOVED-REF-ERR" : 1,
+    "GRL-LOGICAL-ASSIGN-CONST" : 1,
+    "ALL-TO-PRIMITIVE" : 4,
+    "GRL-03-1" : 1
+  },
+  "sm" : {
+    "YET-REMOVED-REF-ERR" : 1,
+    "SM-PROP-ORDER" : 18,
+    "ECM-STRICT-X-THIS-X" : 2,
+    "SM-02" : 15,
+    "ALL-TO-PRIMITIVE" : 4,
+    "SM-SET-PROTOTYPE-OF-THIS" : 1,
+    "SM-04" : 1
+  },
+  "jsc" : {
+    "JSC-11" : 1,
+    "YET-REMOVED-REF-ERR" : 1,
+    "SM-PROP-ORDER" : 1,
+    "ECM-STRICT-X-THIS-X" : 2,
+    "ALL-TO-PRIMITIVE" : 4,
+    "JSC-10" : 1,
+    "JSC-PROP-ORDER" : 3,
+    "SM-SET-PROTOTYPE-OF-THIS" : 1,
+    "JSC-04-1" : 1,
+    "JSC-02" : 1
+  }
+}

@@ -1,0 +1,31 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.findIndex(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let predicate = (pop < argumentsList) else let predicate = absent
+  if (< 0 argumentsList.length) let thisArg = (pop < argumentsList) else let thisArg = absent
+  let O = this
+  call %0 = clo<ValidateTypedArray>(O)
+  [? %0]
+  let len = O.ArrayLength
+  call %1 = clo<IsCallable>(predicate)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1071])
+  } else {}
+  let k = 0
+  loop[repeat] (< k len) {
+    call %2 = clo<ToString>(([number] k))
+    let Pk = [! %2]
+    call %3 = clo<Get>(O, Pk)
+    let kValue = [! %3]
+    call %4 = clo<Call>(predicate, thisArg, (new [kValue, ([number] k), O])[#1072])
+    call %5 = clo<ToBoolean>([? %4])
+    let testResult = %5
+    if (= testResult true) {
+      return ([number] k)
+    } else {}
+    k = (+ k 1)
+  }
+  return -1.0f
+}

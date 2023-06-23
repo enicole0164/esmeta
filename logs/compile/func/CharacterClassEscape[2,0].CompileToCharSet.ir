@@ -1,0 +1,5 @@
+def <SYNTAX>:CharacterClassEscape[2,0].CompileToCharSet(
+  this: Ast:CharacterClassEscape[2,0],
+): Unknown["CharSet"] {
+  (yet "Return the CharSet containing all characters corresponding to a code point on the right-hand side of the |WhiteSpace| or |LineTerminator| productions.")
+}

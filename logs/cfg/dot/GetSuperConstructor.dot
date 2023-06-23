@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1275 {
+    label = "def GetSuperConstructor(): ESValue"
+    style = rounded
+    cluster1275_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1275_entry_name -> cluster1275_entry [arrowhead=none, color="black", style=dashed]
+    cluster1275_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1275_entry -> node5957 [color="black"]
+    cluster1275_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1275_exit_name -> cluster1275_exit [arrowhead=none, color="black", style=dashed]
+    cluster1275_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5957_name [shape=none, label=<<font color="black">Call[5957]</font>>]
+    node5957_name -> node5957 [arrowhead=none, color="black", style=dashed]
+    node5957 [shape=cds, label=<<font color="black">%0 = clo&lt;GetThisEnvironment&gt;()</font>> color="black" fillcolor="white", style=filled]
+    node5957 -> node5958 [color="black"]
+    node5958_name [shape=none, label=<<font color="black">Block[5958]</font>>]
+    node5958_name -> node5958 [arrowhead=none, color="black", style=dashed]
+    node5958 [shape=box, label=<<font color="black">[0] let envRec = %0<BR ALIGN="LEFT"/>[1] assert (? envRec: &quot;FunctionEnvironmentRecord&quot;)<BR ALIGN="LEFT"/>[2] let activeFunction = envRec.FunctionObject<BR ALIGN="LEFT"/>[3] assert (? activeFunction: &quot;ECMAScriptFunctionObject&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5958 -> node5959 [color="black"]
+    node5959_name [shape=none, label=<<font color="black">Call[5959]</font>>]
+    node5959_name -> node5959 [arrowhead=none, color="black", style=dashed]
+    node5959 [shape=cds, label=<<font color="black">%1 = activeFunction-&gt;GetPrototypeOf()</font>> color="black" fillcolor="white", style=filled]
+    node5959 -> node5960 [color="black"]
+    node5960_name [shape=none, label=<<font color="black">Block[5960]</font>>]
+    node5960_name -> node5960 [arrowhead=none, color="black", style=dashed]
+    node5960 [shape=box, label=<<font color="black">[0] let superConstructor = [! %1]<BR ALIGN="LEFT"/>[1] return superConstructor<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5960 -> cluster1275_exit [color="black"]
+  }
+}

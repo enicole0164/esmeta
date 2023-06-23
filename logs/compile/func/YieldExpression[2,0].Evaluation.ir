@@ -1,0 +1,126 @@
+def <SYNTAX>:YieldExpression[2,0].Evaluation(
+  this: Ast:YieldExpression[2,0],
+): Unknown {
+  call %0 = clo<GetGeneratorKind>()
+  let generatorKind = %0
+  sdo-call %1 = this[0]->Evaluation()
+  let exprRef = %1
+  call %2 = clo<GetValue>(exprRef)
+  let value = [? %2]
+  call %3 = clo<GetIterator>(value, generatorKind)
+  let iteratorRecord = [? %3]
+  let iterator = iteratorRecord.Iterator
+  call %4 = clo<NormalCompletion>(undefined)
+  let received = %4
+  loop[repeat] true {
+    if (= received.Type ~normal~) {
+      call %5 = clo<Call>(iteratorRecord.NextMethod, iteratorRecord.Iterator, (new [received.Value])[#663])
+      let innerResult = [? %5]
+      if (= generatorKind ~async~) {
+        call %6 = clo<Await>(innerResult)
+        innerResult = [? %6]
+      } else {}
+      if (! (= (typeof innerResult) @Object)) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#664])
+      } else {}
+      call %7 = clo<IteratorComplete>(innerResult)
+      let done = [? %7]
+      if (= done true) {
+        call %8 = clo<IteratorValue>(innerResult)
+        return [? %8]
+      } else {}
+      if (= generatorKind ~async~) {
+        call %9 = clo<IteratorValue>(innerResult)
+        call %10 = clo<AsyncGeneratorYield>([? %9])
+        call %11 = clo<Completion>(%10)
+        received = %11
+      } else {
+        call %12 = clo<GeneratorYield>(innerResult)
+        call %13 = clo<Completion>(%12)
+        received = %13
+      }
+    } else {
+      if (= received.Type ~throw~) {
+        call %14 = clo<GetMethod>(iterator, "throw")
+        let throw = [? %14]
+        if (! (= throw undefined)) {
+          call %15 = clo<Call>(throw, iterator, (new [received.Value])[#665])
+          let innerResult = [? %15]
+          if (= generatorKind ~async~) {
+            call %16 = clo<Await>(innerResult)
+            innerResult = [? %16]
+          } else {}
+          nop
+          if (! (= (typeof innerResult) @Object)) {
+            return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#666])
+          } else {}
+          call %17 = clo<IteratorComplete>(innerResult)
+          let done = [? %17]
+          if (= done true) {
+            call %18 = clo<IteratorValue>(innerResult)
+            return [? %18]
+          } else {}
+          if (= generatorKind ~async~) {
+            call %19 = clo<IteratorValue>(innerResult)
+            call %20 = clo<AsyncGeneratorYield>([? %19])
+            call %21 = clo<Completion>(%20)
+            received = %21
+          } else {
+            call %22 = clo<GeneratorYield>(innerResult)
+            call %23 = clo<Completion>(%22)
+            received = %23
+          }
+        } else {
+          nop
+          let closeCompletion = comp[~normal~/~empty~](~empty~)
+          if (= generatorKind ~async~) {
+            call %24 = clo<AsyncIteratorClose>(iteratorRecord, closeCompletion)
+            [? %24]
+          } else {
+            call %25 = clo<IteratorClose>(iteratorRecord, closeCompletion)
+            [? %25]
+          }
+          nop
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#667])
+        }
+      } else {
+        assert (= received.Type ~return~)
+        call %26 = clo<GetMethod>(iterator, "return")
+        let return = [? %26]
+        if (= return undefined) {
+          if (= generatorKind ~async~) {
+            call %27 = clo<Await>(received.Value)
+            received.Value = [? %27]
+          } else {}
+          return [? received]
+        } else {}
+        call %28 = clo<Call>(return, iterator, (new [received.Value])[#668])
+        let innerReturnResult = [? %28]
+        if (= generatorKind ~async~) {
+          call %29 = clo<Await>(innerReturnResult)
+          innerReturnResult = [? %29]
+        } else {}
+        if (! (= (typeof innerReturnResult) @Object)) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#669])
+        } else {}
+        call %30 = clo<IteratorComplete>(innerReturnResult)
+        let done = [? %30]
+        if (= done true) {
+          call %31 = clo<IteratorValue>(innerReturnResult)
+          let value = [? %31]
+          return comp[~return~/~empty~](value)
+        } else {}
+        if (= generatorKind ~async~) {
+          call %32 = clo<IteratorValue>(innerReturnResult)
+          call %33 = clo<AsyncGeneratorYield>([? %32])
+          call %34 = clo<Completion>(%33)
+          received = %34
+        } else {
+          call %35 = clo<GeneratorYield>(innerReturnResult)
+          call %36 = clo<Completion>(%35)
+          received = %36
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:ReturnStatement[0,0].Evaluation(
+  this: Ast:ReturnStatement[0,0],
+): Unknown {
+  return comp[~return~/~empty~](undefined)
+}

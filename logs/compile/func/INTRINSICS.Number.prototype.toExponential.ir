@@ -1,0 +1,56 @@
+def <BUILTIN>:INTRINSICS.Number.prototype.toExponential(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let fractionDigits = (pop < argumentsList) else let fractionDigits = absent
+  call %0 = clo<thisNumberValue>(this)
+  let x = [? %0]
+  call %1 = clo<ToIntegerOrInfinity>(fractionDigits)
+  let f = [? %1]
+  assert (|| (! (= fractionDigits undefined)) (= f 0))
+  if (|| (= x NaN) (|| (= x +INF) (= x -INF))) {
+    call %2 = clo<Number::toString>(x)
+    return %2
+  } else {}
+  if (|| (< f 0) (< 100 f)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#926])
+  } else {}
+  x = ([math] x)
+  let s = ""
+  if (< x 0) {
+    s = "-"
+    x = (- x)
+  } else {}
+  if (== x 0) {
+    (yet "Let _m_ be the String value consisting of _f_ + 1 occurrences of the code unit 0x0030 (DIGIT ZERO).")
+    let e = 0
+  } else {
+    if (! (= fractionDigits undefined)) {
+      (yet "Let _e_ and _n_ be integers such that 10<sup>_f_</sup> ≤ _n_ < 10<sup>_f_ + 1</sup> and for which _n_ × 10<sup>_e_ - _f_</sup> - _x_ is as close to zero as possible. If there are two such sets of _e_ and _n_, pick the _e_ and _n_ for which _n_ × 10<sup>_e_ - _f_</sup> is larger.")
+    } else {
+      (yet "Let _e_, _n_, and _f_ be integers such that _f_ ≥ 0, 10<sup>_f_</sup> ≤ _n_ < 10<sup>_f_ + 1</sup>, 𝔽(_n_ × 10<sup>_e_ - _f_</sup>) is 𝔽(_x_), and _f_ is as small as possible. Note that the decimal representation of _n_ has _f_ + 1 digits, _n_ is not divisible by 10, and the least significant digit of _n_ is not necessarily uniquely determined by these criteria.")
+    }
+    (yet "Let _m_ be the String value consisting of the digits of the decimal representation of _n_ (in order, with no leading zeroes).")
+  }
+  if (! (== f 0)) {
+    (yet "Let _a_ be the first code unit of _m_.")
+    (yet "Let _b_ be the other _f_ code units of _m_.")
+    m = (concat a "." b)
+  } else {}
+  if (== e 0) {
+    let c = "+"
+    let d = "0"
+  } else {
+    if (< 0 e) {
+      let c = "+"
+    } else {
+      assert (< e 0)
+      let c = "-"
+      e = (- e)
+    }
+    (yet "Let _d_ be the String value consisting of the digits of the decimal representation of _e_ (in order, with no leading zeroes).")
+  }
+  m = (concat m "e" c d)
+  return (concat s m)
+}

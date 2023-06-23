@@ -1,0 +1,8 @@
+def ToZeroPaddedDecimalString(
+  n: Unknown["NonnegativeInteger"],
+  minLength: Unknown["NonnegativeInteger"],
+): String {
+  (yet "Let _S_ be the String representation of _n_, formatted as a decimal number.")
+  call %0 = clo<StringPad>(S, ([number] minLength), "0", ~start~)
+  return [! %0]
+}

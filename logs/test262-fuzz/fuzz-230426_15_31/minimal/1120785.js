@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } } x ; var x ; assert = this ; { ; } ; 0 ? 0 : 0 ; var x ; function $DONOTEVALUATE ( ) { try { } catch { } } try { } catch { } var iterable = { next : function ( ) { return { value : 1 , done : false } ; } , } ; iterable [ Symbol . iterator ] = function ( ) { return iterable ; } ; function * generator ( ) { yield * iterable ; } var iterator = generator ( ) ; var result = iterator . return ( 2 ) ; 0 ; var x ; assert ( returnGets , 1 ) ; 

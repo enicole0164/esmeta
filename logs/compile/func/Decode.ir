@@ -1,0 +1,58 @@
+def Decode(
+  string: String,
+  reservedSet: String,
+): Normal[String] | Abrupt {
+  let strLen = string.length
+  let R = ""
+  let k = 0
+  loop[repeat] true {
+    if (== k strLen) {
+      return R
+    } else {}
+    let C = string[k]
+    if (! (= C 37cu)) {
+      (yet "Let _S_ be the String value containing only the code unit _C_.")
+    } else {
+      let start = k
+      if (! (< (+ k 2) strLen)) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%URIError.prototype%"], "ErrorData" -> undefined))[#883])
+      } else {}
+      (yet "If the code units at index (_k_ + 1) and (_k_ + 2) within _string_ do not represent hexadecimal digits, throw a *URIError* exception.")
+      (yet "Let _B_ be the 8-bit value represented by the two hexadecimal digits at index (_k_ + 1) and (_k_ + 2).")
+      k = (+ k 2)
+      (yet "Let _n_ be the number of leading 1 bits in _B_.")
+      if (== n 0) {
+        (yet "Let _C_ be the code unit whose value is _B_.")
+        (yet "If _C_ is not in _reservedSet_, then\n  1. Let _S_ be the String value containing only the code unit _C_.")
+        (yet "Else,\n  1. Let _S_ be the substring of _string_ from _start_ to _k_ + 1.")
+      } else {
+        if (|| (== n 1) (< 4 n)) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%URIError.prototype%"], "ErrorData" -> undefined))[#884])
+        } else {}
+        if (! (< (+ k (* 3 (- n 1))) strLen)) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%URIError.prototype%"], "ErrorData" -> undefined))[#885])
+        } else {}
+        let Octets = (new [B])[#886]
+        let j = 1
+        loop[repeat] (< j n) {
+          k = (+ k 1)
+          if (! (= string[k] 37cu)) {
+            return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%URIError.prototype%"], "ErrorData" -> undefined))[#887])
+          } else {}
+          (yet "If the code units at index (_k_ + 1) and (_k_ + 2) within _string_ do not represent hexadecimal digits, throw a *URIError* exception.")
+          (yet "Let _B_ be the 8-bit value represented by the two hexadecimal digits at index (_k_ + 1) and (_k_ + 2).")
+          k = (+ k 2)
+          push Octets < B
+          j = (+ j 1)
+        }
+        assert (= Octets.length n)
+        (yet "If _Octets_ does not contain a valid UTF-8 encoding of a Unicode code point, throw a *URIError* exception.")
+        (yet "Let _V_ be the code point obtained by applying the UTF-8 transformation to _Octets_, that is, from a List of octets into a 21-bit value.")
+        call %0 = clo<UTF16EncodeCodePoint>(V)
+        let S = %0
+      }
+    }
+    R = (concat R S)
+    k = (+ k 1)
+  }
+}

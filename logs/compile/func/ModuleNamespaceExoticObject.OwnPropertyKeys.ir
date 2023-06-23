@@ -1,0 +1,8 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.OwnPropertyKeys(
+  O: ModuleNamespaceExoticObject,
+): Normal[List[Symbol | String]] {
+  let exports = O.Exports
+  call %0 = clo<OrdinaryOwnPropertyKeys>(O)
+  let symbolKeys = %0
+  return (list-concat exports symbolKeys)[#478]
+}

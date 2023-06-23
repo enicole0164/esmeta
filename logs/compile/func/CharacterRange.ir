@@ -1,0 +1,12 @@
+def CharacterRange(
+  A: Unknown["CharSet"],
+  B: Unknown["CharSet"],
+): Unknown["CharSet"] {
+  assert (yet "_A_ and _B_ each contain exactly one character.")
+  (yet "Let _a_ be the one character in CharSet _A_.")
+  (yet "Let _b_ be the one character in CharSet _B_.")
+  (yet "Let _i_ be the character value of character _a_.")
+  (yet "Let _j_ be the character value of character _b_.")
+  assert (! (< j i))
+  (yet "Return the CharSet containing all characters with a character value greater than or equal to _i_ and less than or equal to _j_.")
+}

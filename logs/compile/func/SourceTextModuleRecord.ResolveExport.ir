@@ -1,0 +1,101 @@
+def <CONC>:SourceTextModuleRecord.ResolveExport(
+  module: SourceTextModuleRecord,
+  exportName: String,
+  resolveSet?: Unknown["ListOfRecordsThatHave[[Module]]And[[ExportName]]Fields"],
+): Normal[ResolvedBindingRecord | Const[~ambiguous~] | Null] | Abrupt {
+  if (= resolveSet absent) {
+    resolveSet = (new [])[#788]
+  } else {}
+  %1 = resolveSet
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let r = %1[%0]
+    %2 = (= module r.Module)
+    if %2 {
+      call %3 = clo<SameValue>(exportName, r.ExportName)
+      %2 = (= %3 true)
+    } else {}
+    if %2 {
+      assert (yet "This is a circular import request.")
+      return null
+    } else {}
+    %0 = (+ %0 1)
+  }
+  push resolveSet < (new Record("Module" -> module, "ExportName" -> exportName))[#789]
+  %5 = module.LocalExportEntries
+  %4 = 0
+  loop[foreach] (< %4 %5.length) {
+    let e = %5[%4]
+    call %6 = clo<SameValue>(exportName, e.ExportName)
+    if (= %6 true) {
+      assert (yet "_module_ provides the direct binding for this export.")
+      return (new ResolvedBindingRecord("Module" -> module, "BindingName" -> e.LocalName))[#790]
+    } else {}
+    %4 = (+ %4 1)
+  }
+  %8 = module.IndirectExportEntries
+  %7 = 0
+  loop[foreach] (< %7 %8.length) {
+    let e = %8[%7]
+    call %9 = clo<SameValue>(exportName, e.ExportName)
+    if (= %9 true) {
+      call %10 = clo<HostResolveImportedModule>(module, e.ModuleRequest)
+      let importedModule = [? %10]
+      if (= e.ImportName ~all~) {
+        assert (yet "_module_ does not provide the direct binding for this export.")
+        return (new ResolvedBindingRecord("Module" -> importedModule, "BindingName" -> ~namespace~))[#791]
+      } else {
+        assert (yet "_module_ imports a specific binding for this export.")
+        method-call %11 = importedModule->ResolveExport(e.ImportName, resolveSet)
+        return [? %11]
+      }
+    } else {}
+    %7 = (+ %7 1)
+  }
+  call %12 = clo<SameValue>(exportName, "default")
+  if (= %12 true) {
+    assert (yet "A `default` export was not explicitly defined by this module.")
+    return null
+    nop
+  } else {}
+  let starResolution = null
+  %14 = module.StarExportEntries
+  %13 = 0
+  loop[foreach] (< %13 %14.length) {
+    let e = %14[%13]
+    call %15 = clo<HostResolveImportedModule>(module, e.ModuleRequest)
+    let importedModule = [? %15]
+    method-call %16 = importedModule->ResolveExport(exportName, resolveSet)
+    let resolution = [? %16]
+    if (= resolution ~ambiguous~) {
+      return ~ambiguous~
+    } else {}
+    if (! (= resolution null)) {
+      assert (? resolution: "ResolvedBindingRecord")
+      if (= starResolution null) {
+        starResolution = resolution
+      } else {
+        assert (yet "There is more than one `*` import that includes the requested name.")
+        if (! (= resolution.Module starResolution.Module)) {
+          return ~ambiguous~
+        } else {}
+        if (|| (&& (= resolution.BindingName ~namespace~) (! (= starResolution.BindingName ~namespace~))) (&& (! (= resolution.BindingName ~namespace~)) (= starResolution.BindingName ~namespace~))) {
+          return ~ambiguous~
+        } else {}
+        %17 = (? resolution.BindingName: "String")
+        if %17 {
+          %17 = (? starResolution.BindingName: "String")
+          if %17 {
+            call %18 = clo<SameValue>(resolution.BindingName, starResolution.BindingName)
+            %17 = (= %18 false)
+          } else {}
+        } else {}
+        if %17 {
+          return ~ambiguous~
+        } else {}
+      }
+    } else {}
+    %13 = (+ %13 1)
+  }
+  return starResolution
+}

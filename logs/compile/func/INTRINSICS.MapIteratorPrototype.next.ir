@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.MapIteratorPrototype.next(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<GeneratorResume>(this, ~empty~, "%MapIteratorPrototype%")
+  return [? %0]
+}

@@ -1,0 +1,14 @@
+def Yield(
+  value: ESValue,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<GetGeneratorKind>()
+  let generatorKind = %0
+  if (= generatorKind ~async~) {
+    call %1 = clo<AsyncGeneratorYield>(value)
+    return [? %1]
+  } else {
+    call %2 = clo<CreateIterResultObject>(value, false)
+    call %3 = clo<GeneratorYield>(%2)
+    return [? %3]
+  }
+}

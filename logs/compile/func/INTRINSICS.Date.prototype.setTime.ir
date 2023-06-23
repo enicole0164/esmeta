@@ -1,0 +1,15 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setTime(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let time = (pop < argumentsList) else let time = absent
+  call %0 = clo<thisTimeValue>(this)
+  [? %0]
+  call %1 = clo<ToNumber>(time)
+  let t = [? %1]
+  call %2 = clo<TimeClip>(t)
+  let v = %2
+  (yet "Set the [[DateValue]] internal slot of this Date object to _v_.")
+  return v
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2161 {
+    label = "def <BUILTIN>:INTRINSICS.Date.prototype.valueOf(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2161_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2161_entry_name -> cluster2161_entry [arrowhead=none, color="black", style=dashed]
+    cluster2161_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2161_entry -> node13195 [color="black"]
+    cluster2161_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2161_exit_name -> cluster2161_exit [arrowhead=none, color="black", style=dashed]
+    cluster2161_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13195_name [shape=none, label=<<font color="black">Call[13195]</font>>]
+    node13195_name -> node13195 [arrowhead=none, color="black", style=dashed]
+    node13195 [shape=cds, label=<<font color="black">%0 = clo&lt;thisTimeValue&gt;(this)</font>> color="black" fillcolor="white", style=filled]
+    node13195 -> node13196 [color="black"]
+    node13196_name [shape=none, label=<<font color="black">Block[13196]</font>>]
+    node13196_name -> node13196 [arrowhead=none, color="black", style=dashed]
+    node13196 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13196 -> cluster2161_exit [color="black"]
+  }
+}

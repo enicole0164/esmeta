@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2629 {
+    label = "def AsyncGeneratorEnqueue(generator: Unknown["AsyncGenerator"], completion: Normal, promiseCapability: PromiseCapabilityRecord): Const[~unused~]"
+    style = rounded
+    cluster2629_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2629_entry_name -> cluster2629_entry [arrowhead=none, color="black", style=dashed]
+    cluster2629_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2629_entry -> node19509 [color="black"]
+    cluster2629_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2629_exit_name -> cluster2629_exit [arrowhead=none, color="black", style=dashed]
+    cluster2629_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19509_name [shape=none, label=<<font color="black">Block[19509]</font>>]
+    node19509_name -> node19509 [arrowhead=none, color="black", style=dashed]
+    node19509 [shape=box, label=<<font color="black">[0] let request = (new AsyncGeneratorRequest(&quot;Completion&quot; -&gt; completion, &quot;Capability&quot; -&gt; promiseCapability))[#1330]<BR ALIGN="LEFT"/>[1] push generator.AsyncGeneratorQueue &lt; request<BR ALIGN="LEFT"/>[2] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19509 -> cluster2629_exit [color="black"]
+  }
+}

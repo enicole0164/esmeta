@@ -1,0 +1,13 @@
+def <BUILTIN>:INTRINSICS.Promise.reject(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let r = (pop < argumentsList) else let r = absent
+  let C = this
+  call %0 = clo<NewPromiseCapability>(C)
+  let promiseCapability = [? %0]
+  call %1 = clo<Call>(promiseCapability.Reject, undefined, (new [r])[#1302])
+  [? %1]
+  return promiseCapability.Promise
+}

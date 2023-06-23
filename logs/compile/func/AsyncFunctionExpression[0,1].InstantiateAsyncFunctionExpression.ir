@@ -1,0 +1,21 @@
+def <SYNTAX>:AsyncFunctionExpression[0,1].InstantiateAsyncFunctionExpression(
+  this: Ast:AsyncFunctionExpression[0,1],
+  name?: Unknown,
+): FunctionObject {
+  assert (= name absent)
+  sdo-call %0 = this[0]->StringValue()
+  name = %0
+  let outerEnv = @EXECUTION_STACK[0].LexicalEnvironment
+  call %1 = clo<NewDeclarativeEnvironment>(outerEnv)
+  let funcEnv = %1
+  method-call %2 = funcEnv->CreateImmutableBinding(name, false)
+  [! %2]
+  let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  let sourceText = (source-text this)
+  call %3 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%AsyncFunction.prototype%"], sourceText, this[1], this[2], ~non-lexical-this~, funcEnv, privateEnv)
+  let closure = %3
+  call %4 = clo<SetFunctionName>(closure, name)
+  method-call %5 = funcEnv->InitializeBinding(name, closure)
+  [! %5]
+  return closure
+}

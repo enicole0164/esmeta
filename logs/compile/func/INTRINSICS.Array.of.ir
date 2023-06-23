@@ -1,0 +1,30 @@
+def <BUILTIN>:INTRINSICS.Array.of(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let items = argumentsList
+  let len = items.length
+  let lenNumber = ([number] len)
+  let C = this
+  call %0 = clo<IsConstructor>(C)
+  if (= %0 true) {
+    call %1 = clo<Construct>(C, (new [lenNumber])[#1016])
+    let A = [? %1]
+  } else {
+    call %2 = clo<ArrayCreate>(len)
+    let A = [? %2]
+  }
+  let k = 0
+  loop[repeat] (< k len) {
+    let kValue = items[k]
+    call %3 = clo<ToString>(([number] k))
+    let Pk = [! %3]
+    call %4 = clo<CreateDataPropertyOrThrow>(A, Pk, kValue)
+    [? %4]
+    k = (+ k 1)
+  }
+  call %5 = clo<Set>(A, "length", lenNumber, true)
+  [? %5]
+  return A
+}

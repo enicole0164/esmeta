@@ -1,0 +1,13 @@
+def Set(
+  O: Object,
+  P: Symbol | String,
+  V: ESValue,
+  Throw: Boolean,
+): Normal[Const[~unused~]] | Abrupt {
+  method-call %0 = O->Set(P, V, O)
+  let success = [? %0]
+  if (&& (= success false) (= Throw true)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#40])
+  } else {}
+  return ~unused~
+}

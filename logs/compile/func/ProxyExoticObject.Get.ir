@@ -1,0 +1,38 @@
+def <INTERNAL>:ProxyExoticObject.Get(
+  O: ProxyExoticObject,
+  P: Symbol | String,
+  Receiver: ESValue,
+): Normal[ESValue] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#512])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<GetMethod>(handler, "get")
+  let trap = [? %0]
+  if (= trap undefined) {
+    method-call %1 = target->Get(P, Receiver)
+    return [? %1]
+  } else {}
+  call %2 = clo<Call>(trap, handler, (new [target, P, Receiver])[#513])
+  let trapResult = [? %2]
+  method-call %3 = target->GetOwnProperty(P)
+  let targetDesc = [? %3]
+  if (&& (! (= targetDesc undefined)) (= targetDesc.Configurable false)) {
+    call %4 = clo<IsDataDescriptor>(targetDesc)
+    if (&& (= %4 true) (= targetDesc.Writable false)) {
+      call %5 = clo<SameValue>(trapResult, targetDesc.Value)
+      if (= %5 false) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#514])
+      } else {}
+    } else {}
+    call %6 = clo<IsAccessorDescriptor>(targetDesc)
+    if (&& (= %6 true) (= targetDesc.Get undefined)) {
+      if (! (= trapResult undefined)) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#515])
+      } else {}
+    } else {}
+  } else {}
+  return trapResult
+}

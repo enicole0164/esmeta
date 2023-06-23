@@ -1,0 +1,5 @@
+def GetGlobalObject(
+): Object {
+  let currentRealm = @EXECUTION_STACK[0].Realm
+  return currentRealm.GlobalObject
+}

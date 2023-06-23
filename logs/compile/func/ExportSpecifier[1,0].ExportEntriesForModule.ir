@@ -1,0 +1,17 @@
+def <SYNTAX>:ExportSpecifier[1,0].ExportEntriesForModule(
+  this: Ast:ExportSpecifier[1,0],
+  module: Unknown,
+): Unknown["ListOfExportEntryRecords"] {
+  sdo-call %0 = this[0]->StringValue()
+  let sourceName = %0
+  sdo-call %1 = this[1]->StringValue()
+  let exportName = %1
+  if (= module null) {
+    let localName = sourceName
+    let importName = null
+  } else {
+    let localName = null
+    let importName = sourceName
+  }
+  return (new [(new ExportEntryRecord("ModuleRequest" -> module, "ImportName" -> importName, "LocalName" -> localName, "ExportName" -> exportName))[#863]])[#862]
+}

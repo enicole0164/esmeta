@@ -1,0 +1,28 @@
+def AsyncModuleExecutionRejected(
+  module: CyclicModuleRecord,
+  error: ESValue,
+): Const[~unused~] {
+  if (= module.Status ~evaluated~) {
+    assert (! (= module.EvaluationError ~empty~))
+    return ~unused~
+  } else {}
+  assert (= module.Status ~evaluating-async~)
+  assert (= module.AsyncEvaluation true)
+  assert (= module.EvaluationError ~empty~)
+  call %0 = clo<ThrowCompletion>(error)
+  module.EvaluationError = %0
+  module.Status = ~evaluated~
+  %2 = module.AsyncParentModules
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let m = %2[%1]
+    call %3 = clo<AsyncModuleExecutionRejected>(m, error)
+    %1 = (+ %1 1)
+  }
+  if (! (= module.TopLevelCapability ~empty~)) {
+    assert (= module.CycleRoot module)
+    call %4 = clo<Call>(module.TopLevelCapability.Reject, undefined, (new [error])[#778])
+    [! %4]
+  } else {}
+  return ~unused~
+}

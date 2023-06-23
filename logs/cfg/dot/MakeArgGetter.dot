@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1122 {
+    label = "def MakeArgGetter(name: String, env: EnvironmentRecord): FunctionObject"
+    style = rounded
+    cluster1122_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1122_entry_name -> cluster1122_entry [arrowhead=none, color="black", style=dashed]
+    cluster1122_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1122_entry -> node4800 [color="black"]
+    cluster1122_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1122_exit_name -> cluster1122_exit [arrowhead=none, color="black", style=dashed]
+    cluster1122_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4800_name [shape=none, label=<<font color="black">Block[4800]</font>>]
+    node4800_name -> node4800 [arrowhead=none, color="black", style=dashed]
+    node4800 [shape=box, label=<<font color="black">[0] let getterClosure = clo&lt;MakeArgGetter:clo0, [name, env]&gt;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4800 -> node4801 [color="black"]
+    node4801_name [shape=none, label=<<font color="black">Call[4801]</font>>]
+    node4801_name -> node4801 [arrowhead=none, color="black", style=dashed]
+    node4801 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateBuiltinFunction&gt;(getterClosure, 0, &quot;&quot;, (new [])[#471])</font>> color="black" fillcolor="white", style=filled]
+    node4801 -> node4802 [color="black"]
+    node4802_name [shape=none, label=<<font color="black">Block[4802]</font>>]
+    node4802_name -> node4802 [arrowhead=none, color="black", style=dashed]
+    node4802 [shape=box, label=<<font color="black">[0] let getter = %0<BR ALIGN="LEFT"/>[1] nop<BR ALIGN="LEFT"/>[2] return getter<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4802 -> cluster1122_exit [color="black"]
+  }
+}

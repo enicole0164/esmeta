@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1182 {
+    label = "def <SYNTAX>:DecimalBigIntegerLiteral[1,1].NumericValue(this: Ast:DecimalBigIntegerLiteral[1,1]): Number | BigInt"
+    style = rounded
+    cluster1182_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1182_entry_name -> cluster1182_entry [arrowhead=none, color="black", style=dashed]
+    cluster1182_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1182_entry -> node5387 [color="black"]
+    cluster1182_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1182_exit_name -> cluster1182_exit [arrowhead=none, color="black", style=dashed]
+    cluster1182_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5387_name [shape=none, label=<<font color="black">Block[5387]</font>>]
+    node5387_name -> node5387 [arrowhead=none, color="black", style=dashed]
+    node5387 [shape=box, label=<<font color="black">[0] (yet &quot;Let _n_ be the number of code points in |DecimalDigits|, excluding all occurrences of |NumericLiteralSeparator|.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;Let _mv_ be (the MV of |NonZeroDigit| &times; 10&lt;sup&gt;_n_&lt;/sup&gt;) plus the MV of |DecimalDigits|.&quot;)<BR ALIGN="LEFT"/>[2] return ([bigInt] mv)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5387 -> cluster1182_exit [color="black"]
+  }
+}

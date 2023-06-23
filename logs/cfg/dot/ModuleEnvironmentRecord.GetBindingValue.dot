@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1016 {
+    label = "def <CONC>:ModuleEnvironmentRecord.GetBindingValue(envRec: ModuleEnvironmentRecord, N: String, S: Boolean): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1016_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1016_entry_name -> cluster1016_entry [arrowhead=none, color="black", style=dashed]
+    cluster1016_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1016_entry -> node3815 [color="black"]
+    cluster1016_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1016_exit_name -> cluster1016_exit [arrowhead=none, color="black", style=dashed]
+    cluster1016_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3815_name [shape=none, label=<<font color="black">Block[3815]</font>>]
+    node3815_name -> node3815 [arrowhead=none, color="black", style=dashed]
+    node3815 [shape=box, label=<<font color="black">[0] assert (= S true)<BR ALIGN="LEFT"/>[1] assert (! (= envRec.SubMap[N] absent))<BR ALIGN="LEFT"/>[2] (yet &quot;If the binding for _N_ is an indirect binding, then\n  1. Let _M_ and _N2_ be the indirection values provided when this binding for _N_ was created.\n  1. Let _targetEnv_ be _M_.[[Environment]].\n  1. If _targetEnv_ is ~empty~, throw a newly created *ReferenceError* object.\n  1. Return ? _targetEnv_.GetBindingValue(_N2_, *true*).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3815 -> node3816 [color="black"]
+    node3816_name [shape=none, label=<<font color="black">Branch[3816]</font>>]
+    node3816_name -> node3816 [arrowhead=none, color="black", style=dashed]
+    node3816 [shape=diamond, label=<<font color="black">(! envRec.SubMap[N].initialized)</font>> color="black" fillcolor="white", style=filled]
+    node3816 -> node3817 [label=<<font color="black">true</font>> color="black"]
+    node3816 -> node3818 [label=<<font color="black">false</font>> color="black"]
+    node3817_name [shape=none, label=<<font color="black">Block[3817]</font>>]
+    node3817_name -> node3817 [arrowhead=none, color="black", style=dashed]
+    node3817 [shape=box, label=<<font color="black">[0] return comp[~throw~/~empty~]((new OrdinaryObject(&quot;Prototype&quot; -&gt; @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%ReferenceError.prototype%&quot;], &quot;ErrorData&quot; -&gt; undefined))[#381])<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3817 -> cluster1016_exit [color="black"]
+    node3818_name [shape=none, label=<<font color="black">Block[3818]</font>>]
+    node3818_name -> node3818 [arrowhead=none, color="black", style=dashed]
+    node3818 [shape=box, label=<<font color="black">[0] return envRec.SubMap[N].BoundValue<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3818 -> cluster1016_exit [color="black"]
+  }
+}

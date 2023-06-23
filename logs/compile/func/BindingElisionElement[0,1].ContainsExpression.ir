@@ -1,0 +1,6 @@
+def <SYNTAX>:BindingElisionElement[0,1].ContainsExpression(
+  this: Ast:BindingElisionElement[0,1],
+): Boolean {
+  sdo-call %0 = this[1]->ContainsExpression()
+  return %0
+}

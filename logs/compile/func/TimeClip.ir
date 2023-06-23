@@ -1,0 +1,12 @@
+def TimeClip(
+  time: Number,
+): Number {
+  if (|| (= time NaN) (|| (= time +INF) (= time -INF))) {
+    return NaN
+  } else {}
+  if (< (* 8.64 (** 10 15)) (abs ([math] time))) {
+    return NaN
+  } else {}
+  call %0 = clo<ToIntegerOrInfinity>(time)
+  return ([number] [! %0])
+}

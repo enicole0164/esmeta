@@ -1,0 +1,26 @@
+def <BUILTIN>:INTRINSICS.String.prototype.substring(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let start = (pop < argumentsList) else let start = absent
+  if (< 0 argumentsList.length) let end = (pop < argumentsList) else let end = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  let len = S.length
+  call %2 = clo<ToIntegerOrInfinity>(start)
+  let intStart = [? %2]
+  if (= end undefined) {
+    let intEnd = len
+  } else {
+    call %3 = clo<ToIntegerOrInfinity>(end)
+    let intEnd = [? %3]
+  }
+  let finalStart = (clamp intStart 0 len)
+  let finalEnd = (clamp intEnd 0 len)
+  let from = (min finalStart finalEnd)
+  let to = (max finalStart finalEnd)
+  return (substring S from to)
+}

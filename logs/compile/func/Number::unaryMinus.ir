@@ -1,0 +1,8 @@
+def <NUM>:Number::unaryMinus(
+  x: Number,
+): Number {
+  if (= x NaN) {
+    return NaN
+  } else {}
+  return (- x)
+}

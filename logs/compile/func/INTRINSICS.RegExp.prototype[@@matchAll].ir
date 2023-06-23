@@ -1,0 +1,37 @@
+def <BUILTIN>:INTRINSICS.RegExp.prototype[@@matchAll](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let string = (pop < argumentsList) else let string = absent
+  let R = this
+  if (! (= (typeof R) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#997])
+  } else {}
+  call %0 = clo<ToString>(string)
+  let S = [? %0]
+  call %1 = clo<SpeciesConstructor>(R, @EXECUTION_STACK[0].Realm.Intrinsics["%RegExp%"])
+  let C = [? %1]
+  call %2 = clo<Get>(R, "flags")
+  call %3 = clo<ToString>([? %2])
+  let flags = [? %3]
+  call %4 = clo<Construct>(C, (new [R, flags])[#998])
+  let matcher = [? %4]
+  call %5 = clo<Get>(R, "lastIndex")
+  call %6 = clo<ToLength>([? %5])
+  let lastIndex = [? %6]
+  call %7 = clo<Set>(matcher, "lastIndex", lastIndex, true)
+  [? %7]
+  if (contains flags "g") {
+    let global = true
+  } else {
+    let global = false
+  }
+  if (contains flags "u") {
+    let fullUnicode = true
+  } else {
+    let fullUnicode = false
+  }
+  call %8 = clo<CreateRegExpStringIterator>(matcher, S, global, fullUnicode)
+  return %8
+}

@@ -1,0 +1,57 @@
+def <BUILTIN>:INTRINSICS.RegExp.prototype[@@match](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let string = (pop < argumentsList) else let string = absent
+  let rx = this
+  if (! (= (typeof rx) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#996])
+  } else {}
+  call %0 = clo<ToString>(string)
+  let S = [? %0]
+  call %1 = clo<Get>(rx, "global")
+  call %2 = clo<ToBoolean>([? %1])
+  let global = %2
+  if (= global false) {
+    call %3 = clo<RegExpExec>(rx, S)
+    return [? %3]
+  } else {
+    assert (= global true)
+    call %4 = clo<Get>(rx, "unicode")
+    call %5 = clo<ToBoolean>([? %4])
+    let fullUnicode = %5
+    call %6 = clo<Set>(rx, "lastIndex", 0.0f, true)
+    [? %6]
+    call %7 = clo<ArrayCreate>(0)
+    let A = [! %7]
+    let n = 0
+    loop[repeat] true {
+      call %8 = clo<RegExpExec>(rx, S)
+      let result = [? %8]
+      if (= result null) {
+        if (== n 0) {
+          return null
+        } else {}
+        return A
+      } else {
+        call %9 = clo<Get>(result, "0")
+        call %10 = clo<ToString>([? %9])
+        let matchStr = [? %10]
+        call %11 = clo<ToString>(([number] n))
+        call %12 = clo<CreateDataPropertyOrThrow>(A, [! %11], matchStr)
+        [! %12]
+        if (= matchStr "") {
+          call %13 = clo<Get>(rx, "lastIndex")
+          call %14 = clo<ToLength>([? %13])
+          let thisIndex = ([math] [? %14])
+          call %15 = clo<AdvanceStringIndex>(S, thisIndex, fullUnicode)
+          let nextIndex = %15
+          call %16 = clo<Set>(rx, "lastIndex", ([number] nextIndex), true)
+          [? %16]
+        } else {}
+        n = (+ n 1)
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+def <INTERNAL>:ProxyExoticObject.Call(
+  O: ProxyExoticObject,
+  thisArgument: ESValue,
+  argumentsList: List[ESValue],
+): Normal[ESValue] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#533])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<GetMethod>(handler, "apply")
+  let trap = [? %0]
+  if (= trap undefined) {
+    call %1 = clo<Call>(target, thisArgument, argumentsList)
+    return [? %1]
+  } else {}
+  call %2 = clo<CreateArrayFromList>(argumentsList)
+  let argArray = %2
+  call %3 = clo<Call>(trap, handler, (new [target, thisArgument, argArray])[#534])
+  return [? %3]
+}

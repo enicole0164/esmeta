@@ -1,0 +1,13 @@
+def MakeDate(
+  day: Number,
+  time: Number,
+): Number {
+  if (|| (|| (= day NaN) (|| (= day +INF) (= day -INF))) (|| (= time NaN) (|| (= time +INF) (= time -INF)))) {
+    return NaN
+  } else {}
+  (yet "Let _tv_ be _day_ × msPerDay + _time_.")
+  if (|| (= tv NaN) (|| (= tv +INF) (= tv -INF))) {
+    return NaN
+  } else {}
+  return tv
+}

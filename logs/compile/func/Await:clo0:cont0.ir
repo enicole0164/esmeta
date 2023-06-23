@@ -1,0 +1,5 @@
+def <CONT>:Await:clo0:cont0(
+): Unknown {
+  assert (&& (= prevContext @EXECUTION_STACK[0]) (! (= asyncContext @EXECUTION_STACK[0])))
+  return undefined
+}

@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2641 {
+    label = "def <BUILTIN>:INTRINSICS.AsyncFunction(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2641_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2641_entry_name -> cluster2641_entry [arrowhead=none, color="black", style=dashed]
+    cluster2641_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2641_entry -> node19610 [color="black"]
+    cluster2641_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2641_exit_name -> cluster2641_exit [arrowhead=none, color="black", style=dashed]
+    cluster2641_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19610_name [shape=none, label=<<font color="black">Block[19610]</font>>]
+    node19610_name -> node19610 [arrowhead=none, color="black", style=dashed]
+    node19610 [shape=box, label=<<font color="black">[0] let C = @EXECUTION_STACK[0].Function<BR ALIGN="LEFT"/>[1] let args = argumentsList<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19610 -> node19611 [color="black"]
+    node19611_name [shape=none, label=<<font color="black">Call[19611]</font>>]
+    node19611_name -> node19611 [arrowhead=none, color="black", style=dashed]
+    node19611 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateDynamicFunction&gt;(C, NewTarget, ~async~, args)</font>> color="black" fillcolor="white", style=filled]
+    node19611 -> node19612 [color="black"]
+    node19612_name [shape=none, label=<<font color="black">Block[19612]</font>>]
+    node19612_name -> node19612 [arrowhead=none, color="black", style=dashed]
+    node19612 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19612 -> cluster2641_exit [color="black"]
+  }
+}

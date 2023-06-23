@@ -1,0 +1,5 @@
+def <CONT>:Await:cont2(
+  completion: Unknown,
+): Unknown {
+  return completion
+}

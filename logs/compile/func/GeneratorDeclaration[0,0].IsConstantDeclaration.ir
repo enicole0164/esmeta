@@ -1,0 +1,5 @@
+def <SYNTAX>:GeneratorDeclaration[0,0].IsConstantDeclaration(
+  this: Ast:GeneratorDeclaration[0,0],
+): Boolean {
+  return false
+}

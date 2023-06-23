@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster961 {
+    label = "def <SYNTAX>:LiteralPropertyName[2,0].PropName(this: Ast:LiteralPropertyName[2,0]): Const[~empty~] | String"
+    style = rounded
+    cluster961_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster961_entry_name -> cluster961_entry [arrowhead=none, color="black", style=dashed]
+    cluster961_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster961_entry -> node3562 [color="black"]
+    cluster961_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster961_exit_name -> cluster961_exit [arrowhead=none, color="black", style=dashed]
+    cluster961_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3562_name [shape=none, label=<<font color="black">Call[3562]</font>>]
+    node3562_name -> node3562 [arrowhead=none, color="black", style=dashed]
+    node3562 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;NumericValue()</font>> color="black" fillcolor="white", style=filled]
+    node3562 -> node3563 [color="black"]
+    node3563_name [shape=none, label=<<font color="black">Block[3563]</font>>]
+    node3563_name -> node3563 [arrowhead=none, color="black", style=dashed]
+    node3563 [shape=box, label=<<font color="black">[0] let nbr = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3563 -> node3564 [color="black"]
+    node3564_name [shape=none, label=<<font color="black">Call[3564]</font>>]
+    node3564_name -> node3564 [arrowhead=none, color="black", style=dashed]
+    node3564 [shape=cds, label=<<font color="black">%1 = clo&lt;ToString&gt;(nbr)</font>> color="black" fillcolor="white", style=filled]
+    node3564 -> node3565 [color="black"]
+    node3565_name [shape=none, label=<<font color="black">Block[3565]</font>>]
+    node3565_name -> node3565 [arrowhead=none, color="black", style=dashed]
+    node3565 [shape=box, label=<<font color="black">[0] return [! %1]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3565 -> cluster961_exit [color="black"]
+  }
+}

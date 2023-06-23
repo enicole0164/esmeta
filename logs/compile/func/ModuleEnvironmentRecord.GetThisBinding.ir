@@ -1,0 +1,5 @@
+def <CONC>:ModuleEnvironmentRecord.GetThisBinding(
+  envRec: ModuleEnvironmentRecord,
+): Normal[Undefined] {
+  return undefined
+}

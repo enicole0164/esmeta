@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2640 {
+    label = "def CreateAsyncIteratorFromClosure(closure: Unknown["AbstractClosureWithNoParameters"], generatorBrand: Unknown, generatorPrototype: Object): Unknown["AsyncGenerator"]"
+    style = rounded
+    cluster2640_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2640_entry_name -> cluster2640_entry [arrowhead=none, color="black", style=dashed]
+    cluster2640_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2640_entry -> node19605 [color="black"]
+    cluster2640_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2640_exit_name -> cluster2640_exit [arrowhead=none, color="black", style=dashed]
+    cluster2640_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19605_name [shape=none, label=<<font color="black">Block[19605]</font>>]
+    node19605_name -> node19605 [arrowhead=none, color="black", style=dashed]
+    node19605 [shape=box, label=<<font color="black">[0] nop<BR ALIGN="LEFT"/>[1] let internalSlotsList = (new [&quot;AsyncGeneratorState&quot;, &quot;AsyncGeneratorContext&quot;, &quot;AsyncGeneratorQueue&quot;, &quot;GeneratorBrand&quot;])[#1336]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19605 -> node19606 [color="black"]
+    node19606_name [shape=none, label=<<font color="black">Call[19606]</font>>]
+    node19606_name -> node19606 [arrowhead=none, color="black", style=dashed]
+    node19606 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryObjectCreate&gt;(generatorPrototype, internalSlotsList)</font>> color="black" fillcolor="white", style=filled]
+    node19606 -> node19607 [color="black"]
+    node19607_name [shape=none, label=<<font color="black">Block[19607]</font>>]
+    node19607_name -> node19607 [arrowhead=none, color="black", style=dashed]
+    node19607 [shape=box, label=<<font color="black">[0] let generator = %0<BR ALIGN="LEFT"/>[1] generator.GeneratorBrand = generatorBrand<BR ALIGN="LEFT"/>[2] generator.AsyncGeneratorState = undefined<BR ALIGN="LEFT"/>[3] let callerContext = @EXECUTION_STACK[0]<BR ALIGN="LEFT"/>[4] let calleeContext = (new ExecutionContext())[#1337]<BR ALIGN="LEFT"/>[5] calleeContext.Function = null<BR ALIGN="LEFT"/>[6] calleeContext.Realm = @EXECUTION_STACK[0].Realm<BR ALIGN="LEFT"/>[7] calleeContext.ScriptOrModule = callerContext.ScriptOrModule<BR ALIGN="LEFT"/>[8] nop<BR ALIGN="LEFT"/>[9] push calleeContext &gt; @EXECUTION_STACK<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19607 -> node19608 [color="black"]
+    node19608_name [shape=none, label=<<font color="black">Call[19608]</font>>]
+    node19608_name -> node19608 [arrowhead=none, color="black", style=dashed]
+    node19608 [shape=cds, label=<<font color="black">%1 = clo&lt;AsyncGeneratorStart&gt;(generator, closure)</font>> color="black" fillcolor="white", style=filled]
+    node19608 -> node19609 [color="black"]
+    node19609_name [shape=none, label=<<font color="black">Block[19609]</font>>]
+    node19609_name -> node19609 [arrowhead=none, color="black", style=dashed]
+    node19609 [shape=box, label=<<font color="black">[0] (pop &lt; @EXECUTION_STACK)<BR ALIGN="LEFT"/>[1] return generator<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19609 -> cluster2640_exit [color="black"]
+  }
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:StringNumericLiteral[0,0].StringNumericValue(
+  this: Ast:StringNumericLiteral[0,0],
+): Number {
+  return 0.0f
+}

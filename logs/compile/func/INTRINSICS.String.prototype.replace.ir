@@ -1,0 +1,47 @@
+def <BUILTIN>:INTRINSICS.String.prototype.replace(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let searchValue = (pop < argumentsList) else let searchValue = absent
+  if (< 0 argumentsList.length) let replaceValue = (pop < argumentsList) else let replaceValue = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  if (! (|| (= searchValue undefined) (= searchValue null))) {
+    call %1 = clo<GetMethod>(searchValue, @SYMBOL.replace)
+    let replacer = [? %1]
+    if (! (= replacer undefined)) {
+      call %2 = clo<Call>(replacer, searchValue, (new [O, replaceValue])[#956])
+      return [? %2]
+    } else {}
+  } else {}
+  call %3 = clo<ToString>(O)
+  let string = [? %3]
+  call %4 = clo<ToString>(searchValue)
+  let searchString = [? %4]
+  call %5 = clo<IsCallable>(replaceValue)
+  let functionalReplace = %5
+  if (= functionalReplace false) {
+    call %6 = clo<ToString>(replaceValue)
+    replaceValue = [? %6]
+  } else {}
+  let searchLength = searchString.length
+  call %7 = clo<StringIndexOf>(string, searchString, 0)
+  let position = %7
+  if (= position (- 1)) {
+    return string
+  } else {}
+  let preceding = (substring string 0 position)
+  let following = (substring string (+ position searchLength))
+  if (= functionalReplace true) {
+    call %8 = clo<Call>(replaceValue, undefined, (new [searchString, ([number] position), string])[#957])
+    call %9 = clo<ToString>([? %8])
+    let replacement = [? %9]
+  } else {
+    assert (= (typeof replaceValue) @String)
+    let captures = (new [])[#958]
+    call %10 = clo<GetSubstitution>(searchString, string, position, captures, undefined, replaceValue)
+    let replacement = [! %10]
+  }
+  return (concat preceding replacement following)
+}

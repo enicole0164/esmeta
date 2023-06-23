@@ -1,0 +1,30 @@
+def <BUILTIN>:INTRINSICS.Promise(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let executor = (pop < argumentsList) else let executor = absent
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1253])
+  } else {}
+  call %0 = clo<IsCallable>(executor)
+  if (= %0 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1254])
+  } else {}
+  call %1 = clo<OrdinaryCreateFromConstructor>(NewTarget, "%Promise.prototype%", (new ["PromiseState", "PromiseResult", "PromiseFulfillReactions", "PromiseRejectReactions", "PromiseIsHandled"])[#1255])
+  let promise = [? %1]
+  promise.PromiseState = ~pending~
+  promise.PromiseFulfillReactions = (new [])[#1256]
+  promise.PromiseRejectReactions = (new [])[#1257]
+  promise.PromiseIsHandled = false
+  call %2 = clo<CreateResolvingFunctions>(promise)
+  let resolvingFunctions = %2
+  call %3 = clo<Call>(executor, undefined, (new [resolvingFunctions.Resolve, resolvingFunctions.Reject])[#1258])
+  call %4 = clo<Completion>(%3)
+  let completion = %4
+  if (&& (comp? completion) (! (= completion.Type ~normal~))) {
+    call %5 = clo<Call>(resolvingFunctions.Reject, undefined, (new [completion.Value])[#1259])
+    [? %5]
+  } else {}
+  return promise
+}

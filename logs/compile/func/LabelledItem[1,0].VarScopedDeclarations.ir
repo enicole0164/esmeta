@@ -1,0 +1,5 @@
+def <SYNTAX>:LabelledItem[1,0].VarScopedDeclarations(
+  this: Ast:LabelledItem[1,0],
+): List[Ast] {
+  return (new [])[#267]
+}

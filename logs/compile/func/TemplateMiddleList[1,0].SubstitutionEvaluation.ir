@@ -1,0 +1,11 @@
+def <SYNTAX>:TemplateMiddleList[1,0].SubstitutionEvaluation(
+  this: Ast:TemplateMiddleList[1,0],
+): Normal[List[ESValue]] | Abrupt {
+  sdo-call %0 = this[0]->SubstitutionEvaluation()
+  let preceding = [? %0]
+  sdo-call %1 = this[2]->Evaluation()
+  let nextRef = %1
+  call %2 = clo<GetValue>(nextRef)
+  let next = [? %2]
+  return (list-concat preceding (new [next])[#566])[#565]
+}

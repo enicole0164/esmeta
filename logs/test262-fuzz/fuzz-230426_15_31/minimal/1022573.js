@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } ; throw new Test262Error ( message ) ; } var x ; x => 0 ; assert . notSameValue = function * ( ) { } ; assert . _toString = function ( value ) { throw 0 ; } ; function Test262Error ( message ) { this . message = message || "" ; } async x => { } ; try { } catch ( { x } ) { } function $DONOTEVALUATE ( ) { throw x ; } var target = "a" ; var result = Object . assign ( target ) ; assert . sameValue ( typeof result , "object" ) ; 

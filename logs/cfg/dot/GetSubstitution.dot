@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2187 {
+    label = "def GetSubstitution(matched: String, str: String, position: Unknown["NonnegativeInteger"], captures: Unknown["PossiblyEmptyList,EachOfWhoseElementsIsAStringOr*undefined*"], namedCaptures: Object | Undefined, replacementTemplate: String): Normal[String] | Abrupt"
+    style = rounded
+    cluster2187_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2187_entry_name -> cluster2187_entry [arrowhead=none, color="black", style=dashed]
+    cluster2187_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2187_entry -> node13597 [color="black"]
+    cluster2187_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2187_exit_name -> cluster2187_exit [arrowhead=none, color="black", style=dashed]
+    cluster2187_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13597_name [shape=none, label=<<font color="black">Block[13597]</font>>]
+    node13597_name -> node13597 [arrowhead=none, color="black", style=dashed]
+    node13597 [shape=box, label=<<font color="black">[0] let stringLength = str.length<BR ALIGN="LEFT"/>[1] assert (! (&lt; stringLength position))<BR ALIGN="LEFT"/>[2] let templateRemainder = replacementTemplate<BR ALIGN="LEFT"/>[3] let result = &quot;&quot;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13597 -> node13598 [color="black"]
+    node13598_name [shape=none, label=<<font color="black">Branch[13598]</font>>]
+    node13598_name -> node13598 [arrowhead=none, color="black", style=dashed]
+    node13598 [shape=diamond, label=<<font color="black">(! (= templateRemainder &quot;&quot;))</font>> color="black" fillcolor="white", style=filled]
+    node13598 -> node13599 [label=<<font color="black">true</font>> color="black"]
+    node13598 -> node13600 [label=<<font color="black">false</font>> color="black"]
+    node13599_name [shape=none, label=<<font color="black">Block[13599]</font>>]
+    node13599_name -> node13599 [arrowhead=none, color="black", style=dashed]
+    node13599 [shape=box, label=<<font color="black">[0] nop<BR ALIGN="LEFT"/>[1] (yet &quot;If _templateRemainder_ starts with *\&quot;$$\&quot;*, then\n  1. Let _ref_ be *\&quot;$$\&quot;*.\n  1. Let _refReplacement_ be *\&quot;$\&quot;*.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Else if _templateRemainder_ starts with *\&quot;$`\&quot;*, then\n  1. Let _ref_ be *\&quot;$`\&quot;*.\n  1. Let _refReplacement_ be the substring of _str_ from 0 to _position_.&quot;)<BR ALIGN="LEFT"/>[3] (yet &quot;Else if _templateRemainder_ starts with *\&quot;$&amp;\&quot;*, then\n  1. Let _ref_ be *\&quot;$&amp;\&quot;*.\n  1. Let _refReplacement_ be _matched_.&quot;)<BR ALIGN="LEFT"/>[4] (yet &quot;Else if _templateRemainder_ starts with *\&quot;$'\&quot;* (0x0024 (DOLLAR SIGN) followed by 0x0027 (APOSTROPHE)), then\n  1. Let _ref_ be *\&quot;$'\&quot;*.\n  1. Let _matchLength_ be the length of _matched_.\n  1. Let _tailPos_ be _position_ + _matchLength_.\n  1. Let _refReplacement_ be the substring of _str_ from min(_tailPos_, _stringLength_).\n  1. NOTE: _tailPos_ can exceed _stringLength_ only if this abstract operation was invoked by a call to the intrinsic @@replace method of %RegExp.prototype% on an object whose *\&quot;exec\&quot;* property is not the intrinsic %RegExp.prototype.exec%.&quot;)<BR ALIGN="LEFT"/>[5] (yet &quot;Else if _templateRemainder_ starts with *\&quot;$\&quot;* followed by 1 or more decimal digits, then\n  1. Let _found_ be *false*.\n  1. For each integer _d_ of &laquo; 2, 1 &raquo;, do\n    1. If _found_ is *false* and _templateRemainder_ starts with *\&quot;$\&quot;* followed by _d_ or more decimal digits, then\n      1. Set _found_ to *true*.\n      1. Let _ref_ be the substring of _templateRemainder_ from 0 to 1 + _d_.\n      1. Let _digits_ be the substring of _templateRemainder_ from 1 to 1 + _d_.\n      1. Let _index_ be ℝ(StringToNumber(_digits_)).\n      1. Assert: 0 &le; _index_ &le; 99..\n      1. If _index_ = 0, then\n        1. Let _refReplacement_ be _ref_.\n      1. Else if _index_ &le; the number of elements in _captures_, then\n        1. Let _capture_ be _captures_[_index_ - 1].\n        1. If _capture_ is *undefined*, then\n          1. Let _refReplacement_ be *\&quot;\&quot;*.\n        1. Else,\n          1. Let _refReplacement_ be _capture_.\n      1. Else,\n        1. Let _refReplacement_ be _ref_.&quot;)<BR ALIGN="LEFT"/>[6] (yet &quot;Else if _templateRemainder_ starts with *\&quot;$&lt;\&quot;*, then\n  1. Let _gtPos_ be StringIndexOf(_templateRemainder_, *\&quot;&gt;\&quot;*, 0).\n  1. If _gtPos_ = -1 or _namedCaptures_ is *undefined*, then\n    1. Let _ref_ be *\&quot;$&lt;\&quot;*.\n    1. Let _refReplacement_ be _ref_.\n  1. Else,\n    1. Let _ref_ be the substring of _templateRemainder_ from 0 to _gtPos_ + 1.\n    1. Let _groupName_ be the substring of _templateRemainder_ from 2 to _gtPos_.\n    1. Assert: Type(_namedCaptures_) is Object.\n    1. Let _capture_ be ? Get(_namedCaptures_, _groupName_).\n    1. If _capture_ is *undefined*, then\n      1. Let _refReplacement_ be *\&quot;\&quot;*.\n    1. Else,\n      1. Let _refReplacement_ be ? ToString(_capture_).&quot;)<BR ALIGN="LEFT"/>[7] (yet &quot;Else,\n  1. Let _ref_ be the substring of _templateRemainder_ from 0 to 1.\n  1. Let _refReplacement_ be _ref_.&quot;)<BR ALIGN="LEFT"/>[8] let refLength = ref.length<BR ALIGN="LEFT"/>[9] templateRemainder = (substring templateRemainder refLength)<BR ALIGN="LEFT"/>[10] result = (concat result refReplacement)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13599 -> node13598 [color="black"]
+    node13600_name [shape=none, label=<<font color="black">Block[13600]</font>>]
+    node13600_name -> node13600 [arrowhead=none, color="black", style=dashed]
+    node13600 [shape=box, label=<<font color="black">[0] return result<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13600 -> cluster2187_exit [color="black"]
+  }
+}

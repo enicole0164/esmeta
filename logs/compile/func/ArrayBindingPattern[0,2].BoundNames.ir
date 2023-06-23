@@ -1,0 +1,5 @@
+def <SYNTAX>:ArrayBindingPattern[0,2].BoundNames(
+  this: Ast:ArrayBindingPattern[0,2],
+): List[String] {
+  return (new [])[#90]
+}

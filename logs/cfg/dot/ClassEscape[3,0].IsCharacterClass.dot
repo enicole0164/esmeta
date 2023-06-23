@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2210 {
+    label = "def <SYNTAX>:ClassEscape[3,0].IsCharacterClass(this: Ast:ClassEscape[3,0]): Boolean"
+    style = rounded
+    cluster2210_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2210_entry_name -> cluster2210_entry [arrowhead=none, color="black", style=dashed]
+    cluster2210_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2210_entry -> node13852 [color="black"]
+    cluster2210_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2210_exit_name -> cluster2210_exit [arrowhead=none, color="black", style=dashed]
+    cluster2210_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13852_name [shape=none, label=<<font color="black">Block[13852]</font>>]
+    node13852_name -> node13852 [arrowhead=none, color="black", style=dashed]
+    node13852 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13852 -> cluster2210_exit [color="black"]
+  }
+}

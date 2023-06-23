@@ -1,0 +1,15 @@
+def <SYNTAX>:OptionalChain[9,0].ChainEvaluation(
+  this: Ast:OptionalChain[9,0],
+  baseValue: Unknown,
+  baseReference: Unknown,
+): Normal[ESValue] | Abrupt {
+  let optionalChain = this[0]
+  sdo-call %0 = optionalChain->ChainEvaluation(baseValue, baseReference)
+  let newReference = [? %0]
+  call %1 = clo<GetValue>(newReference)
+  let newValue = [? %1]
+  sdo-call %2 = this[1]->StringValue()
+  let fieldNameString = %2
+  call %3 = clo<MakePrivateReference>(newValue, fieldNameString)
+  return %3
+}

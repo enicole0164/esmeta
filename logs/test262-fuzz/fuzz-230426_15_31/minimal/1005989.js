@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message === undefined ) { message = 'Expected true but got ' ; } } ; assert . notSameValue = this ; function Test262Error ( message ) { this . message = message || "" ; } x : ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; var result = Object . fromEntries ( [ Object ( 'ab' ) ] ) ; assert ( result [ 'a' ] , 'b' ) ; 

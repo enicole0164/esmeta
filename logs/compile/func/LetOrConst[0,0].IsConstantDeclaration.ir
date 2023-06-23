@@ -1,0 +1,5 @@
+def <SYNTAX>:LetOrConst[0,0].IsConstantDeclaration(
+  this: Ast:LetOrConst[0,0],
+): Boolean {
+  return false
+}

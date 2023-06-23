@@ -1,0 +1,11 @@
+def GetGeneratorKind(
+): Const[~async~, ~non-generator~, ~sync~] {
+  let genContext = @EXECUTION_STACK[0]
+  if (= genContext.Generator absent) return ~non-generator~ else {}
+  let generator = genContext.Generator
+  if (! (= generator.AsyncGeneratorState absent)) {
+    return ~async~
+  } else {
+    return ~sync~
+  }
+}

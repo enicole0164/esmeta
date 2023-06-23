@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2665 {
+    label = "def ComposeWriteEventBytes(execution: Unknown["CandidateExecution"], byteIndex: Unknown["NonnegativeInteger"], Ws: Unknown["ListOfEitherWriteSharedMemoryOrReadModifyWriteSharedMemoryEvents"]): Unknown["ListOfByteValues"]"
+    style = rounded
+    cluster2665_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2665_entry_name -> cluster2665_entry [arrowhead=none, color="black", style=dashed]
+    cluster2665_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2665_entry -> node19843 [color="black"]
+    cluster2665_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2665_exit_name -> cluster2665_exit [arrowhead=none, color="black", style=dashed]
+    cluster2665_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19843_name [shape=none, label=<<font color="black">Block[19843]</font>>]
+    node19843_name -> node19843 [arrowhead=none, color="black", style=dashed]
+    node19843 [shape=box, label=<<font color="black">[0] let byteLocation = byteIndex<BR ALIGN="LEFT"/>[1] let bytesRead = (new [])[#1360]<BR ALIGN="LEFT"/>[2] %1 = Ws<BR ALIGN="LEFT"/>[3] %0 = 0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19843 -> node19844 [color="black"]
+    node19844_name [shape=none, label=<<font color="black">Branch[19844]</font>>]
+    node19844_name -> node19844 [arrowhead=none, color="black", style=dashed]
+    node19844 [shape=diamond, label=<<font color="black">(&lt; %0 %1.length)</font>> color="black" fillcolor="white", style=filled]
+    node19844 -> node19845 [label=<<font color="black">true</font>> color="black"]
+    node19844 -> node19846 [label=<<font color="black">false</font>> color="black"]
+    node19845_name [shape=none, label=<<font color="black">Block[19845]</font>>]
+    node19845_name -> node19845 [arrowhead=none, color="black", style=dashed]
+    node19845 [shape=box, label=<<font color="black">[0] let W = %1[%0]<BR ALIGN="LEFT"/>[1] assert (yet &quot;_W_ has _byteLocation_ in its range.&quot;)<BR ALIGN="LEFT"/>[2] let payloadIndex = (- byteLocation W.ByteIndex)<BR ALIGN="LEFT"/>[3] (yet &quot;If _W_ is a WriteSharedMemory event, then\n  1. Let _byte_ be _W_.[[Payload]][_payloadIndex_].&quot;)<BR ALIGN="LEFT"/>[4] (yet &quot;Else,\n  1. Assert: _W_ is a ReadModifyWriteSharedMemory event..\n  1. Let _bytes_ be ValueOfReadEvent(_execution_, _W_).\n  1. Let _bytesModified_ be _W_.[[ModifyOp]](_bytes_, _W_.[[Payload]]).\n  1. Let _byte_ be _bytesModified_[_payloadIndex_].&quot;)<BR ALIGN="LEFT"/>[5] push bytesRead &lt; byte<BR ALIGN="LEFT"/>[6] byteLocation = (+ byteLocation 1)<BR ALIGN="LEFT"/>[7] %0 = (+ %0 1)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19845 -> node19844 [color="black"]
+    node19846_name [shape=none, label=<<font color="black">Block[19846]</font>>]
+    node19846_name -> node19846 [arrowhead=none, color="black", style=dashed]
+    node19846 [shape=box, label=<<font color="black">[0] return bytesRead<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19846 -> cluster2665_exit [color="black"]
+  }
+}

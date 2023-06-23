@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2389 {
+    label = "def <BUILTIN>:INTRINSICS.get TypedArray.prototype.buffer(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2389_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2389_entry_name -> cluster2389_entry [arrowhead=none, color="black", style=dashed]
+    cluster2389_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2389_entry -> node15958 [color="black"]
+    cluster2389_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2389_exit_name -> cluster2389_exit [arrowhead=none, color="black", style=dashed]
+    cluster2389_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node15958_name [shape=none, label=<<font color="black">Block[15958]</font>>]
+    node15958_name -> node15958 [arrowhead=none, color="black", style=dashed]
+    node15958 [shape=box, label=<<font color="black">[0] let O = this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node15958 -> node15959 [color="black"]
+    node15959_name [shape=none, label=<<font color="black">Call[15959]</font>>]
+    node15959_name -> node15959 [arrowhead=none, color="black", style=dashed]
+    node15959 [shape=cds, label=<<font color="black">%0 = clo&lt;RequireInternalSlot&gt;(O, &quot;TypedArrayName&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node15959 -> node15960 [color="black"]
+    node15960_name [shape=none, label=<<font color="black">Block[15960]</font>>]
+    node15960_name -> node15960 [arrowhead=none, color="black", style=dashed]
+    node15960 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/>[1] assert (! (= O.ViewedArrayBuffer absent))<BR ALIGN="LEFT"/>[2] let buffer = O.ViewedArrayBuffer<BR ALIGN="LEFT"/>[3] return buffer<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node15960 -> cluster2389_exit [color="black"]
+  }
+}

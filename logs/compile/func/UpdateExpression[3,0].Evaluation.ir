@@ -1,0 +1,20 @@
+def <SYNTAX>:UpdateExpression[3,0].Evaluation(
+  this: Ast:UpdateExpression[3,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let expr = %0
+  call %1 = clo<GetValue>(expr)
+  call %2 = clo<ToNumeric>([? %1])
+  let oldValue = [? %2]
+  if (= (typeof oldValue) @Number) {
+    call %3 = clo<Number::add>(oldValue, 1.0f)
+    let newValue = %3
+  } else {
+    assert (= (typeof oldValue) @BigInt)
+    call %4 = clo<BigInt::add>(oldValue, 1n)
+    let newValue = %4
+  }
+  call %5 = clo<PutValue>(expr, newValue)
+  [? %5]
+  return newValue
+}

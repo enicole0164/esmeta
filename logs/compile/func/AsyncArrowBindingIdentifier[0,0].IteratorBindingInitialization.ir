@@ -1,0 +1,28 @@
+def <SYNTAX>:AsyncArrowBindingIdentifier[0,0].IteratorBindingInitialization(
+  this: Ast:AsyncArrowBindingIdentifier[0,0],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  let v = undefined
+  assert (= iteratorRecord.Done false)
+  call %0 = clo<IteratorStep>(iteratorRecord)
+  call %1 = clo<Completion>(%0)
+  let next = %1
+  if (&& (comp? next) (! (= next.Type ~normal~))) {
+    iteratorRecord.Done = true
+  } else {}
+  [? next]
+  if (= next false) {
+    iteratorRecord.Done = true
+  } else {
+    call %2 = clo<IteratorValue>(next)
+    call %3 = clo<Completion>(%2)
+    v = %3
+    if (&& (comp? v) (! (= v.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? v]
+  }
+  sdo-call %4 = this[0]->BindingInitialization(v, environment)
+  return [? %4]
+}

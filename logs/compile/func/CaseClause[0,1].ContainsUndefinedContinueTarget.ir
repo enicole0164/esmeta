@@ -1,0 +1,11 @@
+def <SYNTAX>:CaseClause[0,1].ContainsUndefinedContinueTarget(
+  this: Ast:CaseClause[0,1],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  if (! (= this[1] absent)) {
+    sdo-call %0 = this[1]->ContainsUndefinedContinueTarget(iterationSet, (new [])[#349])
+    return %0
+  } else {}
+  return false
+}

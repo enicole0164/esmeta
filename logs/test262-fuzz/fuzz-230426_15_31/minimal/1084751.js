@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message === undefined ) ; throw new Test262Error ( message ) ; } async x => 0 ; async x => 0 ; switch ( 0 ) { } class x { } if ( 0 ) ; else ; x => { } ; class WM extends WeakMap { } var map = new WM ( ) ; var obj = { } ; { ; } map . set ( obj , 42 ) ; ( ... x ) => 0 ; assert ( map . get ( obj ) , 42 ) ; 

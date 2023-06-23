@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2446 {
+    label = "def CreateMapIterator(map: ESValue, kind: Const[~key+value~, ~key~, ~value~]): Unknown["EitherANormalCompletionContainingAGeneratorOrAnAbruptCompletion"]"
+    style = rounded
+    cluster2446_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2446_entry_name -> cluster2446_entry [arrowhead=none, color="black", style=dashed]
+    cluster2446_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2446_entry -> node17029 [color="black"]
+    cluster2446_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2446_exit_name -> cluster2446_exit [arrowhead=none, color="black", style=dashed]
+    cluster2446_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node17029_name [shape=none, label=<<font color="black">Call[17029]</font>>]
+    node17029_name -> node17029 [arrowhead=none, color="black", style=dashed]
+    node17029 [shape=cds, label=<<font color="black">%0 = clo&lt;RequireInternalSlot&gt;(map, &quot;MapData&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node17029 -> node17030 [color="black"]
+    node17030_name [shape=none, label=<<font color="black">Block[17030]</font>>]
+    node17030_name -> node17030 [arrowhead=none, color="black", style=dashed]
+    node17030 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/>[1] let closure = clo&lt;CreateMapIterator:clo0, [map, kind]&gt;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17030 -> node17031 [color="black"]
+    node17031_name [shape=none, label=<<font color="black">Call[17031]</font>>]
+    node17031_name -> node17031 [arrowhead=none, color="black", style=dashed]
+    node17031 [shape=cds, label=<<font color="black">%1 = clo&lt;CreateIteratorFromClosure&gt;(closure, &quot;%MapIteratorPrototype%&quot;, @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%MapIteratorPrototype%&quot;])</font>> color="black" fillcolor="white", style=filled]
+    node17031 -> node17032 [color="black"]
+    node17032_name [shape=none, label=<<font color="black">Block[17032]</font>>]
+    node17032_name -> node17032 [arrowhead=none, color="black", style=dashed]
+    node17032 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17032 -> cluster2446_exit [color="black"]
+  }
+}

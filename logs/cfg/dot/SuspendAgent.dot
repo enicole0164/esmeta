@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2528 {
+    label = "def SuspendAgent(WL: Unknown["WaiterList"], W: Unknown["AgentSignifier"], timeout: Unknown["NonnegativeInteger"]): Boolean"
+    style = rounded
+    cluster2528_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2528_entry_name -> cluster2528_entry [arrowhead=none, color="black", style=dashed]
+    cluster2528_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2528_entry -> node17965 [color="black"]
+    cluster2528_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2528_exit_name -> cluster2528_exit [arrowhead=none, color="black", style=dashed]
+    cluster2528_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node17965_name [shape=none, label=<<font color="black">Block[17965]</font>>]
+    node17965_name -> node17965 [arrowhead=none, color="black", style=dashed]
+    node17965 [shape=box, label=<<font color="black">[0] assert (yet &quot;The calling agent is in the critical section for _WL_.&quot;)<BR ALIGN="LEFT"/>[1] assert (yet &quot;_W_ is equivalent to AgentSignifier().&quot;)<BR ALIGN="LEFT"/>[2] assert (yet &quot;_W_ is on the list of waiters in _WL_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17965 -> node17966 [color="black"]
+    node17966_name [shape=none, label=<<font color="black">Call[17966]</font>>]
+    node17966_name -> node17966 [arrowhead=none, color="black", style=dashed]
+    node17966 [shape=cds, label=<<font color="black">%0 = clo&lt;AgentCanSuspend&gt;()</font>> color="black" fillcolor="white", style=filled]
+    node17966 -> node17967 [color="black"]
+    node17967_name [shape=none, label=<<font color="black">Block[17967]</font>>]
+    node17967_name -> node17967 [arrowhead=none, color="black", style=dashed]
+    node17967 [shape=box, label=<<font color="black">[0] assert (= %0 true)<BR ALIGN="LEFT"/>[1] (yet &quot;Perform LeaveCriticalSection(_WL_) and suspend _W_ for up to _timeout_ milliseconds, performing the combined operation in such a way that a notification that arrives after the critical section is exited but before the suspension takes effect is not lost. _W_ can notify either because the timeout expired or because it was notified explicitly by another agent calling NotifyWaiter with arguments _WL_ and _W_, and not for any other reasons at all.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17967 -> node17968 [color="black"]
+    node17968_name [shape=none, label=<<font color="black">Call[17968]</font>>]
+    node17968_name -> node17968 [arrowhead=none, color="black", style=dashed]
+    node17968 [shape=cds, label=<<font color="black">%1 = clo&lt;EnterCriticalSection&gt;(WL)</font>> color="black" fillcolor="white", style=filled]
+    node17968 -> node17969 [color="black"]
+    node17969_name [shape=none, label=<<font color="black">Block[17969]</font>>]
+    node17969_name -> node17969 [arrowhead=none, color="black", style=dashed]
+    node17969 [shape=box, label=<<font color="black">[0] (yet &quot;If _W_ was notified explicitly by another agent calling NotifyWaiter with arguments _WL_ and _W_, return *true*.&quot;)<BR ALIGN="LEFT"/>[1] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17969 -> cluster2528_exit [color="black"]
+  }
+}

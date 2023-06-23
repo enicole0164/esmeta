@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1181 {
+    label = "def <SYNTAX>:DecimalBigIntegerLiteral[1,0].NumericValue(this: Ast:DecimalBigIntegerLiteral[1,0]): Number | BigInt"
+    style = rounded
+    cluster1181_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1181_entry_name -> cluster1181_entry [arrowhead=none, color="black", style=dashed]
+    cluster1181_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1181_entry -> node5385 [color="black"]
+    cluster1181_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1181_exit_name -> cluster1181_exit [arrowhead=none, color="black", style=dashed]
+    cluster1181_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5385_name [shape=none, label=<<font color="black">Call[5385]</font>>]
+    node5385_name -> node5385 [arrowhead=none, color="black", style=dashed]
+    node5385 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;MV()</font>> color="black" fillcolor="white", style=filled]
+    node5385 -> node5386 [color="black"]
+    node5386_name [shape=none, label=<<font color="black">Block[5386]</font>>]
+    node5386_name -> node5386 [arrowhead=none, color="black", style=dashed]
+    node5386 [shape=box, label=<<font color="black">[0] return ([bigInt] %0)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5386 -> cluster1181_exit [color="black"]
+  }
+}

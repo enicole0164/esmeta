@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster239 {
+    label = "def <SYNTAX>:Declaration[2,0].DeclarationPart(this: Ast:Declaration[2,0]): Ast"
+    style = rounded
+    cluster239_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster239_entry_name -> cluster239_entry [arrowhead=none, color="black", style=dashed]
+    cluster239_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster239_entry -> node1648 [color="black"]
+    cluster239_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster239_exit_name -> cluster239_exit [arrowhead=none, color="black", style=dashed]
+    cluster239_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1648_name [shape=none, label=<<font color="black">Block[1648]</font>>]
+    node1648_name -> node1648 [arrowhead=none, color="black", style=dashed]
+    node1648 [shape=box, label=<<font color="black">[0] return this[0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1648 -> cluster239_exit [color="black"]
+  }
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:NamedExports[0,0].ExportEntriesForModule(
+  this: Ast:NamedExports[0,0],
+  module: Unknown,
+): Unknown["ListOfExportEntryRecords"] {
+  return (new [])[#858]
+}

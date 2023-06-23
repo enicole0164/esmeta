@@ -1,0 +1,21 @@
+def <NUM>:Number::equal(
+  x: Number,
+  y: Number,
+): Boolean {
+  if (= x NaN) {
+    return false
+  } else {}
+  if (= y NaN) {
+    return false
+  } else {}
+  if (= x y) {
+    return true
+  } else {}
+  if (&& (= x 0.0f) (= y -0.0f)) {
+    return true
+  } else {}
+  if (&& (= x -0.0f) (= y 0.0f)) {
+    return true
+  } else {}
+  return false
+}

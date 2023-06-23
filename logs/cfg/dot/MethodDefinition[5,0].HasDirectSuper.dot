@@ -1,0 +1,37 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1583 {
+    label = "def <SYNTAX>:MethodDefinition[5,0].HasDirectSuper(this: Ast:MethodDefinition[5,0]): Boolean"
+    style = rounded
+    cluster1583_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1583_entry_name -> cluster1583_entry [arrowhead=none, color="black", style=dashed]
+    cluster1583_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1583_entry -> node8479 [color="black"]
+    cluster1583_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1583_exit_name -> cluster1583_exit [arrowhead=none, color="black", style=dashed]
+    cluster1583_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8479_name [shape=none, label=<<font color="black">Call[8479]</font>>]
+    node8479_name -> node8479 [arrowhead=none, color="black", style=dashed]
+    node8479 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;Contains((nt |SuperCall|[]))</font>> color="black" fillcolor="white", style=filled]
+    node8479 -> node8480 [color="black"]
+    node8480_name [shape=none, label=<<font color="black">Branch[8480]</font>>]
+    node8480_name -> node8480 [arrowhead=none, color="black", style=dashed]
+    node8480 [shape=diamond, label=<<font color="black">(= %0 true)</font>> color="black" fillcolor="white", style=filled]
+    node8480 -> node8481 [label=<<font color="black">true</font>> color="black"]
+    node8480 -> node8482 [label=<<font color="black">false</font>> color="black"]
+    node8481_name [shape=none, label=<<font color="black">Block[8481]</font>>]
+    node8481_name -> node8481 [arrowhead=none, color="black", style=dashed]
+    node8481 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8481 -> cluster1583_exit [color="black"]
+    node8482_name [shape=none, label=<<font color="black">Call[8482]</font>>]
+    node8482_name -> node8482 [arrowhead=none, color="black", style=dashed]
+    node8482 [shape=cds, label=<<font color="black">%1 = this[2]-&gt;Contains((nt |SuperCall|[]))</font>> color="black" fillcolor="white", style=filled]
+    node8482 -> node8483 [color="black"]
+    node8483_name [shape=none, label=<<font color="black">Block[8483]</font>>]
+    node8483_name -> node8483 [arrowhead=none, color="black", style=dashed]
+    node8483 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8483 -> cluster1583_exit [color="black"]
+  }
+}

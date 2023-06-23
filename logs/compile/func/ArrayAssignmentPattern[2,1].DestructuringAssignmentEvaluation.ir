@@ -1,0 +1,36 @@
+def <SYNTAX>:ArrayAssignmentPattern[2,1].DestructuringAssignmentEvaluation(
+  this: Ast:ArrayAssignmentPattern[2,1],
+  value: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<GetIterator>(value)
+  let iteratorRecord = [? %0]
+  sdo-call %1 = this[0]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+  call %2 = clo<Completion>(%1)
+  let status = %2
+  if (&& (comp? status) (! (= status.Type ~normal~))) {
+    if (= iteratorRecord.Done false) {
+      call %3 = clo<IteratorClose>(iteratorRecord, status)
+      return [? %3]
+    } else {}
+    return [? status]
+  } else {}
+  if (! (= this[1] absent)) {
+    sdo-call %4 = this[1]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+    call %5 = clo<Completion>(%4)
+    status = %5
+    if (&& (comp? status) (! (= status.Type ~normal~))) {
+      assert (= iteratorRecord.Done true)
+      return [? status]
+    } else {}
+  } else {}
+  if (! (= this[2] absent)) {
+    sdo-call %6 = this[2]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+    call %7 = clo<Completion>(%6)
+    status = %7
+  } else {}
+  if (= iteratorRecord.Done false) {
+    call %8 = clo<IteratorClose>(iteratorRecord, status)
+    return [? %8]
+  } else {}
+  return [? status]
+}

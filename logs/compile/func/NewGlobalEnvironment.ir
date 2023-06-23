@@ -1,0 +1,15 @@
+def NewGlobalEnvironment(
+  G: Unknown,
+  thisValue: Unknown,
+): GlobalEnvironmentRecord {
+  call %0 = clo<NewObjectEnvironment>(G, false, null)
+  let objRec = %0
+  let dclRec = (new DeclarativeEnvironmentRecord())[#387]
+  let env = (new GlobalEnvironmentRecord())[#388]
+  env.ObjectRecord = objRec
+  env.GlobalThisValue = thisValue
+  env.DeclarativeRecord = dclRec
+  env.VarNames = (new [])[#389]
+  env.OuterEnv = null
+  return env
+}

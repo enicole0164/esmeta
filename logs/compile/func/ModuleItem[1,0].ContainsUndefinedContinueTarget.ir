@@ -1,0 +1,7 @@
+def <SYNTAX>:ModuleItem[1,0].ContainsUndefinedContinueTarget(
+  this: Ast:ModuleItem[1,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  return false
+}

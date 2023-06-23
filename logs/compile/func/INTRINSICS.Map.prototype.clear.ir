@@ -1,0 +1,19 @@
+def <BUILTIN>:INTRINSICS.Map.prototype.clear(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let M = this
+  call %0 = clo<RequireInternalSlot>(M, "MapData")
+  [? %0]
+  let entries = M.MapData
+  %2 = entries
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let p = %2[%1]
+    p.Key = ~empty~
+    p.Value = ~empty~
+    %1 = (+ %1 1)
+  }
+  return undefined
+}

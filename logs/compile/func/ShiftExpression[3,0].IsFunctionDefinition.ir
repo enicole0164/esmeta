@@ -1,0 +1,5 @@
+def <SYNTAX>:ShiftExpression[3,0].IsFunctionDefinition(
+  this: Ast:ShiftExpression[3,0],
+): Boolean {
+  return false
+}

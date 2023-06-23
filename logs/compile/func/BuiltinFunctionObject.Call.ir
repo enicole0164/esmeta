@@ -1,0 +1,18 @@
+def <INTERNAL>:BuiltinFunctionObject.Call(
+  F: BuiltinFunctionObject,
+  thisArgument: ESValue,
+  argumentsList: List[ESValue],
+): Normal[ESValue] | Abrupt {
+  let callerContext = @EXECUTION_STACK[0]
+  nop
+  let calleeContext = (new ExecutionContext())[#438]
+  calleeContext.Function = F
+  let calleeRealm = F.Realm
+  calleeContext.Realm = calleeRealm
+  calleeContext.ScriptOrModule = null
+  nop
+  push calleeContext > @EXECUTION_STACK
+  call result = F.Code(thisArgument, argumentsList, undefined)
+  (pop < @EXECUTION_STACK)
+  return [? result]
+}

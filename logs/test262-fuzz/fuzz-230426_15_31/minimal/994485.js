@@ -1,0 +1,2 @@
+"use strict";
+function x ( ) { } x => 0 ; ; 0 ; ; function Test262Error ( message ) { message || "" ; } { } x : ; function * x ( ) { } async function * x ( ) { } function $DONE ( error ) { if ( 0 ) { } else ; } var iterationCount = 0 ; var x ; var iterable = { } ; iterable [ Symbol . asyncIterator ] = function ( ) { return { next : function ( ) { return x => 0 ; } , get return ( ) { 1 ; return x => 0 ; } , } ; } ; ( async function ( ) { for await ( var _ of iterable ) { ; break ; } x => 0 ; } ( ) ) . then ( $DONE , $DONE ) ; 

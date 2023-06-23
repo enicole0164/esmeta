@@ -1,0 +1,5 @@
+def <SYNTAX>:RegularExpressionLiteral[0,0].BodyText(
+  this: Ast:RegularExpressionLiteral[0,0],
+): Unknown["SourceText"] {
+  (yet "Return the source text that was recognized as |RegularExpressionBody|.")
+}

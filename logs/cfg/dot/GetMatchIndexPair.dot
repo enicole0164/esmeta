@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2317 {
+    label = "def GetMatchIndexPair(S: String, match: MatchRecord): Unknown["Array"]"
+    style = rounded
+    cluster2317_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2317_entry_name -> cluster2317_entry [arrowhead=none, color="black", style=dashed]
+    cluster2317_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2317_entry -> node14258 [color="black"]
+    cluster2317_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2317_exit_name -> cluster2317_exit [arrowhead=none, color="black", style=dashed]
+    cluster2317_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14258_name [shape=none, label=<<font color="black">Block[14258]</font>>]
+    node14258_name -> node14258 [arrowhead=none, color="black", style=dashed]
+    node14258 [shape=box, label=<<font color="black">[0] assert (yet &quot;_match_.[[StartIndex]] is a non-negative integer less than or equal to the length of _S_.&quot;)<BR ALIGN="LEFT"/>[1] assert (yet &quot;_match_.[[EndIndex]] is an integer between _match_.[[StartIndex]] and the length of _S_, inclusive.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14258 -> node14259 [color="black"]
+    node14259_name [shape=none, label=<<font color="black">Call[14259]</font>>]
+    node14259_name -> node14259 [arrowhead=none, color="black", style=dashed]
+    node14259 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateArrayFromList&gt;((new [([number] match.StartIndex), ([number] match.EndIndex)])[#992])</font>> color="black" fillcolor="white", style=filled]
+    node14259 -> node14260 [color="black"]
+    node14260_name [shape=none, label=<<font color="black">Block[14260]</font>>]
+    node14260_name -> node14260 [arrowhead=none, color="black", style=dashed]
+    node14260 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14260 -> cluster2317_exit [color="black"]
+  }
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:StatementListItem[1,0].TopLevelVarScopedDeclarations(
+  this: Ast:StatementListItem[1,0],
+): List[Ast] {
+  if (? this[0]: "Declaration0") {
+    sdo-call %0 = this[0][0]->DeclarationPart()
+    let declaration = %0
+    return (new [declaration])[#290]
+  } else {}
+  return (new [])[#291]
+}

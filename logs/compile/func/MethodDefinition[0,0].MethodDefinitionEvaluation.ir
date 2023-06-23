@@ -1,0 +1,11 @@
+def <SYNTAX>:MethodDefinition[0,0].MethodDefinitionEvaluation(
+  this: Ast:MethodDefinition[0,0],
+  object: Unknown,
+  enumerable: Unknown,
+): Normal[PrivateElement | Const[~unused~]] | Abrupt {
+  sdo-call %0 = this->DefineMethod(object)
+  let methodDef = [? %0]
+  call %1 = clo<SetFunctionName>(methodDef.Closure, methodDef.Key)
+  call %2 = clo<DefineMethodProperty>(object, methodDef.Key, methodDef.Closure, enumerable)
+  return %2
+}

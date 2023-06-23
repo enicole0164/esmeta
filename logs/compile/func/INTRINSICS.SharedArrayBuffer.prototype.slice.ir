@@ -1,0 +1,61 @@
+def <BUILTIN>:INTRINSICS.SharedArrayBuffer.prototype.slice(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let start = (pop < argumentsList) else let start = absent
+  if (< 0 argumentsList.length) let end = (pop < argumentsList) else let end = absent
+  let O = this
+  call %0 = clo<RequireInternalSlot>(O, "ArrayBufferData")
+  [? %0]
+  call %1 = clo<IsSharedArrayBuffer>(O)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1163])
+  } else {}
+  let len = O.ArrayBufferByteLength
+  call %2 = clo<ToIntegerOrInfinity>(start)
+  let relativeStart = [? %2]
+  if (= relativeStart -INF) {
+    let first = 0
+  } else {
+    if (< relativeStart 0) {
+      let first = (max (+ len relativeStart) 0)
+    } else {
+      let first = (min relativeStart len)
+    }
+  }
+  if (= end undefined) {
+    let relativeEnd = len
+  } else {
+    call %3 = clo<ToIntegerOrInfinity>(end)
+    let relativeEnd = [? %3]
+  }
+  if (= relativeEnd -INF) {
+    let final = 0
+  } else {
+    if (< relativeEnd 0) {
+      let final = (max (+ len relativeEnd) 0)
+    } else {
+      let final = (min relativeEnd len)
+    }
+  }
+  let newLen = (max (- final first) 0)
+  call %4 = clo<SpeciesConstructor>(O, @EXECUTION_STACK[0].Realm.Intrinsics["%SharedArrayBuffer%"])
+  let ctor = [? %4]
+  call %5 = clo<Construct>(ctor, (new [([number] newLen)])[#1164])
+  let new = [? %5]
+  call %6 = clo<RequireInternalSlot>(new, "ArrayBufferData")
+  [? %6]
+  call %7 = clo<IsSharedArrayBuffer>(new)
+  if (= %7 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1165])
+  } else {}
+  (yet "If _new_.[[ArrayBufferData]] and _O_.[[ArrayBufferData]] are the same Shared Data Block values, throw a *TypeError* exception.")
+  if (< new.ArrayBufferByteLength newLen) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1166])
+  } else {}
+  let fromBuf = O.ArrayBufferData
+  let toBuf = new.ArrayBufferData
+  call %8 = clo<CopyDataBlockBytes>(toBuf, 0, fromBuf, first, newLen)
+  return new
+}

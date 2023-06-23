@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1218 {
+    label = "def <SYNTAX>:ArrayLiteral[1,0].Evaluation(this: Ast:ArrayLiteral[1,0]): Unknown"
+    style = rounded
+    cluster1218_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1218_entry_name -> cluster1218_entry [arrowhead=none, color="black", style=dashed]
+    cluster1218_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1218_entry -> node5530 [color="black"]
+    cluster1218_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1218_exit_name -> cluster1218_exit [arrowhead=none, color="black", style=dashed]
+    cluster1218_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5530_name [shape=none, label=<<font color="black">Call[5530]</font>>]
+    node5530_name -> node5530 [arrowhead=none, color="black", style=dashed]
+    node5530 [shape=cds, label=<<font color="black">%0 = clo&lt;ArrayCreate&gt;(0)</font>> color="black" fillcolor="white", style=filled]
+    node5530 -> node5531 [color="black"]
+    node5531_name [shape=none, label=<<font color="black">Block[5531]</font>>]
+    node5531_name -> node5531 [arrowhead=none, color="black", style=dashed]
+    node5531 [shape=box, label=<<font color="black">[0] let array = [! %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5531 -> node5532 [color="black"]
+    node5532_name [shape=none, label=<<font color="black">Call[5532]</font>>]
+    node5532_name -> node5532 [arrowhead=none, color="black", style=dashed]
+    node5532 [shape=cds, label=<<font color="black">%1 = this[0]-&gt;ArrayAccumulation(array, 0)</font>> color="black" fillcolor="white", style=filled]
+    node5532 -> node5533 [color="black"]
+    node5533_name [shape=none, label=<<font color="black">Block[5533]</font>>]
+    node5533_name -> node5533 [arrowhead=none, color="black", style=dashed]
+    node5533 [shape=box, label=<<font color="black">[0] [? %1]<BR ALIGN="LEFT"/>[1] return array<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5533 -> cluster1218_exit [color="black"]
+  }
+}

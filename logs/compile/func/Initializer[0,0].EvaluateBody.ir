@@ -1,0 +1,19 @@
+def <SYNTAX>:Initializer[0,0].EvaluateBody(
+  this: Ast:Initializer[0,0],
+  functionObject: Unknown,
+  argumentsList: Unknown["List"],
+): Normal[ESValue] | Abrupt {
+  assert (= argumentsList.length 0)
+  assert (! (= functionObject.ClassFieldInitializerName ~empty~))
+  call %0 = clo<IsAnonymousFunctionDefinition>(this[0])
+  if (= %0 true) {
+    sdo-call %1 = this->NamedEvaluation(functionObject.ClassFieldInitializerName)
+    let value = [? %1]
+  } else {
+    sdo-call %2 = this[0]->Evaluation()
+    let rhs = %2
+    call %3 = clo<GetValue>(rhs)
+    let value = [? %3]
+  }
+  return comp[~return~/~empty~](value)
+}

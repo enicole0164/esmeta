@@ -1,0 +1,81 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.copyWithin(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  if (< 0 argumentsList.length) let start = (pop < argumentsList) else let start = absent
+  if (< 0 argumentsList.length) let end = (pop < argumentsList) else let end = absent
+  let O = this
+  call %0 = clo<ValidateTypedArray>(O)
+  [? %0]
+  let len = O.ArrayLength
+  call %1 = clo<ToIntegerOrInfinity>(target)
+  let relativeTarget = [? %1]
+  if (= relativeTarget -INF) {
+    let to = 0
+  } else {
+    if (< relativeTarget 0) {
+      let to = (max (+ len relativeTarget) 0)
+    } else {
+      let to = (min relativeTarget len)
+    }
+  }
+  call %2 = clo<ToIntegerOrInfinity>(start)
+  let relativeStart = [? %2]
+  if (= relativeStart -INF) {
+    let from = 0
+  } else {
+    if (< relativeStart 0) {
+      let from = (max (+ len relativeStart) 0)
+    } else {
+      let from = (min relativeStart len)
+    }
+  }
+  if (= end undefined) {
+    let relativeEnd = len
+  } else {
+    call %3 = clo<ToIntegerOrInfinity>(end)
+    let relativeEnd = [? %3]
+  }
+  if (= relativeEnd -INF) {
+    let final = 0
+  } else {
+    if (< relativeEnd 0) {
+      let final = (max (+ len relativeEnd) 0)
+    } else {
+      let final = (min relativeEnd len)
+    }
+  }
+  let count = (min (- final from) (- len to))
+  if (< 0 count) {
+    nop
+    let buffer = O.ViewedArrayBuffer
+    call %4 = clo<IsDetachedBuffer>(buffer)
+    if (= %4 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1061])
+    } else {}
+    call %5 = clo<TypedArrayElementSize>(O)
+    let elementSize = %5
+    let byteOffset = O.ByteOffset
+    let toByteIndex = (+ (* to elementSize) byteOffset)
+    let fromByteIndex = (+ (* from elementSize) byteOffset)
+    let countBytes = (* count elementSize)
+    if (&& (< fromByteIndex toByteIndex) (< toByteIndex (+ fromByteIndex countBytes))) {
+      let direction = (- 1)
+      fromByteIndex = (- (+ fromByteIndex countBytes) 1)
+      toByteIndex = (- (+ toByteIndex countBytes) 1)
+    } else {
+      let direction = 1
+    }
+    loop[repeat] (< 0 countBytes) {
+      call %6 = clo<GetValueFromBuffer>(buffer, fromByteIndex, ~Uint8~, true, ~Unordered~)
+      let value = %6
+      call %7 = clo<SetValueInBuffer>(buffer, toByteIndex, ~Uint8~, value, true, ~Unordered~)
+      fromByteIndex = (+ fromByteIndex direction)
+      toByteIndex = (+ toByteIndex direction)
+      countBytes = (- countBytes 1)
+    }
+  } else {}
+  return O
+}

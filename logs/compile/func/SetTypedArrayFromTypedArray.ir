@@ -1,0 +1,75 @@
+def SetTypedArrayFromTypedArray(
+  target: Unknown["TypedArray"],
+  targetOffset: Unknown["NonnegativeIntegerOr+∞"],
+  source: Unknown["TypedArray"],
+): Normal[Const[~unused~]] | Abrupt {
+  let targetBuffer = target.ViewedArrayBuffer
+  call %0 = clo<IsDetachedBuffer>(targetBuffer)
+  if (= %0 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1085])
+  } else {}
+  let targetLength = target.ArrayLength
+  let srcBuffer = source.ViewedArrayBuffer
+  call %1 = clo<IsDetachedBuffer>(srcBuffer)
+  if (= %1 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1086])
+  } else {}
+  call %2 = clo<TypedArrayElementType>(target)
+  let targetType = %2
+  call %3 = clo<TypedArrayElementSize>(target)
+  let targetElementSize = %3
+  let targetByteOffset = target.ByteOffset
+  call %4 = clo<TypedArrayElementType>(source)
+  let srcType = %4
+  call %5 = clo<TypedArrayElementSize>(source)
+  let srcElementSize = %5
+  let srcLength = source.ArrayLength
+  let srcByteOffset = source.ByteOffset
+  if (= targetOffset +INF) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1087])
+  } else {}
+  if (< targetLength (+ srcLength targetOffset)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1088])
+  } else {}
+  if (! (== target.ContentType source.ContentType)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1089])
+  } else {}
+  call %6 = clo<IsSharedArrayBuffer>(srcBuffer)
+  call %7 = clo<IsSharedArrayBuffer>(targetBuffer)
+  if (&& (= %6 true) (= %7 true)) {
+    (yet "If _srcBuffer_.[[ArrayBufferData]] and _targetBuffer_.[[ArrayBufferData]] are the same Shared Data Block values, let _same_ be *true*; else let _same_ be *false*.")
+  } else {
+    call %8 = clo<SameValue>(srcBuffer, targetBuffer)
+    let same = %8
+  }
+  if (= same true) {
+    let srcByteLength = source.ByteLength
+    call %9 = clo<CloneArrayBuffer>(srcBuffer, srcByteOffset, srcByteLength, @EXECUTION_STACK[0].Realm.Intrinsics["%ArrayBuffer%"])
+    srcBuffer = [? %9]
+    nop
+    let srcByteIndex = 0
+  } else {
+    let srcByteIndex = srcByteOffset
+  }
+  let targetByteIndex = (+ (* targetOffset targetElementSize) targetByteOffset)
+  let limit = (+ targetByteIndex (* targetElementSize srcLength))
+  if (= srcType targetType) {
+    nop
+    loop[repeat] (< targetByteIndex limit) {
+      call %10 = clo<GetValueFromBuffer>(srcBuffer, srcByteIndex, ~Uint8~, true, ~Unordered~)
+      let value = %10
+      call %11 = clo<SetValueInBuffer>(targetBuffer, targetByteIndex, ~Uint8~, value, true, ~Unordered~)
+      srcByteIndex = (+ srcByteIndex 1)
+      targetByteIndex = (+ targetByteIndex 1)
+    }
+  } else {
+    loop[repeat] (< targetByteIndex limit) {
+      call %12 = clo<GetValueFromBuffer>(srcBuffer, srcByteIndex, srcType, true, ~Unordered~)
+      let value = %12
+      call %13 = clo<SetValueInBuffer>(targetBuffer, targetByteIndex, targetType, value, true, ~Unordered~)
+      srcByteIndex = (+ srcByteIndex srcElementSize)
+      targetByteIndex = (+ targetByteIndex targetElementSize)
+    }
+  }
+  return ~unused~
+}

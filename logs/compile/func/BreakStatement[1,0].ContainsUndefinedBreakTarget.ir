@@ -1,0 +1,10 @@
+def <SYNTAX>:BreakStatement[1,0].ContainsUndefinedBreakTarget(
+  this: Ast:BreakStatement[1,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->StringValue()
+  if (! (contains labelSet %0)) {
+    return true
+  } else {}
+  return false
+}

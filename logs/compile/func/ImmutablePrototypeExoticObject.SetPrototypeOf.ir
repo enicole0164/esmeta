@@ -1,0 +1,7 @@
+def <INTERNAL>:ImmutablePrototypeExoticObject.SetPrototypeOf(
+  O: ImmutablePrototypeExoticObject,
+  V: Object | Null,
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<SetImmutablePrototype>(O, V)
+  return [? %0]
+}

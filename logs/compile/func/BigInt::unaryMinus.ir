@@ -1,0 +1,8 @@
+def <NUM>:BigInt::unaryMinus(
+  x: BigInt,
+): BigInt {
+  if (= x 0n) {
+    return 0n
+  } else {}
+  return ([bigInt] (- ([math] x)))
+}

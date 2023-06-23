@@ -1,0 +1,6 @@
+def <SYNTAX>:GeneratorExpression[0,0].Evaluation(
+  this: Ast:GeneratorExpression[0,0],
+): Unknown {
+  sdo-call %0 = this->InstantiateGeneratorFunctionExpression()
+  return %0
+}

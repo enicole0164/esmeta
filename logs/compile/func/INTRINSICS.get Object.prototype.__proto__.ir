@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.get Object.prototype.__proto__(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  method-call %1 = O->GetPrototypeOf()
+  return [? %1]
+}

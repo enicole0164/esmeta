@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster981 {
+    label = "def <CONC>:DeclarativeEnvironmentRecord.HasThisBinding(envRec: DeclarativeEnvironmentRecord): False"
+    style = rounded
+    cluster981_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster981_entry_name -> cluster981_entry [arrowhead=none, color="black", style=dashed]
+    cluster981_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster981_entry -> node3623 [color="black"]
+    cluster981_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster981_exit_name -> cluster981_exit [arrowhead=none, color="black", style=dashed]
+    cluster981_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3623_name [shape=none, label=<<font color="black">Block[3623]</font>>]
+    node3623_name -> node3623 [arrowhead=none, color="black", style=dashed]
+    node3623 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3623 -> cluster981_exit [color="black"]
+  }
+}

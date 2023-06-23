@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1934 {
+    label = "def <SYNTAX>:ExportSpecifier[0,0].ExportedBindings(this: Ast:ExportSpecifier[0,0]): List[String]"
+    style = rounded
+    cluster1934_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1934_entry_name -> cluster1934_entry [arrowhead=none, color="black", style=dashed]
+    cluster1934_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1934_entry -> node10587 [color="black"]
+    cluster1934_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1934_exit_name -> cluster1934_exit [arrowhead=none, color="black", style=dashed]
+    cluster1934_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10587_name [shape=none, label=<<font color="black">Call[10587]</font>>]
+    node10587_name -> node10587 [arrowhead=none, color="black", style=dashed]
+    node10587 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;StringValue()</font>> color="black" fillcolor="white", style=filled]
+    node10587 -> node10588 [color="black"]
+    node10588_name [shape=none, label=<<font color="black">Block[10588]</font>>]
+    node10588_name -> node10588 [arrowhead=none, color="black", style=dashed]
+    node10588 [shape=box, label=<<font color="black">[0] return (new [%0])[#826]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10588 -> cluster1934_exit [color="black"]
+  }
+}

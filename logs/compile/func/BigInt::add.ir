@@ -1,0 +1,6 @@
+def <NUM>:BigInt::add(
+  x: BigInt,
+  y: BigInt,
+): BigInt {
+  return ([bigInt] (+ x y))
+}

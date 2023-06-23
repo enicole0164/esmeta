@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster13 {
+    label = "def <NUM>:Number::bitwiseNOT(x: Number): Unknown["IntegralNumber"]"
+    style = rounded
+    cluster13_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster13_entry_name -> cluster13_entry [arrowhead=none, color="black", style=dashed]
+    cluster13_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster13_entry -> node106 [color="black"]
+    cluster13_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster13_exit_name -> cluster13_exit [arrowhead=none, color="black", style=dashed]
+    cluster13_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node106_name [shape=none, label=<<font color="black">Call[106]</font>>]
+    node106_name -> node106 [arrowhead=none, color="black", style=dashed]
+    node106 [shape=cds, label=<<font color="black">%0 = clo&lt;ToInt32&gt;(x)</font>> color="black" fillcolor="white", style=filled]
+    node106 -> node107 [color="black"]
+    node107_name [shape=none, label=<<font color="black">Block[107]</font>>]
+    node107_name -> node107 [arrowhead=none, color="black", style=dashed]
+    node107 [shape=box, label=<<font color="black">[0] let oldValue = [! %0]<BR ALIGN="LEFT"/>[1] return (~ oldValue)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node107 -> cluster13_exit [color="black"]
+  }
+}

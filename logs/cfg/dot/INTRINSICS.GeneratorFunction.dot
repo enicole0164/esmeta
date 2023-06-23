@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2606 {
+    label = "def <BUILTIN>:INTRINSICS.GeneratorFunction(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2606_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2606_entry_name -> cluster2606_entry [arrowhead=none, color="black", style=dashed]
+    cluster2606_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2606_entry -> node19298 [color="black"]
+    cluster2606_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2606_exit_name -> cluster2606_exit [arrowhead=none, color="black", style=dashed]
+    cluster2606_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19298_name [shape=none, label=<<font color="black">Block[19298]</font>>]
+    node19298_name -> node19298 [arrowhead=none, color="black", style=dashed]
+    node19298 [shape=box, label=<<font color="black">[0] let C = @EXECUTION_STACK[0].Function<BR ALIGN="LEFT"/>[1] let args = argumentsList<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19298 -> node19299 [color="black"]
+    node19299_name [shape=none, label=<<font color="black">Call[19299]</font>>]
+    node19299_name -> node19299 [arrowhead=none, color="black", style=dashed]
+    node19299 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateDynamicFunction&gt;(C, NewTarget, ~generator~, args)</font>> color="black" fillcolor="white", style=filled]
+    node19299 -> node19300 [color="black"]
+    node19300_name [shape=none, label=<<font color="black">Block[19300]</font>>]
+    node19300_name -> node19300 [arrowhead=none, color="black", style=dashed]
+    node19300 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19300 -> cluster2606_exit [color="black"]
+  }
+}

@@ -1,0 +1,10 @@
+def MakeArgGetter(
+  name: String,
+  env: EnvironmentRecord,
+): FunctionObject {
+  let getterClosure = clo<MakeArgGetter:clo0, [name, env]>
+  call %0 = clo<CreateBuiltinFunction>(getterClosure, 0, "", (new [])[#471])
+  let getter = %0
+  nop
+  return getter
+}

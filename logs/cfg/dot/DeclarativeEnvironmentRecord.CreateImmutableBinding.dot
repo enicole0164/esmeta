@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster976 {
+    label = "def <CONC>:DeclarativeEnvironmentRecord.CreateImmutableBinding(envRec: DeclarativeEnvironmentRecord, N: String, S: Boolean): Normal[Const[~unused~]]"
+    style = rounded
+    cluster976_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster976_entry_name -> cluster976_entry [arrowhead=none, color="black", style=dashed]
+    cluster976_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster976_entry -> node3593 [color="black"]
+    cluster976_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster976_exit_name -> cluster976_exit [arrowhead=none, color="black", style=dashed]
+    cluster976_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3593_name [shape=none, label=<<font color="black">Block[3593]</font>>]
+    node3593_name -> node3593 [arrowhead=none, color="black", style=dashed]
+    node3593 [shape=box, label=<<font color="black">[0] assert (= envRec.SubMap[N] absent)<BR ALIGN="LEFT"/>[1] envRec.SubMap[N] = (new ImmutableBinding(&quot;initialized&quot; -&gt; false, &quot;strict&quot; -&gt; S))[#367]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3593 -> node3594 [color="black"]
+    node3594_name [shape=none, label=<<font color="black">Call[3594]</font>>]
+    node3594_name -> node3594 [arrowhead=none, color="black", style=dashed]
+    node3594 [shape=cds, label=<<font color="black">%0 = clo&lt;NormalCompletion&gt;(~unused~)</font>> color="black" fillcolor="white", style=filled]
+    node3594 -> node3595 [color="black"]
+    node3595_name [shape=none, label=<<font color="black">Block[3595]</font>>]
+    node3595_name -> node3595 [arrowhead=none, color="black", style=dashed]
+    node3595 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3595 -> cluster976_exit [color="black"]
+  }
+}

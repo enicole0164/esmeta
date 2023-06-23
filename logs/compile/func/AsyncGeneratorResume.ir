@@ -1,0 +1,14 @@
+def AsyncGeneratorResume(
+  generator: Unknown["AsyncGenerator"],
+  completion: Normal,
+): Const[~unused~] {
+  assert (|| (= generator.AsyncGeneratorState ~suspendedStart~) (= generator.AsyncGeneratorState ~suspendedYield~))
+  let genContext = generator.AsyncGeneratorContext
+  let callerContext = @EXECUTION_STACK[0]
+  nop
+  generator.AsyncGeneratorState = ~executing~
+  push genContext > @EXECUTION_STACK
+  if (= genContext.ReturnCont absent) genContext.ReturnCont = (new [])[#1333] else {}
+  push cont<AsyncGeneratorResume:cont0> > genContext.ReturnCont
+  call %0 = genContext.ResumeCont(completion)
+}

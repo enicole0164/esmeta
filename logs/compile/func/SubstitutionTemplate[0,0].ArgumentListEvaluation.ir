@@ -1,0 +1,12 @@
+def <SYNTAX>:SubstitutionTemplate[0,0].ArgumentListEvaluation(
+  this: Ast:SubstitutionTemplate[0,0],
+): Normal[List[ESValue]] | Abrupt {
+  sdo-call %0 = this[1]->Evaluation()
+  let firstSubRef = %0
+  call %1 = clo<GetValue>(firstSubRef)
+  let firstSub = [? %1]
+  sdo-call %2 = this[2]->SubstitutionEvaluation()
+  let restSub = [? %2]
+  assert (yet "_restSub_ is a possibly empty List.")
+  return (list-concat (new [firstSub])[#584] restSub)[#583]
+}

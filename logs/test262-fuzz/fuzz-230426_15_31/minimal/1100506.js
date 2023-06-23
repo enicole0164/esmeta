@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } } var x = 0 ; assert . sameValue = x => 0 ; assert . notSameValue = { getPrototypeOf : null } ; 0 ; function Test262Error ( message ) { this . message = message || "" ; } ( message ) => { throw new Test262Error ( message ) ; } ; var a = { get length ( ) { return 1 ; } , splice : Array . prototype . splice } ; try { [ 0 ] . splice ( 0 , 0 ) ; throw Test262Error ; } catch ( e ) { if ( ! ( e ) ) { throw e ; } } 

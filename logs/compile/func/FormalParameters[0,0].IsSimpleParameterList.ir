@@ -1,0 +1,5 @@
+def <SYNTAX>:FormalParameters[0,0].IsSimpleParameterList(
+  this: Ast:FormalParameters[0,0],
+): Boolean {
+  return true
+}

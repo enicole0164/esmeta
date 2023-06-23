@@ -1,0 +1,65 @@
+def <BUILTIN>:INTRINSICS.Atomics.compareExchange(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let typedArray = (pop < argumentsList) else let typedArray = absent
+  if (< 0 argumentsList.length) let index = (pop < argumentsList) else let index = absent
+  if (< 0 argumentsList.length) let expectedValue = (pop < argumentsList) else let expectedValue = absent
+  if (< 0 argumentsList.length) let replacementValue = (pop < argumentsList) else let replacementValue = absent
+  call %0 = clo<ValidateIntegerTypedArray>(typedArray)
+  let buffer = [? %0]
+  let block = buffer.ArrayBufferData
+  call %1 = clo<ValidateAtomicAccess>(typedArray, index)
+  let indexedPosition = [? %1]
+  if (= typedArray.ContentType ~BigInt~) {
+    call %2 = clo<ToBigInt>(expectedValue)
+    let expected = [? %2]
+    call %3 = clo<ToBigInt>(replacementValue)
+    let replacement = [? %3]
+  } else {
+    call %4 = clo<ToIntegerOrInfinity>(expectedValue)
+    let expected = ([number] [? %4])
+    call %5 = clo<ToIntegerOrInfinity>(replacementValue)
+    let replacement = ([number] [? %5])
+  }
+  call %6 = clo<IsDetachedBuffer>(buffer)
+  if (= %6 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1185])
+  } else {}
+  nop
+  call %7 = clo<TypedArrayElementType>(typedArray)
+  let elementType = %7
+  call %8 = clo<TypedArrayElementSize>(typedArray)
+  let elementSize = %8
+  (yet "Let _isLittleEndian_ be the value of the [[LittleEndian]] field of the surrounding agent's Agent Record.")
+  call %9 = clo<NumericToRawBytes>(elementType, expected, isLittleEndian)
+  let expectedBytes = %9
+  call %10 = clo<NumericToRawBytes>(elementType, replacement, isLittleEndian)
+  let replacementBytes = %10
+  call %11 = clo<IsSharedArrayBuffer>(buffer)
+  if (= %11 true) {
+    (yet "Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.")
+    (yet "Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().")
+    (yet "Let _rawBytesRead_ be a List of length _elementSize_ whose elements are nondeterministically chosen byte values.")
+    nop
+    nop
+    call %12 = clo<ByteListEqual>(rawBytesRead, expectedBytes)
+    if (= %12 true) {
+      (yet "Let _second_ be a new read-modify-write modification function with parameters (_oldBytes_, _newBytes_) that captures nothing and performs the following steps atomically when called:\n  1. Return _newBytes_.")
+      let event = (new ReadModifyWriteSharedMemory("Order" -> ~SeqCst~, "NoTear" -> true, "Block" -> block, "ByteIndex" -> indexedPosition, "ElementSize" -> elementSize, "Payload" -> replacementBytes, "ModifyOp" -> second))[#1186]
+    } else {
+      let event = (new ReadSharedMemory("Order" -> ~SeqCst~, "NoTear" -> true, "Block" -> block, "ByteIndex" -> indexedPosition, "ElementSize" -> elementSize))[#1187]
+    }
+    push eventList < event
+    push execution.ChosenValues < (new ChosenValueRecord("Event" -> event, "ChosenValue" -> rawBytesRead))[#1188]
+  } else {
+    (yet "Let _rawBytesRead_ be a List of length _elementSize_ whose elements are the sequence of _elementSize_ bytes starting with _block_[_indexedPosition_].")
+    call %13 = clo<ByteListEqual>(rawBytesRead, expectedBytes)
+    if (= %13 true) {
+      (yet "Store the individual bytes of _replacementBytes_ into _block_, starting at _block_[_indexedPosition_].")
+    } else {}
+  }
+  call %14 = clo<RawBytesToNumeric>(elementType, rawBytesRead, isLittleEndian)
+  return %14
+}

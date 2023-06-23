@@ -1,0 +1,5 @@
+def <SYNTAX>:LabelIdentifier[2,0].StringValue(
+  this: Ast:LabelIdentifier[2,0],
+): String {
+  return "await"
+}

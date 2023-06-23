@@ -1,0 +1,16 @@
+def DefineMethodProperty(
+  homeObject: Object,
+  key: PrivateName | Symbol | String,
+  closure: FunctionObject,
+  enumerable: Boolean,
+): PrivateElement | Const[~unused~] {
+  assert (yet "_homeObject_ is an ordinary, extensible object with no non-configurable properties.")
+  if (? key: "PrivateName") {
+    return (new PrivateElement("Key" -> key, "Kind" -> ~method~, "Value" -> closure))[#428]
+  } else {
+    let desc = (new PropertyDescriptor("Value" -> closure, "Writable" -> true, "Enumerable" -> enumerable, "Configurable" -> true))[#429]
+    call %0 = clo<DefinePropertyOrThrow>(homeObject, key, desc)
+    [? %0]
+    return ~unused~
+  }
+}

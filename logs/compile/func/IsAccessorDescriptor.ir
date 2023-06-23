@@ -1,0 +1,14 @@
+def IsAccessorDescriptor(
+  Desc: PropertyDescriptor | Undefined,
+): Boolean {
+  if (= Desc undefined) {
+    return false
+  } else {}
+  if (! (= Desc.Get absent)) {
+    return true
+  } else {}
+  if (! (= Desc.Set absent)) {
+    return true
+  } else {}
+  return false
+}

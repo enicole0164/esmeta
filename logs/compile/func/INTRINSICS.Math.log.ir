@@ -1,0 +1,22 @@
+def <BUILTIN>:INTRINSICS.Math.log(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  call %0 = clo<ToNumber>(x)
+  let n = [? %0]
+  if (|| (= n NaN) (= n +INF)) {
+    return n
+  } else {}
+  if (= n 1.0f) {
+    return 0.0f
+  } else {}
+  if (|| (= n 0.0f) (= n -0.0f)) {
+    return -INF
+  } else {}
+  if (< n -0.0f) {
+    return NaN
+  } else {}
+  return ([approx-number] ([math:log] ([math] n)))
+}

@@ -1,0 +1,25 @@
+def <SYNTAX>:SpreadElement[0,0].ArrayAccumulation(
+  this: Ast:SpreadElement[0,0],
+  array: Unknown["Array"],
+  nextIndex: Unknown["Integer"],
+): Unknown["EitherANormalCompletionContainingAnIntegerOrAnAbruptCompletion"] {
+  sdo-call %0 = this[0]->Evaluation()
+  let spreadRef = %0
+  call %1 = clo<GetValue>(spreadRef)
+  let spreadObj = [? %1]
+  call %2 = clo<GetIterator>(spreadObj)
+  let iteratorRecord = [? %2]
+  loop[repeat] true {
+    call %3 = clo<IteratorStep>(iteratorRecord)
+    let next = [? %3]
+    if (= next false) {
+      return nextIndex
+    } else {}
+    call %4 = clo<IteratorValue>(next)
+    let nextValue = [? %4]
+    call %5 = clo<ToString>(([number] nextIndex))
+    call %6 = clo<CreateDataPropertyOrThrow>(array, [! %5], nextValue)
+    [! %6]
+    nextIndex = (+ nextIndex 1)
+  }
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:ObjectLiteral[0,0].Evaluation(
+  this: Ast:ObjectLiteral[0,0],
+): Unknown {
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  return %0
+}

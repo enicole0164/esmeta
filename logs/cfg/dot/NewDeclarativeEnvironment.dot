@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1021 {
+    label = "def NewDeclarativeEnvironment(E: EnvironmentRecord): DeclarativeEnvironmentRecord"
+    style = rounded
+    cluster1021_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1021_entry_name -> cluster1021_entry [arrowhead=none, color="black", style=dashed]
+    cluster1021_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1021_entry -> node3831 [color="black"]
+    cluster1021_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1021_exit_name -> cluster1021_exit [arrowhead=none, color="black", style=dashed]
+    cluster1021_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3831_name [shape=none, label=<<font color="black">Block[3831]</font>>]
+    node3831_name -> node3831 [arrowhead=none, color="black", style=dashed]
+    node3831 [shape=box, label=<<font color="black">[0] let env = (new DeclarativeEnvironmentRecord())[#384]<BR ALIGN="LEFT"/>[1] env.OuterEnv = E<BR ALIGN="LEFT"/>[2] return env<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3831 -> cluster1021_exit [color="black"]
+  }
+}

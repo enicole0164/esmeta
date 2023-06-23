@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster287 {
+    label = "def <SYNTAX>:StatementListItem[1,0].LexicallyScopedDeclarations(this: Ast:StatementListItem[1,0]): List[Ast]"
+    style = rounded
+    cluster287_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster287_entry_name -> cluster287_entry [arrowhead=none, color="black", style=dashed]
+    cluster287_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster287_entry -> node1777 [color="black"]
+    cluster287_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster287_exit_name -> cluster287_exit [arrowhead=none, color="black", style=dashed]
+    cluster287_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1777_name [shape=none, label=<<font color="black">Call[1777]</font>>]
+    node1777_name -> node1777 [arrowhead=none, color="black", style=dashed]
+    node1777 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;DeclarationPart()</font>> color="black" fillcolor="white", style=filled]
+    node1777 -> node1778 [color="black"]
+    node1778_name [shape=none, label=<<font color="black">Block[1778]</font>>]
+    node1778_name -> node1778 [arrowhead=none, color="black", style=dashed]
+    node1778 [shape=box, label=<<font color="black">[0] return (new [%0])[#141]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1778 -> cluster287_exit [color="black"]
+  }
+}

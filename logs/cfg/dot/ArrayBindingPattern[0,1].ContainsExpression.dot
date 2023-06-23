@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1515 {
+    label = "def <SYNTAX>:ArrayBindingPattern[0,1].ContainsExpression(this: Ast:ArrayBindingPattern[0,1]): Boolean"
+    style = rounded
+    cluster1515_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1515_entry_name -> cluster1515_entry [arrowhead=none, color="black", style=dashed]
+    cluster1515_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1515_entry -> node8285 [color="black"]
+    cluster1515_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1515_exit_name -> cluster1515_exit [arrowhead=none, color="black", style=dashed]
+    cluster1515_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8285_name [shape=none, label=<<font color="black">Call[8285]</font>>]
+    node8285_name -> node8285 [arrowhead=none, color="black", style=dashed]
+    node8285 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;ContainsExpression()</font>> color="black" fillcolor="white", style=filled]
+    node8285 -> node8286 [color="black"]
+    node8286_name [shape=none, label=<<font color="black">Block[8286]</font>>]
+    node8286_name -> node8286 [arrowhead=none, color="black", style=dashed]
+    node8286 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8286 -> cluster1515_exit [color="black"]
+  }
+}

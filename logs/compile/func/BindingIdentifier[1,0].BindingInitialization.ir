@@ -1,0 +1,8 @@
+def <SYNTAX>:BindingIdentifier[1,0].BindingInitialization(
+  this: Ast:BindingIdentifier[1,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<InitializeBoundName>("yield", value, environment)
+  return [? %0]
+}

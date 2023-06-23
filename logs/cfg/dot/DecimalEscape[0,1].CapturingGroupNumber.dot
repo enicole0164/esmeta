@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2205 {
+    label = "def <SYNTAX>:DecimalEscape[0,1].CapturingGroupNumber(this: Ast:DecimalEscape[0,1]): Unknown["PositiveInteger"]"
+    style = rounded
+    cluster2205_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2205_entry_name -> cluster2205_entry [arrowhead=none, color="black", style=dashed]
+    cluster2205_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2205_entry -> node13847 [color="black"]
+    cluster2205_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2205_exit_name -> cluster2205_exit [arrowhead=none, color="black", style=dashed]
+    cluster2205_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13847_name [shape=none, label=<<font color="black">Block[13847]</font>>]
+    node13847_name -> node13847 [arrowhead=none, color="black", style=dashed]
+    node13847 [shape=box, label=<<font color="black">[0] (yet &quot;Let _n_ be the number of code points in |DecimalDigits|.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;Return (the MV of |NonZeroDigit| &times; 10&lt;sup&gt;_n_&lt;/sup&gt; plus the MV of |DecimalDigits|).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13847 -> cluster2205_exit [color="black"]
+  }
+}

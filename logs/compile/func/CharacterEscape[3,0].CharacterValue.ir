@@ -1,0 +1,6 @@
+def <SYNTAX>:CharacterEscape[3,0].CharacterValue(
+  this: Ast:CharacterEscape[3,0],
+): Unknown["NonnegativeInteger"] {
+  sdo-call %0 = this[0]->MV()
+  return %0
+}

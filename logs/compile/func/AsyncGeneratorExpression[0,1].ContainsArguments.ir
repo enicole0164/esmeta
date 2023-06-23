@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncGeneratorExpression[0,1].ContainsArguments(
+  this: Ast:AsyncGeneratorExpression[0,1],
+): Boolean {
+  return false
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2223 {
+    label = "def <SYNTAX>:HexLeadSurrogate[0,0].CharacterValue(this: Ast:HexLeadSurrogate[0,0]): Unknown["NonnegativeInteger"]"
+    style = rounded
+    cluster2223_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2223_entry_name -> cluster2223_entry [arrowhead=none, color="black", style=dashed]
+    cluster2223_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2223_entry -> node13873 [color="black"]
+    cluster2223_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2223_exit_name -> cluster2223_exit [arrowhead=none, color="black", style=dashed]
+    cluster2223_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13873_name [shape=none, label=<<font color="black">Call[13873]</font>>]
+    node13873_name -> node13873 [arrowhead=none, color="black", style=dashed]
+    node13873 [shape=cds, label=<<font color="black">%0 = (nt |HexDigits|[])-&gt;MV()</font>> color="black" fillcolor="white", style=filled]
+    node13873 -> node13874 [color="black"]
+    node13874_name [shape=none, label=<<font color="black">Block[13874]</font>>]
+    node13874_name -> node13874 [arrowhead=none, color="black", style=dashed]
+    node13874 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13874 -> cluster2223_exit [color="black"]
+  }
+}

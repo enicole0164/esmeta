@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster352 {
+    label = "def <SYNTAX>:ForInOfStatement[3,0].VarDeclaredNames(this: Ast:ForInOfStatement[3,0]): List[String]"
+    style = rounded
+    cluster352_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster352_entry_name -> cluster352_entry [arrowhead=none, color="black", style=dashed]
+    cluster352_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster352_entry -> node1943 [color="black"]
+    cluster352_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster352_exit_name -> cluster352_exit [arrowhead=none, color="black", style=dashed]
+    cluster352_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1943_name [shape=none, label=<<font color="black">Call[1943]</font>>]
+    node1943_name -> node1943 [arrowhead=none, color="black", style=dashed]
+    node1943 [shape=cds, label=<<font color="black">%0 = this[2]-&gt;VarDeclaredNames()</font>> color="black" fillcolor="white", style=filled]
+    node1943 -> node1944 [color="black"]
+    node1944_name [shape=none, label=<<font color="black">Block[1944]</font>>]
+    node1944_name -> node1944 [arrowhead=none, color="black", style=dashed]
+    node1944 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1944 -> cluster352_exit [color="black"]
+  }
+}

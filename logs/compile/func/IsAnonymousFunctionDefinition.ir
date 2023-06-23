@@ -1,0 +1,14 @@
+def IsAnonymousFunctionDefinition(
+  expr: Ast[AssignmentExpression, Initializer],
+): Boolean {
+  sdo-call %0 = expr->IsFunctionDefinition()
+  if (= %0 false) {
+    return false
+  } else {}
+  sdo-call %1 = expr->HasName()
+  let hasName = %1
+  if (= hasName true) {
+    return false
+  } else {}
+  return true
+}

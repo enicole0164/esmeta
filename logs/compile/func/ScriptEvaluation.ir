@@ -1,0 +1,30 @@
+def ScriptEvaluation(
+  scriptRecord: Unknown,
+): Normal[ESValue] | Abrupt {
+  let globalEnv = scriptRecord.Realm.GlobalEnv
+  let scriptContext = (new ExecutionContext())[#749]
+  scriptContext.Function = null
+  scriptContext.Realm = scriptRecord.Realm
+  scriptContext.ScriptOrModule = scriptRecord
+  scriptContext.VariableEnvironment = globalEnv
+  scriptContext.LexicalEnvironment = globalEnv
+  scriptContext.PrivateEnvironment = null
+  nop
+  push scriptContext > @EXECUTION_STACK
+  let script = scriptRecord.ECMAScriptCode
+  call %0 = clo<GlobalDeclarationInstantiation>(script, globalEnv)
+  call %1 = clo<Completion>(%0)
+  let result = %1
+  if (= result.Type ~normal~) {
+    sdo-call %2 = script->Evaluation()
+    result = %2
+  } else {}
+  if (&& (= result.Type ~normal~) (= result.Value ~empty~)) {
+    call %3 = clo<NormalCompletion>(undefined)
+    result = %3
+  } else {}
+  (pop < @EXECUTION_STACK)
+  assert (! (= @EXECUTION_STACK.length 0))
+  nop
+  return [? result]
+}

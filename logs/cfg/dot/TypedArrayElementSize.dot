@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2423 {
+    label = "def TypedArrayElementSize(O: Unknown["TypedArray"]): Unknown["NonnegativeInteger"]"
+    style = rounded
+    cluster2423_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2423_entry_name -> cluster2423_entry [arrowhead=none, color="black", style=dashed]
+    cluster2423_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2423_entry -> node16712 [color="black"]
+    cluster2423_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2423_exit_name -> cluster2423_exit [arrowhead=none, color="black", style=dashed]
+    cluster2423_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node16712_name [shape=none, label=<<font color="black">Block[16712]</font>>]
+    node16712_name -> node16712 [arrowhead=none, color="black", style=dashed]
+    node16712 [shape=box, label=<<font color="black">[0] (yet &quot;Return the Element Size value specified in &lt;emu-xref href=\&quot;#table-the-typedarray-constructors\&quot;&gt;&lt;/emu-xref&gt; for _O_.[[TypedArrayName]].&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16712 -> cluster2423_exit [color="black"]
+  }
+}

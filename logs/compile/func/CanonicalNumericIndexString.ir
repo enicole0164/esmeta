@@ -1,0 +1,15 @@
+def CanonicalNumericIndexString(
+  argument: String,
+): Number | Undefined {
+  if (= argument "-0") {
+    return -0.0f
+  } else {}
+  call %0 = clo<ToNumber>(argument)
+  let n = [! %0]
+  call %1 = clo<ToString>(n)
+  call %2 = clo<SameValue>([! %1], argument)
+  if (= %2 false) {
+    return undefined
+  } else {}
+  return n
+}

@@ -1,0 +1,27 @@
+def <CONT>:AsyncGeneratorStart:cont0(
+): Const[~unused~] {
+  if (? generatorBody: "ParseNode") {
+    sdo-call %0 = generatorBody->Evaluation()
+    let result = %0
+  } else {
+    assert (yet "_generatorBody_ is an Abstract Closure with no parameters.")
+    call %1 = generatorBody()
+    call %2 = clo<Completion>(%1)
+    let result = %2
+  }
+  assert (yet "If we return here, the async generator either threw an exception or performed either an implicit or explicit return.")
+  (pop < @EXECUTION_STACK)
+  generator.AsyncGeneratorState = ~completed~
+  if (= result.Type ~normal~) {
+    call %3 = clo<NormalCompletion>(undefined)
+    result = %3
+  } else {}
+  if (= result.Type ~return~) {
+    call %4 = clo<NormalCompletion>(result.Value)
+    result = %4
+  } else {}
+  call %5 = clo<AsyncGeneratorCompleteStep>(generator, result, true)
+  call %6 = clo<AsyncGeneratorDrainQueue>(generator)
+  call %7 = clo<NormalCompletion>(undefined)
+  call %8 = (pop < genContext.ReturnCont)(%7)
+}

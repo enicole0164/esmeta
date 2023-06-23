@@ -1,0 +1,48 @@
+def AsyncFromSyncIteratorContinuation(
+  result: Unknown,
+  promiseCapability: Unknown["PromiseCapabilityRecordForAnIntrinsic%Promise%"],
+): Unknown["Promise"] {
+  nop
+  call %0 = clo<IteratorComplete>(result)
+  call %1 = clo<Completion>(%0)
+  let done = %1
+  if (&& (comp? done) (! (= done.Type ~normal~))) {
+    call %2 = clo<Call>(promiseCapability.Reject, undefined, (new [done.Value])[#1229])
+    [? %2]
+    return promiseCapability.Promise
+  } else {
+    if (? done: "CompletionRecord") {
+      done = done.Value
+    } else {}
+  }
+  call %3 = clo<IteratorValue>(result)
+  call %4 = clo<Completion>(%3)
+  let value = %4
+  if (&& (comp? value) (! (= value.Type ~normal~))) {
+    call %5 = clo<Call>(promiseCapability.Reject, undefined, (new [value.Value])[#1230])
+    [? %5]
+    return promiseCapability.Promise
+  } else {
+    if (? value: "CompletionRecord") {
+      value = value.Value
+    } else {}
+  }
+  call %6 = clo<PromiseResolve>(@EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"], value)
+  call %7 = clo<Completion>(%6)
+  let valueWrapper = %7
+  if (&& (comp? valueWrapper) (! (= valueWrapper.Type ~normal~))) {
+    call %8 = clo<Call>(promiseCapability.Reject, undefined, (new [valueWrapper.Value])[#1231])
+    [? %8]
+    return promiseCapability.Promise
+  } else {
+    if (? valueWrapper: "CompletionRecord") {
+      valueWrapper = valueWrapper.Value
+    } else {}
+  }
+  let unwrap = clo<AsyncFromSyncIteratorContinuation:clo0, [done]>
+  call %9 = clo<CreateBuiltinFunction>(unwrap, 1, "", (new [])[#1232])
+  let onFulfilled = %9
+  nop
+  call %10 = clo<PerformPromiseThen>(valueWrapper, onFulfilled, undefined, promiseCapability)
+  return promiseCapability.Promise
+}

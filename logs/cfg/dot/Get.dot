@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster130 {
+    label = "def Get(O: Object, P: Symbol | String): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster130_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster130_entry_name -> cluster130_entry [arrowhead=none, color="black", style=dashed]
+    cluster130_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster130_entry -> node1094 [color="black"]
+    cluster130_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster130_exit_name -> cluster130_exit [arrowhead=none, color="black", style=dashed]
+    cluster130_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1094_name [shape=none, label=<<font color="black">Call[1094]</font>>]
+    node1094_name -> node1094 [arrowhead=none, color="black", style=dashed]
+    node1094 [shape=cds, label=<<font color="black">%0 = O-&gt;Get(P, O)</font>> color="black" fillcolor="white", style=filled]
+    node1094 -> node1095 [color="black"]
+    node1095_name [shape=none, label=<<font color="black">Block[1095]</font>>]
+    node1095_name -> node1095 [arrowhead=none, color="black", style=dashed]
+    node1095 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1095 -> cluster130_exit [color="black"]
+  }
+}

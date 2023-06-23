@@ -1,0 +1,33 @@
+def ToPrimitive(
+  input: ESValue,
+  preferredType?: Const[~number~, ~string~],
+): Normal[ESValue] | Abrupt {
+  if (= (typeof input) @Object) {
+    call %0 = clo<GetMethod>(input, @SYMBOL.toPrimitive)
+    let exoticToPrim = [? %0]
+    if (! (= exoticToPrim undefined)) {
+      if (= preferredType absent) {
+        let hint = "default"
+      } else {
+        if (= preferredType ~string~) {
+          let hint = "string"
+        } else {
+          assert (= preferredType ~number~)
+          let hint = "number"
+        }
+      }
+      call %1 = clo<Call>(exoticToPrim, input, (new [hint])[#27])
+      let result = [? %1]
+      if (! (= (typeof result) @Object)) {
+        return result
+      } else {}
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#28])
+    } else {}
+    if (= preferredType absent) {
+      let preferredType = ~number~
+    } else {}
+    call %2 = clo<OrdinaryToPrimitive>(input, preferredType)
+    return [? %2]
+  } else {}
+  return input
+}

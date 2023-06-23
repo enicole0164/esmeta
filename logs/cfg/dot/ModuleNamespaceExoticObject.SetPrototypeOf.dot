@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1137 {
+    label = "def <INTERNAL>:ModuleNamespaceExoticObject.SetPrototypeOf(O: ModuleNamespaceExoticObject, V: Object | Null): Normal[Boolean]"
+    style = rounded
+    cluster1137_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1137_entry_name -> cluster1137_entry [arrowhead=none, color="black", style=dashed]
+    cluster1137_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1137_entry -> node4925 [color="black"]
+    cluster1137_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1137_exit_name -> cluster1137_exit [arrowhead=none, color="black", style=dashed]
+    cluster1137_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4925_name [shape=none, label=<<font color="black">Call[4925]</font>>]
+    node4925_name -> node4925 [arrowhead=none, color="black", style=dashed]
+    node4925 [shape=cds, label=<<font color="black">%0 = clo&lt;SetImmutablePrototype&gt;(O, V)</font>> color="black" fillcolor="white", style=filled]
+    node4925 -> node4926 [color="black"]
+    node4926_name [shape=none, label=<<font color="black">Block[4926]</font>>]
+    node4926_name -> node4926 [arrowhead=none, color="black", style=dashed]
+    node4926 [shape=box, label=<<font color="black">[0] return [! %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4926 -> cluster1137_exit [color="black"]
+  }
+}

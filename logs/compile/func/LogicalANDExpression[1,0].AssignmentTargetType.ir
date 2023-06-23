@@ -1,0 +1,5 @@
+def <SYNTAX>:LogicalANDExpression[1,0].AssignmentTargetType(
+  this: Ast:LogicalANDExpression[1,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

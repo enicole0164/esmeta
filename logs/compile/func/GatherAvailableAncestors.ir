@@ -1,0 +1,25 @@
+def GatherAvailableAncestors(
+  module: CyclicModuleRecord,
+  execList: Unknown["ListOfCyclicModuleRecords"],
+): Const[~unused~] {
+  %1 = module.AsyncParentModules
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let m = %1[%0]
+    if (&& (! (contains execList m)) (= m.CycleRoot.EvaluationError ~empty~)) {
+      assert (= m.Status ~evaluating-async~)
+      assert (= m.EvaluationError ~empty~)
+      assert (= m.AsyncEvaluation true)
+      assert (< 0 m.PendingAsyncDependencies)
+      m.PendingAsyncDependencies = (- m.PendingAsyncDependencies 1)
+      if (== m.PendingAsyncDependencies 0) {
+        push execList < m
+        if (= m.HasTLA false) {
+          call %2 = clo<GatherAvailableAncestors>(m, execList)
+        } else {}
+      } else {}
+    } else {}
+    %0 = (+ %0 1)
+  }
+  return ~unused~
+}

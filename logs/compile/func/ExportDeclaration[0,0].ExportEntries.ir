@@ -1,0 +1,8 @@
+def <SYNTAX>:ExportDeclaration[0,0].ExportEntries(
+  this: Ast:ExportDeclaration[0,0],
+): Unknown["ListOfExportEntryRecords"] {
+  sdo-call %0 = this[1]->ModuleRequests()
+  let module = %0[0]
+  sdo-call %1 = this[0]->ExportEntriesForModule(module)
+  return %1
+}

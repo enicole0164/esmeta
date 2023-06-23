@@ -1,0 +1,12 @@
+def IsPropertyReference(
+  V: ReferenceRecord,
+): Boolean {
+  if (= V.Base ~unresolvable~) {
+    return false
+  } else {}
+  if (? V.Base: "EnvironmentRecord") {
+    return false
+  } else {
+    return true
+  }
+}

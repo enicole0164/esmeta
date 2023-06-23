@@ -1,0 +1,53 @@
+def FlattenIntoArray(
+  target: Object,
+  source: Object,
+  sourceLen: Unknown["NonnegativeInteger"],
+  start: Unknown["NonnegativeInteger"],
+  depth: Unknown["NonnegativeIntegerOr+∞"],
+  mapperFunction?: Unknown,
+  thisArg?: Unknown,
+): Unknown["EitherANormalCompletionContainingANonnegativeIntegerOrAnAbruptCompletion"] {
+  assert (yet "If _mapperFunction_ is present, then IsCallable(_mapperFunction_) is *true*, _thisArg_ is present, and _depth_ is 1.")
+  let targetIndex = start
+  let sourceIndex = 0.0f
+  loop[repeat] (< ([math] sourceIndex) sourceLen) {
+    call %0 = clo<ToString>(sourceIndex)
+    let P = [! %0]
+    call %1 = clo<HasProperty>(source, P)
+    let exists = [? %1]
+    if (= exists true) {
+      call %2 = clo<Get>(source, P)
+      let element = [? %2]
+      if (! (= mapperFunction absent)) {
+        call %3 = clo<Call>(mapperFunction, thisArg, (new [element, sourceIndex, source])[#1027])
+        element = [? %3]
+      } else {}
+      let shouldFlatten = false
+      if (< 0 depth) {
+        call %4 = clo<IsArray>(element)
+        shouldFlatten = [? %4]
+      } else {}
+      if (= shouldFlatten true) {
+        if (= depth +INF) {
+          let newDepth = +INF
+        } else {
+          let newDepth = (- depth 1)
+        }
+        call %5 = clo<LengthOfArrayLike>(element)
+        let elementLen = [? %5]
+        call %6 = clo<FlattenIntoArray>(target, element, elementLen, targetIndex, newDepth)
+        targetIndex = [? %6]
+      } else {
+        if (! (< targetIndex (- (** 2 53) 1))) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1028])
+        } else {}
+        call %7 = clo<ToString>(([number] targetIndex))
+        call %8 = clo<CreateDataPropertyOrThrow>(target, [! %7], element)
+        [? %8]
+        targetIndex = (+ targetIndex 1)
+      }
+    } else {}
+    sourceIndex = (+ sourceIndex 1.0f)
+  }
+  return targetIndex
+}

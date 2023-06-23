@@ -1,0 +1,35 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setMonth(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let month = (pop < argumentsList) else let month = absent
+  if (< 0 argumentsList.length) let date = (pop < argumentsList) else let date = absent
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  call %1 = clo<ToNumber>(month)
+  let m = [? %1]
+  if (! (= date absent)) {
+    call %2 = clo<ToNumber>(date)
+    let dt = [? %2]
+  } else {}
+  if (= t NaN) {
+    return NaN
+  } else {}
+  call %3 = clo<LocalTime>(t)
+  t = %3
+  if (= date absent) {
+    call %4 = clo<DateFromTime>(t)
+    let dt = %4
+  } else {}
+  call %5 = clo<YearFromTime>(t)
+  call %6 = clo<MakeDay>(%5, m, dt)
+  call %7 = clo<TimeWithinDay>(t)
+  call %8 = clo<MakeDate>(%6, %7)
+  let newDate = %8
+  call %9 = clo<UTC>(newDate)
+  call %10 = clo<TimeClip>(%9)
+  let u = %10
+  (yet "Set the [[DateValue]] internal slot of this Date object to _u_.")
+  return u
+}

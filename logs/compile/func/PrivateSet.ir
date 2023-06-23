@@ -1,0 +1,27 @@
+def PrivateSet(
+  O: Object,
+  P: PrivateName,
+  value: ESValue,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<PrivateElementFind>(O, P)
+  let entry = %0
+  if (= entry ~empty~) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#70])
+  } else {}
+  if (= entry.Kind ~field~) {
+    entry.Value = value
+  } else {
+    if (= entry.Kind ~method~) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#71])
+    } else {
+      assert (= entry.Kind ~accessor~)
+      if (= entry.Set undefined) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#72])
+      } else {}
+      let setter = entry.Set
+      call %1 = clo<Call>(setter, O, (new [value])[#73])
+      [? %1]
+    }
+  }
+  return ~unused~
+}

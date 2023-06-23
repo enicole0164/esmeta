@@ -1,0 +1,30 @@
+def SameValueNonNumeric(
+  x: Unknown["ECMAScriptLanguageValue,ButNotANumberOrABigInt"],
+  y: Unknown["ECMAScriptLanguageValue,ButNotANumberOrABigInt"],
+): Boolean {
+  assert (= (typeof x) (typeof y))
+  if (= (typeof x) @Undefined) {
+    return true
+  } else {}
+  if (= (typeof x) @Null) {
+    return true
+  } else {}
+  if (= (typeof x) @String) {
+    if (= x y) return true else return false
+  } else {}
+  if (= (typeof x) @Boolean) {
+    if (|| (&& (= x true) (= y true)) (&& (= x false) (= y false))) return true else return false
+  } else {}
+  if (= (typeof x) @Symbol) {
+    if (= x y) {
+      return true
+    } else {
+      return false
+    }
+  } else {}
+  if (= x y) {
+    return true
+  } else {
+    return false
+  }
+}

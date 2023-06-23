@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1398 {
+    label = "def <SYNTAX>:BindingProperty[1,0].PropertyBindingInitialization(this: Ast:BindingProperty[1,0], value: Unknown, environment: Unknown): Normal[List[Symbol | String]] | Abrupt"
+    style = rounded
+    cluster1398_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1398_entry_name -> cluster1398_entry [arrowhead=none, color="black", style=dashed]
+    cluster1398_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1398_entry -> node7247 [color="black"]
+    cluster1398_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1398_exit_name -> cluster1398_exit [arrowhead=none, color="black", style=dashed]
+    cluster1398_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7247_name [shape=none, label=<<font color="black">Call[7247]</font>>]
+    node7247_name -> node7247 [arrowhead=none, color="black", style=dashed]
+    node7247 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node7247 -> node7248 [color="black"]
+    node7248_name [shape=none, label=<<font color="black">Block[7248]</font>>]
+    node7248_name -> node7248 [arrowhead=none, color="black", style=dashed]
+    node7248 [shape=box, label=<<font color="black">[0] let P = %0<BR ALIGN="LEFT"/>[1] [? P]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7248 -> node7249 [color="black"]
+    node7249_name [shape=none, label=<<font color="black">Call[7249]</font>>]
+    node7249_name -> node7249 [arrowhead=none, color="black", style=dashed]
+    node7249 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;KeyedBindingInitialization(value, environment, P)</font>> color="black" fillcolor="white", style=filled]
+    node7249 -> node7250 [color="black"]
+    node7250_name [shape=none, label=<<font color="black">Block[7250]</font>>]
+    node7250_name -> node7250 [arrowhead=none, color="black", style=dashed]
+    node7250 [shape=box, label=<<font color="black">[0] [? %1]<BR ALIGN="LEFT"/>[1] return (new [P])[#603]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7250 -> cluster1398_exit [color="black"]
+  }
+}

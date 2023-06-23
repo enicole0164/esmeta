@@ -1,0 +1,16 @@
+def <CONC>:GlobalEnvironmentRecord.HasRestrictedGlobalProperty(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+): Normal[Boolean] | Abrupt {
+  let ObjRec = envRec.ObjectRecord
+  let globalObject = ObjRec.BindingObject
+  method-call %0 = globalObject->GetOwnProperty(N)
+  let existingProp = [? %0]
+  if (= existingProp undefined) {
+    return false
+  } else {}
+  if (= existingProp.Configurable true) {
+    return false
+  } else {}
+  return true
+}

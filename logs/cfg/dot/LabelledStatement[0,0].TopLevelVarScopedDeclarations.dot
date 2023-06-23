@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster474 {
+    label = "def <SYNTAX>:LabelledStatement[0,0].TopLevelVarScopedDeclarations(this: Ast:LabelledStatement[0,0]): List[Ast]"
+    style = rounded
+    cluster474_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster474_entry_name -> cluster474_entry [arrowhead=none, color="black", style=dashed]
+    cluster474_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster474_entry -> node2313 [color="black"]
+    cluster474_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster474_exit_name -> cluster474_exit [arrowhead=none, color="black", style=dashed]
+    cluster474_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2313_name [shape=none, label=<<font color="black">Call[2313]</font>>]
+    node2313_name -> node2313 [arrowhead=none, color="black", style=dashed]
+    node2313 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;TopLevelVarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2313 -> node2314 [color="black"]
+    node2314_name [shape=none, label=<<font color="black">Block[2314]</font>>]
+    node2314_name -> node2314 [arrowhead=none, color="black", style=dashed]
+    node2314 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2314 -> cluster474_exit [color="black"]
+  }
+}

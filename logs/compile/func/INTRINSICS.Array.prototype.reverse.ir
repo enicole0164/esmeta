@@ -1,0 +1,56 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.reverse(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  let middle = (floor (/ len 2))
+  let lower = 0
+  loop[repeat] (! (== lower middle)) {
+    let upper = (- (- len lower) 1)
+    call %2 = clo<ToString>(([number] upper))
+    let upperP = [! %2]
+    call %3 = clo<ToString>(([number] lower))
+    let lowerP = [! %3]
+    call %4 = clo<HasProperty>(O, lowerP)
+    let lowerExists = [? %4]
+    if (= lowerExists true) {
+      call %5 = clo<Get>(O, lowerP)
+      let lowerValue = [? %5]
+    } else {}
+    call %6 = clo<HasProperty>(O, upperP)
+    let upperExists = [? %6]
+    if (= upperExists true) {
+      call %7 = clo<Get>(O, upperP)
+      let upperValue = [? %7]
+    } else {}
+    if (&& (= lowerExists true) (= upperExists true)) {
+      call %8 = clo<Set>(O, lowerP, upperValue, true)
+      [? %8]
+      call %9 = clo<Set>(O, upperP, lowerValue, true)
+      [? %9]
+    } else {
+      if (&& (= lowerExists false) (= upperExists true)) {
+        call %10 = clo<Set>(O, lowerP, upperValue, true)
+        [? %10]
+        call %11 = clo<DeletePropertyOrThrow>(O, upperP)
+        [? %11]
+      } else {
+        if (&& (= lowerExists true) (= upperExists false)) {
+          call %12 = clo<DeletePropertyOrThrow>(O, lowerP)
+          [? %12]
+          call %13 = clo<Set>(O, upperP, lowerValue, true)
+          [? %13]
+        } else {
+          assert (&& (= lowerExists false) (= upperExists false))
+          (yet "No action is required.")
+        }
+      }
+    }
+    lower = (+ lower 1)
+  }
+  return O
+}

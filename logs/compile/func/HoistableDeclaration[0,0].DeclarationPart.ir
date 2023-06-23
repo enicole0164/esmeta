@@ -1,0 +1,5 @@
+def <SYNTAX>:HoistableDeclaration[0,0].DeclarationPart(
+  this: Ast:HoistableDeclaration[0,0],
+): Ast {
+  return this[0]
+}

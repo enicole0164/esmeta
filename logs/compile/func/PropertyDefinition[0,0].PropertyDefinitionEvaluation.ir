@@ -1,0 +1,15 @@
+def <SYNTAX>:PropertyDefinition[0,0].PropertyDefinitionEvaluation(
+  this: Ast:PropertyDefinition[0,0],
+  object: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  let propName = %0
+  sdo-call %1 = this[0]->Evaluation()
+  let exprValue = %1
+  call %2 = clo<GetValue>(exprValue)
+  let propValue = [? %2]
+  assert (yet "_object_ is an ordinary, extensible object with no non-configurable properties.")
+  call %3 = clo<CreateDataPropertyOrThrow>(object, propName, propValue)
+  [! %3]
+  return ~unused~
+}

@@ -1,0 +1,9 @@
+def <SYNTAX>:IfStatement[0,0].VarDeclaredNames(
+  this: Ast:IfStatement[0,0],
+): List[String] {
+  sdo-call %0 = this[1]->VarDeclaredNames()
+  let names1 = %0
+  sdo-call %1 = this[2]->VarDeclaredNames()
+  let names2 = %1
+  return (list-concat names1 names2)[#187]
+}

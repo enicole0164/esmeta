@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1288 {
+    label = "def <SYNTAX>:OptionalChain[0,0].ChainEvaluation(this: Ast:OptionalChain[0,0], baseValue: Unknown, baseReference: Unknown): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1288_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1288_entry_name -> cluster1288_entry [arrowhead=none, color="black", style=dashed]
+    cluster1288_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1288_entry -> node6044 [color="black"]
+    cluster1288_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1288_exit_name -> cluster1288_exit [arrowhead=none, color="black", style=dashed]
+    cluster1288_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6044_name [shape=none, label=<<font color="black">Block[6044]</font>>]
+    node6044_name -> node6044 [arrowhead=none, color="black", style=dashed]
+    node6044 [shape=box, label=<<font color="black">[0] let thisChain = this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6044 -> node6045 [color="black"]
+    node6045_name [shape=none, label=<<font color="black">Call[6045]</font>>]
+    node6045_name -> node6045 [arrowhead=none, color="black", style=dashed]
+    node6045 [shape=cds, label=<<font color="black">%0 = clo&lt;IsInTailPosition&gt;(thisChain)</font>> color="black" fillcolor="white", style=filled]
+    node6045 -> node6046 [color="black"]
+    node6046_name [shape=none, label=<<font color="black">Block[6046]</font>>]
+    node6046_name -> node6046 [arrowhead=none, color="black", style=dashed]
+    node6046 [shape=box, label=<<font color="black">[0] let tailCall = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6046 -> node6047 [color="black"]
+    node6047_name [shape=none, label=<<font color="black">Call[6047]</font>>]
+    node6047_name -> node6047 [arrowhead=none, color="black", style=dashed]
+    node6047 [shape=cds, label=<<font color="black">%1 = clo&lt;EvaluateCall&gt;(baseValue, baseReference, this[0], tailCall)</font>> color="black" fillcolor="white", style=filled]
+    node6047 -> node6048 [color="black"]
+    node6048_name [shape=none, label=<<font color="black">Block[6048]</font>>]
+    node6048_name -> node6048 [arrowhead=none, color="black", style=dashed]
+    node6048 [shape=box, label=<<font color="black">[0] return [? %1]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6048 -> cluster1288_exit [color="black"]
+  }
+}

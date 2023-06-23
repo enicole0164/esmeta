@@ -1,0 +1,16 @@
+def IsGenericDescriptor(
+  Desc: PropertyDescriptor | Undefined,
+): Boolean {
+  if (= Desc undefined) {
+    return false
+  } else {}
+  call %0 = clo<IsAccessorDescriptor>(Desc)
+  if (= %0 true) {
+    return false
+  } else {}
+  call %1 = clo<IsDataDescriptor>(Desc)
+  if (= %1 true) {
+    return false
+  } else {}
+  return true
+}

@@ -1,0 +1,37 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1123 {
+    label = "def <BUILTIN-CLO>:MakeArgSetter:clo0(this: Unknown, argumentsList: Unknown, NewTarget: Unknown): Unknown"
+    style = rounded
+    cluster1123_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1123_entry_name -> cluster1123_entry [arrowhead=none, color="black", style=dashed]
+    cluster1123_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1123_entry -> node4803 [color="black"]
+    cluster1123_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1123_exit_name -> cluster1123_exit [arrowhead=none, color="black", style=dashed]
+    cluster1123_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4803_name [shape=none, label=<<font color="black">Branch[4803]</font>>]
+    node4803_name -> node4803 [arrowhead=none, color="black", style=dashed]
+    node4803 [shape=diamond, label=<<font color="black">(&lt; 0 argumentsList.length)</font>> color="black" fillcolor="white", style=filled]
+    node4803 -> node4804 [label=<<font color="black">true</font>> color="black"]
+    node4803 -> node4805 [label=<<font color="black">false</font>> color="black"]
+    node4804_name [shape=none, label=<<font color="black">Block[4804]</font>>]
+    node4804_name -> node4804 [arrowhead=none, color="black", style=dashed]
+    node4804 [shape=box, label=<<font color="black">[0] let value = (pop &lt; argumentsList)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4804 -> node4806 [color="black"]
+    node4805_name [shape=none, label=<<font color="black">Block[4805]</font>>]
+    node4805_name -> node4805 [arrowhead=none, color="black", style=dashed]
+    node4805 [shape=box, label=<<font color="black">[0] let value = absent<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4805 -> node4806 [color="black"]
+    node4806_name [shape=none, label=<<font color="black">Call[4806]</font>>]
+    node4806_name -> node4806 [arrowhead=none, color="black", style=dashed]
+    node4806 [shape=cds, label=<<font color="black">%0 = env-&gt;SetMutableBinding(name, value, false)</font>> color="black" fillcolor="white", style=filled]
+    node4806 -> node4807 [color="black"]
+    node4807_name [shape=none, label=<<font color="black">Block[4807]</font>>]
+    node4807_name -> node4807 [arrowhead=none, color="black", style=dashed]
+    node4807 [shape=box, label=<<font color="black">[0] return [! %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4807 -> cluster1123_exit [color="black"]
+  }
+}

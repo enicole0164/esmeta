@@ -1,0 +1,53 @@
+def PerformPromiseAll(
+  iteratorRecord: Unknown,
+  constructor: Unknown["Constructor"],
+  resultCapability: PromiseCapabilityRecord,
+  promiseResolve: FunctionObject,
+): Normal[ESValue] | Abrupt {
+  let values = (new [])[#1264]
+  let remainingElementsCount = (new Record("Value" -> 1))[#1265]
+  let index = 0
+  loop[repeat] true {
+    call %0 = clo<IteratorStep>(iteratorRecord)
+    call %1 = clo<Completion>(%0)
+    let next = %1
+    if (&& (comp? next) (! (= next.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? next]
+    if (= next false) {
+      iteratorRecord.Done = true
+      remainingElementsCount.Value = (- remainingElementsCount.Value 1)
+      if (= remainingElementsCount.Value 0) {
+        call %2 = clo<CreateArrayFromList>(values)
+        let valuesArray = %2
+        call %3 = clo<Call>(resultCapability.Resolve, undefined, (new [valuesArray])[#1266])
+        [? %3]
+      } else {}
+      return resultCapability.Promise
+    } else {}
+    call %4 = clo<IteratorValue>(next)
+    call %5 = clo<Completion>(%4)
+    let nextValue = %5
+    if (&& (comp? nextValue) (! (= nextValue.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? nextValue]
+    push values < undefined
+    call %6 = clo<Call>(promiseResolve, constructor, (new [nextValue])[#1267])
+    let nextPromise = [? %6]
+    let steps = clo<INTRINSICS.yet:`Promise.all`ResolveElementFunction>
+    let length = 1
+    call %7 = clo<CreateBuiltinFunction>(steps, length, "", (new ["AlreadyCalled", "Index", "Values", "Capability", "RemainingElements"])[#1268])
+    let onFulfilled = %7
+    onFulfilled.AlreadyCalled = false
+    onFulfilled.Index = index
+    onFulfilled.Values = values
+    onFulfilled.Capability = resultCapability
+    onFulfilled.RemainingElements = remainingElementsCount
+    remainingElementsCount.Value = (+ remainingElementsCount.Value 1)
+    call %8 = clo<Invoke>(nextPromise, "then", (new [onFulfilled, resultCapability.Reject])[#1269])
+    [? %8]
+    index = (+ index 1)
+  }
+}

@@ -1,0 +1,55 @@
+def <NUM>:Number::divide(
+  x: Number,
+  y: Number,
+): Number {
+  if (|| (= x NaN) (= y NaN)) {
+    return NaN
+  } else {}
+  if (|| (= x +INF) (= x -INF)) {
+    if (|| (= y +INF) (= y -INF)) {
+      return NaN
+    } else {}
+    if (|| (= y 0.0f) (< 0.0f y)) {
+      return x
+    } else {}
+    return (- x)
+  } else {}
+  if (= y +INF) {
+    if (|| (= x 0.0f) (< 0.0f x)) {
+      return 0.0f
+    } else {
+      return -0.0f
+    }
+  } else {}
+  if (= y -INF) {
+    if (|| (= x 0.0f) (< 0.0f x)) {
+      return -0.0f
+    } else {
+      return 0.0f
+    }
+  } else {}
+  if (|| (= x 0.0f) (= x -0.0f)) {
+    if (|| (= y 0.0f) (= y -0.0f)) {
+      return NaN
+    } else {}
+    if (< 0.0f y) {
+      return x
+    } else {}
+    return (- x)
+  } else {}
+  if (= y 0.0f) {
+    if (< 0.0f x) {
+      return +INF
+    } else {
+      return -INF
+    }
+  } else {}
+  if (= y -0.0f) {
+    if (< 0.0f x) {
+      return -INF
+    } else {
+      return +INF
+    }
+  } else {}
+  return ([number] (/ ([math] x) ([math] y)))
+}

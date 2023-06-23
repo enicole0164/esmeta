@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1572 {
+    label = "def <SYNTAX>:FunctionExpression[0,0].Evaluation(this: Ast:FunctionExpression[0,0]): Unknown"
+    style = rounded
+    cluster1572_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1572_entry_name -> cluster1572_entry [arrowhead=none, color="black", style=dashed]
+    cluster1572_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1572_entry -> node8448 [color="black"]
+    cluster1572_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1572_exit_name -> cluster1572_exit [arrowhead=none, color="black", style=dashed]
+    cluster1572_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8448_name [shape=none, label=<<font color="black">Call[8448]</font>>]
+    node8448_name -> node8448 [arrowhead=none, color="black", style=dashed]
+    node8448 [shape=cds, label=<<font color="black">%0 = this-&gt;InstantiateOrdinaryFunctionExpression()</font>> color="black" fillcolor="white", style=filled]
+    node8448 -> node8449 [color="black"]
+    node8449_name [shape=none, label=<<font color="black">Block[8449]</font>>]
+    node8449_name -> node8449 [arrowhead=none, color="black", style=dashed]
+    node8449 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8449 -> cluster1572_exit [color="black"]
+  }
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:BitwiseXORExpression[1,0].IsFunctionDefinition(
+  this: Ast:BitwiseXORExpression[1,0],
+): Boolean {
+  return false
+}

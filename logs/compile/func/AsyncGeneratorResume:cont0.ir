@@ -1,0 +1,7 @@
+def <CONT>:AsyncGeneratorResume:cont0(
+  result: Unknown,
+): Const[~unused~] {
+  assert (|| (! (comp? result)) (= result.Type ~normal~))
+  assert (&& (= callerContext @EXECUTION_STACK[0]) (! (= genContext @EXECUTION_STACK[0])))
+  return ~unused~
+}

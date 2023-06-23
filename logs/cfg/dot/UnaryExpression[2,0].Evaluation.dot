@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1306 {
+    label = "def <SYNTAX>:UnaryExpression[2,0].Evaluation(this: Ast:UnaryExpression[2,0]): Unknown"
+    style = rounded
+    cluster1306_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1306_entry_name -> cluster1306_entry [arrowhead=none, color="black", style=dashed]
+    cluster1306_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1306_entry -> node6227 [color="black"]
+    cluster1306_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1306_exit_name -> cluster1306_exit [arrowhead=none, color="black", style=dashed]
+    cluster1306_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6227_name [shape=none, label=<<font color="black">Call[6227]</font>>]
+    node6227_name -> node6227 [arrowhead=none, color="black", style=dashed]
+    node6227 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node6227 -> node6228 [color="black"]
+    node6228_name [shape=none, label=<<font color="black">Block[6228]</font>>]
+    node6228_name -> node6228 [arrowhead=none, color="black", style=dashed]
+    node6228 [shape=box, label=<<font color="black">[0] let expr = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6228 -> node6229 [color="black"]
+    node6229_name [shape=none, label=<<font color="black">Call[6229]</font>>]
+    node6229_name -> node6229 [arrowhead=none, color="black", style=dashed]
+    node6229 [shape=cds, label=<<font color="black">%1 = clo&lt;GetValue&gt;(expr)</font>> color="black" fillcolor="white", style=filled]
+    node6229 -> node6230 [color="black"]
+    node6230_name [shape=none, label=<<font color="black">Block[6230]</font>>]
+    node6230_name -> node6230 [arrowhead=none, color="black", style=dashed]
+    node6230 [shape=box, label=<<font color="black">[0] [? %1]<BR ALIGN="LEFT"/>[1] return undefined<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6230 -> cluster1306_exit [color="black"]
+  }
+}

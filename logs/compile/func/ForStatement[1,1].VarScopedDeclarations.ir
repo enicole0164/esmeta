@@ -1,0 +1,9 @@
+def <SYNTAX>:ForStatement[1,1].VarScopedDeclarations(
+  this: Ast:ForStatement[1,1],
+): List[Ast] {
+  sdo-call %0 = this[0]->VarScopedDeclarations()
+  let declarations1 = %0
+  sdo-call %1 = this[3]->VarScopedDeclarations()
+  let declarations2 = %1
+  return (list-concat declarations1 declarations2)[#240]
+}

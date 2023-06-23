@@ -1,0 +1,5 @@
+def <SYNTAX>:StrUnsignedDecimalLiteral[0,0].StringNumericValue(
+  this: Ast:StrUnsignedDecimalLiteral[0,0],
+): Number {
+  return +INF
+}

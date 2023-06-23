@@ -1,0 +1,5 @@
+def <SYNTAX>:Module[0,0].ImportEntries(
+  this: Ast:Module[0,0],
+): Unknown["ListOfImportEntryRecords"] {
+  return (new [])[#803]
+}

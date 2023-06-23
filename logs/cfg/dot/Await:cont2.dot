@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster4 {
+    label = "def <CONT>:Await:cont2(completion: Unknown): Unknown"
+    style = rounded
+    cluster4_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster4_entry_name -> cluster4_entry [arrowhead=none, color="black", style=dashed]
+    cluster4_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster4_entry -> node20 [color="black"]
+    cluster4_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster4_exit_name -> cluster4_exit [arrowhead=none, color="black", style=dashed]
+    cluster4_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node20_name [shape=none, label=<<font color="black">Block[20]</font>>]
+    node20_name -> node20 [arrowhead=none, color="black", style=dashed]
+    node20 [shape=box, label=<<font color="black">[0] return completion<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node20 -> cluster4_exit [color="black"]
+  }
+}

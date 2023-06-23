@@ -1,0 +1,6 @@
+def <SYNTAX>:CharacterEscape[5,0].CharacterValue(
+  this: Ast:CharacterEscape[5,0],
+): Unknown["NonnegativeInteger"] {
+  (yet "Let _ch_ be the code point matched by |IdentityEscape|.")
+  return ([math] ch)
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:FormalParameterList[1,0].IteratorBindingInitialization(
+  this: Ast:FormalParameterList[1,0],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->IteratorBindingInitialization(iteratorRecord, environment)
+  [? %0]
+  sdo-call %1 = this[1]->IteratorBindingInitialization(iteratorRecord, environment)
+  return [? %1]
+}

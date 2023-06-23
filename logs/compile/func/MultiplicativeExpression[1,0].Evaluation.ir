@@ -1,0 +1,7 @@
+def <SYNTAX>:MultiplicativeExpression[1,0].Evaluation(
+  this: Ast:MultiplicativeExpression[1,0],
+): Unknown {
+  let opText = (source-text this[1])
+  call %0 = clo<EvaluateStringOrNumericBinaryExpression>(this[0], opText, this[2])
+  return [? %0]
+}

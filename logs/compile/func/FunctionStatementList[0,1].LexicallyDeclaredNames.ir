@@ -1,0 +1,6 @@
+def <SYNTAX>:FunctionStatementList[0,1].LexicallyDeclaredNames(
+  this: Ast:FunctionStatementList[0,1],
+): List[String] {
+  sdo-call %0 = this[0]->TopLevelLexicallyDeclaredNames()
+  return %0
+}

@@ -1,0 +1,22 @@
+@main def RunJobs(
+): Unknown {
+  call %0 = clo<InitializeHostDefinedRealm>()
+  [? %0]
+  let scriptEvaluationJob = clo<RunJobs:clo0>
+  call %1 = clo<HostEnqueuePromiseJob>(scriptEvaluationJob, @EXECUTION_STACK[0].Realm)
+  loop[repeat] true {
+    (pop < @EXECUTION_STACK)
+    assert (= @EXECUTION_STACK.length 0)
+    let nextQueue = @JOB_QUEUE
+    if (= @JOB_QUEUE.length 0) return undefined else {}
+    let nextPending = (pop < @JOB_QUEUE)
+    let newContext = (new ExecutionContext())[#4]
+    newContext.Function = null
+    newContext.Realm = nextPending.Realm
+    newContext.ScriptOrModule = nextPending.ScriptOrModule
+    push newContext > @EXECUTION_STACK
+    let job = nextPending.Job
+    call %2 = job()
+    [? %2]
+  }
+}

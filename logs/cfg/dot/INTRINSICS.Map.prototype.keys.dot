@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2441 {
+    label = "def <BUILTIN>:INTRINSICS.Map.prototype.keys(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2441_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2441_entry_name -> cluster2441_entry [arrowhead=none, color="black", style=dashed]
+    cluster2441_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2441_entry -> node16978 [color="black"]
+    cluster2441_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2441_exit_name -> cluster2441_exit [arrowhead=none, color="black", style=dashed]
+    cluster2441_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node16978_name [shape=none, label=<<font color="black">Block[16978]</font>>]
+    node16978_name -> node16978 [arrowhead=none, color="black", style=dashed]
+    node16978 [shape=box, label=<<font color="black">[0] let M = this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16978 -> node16979 [color="black"]
+    node16979_name [shape=none, label=<<font color="black">Call[16979]</font>>]
+    node16979_name -> node16979 [arrowhead=none, color="black", style=dashed]
+    node16979 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateMapIterator&gt;(M, ~key~)</font>> color="black" fillcolor="white", style=filled]
+    node16979 -> node16980 [color="black"]
+    node16980_name [shape=none, label=<<font color="black">Block[16980]</font>>]
+    node16980_name -> node16980 [arrowhead=none, color="black", style=dashed]
+    node16980 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16980 -> cluster2441_exit [color="black"]
+  }
+}

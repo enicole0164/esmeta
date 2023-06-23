@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1457 {
+    label = "def <SYNTAX>:ForInOfStatement[8,0].ForInOfLoopEvaluation(this: Ast:ForInOfStatement[8,0], labelSet: Unknown): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1457_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1457_entry_name -> cluster1457_entry [arrowhead=none, color="black", style=dashed]
+    cluster1457_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1457_entry -> node7683 [color="black"]
+    cluster1457_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1457_exit_name -> cluster1457_exit [arrowhead=none, color="black", style=dashed]
+    cluster1457_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7683_name [shape=none, label=<<font color="black">Call[7683]</font>>]
+    node7683_name -> node7683 [arrowhead=none, color="black", style=dashed]
+    node7683 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;BoundNames()</font>> color="black" fillcolor="white", style=filled]
+    node7683 -> node7684 [color="black"]
+    node7684_name [shape=none, label=<<font color="black">Call[7684]</font>>]
+    node7684_name -> node7684 [arrowhead=none, color="black", style=dashed]
+    node7684 [shape=cds, label=<<font color="black">%1 = clo&lt;ForIn/OfHeadEvaluation&gt;(%0, this[1], ~async-iterate~)</font>> color="black" fillcolor="white", style=filled]
+    node7684 -> node7685 [color="black"]
+    node7685_name [shape=none, label=<<font color="black">Block[7685]</font>>]
+    node7685_name -> node7685 [arrowhead=none, color="black", style=dashed]
+    node7685 [shape=box, label=<<font color="black">[0] let keyResult = [? %1]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7685 -> node7686 [color="black"]
+    node7686_name [shape=none, label=<<font color="black">Call[7686]</font>>]
+    node7686_name -> node7686 [arrowhead=none, color="black", style=dashed]
+    node7686 [shape=cds, label=<<font color="black">%2 = clo&lt;ForIn/OfBodyEvaluation&gt;(this[0], this[2], keyResult, ~iterate~, ~lexicalBinding~, labelSet, ~async~)</font>> color="black" fillcolor="white", style=filled]
+    node7686 -> node7687 [color="black"]
+    node7687_name [shape=none, label=<<font color="black">Block[7687]</font>>]
+    node7687_name -> node7687 [arrowhead=none, color="black", style=dashed]
+    node7687 [shape=box, label=<<font color="black">[0] return [? %2]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7687 -> cluster1457_exit [color="black"]
+  }
+}

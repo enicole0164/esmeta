@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster732 {
+    label = "def <SYNTAX>:BitwiseANDExpression[1,0].IsFunctionDefinition(this: Ast:BitwiseANDExpression[1,0]): Boolean"
+    style = rounded
+    cluster732_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster732_entry_name -> cluster732_entry [arrowhead=none, color="black", style=dashed]
+    cluster732_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster732_entry -> node2964 [color="black"]
+    cluster732_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster732_exit_name -> cluster732_exit [arrowhead=none, color="black", style=dashed]
+    cluster732_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2964_name [shape=none, label=<<font color="black">Block[2964]</font>>]
+    node2964_name -> node2964 [arrowhead=none, color="black", style=dashed]
+    node2964 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2964 -> cluster732_exit [color="black"]
+  }
+}

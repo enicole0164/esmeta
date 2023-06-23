@@ -1,0 +1,10 @@
+def <SYNTAX>:StrDecimalLiteral[2,0].StringNumericValue(
+  this: Ast:StrDecimalLiteral[2,0],
+): Number {
+  sdo-call %0 = this[0]->StringNumericValue()
+  let a = %0
+  if (= a 0.0f) {
+    return -0.0f
+  } else {}
+  return (- a)
+}

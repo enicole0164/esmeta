@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2286 {
+    label = "def <SYNTAX>:ClassAtom[0,0].CompileToCharSet(this: Ast:ClassAtom[0,0]): Unknown["CharSet"]"
+    style = rounded
+    cluster2286_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2286_entry_name -> cluster2286_entry [arrowhead=none, color="black", style=dashed]
+    cluster2286_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2286_entry -> node14054 [color="black"]
+    cluster2286_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2286_exit_name -> cluster2286_exit [arrowhead=none, color="black", style=dashed]
+    cluster2286_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14054_name [shape=none, label=<<font color="black">Block[14054]</font>>]
+    node14054_name -> node14054 [arrowhead=none, color="black", style=dashed]
+    node14054 [shape=box, label=<<font color="black">[0] (yet &quot;Return the CharSet containing the single character `-` U+002D (HYPHEN-MINUS).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14054 -> cluster2286_exit [color="black"]
+  }
+}

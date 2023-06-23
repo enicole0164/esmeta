@@ -1,0 +1,2 @@
+"use strict";
+async function * await ( ) { } var asyncIterable = { [ Symbol . asyncIterator ] : function ( ) { return this ; } , next : await , } ; async function * asyncGenerator ( ) { yield * asyncIterable ; } var asyncIterator = asyncGenerator ( ) ; asyncIterator . next ( ) . then ( function ( ) { var promise = Promise . resolve ( 2 ) . then ( ( ) => { x ; } ) ; return asyncIterator . return ( promise ) ; } ) ; 

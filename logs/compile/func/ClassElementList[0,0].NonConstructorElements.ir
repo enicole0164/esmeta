@@ -1,0 +1,9 @@
+def <SYNTAX>:ClassElementList[0,0].NonConstructorElements(
+  this: Ast:ClassElementList[0,0],
+): List[Ast[ClassElement]] {
+  sdo-call %0 = this[0]->ClassElementKind()
+  if (= %0 ~NonConstructorMethod~) {
+    return (new [this[0]])[#675]
+  } else {}
+  return (new [])[#676]
+}

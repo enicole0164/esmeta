@@ -1,0 +1,11 @@
+def <SYNTAX>:BindingPropertyList[1,0].PropertyBindingInitialization(
+  this: Ast:BindingPropertyList[1,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[List[Symbol | String]] | Abrupt {
+  sdo-call %0 = this[0]->PropertyBindingInitialization(value, environment)
+  let boundNames = [? %0]
+  sdo-call %1 = this[1]->PropertyBindingInitialization(value, environment)
+  let nextNames = [? %1]
+  return (list-concat boundNames nextNames)[#601]
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue ) { return ; } throw new Test262Error ( message ) ; } var x ; assert . sameValue = x => 0 ; assert . notSameValue = { return : '' } ; 0 ; assert . _toString = async function * ( ... [ ] ) { } ; function Test262Error ( message ) { message || "" ; } ; async function * x ( ) { } var a = { get length ( ) { return 1 ; } , splice : Array . prototype . splice } ; try { a . splice ( 1n , 2 , 4 ) ; } catch ( e ) { if ( ! ( e instanceof TypeError ) ) { throw e ; } } 

@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1871 {
+    label = "def ImportedLocalNames(importEntries: Unknown["ListOfImportEntryRecords"]): List[String]"
+    style = rounded
+    cluster1871_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1871_entry_name -> cluster1871_entry [arrowhead=none, color="black", style=dashed]
+    cluster1871_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1871_entry -> node10075 [color="black"]
+    cluster1871_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1871_exit_name -> cluster1871_exit [arrowhead=none, color="black", style=dashed]
+    cluster1871_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10075_name [shape=none, label=<<font color="black">Block[10075]</font>>]
+    node10075_name -> node10075 [arrowhead=none, color="black", style=dashed]
+    node10075 [shape=box, label=<<font color="black">[0] let localNames = (new [])[#759]<BR ALIGN="LEFT"/>[1] %1 = importEntries<BR ALIGN="LEFT"/>[2] %0 = 0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10075 -> node10076 [color="black"]
+    node10076_name [shape=none, label=<<font color="black">Branch[10076]</font>>]
+    node10076_name -> node10076 [arrowhead=none, color="black", style=dashed]
+    node10076 [shape=diamond, label=<<font color="black">(&lt; %0 %1.length)</font>> color="black" fillcolor="white", style=filled]
+    node10076 -> node10077 [label=<<font color="black">true</font>> color="black"]
+    node10076 -> node10078 [label=<<font color="black">false</font>> color="black"]
+    node10077_name [shape=none, label=<<font color="black">Block[10077]</font>>]
+    node10077_name -> node10077 [arrowhead=none, color="black", style=dashed]
+    node10077 [shape=box, label=<<font color="black">[0] let i = %1[%0]<BR ALIGN="LEFT"/>[1] push localNames &lt; i.LocalName<BR ALIGN="LEFT"/>[2] %0 = (+ %0 1)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10077 -> node10076 [color="black"]
+    node10078_name [shape=none, label=<<font color="black">Block[10078]</font>>]
+    node10078_name -> node10078 [arrowhead=none, color="black", style=dashed]
+    node10078 [shape=box, label=<<font color="black">[0] return localNames<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10078 -> cluster1871_exit [color="black"]
+  }
+}

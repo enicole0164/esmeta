@@ -1,0 +1,5 @@
+def <SYNTAX>:PrimaryExpression[7,0].AssignmentTargetType(
+  this: Ast:PrimaryExpression[7,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

@@ -1,0 +1,55 @@
+def PerformPromiseAny(
+  iteratorRecord: Unknown,
+  constructor: Unknown["Constructor"],
+  resultCapability: PromiseCapabilityRecord,
+  promiseResolve: FunctionObject,
+): Normal[ESValue] | Abrupt {
+  let errors = (new [])[#1287]
+  let remainingElementsCount = (new Record("Value" -> 1))[#1288]
+  let index = 0
+  loop[repeat] true {
+    call %0 = clo<IteratorStep>(iteratorRecord)
+    call %1 = clo<Completion>(%0)
+    let next = %1
+    if (&& (comp? next) (! (= next.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? next]
+    if (= next false) {
+      iteratorRecord.Done = true
+      remainingElementsCount.Value = (- remainingElementsCount.Value 1)
+      if (= remainingElementsCount.Value 0) {
+        let error = (new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%AggregateError.prototype%"], "ErrorData" -> undefined))[#1289]
+        call %2 = clo<CreateArrayFromList>(errors)
+        call %3 = clo<DefinePropertyOrThrow>(error, "errors", (new PropertyDescriptor("Configurable" -> true, "Enumerable" -> false, "Writable" -> true, "Value" -> %2))[#1290])
+        [! %3]
+        call %4 = clo<ThrowCompletion>(error)
+        return %4
+      } else {}
+      return resultCapability.Promise
+    } else {}
+    call %5 = clo<IteratorValue>(next)
+    call %6 = clo<Completion>(%5)
+    let nextValue = %6
+    if (&& (comp? nextValue) (! (= nextValue.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? nextValue]
+    push errors < undefined
+    call %7 = clo<Call>(promiseResolve, constructor, (new [nextValue])[#1291])
+    let nextPromise = [? %7]
+    let stepsRejected = clo<INTRINSICS.yet:`Promise.any`RejectElementFunction>
+    let lengthRejected = 1
+    call %8 = clo<CreateBuiltinFunction>(stepsRejected, lengthRejected, "", (new ["AlreadyCalled", "Index", "Errors", "Capability", "RemainingElements"])[#1292])
+    let onRejected = %8
+    onRejected.AlreadyCalled = false
+    onRejected.Index = index
+    onRejected.Errors = errors
+    onRejected.Capability = resultCapability
+    onRejected.RemainingElements = remainingElementsCount
+    remainingElementsCount.Value = (+ remainingElementsCount.Value 1)
+    call %9 = clo<Invoke>(nextPromise, "then", (new [resultCapability.Resolve, onRejected])[#1293])
+    [? %9]
+    index = (+ index 1)
+  }
+}

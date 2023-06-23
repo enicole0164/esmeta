@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassElement[4,0].PropName(
+  this: Ast:ClassElement[4,0],
+): Const[~empty~] | String {
+  return ~empty~
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:AssignmentPropertyList[1,0].PropertyDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentPropertyList[1,0],
+  value: Unknown,
+): Normal[List[Symbol | String]] | Abrupt {
+  sdo-call %0 = this[0]->PropertyDestructuringAssignmentEvaluation(value)
+  let propertyNames = [? %0]
+  sdo-call %1 = this[1]->PropertyDestructuringAssignmentEvaluation(value)
+  let nextNames = [? %1]
+  return (list-concat propertyNames nextNames)[#595]
+}

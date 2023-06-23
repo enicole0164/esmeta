@@ -1,0 +1,19 @@
+def PromiseResolve(
+  C: Unknown["Constructor"],
+  x: ESValue,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<IsPromise>(x)
+  if (= %0 true) {
+    call %1 = clo<Get>(x, "constructor")
+    let xConstructor = [? %1]
+    call %2 = clo<SameValue>(xConstructor, C)
+    if (= %2 true) {
+      return x
+    } else {}
+  } else {}
+  call %3 = clo<NewPromiseCapability>(C)
+  let promiseCapability = [? %3]
+  call %4 = clo<Call>(promiseCapability.Resolve, undefined, (new [x])[#1304])
+  [? %4]
+  return promiseCapability.Promise
+}

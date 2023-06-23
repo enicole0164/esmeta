@@ -1,0 +1,50 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.indexOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let searchElement = (pop < argumentsList) else let searchElement = absent
+  if (< 0 argumentsList.length) let fromIndex = (pop < argumentsList) else let fromIndex = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  if (= len 0) {
+    return -1.0f
+  } else {}
+  call %2 = clo<ToIntegerOrInfinity>(fromIndex)
+  let n = [? %2]
+  assert (|| (! (= fromIndex undefined)) (= n 0))
+  if (= n +INF) {
+    return -1.0f
+  } else {
+    if (= n -INF) {
+      n = 0
+    } else {}
+  }
+  if (! (< n 0)) {
+    let k = n
+  } else {
+    let k = (+ len n)
+    if (< k 0) {
+      k = 0
+    } else {}
+  }
+  loop[repeat] (< k len) {
+    call %3 = clo<ToString>(([number] k))
+    call %4 = clo<HasProperty>(O, [! %3])
+    let kPresent = [? %4]
+    if (= kPresent true) {
+      call %5 = clo<ToString>(([number] k))
+      call %6 = clo<Get>(O, [! %5])
+      let elementK = [? %6]
+      call %7 = clo<IsStrictlyEqual>(searchElement, elementK)
+      let same = %7
+      if (= same true) {
+        return ([number] k)
+      } else {}
+    } else {}
+    k = (+ k 1)
+  }
+  return -1.0f
+}

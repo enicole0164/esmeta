@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1044 {
+    label = "def ClearKeptObjects(): Const[~unused~]"
+    style = rounded
+    cluster1044_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1044_entry_name -> cluster1044_entry [arrowhead=none, color="black", style=dashed]
+    cluster1044_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1044_entry -> node3924 [color="black"]
+    cluster1044_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1044_exit_name -> cluster1044_exit [arrowhead=none, color="black", style=dashed]
+    cluster1044_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3924_name [shape=none, label=<<font color="black">Block[3924]</font>>]
+    node3924_name -> node3924 [arrowhead=none, color="black", style=dashed]
+    node3924 [shape=box, label=<<font color="black">[0] (yet &quot;Let _agentRecord_ be the surrounding agent's Agent Record.&quot;)<BR ALIGN="LEFT"/>[1] agentRecord.KeptAlive = (new [])[#399]<BR ALIGN="LEFT"/>[2] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3924 -> cluster1044_exit [color="black"]
+  }
+}

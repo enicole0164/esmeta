@@ -1,0 +1,9 @@
+def <CONC>:ObjectEnvironmentRecord.InitializeBinding(
+  envRec: ObjectEnvironmentRecord,
+  N: String,
+  V: ESValue,
+): Normal[Const[~unused~]] | Abrupt {
+  method-call %0 = envRec->SetMutableBinding(N, V, false)
+  [? %0]
+  return ~unused~
+}

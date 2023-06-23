@@ -1,0 +1,54 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.reduce(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let callbackfn = (pop < argumentsList) else let callbackfn = absent
+  if (< 0 argumentsList.length) let initialValue = (pop < argumentsList) else let initialValue = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  call %2 = clo<IsCallable>(callbackfn)
+  if (= %2 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1035])
+  } else {}
+  if (&& (== len 0) (= initialValue absent)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1036])
+  } else {}
+  let k = 0
+  let accumulator = undefined
+  if (! (= initialValue absent)) {
+    accumulator = initialValue
+  } else {
+    let kPresent = false
+    loop[repeat] (&& (= kPresent false) (< k len)) {
+      call %3 = clo<ToString>(([number] k))
+      let Pk = [! %3]
+      call %4 = clo<HasProperty>(O, Pk)
+      kPresent = [? %4]
+      if (= kPresent true) {
+        call %5 = clo<Get>(O, Pk)
+        accumulator = [? %5]
+      } else {}
+      k = (+ k 1)
+    }
+    if (= kPresent false) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1037])
+    } else {}
+  }
+  loop[repeat] (< k len) {
+    call %6 = clo<ToString>(([number] k))
+    let Pk = [! %6]
+    call %7 = clo<HasProperty>(O, Pk)
+    let kPresent = [? %7]
+    if (= kPresent true) {
+      call %8 = clo<Get>(O, Pk)
+      let kValue = [? %8]
+      call %9 = clo<Call>(callbackfn, undefined, (new [accumulator, kValue, ([number] k), O])[#1038])
+      accumulator = [? %9]
+    } else {}
+    k = (+ k 1)
+  }
+  return accumulator
+}

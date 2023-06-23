@@ -1,0 +1,6 @@
+def IsExtensible(
+  O: Object,
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->IsExtensible()
+  return [? %0]
+}

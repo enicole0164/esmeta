@@ -1,0 +1,15 @@
+def TriggerPromiseReactions(
+  reactions: Unknown["ListOfPromiseReactionRecords"],
+  argument: Unknown,
+): Const[~unused~] {
+  %1 = reactions
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let reaction = %1[%0]
+    call %2 = clo<NewPromiseReactionJob>(reaction, argument)
+    let job = %2
+    call %3 = clo<HostEnqueuePromiseJob>(job.Job, job.Realm)
+    %0 = (+ %0 1)
+  }
+  return ~unused~
+}

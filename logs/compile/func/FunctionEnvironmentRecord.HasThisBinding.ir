@@ -1,0 +1,9 @@
+def <CONC>:FunctionEnvironmentRecord.HasThisBinding(
+  envRec: FunctionEnvironmentRecord,
+): Boolean {
+  if (= envRec.ThisBindingStatus ~lexical~) {
+    return false
+  } else {
+    return true
+  }
+}

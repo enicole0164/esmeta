@@ -1,0 +1,73 @@
+def <BUILTIN>:INTRINSICS.TypedArray.from(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let source = (pop < argumentsList) else let source = absent
+  if (< 0 argumentsList.length) let mapfn = (pop < argumentsList) else let mapfn = absent
+  if (< 0 argumentsList.length) let thisArg = (pop < argumentsList) else let thisArg = absent
+  let C = this
+  call %0 = clo<IsConstructor>(C)
+  if (= %0 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1053])
+  } else {}
+  if (= mapfn undefined) {
+    let mapping = false
+  } else {
+    call %1 = clo<IsCallable>(mapfn)
+    if (= %1 false) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1054])
+    } else {}
+    let mapping = true
+  }
+  call %2 = clo<GetMethod>(source, @SYMBOL.iterator)
+  let usingIterator = [? %2]
+  if (! (= usingIterator undefined)) {
+    call %3 = clo<IterableToList>(source, usingIterator)
+    let values = [? %3]
+    let len = values.length
+    call %4 = clo<TypedArrayCreate>(C, (new [([number] len)])[#1055])
+    let targetObj = [? %4]
+    let k = 0
+    loop[repeat] (< k len) {
+      call %5 = clo<ToString>(([number] k))
+      let Pk = [! %5]
+      (yet "Let _kValue_ be the first element of _values_ and remove that element from _values_.")
+      if (= mapping true) {
+        call %6 = clo<Call>(mapfn, thisArg, (new [kValue, ([number] k)])[#1056])
+        let mappedValue = [? %6]
+      } else {
+        let mappedValue = kValue
+      }
+      call %7 = clo<Set>(targetObj, Pk, mappedValue, true)
+      [? %7]
+      k = (+ k 1)
+    }
+    assert (yet "_values_ is now an empty List.")
+    return targetObj
+  } else {}
+  nop
+  call %8 = clo<ToObject>(source)
+  let arrayLike = [! %8]
+  call %9 = clo<LengthOfArrayLike>(arrayLike)
+  let len = [? %9]
+  call %10 = clo<TypedArrayCreate>(C, (new [([number] len)])[#1057])
+  let targetObj = [? %10]
+  let k = 0
+  loop[repeat] (< k len) {
+    call %11 = clo<ToString>(([number] k))
+    let Pk = [! %11]
+    call %12 = clo<Get>(arrayLike, Pk)
+    let kValue = [? %12]
+    if (= mapping true) {
+      call %13 = clo<Call>(mapfn, thisArg, (new [kValue, ([number] k)])[#1058])
+      let mappedValue = [? %13]
+    } else {
+      let mappedValue = kValue
+    }
+    call %14 = clo<Set>(targetObj, Pk, mappedValue, true)
+    [? %14]
+    k = (+ k 1)
+  }
+  return targetObj
+}

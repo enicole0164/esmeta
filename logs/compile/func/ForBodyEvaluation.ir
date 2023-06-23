@@ -1,0 +1,41 @@
+def ForBodyEvaluation(
+  test: Unknown,
+  increment: Unknown,
+  stmt: Unknown,
+  perIterationBindings: Unknown,
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  let V = undefined
+  call %0 = clo<CreatePerIterationEnvironment>(perIterationBindings)
+  [? %0]
+  loop[repeat] true {
+    if (! (= test absent)) {
+      sdo-call %1 = test->Evaluation()
+      let testRef = %1
+      call %2 = clo<GetValue>(testRef)
+      let testValue = [? %2]
+      call %3 = clo<ToBoolean>(testValue)
+      if (= %3 false) {
+        return V
+      } else {}
+    } else {}
+    sdo-call %4 = stmt->Evaluation()
+    let result = %4
+    call %5 = clo<LoopContinues>(result, labelSet)
+    if (= %5 false) {
+      call %6 = clo<UpdateEmpty>(result, V)
+      return [? %6]
+    } else {}
+    if (! (= result.Value ~empty~)) {
+      V = result.Value
+    } else {}
+    call %7 = clo<CreatePerIterationEnvironment>(perIterationBindings)
+    [? %7]
+    if (! (= increment absent)) {
+      sdo-call %8 = increment->Evaluation()
+      let incRef = %8
+      call %9 = clo<GetValue>(incRef)
+      [? %9]
+    } else {}
+  }
+}

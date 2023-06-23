@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster782 {
+    label = "def <SYNTAX>:PrimaryExpression[12,0].NamedEvaluation(this: Ast:PrimaryExpression[12,0], name: Unknown): Normal[FunctionObject] | Abrupt"
+    style = rounded
+    cluster782_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster782_entry_name -> cluster782_entry [arrowhead=none, color="black", style=dashed]
+    cluster782_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster782_entry -> node3021 [color="black"]
+    cluster782_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster782_exit_name -> cluster782_exit [arrowhead=none, color="black", style=dashed]
+    cluster782_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3021_name [shape=none, label=<<font color="black">Block[3021]</font>>]
+    node3021_name -> node3021 [arrowhead=none, color="black", style=dashed]
+    node3021 [shape=box, label=<<font color="black">[0] let expr = (parse this[0] (nt |ParenthesizedExpression|[]))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3021 -> node3022 [color="black"]
+    node3022_name [shape=none, label=<<font color="black">Call[3022]</font>>]
+    node3022_name -> node3022 [arrowhead=none, color="black", style=dashed]
+    node3022 [shape=cds, label=<<font color="black">%0 = expr-&gt;NamedEvaluation(name)</font>> color="black" fillcolor="white", style=filled]
+    node3022 -> node3023 [color="black"]
+    node3023_name [shape=none, label=<<font color="black">Block[3023]</font>>]
+    node3023_name -> node3023 [arrowhead=none, color="black", style=dashed]
+    node3023 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3023 -> cluster782_exit [color="black"]
+  }
+}

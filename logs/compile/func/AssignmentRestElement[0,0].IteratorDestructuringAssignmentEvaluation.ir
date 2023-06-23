@@ -1,0 +1,44 @@
+def <SYNTAX>:AssignmentRestElement[0,0].IteratorDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentRestElement[0,0],
+  iteratorRecord: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  if (! (|| (? this[0]: "ObjectLiteral") (? this[0]: "ArrayLiteral"))) {
+    sdo-call %0 = this[0]->Evaluation()
+    let lref = %0
+    [? lref]
+  } else {}
+  call %1 = clo<ArrayCreate>(0)
+  let A = [! %1]
+  let n = 0
+  loop[repeat] (= iteratorRecord.Done false) {
+    call %2 = clo<IteratorStep>(iteratorRecord)
+    call %3 = clo<Completion>(%2)
+    let next = %3
+    if (&& (comp? next) (! (= next.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? next]
+    if (= next false) {
+      iteratorRecord.Done = true
+    } else {
+      call %4 = clo<IteratorValue>(next)
+      call %5 = clo<Completion>(%4)
+      let nextValue = %5
+      if (&& (comp? nextValue) (! (= nextValue.Type ~normal~))) {
+        iteratorRecord.Done = true
+      } else {}
+      [? nextValue]
+      call %6 = clo<ToString>(([number] n))
+      call %7 = clo<CreateDataPropertyOrThrow>(A, [! %6], nextValue)
+      [! %7]
+      n = (+ n 1)
+    }
+  }
+  if (! (|| (? this[0]: "ObjectLiteral") (? this[0]: "ArrayLiteral"))) {
+    call %8 = clo<PutValue>(lref, A)
+    return [? %8]
+  } else {}
+  let nestedAssignmentPattern = (parse this[0] (nt |AssignmentPattern|[]))
+  sdo-call %9 = nestedAssignmentPattern->DestructuringAssignmentEvaluation(A)
+  return [? %9]
+}

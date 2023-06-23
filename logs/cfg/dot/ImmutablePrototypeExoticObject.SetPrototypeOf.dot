@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1148 {
+    label = "def <INTERNAL>:ImmutablePrototypeExoticObject.SetPrototypeOf(O: ImmutablePrototypeExoticObject, V: Object | Null): Normal[Boolean] | Abrupt"
+    style = rounded
+    cluster1148_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1148_entry_name -> cluster1148_entry [arrowhead=none, color="black", style=dashed]
+    cluster1148_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1148_entry -> node4995 [color="black"]
+    cluster1148_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1148_exit_name -> cluster1148_exit [arrowhead=none, color="black", style=dashed]
+    cluster1148_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4995_name [shape=none, label=<<font color="black">Call[4995]</font>>]
+    node4995_name -> node4995 [arrowhead=none, color="black", style=dashed]
+    node4995 [shape=cds, label=<<font color="black">%0 = clo&lt;SetImmutablePrototype&gt;(O, V)</font>> color="black" fillcolor="white", style=filled]
+    node4995 -> node4996 [color="black"]
+    node4996_name [shape=none, label=<<font color="black">Block[4996]</font>>]
+    node4996_name -> node4996 [arrowhead=none, color="black", style=dashed]
+    node4996 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4996 -> cluster1148_exit [color="black"]
+  }
+}

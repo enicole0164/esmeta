@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.Function.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let func = this
+  if (&& (= (typeof func) @Object) (&& (! (= func.SourceText absent)) (= (typeof func.SourceText) @String))) {
+    return (yet "Function.prototype.toString")
+  } else {}
+  if (? func: "BuiltinFunctionObject") {
+    return (concat "function " func.InitialName "() { [native code] }")
+  } else {}
+  call %0 = clo<IsCallable>(func)
+  if (&& (= (typeof func) @Object) (= %0 true)) {
+    return (yet "Function.prototype.toString")
+  } else {}
+  return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#913])
+}

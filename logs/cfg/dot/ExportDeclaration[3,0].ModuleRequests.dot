@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1881 {
+    label = "def <SYNTAX>:ExportDeclaration[3,0].ModuleRequests(this: Ast:ExportDeclaration[3,0]): List[String]"
+    style = rounded
+    cluster1881_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1881_entry_name -> cluster1881_entry [arrowhead=none, color="black", style=dashed]
+    cluster1881_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1881_entry -> node10095 [color="black"]
+    cluster1881_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1881_exit_name -> cluster1881_exit [arrowhead=none, color="black", style=dashed]
+    cluster1881_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10095_name [shape=none, label=<<font color="black">Block[10095]</font>>]
+    node10095_name -> node10095 [arrowhead=none, color="black", style=dashed]
+    node10095 [shape=box, label=<<font color="black">[0] return (new [])[#765]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10095 -> cluster1881_exit [color="black"]
+  }
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster33 {
+    label = "def <NUM>:BigInt::bitwiseNOT(x: BigInt): BigInt"
+    style = rounded
+    cluster33_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster33_entry_name -> cluster33_entry [arrowhead=none, color="black", style=dashed]
+    cluster33_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster33_entry -> node315 [color="black"]
+    cluster33_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster33_exit_name -> cluster33_exit [arrowhead=none, color="black", style=dashed]
+    cluster33_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node315_name [shape=none, label=<<font color="black">Block[315]</font>>]
+    node315_name -> node315 [arrowhead=none, color="black", style=dashed]
+    node315 [shape=box, label=<<font color="black">[0] return (- (- x) 1n)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node315 -> cluster33_exit [color="black"]
+  }
+}

@@ -1,0 +1,8 @@
+def IsBigIntElementType(
+  type: Unknown,
+): Boolean {
+  if (|| (= type ~BigUint64~) (= type ~BigInt64~)) {
+    return true
+  } else {}
+  return false
+}

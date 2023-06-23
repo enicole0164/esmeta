@@ -1,0 +1,6 @@
+def <SYNTAX>:AsyncFunctionExpression[0,1].Contains(
+  this: Ast:AsyncFunctionExpression[0,1],
+  symbol: Unknown,
+): Boolean {
+  return false
+}

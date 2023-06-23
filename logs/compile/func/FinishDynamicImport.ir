@@ -1,0 +1,15 @@
+def FinishDynamicImport(
+  referencingScriptOrModule: Unknown,
+  specifier: Unknown,
+  promiseCapability: PromiseCapabilityRecord,
+  innerPromise: Unknown,
+): Const[~unused~] {
+  let fulfilledClosure = clo<FinishDynamicImport:clo0, [referencingScriptOrModule, specifier, promiseCapability]>
+  call %0 = clo<CreateBuiltinFunction>(fulfilledClosure, 0, "", (new [])[#800])
+  let onFulfilled = %0
+  let rejectedClosure = clo<FinishDynamicImport:clo1, [promiseCapability]>
+  call %1 = clo<CreateBuiltinFunction>(rejectedClosure, 0, "", (new [])[#801])
+  let onRejected = %1
+  call %2 = clo<PerformPromiseThen>(innerPromise, onFulfilled, onRejected)
+  return ~unused~
+}

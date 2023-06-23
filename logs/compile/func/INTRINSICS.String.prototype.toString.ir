@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.String.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisStringValue>(this)
+  return [? %0]
+}

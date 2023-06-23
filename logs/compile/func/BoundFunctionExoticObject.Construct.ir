@@ -1,0 +1,17 @@
+def <INTERNAL>:BoundFunctionExoticObject.Construct(
+  F: BoundFunctionExoticObject,
+  argumentsList: List[ESValue],
+  newTarget: Unknown["Constructor"],
+): Normal[Object] | Abrupt {
+  let target = F.BoundTargetFunction
+  call %0 = clo<IsConstructor>(target)
+  assert (= %0 true)
+  let boundArgs = F.BoundArguments
+  let args = (list-concat boundArgs argumentsList)[#444]
+  call %1 = clo<SameValue>(F, newTarget)
+  if (= %1 true) {
+    newTarget = target
+  } else {}
+  call %2 = clo<Construct>(target, args, newTarget)
+  return [? %2]
+}

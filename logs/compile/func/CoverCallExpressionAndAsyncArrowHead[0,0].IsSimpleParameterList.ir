@@ -1,0 +1,7 @@
+def <SYNTAX>:CoverCallExpressionAndAsyncArrowHead[0,0].IsSimpleParameterList(
+  this: Ast:CoverCallExpressionAndAsyncArrowHead[0,0],
+): Boolean {
+  let head = (parse this (nt |AsyncArrowHead|[]))
+  sdo-call %0 = head->IsSimpleParameterList()
+  return %0
+}

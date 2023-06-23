@@ -1,0 +1,13 @@
+def ToDateString(
+  tv: Number,
+): String {
+  if (= tv NaN) {
+    return "Invalid Date"
+  } else {}
+  call %0 = clo<LocalTime>(tv)
+  let t = %0
+  call %1 = clo<DateString>(t)
+  call %2 = clo<TimeString>(t)
+  call %3 = clo<TimeZoneString>(tv)
+  return (concat %1 32cu %2 %3)
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2687 {
+    label = "def HostEnsureCanCompileStrings(callerRealm: Unknown, calleeRealm: Unknown): Unknown"
+    style = rounded
+    cluster2687_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2687_entry_name -> cluster2687_entry [arrowhead=none, color="black", style=dashed]
+    cluster2687_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2687_entry -> node20032 [color="black"]
+    cluster2687_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2687_exit_name -> cluster2687_exit [arrowhead=none, color="black", style=dashed]
+    cluster2687_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node20032_name [shape=none, label=<<font color="black">Call[20032]</font>>]
+    node20032_name -> node20032 [arrowhead=none, color="black", style=dashed]
+    node20032 [shape=cds, label=<<font color="black">%0 = clo&lt;NormalCompletion&gt;(~unused~)</font>> color="black" fillcolor="white", style=filled]
+    node20032 -> node20033 [color="black"]
+    node20033_name [shape=none, label=<<font color="black">Block[20033]</font>>]
+    node20033_name -> node20033 [arrowhead=none, color="black", style=dashed]
+    node20033 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node20033 -> cluster2687_exit [color="black"]
+  }
+}

@@ -1,0 +1,18 @@
+def GeneratorValidate(
+  generator: Unknown,
+  generatorBrand: Unknown,
+): Normal[Const[~completed~, ~suspendedStart~, ~suspendedYield~]] | Abrupt {
+  call %0 = clo<RequireInternalSlot>(generator, "GeneratorState")
+  [? %0]
+  call %1 = clo<RequireInternalSlot>(generator, "GeneratorBrand")
+  [? %1]
+  if (! (= generator.GeneratorBrand generatorBrand)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1317])
+  } else {}
+  assert (! (= generator.GeneratorContext absent))
+  let state = generator.GeneratorState
+  if (= state ~executing~) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1318])
+  } else {}
+  return state
+}

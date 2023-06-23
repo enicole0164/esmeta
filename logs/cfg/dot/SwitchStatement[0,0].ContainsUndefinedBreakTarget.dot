@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster582 {
+    label = "def <SYNTAX>:SwitchStatement[0,0].ContainsUndefinedBreakTarget(this: Ast:SwitchStatement[0,0], labelSet: Unknown): Boolean"
+    style = rounded
+    cluster582_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster582_entry_name -> cluster582_entry [arrowhead=none, color="black", style=dashed]
+    cluster582_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster582_entry -> node2594 [color="black"]
+    cluster582_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster582_exit_name -> cluster582_exit [arrowhead=none, color="black", style=dashed]
+    cluster582_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2594_name [shape=none, label=<<font color="black">Call[2594]</font>>]
+    node2594_name -> node2594 [arrowhead=none, color="black", style=dashed]
+    node2594 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;ContainsUndefinedBreakTarget(labelSet)</font>> color="black" fillcolor="white", style=filled]
+    node2594 -> node2595 [color="black"]
+    node2595_name [shape=none, label=<<font color="black">Block[2595]</font>>]
+    node2595_name -> node2595 [arrowhead=none, color="black", style=dashed]
+    node2595 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2595 -> cluster582_exit [color="black"]
+  }
+}

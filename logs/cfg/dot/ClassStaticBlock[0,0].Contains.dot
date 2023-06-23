@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster811 {
+    label = "def <SYNTAX>:ClassStaticBlock[0,0].Contains(this: Ast:ClassStaticBlock[0,0], symbol: Unknown): Boolean"
+    style = rounded
+    cluster811_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster811_entry_name -> cluster811_entry [arrowhead=none, color="black", style=dashed]
+    cluster811_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster811_entry -> node3096 [color="black"]
+    cluster811_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster811_exit_name -> cluster811_exit [arrowhead=none, color="black", style=dashed]
+    cluster811_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3096_name [shape=none, label=<<font color="black">Block[3096]</font>>]
+    node3096_name -> node3096 [arrowhead=none, color="black", style=dashed]
+    node3096 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3096 -> cluster811_exit [color="black"]
+  }
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } x : ; } 0 ; { } x => { } ; x => 0 ; function Test262Error ( message ) { this . message = message || "" ; } Test262Error . prototype = function ( ) { return "Test262Error: " + this ; } ; function $DONOTEVALUATE ( ) { throw "Test262: This statement should not be evaluated." ; } function __consolePrintHandle__ ( msg ) { print ( msg ) ; } class C { #m = async ( ) => 'test262' ; method ( ) { return this ( ) ; } } let c = new C ( ) ; c . method ( ) . then ( $DONE ) ; 

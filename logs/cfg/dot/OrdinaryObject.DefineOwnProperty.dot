@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1057 {
+    label = "def <INTERNAL>:OrdinaryObject.DefineOwnProperty(O: OrdinaryObject, P: Symbol | String, Desc: PropertyDescriptor): Normal[Boolean] | Abrupt"
+    style = rounded
+    cluster1057_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1057_entry_name -> cluster1057_entry [arrowhead=none, color="black", style=dashed]
+    cluster1057_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1057_entry -> node3967 [color="black"]
+    cluster1057_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1057_exit_name -> cluster1057_exit [arrowhead=none, color="black", style=dashed]
+    cluster1057_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3967_name [shape=none, label=<<font color="black">Call[3967]</font>>]
+    node3967_name -> node3967 [arrowhead=none, color="black", style=dashed]
+    node3967 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryDefineOwnProperty&gt;(O, P, Desc)</font>> color="black" fillcolor="white", style=filled]
+    node3967 -> node3968 [color="black"]
+    node3968_name [shape=none, label=<<font color="black">Block[3968]</font>>]
+    node3968_name -> node3968 [arrowhead=none, color="black", style=dashed]
+    node3968 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3968 -> cluster1057_exit [color="black"]
+  }
+}

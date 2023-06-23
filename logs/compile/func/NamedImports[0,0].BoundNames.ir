@@ -1,0 +1,5 @@
+def <SYNTAX>:NamedImports[0,0].BoundNames(
+  this: Ast:NamedImports[0,0],
+): List[String] {
+  return (new [])[#106]
+}

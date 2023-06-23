@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassDeclaration[1,0].BoundNames(
+  this: Ast:ClassDeclaration[1,0],
+): List[String] {
+  return (new ["*default*"])[#101]
+}

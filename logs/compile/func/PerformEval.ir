@@ -1,0 +1,122 @@
+def PerformEval(
+  x: Unknown,
+  callerRealm: Unknown,
+  strictCaller: Unknown,
+  direct: Unknown,
+): Normal[ESValue] | Abrupt {
+  assert (yet "If _direct_ is *false*, then _strictCaller_ is also *false*.")
+  if (! (= (typeof x) @String)) {
+    return x
+  } else {}
+  let evalRealm = @EXECUTION_STACK[0].Realm
+  call %0 = clo<HostEnsureCanCompileStrings>(callerRealm, evalRealm)
+  [? %0]
+  let inFunction = false
+  let inMethod = false
+  let inDerivedConstructor = false
+  let inClassFieldInitializer = false
+  if (= direct true) {
+    call %1 = clo<GetThisEnvironment>()
+    let thisEnvRec = %1
+    if (? thisEnvRec: "FunctionEnvironmentRecord") {
+      let F = thisEnvRec.FunctionObject
+      inFunction = true
+      method-call %2 = thisEnvRec->HasSuperBinding()
+      inMethod = %2
+      if (= F.ConstructorKind ~derived~) {
+        inDerivedConstructor = true
+      } else {}
+      let classFieldIntializerName = F.ClassFieldInitializerName
+      if (! (= classFieldIntializerName ~empty~)) {
+        inClassFieldInitializer = true
+      } else {}
+    } else {}
+  } else {}
+  call %3 = clo<StringToCodePoints>(x)
+  let script = (parse %3 (nt |Script|[]))
+  if (? script: "ListOfErrors") {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#868])
+  } else {}
+  sdo-call %4 = script->Contains((nt |ScriptBody|[]))
+  if (= %4 false) {
+    return undefined
+  } else {}
+  let body = script.ScriptBody
+  %5 = (= inFunction false)
+  if %5 {
+    sdo-call %6 = body->Contains((nt |NewTarget|[]))
+    %5 = %6
+  } else {}
+  if %5 {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#869])
+  } else {}
+  %7 = (= inMethod false)
+  if %7 {
+    sdo-call %8 = body->Contains((nt |SuperProperty|[]))
+    %7 = %8
+  } else {}
+  if %7 {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#870])
+  } else {}
+  %9 = (= inDerivedConstructor false)
+  if %9 {
+    sdo-call %10 = body->Contains((nt |SuperCall|[]))
+    %9 = %10
+  } else {}
+  if %9 {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#871])
+  } else {}
+  %11 = (= inClassFieldInitializer true)
+  if %11 {
+    sdo-call %12 = body->ContainsArguments()
+    %11 = (= %12 true)
+  } else {}
+  if %11 {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%SyntaxError.prototype%"], "ErrorData" -> undefined))[#872])
+  } else {}
+  if (= strictCaller true) {
+    let strictEval = true
+  } else {
+    sdo-call %13 = script->IsStrict()
+    let strictEval = %13
+  }
+  let runningContext = @EXECUTION_STACK[0]
+  nop
+  if (= direct true) {
+    call %14 = clo<NewDeclarativeEnvironment>(runningContext.LexicalEnvironment)
+    let lexEnv = %14
+    let varEnv = runningContext.VariableEnvironment
+    let privateEnv = runningContext.PrivateEnvironment
+  } else {
+    call %15 = clo<NewDeclarativeEnvironment>(evalRealm.GlobalEnv)
+    let lexEnv = %15
+    let varEnv = evalRealm.GlobalEnv
+    let privateEnv = null
+  }
+  if (= strictEval true) {
+    varEnv = lexEnv
+  } else {}
+  nop
+  let evalContext = (new ExecutionContext())[#873]
+  evalContext.Function = null
+  evalContext.Realm = evalRealm
+  evalContext.ScriptOrModule = runningContext.ScriptOrModule
+  evalContext.VariableEnvironment = varEnv
+  evalContext.LexicalEnvironment = lexEnv
+  evalContext.PrivateEnvironment = privateEnv
+  push evalContext > @EXECUTION_STACK
+  call %16 = clo<EvalDeclarationInstantiation>(body, varEnv, lexEnv, privateEnv, strictEval)
+  call %17 = clo<Completion>(%16)
+  let result = %17
+  if (= result.Type ~normal~) {
+    sdo-call %18 = body->Evaluation()
+    result = %18
+  } else {}
+  if (&& (= result.Type ~normal~) (= result.Value ~empty~)) {
+    call %19 = clo<NormalCompletion>(undefined)
+    result = %19
+  } else {}
+  (pop < @EXECUTION_STACK)
+  nop
+  return [? result]
+}

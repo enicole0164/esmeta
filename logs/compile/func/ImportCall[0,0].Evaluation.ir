@@ -1,0 +1,26 @@
+def <SYNTAX>:ImportCall[0,0].Evaluation(
+  this: Ast:ImportCall[0,0],
+): Unknown {
+  call %0 = clo<GetActiveScriptOrModule>()
+  let referencingScriptOrModule = %0
+  sdo-call %1 = this[0]->Evaluation()
+  let argRef = %1
+  call %2 = clo<GetValue>(argRef)
+  let specifier = [? %2]
+  call %3 = clo<NewPromiseCapability>(@EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"])
+  let promiseCapability = [! %3]
+  call %4 = clo<ToString>(specifier)
+  call %5 = clo<Completion>(%4)
+  let specifierString = %5
+  if (&& (comp? specifierString) (! (= specifierString.Type ~normal~))) {
+    call %6 = clo<Call>(promiseCapability.Reject, undefined, (new [specifierString.Value])[#585])
+    [? %6]
+    return promiseCapability.Promise
+  } else {
+    if (? specifierString: "CompletionRecord") {
+      specifierString = specifierString.Value
+    } else {}
+  }
+  call %7 = clo<HostImportModuleDynamically>(referencingScriptOrModule, specifierString, promiseCapability)
+  return promiseCapability.Promise
+}

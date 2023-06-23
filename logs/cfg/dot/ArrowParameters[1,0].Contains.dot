@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster813 {
+    label = "def <SYNTAX>:ArrowParameters[1,0].Contains(this: Ast:ArrowParameters[1,0], symbol: Unknown): Boolean"
+    style = rounded
+    cluster813_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster813_entry_name -> cluster813_entry [arrowhead=none, color="black", style=dashed]
+    cluster813_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster813_entry -> node3104 [color="black"]
+    cluster813_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster813_exit_name -> cluster813_exit [arrowhead=none, color="black", style=dashed]
+    cluster813_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3104_name [shape=none, label=<<font color="black">Block[3104]</font>>]
+    node3104_name -> node3104 [arrowhead=none, color="black", style=dashed]
+    node3104 [shape=box, label=<<font color="black">[0] let formals = (parse this[0] (nt |ArrowFormalParameters|[]))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3104 -> node3105 [color="black"]
+    node3105_name [shape=none, label=<<font color="black">Call[3105]</font>>]
+    node3105_name -> node3105 [arrowhead=none, color="black", style=dashed]
+    node3105 [shape=cds, label=<<font color="black">%0 = formals-&gt;Contains(symbol)</font>> color="black" fillcolor="white", style=filled]
+    node3105 -> node3106 [color="black"]
+    node3106_name [shape=none, label=<<font color="black">Block[3106]</font>>]
+    node3106_name -> node3106 [arrowhead=none, color="black", style=dashed]
+    node3106 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3106 -> cluster813_exit [color="black"]
+  }
+}

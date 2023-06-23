@@ -1,0 +1,5 @@
+def <SYNTAX>:ModuleItem[2,0].ExportedNames(
+  this: Ast:ModuleItem[2,0],
+): List[String] {
+  return (new [])[#830]
+}

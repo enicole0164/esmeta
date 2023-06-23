@@ -1,0 +1,7 @@
+def MakeMethod(
+  F: ECMAScriptFunctionObject,
+  homeObject: Object,
+): Const[~unused~] {
+  F.HomeObject = homeObject
+  return ~unused~
+}

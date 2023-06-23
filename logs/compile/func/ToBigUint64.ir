@@ -1,0 +1,8 @@
+def ToBigUint64(
+  argument: Unknown,
+): Normal[BigInt] | Abrupt {
+  call %0 = clo<ToBigInt>(argument)
+  let n = [? %0]
+  let int64bit = (% ([math] n) (** 2 64))
+  return ([bigInt] int64bit)
+}

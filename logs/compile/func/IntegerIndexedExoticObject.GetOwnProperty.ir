@@ -1,0 +1,19 @@
+def <INTERNAL>:IntegerIndexedExoticObject.GetOwnProperty(
+  O: IntegerIndexedExoticObject,
+  P: Symbol | String,
+): Normal[PropertyDescriptor | Undefined] {
+  if (= (typeof P) @String) {
+    call %0 = clo<CanonicalNumericIndexString>(P)
+    let numericIndex = %0
+    if (! (= numericIndex undefined)) {
+      call %1 = clo<IntegerIndexedElementGet>(O, numericIndex)
+      let value = %1
+      if (= value undefined) {
+        return undefined
+      } else {}
+      return (new PropertyDescriptor("Value" -> value, "Writable" -> true, "Enumerable" -> true, "Configurable" -> true))[#473]
+    } else {}
+  } else {}
+  call %2 = clo<OrdinaryGetOwnProperty>(O, P)
+  return %2
+}

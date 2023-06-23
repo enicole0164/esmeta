@@ -1,0 +1,7 @@
+def <SYNTAX>:IterationStatement[1,0].LoopEvaluation(
+  this: Ast:IterationStatement[1,0],
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this[0]->WhileLoopEvaluation(labelSet)
+  return [? %0]
+}

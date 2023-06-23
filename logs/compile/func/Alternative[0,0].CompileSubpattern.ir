@@ -1,0 +1,6 @@
+def <SYNTAX>:Alternative[0,0].CompileSubpattern(
+  this: Ast:Alternative[0,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  (yet "Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Return _c_(_x_).")
+}

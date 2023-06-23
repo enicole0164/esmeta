@@ -1,0 +1,5 @@
+def <SYNTAX>:MethodDefinition[0,0].SpecialMethod(
+  this: Ast:MethodDefinition[0,0],
+): Boolean {
+  return false
+}

@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue ) { return ; } ; throw new Test262Error ( message ) ; } assert . sameValue = [ ] ; assert = x => 0 ; assert . _toString = async x => 0 ; function Test262Error ( message ) { message ; } async x => 0 ; async x => 0 ; function $DONOTEVALUATE ( ) { throw "Test262: This statement should not be evaluated." ; } Object . freeze ( 0 ) ; 

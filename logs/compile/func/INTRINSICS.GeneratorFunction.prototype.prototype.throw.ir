@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.GeneratorFunction.prototype.prototype.throw(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let exception = (pop < argumentsList) else let exception = absent
+  let g = this
+  call %0 = clo<ThrowCompletion>(exception)
+  let C = %0
+  call %1 = clo<GeneratorResumeAbrupt>(g, C, ~empty~)
+  return [? %1]
+}

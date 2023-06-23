@@ -1,0 +1,6 @@
+def <INTERNAL>:OrdinaryObject.OwnPropertyKeys(
+  O: OrdinaryObject,
+): Normal[List[Symbol | String]] {
+  call %0 = clo<OrdinaryOwnPropertyKeys>(O)
+  return %0
+}

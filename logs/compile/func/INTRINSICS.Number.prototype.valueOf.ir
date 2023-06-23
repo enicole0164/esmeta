@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.Number.prototype.valueOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisNumberValue>(this)
+  return [? %0]
+}

@@ -1,0 +1,15 @@
+def <SYNTAX>:AssignmentRestProperty[0,0].RestDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentRestProperty[0,0],
+  value: Unknown,
+  excludedNames: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  let lref = %0
+  [? lref]
+  call %1 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let restObj = %1
+  call %2 = clo<CopyDataProperties>(restObj, value, excludedNames)
+  [? %2]
+  call %3 = clo<PutValue>(lref, restObj)
+  return [? %3]
+}

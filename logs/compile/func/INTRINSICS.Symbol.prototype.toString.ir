@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.Symbol.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisSymbolValue>(this)
+  let sym = [? %0]
+  call %1 = clo<SymbolDescriptiveString>(sym)
+  return %1
+}

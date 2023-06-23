@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2303 {
+    label = "def UnicodeMatchPropertyValue(p: Unknown["ListOfUnicodeCodePoints"], v: Unknown["ListOfUnicodeCodePoints"]): Unknown["UnicodePropertyValue"]"
+    style = rounded
+    cluster2303_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2303_entry_name -> cluster2303_entry [arrowhead=none, color="black", style=dashed]
+    cluster2303_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2303_entry -> node14084 [color="black"]
+    cluster2303_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2303_exit_name -> cluster2303_exit [arrowhead=none, color="black", style=dashed]
+    cluster2303_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14084_name [shape=none, label=<<font color="black">Block[14084]</font>>]
+    node14084_name -> node14084 [arrowhead=none, color="black", style=dashed]
+    node14084 [shape=box, label=<<font color="black">[0] assert (yet &quot;_p_ is a canonical, unaliased Unicode property name listed in the &ldquo;Canonical property name&rdquo; column of &lt;emu-xref href=\&quot;#table-nonbinary-unicode-properties\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[1] assert (yet &quot;_v_ is a property value or property value alias for Unicode property _p_ listed in the &ldquo;Property value and aliases&rdquo; column of &lt;emu-xref href=\&quot;#table-unicode-general-category-values\&quot;&gt;&lt;/emu-xref&gt; or &lt;emu-xref href=\&quot;#table-unicode-script-values\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Let _value_ be the canonical property value of _v_ as given in the &ldquo;Canonical property value&rdquo; column of the corresponding row.&quot;)<BR ALIGN="LEFT"/>[3] (yet &quot;Return the List of Unicode code points _value_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14084 -> cluster2303_exit [color="black"]
+  }
+}

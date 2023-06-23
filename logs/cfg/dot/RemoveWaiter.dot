@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2526 {
+    label = "def RemoveWaiter(WL: Unknown["WaiterList"], W: Unknown["AgentSignifier"]): Const[~unused~]"
+    style = rounded
+    cluster2526_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2526_entry_name -> cluster2526_entry [arrowhead=none, color="black", style=dashed]
+    cluster2526_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2526_entry -> node17958 [color="black"]
+    cluster2526_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2526_exit_name -> cluster2526_exit [arrowhead=none, color="black", style=dashed]
+    cluster2526_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node17958_name [shape=none, label=<<font color="black">Block[17958]</font>>]
+    node17958_name -> node17958 [arrowhead=none, color="black", style=dashed]
+    node17958 [shape=box, label=<<font color="black">[0] assert (yet &quot;The calling agent is in the critical section for _WL_.&quot;)<BR ALIGN="LEFT"/>[1] assert (yet &quot;_W_ is on the list of waiters in _WL_.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Remove _W_ from the list of waiters in _WL_.&quot;)<BR ALIGN="LEFT"/>[3] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17958 -> cluster2526_exit [color="black"]
+  }
+}

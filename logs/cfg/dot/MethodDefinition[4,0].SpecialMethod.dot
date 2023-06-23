@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1591 {
+    label = "def <SYNTAX>:MethodDefinition[4,0].SpecialMethod(this: Ast:MethodDefinition[4,0]): Boolean"
+    style = rounded
+    cluster1591_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1591_entry_name -> cluster1591_entry [arrowhead=none, color="black", style=dashed]
+    cluster1591_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1591_entry -> node8503 [color="black"]
+    cluster1591_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1591_exit_name -> cluster1591_exit [arrowhead=none, color="black", style=dashed]
+    cluster1591_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8503_name [shape=none, label=<<font color="black">Block[8503]</font>>]
+    node8503_name -> node8503 [arrowhead=none, color="black", style=dashed]
+    node8503 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8503 -> cluster1591_exit [color="black"]
+  }
+}

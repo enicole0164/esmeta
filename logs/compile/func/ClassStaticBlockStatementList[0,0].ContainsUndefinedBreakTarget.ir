@@ -1,0 +1,6 @@
+def <SYNTAX>:ClassStaticBlockStatementList[0,0].ContainsUndefinedBreakTarget(
+  this: Ast:ClassStaticBlockStatementList[0,0],
+  labelSet: Unknown,
+): Boolean {
+  return false
+}

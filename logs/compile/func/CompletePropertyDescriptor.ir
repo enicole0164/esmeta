@@ -1,0 +1,33 @@
+def CompletePropertyDescriptor(
+  Desc: PropertyDescriptor,
+): Const[~unused~] {
+  let like = (new Record("Value" -> undefined, "Writable" -> false, "Get" -> undefined, "Set" -> undefined, "Enumerable" -> false, "Configurable" -> false))[#22]
+  call %1 = clo<IsGenericDescriptor>(Desc)
+  %0 = (= %1 true)
+  if %0 {} else {
+    call %2 = clo<IsDataDescriptor>(Desc)
+    %0 = (= %2 true)
+  }
+  if %0 {
+    if (= Desc.Value absent) {
+      Desc.Value = like.Value
+    } else {}
+    if (= Desc.Writable absent) {
+      Desc.Writable = like.Writable
+    } else {}
+  } else {
+    if (= Desc.Get absent) {
+      Desc.Get = like.Get
+    } else {}
+    if (= Desc.Set absent) {
+      Desc.Set = like.Set
+    } else {}
+  }
+  if (= Desc.Enumerable absent) {
+    Desc.Enumerable = like.Enumerable
+  } else {}
+  if (= Desc.Configurable absent) {
+    Desc.Configurable = like.Configurable
+  } else {}
+  return ~unused~
+}

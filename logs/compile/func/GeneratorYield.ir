@@ -1,0 +1,13 @@
+def GeneratorYield(
+  iterNextObj: Unknown["ObjectThatConformsToThe<i>IteratorResult</i>Interface"],
+): Normal[ESValue] | Abrupt {
+  let genContext = @EXECUTION_STACK[0]
+  assert (? genContext: "ExecutionContext")
+  let generator = genContext.Generator
+  call %0 = clo<GetGeneratorKind>()
+  assert (= %0 ~sync~)
+  generator.GeneratorState = ~suspendedYield~
+  (pop < @EXECUTION_STACK)
+  genContext.ResumeCont = cont<GeneratorYield:cont0>
+  call %1 = (pop < genContext.ReturnCont)(iterNextObj)
+}

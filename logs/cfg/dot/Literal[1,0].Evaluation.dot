@@ -1,0 +1,33 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1202 {
+    label = "def <SYNTAX>:Literal[1,0].Evaluation(this: Ast:Literal[1,0]): Unknown"
+    style = rounded
+    cluster1202_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1202_entry_name -> cluster1202_entry [arrowhead=none, color="black", style=dashed]
+    cluster1202_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1202_entry -> node5421 [color="black"]
+    cluster1202_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1202_exit_name -> cluster1202_exit [arrowhead=none, color="black", style=dashed]
+    cluster1202_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5421_name [shape=none, label=<<font color="black">Branch[5421]</font>>]
+    node5421_name -> node5421 [arrowhead=none, color="black", style=dashed]
+    node5421 [shape=diamond, label=<<font color="black">(= (source-text this[0]) &quot;false&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node5421 -> node5422 [label=<<font color="black">true</font>> color="black"]
+    node5421 -> node5423 [label=<<font color="black">false</font>> color="black"]
+    node5422_name [shape=none, label=<<font color="black">Block[5422]</font>>]
+    node5422_name -> node5422 [arrowhead=none, color="black", style=dashed]
+    node5422 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5422 -> cluster1202_exit [color="black"]
+    node5423_name [shape=none, label=<<font color="black">Branch[5423]</font>>]
+    node5423_name -> node5423 [arrowhead=none, color="black", style=dashed]
+    node5423 [shape=diamond, label=<<font color="black">(= (source-text this[0]) &quot;true&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node5423 -> node5424 [label=<<font color="black">true</font>> color="black"]
+    node5424_name [shape=none, label=<<font color="black">Block[5424]</font>>]
+    node5424_name -> node5424 [arrowhead=none, color="black", style=dashed]
+    node5424 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5424 -> cluster1202_exit [color="black"]
+  }
+}

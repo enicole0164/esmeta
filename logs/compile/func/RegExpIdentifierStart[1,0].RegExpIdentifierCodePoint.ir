@@ -1,0 +1,5 @@
+def <SYNTAX>:RegExpIdentifierStart[1,0].RegExpIdentifierCodePoint(
+  this: Ast:RegExpIdentifierStart[1,0],
+): Unknown["CodePoint"] {
+  (yet "Return the code point whose numeric value is the CharacterValue of |RegExpUnicodeEscapeSequence|.")
+}

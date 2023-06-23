@@ -1,0 +1,2 @@
+"use strict";
+async function x ( ) { } 0 ; { sticky : true ; } ; function $DONOTEVALUATE ( ) { throw { } ; } var quickIter = { } ; var iter , exprValue , throwReceived ; quickIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , throw : function ( x ) { throwReceived = x ; return { 0 : false } ; } } ; } ; function * g ( ) { exprValue = yield * quickIter ; } iter = g ( ) ; iter . next ( ) ; iter . throw ( 2222 ) ; 

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster871 {
+    label = "def <SYNTAX>:FormalParameters[0,0].IteratorBindingInitialization(this: Ast:FormalParameters[0,0], iteratorRecord: Unknown, environment: Unknown): Normal[Const[~unused~]] | Abrupt"
+    style = rounded
+    cluster871_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster871_entry_name -> cluster871_entry [arrowhead=none, color="black", style=dashed]
+    cluster871_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster871_entry -> node3426 [color="black"]
+    cluster871_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster871_exit_name -> cluster871_exit [arrowhead=none, color="black", style=dashed]
+    cluster871_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3426_name [shape=none, label=<<font color="black">Block[3426]</font>>]
+    node3426_name -> node3426 [arrowhead=none, color="black", style=dashed]
+    node3426 [shape=box, label=<<font color="black">[0] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3426 -> cluster871_exit [color="black"]
+  }
+}

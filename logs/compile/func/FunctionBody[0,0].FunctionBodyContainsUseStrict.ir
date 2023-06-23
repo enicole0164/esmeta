@@ -1,0 +1,5 @@
+def <SYNTAX>:FunctionBody[0,0].FunctionBodyContainsUseStrict(
+  this: Ast:FunctionBody[0,0],
+): Boolean {
+  (yet "If the Directive Prologue of |FunctionBody| contains a Use Strict Directive, return *true*; otherwise, return *false*.")
+}

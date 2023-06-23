@@ -1,0 +1,11 @@
+def DeletePropertyOrThrow(
+  O: Object,
+  P: Symbol | String,
+): Normal[Const[~unused~]] | Abrupt {
+  method-call %0 = O->Delete(P)
+  let success = [? %0]
+  if (= success false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#46])
+  } else {}
+  return ~unused~
+}

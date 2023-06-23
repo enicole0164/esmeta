@@ -1,0 +1,6 @@
+def <SYNTAX>:ForDeclaration[0,0].BoundNames(
+  this: Ast:ForDeclaration[0,0],
+): List[String] {
+  sdo-call %0 = this[1]->BoundNames()
+  return %0
+}

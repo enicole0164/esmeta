@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } throw 0 ; throw new Test262Error ( message ) ; } assert . _isSameValue = this ; assert . sameValue = function ( ) { } ; assert . notSameValue = x => 0 ; assert . throws = async function * ( ) { } ; assert . _toString = function ( value ) { if ( 0 ) ; } ; function Test262Error ( message ) { this . message = message || "" ; } 0 ; Test262Error . thrower = ( message ) => { throw new Test262Error ( message ) ; } ; class x { } Function ( { groups : null } , 'return;' ) ; 

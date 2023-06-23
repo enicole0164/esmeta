@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncConciseBody[0,0].VarDeclaredNames(
+  this: Ast:AsyncConciseBody[0,0],
+): List[String] {
+  return (new [])[#220]
+}

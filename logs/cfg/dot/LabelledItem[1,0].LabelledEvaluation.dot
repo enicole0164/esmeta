@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1490 {
+    label = "def <SYNTAX>:LabelledItem[1,0].LabelledEvaluation(this: Ast:LabelledItem[1,0], labelSet: Unknown): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1490_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1490_entry_name -> cluster1490_entry [arrowhead=none, color="black", style=dashed]
+    cluster1490_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1490_entry -> node8197 [color="black"]
+    cluster1490_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1490_exit_name -> cluster1490_exit [arrowhead=none, color="black", style=dashed]
+    cluster1490_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8197_name [shape=none, label=<<font color="black">Call[8197]</font>>]
+    node8197_name -> node8197 [arrowhead=none, color="black", style=dashed]
+    node8197 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node8197 -> node8198 [color="black"]
+    node8198_name [shape=none, label=<<font color="black">Block[8198]</font>>]
+    node8198_name -> node8198 [arrowhead=none, color="black", style=dashed]
+    node8198 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8198 -> cluster1490_exit [color="black"]
+  }
+}

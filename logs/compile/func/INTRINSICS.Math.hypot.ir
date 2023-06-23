@@ -1,0 +1,43 @@
+def <BUILTIN>:INTRINSICS.Math.hypot(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let args = argumentsList
+  let coerced = (new [])[#935]
+  %1 = args
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let arg = %1[%0]
+    call %2 = clo<ToNumber>(arg)
+    let n = [? %2]
+    push coerced < n
+    %0 = (+ %0 1)
+  }
+  %4 = coerced
+  %3 = 0
+  loop[foreach] (< %3 %4.length) {
+    let number = %4[%3]
+    if (|| (= number +INF) (= number -INF)) {
+      return +INF
+    } else {}
+    %3 = (+ %3 1)
+  }
+  let onlyZero = true
+  %6 = coerced
+  %5 = 0
+  loop[foreach] (< %5 %6.length) {
+    let number = %6[%5]
+    if (= number NaN) {
+      return NaN
+    } else {}
+    if (! (|| (= number 0.0f) (= number -0.0f))) {
+      onlyZero = false
+    } else {}
+    %5 = (+ %5 1)
+  }
+  if (= onlyZero true) {
+    return 0.0f
+  } else {}
+  return ([approx-number] ([math:hypot] coerced))
+}

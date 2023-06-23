@@ -1,0 +1,5 @@
+def UTC(
+  t: Number,
+): Unknown["TimeValue"] {
+  (yet "Return _t_ - LocalTZA(_t_, *false*).")
+}

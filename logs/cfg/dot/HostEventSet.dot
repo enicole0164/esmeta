@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2664 {
+    label = "def HostEventSet(execution: Unknown["CandidateExecution"]): Unknown["SetOfEvents"]"
+    style = rounded
+    cluster2664_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2664_entry_name -> cluster2664_entry [arrowhead=none, color="black", style=dashed]
+    cluster2664_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2664_entry -> node19842 [color="black"]
+    cluster2664_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2664_exit_name -> cluster2664_exit [arrowhead=none, color="black", style=dashed]
+    cluster2664_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19842_name [shape=none, label=<<font color="black">Block[19842]</font>>]
+    node19842_name -> node19842 [arrowhead=none, color="black", style=dashed]
+    node19842 [shape=box, label=<<font color="black">[0] (yet &quot;Let _events_ be an empty Set.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;For each event _E_ of EventSet(_execution_), do\n  1. If _E_ is not in SharedDataBlockEventSet(_execution_), add _E_ to _events_.&quot;)<BR ALIGN="LEFT"/>[2] return events<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19842 -> cluster2664_exit [color="black"]
+  }
+}

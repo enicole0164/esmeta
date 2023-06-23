@@ -1,0 +1,3 @@
+// [EXIT] normal
+"use strict";
+for ( { x : 0 } . x in [ 0 ] ) ;

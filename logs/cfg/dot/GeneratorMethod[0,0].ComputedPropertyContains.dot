@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster829 {
+    label = "def <SYNTAX>:GeneratorMethod[0,0].ComputedPropertyContains(this: Ast:GeneratorMethod[0,0], symbol: Unknown): Boolean"
+    style = rounded
+    cluster829_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster829_entry_name -> cluster829_entry [arrowhead=none, color="black", style=dashed]
+    cluster829_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster829_entry -> node3147 [color="black"]
+    cluster829_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster829_exit_name -> cluster829_exit [arrowhead=none, color="black", style=dashed]
+    cluster829_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3147_name [shape=none, label=<<font color="black">Call[3147]</font>>]
+    node3147_name -> node3147 [arrowhead=none, color="black", style=dashed]
+    node3147 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ComputedPropertyContains(symbol)</font>> color="black" fillcolor="white", style=filled]
+    node3147 -> node3148 [color="black"]
+    node3148_name [shape=none, label=<<font color="black">Block[3148]</font>>]
+    node3148_name -> node3148 [arrowhead=none, color="black", style=dashed]
+    node3148 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3148 -> cluster829_exit [color="black"]
+  }
+}

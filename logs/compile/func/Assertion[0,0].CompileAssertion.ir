@@ -1,0 +1,5 @@
+def <SYNTAX>:Assertion[0,0].CompileAssertion(
+  this: Ast:Assertion[0,0],
+): Unknown["Matcher"] {
+  (yet "Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _e_ be _x_'s _endIndex_.\n  1. If _e_ = 0, or if _Multiline_ is *true* and the character _Input_[_e_ - 1] is one of |LineTerminator|, then\n    1. Return _c_(_x_).\n  1. Return ~failure~.")
+}

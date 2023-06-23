@@ -1,0 +1,6 @@
+def <SYNTAX>:LabelledItem[1,0].HasCallInTailPosition(
+  this: Ast:LabelledItem[1,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

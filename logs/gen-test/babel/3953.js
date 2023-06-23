@@ -1,0 +1,4 @@
+// [EXIT] throw-error: TypeError(Call ((step 2, 3:43-73))<BUILTIN>:INTRINSICS.WeakMap)
+"use strict";
+
+new WeakMap(0);

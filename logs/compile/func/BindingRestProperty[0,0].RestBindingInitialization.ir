@@ -1,0 +1,20 @@
+def <SYNTAX>:BindingRestProperty[0,0].RestBindingInitialization(
+  this: Ast:BindingRestProperty[0,0],
+  value: Unknown,
+  environment: Unknown,
+  excludedNames: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  call %1 = clo<ResolveBinding>(%0, environment)
+  let lhs = [? %1]
+  call %2 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+  let restObj = %2
+  call %3 = clo<CopyDataProperties>(restObj, value, excludedNames)
+  [? %3]
+  if (= environment undefined) {
+    call %4 = clo<PutValue>(lhs, restObj)
+    return [? %4]
+  } else {}
+  call %5 = clo<InitializeReferencedBinding>(lhs, restObj)
+  return [? %5]
+}

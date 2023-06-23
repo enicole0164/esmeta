@@ -1,0 +1,6 @@
+def <SYNTAX>:Statement[3,0].ContainsDuplicateLabels(
+  this: Ast:Statement[3,0],
+  labelSet: Unknown,
+): Boolean {
+  return false
+}

@@ -1,0 +1,25 @@
+def IsValidRegularExpressionLiteral(
+  literal: Ast[RegularExpressionLiteral],
+): Boolean {
+  (yet "If FlagText of _literal_ contains any code points other than `g`, `i`, `m`, `s`, `u`, or `y`, or if it contains the same code point more than once, return *false*.")
+  sdo-call %0 = literal->BodyText()
+  let patternText = %0
+  sdo-call %1 = literal->FlagText()
+  if (contains %1 "u") {
+    let u = true
+  } else {
+    let u = false
+  }
+  if (= u false) {
+    call %2 = clo<CodePointsToString>(patternText)
+    let stringValue = %2
+    (yet "Set _patternText_ to the sequence of code points resulting from interpreting each of the 16-bit elements of _stringValue_ as a Unicode BMP code point. UTF-16 decoding is not applied to the elements.")
+  } else {}
+  call %3 = clo<ParsePattern>(patternText, u)
+  let parseResult = %3
+  if (? parseResult: "ParseNode") {
+    return true
+  } else {
+    return false
+  }
+}

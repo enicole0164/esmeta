@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } throw new Test262Error ( message ) ; } { ; } assert . throws = function ( expectedErrorConstructor , func , message ) { var expectedName , actualName ; if ( func ) { let x ; } if ( message ) { '' ; } else { message += ' ' ; } try { func ( ) ; } catch ( thrown ) { try { } catch { } finally { } return ; } throw new Test262Error ( message ) ; } ; async x => 0 ; class x { } assert . throws ( TypeError , function ( ) { 'abc' . padEnd ( { } , Symbol ( ) ) ; } ) ; 

@@ -1,0 +1,27 @@
+def AtomicReadModifyWrite(
+  typedArray: Unknown,
+  index: Unknown,
+  value: Unknown,
+  op: Unknown["ReadmodifywriteModificationFunction"],
+): Normal[Number | BigInt] | Abrupt {
+  call %0 = clo<ValidateIntegerTypedArray>(typedArray)
+  let buffer = [? %0]
+  call %1 = clo<ValidateAtomicAccess>(typedArray, index)
+  let indexedPosition = [? %1]
+  if (= typedArray.ContentType ~BigInt~) {
+    call %2 = clo<ToBigInt>(value)
+    let v = [? %2]
+  } else {
+    call %3 = clo<ToIntegerOrInfinity>(value)
+    let v = ([number] [? %3])
+  }
+  call %4 = clo<IsDetachedBuffer>(buffer)
+  if (= %4 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1183])
+  } else {}
+  nop
+  call %5 = clo<TypedArrayElementType>(typedArray)
+  let elementType = %5
+  call %6 = clo<GetModifySetValueInBuffer>(buffer, indexedPosition, elementType, v, op)
+  return %6
+}

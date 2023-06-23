@@ -1,0 +1,27 @@
+def OrdinaryToPrimitive(
+  O: Object,
+  hint: Const[~number~, ~string~],
+): Normal[ESValue] | Abrupt {
+  if (= hint ~string~) {
+    let methodNames = (new ["toString", "valueOf"])[#29]
+  } else {
+    let methodNames = (new ["valueOf", "toString"])[#30]
+  }
+  %1 = methodNames
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let name = %1[%0]
+    call %2 = clo<Get>(O, name)
+    let method = [? %2]
+    call %3 = clo<IsCallable>(method)
+    if (= %3 true) {
+      call %4 = clo<Call>(method, O)
+      let result = [? %4]
+      if (! (= (typeof result) @Object)) {
+        return result
+      } else {}
+    } else {}
+    %0 = (+ %0 1)
+  }
+  return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#31])
+}

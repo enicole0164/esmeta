@@ -1,0 +1,9 @@
+def <SYNTAX>:FormalParameterList[0,0].ExpectedArgumentCount(
+  this: Ast:FormalParameterList[0,0],
+): Unknown["Integer"] {
+  sdo-call %0 = this[0]->HasInitializer()
+  if (= %0 true) {
+    return 0
+  } else {}
+  return 1
+}

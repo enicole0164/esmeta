@@ -1,0 +1,18 @@
+def LoopContinues(
+  completion: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  if (= completion.Type ~normal~) {
+    return true
+  } else {}
+  if (! (= completion.Type ~continue~)) {
+    return false
+  } else {}
+  if (= completion.Target ~empty~) {
+    return true
+  } else {}
+  if (contains labelSet completion.Target) {
+    return true
+  } else {}
+  return false
+}

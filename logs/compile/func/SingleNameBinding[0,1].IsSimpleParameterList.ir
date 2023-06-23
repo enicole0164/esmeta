@@ -1,0 +1,5 @@
+def <SYNTAX>:SingleNameBinding[0,1].IsSimpleParameterList(
+  this: Ast:SingleNameBinding[0,1],
+): Boolean {
+  return false
+}

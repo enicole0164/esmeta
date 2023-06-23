@@ -1,0 +1,30 @@
+def GetValue(
+  V: Unknown,
+): Normal[ESValue] | Abrupt {
+  [? V]
+  if (! (? V: "ReferenceRecord")) {
+    return V
+  } else {}
+  call %0 = clo<IsUnresolvableReference>(V)
+  if (= %0 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#12])
+  } else {}
+  call %1 = clo<IsPropertyReference>(V)
+  if (= %1 true) {
+    call %2 = clo<ToObject>(V.Base)
+    let baseObj = [? %2]
+    call %3 = clo<IsPrivateReference>(V)
+    if (= %3 true) {
+      call %4 = clo<PrivateGet>(baseObj, V.ReferencedName)
+      return [? %4]
+    } else {}
+    call %6 = clo<GetThisValue>(V)
+    method-call %5 = baseObj->Get(V.ReferencedName, %6)
+    return [? %5]
+  } else {
+    let base = V.Base
+    assert (? base: "EnvironmentRecord")
+    method-call %7 = base->GetBindingValue(V.ReferencedName, V.Strict)
+    return [? %7]
+  }
+}

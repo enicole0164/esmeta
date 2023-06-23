@@ -1,0 +1,11 @@
+def IsStringPrefix(
+  p: String,
+  q: String,
+): Boolean {
+  call %0 = clo<StringIndexOf>(q, p, 0)
+  if (= %0 0) {
+    return true
+  } else {
+    return false
+  }
+}

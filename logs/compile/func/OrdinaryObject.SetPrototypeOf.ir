@@ -1,0 +1,7 @@
+def <INTERNAL>:OrdinaryObject.SetPrototypeOf(
+  O: OrdinaryObject,
+  V: Object | Null,
+): Normal[Boolean] {
+  call %0 = clo<OrdinarySetPrototypeOf>(O, V)
+  return %0
+}

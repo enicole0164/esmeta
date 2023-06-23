@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1054 {
+    label = "def OrdinaryPreventExtensions(O: Object): True"
+    style = rounded
+    cluster1054_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1054_entry_name -> cluster1054_entry [arrowhead=none, color="black", style=dashed]
+    cluster1054_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1054_entry -> node3955 [color="black"]
+    cluster1054_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1054_exit_name -> cluster1054_exit [arrowhead=none, color="black", style=dashed]
+    cluster1054_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3955_name [shape=none, label=<<font color="black">Block[3955]</font>>]
+    node3955_name -> node3955 [arrowhead=none, color="black", style=dashed]
+    node3955 [shape=box, label=<<font color="black">[0] O.Extensible = false<BR ALIGN="LEFT"/>[1] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3955 -> cluster1054_exit [color="black"]
+  }
+}

@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1028 {
+    label = "def CreateRealm(): RealmRecord"
+    style = rounded
+    cluster1028_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1028_entry_name -> cluster1028_entry [arrowhead=none, color="black", style=dashed]
+    cluster1028_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1028_entry -> node3854 [color="black"]
+    cluster1028_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1028_exit_name -> cluster1028_exit [arrowhead=none, color="black", style=dashed]
+    cluster1028_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3854_name [shape=none, label=<<font color="black">Block[3854]</font>>]
+    node3854_name -> node3854 [arrowhead=none, color="black", style=dashed]
+    node3854 [shape=box, label=<<font color="black">[0] let realmRec = @REALM<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3854 -> node3855 [color="black"]
+    node3855_name [shape=none, label=<<font color="black">Call[3855]</font>>]
+    node3855_name -> node3855 [arrowhead=none, color="black", style=dashed]
+    node3855 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateIntrinsics&gt;(realmRec)</font>> color="black" fillcolor="white", style=filled]
+    node3855 -> node3856 [color="black"]
+    node3856_name [shape=none, label=<<font color="black">Block[3856]</font>>]
+    node3856_name -> node3856 [arrowhead=none, color="black", style=dashed]
+    node3856 [shape=box, label=<<font color="black">[0] realmRec.GlobalObject = undefined<BR ALIGN="LEFT"/>[1] realmRec.GlobalEnv = undefined<BR ALIGN="LEFT"/>[2] realmRec.TemplateMap = (new [])[#393]<BR ALIGN="LEFT"/>[3] return realmRec<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3856 -> cluster1028_exit [color="black"]
+  }
+}

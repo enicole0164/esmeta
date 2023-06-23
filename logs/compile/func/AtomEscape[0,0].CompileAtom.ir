@@ -1,0 +1,10 @@
+def <SYNTAX>:AtomEscape[0,0].CompileAtom(
+  this: Ast:AtomEscape[0,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CapturingGroupNumber()
+  let n = %0
+  assert (! (< NcapturingParens n))
+  call %1 = clo<BackreferenceMatcher>(n, direction)
+  return %1
+}

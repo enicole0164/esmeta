@@ -1,0 +1,6 @@
+def <SYNTAX>:MultiplicativeExpression[1,0].HasCallInTailPosition(
+  this: Ast:MultiplicativeExpression[1,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2267 {
+    label = "def <SYNTAX>:Atom[0,0].CompileAtom(this: Ast:Atom[0,0], direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2267_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2267_entry_name -> cluster2267_entry [arrowhead=none, color="black", style=dashed]
+    cluster2267_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2267_entry -> node13982 [color="black"]
+    cluster2267_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2267_exit_name -> cluster2267_exit [arrowhead=none, color="black", style=dashed]
+    cluster2267_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13982_name [shape=none, label=<<font color="black">Block[13982]</font>>]
+    node13982_name -> node13982 [arrowhead=none, color="black", style=dashed]
+    node13982 [shape=box, label=<<font color="black">[0] (yet &quot;Let _ch_ be the character matched by |PatternCharacter|.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;Let _A_ be a one-element CharSet containing the character _ch_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13982 -> node13983 [color="black"]
+    node13983_name [shape=none, label=<<font color="black">Call[13983]</font>>]
+    node13983_name -> node13983 [arrowhead=none, color="black", style=dashed]
+    node13983 [shape=cds, label=<<font color="black">%0 = clo&lt;CharacterSetMatcher&gt;(A, false, direction)</font>> color="black" fillcolor="white", style=filled]
+    node13983 -> node13984 [color="black"]
+    node13984_name [shape=none, label=<<font color="black">Block[13984]</font>>]
+    node13984_name -> node13984 [arrowhead=none, color="black", style=dashed]
+    node13984 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13984 -> cluster2267_exit [color="black"]
+  }
+}

@@ -1,0 +1,30 @@
+def <BUILTIN>:INTRINSICS.String.prototype.includes(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let searchString = (pop < argumentsList) else let searchString = absent
+  if (< 0 argumentsList.length) let position = (pop < argumentsList) else let position = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  call %2 = clo<IsRegExp>(searchString)
+  let isRegExp = [? %2]
+  if (= isRegExp true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#948])
+  } else {}
+  call %3 = clo<ToString>(searchString)
+  let searchStr = [? %3]
+  call %4 = clo<ToIntegerOrInfinity>(position)
+  let pos = [? %4]
+  assert (|| (! (= position undefined)) (= pos 0))
+  let len = S.length
+  let start = (clamp pos 0 len)
+  call %5 = clo<StringIndexOf>(S, searchStr, start)
+  let index = %5
+  if (! (= index (- 1))) {
+    return true
+  } else {}
+  return false
+}

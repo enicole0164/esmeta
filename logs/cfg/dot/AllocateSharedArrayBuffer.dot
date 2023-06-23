@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2488 {
+    label = "def AllocateSharedArrayBuffer(constructor: Unknown, byteLength: Unknown["NonnegativeInteger"]): Unknown["EitherANormalCompletionContainingASharedArrayBufferOrAnAbruptCompletion"]"
+    style = rounded
+    cluster2488_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2488_entry_name -> cluster2488_entry [arrowhead=none, color="black", style=dashed]
+    cluster2488_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2488_entry -> node17550 [color="black"]
+    cluster2488_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2488_exit_name -> cluster2488_exit [arrowhead=none, color="black", style=dashed]
+    cluster2488_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node17550_name [shape=none, label=<<font color="black">Call[17550]</font>>]
+    node17550_name -> node17550 [arrowhead=none, color="black", style=dashed]
+    node17550 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryCreateFromConstructor&gt;(constructor, &quot;%SharedArrayBuffer.prototype%&quot;, (new [&quot;ArrayBufferData&quot;, &quot;ArrayBufferByteLength&quot;])[#1160])</font>> color="black" fillcolor="white", style=filled]
+    node17550 -> node17551 [color="black"]
+    node17551_name [shape=none, label=<<font color="black">Block[17551]</font>>]
+    node17551_name -> node17551 [arrowhead=none, color="black", style=dashed]
+    node17551 [shape=box, label=<<font color="black">[0] let obj = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17551 -> node17552 [color="black"]
+    node17552_name [shape=none, label=<<font color="black">Call[17552]</font>>]
+    node17552_name -> node17552 [arrowhead=none, color="black", style=dashed]
+    node17552 [shape=cds, label=<<font color="black">%1 = clo&lt;CreateSharedByteDataBlock&gt;(byteLength)</font>> color="black" fillcolor="white", style=filled]
+    node17552 -> node17553 [color="black"]
+    node17553_name [shape=none, label=<<font color="black">Block[17553]</font>>]
+    node17553_name -> node17553 [arrowhead=none, color="black", style=dashed]
+    node17553 [shape=box, label=<<font color="black">[0] let block = [? %1]<BR ALIGN="LEFT"/>[1] obj.ArrayBufferData = block<BR ALIGN="LEFT"/>[2] obj.ArrayBufferByteLength = byteLength<BR ALIGN="LEFT"/>[3] return obj<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17553 -> cluster2488_exit [color="black"]
+  }
+}

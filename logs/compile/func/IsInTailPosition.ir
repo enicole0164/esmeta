@@ -1,0 +1,22 @@
+def IsInTailPosition(
+  call: Unknown,
+): Unknown {
+  if false return false else {}
+  %0 = false
+  %1 = call
+  loop[repeat] (&& (! %0) (! (= %1 absent))) {
+    %0 = (|| (|| (|| %0 (? %1: "FunctionBody")) (? %1: "ConciseBody")) (? %1: "AsyncConciseBody"))
+    if (! %0) %1 = %1.parent else {}
+  }
+  if (! %0) return false else {}
+  let body = %1
+  %2 = body.parent
+  if (! (= %2 absent)) {
+    if (&& (? body: "FunctionBody") (? %2: "GeneratorBody")) return false else {}
+    if (&& (? body: "FunctionBody") (? %2: "AsyncFunctionBody")) return false else {}
+    if (&& (? body: "FunctionBody") (? %2: "AsyncGeneratorBody")) return false else {}
+  } else {}
+  if (? body: "AsyncConciseBody") return false else {}
+  sdo-call %3 = body->HasCallInTailPosition(call)
+  return %3
+}

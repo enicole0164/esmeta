@@ -1,0 +1,17 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.toTimeString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  (yet "Let _O_ be this Date object.")
+  call %0 = clo<thisTimeValue>(O)
+  let tv = [? %0]
+  if (= tv NaN) {
+    return "Invalid Date"
+  } else {}
+  call %1 = clo<LocalTime>(tv)
+  let t = %1
+  call %2 = clo<TimeString>(t)
+  call %3 = clo<TimeZoneString>(tv)
+  return (concat %2 %3)
+}

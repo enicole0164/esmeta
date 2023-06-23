@@ -1,0 +1,80 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.copyWithin(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  if (< 0 argumentsList.length) let start = (pop < argumentsList) else let start = absent
+  if (< 0 argumentsList.length) let end = (pop < argumentsList) else let end = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let len = [? %1]
+  call %2 = clo<ToIntegerOrInfinity>(target)
+  let relativeTarget = [? %2]
+  if (= relativeTarget -INF) {
+    let to = 0
+  } else {
+    if (< relativeTarget 0) {
+      let to = (max (+ len relativeTarget) 0)
+    } else {
+      let to = (min relativeTarget len)
+    }
+  }
+  call %3 = clo<ToIntegerOrInfinity>(start)
+  let relativeStart = [? %3]
+  if (= relativeStart -INF) {
+    let from = 0
+  } else {
+    if (< relativeStart 0) {
+      let from = (max (+ len relativeStart) 0)
+    } else {
+      let from = (min relativeStart len)
+    }
+  }
+  if (= end undefined) {
+    let relativeEnd = len
+  } else {
+    call %4 = clo<ToIntegerOrInfinity>(end)
+    let relativeEnd = [? %4]
+  }
+  if (= relativeEnd -INF) {
+    let final = 0
+  } else {
+    if (< relativeEnd 0) {
+      let final = (max (+ len relativeEnd) 0)
+    } else {
+      let final = (min relativeEnd len)
+    }
+  }
+  let count = (min (- final from) (- len to))
+  if (&& (< from to) (< to (+ from count))) {
+    let direction = (- 1)
+    from = (- (+ from count) 1)
+    to = (- (+ to count) 1)
+  } else {
+    let direction = 1
+  }
+  loop[repeat] (< 0 count) {
+    call %5 = clo<ToString>(([number] from))
+    let fromKey = [! %5]
+    call %6 = clo<ToString>(([number] to))
+    let toKey = [! %6]
+    call %7 = clo<HasProperty>(O, fromKey)
+    let fromPresent = [? %7]
+    if (= fromPresent true) {
+      call %8 = clo<Get>(O, fromKey)
+      let fromVal = [? %8]
+      call %9 = clo<Set>(O, toKey, fromVal, true)
+      [? %9]
+    } else {
+      assert (= fromPresent false)
+      call %10 = clo<DeletePropertyOrThrow>(O, toKey)
+      [? %10]
+    }
+    from = (+ from direction)
+    to = (+ to direction)
+    count = (- count 1)
+  }
+  return O
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1524 {
+    label = "def <SYNTAX>:BindingElisionElement[0,1].ContainsExpression(this: Ast:BindingElisionElement[0,1]): Boolean"
+    style = rounded
+    cluster1524_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1524_entry_name -> cluster1524_entry [arrowhead=none, color="black", style=dashed]
+    cluster1524_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1524_entry -> node8319 [color="black"]
+    cluster1524_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1524_exit_name -> cluster1524_exit [arrowhead=none, color="black", style=dashed]
+    cluster1524_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8319_name [shape=none, label=<<font color="black">Call[8319]</font>>]
+    node8319_name -> node8319 [arrowhead=none, color="black", style=dashed]
+    node8319 [shape=cds, label=<<font color="black">%0 = this[1]-&gt;ContainsExpression()</font>> color="black" fillcolor="white", style=filled]
+    node8319 -> node8320 [color="black"]
+    node8320_name [shape=none, label=<<font color="black">Block[8320]</font>>]
+    node8320_name -> node8320 [arrowhead=none, color="black", style=dashed]
+    node8320 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8320 -> cluster1524_exit [color="black"]
+  }
+}

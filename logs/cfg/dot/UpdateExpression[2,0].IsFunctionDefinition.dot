@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster703 {
+    label = "def <SYNTAX>:UpdateExpression[2,0].IsFunctionDefinition(this: Ast:UpdateExpression[2,0]): Boolean"
+    style = rounded
+    cluster703_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster703_entry_name -> cluster703_entry [arrowhead=none, color="black", style=dashed]
+    cluster703_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster703_entry -> node2935 [color="black"]
+    cluster703_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster703_exit_name -> cluster703_exit [arrowhead=none, color="black", style=dashed]
+    cluster703_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2935_name [shape=none, label=<<font color="black">Block[2935]</font>>]
+    node2935_name -> node2935 [arrowhead=none, color="black", style=dashed]
+    node2935 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2935 -> cluster703_exit [color="black"]
+  }
+}

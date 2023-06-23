@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster305 {
+    label = "def <SYNTAX>:ConciseBody[0,0].LexicallyScopedDeclarations(this: Ast:ConciseBody[0,0]): List[Ast]"
+    style = rounded
+    cluster305_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster305_entry_name -> cluster305_entry [arrowhead=none, color="black", style=dashed]
+    cluster305_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster305_entry -> node1854 [color="black"]
+    cluster305_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster305_exit_name -> cluster305_exit [arrowhead=none, color="black", style=dashed]
+    cluster305_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1854_name [shape=none, label=<<font color="black">Block[1854]</font>>]
+    node1854_name -> node1854 [arrowhead=none, color="black", style=dashed]
+    node1854 [shape=box, label=<<font color="black">[0] return (new [])[#164]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1854 -> cluster305_exit [color="black"]
+  }
+}

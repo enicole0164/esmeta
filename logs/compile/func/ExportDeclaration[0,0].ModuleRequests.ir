@@ -1,0 +1,6 @@
+def <SYNTAX>:ExportDeclaration[0,0].ModuleRequests(
+  this: Ast:ExportDeclaration[0,0],
+): List[String] {
+  sdo-call %0 = this[1]->ModuleRequests()
+  return %0
+}

@@ -1,0 +1,6 @@
+def ClearKeptObjects(
+): Const[~unused~] {
+  (yet "Let _agentRecord_ be the surrounding agent's Agent Record.")
+  agentRecord.KeptAlive = (new [])[#399]
+  return ~unused~
+}

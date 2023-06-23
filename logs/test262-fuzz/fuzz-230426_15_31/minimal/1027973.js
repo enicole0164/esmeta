@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue ) { ; } assert . throws = function ( expectedErrorConstructor , func ) { 0 ; try { func ( ) ; } catch ( thrown ) { ; } } ; let x ; var nextCount = 0 ; var iterable = { } ; var iterator = { next : function ( ) { nextCount += 1 ; if ( nextCount === 2 ) throw 0 ; return { } ; } } ; iterable [ Symbol . iterator ] = function ( ) { return iterator ; } ; assert . throws ( x , function ( ) { 0 , [ x , , ] = iterable ; } ) ; ; 

@@ -1,0 +1,32 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setUTCSeconds(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let sec = (pop < argumentsList) else let sec = absent
+  if (< 0 argumentsList.length) let ms = (pop < argumentsList) else let ms = absent
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  call %1 = clo<ToNumber>(sec)
+  let s = [? %1]
+  if (! (= ms absent)) {
+    call %2 = clo<ToNumber>(ms)
+    let milli = [? %2]
+  } else {}
+  if (= t NaN) {
+    return NaN
+  } else {}
+  if (= ms absent) {
+    (yet "let _milli_ be msFromTime(_t_).")
+  } else {}
+  call %3 = clo<Day>(t)
+  call %4 = clo<HourFromTime>(t)
+  call %5 = clo<MinFromTime>(t)
+  call %6 = clo<MakeTime>(%4, %5, s, milli)
+  call %7 = clo<MakeDate>(%3, %6)
+  let date = %7
+  call %8 = clo<TimeClip>(date)
+  let v = %8
+  (yet "Set the [[DateValue]] internal slot of this Date object to _v_.")
+  return v
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:BitwiseXORExpression[1,0].AssignmentTargetType(
+  this: Ast:BitwiseXORExpression[1,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

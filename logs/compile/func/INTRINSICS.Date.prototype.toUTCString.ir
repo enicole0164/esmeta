@@ -1,0 +1,28 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.toUTCString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  (yet "Let _O_ be this Date object.")
+  call %0 = clo<thisTimeValue>(O)
+  let tv = [? %0]
+  if (= tv NaN) {
+    return "Invalid Date"
+  } else {}
+  (yet "Let _weekday_ be the Name of the entry in <emu-xref href=\"#sec-todatestring-day-names\"></emu-xref> with the Number WeekDay(_tv_).")
+  (yet "Let _month_ be the Name of the entry in <emu-xref href=\"#sec-todatestring-month-names\"></emu-xref> with the Number MonthFromTime(_tv_).")
+  call %1 = clo<DateFromTime>(tv)
+  call %2 = clo<ToZeroPaddedDecimalString>(([math] %1), 2)
+  let day = %2
+  call %3 = clo<YearFromTime>(tv)
+  let yv = %3
+  if (|| (= yv 0.0f) (< 0.0f yv)) {
+    let yearSign = ""
+  } else {
+    let yearSign = "-"
+  }
+  call %4 = clo<ToZeroPaddedDecimalString>((abs ([math] yv)), 4)
+  let paddedYear = %4
+  call %5 = clo<TimeString>(tv)
+  return (concat weekday "," 32cu day 32cu month 32cu yearSign paddedYear 32cu %5)
+}

@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.toString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisTimeValue>(this)
+  let tv = [? %0]
+  call %1 = clo<ToDateString>(tv)
+  return %1
+}

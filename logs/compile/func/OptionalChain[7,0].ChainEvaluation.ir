@@ -1,0 +1,18 @@
+def <SYNTAX>:OptionalChain[7,0].ChainEvaluation(
+  this: Ast:OptionalChain[7,0],
+  baseValue: Unknown,
+  baseReference: Unknown,
+): Normal[ESValue] | Abrupt {
+  let optionalChain = this[0]
+  sdo-call %0 = optionalChain->ChainEvaluation(baseValue, baseReference)
+  let newReference = [? %0]
+  call %1 = clo<GetValue>(newReference)
+  let newValue = [? %1]
+  if true {
+    let strict = true
+  } else {
+    let strict = false
+  }
+  call %2 = clo<EvaluatePropertyAccessWithIdentifierKey>(newValue, this[1], strict)
+  return %2
+}

@@ -1,0 +1,9 @@
+def GetV(
+  V: ESValue,
+  P: Symbol | String,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<ToObject>(V)
+  let O = [? %0]
+  method-call %1 = O->Get(P, V)
+  return [? %1]
+}

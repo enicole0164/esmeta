@@ -1,0 +1,17 @@
+def <BUILTIN>:INTRINSICS.get TypedArray.prototype.byteOffset(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  call %0 = clo<RequireInternalSlot>(O, "TypedArrayName")
+  [? %0]
+  assert (! (= O.ViewedArrayBuffer absent))
+  let buffer = O.ViewedArrayBuffer
+  call %1 = clo<IsDetachedBuffer>(buffer)
+  if (= %1 true) {
+    return 0.0f
+  } else {}
+  let offset = O.ByteOffset
+  return ([number] offset)
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:ObjectBindingPattern[3,1].ContainsExpression(
+  this: Ast:ObjectBindingPattern[3,1],
+): Boolean {
+  sdo-call %0 = this[0]->ContainsExpression()
+  return %0
+}

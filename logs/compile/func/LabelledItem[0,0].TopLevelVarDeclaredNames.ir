@@ -1,0 +1,10 @@
+def <SYNTAX>:LabelledItem[0,0].TopLevelVarDeclaredNames(
+  this: Ast:LabelledItem[0,0],
+): List[String] {
+  if (? this[0]: "Statement10") {
+    sdo-call %0 = this[0]->TopLevelVarDeclaredNames()
+    return %0
+  } else {}
+  sdo-call %1 = this[0]->VarDeclaredNames()
+  return %1
+}

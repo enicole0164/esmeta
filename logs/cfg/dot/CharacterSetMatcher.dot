@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2276 {
+    label = "def CharacterSetMatcher(A: Unknown["CharSet"], invert: Boolean, direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2276_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2276_entry_name -> cluster2276_entry [arrowhead=none, color="black", style=dashed]
+    cluster2276_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2276_entry -> node14013 [color="black"]
+    cluster2276_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2276_exit_name -> cluster2276_exit [arrowhead=none, color="black", style=dashed]
+    cluster2276_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14013_name [shape=none, label=<<font color="black">Block[14013]</font>>]
+    node14013_name -> node14013 [arrowhead=none, color="black", style=dashed]
+    node14013 [shape=box, label=<<font color="black">[0] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures _A_, _invert_, and _direction_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _e_ be _x_'s _endIndex_.\n  1. If _direction_ is ~forward~, let _f_ be _e_ + 1.\n  1. Else, let _f_ be _e_ - 1.\n  1. If _f_ &lt; 0 or _f_ &gt; _InputLength_, return ~failure~.\n  1. Let _index_ be min(_e_, _f_).\n  1. Let _ch_ be the character _Input_[_index_].\n  1. Let _cc_ be Canonicalize(_ch_).\n  1. If there exists a member _a_ of _A_ such that Canonicalize(_a_) is _cc_, let _found_ be *true*. Otherwise, let _found_ be *false*.\n  1. If _invert_ is *false* and _found_ is *false*, return ~failure~.\n  1. If _invert_ is *true* and _found_ is *true*, return ~failure~.\n  1. Let _cap_ be _x_'s _captures_ List.\n  1. Let _y_ be the State (_f_, _cap_).\n  1. Return _c_(_y_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14013 -> cluster2276_exit [color="black"]
+  }
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:FormalParameterList[1,0].HasInitializer(
+  this: Ast:FormalParameterList[1,0],
+): Boolean {
+  sdo-call %0 = this[0]->HasInitializer()
+  if (= %0 true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->HasInitializer()
+  return %1
+}

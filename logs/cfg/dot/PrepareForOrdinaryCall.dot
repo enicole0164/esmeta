@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1077 {
+    label = "def PrepareForOrdinaryCall(F: FunctionObject, newTarget: Object | Undefined): ExecutionContext"
+    style = rounded
+    cluster1077_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1077_entry_name -> cluster1077_entry [arrowhead=none, color="black", style=dashed]
+    cluster1077_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1077_entry -> node4241 [color="black"]
+    cluster1077_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1077_exit_name -> cluster1077_exit [arrowhead=none, color="black", style=dashed]
+    cluster1077_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4241_name [shape=none, label=<<font color="black">Block[4241]</font>>]
+    node4241_name -> node4241 [arrowhead=none, color="black", style=dashed]
+    node4241 [shape=box, label=<<font color="black">[0] let callerContext = @EXECUTION_STACK[0]<BR ALIGN="LEFT"/>[1] let calleeContext = (new ExecutionContext())[#418]<BR ALIGN="LEFT"/>[2] calleeContext.Function = F<BR ALIGN="LEFT"/>[3] let calleeRealm = F.Realm<BR ALIGN="LEFT"/>[4] calleeContext.Realm = calleeRealm<BR ALIGN="LEFT"/>[5] calleeContext.ScriptOrModule = F.ScriptOrModule<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4241 -> node4242 [color="black"]
+    node4242_name [shape=none, label=<<font color="black">Call[4242]</font>>]
+    node4242_name -> node4242 [arrowhead=none, color="black", style=dashed]
+    node4242 [shape=cds, label=<<font color="black">%0 = clo&lt;NewFunctionEnvironment&gt;(F, newTarget)</font>> color="black" fillcolor="white", style=filled]
+    node4242 -> node4243 [color="black"]
+    node4243_name [shape=none, label=<<font color="black">Block[4243]</font>>]
+    node4243_name -> node4243 [arrowhead=none, color="black", style=dashed]
+    node4243 [shape=box, label=<<font color="black">[0] let localEnv = %0<BR ALIGN="LEFT"/>[1] calleeContext.LexicalEnvironment = localEnv<BR ALIGN="LEFT"/>[2] calleeContext.VariableEnvironment = localEnv<BR ALIGN="LEFT"/>[3] calleeContext.PrivateEnvironment = F.PrivateEnvironment<BR ALIGN="LEFT"/>[4] nop<BR ALIGN="LEFT"/>[5] push calleeContext &gt; @EXECUTION_STACK<BR ALIGN="LEFT"/>[6] nop<BR ALIGN="LEFT"/>[7] return calleeContext<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4243 -> cluster1077_exit [color="black"]
+  }
+}

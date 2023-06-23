@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.decodeURIComponent(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let encodedURIComponent = (pop < argumentsList) else let encodedURIComponent = absent
+  call %0 = clo<ToString>(encodedURIComponent)
+  let componentString = [? %0]
+  let reservedURIComponentSet = ""
+  call %1 = clo<Decode>(componentString, reservedURIComponentSet)
+  return [? %1]
+}

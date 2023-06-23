@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2266 {
+    label = "def <SYNTAX>:QuantifierPrefix[5,0].CompileQuantifierPrefix(this: Ast:QuantifierPrefix[5,0]): Unknown["RecordWithFields[[Min]](aNonnegativeInteger)And[[Max]](aNonnegativeIntegerOr+∞)"]"
+    style = rounded
+    cluster2266_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2266_entry_name -> cluster2266_entry [arrowhead=none, color="black", style=dashed]
+    cluster2266_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2266_entry -> node13978 [color="black"]
+    cluster2266_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2266_exit_name -> cluster2266_exit [arrowhead=none, color="black", style=dashed]
+    cluster2266_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13978_name [shape=none, label=<<font color="black">Call[13978]</font>>]
+    node13978_name -> node13978 [arrowhead=none, color="black", style=dashed]
+    node13978 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;MV()</font>> color="black" fillcolor="white", style=filled]
+    node13978 -> node13979 [color="black"]
+    node13979_name [shape=none, label=<<font color="black">Block[13979]</font>>]
+    node13979_name -> node13979 [arrowhead=none, color="black", style=dashed]
+    node13979 [shape=box, label=<<font color="black">[0] let i = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13979 -> node13980 [color="black"]
+    node13980_name [shape=none, label=<<font color="black">Call[13980]</font>>]
+    node13980_name -> node13980 [arrowhead=none, color="black", style=dashed]
+    node13980 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;MV()</font>> color="black" fillcolor="white", style=filled]
+    node13980 -> node13981 [color="black"]
+    node13981_name [shape=none, label=<<font color="black">Block[13981]</font>>]
+    node13981_name -> node13981 [arrowhead=none, color="black", style=dashed]
+    node13981 [shape=box, label=<<font color="black">[0] let j = %1<BR ALIGN="LEFT"/>[1] return (new Record(&quot;Min&quot; -&gt; i, &quot;Max&quot; -&gt; j))[#982]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13981 -> cluster2266_exit [color="black"]
+  }
+}

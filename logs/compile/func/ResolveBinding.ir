@@ -1,0 +1,16 @@
+def ResolveBinding(
+  name: String,
+  env?: EnvironmentRecord | Undefined,
+): Normal[ReferenceRecord] | Abrupt {
+  if (|| (= env absent) (= env undefined)) {
+    env = @EXECUTION_STACK[0].LexicalEnvironment
+  } else {}
+  assert (? env: "EnvironmentRecord")
+  if true {
+    let strict = true
+  } else {
+    let strict = false
+  }
+  call %0 = clo<GetIdentifierReference>(env, name, strict)
+  return [? %0]
+}

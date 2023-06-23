@@ -1,0 +1,48 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.subarray(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let begin = (pop < argumentsList) else let begin = absent
+  if (< 0 argumentsList.length) let end = (pop < argumentsList) else let end = absent
+  let O = this
+  call %0 = clo<RequireInternalSlot>(O, "TypedArrayName")
+  [? %0]
+  assert (! (= O.ViewedArrayBuffer absent))
+  let buffer = O.ViewedArrayBuffer
+  let srcLength = O.ArrayLength
+  call %1 = clo<ToIntegerOrInfinity>(begin)
+  let relativeBegin = [? %1]
+  if (= relativeBegin -INF) {
+    let beginIndex = 0
+  } else {
+    if (< relativeBegin 0) {
+      let beginIndex = (max (+ srcLength relativeBegin) 0)
+    } else {
+      let beginIndex = (min relativeBegin srcLength)
+    }
+  }
+  if (= end undefined) {
+    let relativeEnd = srcLength
+  } else {
+    call %2 = clo<ToIntegerOrInfinity>(end)
+    let relativeEnd = [? %2]
+  }
+  if (= relativeEnd -INF) {
+    let endIndex = 0
+  } else {
+    if (< relativeEnd 0) {
+      let endIndex = (max (+ srcLength relativeEnd) 0)
+    } else {
+      let endIndex = (min relativeEnd srcLength)
+    }
+  }
+  let newLength = (max (- endIndex beginIndex) 0)
+  call %3 = clo<TypedArrayElementSize>(O)
+  let elementSize = %3
+  let srcByteOffset = O.ByteOffset
+  let beginByteOffset = (+ srcByteOffset (* beginIndex elementSize))
+  let argumentsList = (new [buffer, ([number] beginByteOffset), ([number] newLength)])[#1101]
+  call %4 = clo<TypedArraySpeciesCreate>(O, argumentsList)
+  return [? %4]
+}

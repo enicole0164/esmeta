@@ -1,0 +1,16 @@
+def StringCreate(
+  value: String,
+  prototype: Unknown,
+): StringExoticObject {
+  call %0 = clo<MakeBasicObject>((new ["Prototype", "Extensible", "StringData"])[#458])
+  let S = %0
+  S.Prototype = prototype
+  S.StringData = value
+  S.GetOwnProperty = clo<StringExoticObject.GetOwnProperty>
+  S.DefineOwnProperty = clo<StringExoticObject.DefineOwnProperty>
+  S.OwnPropertyKeys = clo<StringExoticObject.OwnPropertyKeys>
+  let length = value.length
+  call %1 = clo<DefinePropertyOrThrow>(S, "length", (new PropertyDescriptor("Value" -> ([number] length), "Writable" -> false, "Enumerable" -> false, "Configurable" -> false))[#459])
+  [! %1]
+  return S
+}

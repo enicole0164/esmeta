@@ -1,0 +1,22 @@
+def <BUILTIN>:INTRINSICS.String.prototype.normalize(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let form = (pop < argumentsList) else let form = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  if (= form undefined) {
+    let f = "NFC"
+  } else {
+    call %2 = clo<ToString>(form)
+    let f = [? %2]
+  }
+  if (! (|| (|| (|| (= f "NFC") (= f "NFD")) (= f "NFKC")) (= f "NFKD"))) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#954])
+  } else {}
+  (yet "Let _ns_ be the String value that is the result of normalizing _S_ into the normalization form named by _f_ as specified in <a href=\"https://unicode.org/reports/tr15/\">https://unicode.org/reports/tr15/</a>.")
+  return ns
+}

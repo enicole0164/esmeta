@@ -1,0 +1,10 @@
+def ValueOfReadEvent(
+  execution: Unknown["CandidateExecution"],
+  R: Unknown["ReadSharedMemoryOrReadModifyWriteSharedMemoryEvent"],
+): Unknown["ListOfByteValues"] {
+  method-call %0 = execution->ReadsBytesFrom(R)
+  let Ws = %0
+  assert (yet "_Ws_ is a List of WriteSharedMemory or ReadModifyWriteSharedMemory events with length equal to _R_.[[ElementSize]].")
+  call %1 = clo<ComposeWriteEventBytes>(execution, R.ByteIndex, Ws)
+  return %1
+}

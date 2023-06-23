@@ -1,0 +1,7 @@
+def <NUM>:BigInt::signedRightShift(
+  x: BigInt,
+  y: BigInt,
+): BigInt {
+  call %0 = clo<BigInt::leftShift>(x, (- y))
+  return %0
+}

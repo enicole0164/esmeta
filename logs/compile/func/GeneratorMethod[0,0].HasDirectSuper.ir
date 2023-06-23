@@ -1,0 +1,10 @@
+def <SYNTAX>:GeneratorMethod[0,0].HasDirectSuper(
+  this: Ast:GeneratorMethod[0,0],
+): Boolean {
+  sdo-call %0 = this[1]->Contains((nt |SuperCall|[]))
+  if (= %0 true) {
+    return true
+  } else {}
+  sdo-call %1 = this[2]->Contains((nt |SuperCall|[]))
+  return %1
+}

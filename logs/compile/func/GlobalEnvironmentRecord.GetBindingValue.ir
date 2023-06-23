@@ -1,0 +1,15 @@
+def <CONC>:GlobalEnvironmentRecord.GetBindingValue(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+  S: Boolean,
+): Normal[ESValue] | Abrupt {
+  let DclRec = envRec.DeclarativeRecord
+  method-call %0 = DclRec->HasBinding(N)
+  if (= [! %0] true) {
+    method-call %1 = DclRec->GetBindingValue(N, S)
+    return %1
+  } else {}
+  let ObjRec = envRec.ObjectRecord
+  method-call %2 = ObjRec->GetBindingValue(N, S)
+  return [? %2]
+}

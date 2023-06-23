@@ -1,0 +1,11 @@
+def CreateForInIterator(
+  object: Object,
+): Unknown["ForInIterator"] {
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%ForInIteratorPrototype%"], (new ["Object", "ObjectWasVisited", "VisitedKeys", "RemainingKeys"])[#628])
+  let iterator = %0
+  iterator.Object = object
+  iterator.ObjectWasVisited = false
+  iterator.VisitedKeys = (new [])[#629]
+  iterator.RemainingKeys = (new [])[#630]
+  return iterator
+}

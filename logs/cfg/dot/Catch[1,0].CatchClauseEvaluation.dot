@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1505 {
+    label = "def <SYNTAX>:Catch[1,0].CatchClauseEvaluation(this: Ast:Catch[1,0], thrownValue: Unknown): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster1505_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1505_entry_name -> cluster1505_entry [arrowhead=none, color="black", style=dashed]
+    cluster1505_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1505_entry -> node8246 [color="black"]
+    cluster1505_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1505_exit_name -> cluster1505_exit [arrowhead=none, color="black", style=dashed]
+    cluster1505_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8246_name [shape=none, label=<<font color="black">Call[8246]</font>>]
+    node8246_name -> node8246 [arrowhead=none, color="black", style=dashed]
+    node8246 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node8246 -> node8247 [color="black"]
+    node8247_name [shape=none, label=<<font color="black">Block[8247]</font>>]
+    node8247_name -> node8247 [arrowhead=none, color="black", style=dashed]
+    node8247 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8247 -> cluster1505_exit [color="black"]
+  }
+}

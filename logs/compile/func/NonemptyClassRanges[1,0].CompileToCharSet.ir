@@ -1,0 +1,9 @@
+def <SYNTAX>:NonemptyClassRanges[1,0].CompileToCharSet(
+  this: Ast:NonemptyClassRanges[1,0],
+): Unknown["CharSet"] {
+  sdo-call %0 = this[0]->CompileToCharSet()
+  let A = %0
+  sdo-call %1 = this[1]->CompileToCharSet()
+  let B = %1
+  (yet "Return the union of CharSets _A_ and _B_.")
+}

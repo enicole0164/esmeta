@@ -1,0 +1,15 @@
+def <SYNTAX>:AsyncArrowFunction[1,0].Contains(
+  this: Ast:AsyncArrowFunction[1,0],
+  symbol: Unknown,
+): Boolean {
+  if (! (|| (|| (|| (|| (= symbol (nt |NewTarget|[])) (= symbol (nt |SuperProperty|[]))) (= symbol (nt |SuperCall|[]))) (= symbol "super")) (= symbol "this"))) {
+    return false
+  } else {}
+  let head = (parse this[0] (nt |AsyncArrowHead|[]))
+  sdo-call %0 = head->Contains(symbol)
+  if (= %0 true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->Contains(symbol)
+  return %1
+}

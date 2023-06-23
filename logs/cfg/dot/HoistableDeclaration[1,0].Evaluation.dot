@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1376 {
+    label = "def <SYNTAX>:HoistableDeclaration[1,0].Evaluation(this: Ast:HoistableDeclaration[1,0]): Unknown"
+    style = rounded
+    cluster1376_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1376_entry_name -> cluster1376_entry [arrowhead=none, color="black", style=dashed]
+    cluster1376_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1376_entry -> node7130 [color="black"]
+    cluster1376_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1376_exit_name -> cluster1376_exit [arrowhead=none, color="black", style=dashed]
+    cluster1376_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7130_name [shape=none, label=<<font color="black">Block[7130]</font>>]
+    node7130_name -> node7130 [arrowhead=none, color="black", style=dashed]
+    node7130 [shape=box, label=<<font color="black">[0] return ~empty~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7130 -> cluster1376_exit [color="black"]
+  }
+}

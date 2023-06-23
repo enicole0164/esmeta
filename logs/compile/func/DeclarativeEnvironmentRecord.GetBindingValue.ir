@@ -1,0 +1,9 @@
+def <CONC>:DeclarativeEnvironmentRecord.GetBindingValue(
+  envRec: DeclarativeEnvironmentRecord,
+  N: String,
+  S: Boolean,
+): Normal[ESValue] | Abrupt {
+  assert (! (= envRec.SubMap[N] absent))
+  if (! envRec.SubMap[N].initialized) return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#381]) else {}
+  return envRec.SubMap[N].BoundValue
+}

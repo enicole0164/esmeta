@@ -1,0 +1,20 @@
+def <SYNTAX>:ConditionalExpression[1,0].Evaluation(
+  this: Ast:ConditionalExpression[1,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let lref = %0
+  call %1 = clo<GetValue>(lref)
+  call %2 = clo<ToBoolean>([? %1])
+  let lval = %2
+  if (= lval true) {
+    sdo-call %3 = this[1]->Evaluation()
+    let trueRef = %3
+    call %4 = clo<GetValue>(trueRef)
+    return [? %4]
+  } else {
+    sdo-call %5 = this[2]->Evaluation()
+    let falseRef = %5
+    call %6 = clo<GetValue>(falseRef)
+    return [? %6]
+  }
+}

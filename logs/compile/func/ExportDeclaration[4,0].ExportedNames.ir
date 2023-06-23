@@ -1,0 +1,5 @@
+def <SYNTAX>:ExportDeclaration[4,0].ExportedNames(
+  this: Ast:ExportDeclaration[4,0],
+): List[String] {
+  return (new ["default"])[#833]
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1787 {
+    label = "def <SYNTAX>:BitwiseORExpression[1,0].HasCallInTailPosition(this: Ast:BitwiseORExpression[1,0], call: Unknown): Boolean"
+    style = rounded
+    cluster1787_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1787_entry_name -> cluster1787_entry [arrowhead=none, color="black", style=dashed]
+    cluster1787_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1787_entry -> node9860 [color="black"]
+    cluster1787_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1787_exit_name -> cluster1787_exit [arrowhead=none, color="black", style=dashed]
+    cluster1787_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node9860_name [shape=none, label=<<font color="black">Block[9860]</font>>]
+    node9860_name -> node9860 [arrowhead=none, color="black", style=dashed]
+    node9860 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9860 -> cluster1787_exit [color="black"]
+  }
+}

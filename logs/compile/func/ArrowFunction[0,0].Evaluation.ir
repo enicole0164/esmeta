@@ -1,0 +1,6 @@
+def <SYNTAX>:ArrowFunction[0,0].Evaluation(
+  this: Ast:ArrowFunction[0,0],
+): Unknown {
+  sdo-call %0 = this->InstantiateArrowFunctionExpression()
+  return %0
+}

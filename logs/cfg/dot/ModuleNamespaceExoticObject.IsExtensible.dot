@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1138 {
+    label = "def <INTERNAL>:ModuleNamespaceExoticObject.IsExtensible(this: ModuleNamespaceExoticObject): Normal[False]"
+    style = rounded
+    cluster1138_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1138_entry_name -> cluster1138_entry [arrowhead=none, color="black", style=dashed]
+    cluster1138_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1138_entry -> node4927 [color="black"]
+    cluster1138_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1138_exit_name -> cluster1138_exit [arrowhead=none, color="black", style=dashed]
+    cluster1138_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4927_name [shape=none, label=<<font color="black">Block[4927]</font>>]
+    node4927_name -> node4927 [arrowhead=none, color="black", style=dashed]
+    node4927 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4927 -> cluster1138_exit [color="black"]
+  }
+}

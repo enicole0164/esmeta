@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.Object.getOwnPropertyNames(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let O = (pop < argumentsList) else let O = absent
+  call %0 = clo<GetOwnPropertyKeys>(O, ~string~)
+  call %1 = clo<CreateArrayFromList>([? %0])
+  return %1
+}

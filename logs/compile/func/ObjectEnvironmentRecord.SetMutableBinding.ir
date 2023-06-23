@@ -1,0 +1,16 @@
+def <CONC>:ObjectEnvironmentRecord.SetMutableBinding(
+  envRec: ObjectEnvironmentRecord,
+  N: String,
+  V: ESValue,
+  S: Boolean,
+): Normal[Const[~unused~]] | Abrupt {
+  let bindingObject = envRec.BindingObject
+  call %0 = clo<HasProperty>(bindingObject, N)
+  let stillExists = [? %0]
+  if (&& (= stillExists false) (= S true)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#373])
+  } else {}
+  call %1 = clo<Set>(bindingObject, N, V, S)
+  [? %1]
+  return ~unused~
+}

@@ -1,0 +1,9 @@
+def <SYNTAX>:ClassElement[0,0].ClassElementKind(
+  this: Ast:ClassElement[0,0],
+): Const[~ConstructorMethod~, ~NonConstructorMethod~, ~empty~] {
+  sdo-call %0 = this[0]->PropName()
+  if (= %0 "constructor") {
+    return ~ConstructorMethod~
+  } else {}
+  return ~NonConstructorMethod~
+}

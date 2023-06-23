@@ -1,0 +1,5 @@
+def LocalTime(
+  t: Unknown["TimeValue"],
+): Number {
+  (yet "Return _t_ + LocalTZA(_t_, *true*).")
+}

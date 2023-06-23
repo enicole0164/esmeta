@@ -1,0 +1,5 @@
+def <SYNTAX>:MultiplicativeExpression[1,0].AssignmentTargetType(
+  this: Ast:MultiplicativeExpression[1,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

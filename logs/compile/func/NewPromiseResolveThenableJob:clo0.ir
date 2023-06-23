@@ -1,0 +1,13 @@
+def <CLO>:NewPromiseResolveThenableJob:clo0(
+): Unknown {
+  call %0 = clo<CreateResolvingFunctions>(promiseToResolve)
+  let resolvingFunctions = %0
+  call %1 = clo<HostCallJobCallback>(then, thenable, (new [resolvingFunctions.Resolve, resolvingFunctions.Reject])[#1250])
+  call %2 = clo<Completion>(%1)
+  let thenCallResult = %2
+  if (&& (comp? thenCallResult) (! (= thenCallResult.Type ~normal~))) {
+    call %3 = clo<Call>(resolvingFunctions.Reject, undefined, (new [thenCallResult.Value])[#1251])
+    return [? %3]
+  } else {}
+  return [? thenCallResult]
+}

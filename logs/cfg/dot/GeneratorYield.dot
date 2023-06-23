@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2620 {
+    label = "def GeneratorYield(iterNextObj: Unknown["ObjectThatConformsToThe<i>IteratorResult</i>Interface"]): Normal[ESValue] | Abrupt"
+    style = rounded
+    cluster2620_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2620_entry_name -> cluster2620_entry [arrowhead=none, color="black", style=dashed]
+    cluster2620_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2620_entry -> node19385 [color="black"]
+    cluster2620_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2620_exit_name -> cluster2620_exit [arrowhead=none, color="black", style=dashed]
+    cluster2620_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19385_name [shape=none, label=<<font color="black">Block[19385]</font>>]
+    node19385_name -> node19385 [arrowhead=none, color="black", style=dashed]
+    node19385 [shape=box, label=<<font color="black">[0] let genContext = @EXECUTION_STACK[0]<BR ALIGN="LEFT"/>[1] assert (? genContext: &quot;ExecutionContext&quot;)<BR ALIGN="LEFT"/>[2] let generator = genContext.Generator<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19385 -> node19386 [color="black"]
+    node19386_name [shape=none, label=<<font color="black">Call[19386]</font>>]
+    node19386_name -> node19386 [arrowhead=none, color="black", style=dashed]
+    node19386 [shape=cds, label=<<font color="black">%0 = clo&lt;GetGeneratorKind&gt;()</font>> color="black" fillcolor="white", style=filled]
+    node19386 -> node19387 [color="black"]
+    node19387_name [shape=none, label=<<font color="black">Block[19387]</font>>]
+    node19387_name -> node19387 [arrowhead=none, color="black", style=dashed]
+    node19387 [shape=box, label=<<font color="black">[0] assert (= %0 ~sync~)<BR ALIGN="LEFT"/>[1] generator.GeneratorState = ~suspendedYield~<BR ALIGN="LEFT"/>[2] (pop &lt; @EXECUTION_STACK)<BR ALIGN="LEFT"/>[3] genContext.ResumeCont = cont&lt;GeneratorYield:cont0&gt;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19387 -> node19388 [color="black"]
+    node19388_name [shape=none, label=<<font color="black">Call[19388]</font>>]
+    node19388_name -> node19388 [arrowhead=none, color="black", style=dashed]
+    node19388 [shape=cds, label=<<font color="black">%1 = (pop &lt; genContext.ReturnCont)(iterNextObj)</font>> color="black" fillcolor="white", style=filled]
+    node19388 -> cluster2620_exit [color="black"]
+  }
+}

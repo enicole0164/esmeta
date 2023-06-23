@@ -1,0 +1,6 @@
+def <SYNTAX>:PrimaryExpression[8,0].HasCallInTailPosition(
+  this: Ast:PrimaryExpression[8,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

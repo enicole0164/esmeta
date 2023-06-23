@@ -1,0 +1,67 @@
+def ToPropertyDescriptor(
+  Obj: Unknown,
+): Normal[PropertyDescriptor] | Abrupt {
+  if (! (= (typeof Obj) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#17])
+  } else {}
+  let desc = (new PropertyDescriptor())[#18]
+  call %0 = clo<HasProperty>(Obj, "enumerable")
+  let hasEnumerable = [? %0]
+  if (= hasEnumerable true) {
+    call %1 = clo<Get>(Obj, "enumerable")
+    call %2 = clo<ToBoolean>([? %1])
+    let enumerable = %2
+    desc.Enumerable = enumerable
+  } else {}
+  call %3 = clo<HasProperty>(Obj, "configurable")
+  let hasConfigurable = [? %3]
+  if (= hasConfigurable true) {
+    call %4 = clo<Get>(Obj, "configurable")
+    call %5 = clo<ToBoolean>([? %4])
+    let configurable = %5
+    desc.Configurable = configurable
+  } else {}
+  call %6 = clo<HasProperty>(Obj, "value")
+  let hasValue = [? %6]
+  if (= hasValue true) {
+    call %7 = clo<Get>(Obj, "value")
+    let value = [? %7]
+    desc.Value = value
+  } else {}
+  call %8 = clo<HasProperty>(Obj, "writable")
+  let hasWritable = [? %8]
+  if (= hasWritable true) {
+    call %9 = clo<Get>(Obj, "writable")
+    call %10 = clo<ToBoolean>([? %9])
+    let writable = %10
+    desc.Writable = writable
+  } else {}
+  call %11 = clo<HasProperty>(Obj, "get")
+  let hasGet = [? %11]
+  if (= hasGet true) {
+    call %12 = clo<Get>(Obj, "get")
+    let getter = [? %12]
+    call %13 = clo<IsCallable>(getter)
+    if (&& (= %13 false) (! (= getter undefined))) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#19])
+    } else {}
+    desc.Get = getter
+  } else {}
+  call %14 = clo<HasProperty>(Obj, "set")
+  let hasSet = [? %14]
+  if (= hasSet true) {
+    call %15 = clo<Get>(Obj, "set")
+    let setter = [? %15]
+    call %16 = clo<IsCallable>(setter)
+    if (&& (= %16 false) (! (= setter undefined))) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#20])
+    } else {}
+    desc.Set = setter
+  } else {}
+  if (|| (! (= desc.Get absent)) (! (= desc.Set absent))) {
+    if (|| (! (= desc.Value absent)) (! (= desc.Writable absent))) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#21])
+    } else {}
+  } else {}
+  return desc
+}

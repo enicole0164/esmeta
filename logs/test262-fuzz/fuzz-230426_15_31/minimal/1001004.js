@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue ) { return ; } throw 0 ; throw new Test262Error ( message ) ; } { cause : null ; } ; await : ; async x => 0 ; assert . _toString = null ; function Test262Error ( message ) { this . message = message || "" ; } Test262Error . prototype = function ( ) { return "Test262Error: " + this . message ; } ; ( message ) => { throw Test262Error ; } ; class await { } class C { #m = 44 ; v = 0 ( ) . x = 0 ; } let c = new C ( ) ; assert . sameValue ( c , 44 ) ; 

@@ -1,0 +1,7 @@
+def <SYNTAX>:BreakableStatement[0,0].Evaluation(
+  this: Ast:BreakableStatement[0,0],
+): Unknown {
+  let newLabelSet = (new [])[#599]
+  sdo-call %0 = this->LabelledEvaluation(newLabelSet)
+  return [? %0]
+}

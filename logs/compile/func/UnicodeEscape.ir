@@ -1,0 +1,7 @@
+def UnicodeEscape(
+  C: Unknown["CodeUnit"],
+): String {
+  let n = ([math] C)
+  assert (! (< 65535 n))
+  (yet "Return the string-concatenation of:\n  * 0x005c (REVERSE SOLIDUS)\n  * *\"u\"*\n  * the String representation of _n_, formatted as a four-digit lowercase hexadecimal number, padded to the left with zeroes if necessary")
+}

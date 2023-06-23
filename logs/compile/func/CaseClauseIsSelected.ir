@@ -1,0 +1,12 @@
+def CaseClauseIsSelected(
+  C: Ast[CaseClause],
+  input: ESValue,
+): Normal[Boolean] | Abrupt {
+  assert (yet "_C_ is an instance of the production <emu-grammar>CaseClause : `case` Expression `:` StatementList?</emu-grammar>.")
+  sdo-call %0 = C.Expression->Evaluation()
+  let exprRef = %0
+  call %1 = clo<GetValue>(exprRef)
+  let clauseSelector = [? %1]
+  call %2 = clo<IsStrictlyEqual>(input, clauseSelector)
+  return %2
+}

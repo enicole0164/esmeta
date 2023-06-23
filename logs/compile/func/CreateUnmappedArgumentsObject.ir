@@ -1,0 +1,23 @@
+def CreateUnmappedArgumentsObject(
+  argumentsList: Unknown,
+): ArgumentsExoticObject {
+  let len = argumentsList.length
+  call %0 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"], (new ["ParameterMap"])[#461])
+  let obj = %0
+  obj.ParameterMap = undefined
+  call %1 = clo<DefinePropertyOrThrow>(obj, "length", (new PropertyDescriptor("Value" -> ([number] len), "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#462])
+  [! %1]
+  let index = 0
+  loop[repeat] (< index len) {
+    let val = argumentsList[index]
+    call %2 = clo<ToString>(([number] index))
+    call %3 = clo<CreateDataPropertyOrThrow>(obj, [! %2], val)
+    [! %3]
+    index = (+ index 1)
+  }
+  call %4 = clo<DefinePropertyOrThrow>(obj, @SYMBOL.iterator, (new PropertyDescriptor("Value" -> @EXECUTION_STACK[0].Realm.Intrinsics["%Array.prototype.values%"], "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#463])
+  [! %4]
+  call %5 = clo<DefinePropertyOrThrow>(obj, "callee", (new PropertyDescriptor("Get" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ThrowTypeError%"], "Set" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ThrowTypeError%"], "Enumerable" -> false, "Configurable" -> false))[#464])
+  [! %5]
+  return obj
+}

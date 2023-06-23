@@ -1,0 +1,112 @@
+def <BUILTIN>:INTRINSICS.Array.from(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let items = (pop < argumentsList) else let items = absent
+  if (< 0 argumentsList.length) let mapfn = (pop < argumentsList) else let mapfn = absent
+  if (< 0 argumentsList.length) let thisArg = (pop < argumentsList) else let thisArg = absent
+  let C = this
+  if (= mapfn undefined) {
+    let mapping = false
+  } else {
+    call %0 = clo<IsCallable>(mapfn)
+    if (= %0 false) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1011])
+    } else {}
+    let mapping = true
+  }
+  call %1 = clo<GetMethod>(items, @SYMBOL.iterator)
+  let usingIterator = [? %1]
+  if (! (= usingIterator undefined)) {
+    call %2 = clo<IsConstructor>(C)
+    if (= %2 true) {
+      call %3 = clo<Construct>(C)
+      let A = [? %3]
+    } else {
+      call %4 = clo<ArrayCreate>(0)
+      let A = [! %4]
+    }
+    call %5 = clo<GetIterator>(items, ~sync~, usingIterator)
+    let iteratorRecord = [? %5]
+    let k = 0
+    loop[repeat] true {
+      if (! (< k (- (** 2 53) 1))) {
+        call %6 = clo<ThrowCompletion>((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1012])
+        let error = %6
+        call %7 = clo<IteratorClose>(iteratorRecord, error)
+        return [? %7]
+      } else {}
+      call %8 = clo<ToString>(([number] k))
+      let Pk = [! %8]
+      call %9 = clo<IteratorStep>(iteratorRecord)
+      let next = [? %9]
+      if (= next false) {
+        call %10 = clo<Set>(A, "length", ([number] k), true)
+        [? %10]
+        return A
+      } else {}
+      call %11 = clo<IteratorValue>(next)
+      let nextValue = [? %11]
+      if (= mapping true) {
+        call %12 = clo<Call>(mapfn, thisArg, (new [nextValue, ([number] k)])[#1013])
+        call %13 = clo<Completion>(%12)
+        let mappedValue = %13
+        if (&& (comp? mappedValue) (! (= mappedValue.Type ~normal~))) {
+          call %14 = clo<IteratorClose>(iteratorRecord, mappedValue)
+          return [? %14]
+        } else {
+          if (? mappedValue: "CompletionRecord") {
+            mappedValue = mappedValue.Value
+          } else {}
+        }
+      } else {
+        let mappedValue = nextValue
+      }
+      call %15 = clo<CreateDataPropertyOrThrow>(A, Pk, mappedValue)
+      call %16 = clo<Completion>(%15)
+      let defineStatus = %16
+      if (&& (comp? defineStatus) (! (= defineStatus.Type ~normal~))) {
+        call %17 = clo<IteratorClose>(iteratorRecord, defineStatus)
+        return [? %17]
+      } else {
+        if (? defineStatus: "CompletionRecord") {
+          defineStatus = defineStatus.Value
+        } else {}
+      }
+      k = (+ k 1)
+    }
+  } else {}
+  nop
+  call %18 = clo<ToObject>(items)
+  let arrayLike = [! %18]
+  call %19 = clo<LengthOfArrayLike>(arrayLike)
+  let len = [? %19]
+  call %20 = clo<IsConstructor>(C)
+  if (= %20 true) {
+    call %21 = clo<Construct>(C, (new [([number] len)])[#1014])
+    let A = [? %21]
+  } else {
+    call %22 = clo<ArrayCreate>(len)
+    let A = [? %22]
+  }
+  let k = 0
+  loop[repeat] (< k len) {
+    call %23 = clo<ToString>(([number] k))
+    let Pk = [! %23]
+    call %24 = clo<Get>(arrayLike, Pk)
+    let kValue = [? %24]
+    if (= mapping true) {
+      call %25 = clo<Call>(mapfn, thisArg, (new [kValue, ([number] k)])[#1015])
+      let mappedValue = [? %25]
+    } else {
+      let mappedValue = kValue
+    }
+    call %26 = clo<CreateDataPropertyOrThrow>(A, Pk, mappedValue)
+    [? %26]
+    k = (+ k 1)
+  }
+  call %27 = clo<Set>(A, "length", ([number] len), true)
+  [? %27]
+  return A
+}

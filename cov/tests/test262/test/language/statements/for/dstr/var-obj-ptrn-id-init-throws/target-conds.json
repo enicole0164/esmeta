@@ -1,0 +1,6281 @@
+{
+  "274" : {
+    "ty" : {
+      "name" : "BreakableStatement",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 3,
+        "offset" : 5284
+      },
+      "end" : {
+        "line" : 196,
+        "column" : 4,
+        "offset" : 5351
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "333" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "150" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "12" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "87" : {
+    "ty" : {
+      "name" : "StatementListItem",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "102" : {
+    "ty" : {
+      "name" : "Catch",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 83,
+        "column" : 5,
+        "offset" : 1922
+      },
+      "end" : {
+        "line" : 98,
+        "column" : 4,
+        "offset" : 2562
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "184" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "442" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "392" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "278" : {
+    "ty" : {
+      "name" : "TryStatement",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 81,
+        "column" : 3,
+        "offset" : 1900
+      },
+      "end" : {
+        "line" : 98,
+        "column" : 4,
+        "offset" : 2562
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "252" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "225" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "153" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "470" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "72" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "148" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "394" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 53,
+        "offset" : 1588
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 57,
+        "offset" : 1592
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "235" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "149" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "412" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 39,
+        "offset" : 2125
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "76" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "512" : {
+    "ty" : {
+      "name" : "ThrowStatement",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 3,
+        "offset" : 5212
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 28,
+        "offset" : 5237
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "514" : {
+    "ty" : {
+      "name" : "Catch",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 83,
+        "column" : 5,
+        "offset" : 1922
+      },
+      "end" : {
+        "line" : 98,
+        "column" : 4,
+        "offset" : 2562
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "198" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "208" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "487" : {
+    "ty" : {
+      "name" : "LogicalORExpression",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 54,
+        "offset" : 1992
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "264" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "484" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "356" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "506" : {
+    "ty" : {
+      "name" : "IfStatement",
+      "idx" : 0,
+      "subIdx" : 7
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 5,
+        "offset" : 1943
+      },
+      "end" : {
+        "line" : 96,
+        "column" : 6,
+        "offset" : 2546
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "58" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "345" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "426" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "334" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "477" : {
+    "ty" : {
+      "name" : "ArgumentList",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 16,
+        "offset" : 5255
+      },
+      "end" : {
+        "line" : 193,
+        "column" : 28,
+        "offset" : 5267
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "22" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "299" : {
+    "ty" : {
+      "name" : "StatementList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "122" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "201" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "383" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "68" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "336" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "423" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "255" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "398" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 13,
+        "offset" : 5222
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 25,
+        "offset" : 5234
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "361" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "253" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "234" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 3,
+        "offset" : 5284
+      },
+      "end" : {
+        "line" : 196,
+        "column" : 4,
+        "offset" : 5351
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "73" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "483" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 3,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 39,
+        "offset" : 1977
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 54,
+        "offset" : 1992
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "114" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 13,
+        "offset" : 5222
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 25,
+        "offset" : 5234
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "86" : {
+    "ty" : {
+      "name" : "StatementListItem",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "414" : {
+    "ty" : {
+      "name" : "PrimaryExpression",
+      "idx" : 0,
+      "subIdx" : 0
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 7,
+        "offset" : 3423
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "478" : {
+    "ty" : {
+      "name" : "ArgumentList",
+      "idx" : 2,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 16,
+        "offset" : 5255
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "9" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "282" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 140,
+        "column" : 26,
+        "offset" : 3570
+      },
+      "end" : {
+        "line" : 140,
+        "column" : 33,
+        "offset" : 3577
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "115" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "155" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "219" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "485" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "488" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "393" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "5" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "400" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "251" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "94" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "279" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 27,
+        "offset" : 1562
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 66,
+        "offset" : 1601
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "500" : {
+    "ty" : {
+      "name" : "BindingProperty",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "357" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "424" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "363" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 76,
+        "column" : 5,
+        "offset" : 1848
+      },
+      "end" : {
+        "line" : 76,
+        "column" : 17,
+        "offset" : 1860
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "490" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "85" : {
+    "ty" : {
+      "name" : "StatementListItem",
+      "idx" : 1,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 189,
+        "column" : 1,
+        "offset" : 5189
+      },
+      "end" : {
+        "line" : 191,
+        "column" : 2,
+        "offset" : 5239
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "273" : {
+    "ty" : {
+      "name" : "IfStatement",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 12,
+        "offset" : 2098
+      },
+      "end" : {
+        "line" : 96,
+        "column" : 6,
+        "offset" : 2546
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "366" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "479" : {
+    "ty" : {
+      "name" : "ArgumentList",
+      "idx" : 2,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 16,
+        "offset" : 5255
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "197" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "347" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "422" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "328" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "496" : {
+    "ty" : {
+      "name" : "VariableStatement",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 69,
+        "column" : 32,
+        "offset" : 1636
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "14" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "241" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "84" : {
+    "ty" : {
+      "name" : "StatementListItem",
+      "idx" : 1,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 189,
+        "column" : 1,
+        "offset" : 5189
+      },
+      "end" : {
+        "line" : 191,
+        "column" : 2,
+        "offset" : 5239
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "191" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "372" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "106" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 76,
+        "column" : 5,
+        "offset" : 1848
+      },
+      "end" : {
+        "line" : 76,
+        "column" : 17,
+        "offset" : 1860
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "486" : {
+    "ty" : {
+      "name" : "LogicalORExpression",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 54,
+        "offset" : 1992
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "130" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "390" : {
+    "ty" : {
+      "name" : "ObjectBindingPattern",
+      "idx" : 2,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "358" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "75" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "218" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "212" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "425" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "374" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "379" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "427" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "92" : {
+    "ty" : {
+      "name" : "BindingIdentifier",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 83,
+        "column" : 12,
+        "offset" : 1929
+      },
+      "end" : {
+        "line" : 83,
+        "column" : 18,
+        "offset" : 1935
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "99" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "507" : {
+    "ty" : {
+      "name" : "IfStatement",
+      "idx" : 0,
+      "subIdx" : 7
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 5,
+        "offset" : 1943
+      },
+      "end" : {
+        "line" : 96,
+        "column" : 6,
+        "offset" : 2546
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "432" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "346" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "236" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "93" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "25" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "74" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "207" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "508" : {
+    "ty" : {
+      "name" : "IfStatement",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 12,
+        "offset" : 2098
+      },
+      "end" : {
+        "line" : 96,
+        "column" : 6,
+        "offset" : 2546
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "206" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "362" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "428" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "286" : {
+    "ty" : {
+      "name" : "ArrowFunction",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 140,
+        "column" : 24,
+        "offset" : 3569
+      },
+      "end" : {
+        "line" : 142,
+        "column" : 2,
+        "offset" : 3620
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "26" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "481" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "57" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "138" : {
+    "ty" : {
+      "name" : "PrimaryExpression",
+      "idx" : 0,
+      "subIdx" : 0
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 7,
+        "offset" : 3423
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "237" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "230" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "359" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "469" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "511" : {
+    "ty" : {
+      "name" : "BreakableStatement",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 3,
+        "offset" : 5284
+      },
+      "end" : {
+        "line" : 196,
+        "column" : 4,
+        "offset" : 5351
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "259" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "177" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "260" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "295" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "503" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "242" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "281" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 27,
+        "offset" : 1562
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 57,
+        "offset" : 1592
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "420" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "154" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "331" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "399" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "220" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "387" : {
+    "ty" : {
+      "name" : "BindingIdentifier",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 83,
+        "column" : 12,
+        "offset" : 1929
+      },
+      "end" : {
+        "line" : 83,
+        "column" : 18,
+        "offset" : 1935
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "20" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "109" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 13,
+        "offset" : 5222
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 25,
+        "offset" : 5234
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "229" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "256" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "105" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 76,
+        "column" : 5,
+        "offset" : 1848
+      },
+      "end" : {
+        "line" : 76,
+        "column" : 17,
+        "offset" : 1860
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "421" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "343" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "370" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "257" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "71" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "62" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "402" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 13,
+        "offset" : 5222
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 25,
+        "offset" : 5234
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "510" : {
+    "ty" : {
+      "name" : "ForStatement",
+      "idx" : 1,
+      "subIdx" : 13
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 3,
+        "offset" : 5284
+      },
+      "end" : {
+        "line" : 196,
+        "column" : 4,
+        "offset" : 5351
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "199" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "31" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "386" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "265" : {
+    "ty" : {
+      "name" : "LogicalORExpression",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 54,
+        "offset" : 1992
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "88" : {
+    "ty" : {
+      "name" : "StatementListItem",
+      "idx" : 1,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 189,
+        "column" : 1,
+        "offset" : 5189
+      },
+      "end" : {
+        "line" : 191,
+        "column" : 2,
+        "offset" : 5239
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "382" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "429" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "270" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "152" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "39" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "33" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "110" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "369" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "380" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "82" : {
+    "ty" : {
+      "name" : "StatementListItem",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 97,
+        "column" : 5,
+        "offset" : 2551
+      },
+      "end" : {
+        "line" : 97,
+        "column" : 12,
+        "offset" : 2558
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "397" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 27,
+        "offset" : 1562
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 66,
+        "offset" : 1601
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "332" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "463" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 39,
+        "offset" : 2125
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "21" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "378" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "151" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "395" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "433" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "65" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "501" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "200" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "330" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "61" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "97" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 53,
+        "offset" : 1588
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 57,
+        "offset" : 1592
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "389" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "3" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "37" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "210" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "341" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "457" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "340" : {
+    "ty" : {
+      "name" : "IfStatement",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 12,
+        "offset" : 2098
+      },
+      "end" : {
+        "line" : 96,
+        "column" : 6,
+        "offset" : 2546
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "471" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "466" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "254" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "464" : {
+    "ty" : {
+      "name" : "PrimaryExpression",
+      "idx" : 0,
+      "subIdx" : 0
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 7,
+        "offset" : 3423
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "183" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "113" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "404" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "91" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 140,
+        "column" : 1,
+        "offset" : 3546
+      },
+      "end" : {
+        "line" : 142,
+        "column" : 2,
+        "offset" : 3620
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "375" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "267" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "268" : {
+    "ty" : {
+      "name" : "Block",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 83,
+        "column" : 20,
+        "offset" : 1937
+      },
+      "end" : {
+        "line" : 98,
+        "column" : 4,
+        "offset" : 2562
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "261" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "294" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "417" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "107" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "297" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "227" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "344" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "474" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "321" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "441" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "284" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 27,
+        "offset" : 1562
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 66,
+        "offset" : 1601
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "217" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 3,
+        "offset" : 5284
+      },
+      "end" : {
+        "line" : 196,
+        "column" : 4,
+        "offset" : 5351
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "418" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "98" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "515" : {
+    "ty" : {
+      "name" : "TryStatement",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 81,
+        "column" : 3,
+        "offset" : 1900
+      },
+      "end" : {
+        "line" : 98,
+        "column" : 4,
+        "offset" : 2562
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "226" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "277" : {
+    "ty" : {
+      "name" : "Catch",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 83,
+        "column" : 5,
+        "offset" : 1922
+      },
+      "end" : {
+        "line" : 98,
+        "column" : 4,
+        "offset" : 2562
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "228" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "434" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "44" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "509" : {
+    "ty" : {
+      "name" : "IterationStatement",
+      "idx" : 2,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 3,
+        "offset" : 5284
+      },
+      "end" : {
+        "line" : 196,
+        "column" : 4,
+        "offset" : 5351
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "467" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "491" : {
+    "ty" : {
+      "name" : "BreakableStatement",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 3,
+        "offset" : 5284
+      },
+      "end" : {
+        "line" : 196,
+        "column" : 4,
+        "offset" : 5351
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "360" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "6" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "119" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 39,
+        "offset" : 2125
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "480" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "300" : {
+    "ty" : {
+      "name" : "IfStatement",
+      "idx" : 0,
+      "subIdx" : 7
+    },
+    "loc" : {
+      "start" : {
+        "line" : 90,
+        "column" : 7,
+        "offset" : 2255
+      },
+      "end" : {
+        "line" : 94,
+        "column" : 8,
+        "offset" : 2501
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "465" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 2,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 34,
+        "offset" : 2120
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "182" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "283" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 27,
+        "offset" : 1562
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 66,
+        "offset" : 1601
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "50" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "4" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "497" : {
+    "ty" : {
+      "name" : "VariableDeclarationList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 7,
+        "offset" : 1611
+      },
+      "end" : {
+        "line" : 69,
+        "column" : 31,
+        "offset" : 1635
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "335" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "127" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "211" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "342" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "194" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "364" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "388" : {
+    "ty" : {
+      "name" : "BindingPattern",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 29,
+        "offset" : 5310
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "296" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "499" : {
+    "ty" : {
+      "name" : "VariableDeclaration",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 34,
+        "offset" : 5315
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "111" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "413" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 39,
+        "offset" : 2125
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "396" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 27,
+        "offset" : 1562
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 66,
+        "offset" : 1601
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "339" : {
+    "ty" : {
+      "name" : "IfStatement",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 12,
+        "offset" : 2098
+      },
+      "end" : {
+        "line" : 96,
+        "column" : 6,
+        "offset" : 2546
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "435" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 82,
+        "column" : 5,
+        "offset" : 1910
+      },
+      "end" : {
+        "line" : 82,
+        "column" : 11,
+        "offset" : 1916
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "454" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "516" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "368" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "112" : {
+    "ty" : {
+      "name" : "PrimaryExpression",
+      "idx" : 0,
+      "subIdx" : 0
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 7,
+        "offset" : 3423
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "266" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "141" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "246" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "430" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "104" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 76,
+        "column" : 5,
+        "offset" : 1848
+      },
+      "end" : {
+        "line" : 76,
+        "column" : 17,
+        "offset" : 1860
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "83" : {
+    "ty" : {
+      "name" : "StatementListItem",
+      "idx" : 1,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 189,
+        "column" : 1,
+        "offset" : 5189
+      },
+      "end" : {
+        "line" : 191,
+        "column" : 2,
+        "offset" : 5239
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "258" : {
+    "ty" : {
+      "name" : "UnaryExpression",
+      "idx" : 3,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 22,
+        "offset" : 1960
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "280" : {
+    "ty" : {
+      "name" : "FormalParameterList",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 27,
+        "offset" : 1562
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 66,
+        "offset" : 1601
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "108" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 13,
+        "offset" : 5222
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 25,
+        "offset" : 5234
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "419" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "17" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "172" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "411" : {
+    "ty" : {
+      "name" : "IdentifierReference",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 39,
+        "offset" : 2125
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "489" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "502" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "77" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "67" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "222" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "54" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "213" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "243" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "221" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "373" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "247" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "443" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "381" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 68,
+        "column" : 53,
+        "offset" : 1588
+      },
+      "end" : {
+        "line" : 68,
+        "column" : 57,
+        "offset" : 1592
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "214" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "32" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "285" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "38" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "298" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "416" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "144" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "367" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "27" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "250" : {
+    "ty" : {
+      "name" : "CallExpression",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 18,
+        "offset" : 5299
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "132" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "231" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "365" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 2
+    },
+    "loc" : {
+      "start" : {
+        "line" : 132,
+        "column" : 23,
+        "offset" : 3406
+      },
+      "end" : {
+        "line" : 132,
+        "column" : 30,
+        "offset" : 3413
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "103" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 76,
+        "column" : 5,
+        "offset" : 1848
+      },
+      "end" : {
+        "line" : 76,
+        "column" : 17,
+        "offset" : 1860
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "13" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 87,
+        "column" : 16,
+        "offset" : 2102
+      },
+      "end" : {
+        "line" : 87,
+        "column" : 63,
+        "offset" : 2149
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "209" : {
+    "ty" : {
+      "name" : "FunctionExpression",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 193,
+        "column" : 30,
+        "offset" : 5269
+      },
+      "end" : {
+        "line" : 197,
+        "column" : 2,
+        "offset" : 5353
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "329" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 69,
+        "column" : 3,
+        "offset" : 1607
+      },
+      "end" : {
+        "line" : 101,
+        "column" : 35,
+        "offset" : 2711
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "482" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 3,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 39,
+        "offset" : 1977
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 54,
+        "offset" : 1992
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "28" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "269" : {
+    "ty" : {
+      "name" : "SingleNameBinding",
+      "idx" : 0,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 14,
+        "offset" : 5295
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 27,
+        "offset" : 5308
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "53" : {
+    "ty" : {
+      "name" : "EqualityExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 84,
+        "column" : 9,
+        "offset" : 1947
+      },
+      "end" : {
+        "line" : 84,
+        "column" : 35,
+        "offset" : 1973
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "322" : {
+    "ty" : {
+      "name" : "FunctionBody",
+      "idx" : 0,
+      "subIdx" : 1
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 32,
+        "offset" : 3448
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "468" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "498" : {
+    "ty" : {
+      "name" : "VariableDeclaration",
+      "idx" : 1,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 194,
+        "column" : 12,
+        "offset" : 5293
+      },
+      "end" : {
+        "line" : 194,
+        "column" : 34,
+        "offset" : 5315
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "202" : {
+    "ty" : {
+      "name" : "MemberExpression",
+      "idx" : 6,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 190,
+        "column" : 9,
+        "offset" : 5218
+      },
+      "end" : {
+        "line" : 190,
+        "column" : 27,
+        "offset" : 5236
+      },
+      "steps" : [
+      ]
+    }
+  },
+  "145" : {
+    "ty" : {
+      "name" : "AssignmentExpression",
+      "idx" : 4,
+      "subIdx" : 3
+    },
+    "loc" : {
+      "start" : {
+        "line" : 133,
+        "column" : 3,
+        "offset" : 3419
+      },
+      "end" : {
+        "line" : 133,
+        "column" : 31,
+        "offset" : 3447
+      },
+      "steps" : [
+      ]
+    }
+  }
+}

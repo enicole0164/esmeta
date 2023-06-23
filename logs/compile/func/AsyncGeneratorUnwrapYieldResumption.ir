@@ -1,0 +1,15 @@
+def AsyncGeneratorUnwrapYieldResumption(
+  resumptionValue: Normal,
+): Normal[ESValue] | Abrupt {
+  if (! (= resumptionValue.Type ~return~)) {
+    return [? resumptionValue]
+  } else {}
+  call %0 = clo<Await>(resumptionValue.Value)
+  call %1 = clo<Completion>(%0)
+  let awaited = %1
+  if (= awaited.Type ~throw~) {
+    return [? awaited]
+  } else {}
+  assert (= awaited.Type ~normal~)
+  return comp[~return~/~empty~](awaited.Value)
+}

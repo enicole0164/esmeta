@@ -1,0 +1,11 @@
+def <SYNTAX>:TryStatement[2,0].VarDeclaredNames(
+  this: Ast:TryStatement[2,0],
+): List[String] {
+  sdo-call %0 = this[0]->VarDeclaredNames()
+  let names1 = %0
+  sdo-call %1 = this[1]->VarDeclaredNames()
+  let names2 = %1
+  sdo-call %2 = this[2]->VarDeclaredNames()
+  let names3 = %2
+  return (list-concat names1 names2 names3)[#216]
+}

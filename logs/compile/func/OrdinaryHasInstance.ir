@@ -1,0 +1,33 @@
+def OrdinaryHasInstance(
+  C: ESValue,
+  O: Unknown,
+): Normal[Boolean] | Abrupt {
+  call %0 = clo<IsCallable>(C)
+  if (= %0 false) {
+    return false
+  } else {}
+  if (! (= C.BoundTargetFunction absent)) {
+    let BC = C.BoundTargetFunction
+    call %1 = clo<InstanceofOperator>(O, BC)
+    return [? %1]
+  } else {}
+  if (! (= (typeof O) @Object)) {
+    return false
+  } else {}
+  call %2 = clo<Get>(C, "prototype")
+  let P = [? %2]
+  if (! (= (typeof P) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#59])
+  } else {}
+  loop[repeat] true {
+    method-call %3 = O->GetPrototypeOf()
+    O = [? %3]
+    if (= O null) {
+      return false
+    } else {}
+    call %4 = clo<SameValue>(P, O)
+    if (= %4 true) {
+      return true
+    } else {}
+  }
+}

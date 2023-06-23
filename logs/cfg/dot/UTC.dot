@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2111 {
+    label = "def UTC(t: Number): Unknown["TimeValue"]"
+    style = rounded
+    cluster2111_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2111_entry_name -> cluster2111_entry [arrowhead=none, color="black", style=dashed]
+    cluster2111_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2111_entry -> node12436 [color="black"]
+    cluster2111_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2111_exit_name -> cluster2111_exit [arrowhead=none, color="black", style=dashed]
+    cluster2111_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node12436_name [shape=none, label=<<font color="black">Block[12436]</font>>]
+    node12436_name -> node12436 [arrowhead=none, color="black", style=dashed]
+    node12436 [shape=box, label=<<font color="black">[0] (yet &quot;Return _t_ - LocalTZA(_t_, *false*).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node12436 -> cluster2111_exit [color="black"]
+  }
+}

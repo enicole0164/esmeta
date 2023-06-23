@@ -1,0 +1,8 @@
+def CreateArrayIterator(
+  array: Object,
+  kind: Const[~key+value~, ~key~, ~value~],
+): Unknown["Generator"] {
+  let closure = clo<CreateArrayIterator:clo0, [kind, array]>
+  call %0 = clo<CreateIteratorFromClosure>(closure, "%ArrayIteratorPrototype%", @EXECUTION_STACK[0].Realm.Intrinsics["%ArrayIteratorPrototype%"])
+  return %0
+}

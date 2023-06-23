@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } throw new Test262Error ( message ) ; } assert = [ 0 ] ; { } assert . notSameValue = { [ Symbol . hasInstance ] : '' } ; async x => 0 ; if ( 0 ) ; function Test262Error ( message ) { this . message = message || "" ; } Test262Error . prototype . toString = function ( ) { return "Test262Error: " + this . message ; } ; function $DONOTEVALUATE ( ) { throw "Test262: This statement should not be evaluated." ; } assert . sameValue ( 'abc' . padStart ( 1 , '' ) , 'abc' ) ; 

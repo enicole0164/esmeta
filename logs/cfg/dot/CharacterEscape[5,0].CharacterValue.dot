@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2226 {
+    label = "def <SYNTAX>:CharacterEscape[5,0].CharacterValue(this: Ast:CharacterEscape[5,0]): Unknown["NonnegativeInteger"]"
+    style = rounded
+    cluster2226_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2226_entry_name -> cluster2226_entry [arrowhead=none, color="black", style=dashed]
+    cluster2226_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2226_entry -> node13879 [color="black"]
+    cluster2226_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2226_exit_name -> cluster2226_exit [arrowhead=none, color="black", style=dashed]
+    cluster2226_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13879_name [shape=none, label=<<font color="black">Block[13879]</font>>]
+    node13879_name -> node13879 [arrowhead=none, color="black", style=dashed]
+    node13879 [shape=box, label=<<font color="black">[0] (yet &quot;Let _ch_ be the code point matched by |IdentityEscape|.&quot;)<BR ALIGN="LEFT"/>[1] return ([math] ch)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13879 -> cluster2226_exit [color="black"]
+  }
+}

@@ -1,0 +1,36 @@
+def CopyDataBlockBytes(
+  toBlock: Unknown["DataBlockOrASharedDataBlock"],
+  toIndex: Unknown["NonnegativeInteger"],
+  fromBlock: Unknown["DataBlockOrASharedDataBlock"],
+  fromIndex: Unknown["NonnegativeInteger"],
+  count: Unknown["NonnegativeInteger"],
+): Const[~unused~] {
+  assert (yet "_fromBlock_ and _toBlock_ are distinct values.")
+  (yet "Let _fromSize_ be the number of bytes in _fromBlock_.")
+  assert (! (< fromSize (+ fromIndex count)))
+  (yet "Let _toSize_ be the number of bytes in _toBlock_.")
+  assert (! (< toSize (+ toIndex count)))
+  loop[repeat] (< 0 count) {
+    if (? fromBlock: "SharedDataBlock") {
+      (yet "Let _execution_ be the [[CandidateExecution]] field of the surrounding agent's Agent Record.")
+      (yet "Let _eventList_ be the [[EventList]] field of the element in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().")
+      (yet "Let _bytes_ be a List whose sole element is a nondeterministically chosen byte value.")
+      nop
+      let readEvent = (new ReadSharedMemory("Order" -> ~Unordered~, "NoTear" -> true, "Block" -> fromBlock, "ByteIndex" -> fromIndex, "ElementSize" -> 1))[#24]
+      push eventList < readEvent
+      push execution.ChosenValues < (new ChosenValueRecord("Event" -> readEvent, "ChosenValue" -> bytes))[#25]
+      if (? toBlock: "SharedDataBlock") {
+        push eventList < (new WriteSharedMemory("Order" -> ~Unordered~, "NoTear" -> true, "Block" -> toBlock, "ByteIndex" -> toIndex, "ElementSize" -> 1, "Payload" -> bytes))[#26]
+      } else {
+        toBlock[toIndex] = bytes[0]
+      }
+    } else {
+      assert (! (? toBlock: "SharedDataBlock"))
+      toBlock[toIndex] = fromBlock[fromIndex]
+    }
+    toIndex = (+ toIndex 1)
+    fromIndex = (+ fromIndex 1)
+    count = (- count 1)
+  }
+  return ~unused~
+}

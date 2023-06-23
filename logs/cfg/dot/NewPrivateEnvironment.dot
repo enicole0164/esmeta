@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1026 {
+    label = "def NewPrivateEnvironment(outerPrivEnv: PrivateEnvironmentRecord | Null): PrivateEnvironmentRecord"
+    style = rounded
+    cluster1026_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1026_entry_name -> cluster1026_entry [arrowhead=none, color="black", style=dashed]
+    cluster1026_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1026_entry -> node3841 [color="black"]
+    cluster1026_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1026_exit_name -> cluster1026_exit [arrowhead=none, color="black", style=dashed]
+    cluster1026_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3841_name [shape=none, label=<<font color="black">Block[3841]</font>>]
+    node3841_name -> node3841 [arrowhead=none, color="black", style=dashed]
+    node3841 [shape=box, label=<<font color="black">[0] let names = (new [])[#391]<BR ALIGN="LEFT"/>[1] return (new PrivateEnvironmentRecord(&quot;OuterPrivateEnvironment&quot; -&gt; outerPrivEnv, &quot;Names&quot; -&gt; names))[#392]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3841 -> cluster1026_exit [color="black"]
+  }
+}

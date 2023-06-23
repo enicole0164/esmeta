@@ -1,0 +1,29 @@
+def OrdinaryGet(
+  O: Object,
+  P: Symbol | String,
+  Receiver: ESValue,
+): Normal[ESValue] | Abrupt {
+  method-call %0 = O->GetOwnProperty(P)
+  let desc = [? %0]
+  if (= desc undefined) {
+    method-call %1 = O->GetPrototypeOf()
+    let parent = [? %1]
+    if (= parent null) {
+      return undefined
+    } else {}
+    method-call %2 = parent->Get(P, Receiver)
+    return [? %2]
+  } else {}
+  call %3 = clo<IsDataDescriptor>(desc)
+  if (= %3 true) {
+    return desc.Value
+  } else {}
+  call %4 = clo<IsAccessorDescriptor>(desc)
+  assert (= %4 true)
+  let getter = desc.Get
+  if (= getter undefined) {
+    return undefined
+  } else {}
+  call %5 = clo<Call>(getter, Receiver)
+  return [? %5]
+}

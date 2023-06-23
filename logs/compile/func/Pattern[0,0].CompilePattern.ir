@@ -1,0 +1,7 @@
+def <SYNTAX>:Pattern[0,0].CompilePattern(
+  this: Ast:Pattern[0,0],
+): Unknown["AbstractClosureThatTakesAListOfCharactersAndANonnegativeIntegerAndReturnsAMatchResult"] {
+  sdo-call %0 = this[0]->CompileSubpattern(~forward~)
+  let m = %0
+  return clo<Pattern[0,0].CompilePattern:clo0, [m]>
+}

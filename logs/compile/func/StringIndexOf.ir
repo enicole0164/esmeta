@@ -1,0 +1,20 @@
+def StringIndexOf(
+  string: String,
+  searchValue: String,
+  fromIndex: Unknown["NonnegativeInteger"],
+): Unknown["Integer"] {
+  let len = string.length
+  if (&& (= searchValue "") (! (< len fromIndex))) {
+    return fromIndex
+  } else {}
+  let searchLen = searchValue.length
+  let i = fromIndex
+  loop[foreach-int] (! (< (- len searchLen) i)) {
+    let candidate = (substring string i (+ i searchLen))
+    if (= candidate searchValue) {
+      return i
+    } else {}
+    i = (+ i 1)
+  }
+  return (- 1)
+}

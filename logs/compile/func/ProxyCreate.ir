@@ -1,0 +1,25 @@
+def ProxyCreate(
+  target: Unknown,
+  handler: Unknown,
+): Normal[ProxyExoticObject] | Abrupt {
+  if (! (= (typeof target) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#538])
+  } else {}
+  if (! (= (typeof handler) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#539])
+  } else {}
+  call %0 = clo<MakeBasicObject>((new ["ProxyHandler", "ProxyTarget"])[#540])
+  let P = %0
+  (yet "Set _P_'s essential internal methods, except for [[Call]] and [[Construct]], to the definitions specified in <emu-xref href=\"#sec-proxy-object-internal-methods-and-internal-slots\"></emu-xref>.")
+  call %1 = clo<IsCallable>(target)
+  if (= %1 true) {
+    P.Call = clo<ProxyExoticObject.Call>
+    call %2 = clo<IsConstructor>(target)
+    if (= %2 true) {
+      P.Construct = clo<ProxyExoticObject.Construct>
+    } else {}
+  } else {}
+  P.ProxyTarget = target
+  P.ProxyHandler = handler
+  return P
+}

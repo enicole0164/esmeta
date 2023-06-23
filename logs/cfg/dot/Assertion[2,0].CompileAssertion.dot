@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2252 {
+    label = "def <SYNTAX>:Assertion[2,0].CompileAssertion(this: Ast:Assertion[2,0]): Unknown["Matcher"]"
+    style = rounded
+    cluster2252_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2252_entry_name -> cluster2252_entry [arrowhead=none, color="black", style=dashed]
+    cluster2252_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2252_entry -> node13954 [color="black"]
+    cluster2252_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2252_exit_name -> cluster2252_exit [arrowhead=none, color="black", style=dashed]
+    cluster2252_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13954_name [shape=none, label=<<font color="black">Block[13954]</font>>]
+    node13954_name -> node13954 [arrowhead=none, color="black", style=dashed]
+    node13954 [shape=box, label=<<font color="black">[0] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures nothing and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _e_ be _x_'s _endIndex_.\n  1. Let _a_ be IsWordChar(_e_ - 1).\n  1. Let _b_ be IsWordChar(_e_).\n  1. If _a_ is *true* and _b_ is *false* or _a_ is *false* and _b_ is *true*, return _c_(_x_).\n  1. Return ~failure~.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13954 -> cluster2252_exit [color="black"]
+  }
+}

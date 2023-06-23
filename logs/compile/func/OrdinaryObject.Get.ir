@@ -1,0 +1,8 @@
+def <INTERNAL>:OrdinaryObject.Get(
+  O: OrdinaryObject,
+  P: Symbol | String,
+  Receiver: ESValue,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<OrdinaryGet>(O, P, Receiver)
+  return [? %0]
+}

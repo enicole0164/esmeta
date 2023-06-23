@@ -1,0 +1,25 @@
+def NewPromiseCapability(
+  C: Unknown,
+): Normal[PromiseCapabilityRecord] | Abrupt {
+  call %0 = clo<IsConstructor>(C)
+  if (= %0 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1240])
+  } else {}
+  nop
+  let promiseCapability = (new PromiseCapabilityRecord("Promise" -> undefined, "Resolve" -> undefined, "Reject" -> undefined))[#1241]
+  let executorClosure = clo<NewPromiseCapability:clo0, [promiseCapability]>
+  call %1 = clo<CreateBuiltinFunction>(executorClosure, 2, "", (new [])[#1242])
+  let executor = %1
+  call %2 = clo<Construct>(C, (new [executor])[#1243])
+  let promise = [? %2]
+  call %3 = clo<IsCallable>(promiseCapability.Resolve)
+  if (= %3 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1244])
+  } else {}
+  call %4 = clo<IsCallable>(promiseCapability.Reject)
+  if (= %4 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1245])
+  } else {}
+  promiseCapability.Promise = promise
+  return promiseCapability
+}

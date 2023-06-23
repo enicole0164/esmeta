@@ -1,0 +1,18 @@
+def ExecuteAsyncModule(
+  module: CyclicModuleRecord,
+): Const[~unused~] {
+  assert (|| (= module.Status ~evaluating~) (= module.Status ~evaluating-async~))
+  assert (= module.HasTLA true)
+  call %0 = clo<NewPromiseCapability>(@EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"])
+  let capability = [! %0]
+  let fulfilledClosure = clo<ExecuteAsyncModule:clo0, [module]>
+  call %1 = clo<CreateBuiltinFunction>(fulfilledClosure, 0, "", (new [])[#773])
+  let onFulfilled = %1
+  let rejectedClosure = clo<ExecuteAsyncModule:clo1, [module]>
+  call %2 = clo<CreateBuiltinFunction>(rejectedClosure, 0, "", (new [])[#774])
+  let onRejected = %2
+  call %3 = clo<PerformPromiseThen>(capability.Promise, onFulfilled, onRejected)
+  method-call %4 = module->ExecuteModule(capability)
+  [! %4]
+  return ~unused~
+}

@@ -1,0 +1,10 @@
+def <SYNTAX>:OptionalChain[4,0].AllPrivateIdentifiersValid(
+  this: Ast:OptionalChain[4,0],
+  names: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->StringValue()
+  if (contains names %0) {
+    return true
+  } else {}
+  return false
+}

@@ -1,0 +1,11 @@
+def <SYNTAX>:ObjectAssignmentPattern[3,1].DestructuringAssignmentEvaluation(
+  this: Ast:ObjectAssignmentPattern[3,1],
+  value: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<RequireObjectCoercible>(value)
+  [? %0]
+  sdo-call %1 = this[0]->PropertyDestructuringAssignmentEvaluation(value)
+  let excludedNames = [? %1]
+  sdo-call %2 = this[1]->RestDestructuringAssignmentEvaluation(value, excludedNames)
+  return [? %2]
+}

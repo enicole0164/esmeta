@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.getMilliseconds(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  if (= t NaN) {
+    return NaN
+  } else {}
+  (yet "Return msFromTime(LocalTime(_t_)).")
+}

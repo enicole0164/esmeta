@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster66 {
+    label = "def MakePrivateReference(baseValue: ESValue, privateIdentifier: String): ReferenceRecord"
+    style = rounded
+    cluster66_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster66_entry_name -> cluster66_entry [arrowhead=none, color="black", style=dashed]
+    cluster66_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster66_entry -> node458 [color="black"]
+    cluster66_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster66_exit_name -> cluster66_exit [arrowhead=none, color="black", style=dashed]
+    cluster66_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node458_name [shape=none, label=<<font color="black">Block[458]</font>>]
+    node458_name -> node458 [arrowhead=none, color="black", style=dashed]
+    node458 [shape=box, label=<<font color="black">[0] let privEnv = @EXECUTION_STACK[0].PrivateEnvironment<BR ALIGN="LEFT"/>[1] assert (! (= privEnv null))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node458 -> node459 [color="black"]
+    node459_name [shape=none, label=<<font color="black">Call[459]</font>>]
+    node459_name -> node459 [arrowhead=none, color="black", style=dashed]
+    node459 [shape=cds, label=<<font color="black">%0 = clo&lt;ResolvePrivateIdentifier&gt;(privEnv, privateIdentifier)</font>> color="black" fillcolor="white", style=filled]
+    node459 -> node460 [color="black"]
+    node460_name [shape=none, label=<<font color="black">Block[460]</font>>]
+    node460_name -> node460 [arrowhead=none, color="black", style=dashed]
+    node460 [shape=box, label=<<font color="black">[0] let privateName = %0<BR ALIGN="LEFT"/>[1] return (new ReferenceRecord(&quot;Base&quot; -&gt; baseValue, &quot;ReferencedName&quot; -&gt; privateName, &quot;Strict&quot; -&gt; true, &quot;ThisValue&quot; -&gt; ~empty~))[#16]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node460 -> cluster66_exit [color="black"]
+  }
+}

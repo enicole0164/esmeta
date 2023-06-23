@@ -1,0 +1,2 @@
+"use strict";
+let x ; new function ( ) { return x = function x ( ) { } ; } ; 

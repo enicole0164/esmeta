@@ -1,0 +1,29 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster47 {
+    label = "def BinaryAnd(x: Unknown["0Or1"], y: Unknown["0Or1"]): Unknown["0Or1"]"
+    style = rounded
+    cluster47_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster47_entry_name -> cluster47_entry [arrowhead=none, color="black", style=dashed]
+    cluster47_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster47_entry -> node346 [color="black"]
+    cluster47_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster47_exit_name -> cluster47_exit [arrowhead=none, color="black", style=dashed]
+    cluster47_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node346_name [shape=none, label=<<font color="black">Branch[346]</font>>]
+    node346_name -> node346 [arrowhead=none, color="black", style=dashed]
+    node346 [shape=diamond, label=<<font color="black">(&amp;&amp; (= x 1) (= y 1))</font>> color="black" fillcolor="white", style=filled]
+    node346 -> node347 [label=<<font color="black">true</font>> color="black"]
+    node346 -> node348 [label=<<font color="black">false</font>> color="black"]
+    node347_name [shape=none, label=<<font color="black">Block[347]</font>>]
+    node347_name -> node347 [arrowhead=none, color="black", style=dashed]
+    node347 [shape=box, label=<<font color="black">[0] return 1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node347 -> cluster47_exit [color="black"]
+    node348_name [shape=none, label=<<font color="black">Block[348]</font>>]
+    node348_name -> node348 [arrowhead=none, color="black", style=dashed]
+    node348 [shape=box, label=<<font color="black">[0] return 0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node348 -> cluster47_exit [color="black"]
+  }
+}

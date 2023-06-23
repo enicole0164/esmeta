@@ -1,0 +1,10 @@
+def ToLength(
+  argument: ESValue,
+): Unknown["EitherANormalCompletionContainingAnIntegralNumberOrAnAbruptCompletion"] {
+  call %0 = clo<ToIntegerOrInfinity>(argument)
+  let len = [? %0]
+  if (! (< 0 len)) {
+    return 0.0f
+  } else {}
+  return ([number] (min len (- (** 2 53) 1)))
+}

@@ -1,0 +1,6 @@
+def <INTERNAL>:OrdinaryObject.PreventExtensions(
+  O: OrdinaryObject,
+): Normal[True] {
+  call %0 = clo<OrdinaryPreventExtensions>(O)
+  return %0
+}

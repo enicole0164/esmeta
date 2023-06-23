@@ -1,0 +1,16 @@
+def AllocateTypedArrayBuffer(
+  O: Unknown["TypedArray"],
+  length: Unknown["NonnegativeInteger"],
+): Normal[Const[~unused~]] | Abrupt {
+  assert (= O.ViewedArrayBuffer undefined)
+  call %0 = clo<TypedArrayElementSize>(O)
+  let elementSize = %0
+  let byteLength = (* elementSize length)
+  call %1 = clo<AllocateArrayBuffer>(@EXECUTION_STACK[0].Realm.Intrinsics["%ArrayBuffer%"], byteLength)
+  let data = [? %1]
+  O.ViewedArrayBuffer = data
+  O.ByteLength = byteLength
+  O.ByteOffset = 0
+  O.ArrayLength = length
+  return ~unused~
+}

@@ -1,0 +1,12 @@
+def GetStringIndex(
+  S: String,
+  e: Unknown["NonnegativeInteger"],
+): Unknown["NonnegativeInteger"] {
+  if (= S "") {
+    return 0
+  } else {}
+  call %0 = clo<StringToCodePoints>(S)
+  let codepoints = %0
+  (yet "Let _eUTF_ be the smallest index into _S_ that corresponds to the character at element _e_ of _codepoints_. If _e_ is greater than or equal to the number of elements in _codepoints_, then _eUTF_ is the number of code units in _S_.")
+  return eUTF
+}

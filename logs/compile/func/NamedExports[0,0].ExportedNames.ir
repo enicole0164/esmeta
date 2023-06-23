@@ -1,0 +1,5 @@
+def <SYNTAX>:NamedExports[0,0].ExportedNames(
+  this: Ast:NamedExports[0,0],
+): List[String] {
+  return (new [])[#836]
+}

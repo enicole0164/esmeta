@@ -1,0 +1,6 @@
+def <SYNTAX>:Statement[2,0].HasCallInTailPosition(
+  this: Ast:Statement[2,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

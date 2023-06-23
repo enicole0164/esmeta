@@ -1,0 +1,46 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.lastIndexOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let searchElement = (pop < argumentsList) else let searchElement = absent
+  if (< 0 argumentsList.length) let fromIndex = (pop < argumentsList) else let fromIndex = absent
+  let O = this
+  call %0 = clo<ValidateTypedArray>(O)
+  [? %0]
+  let len = O.ArrayLength
+  if (= len 0) {
+    return -1.0f
+  } else {}
+  if (! (= fromIndex absent)) {
+    call %1 = clo<ToIntegerOrInfinity>(fromIndex)
+    let n = [? %1]
+  } else {
+    let n = (- len 1)
+  }
+  if (= n -INF) {
+    return -1.0f
+  } else {}
+  if (! (< n 0)) {
+    let k = (min n (- len 1))
+  } else {
+    let k = (+ len n)
+  }
+  loop[repeat] (! (< k 0)) {
+    call %2 = clo<ToString>(([number] k))
+    call %3 = clo<HasProperty>(O, [! %2])
+    let kPresent = [! %3]
+    if (= kPresent true) {
+      call %4 = clo<ToString>(([number] k))
+      call %5 = clo<Get>(O, [! %4])
+      let elementK = [! %5]
+      call %6 = clo<IsStrictlyEqual>(searchElement, elementK)
+      let same = %6
+      if (= same true) {
+        return ([number] k)
+      } else {}
+    } else {}
+    k = (- k 1)
+  }
+  return -1.0f
+}

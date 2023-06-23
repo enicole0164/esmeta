@@ -1,0 +1,2 @@
+"use strict";
+function assert ( mustBeTrue , message ) { if ( mustBeTrue === true ) { return ; } if ( message === undefined ) { ; } throw new Test262Error ( message ) ; } try { } finally { } assert . sameValue = function * x ( ) { } ; assert = async function ( ) { } ; assert . throws = [ 0 ] ; 0 ?? 0 ; function Test262Error ( message ) { message || "" ; } ( message ) => { throw new Test262Error ( message ) ; } ; let called ; async function foo ( ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ; 

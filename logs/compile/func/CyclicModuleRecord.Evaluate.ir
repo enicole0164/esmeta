@@ -1,0 +1,44 @@
+def <CONC>:CyclicModuleRecord.Evaluate(
+  module: CyclicModuleRecord,
+): Unknown["Promise"] {
+  assert (yet "This call to Evaluate is not happening at the same time as another call to Evaluate within the surrounding agent.")
+  assert (|| (|| (= module.Status ~linked~) (= module.Status ~evaluating-async~)) (= module.Status ~evaluated~))
+  if (|| (= module.Status ~evaluating-async~) (= module.Status ~evaluated~)) {
+    module = module.CycleRoot
+  } else {}
+  if (! (= module.TopLevelCapability ~empty~)) {
+    return module.TopLevelCapability.Promise
+  } else {}
+  let stack = (new [])[#770]
+  call %0 = clo<NewPromiseCapability>(@EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"])
+  let capability = [! %0]
+  module.TopLevelCapability = capability
+  call %1 = clo<InnerModuleEvaluation>(module, stack, 0)
+  call %2 = clo<Completion>(%1)
+  let result = %2
+  if (&& (comp? result) (! (= result.Type ~normal~))) {
+    %4 = stack
+    %3 = 0
+    loop[foreach] (< %3 %4.length) {
+      let m = %4[%3]
+      assert (= m.Status ~evaluating~)
+      m.Status = ~evaluated~
+      m.EvaluationError = result
+      %3 = (+ %3 1)
+    }
+    assert (= module.Status ~evaluated~)
+    assert (= module.EvaluationError result)
+    call %5 = clo<Call>(capability.Reject, undefined, (new [result.Value])[#771])
+    [! %5]
+  } else {
+    assert (|| (= module.Status ~evaluating-async~) (= module.Status ~evaluated~))
+    assert (= module.EvaluationError ~empty~)
+    if (= module.AsyncEvaluation false) {
+      assert (= module.Status ~evaluated~)
+      call %6 = clo<Call>(capability.Resolve, undefined, (new [undefined])[#772])
+      [! %6]
+    } else {}
+    assert (= stack.length 0)
+  }
+  return capability.Promise
+}

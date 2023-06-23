@@ -1,0 +1,6 @@
+def <SYNTAX>:ExportDeclaration[3,0].LexicallyScopedDeclarations(
+  this: Ast:ExportDeclaration[3,0],
+): List[Ast] {
+  sdo-call %0 = this[0]->DeclarationPart()
+  return (new [%0])[#173]
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:AssignmentElisionElement[0,0].IteratorDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentElisionElement[0,0],
+  iteratorRecord: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[1]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+  return [? %0]
+}

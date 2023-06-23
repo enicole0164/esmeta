@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2291 {
+    label = "def <SYNTAX>:CharacterClassEscape[0,0].CompileToCharSet(this: Ast:CharacterClassEscape[0,0]): Unknown["CharSet"]"
+    style = rounded
+    cluster2291_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2291_entry_name -> cluster2291_entry [arrowhead=none, color="black", style=dashed]
+    cluster2291_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2291_entry -> node14062 [color="black"]
+    cluster2291_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2291_exit_name -> cluster2291_exit [arrowhead=none, color="black", style=dashed]
+    cluster2291_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14062_name [shape=none, label=<<font color="black">Block[14062]</font>>]
+    node14062_name -> node14062 [arrowhead=none, color="black", style=dashed]
+    node14062 [shape=box, label=<<font color="black">[0] (yet &quot;Return the ten-element CharSet containing the characters `0` through `9` inclusive.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14062 -> cluster2291_exit [color="black"]
+  }
+}

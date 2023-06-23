@@ -1,0 +1,13 @@
+def ImportedLocalNames(
+  importEntries: Unknown["ListOfImportEntryRecords"],
+): List[String] {
+  let localNames = (new [])[#759]
+  %1 = importEntries
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let i = %1[%0]
+    push localNames < i.LocalName
+    %0 = (+ %0 1)
+  }
+  return localNames
+}

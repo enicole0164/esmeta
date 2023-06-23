@@ -1,0 +1,8 @@
+def <SYNTAX>:ObjectAssignmentPattern[0,0].DestructuringAssignmentEvaluation(
+  this: Ast:ObjectAssignmentPattern[0,0],
+  value: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<RequireObjectCoercible>(value)
+  [? %0]
+  return ~unused~
+}

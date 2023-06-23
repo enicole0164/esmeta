@@ -1,0 +1,11 @@
+def <BUILTIN>:INTRINSICS.WeakRef.prototype.deref(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let weakRef = this
+  call %0 = clo<RequireInternalSlot>(weakRef, "WeakRefTarget")
+  [? %0]
+  call %1 = clo<WeakRefDeref>(weakRef)
+  return %1
+}

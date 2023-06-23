@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1229 {
+    label = "def <SYNTAX>:LiteralPropertyName[1,0].Evaluation(this: Ast:LiteralPropertyName[1,0]): Unknown"
+    style = rounded
+    cluster1229_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1229_entry_name -> cluster1229_entry [arrowhead=none, color="black", style=dashed]
+    cluster1229_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1229_entry -> node5576 [color="black"]
+    cluster1229_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1229_exit_name -> cluster1229_exit [arrowhead=none, color="black", style=dashed]
+    cluster1229_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5576_name [shape=none, label=<<font color="black">Call[5576]</font>>]
+    node5576_name -> node5576 [arrowhead=none, color="black", style=dashed]
+    node5576 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;SV()</font>> color="black" fillcolor="white", style=filled]
+    node5576 -> node5577 [color="black"]
+    node5577_name [shape=none, label=<<font color="black">Block[5577]</font>>]
+    node5577_name -> node5577 [arrowhead=none, color="black", style=dashed]
+    node5577 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5577 -> cluster1229_exit [color="black"]
+  }
+}

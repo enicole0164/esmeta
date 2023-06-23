@@ -1,0 +1,9 @@
+def <SYNTAX>:AssignmentElementList[1,0].IteratorDestructuringAssignmentEvaluation(
+  this: Ast:AssignmentElementList[1,0],
+  iteratorRecord: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+  [? %0]
+  sdo-call %1 = this[1]->IteratorDestructuringAssignmentEvaluation(iteratorRecord)
+  return [? %1]
+}

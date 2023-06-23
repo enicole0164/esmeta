@@ -1,0 +1,10 @@
+def <BUILTIN>:INTRINSICS.Function.prototype[@@hasInstance](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let V = (pop < argumentsList) else let V = absent
+  let F = this
+  call %0 = clo<OrdinaryHasInstance>(F, V)
+  return [? %0]
+}

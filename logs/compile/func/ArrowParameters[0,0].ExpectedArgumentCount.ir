@@ -1,0 +1,5 @@
+def <SYNTAX>:ArrowParameters[0,0].ExpectedArgumentCount(
+  this: Ast:ArrowParameters[0,0],
+): Unknown["Integer"] {
+  return 1
+}

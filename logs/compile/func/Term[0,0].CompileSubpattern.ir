@@ -1,0 +1,7 @@
+def <SYNTAX>:Term[0,0].CompileSubpattern(
+  this: Ast:Term[0,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CompileAssertion()
+  return %0
+}

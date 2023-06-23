@@ -1,0 +1,19 @@
+def <BUILTIN>:INTRINSICS.Math.ceil(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  call %0 = clo<ToNumber>(x)
+  let n = [? %0]
+  if (|| (= n NaN) (|| (= n 0.0f) (|| (= n -0.0f) (|| (= n +INF) (= n -INF))))) {
+    return n
+  } else {}
+  if (&& (< n -0.0f) (< -1.0f n)) {
+    return -0.0f
+  } else {}
+  if (&& (? n: "Number") (= ([math] n) (floor ([math] n)))) {
+    return n
+  } else {}
+  (yet "Return the smallest (closest to -∞) integral Number value that is not less than _n_.")
+}

@@ -1,0 +1,29 @@
+def <SYNTAX>:Catch[0,0].CatchClauseEvaluation(
+  this: Ast:Catch[0,0],
+  thrownValue: Unknown,
+): Normal[ESValue] | Abrupt {
+  let oldEnv = @EXECUTION_STACK[0].LexicalEnvironment
+  call %0 = clo<NewDeclarativeEnvironment>(oldEnv)
+  let catchEnv = %0
+  sdo-call %3 = this[0]->BoundNames()
+  %2 = %3
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let argName = %2[%1]
+    method-call %4 = catchEnv->CreateMutableBinding(argName, false)
+    [! %4]
+    %1 = (+ %1 1)
+  }
+  @EXECUTION_STACK[0].LexicalEnvironment = catchEnv
+  sdo-call %5 = this[0]->BindingInitialization(thrownValue, catchEnv)
+  call %6 = clo<Completion>(%5)
+  let status = %6
+  if (&& (comp? status) (! (= status.Type ~normal~))) {
+    @EXECUTION_STACK[0].LexicalEnvironment = oldEnv
+    return [? status]
+  } else {}
+  sdo-call %7 = this[1]->Evaluation()
+  let B = %7
+  @EXECUTION_STACK[0].LexicalEnvironment = oldEnv
+  return [? B]
+}

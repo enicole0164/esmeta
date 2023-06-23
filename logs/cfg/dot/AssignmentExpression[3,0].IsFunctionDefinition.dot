@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster747 {
+    label = "def <SYNTAX>:AssignmentExpression[3,0].IsFunctionDefinition(this: Ast:AssignmentExpression[3,0]): Boolean"
+    style = rounded
+    cluster747_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster747_entry_name -> cluster747_entry [arrowhead=none, color="black", style=dashed]
+    cluster747_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster747_entry -> node2979 [color="black"]
+    cluster747_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster747_exit_name -> cluster747_exit [arrowhead=none, color="black", style=dashed]
+    cluster747_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2979_name [shape=none, label=<<font color="black">Block[2979]</font>>]
+    node2979_name -> node2979 [arrowhead=none, color="black", style=dashed]
+    node2979 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2979 -> cluster747_exit [color="black"]
+  }
+}

@@ -1,0 +1,5 @@
+def TypedArrayElementType(
+  O: Unknown["TypedArray"],
+): Unknown["TypedArrayElementType"] {
+  (yet "Return the Element Type value specified in <emu-xref href=\"#table-the-typedarray-constructors\"></emu-xref> for _O_.[[TypedArrayName]].")
+}

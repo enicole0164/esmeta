@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.Symbol.prototype.valueOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisSymbolValue>(this)
+  return [? %0]
+}

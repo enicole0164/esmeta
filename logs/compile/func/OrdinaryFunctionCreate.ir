@@ -1,0 +1,46 @@
+def OrdinaryFunctionCreate(
+  functionPrototype: Object,
+  sourceText: Unknown["SequenceOfUnicodeCodePoints"],
+  ParameterList: Ast,
+  Body: Ast,
+  thisMode: Const[~lexical-this~, ~non-lexical-this~],
+  env: EnvironmentRecord,
+  privateEnv: PrivateEnvironmentRecord | Null,
+): FunctionObject {
+  let internalSlotsList = (new ["Environment", "PrivateEnvironment", "FormalParameters", "ECMAScriptCode", "ConstructorKind", "Realm", "ScriptOrModule", "ThisMode", "Strict", "HomeObject", "SourceText", "Fields", "PrivateMethods", "ClassFieldInitializerName", "IsClassConstructor"])[#420]
+  call %0 = clo<OrdinaryObjectCreate>(functionPrototype, internalSlotsList)
+  let F = %0
+  F.Call = clo<ECMAScriptFunctionObject.Call>
+  F.SourceText = sourceText
+  F.FormalParameters = ParameterList
+  F.ECMAScriptCode = Body
+  if true {
+    let Strict = true
+  } else {
+    let Strict = false
+  }
+  F.Strict = Strict
+  if (= thisMode ~lexical-this~) {
+    F.ThisMode = ~lexical~
+  } else {
+    if (= Strict true) {
+      F.ThisMode = ~strict~
+    } else {
+      F.ThisMode = ~global~
+    }
+  }
+  F.IsClassConstructor = false
+  F.Environment = env
+  F.PrivateEnvironment = privateEnv
+  call %1 = clo<GetActiveScriptOrModule>()
+  F.ScriptOrModule = %1
+  F.Realm = @EXECUTION_STACK[0].Realm
+  F.HomeObject = undefined
+  F.Fields = (new [])[#421]
+  F.PrivateMethods = (new [])[#422]
+  F.ClassFieldInitializerName = ~empty~
+  sdo-call %2 = ParameterList->ExpectedArgumentCount()
+  let len = %2
+  call %3 = clo<SetFunctionLength>(F, len)
+  return F
+}

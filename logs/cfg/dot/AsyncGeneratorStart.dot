@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2627 {
+    label = "def AsyncGeneratorStart(generator: Unknown["AsyncGenerator"], generatorBody: Unknown["FunctionBodyParseNodeOrAnAbstractClosureWithNoParameters"]): Const[~unused~]"
+    style = rounded
+    cluster2627_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2627_entry_name -> cluster2627_entry [arrowhead=none, color="black", style=dashed]
+    cluster2627_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2627_entry -> node19499 [color="black"]
+    cluster2627_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2627_exit_name -> cluster2627_exit [arrowhead=none, color="black", style=dashed]
+    cluster2627_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19499_name [shape=none, label=<<font color="black">Block[19499]</font>>]
+    node19499_name -> node19499 [arrowhead=none, color="black", style=dashed]
+    node19499 [shape=box, label=<<font color="black">[0] assert (= generator.AsyncGeneratorState undefined)<BR ALIGN="LEFT"/>[1] let genContext = @EXECUTION_STACK[0]<BR ALIGN="LEFT"/>[2] genContext.Generator = generator<BR ALIGN="LEFT"/>[3] genContext.ResumeCont = cont&lt;AsyncGeneratorStart:cont0&gt;<BR ALIGN="LEFT"/>[4] generator.AsyncGeneratorContext = genContext<BR ALIGN="LEFT"/>[5] generator.AsyncGeneratorState = ~suspendedStart~<BR ALIGN="LEFT"/>[6] generator.AsyncGeneratorQueue = (new [])[#1328]<BR ALIGN="LEFT"/>[7] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19499 -> cluster2627_exit [color="black"]
+  }
+}

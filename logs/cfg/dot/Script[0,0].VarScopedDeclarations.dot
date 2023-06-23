@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster453 {
+    label = "def <SYNTAX>:Script[0,0].VarScopedDeclarations(this: Ast:Script[0,0]): List[Ast]"
+    style = rounded
+    cluster453_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster453_entry_name -> cluster453_entry [arrowhead=none, color="black", style=dashed]
+    cluster453_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster453_entry -> node2251 [color="black"]
+    cluster453_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster453_exit_name -> cluster453_exit [arrowhead=none, color="black", style=dashed]
+    cluster453_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2251_name [shape=none, label=<<font color="black">Block[2251]</font>>]
+    node2251_name -> node2251 [arrowhead=none, color="black", style=dashed]
+    node2251 [shape=box, label=<<font color="black">[0] return (new [])[#275]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2251 -> cluster453_exit [color="black"]
+  }
+}

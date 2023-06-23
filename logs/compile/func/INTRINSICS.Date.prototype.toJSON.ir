@@ -1,0 +1,16 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.toJSON(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let key = (pop < argumentsList) else let key = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<ToPrimitive>(O, ~number~)
+  let tv = [? %1]
+  if (&& (= (typeof tv) @Number) (|| (= tv NaN) (|| (= tv +INF) (= tv -INF)))) {
+    return null
+  } else {}
+  call %2 = clo<Invoke>(O, "toISOString")
+  return [? %2]
+}

@@ -1,0 +1,8 @@
+def <SYNTAX>:AsyncFunctionDeclaration[0,0].InstantiateFunctionObject(
+  this: Ast:AsyncFunctionDeclaration[0,0],
+  env: Unknown,
+  privateEnv: Unknown,
+): FunctionObject {
+  sdo-call %0 = this->InstantiateAsyncFunctionObject(env, privateEnv)
+  return %0
+}

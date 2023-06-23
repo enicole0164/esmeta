@@ -1,0 +1,5 @@
+def <SYNTAX>:AdditiveExpression[2,0].IsFunctionDefinition(
+  this: Ast:AdditiveExpression[2,0],
+): Boolean {
+  return false
+}

@@ -1,0 +1,15 @@
+def NewFunctionEnvironment(
+  F: Unknown["ECMAScriptFunction"],
+  newTarget: Object | Undefined,
+): FunctionEnvironmentRecord {
+  let env = (new FunctionEnvironmentRecord())[#386]
+  env.FunctionObject = F
+  if (= F.ThisMode ~lexical~) {
+    env.ThisBindingStatus = ~lexical~
+  } else {
+    env.ThisBindingStatus = ~uninitialized~
+  }
+  env.NewTarget = newTarget
+  env.OuterEnv = F.Environment
+  return env
+}

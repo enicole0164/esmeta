@@ -1,0 +1,11 @@
+def <SYNTAX>:ImportSpecifier[1,0].ImportEntriesForModule(
+  this: Ast:ImportSpecifier[1,0],
+  module: Unknown,
+): Unknown["ListOfImportEntryRecords"] {
+  sdo-call %0 = this[0]->StringValue()
+  let importName = %0
+  sdo-call %1 = this[1]->StringValue()
+  let localName = %1
+  let entry = (new ImportEntryRecord("ModuleRequest" -> module, "ImportName" -> importName, "LocalName" -> localName))[#818]
+  return (new [entry])[#819]
+}

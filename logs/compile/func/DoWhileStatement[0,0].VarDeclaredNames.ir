@@ -1,0 +1,6 @@
+def <SYNTAX>:DoWhileStatement[0,0].VarDeclaredNames(
+  this: Ast:DoWhileStatement[0,0],
+): List[String] {
+  sdo-call %0 = this[0]->VarDeclaredNames()
+  return %0
+}

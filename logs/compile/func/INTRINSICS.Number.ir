@@ -1,0 +1,25 @@
+def <BUILTIN>:INTRINSICS.Number(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let value = (pop < argumentsList) else let value = absent
+  if (! (= value absent)) {
+    call %0 = clo<ToNumeric>(value)
+    let prim = [? %0]
+    if (= (typeof prim) @BigInt) {
+      let n = ([number] ([math] prim))
+    } else {
+      let n = prim
+    }
+  } else {
+    let n = 0.0f
+  }
+  if (= NewTarget undefined) {
+    return n
+  } else {}
+  call %1 = clo<OrdinaryCreateFromConstructor>(NewTarget, "%Number.prototype%", (new ["NumberData"])[#924])
+  let O = [? %1]
+  O.NumberData = n
+  return O
+}

@@ -1,0 +1,38 @@
+def <SYNTAX>:BindingRestElement[1,0].IteratorBindingInitialization(
+  this: Ast:BindingRestElement[1,0],
+  iteratorRecord: Unknown,
+  environment: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<ArrayCreate>(0)
+  let A = [! %0]
+  let n = 0
+  loop[repeat] true {
+    if (= iteratorRecord.Done false) {
+      call %1 = clo<IteratorStep>(iteratorRecord)
+      call %2 = clo<Completion>(%1)
+      let next = %2
+      if (&& (comp? next) (! (= next.Type ~normal~))) {
+        iteratorRecord.Done = true
+      } else {}
+      [? next]
+      if (= next false) {
+        iteratorRecord.Done = true
+      } else {}
+    } else {}
+    if (= iteratorRecord.Done true) {
+      sdo-call %3 = this[0]->BindingInitialization(A, environment)
+      return [? %3]
+    } else {}
+    call %4 = clo<IteratorValue>(next)
+    call %5 = clo<Completion>(%4)
+    let nextValue = %5
+    if (&& (comp? nextValue) (! (= nextValue.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? nextValue]
+    call %6 = clo<ToString>(([number] n))
+    call %7 = clo<CreateDataPropertyOrThrow>(A, [! %6], nextValue)
+    [! %7]
+    n = (+ n 1)
+  }
+}

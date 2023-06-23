@@ -1,0 +1,17 @@
+def AdvanceStringIndex(
+  S: String,
+  index: Unknown["NonnegativeInteger"],
+  unicode: Boolean,
+): Unknown["Integer"] {
+  assert (! (< (- (** 2 53) 1) index))
+  if (= unicode false) {
+    return (+ index 1)
+  } else {}
+  let length = S.length
+  if (! (< (+ index 1) length)) {
+    return (+ index 1)
+  } else {}
+  call %0 = clo<CodePointAt>(S, index)
+  let cp = %0
+  return (+ index cp.CodeUnitCount)
+}

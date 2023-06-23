@@ -1,0 +1,7 @@
+def <SYNTAX>:ModuleItem[1,0].LexicallyDeclaredNames(
+  this: Ast:ModuleItem[1,0],
+): List[String] {
+  (yet "If |ExportDeclaration| is `export` |VariableStatement|, return a new empty List.")
+  sdo-call %0 = this[0]->BoundNames()
+  return %0
+}

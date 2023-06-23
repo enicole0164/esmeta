@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassStaticBlockStatementList[0,0].Evaluation(
+  this: Ast:ClassStaticBlockStatementList[0,0],
+): Unknown {
+  return undefined
+}

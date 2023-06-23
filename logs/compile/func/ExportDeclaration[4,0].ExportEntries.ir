@@ -1,0 +1,8 @@
+def <SYNTAX>:ExportDeclaration[4,0].ExportEntries(
+  this: Ast:ExportDeclaration[4,0],
+): Unknown["ListOfExportEntryRecords"] {
+  sdo-call %0 = this[0]->BoundNames()
+  let names = %0
+  let localName = names[0]
+  return (new [(new ExportEntryRecord("ModuleRequest" -> null, "ImportName" -> null, "LocalName" -> localName, "ExportName" -> "default"))[#849]])[#848]
+}

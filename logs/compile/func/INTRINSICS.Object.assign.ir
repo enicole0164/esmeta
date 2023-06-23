@@ -1,0 +1,38 @@
+def <BUILTIN>:INTRINSICS.Object.assign(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let target = (pop < argumentsList) else let target = absent
+  let sources = argumentsList
+  call %0 = clo<ToObject>(target)
+  let to = [? %0]
+  if (= argumentsList.length 0) return to else {}
+  %2 = sources
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let nextSource = %2[%1]
+    if (! (|| (= nextSource undefined) (= nextSource null))) {
+      call %3 = clo<ToObject>(nextSource)
+      let from = [! %3]
+      method-call %4 = from->OwnPropertyKeys()
+      let keys = [? %4]
+      %6 = keys
+      %5 = 0
+      loop[foreach] (< %5 %6.length) {
+        let nextKey = %6[%5]
+        method-call %7 = from->GetOwnProperty(nextKey)
+        let desc = [? %7]
+        if (&& (! (= desc undefined)) (= desc.Enumerable true)) {
+          call %8 = clo<Get>(from, nextKey)
+          let propValue = [? %8]
+          call %9 = clo<Set>(to, nextKey, propValue, true)
+          [? %9]
+        } else {}
+        %5 = (+ %5 1)
+      }
+    } else {}
+    %1 = (+ %1 1)
+  }
+  return to
+}

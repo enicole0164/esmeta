@@ -1,0 +1,9 @@
+def <BUILTIN>:INTRINSICS.Number.isInteger(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let number = (pop < argumentsList) else let number = absent
+  call %0 = clo<IsIntegralNumber>(number)
+  return %0
+}

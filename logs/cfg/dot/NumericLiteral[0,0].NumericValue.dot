@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1176 {
+    label = "def <SYNTAX>:NumericLiteral[0,0].NumericValue(this: Ast:NumericLiteral[0,0]): Number | BigInt"
+    style = rounded
+    cluster1176_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1176_entry_name -> cluster1176_entry [arrowhead=none, color="black", style=dashed]
+    cluster1176_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1176_entry -> node5375 [color="black"]
+    cluster1176_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1176_exit_name -> cluster1176_exit [arrowhead=none, color="black", style=dashed]
+    cluster1176_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5375_name [shape=none, label=<<font color="black">Call[5375]</font>>]
+    node5375_name -> node5375 [arrowhead=none, color="black", style=dashed]
+    node5375 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;MV()</font>> color="black" fillcolor="white", style=filled]
+    node5375 -> node5376 [color="black"]
+    node5376_name [shape=none, label=<<font color="black">Call[5376]</font>>]
+    node5376_name -> node5376 [arrowhead=none, color="black", style=dashed]
+    node5376 [shape=cds, label=<<font color="black">%1 = clo&lt;RoundMVResult&gt;(%0)</font>> color="black" fillcolor="white", style=filled]
+    node5376 -> node5377 [color="black"]
+    node5377_name [shape=none, label=<<font color="black">Block[5377]</font>>]
+    node5377_name -> node5377 [arrowhead=none, color="black", style=dashed]
+    node5377 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5377 -> cluster1176_exit [color="black"]
+  }
+}

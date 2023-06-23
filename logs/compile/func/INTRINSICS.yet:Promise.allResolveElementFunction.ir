@@ -1,0 +1,25 @@
+def <BUILTIN>:INTRINSICS.yet:`Promise.all`ResolveElementFunction(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  let F = @EXECUTION_STACK[0].Function
+  if (= F.AlreadyCalled true) {
+    return undefined
+  } else {}
+  F.AlreadyCalled = true
+  let index = F.Index
+  let values = F.Values
+  let promiseCapability = F.Capability
+  let remainingElementsCount = F.RemainingElements
+  values[index] = x
+  remainingElementsCount.Value = (- remainingElementsCount.Value 1)
+  if (= remainingElementsCount.Value 0) {
+    call %0 = clo<CreateArrayFromList>(values)
+    let valuesArray = %0
+    call %1 = clo<Call>(promiseCapability.Resolve, undefined, (new [valuesArray])[#1270])
+    return [? %1]
+  } else {}
+  return undefined
+}

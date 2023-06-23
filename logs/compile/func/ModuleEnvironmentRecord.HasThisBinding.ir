@@ -1,0 +1,5 @@
+def <CONC>:ModuleEnvironmentRecord.HasThisBinding(
+  envRec: ModuleEnvironmentRecord,
+): True {
+  return true
+}

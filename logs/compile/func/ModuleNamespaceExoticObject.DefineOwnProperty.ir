@@ -1,0 +1,33 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.DefineOwnProperty(
+  O: ModuleNamespaceExoticObject,
+  P: Symbol | String,
+  Desc: PropertyDescriptor,
+): Normal[Boolean] | Abrupt {
+  if (= (typeof P) @Symbol) {
+    call %0 = clo<OrdinaryDefineOwnProperty>(O, P, Desc)
+    return [! %0]
+  } else {}
+  method-call %1 = O->GetOwnProperty(P)
+  let current = [? %1]
+  if (= current undefined) {
+    return false
+  } else {}
+  if (&& (! (= Desc.Configurable absent)) (= Desc.Configurable true)) {
+    return false
+  } else {}
+  if (&& (! (= Desc.Enumerable absent)) (= Desc.Enumerable false)) {
+    return false
+  } else {}
+  call %2 = clo<IsAccessorDescriptor>(Desc)
+  if (= %2 true) {
+    return false
+  } else {}
+  if (&& (! (= Desc.Writable absent)) (= Desc.Writable false)) {
+    return false
+  } else {}
+  if (! (= Desc.Value absent)) {
+    call %3 = clo<SameValue>(Desc.Value, current.Value)
+    return %3
+  } else {}
+  return true
+}

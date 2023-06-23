@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2308 {
+    label = "def RegExpCreate(P: Unknown, F: Unknown): Normal[Object] | Abrupt"
+    style = rounded
+    cluster2308_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2308_entry_name -> cluster2308_entry [arrowhead=none, color="black", style=dashed]
+    cluster2308_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2308_entry -> node14149 [color="black"]
+    cluster2308_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2308_exit_name -> cluster2308_exit [arrowhead=none, color="black", style=dashed]
+    cluster2308_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14149_name [shape=none, label=<<font color="black">Call[14149]</font>>]
+    node14149_name -> node14149 [arrowhead=none, color="black", style=dashed]
+    node14149 [shape=cds, label=<<font color="black">%0 = clo&lt;RegExpAlloc&gt;(@EXECUTION_STACK[0].Realm.Intrinsics[&quot;%RegExp%&quot;])</font>> color="black" fillcolor="white", style=filled]
+    node14149 -> node14150 [color="black"]
+    node14150_name [shape=none, label=<<font color="black">Block[14150]</font>>]
+    node14150_name -> node14150 [arrowhead=none, color="black", style=dashed]
+    node14150 [shape=box, label=<<font color="black">[0] let obj = [! %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14150 -> node14151 [color="black"]
+    node14151_name [shape=none, label=<<font color="black">Call[14151]</font>>]
+    node14151_name -> node14151 [arrowhead=none, color="black", style=dashed]
+    node14151 [shape=cds, label=<<font color="black">%1 = clo&lt;RegExpInitialize&gt;(obj, P, F)</font>> color="black" fillcolor="white", style=filled]
+    node14151 -> node14152 [color="black"]
+    node14152_name [shape=none, label=<<font color="black">Block[14152]</font>>]
+    node14152_name -> node14152 [arrowhead=none, color="black", style=dashed]
+    node14152 [shape=box, label=<<font color="black">[0] return [? %1]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14152 -> cluster2308_exit [color="black"]
+  }
+}

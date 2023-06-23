@@ -1,0 +1,9 @@
+def IsUnresolvableReference(
+  V: ReferenceRecord,
+): Boolean {
+  if (= V.Base ~unresolvable~) {
+    return true
+  } else {
+    return false
+  }
+}

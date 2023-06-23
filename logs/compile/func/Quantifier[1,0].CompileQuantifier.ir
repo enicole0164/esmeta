@@ -1,0 +1,7 @@
+def <SYNTAX>:Quantifier[1,0].CompileQuantifier(
+  this: Ast:Quantifier[1,0],
+): Unknown["RecordWithFields[[Min]](aNonnegativeInteger),[[Max]](aNonnegativeIntegerOr+∞),And[[Greedy]](aBoolean)"] {
+  sdo-call %0 = this[0]->CompileQuantifierPrefix()
+  let qp = %0
+  return (new Record("Min" -> qp.Min, "Max" -> qp.Max, "Greedy" -> false))[#976]
+}

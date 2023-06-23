@@ -1,0 +1,22 @@
+def <BUILTIN>:INTRINSICS.Date.prototype[@@toPrimitive](
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let hint = (pop < argumentsList) else let hint = absent
+  let O = this
+  if (! (= (typeof O) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#940])
+  } else {}
+  if (|| (= hint "string") (= hint "default")) {
+    let tryFirst = ~string~
+  } else {
+    if (= hint "number") {
+      let tryFirst = ~number~
+    } else {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#941])
+    }
+  }
+  call %0 = clo<OrdinaryToPrimitive>(O, tryFirst)
+  return [? %0]
+}

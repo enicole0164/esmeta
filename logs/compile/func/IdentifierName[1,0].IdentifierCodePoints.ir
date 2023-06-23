@@ -1,0 +1,8 @@
+def <SYNTAX>:IdentifierName[1,0].IdentifierCodePoints(
+  this: Ast:IdentifierName[1,0],
+): Unknown["ListOfCodePoints"] {
+  (yet "Let _cps_ be IdentifierCodePoints of the derived |IdentifierName|.")
+  sdo-call %0 = this[1]->IdentifierCodePoint()
+  let cp = %0
+  return (list-concat cps (new [cp])[#544])[#543]
+}

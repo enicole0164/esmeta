@@ -1,0 +1,5 @@
+def <SYNTAX>:ClassElement[2,0].IsStatic(
+  this: Ast:ClassElement[2,0],
+): Boolean {
+  return false
+}

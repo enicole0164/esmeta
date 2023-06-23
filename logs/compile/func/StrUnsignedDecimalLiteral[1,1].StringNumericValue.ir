@@ -1,0 +1,22 @@
+def <SYNTAX>:StrUnsignedDecimalLiteral[1,1].StringNumericValue(
+  this: Ast:StrUnsignedDecimalLiteral[1,1],
+): Number {
+  sdo-call %0 = this[0]->MV()
+  let a = %0
+  if (! (= this[1] absent)) {
+    sdo-call %1 = this[1]->MV()
+    let b = %1
+    (yet "Let _n_ be the number of code points in the second |DecimalDigits|.")
+  } else {
+    let b = 0
+    let n = 0
+  }
+  if (! (= this[2] absent)) {
+    sdo-call %2 = this[2]->MV()
+    let e = %2
+  } else {
+    let e = 0
+  }
+  call %3 = clo<RoundMVResult>((* (+ a (* b (** 10 (- n)))) (** 10 e)))
+  return %3
+}

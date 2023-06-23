@@ -1,0 +1,23 @@
+def <CONC>:GlobalEnvironmentRecord.CreateGlobalVarBinding(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+  D: Boolean,
+): Normal[Const[~unused~]] | Abrupt {
+  let ObjRec = envRec.ObjectRecord
+  let globalObject = ObjRec.BindingObject
+  call %0 = clo<HasOwnProperty>(globalObject, N)
+  let hasProperty = [? %0]
+  call %1 = clo<IsExtensible>(globalObject)
+  let extensible = [? %1]
+  if (&& (= hasProperty false) (= extensible true)) {
+    method-call %2 = ObjRec->CreateMutableBinding(N, D)
+    [? %2]
+    method-call %3 = ObjRec->InitializeBinding(N, undefined)
+    [? %3]
+  } else {}
+  let varDeclaredNames = envRec.VarNames
+  if (! (contains varDeclaredNames N)) {
+    push varDeclaredNames < N
+  } else {}
+  return ~unused~
+}

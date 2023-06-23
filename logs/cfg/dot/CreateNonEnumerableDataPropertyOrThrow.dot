@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster136 {
+    label = "def CreateNonEnumerableDataPropertyOrThrow(O: Object, P: Symbol | String, V: ESValue): Const[~unused~]"
+    style = rounded
+    cluster136_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster136_entry_name -> cluster136_entry [arrowhead=none, color="black", style=dashed]
+    cluster136_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster136_entry -> node1116 [color="black"]
+    cluster136_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster136_exit_name -> cluster136_exit [arrowhead=none, color="black", style=dashed]
+    cluster136_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1116_name [shape=none, label=<<font color="black">Block[1116]</font>>]
+    node1116_name -> node1116 [arrowhead=none, color="black", style=dashed]
+    node1116 [shape=box, label=<<font color="black">[0] assert (&amp;&amp; (? O: &quot;OrdinaryObject&quot;) O.Extensible)<BR ALIGN="LEFT"/>[1] let newDesc = (new PropertyDescriptor(&quot;Value&quot; -&gt; V, &quot;Writable&quot; -&gt; true, &quot;Enumerable&quot; -&gt; false, &quot;Configurable&quot; -&gt; true))[#44]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1116 -> node1117 [color="black"]
+    node1117_name [shape=none, label=<<font color="black">Call[1117]</font>>]
+    node1117_name -> node1117 [arrowhead=none, color="black", style=dashed]
+    node1117 [shape=cds, label=<<font color="black">%0 = clo&lt;DefinePropertyOrThrow&gt;(O, P, newDesc)</font>> color="black" fillcolor="white", style=filled]
+    node1117 -> node1118 [color="black"]
+    node1118_name [shape=none, label=<<font color="black">Block[1118]</font>>]
+    node1118_name -> node1118 [arrowhead=none, color="black", style=dashed]
+    node1118 [shape=box, label=<<font color="black">[0] [! %0]<BR ALIGN="LEFT"/>[1] return ~unused~<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1118 -> cluster136_exit [color="black"]
+  }
+}

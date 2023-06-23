@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2561 {
+    label = "def CreateAsyncFromSyncIterator(syncIteratorRecord: Unknown): IteratorRecord"
+    style = rounded
+    cluster2561_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2561_entry_name -> cluster2561_entry [arrowhead=none, color="black", style=dashed]
+    cluster2561_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2561_entry -> node18561 [color="black"]
+    cluster2561_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2561_exit_name -> cluster2561_exit [arrowhead=none, color="black", style=dashed]
+    cluster2561_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node18561_name [shape=none, label=<<font color="black">Call[18561]</font>>]
+    node18561_name -> node18561 [arrowhead=none, color="black", style=dashed]
+    node18561 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryObjectCreate&gt;(@EXECUTION_STACK[0].Realm.Intrinsics[&quot;%AsyncFromSyncIteratorPrototype%&quot;], (new [&quot;SyncIteratorRecord&quot;])[#1214])</font>> color="black" fillcolor="white", style=filled]
+    node18561 -> node18562 [color="black"]
+    node18562_name [shape=none, label=<<font color="black">Block[18562]</font>>]
+    node18562_name -> node18562 [arrowhead=none, color="black", style=dashed]
+    node18562 [shape=box, label=<<font color="black">[0] let asyncIterator = %0<BR ALIGN="LEFT"/>[1] asyncIterator.SyncIteratorRecord = syncIteratorRecord<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18562 -> node18563 [color="black"]
+    node18563_name [shape=none, label=<<font color="black">Call[18563]</font>>]
+    node18563_name -> node18563 [arrowhead=none, color="black", style=dashed]
+    node18563 [shape=cds, label=<<font color="black">%1 = clo&lt;Get&gt;(asyncIterator, &quot;next&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node18563 -> node18564 [color="black"]
+    node18564_name [shape=none, label=<<font color="black">Block[18564]</font>>]
+    node18564_name -> node18564 [arrowhead=none, color="black", style=dashed]
+    node18564 [shape=box, label=<<font color="black">[0] let nextMethod = [! %1]<BR ALIGN="LEFT"/>[1] let iteratorRecord = (new IteratorRecord(&quot;Iterator&quot; -&gt; asyncIterator, &quot;NextMethod&quot; -&gt; nextMethod, &quot;Done&quot; -&gt; false))[#1215]<BR ALIGN="LEFT"/>[2] return iteratorRecord<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18564 -> cluster2561_exit [color="black"]
+  }
+}

@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1756 {
+    label = "def <SYNTAX>:ForStatement[2,3].HasCallInTailPosition(this: Ast:ForStatement[2,3], call: Unknown): Boolean"
+    style = rounded
+    cluster1756_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1756_entry_name -> cluster1756_entry [arrowhead=none, color="black", style=dashed]
+    cluster1756_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1756_entry -> node9748 [color="black"]
+    cluster1756_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1756_exit_name -> cluster1756_exit [arrowhead=none, color="black", style=dashed]
+    cluster1756_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node9748_name [shape=none, label=<<font color="black">Call[9748]</font>>]
+    node9748_name -> node9748 [arrowhead=none, color="black", style=dashed]
+    node9748 [shape=cds, label=<<font color="black">%0 = this[3]-&gt;HasCallInTailPosition(call)</font>> color="black" fillcolor="white", style=filled]
+    node9748 -> node9749 [color="black"]
+    node9749_name [shape=none, label=<<font color="black">Block[9749]</font>>]
+    node9749_name -> node9749 [arrowhead=none, color="black", style=dashed]
+    node9749 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node9749 -> cluster1756_exit [color="black"]
+  }
+}

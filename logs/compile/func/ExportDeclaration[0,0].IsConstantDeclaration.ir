@@ -1,0 +1,5 @@
+def <SYNTAX>:ExportDeclaration[0,0].IsConstantDeclaration(
+  this: Ast:ExportDeclaration[0,0],
+): Boolean {
+  return false
+}

@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1147 {
+    label = "def ModuleNamespaceCreate(module: ModuleRecord, exports: List[String]): ModuleNamespaceExoticObject"
+    style = rounded
+    cluster1147_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1147_entry_name -> cluster1147_entry [arrowhead=none, color="black", style=dashed]
+    cluster1147_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1147_entry -> node4992 [color="black"]
+    cluster1147_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1147_exit_name -> cluster1147_exit [arrowhead=none, color="black", style=dashed]
+    cluster1147_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4992_name [shape=none, label=<<font color="black">Block[4992]</font>>]
+    node4992_name -> node4992 [arrowhead=none, color="black", style=dashed]
+    node4992 [shape=box, label=<<font color="black">[0] assert (= module.Namespace ~empty~)<BR ALIGN="LEFT"/>[1] let internalSlotsList = (new [&quot;Module&quot;, &quot;Exports&quot;])[#479]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4992 -> node4993 [color="black"]
+    node4993_name [shape=none, label=<<font color="black">Call[4993]</font>>]
+    node4993_name -> node4993 [arrowhead=none, color="black", style=dashed]
+    node4993 [shape=cds, label=<<font color="black">%0 = clo&lt;MakeBasicObject&gt;(internalSlotsList)</font>> color="black" fillcolor="white", style=filled]
+    node4993 -> node4994 [color="black"]
+    node4994_name [shape=none, label=<<font color="black">Block[4994]</font>>]
+    node4994_name -> node4994 [arrowhead=none, color="black", style=dashed]
+    node4994 [shape=box, label=<<font color="black">[0] let M = %0<BR ALIGN="LEFT"/>[1] (yet &quot;Set _M_'s essential internal methods to the definitions specified in &lt;emu-xref href=\&quot;#sec-module-namespace-exotic-objects\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[2] M.Module = module<BR ALIGN="LEFT"/>[3] (yet &quot;Let _sortedExports_ be a List whose elements are the elements of _exports_ ordered as if an Array of the same values had been sorted using %Array.prototype.sort% using *undefined* as _comparefn_.&quot;)<BR ALIGN="LEFT"/>[4] M.Exports = sortedExports<BR ALIGN="LEFT"/>[5] (yet &quot;Create own properties of _M_ corresponding to the definitions in &lt;emu-xref href=\&quot;#sec-module-namespace-objects\&quot;&gt;&lt;/emu-xref&gt;.&quot;)<BR ALIGN="LEFT"/>[6] module.Namespace = M<BR ALIGN="LEFT"/>[7] return M<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4994 -> cluster1147_exit [color="black"]
+  }
+}

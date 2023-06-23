@@ -1,0 +1,7 @@
+def OrdinaryCallEvaluateBody(
+  F: FunctionObject,
+  argumentsList: Unknown["List"],
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = F.ECMAScriptCode->EvaluateBody(F, argumentsList)
+  return [? %0]
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:BitwiseANDExpression[1,0].AssignmentTargetType(
+  this: Ast:BitwiseANDExpression[1,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

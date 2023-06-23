@@ -1,0 +1,44 @@
+def <BUILTIN>:INTRINSICS.Set(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let iterable = (pop < argumentsList) else let iterable = absent
+  if (= NewTarget undefined) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1123])
+  } else {}
+  call %0 = clo<OrdinaryCreateFromConstructor>(NewTarget, "%Set.prototype%", (new ["SetData"])[#1124])
+  let set = [? %0]
+  set.SetData = (new [])[#1125]
+  if (|| (= iterable undefined) (= iterable null)) {
+    return set
+  } else {}
+  call %1 = clo<Get>(set, "add")
+  let adder = [? %1]
+  call %2 = clo<IsCallable>(adder)
+  if (= %2 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1126])
+  } else {}
+  call %3 = clo<GetIterator>(iterable)
+  let iteratorRecord = [? %3]
+  loop[repeat] true {
+    call %4 = clo<IteratorStep>(iteratorRecord)
+    let next = [? %4]
+    if (= next false) {
+      return set
+    } else {}
+    call %5 = clo<IteratorValue>(next)
+    let nextValue = [? %5]
+    call %6 = clo<Call>(adder, set, (new [nextValue])[#1127])
+    call %7 = clo<Completion>(%6)
+    let status = %7
+    if (&& (comp? status) (! (= status.Type ~normal~))) {
+      call %8 = clo<IteratorClose>(iteratorRecord, status)
+      return [? %8]
+    } else {
+      if (? status: "CompletionRecord") {
+        status = status.Value
+      } else {}
+    }
+  }
+}

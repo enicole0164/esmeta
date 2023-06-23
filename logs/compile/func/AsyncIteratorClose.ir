@@ -1,0 +1,34 @@
+def AsyncIteratorClose(
+  iteratorRecord: IteratorRecord,
+  completion: Normal,
+): Normal {
+  assert (= (typeof iteratorRecord.Iterator) @Object)
+  let iterator = iteratorRecord.Iterator
+  call %0 = clo<GetMethod>(iterator, "return")
+  call %1 = clo<Completion>(%0)
+  let innerResult = %1
+  if (= innerResult.Type ~normal~) {
+    let return = innerResult.Value
+    if (= return undefined) {
+      return [? completion]
+    } else {}
+    call %2 = clo<Call>(return, iterator)
+    call %3 = clo<Completion>(%2)
+    innerResult = %3
+    if (= innerResult.Type ~normal~) {
+      call %4 = clo<Await>(innerResult.Value)
+      call %5 = clo<Completion>(%4)
+      innerResult = %5
+    } else {}
+  } else {}
+  if (= completion.Type ~throw~) {
+    return [? completion]
+  } else {}
+  if (= innerResult.Type ~throw~) {
+    return [? innerResult]
+  } else {}
+  if (! (= (typeof innerResult.Value) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#79])
+  } else {}
+  return [? completion]
+}

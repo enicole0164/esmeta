@@ -1,0 +1,8 @@
+def <SYNTAX>:GeneratorBody[0,0].EvaluateBody(
+  this: Ast:GeneratorBody[0,0],
+  functionObject: Unknown,
+  argumentsList: Unknown["List"],
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this->EvaluateGeneratorBody(functionObject, argumentsList)
+  return [? %0]
+}

@@ -1,0 +1,18 @@
+def <CONC>:GlobalEnvironmentRecord.CanDeclareGlobalFunction(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+): Normal[Boolean] | Abrupt {
+  let ObjRec = envRec.ObjectRecord
+  let globalObject = ObjRec.BindingObject
+  method-call %0 = globalObject->GetOwnProperty(N)
+  let existingProp = [? %0]
+  if (= existingProp undefined) {
+    call %1 = clo<IsExtensible>(globalObject)
+    return [? %1]
+  } else {}
+  if (= existingProp.Configurable true) {
+    return true
+  } else {}
+  (yet "If IsDataDescriptor(_existingProp_) is *true* and _existingProp_ has attribute values { [[Writable]]: *true*, [[Enumerable]]: *true* }, return *true*.")
+  return false
+}

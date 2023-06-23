@@ -1,0 +1,151 @@
+def ValidateAndApplyPropertyDescriptor(
+  O: Object | Undefined,
+  P: Symbol | String,
+  extensible: Boolean,
+  Desc: PropertyDescriptor,
+  current: PropertyDescriptor | Undefined,
+): Boolean {
+  call %0 = clo<IsPropertyKey>(P)
+  assert (= %0 true)
+  if (= current undefined) {
+    if (= extensible false) {
+      return false
+    } else {}
+    if (= O undefined) {
+      return true
+    } else {}
+    call %1 = clo<IsAccessorDescriptor>(Desc)
+    if (= %1 true) {
+      let ap = (new PropertyDescriptor())[#401]
+      if (= Desc.Get absent) ap.Get = undefined else ap.Get = Desc.Get
+      if (= Desc.Set absent) ap.Set = undefined else ap.Set = Desc.Set
+      if (= Desc.Enumerable absent) ap.Enumerable = false else ap.Enumerable = Desc.Enumerable
+      if (= Desc.Configurable absent) ap.Configurable = false else ap.Configurable = Desc.Configurable
+      O.SubMap[P] = ap
+    } else {
+      let dp = (new PropertyDescriptor())[#402]
+      if (= Desc.Value absent) dp.Value = undefined else dp.Value = Desc.Value
+      if (= Desc.Writable absent) dp.Writable = false else dp.Writable = Desc.Writable
+      if (= Desc.Enumerable absent) dp.Enumerable = false else dp.Enumerable = Desc.Enumerable
+      if (= Desc.Configurable absent) dp.Configurable = false else dp.Configurable = Desc.Configurable
+      O.SubMap[P] = dp
+    }
+    return true
+  } else {}
+  assert (|| (! (|| (|| (|| (= current.Value absent) (= current.Writable absent)) (= current.Enumerable absent)) (= current.Configurable absent))) (! (|| (|| (|| (= current.Get absent) (= current.Set absent)) (= current.Enumerable absent)) (= current.Configurable absent))))
+  let descKeys = (keys Desc)[#403]
+  if (= descKeys.length 0) return true else {}
+  if (= current.Configurable false) {
+    if (&& (! (= Desc.Configurable absent)) (= Desc.Configurable true)) {
+      return false
+    } else {}
+    %2 = (! (= Desc.Enumerable absent))
+    if %2 {
+      call %3 = clo<SameValue>(Desc.Enumerable, current.Enumerable)
+      %2 = (= %3 false)
+    } else {}
+    if %2 {
+      return false
+    } else {}
+    call %5 = clo<IsGenericDescriptor>(Desc)
+    %4 = (= %5 false)
+    if %4 {
+      call %6 = clo<IsAccessorDescriptor>(Desc)
+      call %7 = clo<IsAccessorDescriptor>(current)
+      call %8 = clo<SameValue>(%6, %7)
+      %4 = (= %8 false)
+    } else {}
+    if %4 {
+      return false
+    } else {}
+    call %9 = clo<IsAccessorDescriptor>(Desc)
+    if (= %9 true) {
+      %10 = (! (= Desc.Get absent))
+      if %10 {
+        call %11 = clo<SameValue>(Desc.Get, current.Get)
+        %10 = (= %11 false)
+      } else {}
+      if %10 {
+        return false
+      } else {}
+      %12 = (! (= Desc.Set absent))
+      if %12 {
+        call %13 = clo<SameValue>(Desc.Set, current.Set)
+        %12 = (= %13 false)
+      } else {}
+      if %12 {
+        return false
+      } else {}
+    } else {
+      if (= current.Writable false) {
+        if (&& (! (= Desc.Writable absent)) (= Desc.Writable true)) {
+          return false
+        } else {}
+        %14 = (! (= Desc.Value absent))
+        if %14 {
+          call %15 = clo<SameValue>(Desc.Value, current.Value)
+          %14 = (= %15 false)
+        } else {}
+        if %14 {
+          return false
+        } else {}
+      } else {}
+    }
+  } else {}
+  if (! (= O undefined)) {
+    call %17 = clo<IsDataDescriptor>(current)
+    %16 = (= %17 true)
+    if %16 {
+      call %18 = clo<IsAccessorDescriptor>(Desc)
+      %16 = (= %18 true)
+    } else {}
+    if %16 {
+      if (! (= Desc.Configurable absent)) {
+        let configurable = Desc.Configurable
+      } else {
+        let configurable = current.Configurable
+      }
+      if (! (= Desc.Enumerable absent)) {
+        let enumerable = Desc.Enumerable
+      } else {
+        let enumerable = current.Enumerable
+      }
+      let ap2 = (new PropertyDescriptor("Configurable" -> configurable, "Enumerable" -> enumerable))[#404]
+      if (= Desc.Get absent) ap2.Get = undefined else ap2.Get = Desc.Get
+      if (= Desc.Set absent) ap2.Set = undefined else ap2.Set = Desc.Set
+      O.SubMap[P] = ap2
+    } else {
+      call %20 = clo<IsAccessorDescriptor>(current)
+      %19 = (= %20 true)
+      if %19 {
+        call %21 = clo<IsDataDescriptor>(Desc)
+        %19 = (= %21 true)
+      } else {}
+      if %19 {
+        if (! (= Desc.Configurable absent)) {
+          let configurable = Desc.Configurable
+        } else {
+          let configurable = current.Configurable
+        }
+        if (! (= Desc.Enumerable absent)) {
+          let enumerable = Desc.Enumerable
+        } else {
+          let enumerable = current.Enumerable
+        }
+        let dp2 = (new PropertyDescriptor("Configurable" -> configurable, "Enumerable" -> enumerable))[#405]
+        if (= Desc.Value absent) dp2.Value = undefined else dp2.Value = Desc.Value
+        if (= Desc.Writable absent) dp2.Writable = false else dp2.Writable = Desc.Writable
+        O.SubMap[P] = dp2
+      } else {
+        let fields = (keys Desc)[#406]
+        let idx = 0
+        loop[repeat] (< idx fields.length) {
+          let f = fields[idx]
+          O.SubMap[P][f] = Desc[f]
+          idx = (+ idx 1)
+        }
+      }
+    }
+  } else {}
+  return true
+}

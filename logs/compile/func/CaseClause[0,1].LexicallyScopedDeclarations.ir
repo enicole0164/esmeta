@@ -1,0 +1,9 @@
+def <SYNTAX>:CaseClause[0,1].LexicallyScopedDeclarations(
+  this: Ast:CaseClause[0,1],
+): List[Ast] {
+  if (! (= this[1] absent)) {
+    sdo-call %0 = this[1]->LexicallyScopedDeclarations()
+    return %0
+  } else {}
+  return (new [])[#157]
+}

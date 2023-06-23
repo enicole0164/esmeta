@@ -1,0 +1,16 @@
+def <SYNTAX>:SubstitutionTemplate[0,0].Evaluation(
+  this: Ast:SubstitutionTemplate[0,0],
+): Unknown {
+  sdo-call %0 = this[0]->TV()
+  let head = %0
+  sdo-call %1 = this[1]->Evaluation()
+  let subRef = %1
+  call %2 = clo<GetValue>(subRef)
+  let sub = [? %2]
+  call %3 = clo<ToString>(sub)
+  let middle = [? %3]
+  sdo-call %4 = this[2]->Evaluation()
+  let tail = %4
+  [? tail]
+  return (concat head middle tail)
+}

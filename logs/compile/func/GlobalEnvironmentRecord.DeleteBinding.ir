@@ -1,0 +1,27 @@
+def <CONC>:GlobalEnvironmentRecord.DeleteBinding(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+): Normal[Boolean] | Abrupt {
+  let DclRec = envRec.DeclarativeRecord
+  method-call %0 = DclRec->HasBinding(N)
+  if (= [! %0] true) {
+    method-call %1 = DclRec->DeleteBinding(N)
+    return [! %1]
+  } else {}
+  let ObjRec = envRec.ObjectRecord
+  let globalObject = ObjRec.BindingObject
+  call %2 = clo<HasOwnProperty>(globalObject, N)
+  let existingProp = [? %2]
+  if (= existingProp true) {
+    method-call %3 = ObjRec->DeleteBinding(N)
+    let status = [? %3]
+    if (= status true) {
+      let varNames = envRec.VarNames
+      if (contains varNames N) {
+        remove-elem varNames N
+      } else {}
+    } else {}
+    return status
+  } else {}
+  return true
+}

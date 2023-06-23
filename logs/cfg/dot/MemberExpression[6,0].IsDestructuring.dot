@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1439 {
+    label = "def <SYNTAX>:MemberExpression[6,0].IsDestructuring(this: Ast:MemberExpression[6,0]): Boolean"
+    style = rounded
+    cluster1439_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1439_entry_name -> cluster1439_entry [arrowhead=none, color="black", style=dashed]
+    cluster1439_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1439_entry -> node7625 [color="black"]
+    cluster1439_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1439_exit_name -> cluster1439_exit [arrowhead=none, color="black", style=dashed]
+    cluster1439_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node7625_name [shape=none, label=<<font color="black">Block[7625]</font>>]
+    node7625_name -> node7625 [arrowhead=none, color="black", style=dashed]
+    node7625 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node7625 -> cluster1439_exit [color="black"]
+  }
+}

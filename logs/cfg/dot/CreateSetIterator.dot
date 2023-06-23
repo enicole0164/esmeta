@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2459 {
+    label = "def CreateSetIterator(set: ESValue, kind: Const[~key+value~, ~value~]): Unknown["EitherANormalCompletionContainingAGeneratorOrAnAbruptCompletion"]"
+    style = rounded
+    cluster2459_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2459_entry_name -> cluster2459_entry [arrowhead=none, color="black", style=dashed]
+    cluster2459_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2459_entry -> node17171 [color="black"]
+    cluster2459_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2459_exit_name -> cluster2459_exit [arrowhead=none, color="black", style=dashed]
+    cluster2459_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node17171_name [shape=none, label=<<font color="black">Call[17171]</font>>]
+    node17171_name -> node17171 [arrowhead=none, color="black", style=dashed]
+    node17171 [shape=cds, label=<<font color="black">%0 = clo&lt;RequireInternalSlot&gt;(set, &quot;SetData&quot;)</font>> color="black" fillcolor="white", style=filled]
+    node17171 -> node17172 [color="black"]
+    node17172_name [shape=none, label=<<font color="black">Block[17172]</font>>]
+    node17172_name -> node17172 [arrowhead=none, color="black", style=dashed]
+    node17172 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/>[1] let closure = clo&lt;CreateSetIterator:clo0, [set, kind]&gt;<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17172 -> node17173 [color="black"]
+    node17173_name [shape=none, label=<<font color="black">Call[17173]</font>>]
+    node17173_name -> node17173 [arrowhead=none, color="black", style=dashed]
+    node17173 [shape=cds, label=<<font color="black">%1 = clo&lt;CreateIteratorFromClosure&gt;(closure, &quot;%SetIteratorPrototype%&quot;, @EXECUTION_STACK[0].Realm.Intrinsics[&quot;%SetIteratorPrototype%&quot;])</font>> color="black" fillcolor="white", style=filled]
+    node17173 -> node17174 [color="black"]
+    node17174_name [shape=none, label=<<font color="black">Block[17174]</font>>]
+    node17174_name -> node17174 [arrowhead=none, color="black", style=dashed]
+    node17174 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node17174 -> cluster2459_exit [color="black"]
+  }
+}

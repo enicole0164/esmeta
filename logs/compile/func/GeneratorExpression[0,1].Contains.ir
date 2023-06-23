@@ -1,0 +1,6 @@
+def <SYNTAX>:GeneratorExpression[0,1].Contains(
+  this: Ast:GeneratorExpression[0,1],
+  symbol: Unknown,
+): Boolean {
+  return false
+}

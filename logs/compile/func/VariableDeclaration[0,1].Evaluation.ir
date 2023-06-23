@@ -1,0 +1,21 @@
+def <SYNTAX>:VariableDeclaration[0,1].Evaluation(
+  this: Ast:VariableDeclaration[0,1],
+): Unknown {
+  sdo-call %0 = this[0]->StringValue()
+  let bindingId = %0
+  call %1 = clo<ResolveBinding>(bindingId)
+  let lhs = [? %1]
+  call %2 = clo<IsAnonymousFunctionDefinition>(this[1])
+  if (= %2 true) {
+    sdo-call %3 = this[1]->NamedEvaluation(bindingId)
+    let value = [? %3]
+  } else {
+    sdo-call %4 = this[1]->Evaluation()
+    let rhs = %4
+    call %5 = clo<GetValue>(rhs)
+    let value = [? %5]
+  }
+  call %6 = clo<PutValue>(lhs, value)
+  [? %6]
+  return ~empty~
+}

@@ -1,0 +1,28 @@
+def ByteListBitwiseOp(
+  op: Unknown["`&`,`^`,Or``"],
+  xBytes: Unknown["ListOfByteValues"],
+  yBytes: Unknown["ListOfByteValues"],
+): Unknown["ListOfByteValues"] {
+  assert (yet "_xBytes_ and _yBytes_ have the same number of elements.")
+  let result = (new [])[#1184]
+  let i = 0
+  %1 = xBytes
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let xByte = %1[%0]
+    let yByte = yBytes[i]
+    if (= op "&") {
+      let resultByte = (& xByte yByte)
+    } else {
+      if (= op "^") {
+        let resultByte = (^ xByte yByte)
+      } else {
+        (yet "_op_ is `|`. Let _resultByte_ be the result of applying the bitwise inclusive OR operation to _xByte_ and _yByte_.")
+      }
+    }
+    i = (+ i 1)
+    push result < resultByte
+    %0 = (+ %0 1)
+  }
+  return result
+}

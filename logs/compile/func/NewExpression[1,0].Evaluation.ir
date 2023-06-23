@@ -1,0 +1,6 @@
+def <SYNTAX>:NewExpression[1,0].Evaluation(
+  this: Ast:NewExpression[1,0],
+): Unknown {
+  call %0 = clo<EvaluateNew>(this[0], ~empty~)
+  return [? %0]
+}

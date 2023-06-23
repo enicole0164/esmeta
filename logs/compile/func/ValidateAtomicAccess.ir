@@ -1,0 +1,16 @@
+def ValidateAtomicAccess(
+  typedArray: Unknown["TypedArray"],
+  requestIndex: Unknown,
+): Unknown["EitherANormalCompletionContainingAnIntegerOrAnAbruptCompletion"] {
+  let length = typedArray.ArrayLength
+  call %0 = clo<ToIndex>(requestIndex)
+  let accessIndex = [? %0]
+  assert (! (< accessIndex 0))
+  if (! (< accessIndex length)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1181])
+  } else {}
+  call %1 = clo<TypedArrayElementSize>(typedArray)
+  let elementSize = %1
+  let offset = typedArray.ByteOffset
+  return (+ (* accessIndex elementSize) offset)
+}

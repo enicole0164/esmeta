@@ -1,0 +1,12 @@
+def ParsePattern(
+  patternText: Unknown["SequenceOfUnicodeCodePoints"],
+  u: Boolean,
+): Unknown["ParseNodeOrANonemptyListOf*SyntaxError*Objects"] {
+  if (= u true) {
+    (yet "Let _parseResult_ be ParseText(_patternText_, |Pattern[+UnicodeMode, +N]|).")
+  } else {
+    (yet "Let _parseResult_ be ParseText(_patternText_, |Pattern[~UnicodeMode, ~N]|).")
+    (yet "If _parseResult_ is a Parse Node and _parseResult_ contains a |GroupName|, then\n  1. Set _parseResult_ to ParseText(_patternText_, |Pattern[~UnicodeMode, +N]|).")
+  }
+  return parseResult
+}

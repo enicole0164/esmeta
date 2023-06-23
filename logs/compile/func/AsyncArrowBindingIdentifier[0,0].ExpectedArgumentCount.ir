@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncArrowBindingIdentifier[0,0].ExpectedArgumentCount(
+  this: Ast:AsyncArrowBindingIdentifier[0,0],
+): Unknown["Integer"] {
+  return 1
+}

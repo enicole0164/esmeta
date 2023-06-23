@@ -1,0 +1,5 @@
+def <SYNTAX>:UnicodePropertyNameCharacters[0,0].SourceText(
+  this: Ast:UnicodePropertyNameCharacters[0,0],
+): Unknown["ListOfCodePoints"] {
+  (yet "Return the List, in source text order, of Unicode code points in the source text matched by this production.")
+}

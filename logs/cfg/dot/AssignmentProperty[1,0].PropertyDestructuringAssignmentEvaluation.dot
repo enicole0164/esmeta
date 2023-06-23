@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1362 {
+    label = "def <SYNTAX>:AssignmentProperty[1,0].PropertyDestructuringAssignmentEvaluation(this: Ast:AssignmentProperty[1,0], value: Unknown): Normal[List[Symbol | String]] | Abrupt"
+    style = rounded
+    cluster1362_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1362_entry_name -> cluster1362_entry [arrowhead=none, color="black", style=dashed]
+    cluster1362_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1362_entry -> node6923 [color="black"]
+    cluster1362_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1362_exit_name -> cluster1362_exit [arrowhead=none, color="black", style=dashed]
+    cluster1362_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6923_name [shape=none, label=<<font color="black">Call[6923]</font>>]
+    node6923_name -> node6923 [arrowhead=none, color="black", style=dashed]
+    node6923 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;Evaluation()</font>> color="black" fillcolor="white", style=filled]
+    node6923 -> node6924 [color="black"]
+    node6924_name [shape=none, label=<<font color="black">Block[6924]</font>>]
+    node6924_name -> node6924 [arrowhead=none, color="black", style=dashed]
+    node6924 [shape=box, label=<<font color="black">[0] let name = %0<BR ALIGN="LEFT"/>[1] [? name]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6924 -> node6925 [color="black"]
+    node6925_name [shape=none, label=<<font color="black">Call[6925]</font>>]
+    node6925_name -> node6925 [arrowhead=none, color="black", style=dashed]
+    node6925 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;KeyedDestructuringAssignmentEvaluation(value, name)</font>> color="black" fillcolor="white", style=filled]
+    node6925 -> node6926 [color="black"]
+    node6926_name [shape=none, label=<<font color="black">Block[6926]</font>>]
+    node6926_name -> node6926 [arrowhead=none, color="black", style=dashed]
+    node6926 [shape=box, label=<<font color="black">[0] [? %1]<BR ALIGN="LEFT"/>[1] return (new [name])[#598]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6926 -> cluster1362_exit [color="black"]
+  }
+}

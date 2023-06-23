@@ -1,0 +1,17 @@
+def <INTERNAL>:ArgumentsExoticObject.Get(
+  args: ArgumentsExoticObject,
+  P: Symbol | String,
+  Receiver: ESValue,
+): Normal[ESValue] | Abrupt {
+  let map = args.ParameterMap
+  call %0 = clo<HasOwnProperty>(map, P)
+  let isMapped = [! %0]
+  if (= isMapped false) {
+    call %1 = clo<OrdinaryGet>(args, P, Receiver)
+    return [? %1]
+  } else {
+    assert (yet "_map_ contains a formal parameter mapping for _P_.")
+    call %2 = clo<Get>(map, P)
+    return [! %2]
+  }
+}

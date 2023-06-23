@@ -1,0 +1,35 @@
+def <BUILTIN>:INTRINSICS.String.prototype.matchAll(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let regexp = (pop < argumentsList) else let regexp = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  if (! (|| (= regexp undefined) (= regexp null))) {
+    call %1 = clo<IsRegExp>(regexp)
+    let isRegExp = [? %1]
+    if (= isRegExp true) {
+      call %2 = clo<Get>(regexp, "flags")
+      let flags = [? %2]
+      call %3 = clo<RequireObjectCoercible>(flags)
+      [? %3]
+      call %4 = clo<ToString>(flags)
+      if (! (contains [? %4] "g")) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#951])
+      } else {}
+    } else {}
+    call %5 = clo<GetMethod>(regexp, @SYMBOL.matchAll)
+    let matcher = [? %5]
+    if (! (= matcher undefined)) {
+      call %6 = clo<Call>(matcher, regexp, (new [O])[#952])
+      return [? %6]
+    } else {}
+  } else {}
+  call %7 = clo<ToString>(O)
+  let S = [? %7]
+  call %8 = clo<RegExpCreate>(regexp, "g")
+  let rx = [? %8]
+  call %9 = clo<Invoke>(rx, @SYMBOL.matchAll, (new [S])[#953])
+  return [? %9]
+}

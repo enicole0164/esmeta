@@ -1,0 +1,5 @@
+def <SYNTAX>:AsyncConciseBody[1,0].AsyncConciseBodyContainsUseStrict(
+  this: Ast:AsyncConciseBody[1,0],
+): Boolean {
+  (yet "Return FunctionBodyContainsUseStrict of |AsyncFunctionBody|.")
+}

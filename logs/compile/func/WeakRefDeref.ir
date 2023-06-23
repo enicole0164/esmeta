@@ -1,0 +1,10 @@
+def WeakRefDeref(
+  weakRef: Unknown["WeakRef"],
+): ESValue {
+  let target = weakRef.WeakRefTarget
+  if (! (= target ~empty~)) {
+    call %0 = clo<AddToKeptObjects>(target)
+    return target
+  } else {}
+  return undefined
+}

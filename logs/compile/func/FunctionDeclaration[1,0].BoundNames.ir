@@ -1,0 +1,5 @@
+def <SYNTAX>:FunctionDeclaration[1,0].BoundNames(
+  this: Ast:FunctionDeclaration[1,0],
+): List[String] {
+  return (new ["*default*"])[#95]
+}

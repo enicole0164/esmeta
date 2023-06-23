@@ -1,0 +1,6 @@
+def <SYNTAX>:LexicalBinding[0,1].BoundNames(
+  this: Ast:LexicalBinding[0,1],
+): List[String] {
+  sdo-call %0 = this[0]->BoundNames()
+  return %0
+}

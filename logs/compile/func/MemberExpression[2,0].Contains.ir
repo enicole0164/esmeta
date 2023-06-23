@@ -1,0 +1,10 @@
+def <SYNTAX>:MemberExpression[2,0].Contains(
+  this: Ast:MemberExpression[2,0],
+  symbol: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->Contains(symbol)
+  if (= %0 true) {
+    return true
+  } else {}
+  return false
+}

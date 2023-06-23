@@ -1,0 +1,19 @@
+def <BUILTIN>:INTRINSICS.String.fromCharCode(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let codeUnits = argumentsList
+  let length = codeUnits.length
+  let elements = (new [])[#942]
+  %1 = codeUnits
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let next = %1[%0]
+    call %2 = clo<ToUint16>(next)
+    let nextCU = ([math] [? %2])
+    push elements < nextCU
+    %0 = (+ %0 1)
+  }
+  (yet "Return the String value whose code units are the elements in the List _elements_. If _codeUnits_ is empty, the empty String is returned.")
+}

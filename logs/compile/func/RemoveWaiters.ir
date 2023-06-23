@@ -1,0 +1,17 @@
+def RemoveWaiters(
+  WL: Unknown["WaiterList"],
+  c: Unknown["NonnegativeIntegerOr+∞"],
+): Unknown["ListOfAgentSignifiers"] {
+  assert (yet "The calling agent is in the critical section for _WL_.")
+  let L = (new [])[#1182]
+  (yet "Let _S_ be a reference to the list of waiters in _WL_.")
+  loop[repeat] (&& (< 0 c) (! (= S.length 0))) {
+    (yet "Let _W_ be the first waiter in _S_.")
+    push L < W
+    (yet "Remove _W_ from _S_.")
+    if (! (|| (= c NaN) (|| (= c +INF) (= c -INF)))) {
+      c = (- c 1)
+    } else {}
+  }
+  return L
+}

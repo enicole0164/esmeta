@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1333 {
+    label = "def <SYNTAX>:BitwiseORExpression[1,0].Evaluation(this: Ast:BitwiseORExpression[1,0]): Unknown"
+    style = rounded
+    cluster1333_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1333_entry_name -> cluster1333_entry [arrowhead=none, color="black", style=dashed]
+    cluster1333_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1333_entry -> node6460 [color="black"]
+    cluster1333_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1333_exit_name -> cluster1333_exit [arrowhead=none, color="black", style=dashed]
+    cluster1333_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node6460_name [shape=none, label=<<font color="black">Call[6460]</font>>]
+    node6460_name -> node6460 [arrowhead=none, color="black", style=dashed]
+    node6460 [shape=cds, label=<<font color="black">%0 = clo&lt;EvaluateStringOrNumericBinaryExpression&gt;(this[0], &quot;|&quot;, this[1])</font>> color="black" fillcolor="white", style=filled]
+    node6460 -> node6461 [color="black"]
+    node6461_name [shape=none, label=<<font color="black">Block[6461]</font>>]
+    node6461_name -> node6461 [arrowhead=none, color="black", style=dashed]
+    node6461 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node6461 -> cluster1333_exit [color="black"]
+  }
+}

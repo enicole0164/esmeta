@@ -1,0 +1,25 @@
+def CreatePerIterationEnvironment(
+  perIterationBindings: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  if (! (= perIterationBindings.length 0)) {
+    let lastIterationEnv = @EXECUTION_STACK[0].LexicalEnvironment
+    let outer = lastIterationEnv.OuterEnv
+    assert (! (= outer null))
+    call %0 = clo<NewDeclarativeEnvironment>(outer)
+    let thisIterationEnv = %0
+    %2 = perIterationBindings
+    %1 = 0
+    loop[foreach] (< %1 %2.length) {
+      let bn = %2[%1]
+      method-call %3 = thisIterationEnv->CreateMutableBinding(bn, false)
+      [! %3]
+      method-call %4 = lastIterationEnv->GetBindingValue(bn, true)
+      let lastValue = [? %4]
+      method-call %5 = thisIterationEnv->InitializeBinding(bn, lastValue)
+      [! %5]
+      %1 = (+ %1 1)
+    }
+    @EXECUTION_STACK[0].LexicalEnvironment = thisIterationEnv
+  } else {}
+  return ~unused~
+}

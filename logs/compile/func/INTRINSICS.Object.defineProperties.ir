@@ -1,0 +1,13 @@
+def <BUILTIN>:INTRINSICS.Object.defineProperties(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let O = (pop < argumentsList) else let O = absent
+  if (< 0 argumentsList.length) let Properties = (pop < argumentsList) else let Properties = absent
+  if (! (= (typeof O) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#889])
+  } else {}
+  call %0 = clo<ObjectDefineProperties>(O, Properties)
+  return [? %0]
+}

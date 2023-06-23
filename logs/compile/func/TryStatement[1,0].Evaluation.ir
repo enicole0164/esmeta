@@ -1,0 +1,13 @@
+def <SYNTAX>:TryStatement[1,0].Evaluation(
+  this: Ast:TryStatement[1,0],
+): Unknown {
+  sdo-call %0 = this[0]->Evaluation()
+  let B = %0
+  sdo-call %1 = this[1]->Evaluation()
+  let F = %1
+  if (= F.Type ~normal~) {
+    F = B
+  } else {}
+  call %2 = clo<UpdateEmpty>(F, undefined)
+  return [? %2]
+}

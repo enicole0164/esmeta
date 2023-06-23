@@ -1,0 +1,12 @@
+def <SYNTAX>:ModuleItemList[1,0].ContainsDuplicateLabels(
+  this: Ast:ModuleItemList[1,0],
+  labelSet: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->ContainsDuplicateLabels(labelSet)
+  let hasDuplicates = %0
+  if (= hasDuplicates true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->ContainsDuplicateLabels(labelSet)
+  return %1
+}

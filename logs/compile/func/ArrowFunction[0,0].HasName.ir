@@ -1,0 +1,5 @@
+def <SYNTAX>:ArrowFunction[0,0].HasName(
+  this: Ast:ArrowFunction[0,0],
+): Boolean {
+  return false
+}

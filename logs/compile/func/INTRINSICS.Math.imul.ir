@@ -1,0 +1,18 @@
+def <BUILTIN>:INTRINSICS.Math.imul(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  if (< 0 argumentsList.length) let y = (pop < argumentsList) else let y = absent
+  call %0 = clo<ToUint32>(x)
+  let a = ([math] [? %0])
+  call %1 = clo<ToUint32>(y)
+  let b = ([math] [? %1])
+  let product = (% (* a b) (** 2 32))
+  if (! (< product (** 2 31))) {
+    return ([number] (- product (** 2 32)))
+  } else {
+    return ([number] product)
+  }
+}

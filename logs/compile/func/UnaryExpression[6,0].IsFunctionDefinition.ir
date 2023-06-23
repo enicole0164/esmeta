@@ -1,0 +1,5 @@
+def <SYNTAX>:UnaryExpression[6,0].IsFunctionDefinition(
+  this: Ast:UnaryExpression[6,0],
+): Boolean {
+  return false
+}

@@ -1,0 +1,29 @@
+def <BUILTIN>:INTRINSICS.Promise.prototype.finally(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let onFinally = (pop < argumentsList) else let onFinally = absent
+  let promise = this
+  if (! (= (typeof promise) @Object)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1310])
+  } else {}
+  call %0 = clo<SpeciesConstructor>(promise, @EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"])
+  let C = [? %0]
+  call %1 = clo<IsConstructor>(C)
+  assert (= %1 true)
+  call %2 = clo<IsCallable>(onFinally)
+  if (= %2 false) {
+    let thenFinally = onFinally
+    let catchFinally = onFinally
+  } else {
+    let thenFinallyClosure = clo<INTRINSICS.Promise.prototype.finally:clo0, [onFinally, C]>
+    call %3 = clo<CreateBuiltinFunction>(thenFinallyClosure, 1, "", (new [])[#1311])
+    let thenFinally = %3
+    let catchFinallyClosure = clo<INTRINSICS.Promise.prototype.finally:clo1, [onFinally, C]>
+    call %4 = clo<CreateBuiltinFunction>(catchFinallyClosure, 1, "", (new [])[#1312])
+    let catchFinally = %4
+  }
+  call %5 = clo<Invoke>(promise, "then", (new [thenFinally, catchFinally])[#1313])
+  return [? %5]
+}

@@ -1,0 +1,10 @@
+def CreateRegExpStringIterator(
+  R: Object,
+  S: String,
+  global: Boolean,
+  fullUnicode: Boolean,
+): Unknown["Generator"] {
+  let closure = clo<CreateRegExpStringIterator:clo0, [R, S, global, fullUnicode]>
+  call %0 = clo<CreateIteratorFromClosure>(closure, "%RegExpStringIteratorPrototype%", @EXECUTION_STACK[0].Realm.Intrinsics["%RegExpStringIteratorPrototype%"])
+  return %0
+}

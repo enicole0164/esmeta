@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1649 {
+    label = "def <SYNTAX>:MethodDefinition[0,0].PrivateBoundIdentifiers(this: Ast:MethodDefinition[0,0]): List[String]"
+    style = rounded
+    cluster1649_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1649_entry_name -> cluster1649_entry [arrowhead=none, color="black", style=dashed]
+    cluster1649_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1649_entry -> node8885 [color="black"]
+    cluster1649_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1649_exit_name -> cluster1649_exit [arrowhead=none, color="black", style=dashed]
+    cluster1649_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8885_name [shape=none, label=<<font color="black">Call[8885]</font>>]
+    node8885_name -> node8885 [arrowhead=none, color="black", style=dashed]
+    node8885 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;PrivateBoundIdentifiers()</font>> color="black" fillcolor="white", style=filled]
+    node8885 -> node8886 [color="black"]
+    node8886_name [shape=none, label=<<font color="black">Block[8886]</font>>]
+    node8886_name -> node8886 [arrowhead=none, color="black", style=dashed]
+    node8886 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8886 -> cluster1649_exit [color="black"]
+  }
+}

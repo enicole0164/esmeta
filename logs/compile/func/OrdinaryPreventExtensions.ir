@@ -1,0 +1,6 @@
+def OrdinaryPreventExtensions(
+  O: Object,
+): True {
+  O.Extensible = false
+  return true
+}

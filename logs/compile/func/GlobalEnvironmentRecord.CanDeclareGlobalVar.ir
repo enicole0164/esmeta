@@ -1,0 +1,14 @@
+def <CONC>:GlobalEnvironmentRecord.CanDeclareGlobalVar(
+  envRec: GlobalEnvironmentRecord,
+  N: String,
+): Normal[Boolean] | Abrupt {
+  let ObjRec = envRec.ObjectRecord
+  let globalObject = ObjRec.BindingObject
+  call %0 = clo<HasOwnProperty>(globalObject, N)
+  let hasProperty = [? %0]
+  if (= hasProperty true) {
+    return true
+  } else {}
+  call %1 = clo<IsExtensible>(globalObject)
+  return [? %1]
+}

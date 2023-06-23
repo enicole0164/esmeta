@@ -1,0 +1,27 @@
+def <BUILTIN>:INTRINSICS.Map.prototype.forEach(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let callbackfn = (pop < argumentsList) else let callbackfn = absent
+  if (< 0 argumentsList.length) let thisArg = (pop < argumentsList) else let thisArg = absent
+  let M = this
+  call %0 = clo<RequireInternalSlot>(M, "MapData")
+  [? %0]
+  call %1 = clo<IsCallable>(callbackfn)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1119])
+  } else {}
+  let entries = M.MapData
+  %3 = entries
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let e = %3[%2]
+    if (! (= e.Key ~empty~)) {
+      call %4 = clo<Call>(callbackfn, thisArg, (new [e.Value, e.Key, M])[#1120])
+      [? %4]
+    } else {}
+    %2 = (+ %2 1)
+  }
+  return undefined
+}

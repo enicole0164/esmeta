@@ -1,0 +1,15 @@
+def <SYNTAX>:Alternative[1,0].CompileSubpattern(
+  this: Ast:Alternative[1,0],
+  direction: Const[~backward~, ~forward~],
+): Unknown["Matcher"] {
+  sdo-call %0 = this[0]->CompileSubpattern(direction)
+  let m1 = %0
+  sdo-call %1 = this[1]->CompileSubpattern(direction)
+  let m2 = %1
+  if (= direction ~forward~) {
+    (yet "Return a new Matcher with parameters (_x_, _c_) that captures _m1_ and _m2_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _d_ be a new Continuation with parameters (_y_) that captures _c_ and _m2_ and performs the following steps when called:\n    1. Assert: _y_ is a State.\n    1. Return _m2_(_y_, _c_).\n  1. Return _m1_(_x_, _d_).")
+  } else {
+    assert (= direction ~backward~)
+    (yet "Return a new Matcher with parameters (_x_, _c_) that captures _m1_ and _m2_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Let _d_ be a new Continuation with parameters (_y_) that captures _c_ and _m1_ and performs the following steps when called:\n    1. Assert: _y_ is a State.\n    1. Return _m1_(_y_, _c_).\n  1. Return _m2_(_x_, _d_).")
+  }
+}

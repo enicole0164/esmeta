@@ -1,0 +1,7 @@
+def <SYNTAX>:BreakStatement[1,0].Evaluation(
+  this: Ast:BreakStatement[1,0],
+): Unknown {
+  sdo-call %0 = this[0]->StringValue()
+  let label = %0
+  return comp[~break~/label](~empty~)
+}

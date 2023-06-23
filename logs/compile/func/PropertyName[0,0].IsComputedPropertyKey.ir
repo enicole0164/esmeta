@@ -1,0 +1,5 @@
+def <SYNTAX>:PropertyName[0,0].IsComputedPropertyKey(
+  this: Ast:PropertyName[0,0],
+): Boolean {
+  return false
+}

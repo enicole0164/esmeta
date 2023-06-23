@@ -1,0 +1,6 @@
+def <SYNTAX>:AsyncFunctionExpression[0,0].Evaluation(
+  this: Ast:AsyncFunctionExpression[0,0],
+): Unknown {
+  sdo-call %0 = this->InstantiateAsyncFunctionExpression()
+  return %0
+}

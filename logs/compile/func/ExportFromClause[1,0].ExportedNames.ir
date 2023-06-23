@@ -1,0 +1,6 @@
+def <SYNTAX>:ExportFromClause[1,0].ExportedNames(
+  this: Ast:ExportFromClause[1,0],
+): List[String] {
+  sdo-call %0 = this[0]->StringValue()
+  return (new [%0])[#832]
+}

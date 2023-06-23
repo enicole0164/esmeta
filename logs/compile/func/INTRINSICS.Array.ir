@@ -1,0 +1,55 @@
+def <BUILTIN>:INTRINSICS.Array(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let values = argumentsList
+  if (= NewTarget undefined) {
+    let newTarget = @EXECUTION_STACK[0].Function
+  } else {
+    let newTarget = NewTarget
+  }
+  call %0 = clo<GetPrototypeFromConstructor>(newTarget, "%Array.prototype%")
+  let proto = [? %0]
+  let numberOfArgs = values.length
+  if (== numberOfArgs 0) {
+    call %1 = clo<ArrayCreate>(0, proto)
+    return [! %1]
+  } else {
+    if (== numberOfArgs 1) {
+      let len = values[0]
+      call %2 = clo<ArrayCreate>(0, proto)
+      let array = [! %2]
+      if (! (= (typeof len) @Number)) {
+        call %3 = clo<CreateDataPropertyOrThrow>(array, "0", len)
+        [! %3]
+        let intLen = 1.0f
+      } else {
+        call %4 = clo<ToUint32>(len)
+        let intLen = [! %4]
+        call %5 = clo<SameValueZero>(intLen, len)
+        if (= %5 false) {
+          return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#1010])
+        } else {}
+      }
+      call %6 = clo<Set>(array, "length", intLen, true)
+      [! %6]
+      return array
+    } else {
+      assert (! (< numberOfArgs 2))
+      call %7 = clo<ArrayCreate>(numberOfArgs, proto)
+      let array = [? %7]
+      let k = 0
+      loop[repeat] (< k numberOfArgs) {
+        call %8 = clo<ToString>(([number] k))
+        let Pk = [! %8]
+        let itemK = values[k]
+        call %9 = clo<CreateDataPropertyOrThrow>(array, Pk, itemK)
+        [! %9]
+        k = (+ k 1)
+      }
+      assert (yet "The mathematical value of _array_'s *\"length\"* property is _numberOfArgs_.")
+      return array
+    }
+  }
+}

@@ -1,0 +1,9 @@
+def <SYNTAX>:ForInOfStatement[4,0].ForInOfLoopEvaluation(
+  this: Ast:ForInOfStatement[4,0],
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  call %0 = clo<ForIn/OfHeadEvaluation>((new [])[#623], this[1], ~iterate~)
+  let keyResult = [? %0]
+  call %1 = clo<ForIn/OfBodyEvaluation>(this[0], this[2], keyResult, ~iterate~, ~varBinding~, labelSet)
+  return [? %1]
+}

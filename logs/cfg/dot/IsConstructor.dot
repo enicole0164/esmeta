@@ -1,0 +1,38 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster116 {
+    label = "def IsConstructor(argument: ESValue): Boolean"
+    style = rounded
+    cluster116_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster116_entry_name -> cluster116_entry [arrowhead=none, color="black", style=dashed]
+    cluster116_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster116_entry -> node888 [color="black"]
+    cluster116_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster116_exit_name -> cluster116_exit [arrowhead=none, color="black", style=dashed]
+    cluster116_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node888_name [shape=none, label=<<font color="black">Branch[888]</font>>]
+    node888_name -> node888 [arrowhead=none, color="black", style=dashed]
+    node888 [shape=diamond, label=<<font color="black">(! (= (typeof argument) @Object))</font>> color="black" fillcolor="white", style=filled]
+    node888 -> node889 [label=<<font color="black">true</font>> color="black"]
+    node888 -> node890 [label=<<font color="black">false</font>> color="black"]
+    node889_name [shape=none, label=<<font color="black">Block[889]</font>>]
+    node889_name -> node889 [arrowhead=none, color="black", style=dashed]
+    node889 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node889 -> cluster116_exit [color="black"]
+    node890_name [shape=none, label=<<font color="black">Branch[890]</font>>]
+    node890_name -> node890 [arrowhead=none, color="black", style=dashed]
+    node890 [shape=diamond, label=<<font color="black">(! (= argument.Construct absent))</font>> color="black" fillcolor="white", style=filled]
+    node890 -> node891 [label=<<font color="black">true</font>> color="black"]
+    node890 -> node892 [label=<<font color="black">false</font>> color="black"]
+    node891_name [shape=none, label=<<font color="black">Block[891]</font>>]
+    node891_name -> node891 [arrowhead=none, color="black", style=dashed]
+    node891 [shape=box, label=<<font color="black">[0] return true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node891 -> cluster116_exit [color="black"]
+    node892_name [shape=none, label=<<font color="black">Block[892]</font>>]
+    node892_name -> node892 [arrowhead=none, color="black", style=dashed]
+    node892 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node892 -> cluster116_exit [color="black"]
+  }
+}

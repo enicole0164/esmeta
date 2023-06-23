@@ -1,0 +1,9 @@
+def <BUILTIN-CLO>:MakeArgSetter:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let value = (pop < argumentsList) else let value = absent
+  method-call %0 = env->SetMutableBinding(name, value, false)
+  return [! %0]
+}

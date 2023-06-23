@@ -1,0 +1,17 @@
+def <BUILTIN-CLO>:NewPromiseCapability:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let resolve = (pop < argumentsList) else let resolve = absent
+  if (< 0 argumentsList.length) let reject = (pop < argumentsList) else let reject = absent
+  if (! (= promiseCapability.Resolve undefined)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1238])
+  } else {}
+  if (! (= promiseCapability.Reject undefined)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1239])
+  } else {}
+  promiseCapability.Resolve = resolve
+  promiseCapability.Reject = reject
+  return undefined
+}

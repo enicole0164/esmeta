@@ -1,0 +1,37 @@
+def <INTERNAL>:ProxyExoticObject.Delete(
+  O: ProxyExoticObject,
+  P: Symbol | String,
+): Normal[Boolean] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#520])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<GetMethod>(handler, "deleteProperty")
+  let trap = [? %0]
+  if (= trap undefined) {
+    method-call %1 = target->Delete(P)
+    return [? %1]
+  } else {}
+  call %2 = clo<Call>(trap, handler, (new [target, P])[#521])
+  call %3 = clo<ToBoolean>([? %2])
+  let booleanTrapResult = %3
+  if (= booleanTrapResult false) {
+    return false
+  } else {}
+  method-call %4 = target->GetOwnProperty(P)
+  let targetDesc = [? %4]
+  if (= targetDesc undefined) {
+    return true
+  } else {}
+  if (= targetDesc.Configurable false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#522])
+  } else {}
+  call %5 = clo<IsExtensible>(target)
+  let extensibleTarget = [? %5]
+  if (= extensibleTarget false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#523])
+  } else {}
+  return true
+}

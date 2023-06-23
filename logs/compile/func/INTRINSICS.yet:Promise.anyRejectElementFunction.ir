@@ -1,0 +1,27 @@
+def <BUILTIN>:INTRINSICS.yet:`Promise.any`RejectElementFunction(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  let F = @EXECUTION_STACK[0].Function
+  if (= F.AlreadyCalled true) {
+    return undefined
+  } else {}
+  F.AlreadyCalled = true
+  let index = F.Index
+  let errors = F.Errors
+  let promiseCapability = F.Capability
+  let remainingElementsCount = F.RemainingElements
+  errors[index] = x
+  remainingElementsCount.Value = (- remainingElementsCount.Value 1)
+  if (= remainingElementsCount.Value 0) {
+    let error = (new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%AggregateError.prototype%"], "ErrorData" -> undefined))[#1294]
+    call %0 = clo<CreateArrayFromList>(errors)
+    call %1 = clo<DefinePropertyOrThrow>(error, "errors", (new PropertyDescriptor("Configurable" -> true, "Enumerable" -> false, "Writable" -> true, "Value" -> %0))[#1295])
+    [! %1]
+    call %2 = clo<Call>(promiseCapability.Reject, undefined, (new [error])[#1296])
+    return [? %2]
+  } else {}
+  return undefined
+}

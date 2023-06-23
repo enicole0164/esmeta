@@ -1,0 +1,6 @@
+def <SYNTAX>:EqualityExpression[1,0].HasCallInTailPosition(
+  this: Ast:EqualityExpression[1,0],
+  call: Unknown,
+): Boolean {
+  return false
+}

@@ -1,0 +1,13 @@
+def <SYNTAX>:TemplateSpans[0,0].TemplateStrings(
+  this: Ast:TemplateSpans[0,0],
+  raw: Unknown,
+): List[String] {
+  if (= raw false) {
+    sdo-call %0 = this[0]->TV()
+    let tail = %0
+  } else {
+    sdo-call %1 = this[0]->TRV()
+    let tail = %1
+  }
+  return (new [tail])[#553]
+}

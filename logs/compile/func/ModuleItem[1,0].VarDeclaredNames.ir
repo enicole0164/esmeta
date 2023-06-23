@@ -1,0 +1,6 @@
+def <SYNTAX>:ModuleItem[1,0].VarDeclaredNames(
+  this: Ast:ModuleItem[1,0],
+): List[String] {
+  (yet "If |ExportDeclaration| is `export` |VariableStatement|, return BoundNames of |ExportDeclaration|.")
+  return (new [])[#224]
+}

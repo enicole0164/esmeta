@@ -1,0 +1,21 @@
+def OrdinaryGetOwnProperty(
+  O: Object,
+  P: Symbol | String,
+): PropertyDescriptor | Undefined {
+  if (= O.SubMap[P] absent) return undefined else {}
+  let D = (new PropertyDescriptor())[#400]
+  let X = O.SubMap[P]
+  call %0 = clo<IsDataDescriptor>(X)
+  if %0 {
+    D.Value = X.Value
+    D.Writable = X.Writable
+  } else {
+    call %1 = clo<IsAccessorDescriptor>(X)
+    assert %1
+    D.Get = X.Get
+    D.Set = X.Set
+  }
+  D.Enumerable = X.Enumerable
+  D.Configurable = X.Configurable
+  return D
+}

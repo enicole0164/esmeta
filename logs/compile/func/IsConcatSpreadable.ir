@@ -1,0 +1,15 @@
+def IsConcatSpreadable(
+  O: Unknown,
+): Normal[Boolean] | Abrupt {
+  if (! (= (typeof O) @Object)) {
+    return false
+  } else {}
+  call %0 = clo<Get>(O, @SYMBOL.isConcatSpreadable)
+  let spreadable = [? %0]
+  if (! (= spreadable undefined)) {
+    call %1 = clo<ToBoolean>(spreadable)
+    return %1
+  } else {}
+  call %2 = clo<IsArray>(O)
+  return [? %2]
+}

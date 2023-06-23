@@ -1,0 +1,16 @@
+def InstallErrorCause(
+  O: Object,
+  options: ESValue,
+): Normal[Const[~unused~]] | Abrupt {
+  %0 = (= (typeof options) @Object)
+  if %0 {
+    call %1 = clo<HasProperty>(options, "cause")
+    %0 = (= [? %1] true)
+  } else {}
+  if %0 {
+    call %2 = clo<Get>(options, "cause")
+    let cause = [? %2]
+    call %3 = clo<CreateNonEnumerableDataPropertyOrThrow>(O, "cause", cause)
+  } else {}
+  return ~unused~
+}

@@ -1,0 +1,13 @@
+def <SYNTAX>:ClassDeclaration[0,0].BindingClassDeclarationEvaluation(
+  this: Ast:ClassDeclaration[0,0],
+): Normal[FunctionObject] | Abrupt {
+  sdo-call %0 = this[0]->StringValue()
+  let className = %0
+  sdo-call %1 = this[1]->ClassDefinitionEvaluation(className, className)
+  let value = [? %1]
+  value.SourceText = (source-text this)
+  let env = @EXECUTION_STACK[0].LexicalEnvironment
+  call %2 = clo<InitializeBoundName>(className, value, env)
+  [? %2]
+  return value
+}

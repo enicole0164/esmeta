@@ -1,0 +1,20 @@
+def PrepareForOrdinaryCall(
+  F: FunctionObject,
+  newTarget: Object | Undefined,
+): ExecutionContext {
+  let callerContext = @EXECUTION_STACK[0]
+  let calleeContext = (new ExecutionContext())[#418]
+  calleeContext.Function = F
+  let calleeRealm = F.Realm
+  calleeContext.Realm = calleeRealm
+  calleeContext.ScriptOrModule = F.ScriptOrModule
+  call %0 = clo<NewFunctionEnvironment>(F, newTarget)
+  let localEnv = %0
+  calleeContext.LexicalEnvironment = localEnv
+  calleeContext.VariableEnvironment = localEnv
+  calleeContext.PrivateEnvironment = F.PrivateEnvironment
+  nop
+  push calleeContext > @EXECUTION_STACK
+  nop
+  return calleeContext
+}

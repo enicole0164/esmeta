@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1225 {
+    label = "def <SYNTAX>:ObjectLiteral[0,0].Evaluation(this: Ast:ObjectLiteral[0,0]): Unknown"
+    style = rounded
+    cluster1225_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1225_entry_name -> cluster1225_entry [arrowhead=none, color="black", style=dashed]
+    cluster1225_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1225_entry -> node5564 [color="black"]
+    cluster1225_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1225_exit_name -> cluster1225_exit [arrowhead=none, color="black", style=dashed]
+    cluster1225_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5564_name [shape=none, label=<<font color="black">Call[5564]</font>>]
+    node5564_name -> node5564 [arrowhead=none, color="black", style=dashed]
+    node5564 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryObjectCreate&gt;(@EXECUTION_STACK[0].Realm.Intrinsics[&quot;%Object.prototype%&quot;])</font>> color="black" fillcolor="white", style=filled]
+    node5564 -> node5565 [color="black"]
+    node5565_name [shape=none, label=<<font color="black">Block[5565]</font>>]
+    node5565_name -> node5565 [arrowhead=none, color="black", style=dashed]
+    node5565 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5565 -> cluster1225_exit [color="black"]
+  }
+}

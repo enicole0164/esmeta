@@ -1,0 +1,17 @@
+def OrdinaryHasProperty(
+  O: Object,
+  P: Symbol | String,
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->GetOwnProperty(P)
+  let hasOwn = [? %0]
+  if (! (= hasOwn undefined)) {
+    return true
+  } else {}
+  method-call %1 = O->GetPrototypeOf()
+  let parent = [? %1]
+  if (! (= parent null)) {
+    method-call %2 = parent->HasProperty(P)
+    return [? %2]
+  } else {}
+  return false
+}

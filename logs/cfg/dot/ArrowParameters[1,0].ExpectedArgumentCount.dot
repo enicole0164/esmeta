@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1561 {
+    label = "def <SYNTAX>:ArrowParameters[1,0].ExpectedArgumentCount(this: Ast:ArrowParameters[1,0]): Unknown["Integer"]"
+    style = rounded
+    cluster1561_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1561_entry_name -> cluster1561_entry [arrowhead=none, color="black", style=dashed]
+    cluster1561_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1561_entry -> node8399 [color="black"]
+    cluster1561_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1561_exit_name -> cluster1561_exit [arrowhead=none, color="black", style=dashed]
+    cluster1561_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node8399_name [shape=none, label=<<font color="black">Block[8399]</font>>]
+    node8399_name -> node8399 [arrowhead=none, color="black", style=dashed]
+    node8399 [shape=box, label=<<font color="black">[0] let formals = (parse this[0] (nt |ArrowFormalParameters|[]))<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8399 -> node8400 [color="black"]
+    node8400_name [shape=none, label=<<font color="black">Call[8400]</font>>]
+    node8400_name -> node8400 [arrowhead=none, color="black", style=dashed]
+    node8400 [shape=cds, label=<<font color="black">%0 = formals-&gt;ExpectedArgumentCount()</font>> color="black" fillcolor="white", style=filled]
+    node8400 -> node8401 [color="black"]
+    node8401_name [shape=none, label=<<font color="black">Block[8401]</font>>]
+    node8401_name -> node8401 [arrowhead=none, color="black", style=dashed]
+    node8401 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node8401 -> cluster1561_exit [color="black"]
+  }
+}

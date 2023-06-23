@@ -1,0 +1,31 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.toLocaleString(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let reserved1 = (pop < argumentsList) else let reserved1 = absent
+  if (< 0 argumentsList.length) let reserved2 = (pop < argumentsList) else let reserved2 = absent
+  call %0 = clo<ToObject>(this)
+  let array = [? %0]
+  call %1 = clo<LengthOfArrayLike>(array)
+  let len = [? %1]
+  (yet "Let _separator_ be the implementation-defined list-separator String value appropriate for the host environment's current locale (such as *\", \"*).")
+  let R = ""
+  let k = 0
+  loop[repeat] (< k len) {
+    if (< 0 k) {
+      R = (concat R separator)
+    } else {}
+    call %2 = clo<ToString>(([number] k))
+    call %3 = clo<Get>(array, [! %2])
+    let nextElement = [? %3]
+    if (! (|| (= nextElement undefined) (= nextElement null))) {
+      call %4 = clo<Invoke>(nextElement, "toLocaleString")
+      call %5 = clo<ToString>([? %4])
+      let S = [? %5]
+      R = (concat R S)
+    } else {}
+    k = (+ k 1)
+  }
+  return R
+}

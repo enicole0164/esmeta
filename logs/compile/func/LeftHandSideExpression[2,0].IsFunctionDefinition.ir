@@ -1,0 +1,5 @@
+def <SYNTAX>:LeftHandSideExpression[2,0].IsFunctionDefinition(
+  this: Ast:LeftHandSideExpression[2,0],
+): Boolean {
+  return false
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:NumericLiteral[0,0].NumericValue(
+  this: Ast:NumericLiteral[0,0],
+): Number | BigInt {
+  sdo-call %0 = this[0]->MV()
+  call %1 = clo<RoundMVResult>(%0)
+  return %1
+}

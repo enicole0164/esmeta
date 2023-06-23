@@ -1,0 +1,9 @@
+def <SYNTAX>:StatementList[1,0].TopLevelLexicallyDeclaredNames(
+  this: Ast:StatementList[1,0],
+): List[String] {
+  sdo-call %0 = this[0]->TopLevelLexicallyDeclaredNames()
+  let names1 = %0
+  sdo-call %1 = this[1]->TopLevelLexicallyDeclaredNames()
+  let names2 = %1
+  return (list-concat names1 names2)[#280]
+}

@@ -1,0 +1,7 @@
+def <INTERNAL>:OrdinaryObject.GetOwnProperty(
+  O: OrdinaryObject,
+  P: Symbol | String,
+): Normal[PropertyDescriptor | Undefined] {
+  call %0 = clo<OrdinaryGetOwnProperty>(O, P)
+  return %0
+}

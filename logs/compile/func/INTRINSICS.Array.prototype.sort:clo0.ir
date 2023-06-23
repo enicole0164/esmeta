@@ -1,0 +1,38 @@
+def <CLO>:INTRINSICS.Array.prototype.sort:clo0(
+  x: Unknown,
+  y: Unknown,
+): Unknown {
+  if (&& (= x undefined) (= y undefined)) {
+    return 0.0f
+  } else {}
+  if (= x undefined) {
+    return 1.0f
+  } else {}
+  if (= y undefined) {
+    return -1.0f
+  } else {}
+  if (! (= comparefn undefined)) {
+    call %0 = clo<Call>(comparefn, undefined, (new [x, y])[#1045])
+    call %1 = clo<ToNumber>([? %0])
+    let v = [? %1]
+    if (= v NaN) {
+      return 0.0f
+    } else {}
+    return v
+  } else {}
+  call %2 = clo<ToString>(x)
+  let xString = [? %2]
+  call %3 = clo<ToString>(y)
+  let yString = [? %3]
+  call %4 = clo<IsLessThan>(xString, yString, true)
+  let xSmaller = [! %4]
+  if (= xSmaller true) {
+    return -1.0f
+  } else {}
+  call %5 = clo<IsLessThan>(yString, xString, true)
+  let ySmaller = [! %5]
+  if (= ySmaller true) {
+    return 1.0f
+  } else {}
+  return 0.0f
+}

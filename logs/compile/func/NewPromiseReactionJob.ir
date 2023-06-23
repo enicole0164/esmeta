@@ -1,0 +1,19 @@
+def NewPromiseReactionJob(
+  reaction: Unknown["PromiseReactionRecord"],
+  argument: Unknown,
+): Unknown["RecordWithFields[[Job]](aJobAbstractClosure)And[[Realm]](aRealmRecordOr*null*)"] {
+  let job = clo<NewPromiseReactionJob:clo0, [reaction, argument]>
+  let handlerRealm = null
+  if (! (= reaction.Handler ~empty~)) {
+    call %0 = clo<GetFunctionRealm>(reaction.Handler.Callback)
+    call %1 = clo<Completion>(%0)
+    let getHandlerRealmResult = %1
+    if (&& (comp? getHandlerRealmResult) (= getHandlerRealmResult.Type ~normal~)) {
+      handlerRealm = getHandlerRealmResult.Value
+    } else {
+      handlerRealm = @EXECUTION_STACK[0].Realm
+    }
+    nop
+  } else {}
+  return (new Record("Job" -> job, "Realm" -> handlerRealm))[#1249]
+}

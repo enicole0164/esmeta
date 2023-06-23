@@ -1,0 +1,18 @@
+def <SYNTAX>:AsyncConciseBody[0,0].EvaluateAsyncConciseBody(
+  this: Ast:AsyncConciseBody[0,0],
+  functionObject: Unknown,
+  argumentsList: Unknown["List"],
+): Abrupt[return] {
+  call %0 = clo<NewPromiseCapability>(@EXECUTION_STACK[0].Realm.Intrinsics["%Promise%"])
+  let promiseCapability = [! %0]
+  call %1 = clo<FunctionDeclarationInstantiation>(functionObject, argumentsList)
+  call %2 = clo<Completion>(%1)
+  let declResult = %2
+  if (&& (comp? declResult) (! (= declResult.Type ~normal~))) {
+    call %3 = clo<Call>(promiseCapability.Reject, undefined, (new [declResult.Value])[#747])
+    [! %3]
+  } else {
+    call %4 = clo<AsyncFunctionStart>(promiseCapability, this[0])
+  }
+  return comp[~return~/~empty~](promiseCapability.Promise)
+}

@@ -1,0 +1,7 @@
+def MakeClassConstructor(
+  F: ECMAScriptFunctionObject,
+): Const[~unused~] {
+  assert (= F.IsClassConstructor false)
+  F.IsClassConstructor = true
+  return ~unused~
+}

@@ -1,0 +1,7 @@
+def HasProperty(
+  O: Object,
+  P: Symbol | String,
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->HasProperty(P)
+  return [? %0]
+}

@@ -1,0 +1,7 @@
+def <SYNTAX>:CoalesceExpression[0,0].HasCallInTailPosition(
+  this: Ast:CoalesceExpression[0,0],
+  call: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->HasCallInTailPosition(call)
+  return %0
+}

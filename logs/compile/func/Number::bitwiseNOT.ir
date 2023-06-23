@@ -1,0 +1,7 @@
+def <NUM>:Number::bitwiseNOT(
+  x: Number,
+): Unknown["IntegralNumber"] {
+  call %0 = clo<ToInt32>(x)
+  let oldValue = [! %0]
+  return (~ oldValue)
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster326 {
+    label = "def <SYNTAX>:Block[0,0].VarDeclaredNames(this: Ast:Block[0,0]): List[String]"
+    style = rounded
+    cluster326_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster326_entry_name -> cluster326_entry [arrowhead=none, color="black", style=dashed]
+    cluster326_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster326_entry -> node1881 [color="black"]
+    cluster326_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster326_exit_name -> cluster326_exit [arrowhead=none, color="black", style=dashed]
+    cluster326_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1881_name [shape=none, label=<<font color="black">Block[1881]</font>>]
+    node1881_name -> node1881 [arrowhead=none, color="black", style=dashed]
+    node1881 [shape=box, label=<<font color="black">[0] return (new [])[#184]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1881 -> cluster326_exit [color="black"]
+  }
+}

@@ -1,0 +1,56 @@
+def CreateMappedArgumentsObject(
+  func: Object,
+  formals: Ast,
+  argumentsList: Unknown["List"],
+  env: EnvironmentRecord,
+): ArgumentsExoticObject {
+  assert (yet "_formals_ does not contain a rest parameter, any binding patterns, or any initializers. It may contain duplicate identifiers.")
+  let len = argumentsList.length
+  call %0 = clo<MakeBasicObject>((new ["Prototype", "Extensible", "ParameterMap"])[#465])
+  let obj = %0
+  obj.GetOwnProperty = clo<ArgumentsExoticObject.GetOwnProperty>
+  obj.DefineOwnProperty = clo<ArgumentsExoticObject.DefineOwnProperty>
+  obj.Get = clo<ArgumentsExoticObject.Get>
+  obj.Set = clo<ArgumentsExoticObject.Set>
+  obj.Delete = clo<ArgumentsExoticObject.Delete>
+  obj.Prototype = @EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"]
+  call %1 = clo<OrdinaryObjectCreate>(null)
+  let map = %1
+  obj.ParameterMap = map
+  sdo-call %2 = formals->BoundNames()
+  let parameterNames = %2
+  let numberOfParameters = parameterNames.length
+  let index = 0
+  loop[repeat] (< index len) {
+    let val = argumentsList[index]
+    call %3 = clo<ToString>(([number] index))
+    call %4 = clo<CreateDataPropertyOrThrow>(obj, [! %3], val)
+    [! %4]
+    index = (+ index 1)
+  }
+  call %5 = clo<DefinePropertyOrThrow>(obj, "length", (new PropertyDescriptor("Value" -> ([number] len), "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#466])
+  [! %5]
+  let mappedNames = (new [])[#467]
+  index = (- numberOfParameters 1)
+  loop[repeat] (! (< index 0)) {
+    let name = parameterNames[index]
+    if (! (contains mappedNames name)) {
+      (yet "Add _name_ as an element of the list _mappedNames_.")
+      if (< index len) {
+        call %6 = clo<MakeArgGetter>(name, env)
+        let g = %6
+        call %7 = clo<MakeArgSetter>(name, env)
+        let p = %7
+        call %9 = clo<ToString>(([number] index))
+        method-call %8 = map->DefineOwnProperty([! %9], (new PropertyDescriptor("Set" -> p, "Get" -> g, "Enumerable" -> false, "Configurable" -> true))[#468])
+        [! %8]
+      } else {}
+    } else {}
+    index = (- index 1)
+  }
+  call %10 = clo<DefinePropertyOrThrow>(obj, @SYMBOL.iterator, (new PropertyDescriptor("Value" -> @EXECUTION_STACK[0].Realm.Intrinsics["%Array.prototype.values%"], "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#469])
+  [! %10]
+  call %11 = clo<DefinePropertyOrThrow>(obj, "callee", (new PropertyDescriptor("Value" -> func, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true))[#470])
+  [! %11]
+  return obj
+}

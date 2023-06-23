@@ -1,0 +1,6 @@
+def <INTERNAL>:OrdinaryObject.IsExtensible(
+  O: OrdinaryObject,
+): Normal[Boolean] {
+  call %0 = clo<OrdinaryIsExtensible>(O)
+  return %0
+}

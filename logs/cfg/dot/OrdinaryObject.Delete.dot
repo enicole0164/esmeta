@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1068 {
+    label = "def <INTERNAL>:OrdinaryObject.Delete(O: OrdinaryObject, P: Symbol | String): Normal[Boolean] | Abrupt"
+    style = rounded
+    cluster1068_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1068_entry_name -> cluster1068_entry [arrowhead=none, color="black", style=dashed]
+    cluster1068_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1068_entry -> node4175 [color="black"]
+    cluster1068_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1068_exit_name -> cluster1068_exit [arrowhead=none, color="black", style=dashed]
+    cluster1068_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4175_name [shape=none, label=<<font color="black">Call[4175]</font>>]
+    node4175_name -> node4175 [arrowhead=none, color="black", style=dashed]
+    node4175 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryDelete&gt;(O, P)</font>> color="black" fillcolor="white", style=filled]
+    node4175 -> node4176 [color="black"]
+    node4176_name [shape=none, label=<<font color="black">Block[4176]</font>>]
+    node4176_name -> node4176 [arrowhead=none, color="black", style=dashed]
+    node4176 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4176 -> cluster1068_exit [color="black"]
+  }
+}

@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2273 {
+    label = "def <SYNTAX>:AtomEscape[2,0].CompileAtom(this: Ast:AtomEscape[2,0], direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2273_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2273_entry_name -> cluster2273_entry [arrowhead=none, color="black", style=dashed]
+    cluster2273_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2273_entry -> node14002 [color="black"]
+    cluster2273_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2273_exit_name -> cluster2273_exit [arrowhead=none, color="black", style=dashed]
+    cluster2273_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node14002_name [shape=none, label=<<font color="black">Call[14002]</font>>]
+    node14002_name -> node14002 [arrowhead=none, color="black", style=dashed]
+    node14002 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CharacterValue()</font>> color="black" fillcolor="white", style=filled]
+    node14002 -> node14003 [color="black"]
+    node14003_name [shape=none, label=<<font color="black">Block[14003]</font>>]
+    node14003_name -> node14003 [arrowhead=none, color="black", style=dashed]
+    node14003 [shape=box, label=<<font color="black">[0] let cv = %0<BR ALIGN="LEFT"/>[1] (yet &quot;Let _ch_ be the character whose character value is _cv_.&quot;)<BR ALIGN="LEFT"/>[2] (yet &quot;Let _A_ be a one-element CharSet containing the character _ch_.&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14003 -> node14004 [color="black"]
+    node14004_name [shape=none, label=<<font color="black">Call[14004]</font>>]
+    node14004_name -> node14004 [arrowhead=none, color="black", style=dashed]
+    node14004 [shape=cds, label=<<font color="black">%1 = clo&lt;CharacterSetMatcher&gt;(A, false, direction)</font>> color="black" fillcolor="white", style=filled]
+    node14004 -> node14005 [color="black"]
+    node14005_name [shape=none, label=<<font color="black">Block[14005]</font>>]
+    node14005_name -> node14005 [arrowhead=none, color="black", style=dashed]
+    node14005 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node14005 -> cluster2273_exit [color="black"]
+  }
+}

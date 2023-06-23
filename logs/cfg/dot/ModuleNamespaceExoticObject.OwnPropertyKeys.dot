@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1146 {
+    label = "def <INTERNAL>:ModuleNamespaceExoticObject.OwnPropertyKeys(O: ModuleNamespaceExoticObject): Normal[List[Symbol | String]]"
+    style = rounded
+    cluster1146_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1146_entry_name -> cluster1146_entry [arrowhead=none, color="black", style=dashed]
+    cluster1146_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1146_entry -> node4989 [color="black"]
+    cluster1146_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1146_exit_name -> cluster1146_exit [arrowhead=none, color="black", style=dashed]
+    cluster1146_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4989_name [shape=none, label=<<font color="black">Block[4989]</font>>]
+    node4989_name -> node4989 [arrowhead=none, color="black", style=dashed]
+    node4989 [shape=box, label=<<font color="black">[0] let exports = O.Exports<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4989 -> node4990 [color="black"]
+    node4990_name [shape=none, label=<<font color="black">Call[4990]</font>>]
+    node4990_name -> node4990 [arrowhead=none, color="black", style=dashed]
+    node4990 [shape=cds, label=<<font color="black">%0 = clo&lt;OrdinaryOwnPropertyKeys&gt;(O)</font>> color="black" fillcolor="white", style=filled]
+    node4990 -> node4991 [color="black"]
+    node4991_name [shape=none, label=<<font color="black">Block[4991]</font>>]
+    node4991_name -> node4991 [arrowhead=none, color="black", style=dashed]
+    node4991 [shape=box, label=<<font color="black">[0] let symbolKeys = %0<BR ALIGN="LEFT"/>[1] return (list-concat exports symbolKeys)[#478]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4991 -> cluster1146_exit [color="black"]
+  }
+}

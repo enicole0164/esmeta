@@ -1,0 +1,11 @@
+def ToNumeric(
+  value: Unknown,
+): Normal[Number | BigInt] | Abrupt {
+  call %0 = clo<ToPrimitive>(value, ~number~)
+  let primValue = [? %0]
+  if (= (typeof primValue) @BigInt) {
+    return primValue
+  } else {}
+  call %1 = clo<ToNumber>(primValue)
+  return [? %1]
+}

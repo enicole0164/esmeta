@@ -1,0 +1,6 @@
+def <SYNTAX>:PropertyDefinition[2,0].PropName(
+  this: Ast:PropertyDefinition[2,0],
+): Const[~empty~] | String {
+  sdo-call %0 = this[0]->PropName()
+  return %0
+}

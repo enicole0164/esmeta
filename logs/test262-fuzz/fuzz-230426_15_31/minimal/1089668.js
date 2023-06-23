@@ -1,0 +1,2 @@
+"use strict";
+function * x ( ) { } switch ( 0 ) { } `${ 0 }` ; async x => 0 ; function Test262Error ( message ) { var x ; } await : ; 0 ? 0 : 0 ; function __consolePrintHandle__ ( msg ) { print ( msg ) ; } function $DONE ( error ) { if ( error ) return 0 ; else { __consolePrintHandle__ ( { next : '' } ) ; } } async function fn ( ) { for await ( x of [ 7 ] ) ; } fn ( ) . then ( x => 0 , $DONE ) . then ( $DONE , $DONE ) ; 

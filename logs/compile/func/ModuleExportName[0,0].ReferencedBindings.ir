@@ -1,0 +1,5 @@
+def <SYNTAX>:ModuleExportName[0,0].ReferencedBindings(
+  this: Ast:ModuleExportName[0,0],
+): List[Ast] {
+  return (new [this[0]])[#866]
+}

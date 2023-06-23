@@ -1,0 +1,38 @@
+def <BUILTIN>:INTRINSICS.String.prototype.lastIndexOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let searchString = (pop < argumentsList) else let searchString = absent
+  if (< 0 argumentsList.length) let position = (pop < argumentsList) else let position = absent
+  call %0 = clo<RequireObjectCoercible>(this)
+  let O = [? %0]
+  call %1 = clo<ToString>(O)
+  let S = [? %1]
+  call %2 = clo<ToString>(searchString)
+  let searchStr = [? %2]
+  call %3 = clo<ToNumber>(position)
+  let numPos = [? %3]
+  assert (|| (! (= position undefined)) (= numPos NaN))
+  if (= numPos NaN) {
+    let pos = +INF
+  } else {
+    call %4 = clo<ToIntegerOrInfinity>(numPos)
+    let pos = [! %4]
+  }
+  let len = S.length
+  let start = (clamp pos 0 len)
+  if (= searchStr "") {
+    return ([number] start)
+  } else {}
+  let searchLen = searchStr.length
+  let i = start
+  loop[foreach-int] (! (< (- len searchLen) i)) {
+    let candidate = (substring S i (+ i searchLen))
+    if (= candidate searchStr) {
+      return ([number] i)
+    } else {}
+    i = (- i 1)
+  }
+  return -1.0f
+}

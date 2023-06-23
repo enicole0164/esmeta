@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2248 {
+    label = "def <SYNTAX>:Term[2,0].CompileSubpattern(this: Ast:Term[2,0], direction: Const[~backward~, ~forward~]): Unknown["Matcher"]"
+    style = rounded
+    cluster2248_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2248_entry_name -> cluster2248_entry [arrowhead=none, color="black", style=dashed]
+    cluster2248_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2248_entry -> node13928 [color="black"]
+    cluster2248_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2248_exit_name -> cluster2248_exit [arrowhead=none, color="black", style=dashed]
+    cluster2248_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node13928_name [shape=none, label=<<font color="black">Call[13928]</font>>]
+    node13928_name -> node13928 [arrowhead=none, color="black", style=dashed]
+    node13928 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;CompileAtom(direction)</font>> color="black" fillcolor="white", style=filled]
+    node13928 -> node13929 [color="black"]
+    node13929_name [shape=none, label=<<font color="black">Block[13929]</font>>]
+    node13929_name -> node13929 [arrowhead=none, color="black", style=dashed]
+    node13929 [shape=box, label=<<font color="black">[0] let m = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13929 -> node13930 [color="black"]
+    node13930_name [shape=none, label=<<font color="black">Call[13930]</font>>]
+    node13930_name -> node13930 [arrowhead=none, color="black", style=dashed]
+    node13930 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;CompileQuantifier()</font>> color="black" fillcolor="white", style=filled]
+    node13930 -> node13931 [color="black"]
+    node13931_name [shape=none, label=<<font color="black">Block[13931]</font>>]
+    node13931_name -> node13931 [arrowhead=none, color="black", style=dashed]
+    node13931 [shape=box, label=<<font color="black">[0] let q = %1<BR ALIGN="LEFT"/>[1] assert (! (&lt; q.Max q.Min))<BR ALIGN="LEFT"/>[2] (yet &quot;Let _parenIndex_ be the number of left-capturing parentheses in the entire regular expression that occur to the left of this |Term|. This is the total number of &lt;emu-grammar&gt;Atom :: `(` GroupSpecifier Disjunction `)`&lt;/emu-grammar&gt; Parse Nodes prior to or enclosing this |Term|.&quot;)<BR ALIGN="LEFT"/>[3] (yet &quot;Let _parenCount_ be the number of left-capturing parentheses in |Atom|. This is the total number of &lt;emu-grammar&gt;Atom :: `(` GroupSpecifier Disjunction `)`&lt;/emu-grammar&gt; Parse Nodes enclosed by |Atom|.&quot;)<BR ALIGN="LEFT"/>[4] (yet &quot;Return a new Matcher with parameters (_x_, _c_) that captures _m_, _q_, _parenIndex_, and _parenCount_ and performs the following steps when called:\n  1. Assert: _x_ is a State.\n  1. Assert: _c_ is a Continuation.\n  1. Return RepeatMatcher(_m_, _q_.[[Min]], _q_.[[Max]], _q_.[[Greedy]], _x_, _c_, _parenIndex_, _parenCount_).&quot;)<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node13931 -> cluster2248_exit [color="black"]
+  }
+}

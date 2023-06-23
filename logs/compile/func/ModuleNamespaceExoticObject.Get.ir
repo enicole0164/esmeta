@@ -1,0 +1,30 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.Get(
+  O: ModuleNamespaceExoticObject,
+  P: Symbol | String,
+  Receiver: ESValue,
+): Normal[ESValue] | Abrupt {
+  if (= (typeof P) @Symbol) {
+    call %0 = clo<OrdinaryGet>(O, P, Receiver)
+    return [! %0]
+  } else {}
+  let exports = O.Exports
+  if (! (contains exports P)) {
+    return undefined
+  } else {}
+  let m = O.Module
+  method-call %1 = m->ResolveExport(P)
+  let binding = [! %1]
+  assert (? binding: "ResolvedBindingRecord")
+  let targetModule = binding.Module
+  assert (! (= targetModule undefined))
+  if (= binding.BindingName ~namespace~) {
+    call %2 = clo<GetModuleNamespace>(targetModule)
+    return [? %2]
+  } else {}
+  let targetEnv = targetModule.Environment
+  if (= targetEnv ~empty~) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#477])
+  } else {}
+  method-call %3 = targetEnv->GetBindingValue(binding.BindingName, true)
+  return [? %3]
+}

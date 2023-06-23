@@ -1,0 +1,9 @@
+def <SYNTAX>:BreakableStatement[0,0].ContainsUndefinedContinueTarget(
+  this: Ast:BreakableStatement[0,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  let newIterationSet = (list-concat iterationSet labelSet)[#298]
+  sdo-call %0 = this[0]->ContainsUndefinedContinueTarget(newIterationSet, (new [])[#299])
+  return %0
+}

@@ -1,0 +1,28 @@
+def StringGetOwnProperty(
+  S: Unknown["ObjectThatHasA[[StringData]]InternalSlot"],
+  P: Symbol | String,
+): PropertyDescriptor | Undefined {
+  if (! (= (typeof P) @String)) {
+    return undefined
+  } else {}
+  call %0 = clo<CanonicalNumericIndexString>(P)
+  let index = %0
+  if (= index undefined) {
+    return undefined
+  } else {}
+  call %1 = clo<IsIntegralNumber>(index)
+  if (= %1 false) {
+    return undefined
+  } else {}
+  if (= index -0.0f) {
+    return undefined
+  } else {}
+  let str = S.StringData
+  assert (= (typeof str) @String)
+  let len = str.length
+  if (|| (< ([math] index) 0) (! (< ([math] index) len))) {
+    return undefined
+  } else {}
+  let resultStr = (substring str ([math] index) (+ ([math] index) 1))
+  return (new PropertyDescriptor("Value" -> resultStr, "Writable" -> false, "Enumerable" -> true, "Configurable" -> false))[#460]
+}

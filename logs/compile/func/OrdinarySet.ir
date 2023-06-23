@@ -1,0 +1,11 @@
+def OrdinarySet(
+  O: Object,
+  P: Symbol | String,
+  V: ESValue,
+  Receiver: ESValue,
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->GetOwnProperty(P)
+  let ownDesc = [? %0]
+  call %1 = clo<OrdinarySetWithOwnDescriptor>(O, P, V, Receiver, ownDesc)
+  return [? %1]
+}

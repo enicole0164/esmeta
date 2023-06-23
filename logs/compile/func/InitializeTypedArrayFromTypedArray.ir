@@ -1,0 +1,58 @@
+def InitializeTypedArrayFromTypedArray(
+  O: Unknown["TypedArray"],
+  srcArray: Unknown["TypedArray"],
+): Normal[Const[~unused~]] | Abrupt {
+  let srcData = srcArray.ViewedArrayBuffer
+  call %0 = clo<IsDetachedBuffer>(srcData)
+  if (= %0 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1105])
+  } else {}
+  call %1 = clo<TypedArrayElementType>(O)
+  let elementType = %1
+  call %2 = clo<TypedArrayElementSize>(O)
+  let elementSize = %2
+  call %3 = clo<TypedArrayElementType>(srcArray)
+  let srcType = %3
+  call %4 = clo<TypedArrayElementSize>(srcArray)
+  let srcElementSize = %4
+  let srcByteOffset = srcArray.ByteOffset
+  let elementLength = srcArray.ArrayLength
+  let byteLength = (* elementSize elementLength)
+  call %5 = clo<IsSharedArrayBuffer>(srcData)
+  if (= %5 false) {
+    call %6 = clo<SpeciesConstructor>(srcData, @EXECUTION_STACK[0].Realm.Intrinsics["%ArrayBuffer%"])
+    let bufferConstructor = [? %6]
+  } else {
+    let bufferConstructor = @EXECUTION_STACK[0].Realm.Intrinsics["%ArrayBuffer%"]
+  }
+  if (= elementType srcType) {
+    call %7 = clo<CloneArrayBuffer>(srcData, srcByteOffset, byteLength, bufferConstructor)
+    let data = [? %7]
+  } else {
+    call %8 = clo<AllocateArrayBuffer>(bufferConstructor, byteLength)
+    let data = [? %8]
+    call %9 = clo<IsDetachedBuffer>(srcData)
+    if (= %9 true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1106])
+    } else {}
+    if (! (== srcArray.ContentType O.ContentType)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1107])
+    } else {}
+    let srcByteIndex = srcByteOffset
+    let targetByteIndex = 0
+    let count = elementLength
+    loop[repeat] (< 0 count) {
+      call %10 = clo<GetValueFromBuffer>(srcData, srcByteIndex, srcType, true, ~Unordered~)
+      let value = %10
+      call %11 = clo<SetValueInBuffer>(data, targetByteIndex, elementType, value, true, ~Unordered~)
+      srcByteIndex = (+ srcByteIndex srcElementSize)
+      targetByteIndex = (+ targetByteIndex elementSize)
+      count = (- count 1)
+    }
+  }
+  O.ViewedArrayBuffer = data
+  O.ByteLength = byteLength
+  O.ByteOffset = 0
+  O.ArrayLength = elementLength
+  return ~unused~
+}

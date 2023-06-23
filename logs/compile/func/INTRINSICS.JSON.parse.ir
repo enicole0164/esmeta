@@ -1,0 +1,32 @@
+def <BUILTIN>:INTRINSICS.JSON.parse(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let text = (pop < argumentsList) else let text = absent
+  if (< 0 argumentsList.length) let reviver = (pop < argumentsList) else let reviver = absent
+  call %0 = clo<ToString>(text)
+  let jsonString = [? %0]
+  (yet "Parse StringToCodePoints(_jsonString_) as a JSON text as specified in ECMA-404. Throw a *SyntaxError* exception if it is not a valid JSON text as defined in that specification.")
+  let scriptString = (concat "(" jsonString ");")
+  call %1 = clo<StringToCodePoints>(scriptString)
+  let script = (parse %1 (nt |Script|[]))
+  nop
+  assert (? script: "ParseNode")
+  (yet "Let _completion_ be the result of <emu-meta suppress-effects=\"user-code\">evaluating _script_</emu-meta>.")
+  nop
+  let unfiltered = completion.Value
+  assert (yet "_unfiltered_ is either a String, Number, Boolean, Null, or an Object that is defined by either an |ArrayLiteral| or an |ObjectLiteral|.")
+  call %2 = clo<IsCallable>(reviver)
+  if (= %2 true) {
+    call %3 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%Object.prototype%"])
+    let root = %3
+    let rootName = ""
+    call %4 = clo<CreateDataPropertyOrThrow>(root, rootName, unfiltered)
+    [! %4]
+    call %5 = clo<InternalizeJSONProperty>(root, rootName, reviver)
+    return [? %5]
+  } else {
+    return unfiltered
+  }
+}

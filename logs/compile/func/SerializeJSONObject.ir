@@ -1,0 +1,51 @@
+def SerializeJSONObject(
+  state: Unknown,
+  value: Object,
+): Normal[String] | Abrupt {
+  if (contains state.Stack value) {
+    (yet "throw a *TypeError* exception because the structure is cyclical.")
+  } else {}
+  push state.Stack < value
+  let stepback = state.Indent
+  state.Indent = (concat state.Indent state.Gap)
+  if (! (= state.PropertyList undefined)) {
+    let K = state.PropertyList
+  } else {
+    call %0 = clo<EnumerableOwnPropertyNames>(value, ~key~)
+    let K = [? %0]
+  }
+  let partial = (new [])[#1200]
+  %2 = K
+  %1 = 0
+  loop[foreach] (< %1 %2.length) {
+    let P = %2[%1]
+    call %3 = clo<SerializeJSONProperty>(state, P, value)
+    let strP = [? %3]
+    if (! (= strP undefined)) {
+      call %4 = clo<QuoteJSONString>(P)
+      let member = %4
+      member = (concat member ":")
+      if (! (= state.Gap "")) {
+        member = (concat member 32cu)
+      } else {}
+      member = (concat member strP)
+      push partial < member
+    } else {}
+    %1 = (+ %1 1)
+  }
+  if (= partial.length 0) {
+    let final = "{}"
+  } else {
+    if (= state.Gap "") {
+      (yet "Let _properties_ be the String value formed by concatenating all the element Strings of _partial_ with each adjacent pair of Strings separated with the code unit 0x002C (COMMA). A comma is not inserted either before the first String or after the last String.")
+      let final = (concat "{" properties "}")
+    } else {
+      let separator = (concat 44cu 10cu state.Indent)
+      (yet "Let _properties_ be the String value formed by concatenating all the element Strings of _partial_ with each adjacent pair of Strings separated with _separator_. The _separator_ String is not inserted either before the first String or after the last String.")
+      let final = (concat "{" 10cu state.Indent properties 10cu stepback "}")
+    }
+  }
+  (yet "Remove the last element of _state_.[[Stack]].")
+  state.Indent = stepback
+  return final
+}

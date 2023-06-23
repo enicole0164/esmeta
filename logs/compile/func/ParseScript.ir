@@ -1,0 +1,11 @@
+def ParseScript(
+  sourceText: Unknown["ECMAScriptSourceText"],
+  realm: Unknown,
+  hostDefined: Unknown,
+): Unknown["ScriptRecordOrANonemptyListOf*SyntaxError*Objects"] {
+  let script = (parse sourceText (nt |Script|[]))
+  if (? script: "ListOfErrors") {
+    return script
+  } else {}
+  return (new ScriptRecord("Realm" -> realm, "ECMAScriptCode" -> script, "HostDefined" -> hostDefined))[#748]
+}

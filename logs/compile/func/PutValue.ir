@@ -1,0 +1,43 @@
+def PutValue(
+  V: Unknown,
+  W: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  [? V]
+  [? W]
+  if (! (? V: "ReferenceRecord")) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#13])
+  } else {}
+  call %0 = clo<IsUnresolvableReference>(V)
+  if (= %0 true) {
+    if (= V.Strict true) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%ReferenceError.prototype%"], "ErrorData" -> undefined))[#14])
+    } else {}
+    call %1 = clo<GetGlobalObject>()
+    let globalObj = %1
+    call %2 = clo<Set>(globalObj, V.ReferencedName, W, false)
+    [? %2]
+    return ~unused~
+  } else {}
+  call %3 = clo<IsPropertyReference>(V)
+  if (= %3 true) {
+    call %4 = clo<ToObject>(V.Base)
+    let baseObj = [? %4]
+    call %5 = clo<IsPrivateReference>(V)
+    if (= %5 true) {
+      call %6 = clo<PrivateSet>(baseObj, V.ReferencedName, W)
+      return [? %6]
+    } else {}
+    call %8 = clo<GetThisValue>(V)
+    method-call %7 = baseObj->Set(V.ReferencedName, W, %8)
+    let succeeded = [? %7]
+    if (&& (= succeeded false) (= V.Strict true)) {
+      return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#15])
+    } else {}
+    return ~unused~
+  } else {
+    let base = V.Base
+    assert (? base: "EnvironmentRecord")
+    method-call %9 = base->SetMutableBinding(V.ReferencedName, W, V.Strict)
+    return [? %9]
+  }
+}

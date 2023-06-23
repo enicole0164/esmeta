@@ -1,0 +1,13 @@
+def <SYNTAX>:PropertyDefinition[4,0].PropertyDefinitionEvaluation(
+  this: Ast:PropertyDefinition[4,0],
+  object: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  let exprValue = %0
+  call %1 = clo<GetValue>(exprValue)
+  let fromValue = [? %1]
+  let excludedNames = (new [])[#549]
+  call %2 = clo<CopyDataProperties>(object, fromValue, excludedNames)
+  [? %2]
+  return ~unused~
+}

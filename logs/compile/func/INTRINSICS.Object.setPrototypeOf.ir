@@ -1,0 +1,22 @@
+def <BUILTIN>:INTRINSICS.Object.setPrototypeOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let O = (pop < argumentsList) else let O = absent
+  if (< 0 argumentsList.length) let proto = (pop < argumentsList) else let proto = absent
+  call %0 = clo<RequireObjectCoercible>(O)
+  O = [? %0]
+  if (! (|| (= (typeof proto) @Object) (= (typeof proto) @Null))) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#898])
+  } else {}
+  if (! (= (typeof O) @Object)) {
+    return O
+  } else {}
+  method-call %1 = O->SetPrototypeOf(proto)
+  let status = [? %1]
+  if (= status false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#899])
+  } else {}
+  return O
+}

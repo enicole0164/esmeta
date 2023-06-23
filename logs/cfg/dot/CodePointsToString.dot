@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1165 {
+    label = "def CodePointsToString(text: Unknown["SequenceOfUnicodeCodePoints"]): String"
+    style = rounded
+    cluster1165_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1165_entry_name -> cluster1165_entry [arrowhead=none, color="black", style=dashed]
+    cluster1165_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1165_entry -> node5359 [color="black"]
+    cluster1165_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1165_exit_name -> cluster1165_exit [arrowhead=none, color="black", style=dashed]
+    cluster1165_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node5359_name [shape=none, label=<<font color="black">Block[5359]</font>>]
+    node5359_name -> node5359 [arrowhead=none, color="black", style=dashed]
+    node5359 [shape=box, label=<<font color="black">[0] let result = &quot;&quot;<BR ALIGN="LEFT"/>[1] (yet &quot;For each code point _cp_ of _text_, do\n  1. Set _result_ to the string-concatenation of _result_ and UTF16EncodeCodePoint(_cp_).&quot;)<BR ALIGN="LEFT"/>[2] return result<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node5359 -> cluster1165_exit [color="black"]
+  }
+}

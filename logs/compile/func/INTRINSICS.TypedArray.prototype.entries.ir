@@ -1,0 +1,11 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.entries(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  call %0 = clo<ValidateTypedArray>(O)
+  [? %0]
+  call %1 = clo<CreateArrayIterator>(O, ~key+value~)
+  return %1
+}

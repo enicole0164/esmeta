@@ -1,0 +1,10 @@
+def BinaryAnd(
+  x: Unknown["0Or1"],
+  y: Unknown["0Or1"],
+): Unknown["0Or1"] {
+  if (&& (= x 1) (= y 1)) {
+    return 1
+  } else {
+    return 0
+  }
+}

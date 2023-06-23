@@ -1,0 +1,11 @@
+def <SYNTAX>:BindingProperty[1,0].ContainsExpression(
+  this: Ast:BindingProperty[1,0],
+): Boolean {
+  sdo-call %0 = this[0]->IsComputedPropertyKey()
+  let has = %0
+  if (= has true) {
+    return true
+  } else {}
+  sdo-call %1 = this[1]->ContainsExpression()
+  return %1
+}

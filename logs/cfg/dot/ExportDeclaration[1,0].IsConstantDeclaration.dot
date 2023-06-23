@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster254 {
+    label = "def <SYNTAX>:ExportDeclaration[1,0].IsConstantDeclaration(this: Ast:ExportDeclaration[1,0]): Boolean"
+    style = rounded
+    cluster254_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster254_entry_name -> cluster254_entry [arrowhead=none, color="black", style=dashed]
+    cluster254_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster254_entry -> node1664 [color="black"]
+    cluster254_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster254_exit_name -> cluster254_exit [arrowhead=none, color="black", style=dashed]
+    cluster254_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1664_name [shape=none, label=<<font color="black">Block[1664]</font>>]
+    node1664_name -> node1664 [arrowhead=none, color="black", style=dashed]
+    node1664 [shape=box, label=<<font color="black">[0] return false<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1664 -> cluster254_exit [color="black"]
+  }
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:BindingIdentifier[2,0].BoundNames(
+  this: Ast:BindingIdentifier[2,0],
+): List[String] {
+  return (new ["await"])[#84]
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:DebuggerStatement[0,0].Evaluation(
+  this: Ast:DebuggerStatement[0,0],
+): Unknown {
+  (yet "If an implementation-defined debugging facility is available and enabled, then\n  1. Perform an implementation-defined debugging action.\n  1. Return a new implementation-defined Completion Record.")
+  (yet "Else,\n  1. Return ~empty~.")
+}

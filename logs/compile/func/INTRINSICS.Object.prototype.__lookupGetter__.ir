@@ -1,0 +1,27 @@
+def <BUILTIN>:INTRINSICS.Object.prototype.__lookupGetter__(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let P = (pop < argumentsList) else let P = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<ToPropertyKey>(P)
+  let key = [? %1]
+  loop[repeat] true {
+    method-call %2 = O->GetOwnProperty(key)
+    let desc = [? %2]
+    if (! (= desc undefined)) {
+      call %3 = clo<IsAccessorDescriptor>(desc)
+      if (= %3 true) {
+        return desc.Get
+      } else {}
+      return undefined
+    } else {}
+    method-call %4 = O->GetPrototypeOf()
+    O = [? %4]
+    if (= O null) {
+      return undefined
+    } else {}
+  }
+}

@@ -1,0 +1,11 @@
+def <SYNTAX>:CallExpression[7,0].AllPrivateIdentifiersValid(
+  this: Ast:CallExpression[7,0],
+  names: Unknown,
+): Boolean {
+  sdo-call %0 = this[1]->StringValue()
+  if (contains names %0) {
+    sdo-call %1 = this[0]->AllPrivateIdentifiersValid(names)
+    return %1
+  } else {}
+  return false
+}

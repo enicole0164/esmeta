@@ -1,0 +1,68 @@
+def <BUILTIN>:INTRINSICS.Atomics.wait(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let typedArray = (pop < argumentsList) else let typedArray = absent
+  if (< 0 argumentsList.length) let index = (pop < argumentsList) else let index = absent
+  if (< 0 argumentsList.length) let value = (pop < argumentsList) else let value = absent
+  if (< 0 argumentsList.length) let timeout = (pop < argumentsList) else let timeout = absent
+  call %0 = clo<ValidateIntegerTypedArray>(typedArray, true)
+  let buffer = [? %0]
+  call %1 = clo<IsSharedArrayBuffer>(buffer)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1191])
+  } else {}
+  call %2 = clo<ValidateAtomicAccess>(typedArray, index)
+  let indexedPosition = [? %2]
+  if (= typedArray.TypedArrayName "BigInt64Array") {
+    call %3 = clo<ToBigInt64>(value)
+    let v = [? %3]
+  } else {
+    call %4 = clo<ToInt32>(value)
+    let v = [? %4]
+  }
+  call %5 = clo<ToNumber>(timeout)
+  let q = [? %5]
+  if (|| (= q NaN) (= q +INF)) {
+    let t = +INF
+  } else {
+    if (= q -INF) {
+      let t = 0
+    } else {
+      let t = (max ([math] q) 0)
+    }
+  }
+  call %6 = clo<AgentCanSuspend>()
+  let B = %6
+  if (= B false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1192])
+  } else {}
+  let block = buffer.ArrayBufferData
+  call %7 = clo<GetWaiterList>(block, indexedPosition)
+  let WL = %7
+  call %8 = clo<EnterCriticalSection>(WL)
+  call %9 = clo<TypedArrayElementType>(typedArray)
+  let elementType = %9
+  call %10 = clo<GetValueFromBuffer>(buffer, indexedPosition, elementType, true, ~SeqCst~)
+  let w = %10
+  if (! (== v w)) {
+    call %11 = clo<LeaveCriticalSection>(WL)
+    return "not-equal"
+  } else {}
+  call %12 = clo<AgentSignifier>()
+  let W = %12
+  call %13 = clo<AddWaiter>(WL, W)
+  call %14 = clo<SuspendAgent>(WL, W, t)
+  let notified = %14
+  if (= notified true) {
+    assert (yet "_W_ is not on the list of waiters in _WL_.")
+  } else {
+    call %15 = clo<RemoveWaiter>(WL, W)
+  }
+  call %16 = clo<LeaveCriticalSection>(WL)
+  if (= notified true) {
+    return "ok"
+  } else {}
+  return "timed-out"
+}

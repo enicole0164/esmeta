@@ -1,0 +1,13 @@
+def <BUILTIN>:INTRINSICS.Symbol.keyFor(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let sym = (pop < argumentsList) else let sym = absent
+  if (! (= (typeof sym) @Symbol)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#918])
+  } else {}
+  (yet "For each element _e_ of the GlobalSymbolRegistry List (see <emu-xref href=\"#sec-symbol.for\"></emu-xref>), do\n  1. If SameValue(_e_.[[Symbol]], _sym_) is *true*, return _e_.[[Key]].")
+  assert (yet "GlobalSymbolRegistry does not currently contain an entry for _sym_.")
+  return undefined
+}

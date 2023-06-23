@@ -1,0 +1,36 @@
+def ObjectDefineProperties(
+  O: Object,
+  Properties: Unknown,
+): Normal[Object] | Abrupt {
+  call %0 = clo<ToObject>(Properties)
+  let props = [? %0]
+  method-call %1 = props->OwnPropertyKeys()
+  let keys = [? %1]
+  let descriptors = (new [])[#890]
+  %3 = keys
+  %2 = 0
+  loop[foreach] (< %2 %3.length) {
+    let nextKey = %3[%2]
+    method-call %4 = props->GetOwnProperty(nextKey)
+    let propDesc = [? %4]
+    if (&& (! (= propDesc undefined)) (= propDesc.Enumerable true)) {
+      call %5 = clo<Get>(props, nextKey)
+      let descObj = [? %5]
+      call %6 = clo<ToPropertyDescriptor>(descObj)
+      let desc = [? %6]
+      push descriptors < (new [nextKey, desc])[#891]
+    } else {}
+    %2 = (+ %2 1)
+  }
+  %8 = descriptors
+  %7 = 0
+  loop[foreach] (< %7 %8.length) {
+    let pair = %8[%7]
+    let P = pair[0]
+    let desc = pair[1]
+    call %9 = clo<DefinePropertyOrThrow>(O, P, desc)
+    [? %9]
+    %7 = (+ %7 1)
+  }
+  return O
+}

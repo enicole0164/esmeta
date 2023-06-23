@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2663 {
+    label = "def SharedDataBlockEventSet(execution: Unknown["CandidateExecution"]): Unknown["SetOfEvents"]"
+    style = rounded
+    cluster2663_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2663_entry_name -> cluster2663_entry [arrowhead=none, color="black", style=dashed]
+    cluster2663_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2663_entry -> node19841 [color="black"]
+    cluster2663_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2663_exit_name -> cluster2663_exit [arrowhead=none, color="black", style=dashed]
+    cluster2663_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node19841_name [shape=none, label=<<font color="black">Block[19841]</font>>]
+    node19841_name -> node19841 [arrowhead=none, color="black", style=dashed]
+    node19841 [shape=box, label=<<font color="black">[0] (yet &quot;Let _events_ be an empty Set.&quot;)<BR ALIGN="LEFT"/>[1] (yet &quot;For each event _E_ of EventSet(_execution_), do\n  1. If _E_ is a ReadSharedMemory, WriteSharedMemory, or ReadModifyWriteSharedMemory event, add _E_ to _events_.&quot;)<BR ALIGN="LEFT"/>[2] return events<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node19841 -> cluster2663_exit [color="black"]
+  }
+}

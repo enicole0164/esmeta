@@ -1,0 +1,18 @@
+def SameValueZero(
+  x: ESValue,
+  y: ESValue,
+): Boolean {
+  if (! (= (typeof x) (typeof y))) {
+    return false
+  } else {}
+  if (= (typeof x) @Number) {
+    call %0 = clo<Number::sameValueZero>(x, y)
+    return %0
+  } else {}
+  if (= (typeof x) @BigInt) {
+    call %1 = clo<BigInt::sameValueZero>(x, y)
+    return %1
+  } else {}
+  call %2 = clo<SameValueNonNumeric>(x, y)
+  return %2
+}

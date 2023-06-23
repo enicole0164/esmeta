@@ -1,0 +1,5 @@
+def OrdinaryIsExtensible(
+  O: Object,
+): Boolean {
+  return O.Extensible
+}

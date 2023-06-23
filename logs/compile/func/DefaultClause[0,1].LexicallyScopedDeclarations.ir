@@ -1,0 +1,9 @@
+def <SYNTAX>:DefaultClause[0,1].LexicallyScopedDeclarations(
+  this: Ast:DefaultClause[0,1],
+): List[Ast] {
+  if (! (= this[0] absent)) {
+    sdo-call %0 = this[0]->LexicallyScopedDeclarations()
+    return %0
+  } else {}
+  return (new [])[#159]
+}

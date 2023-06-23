@@ -1,0 +1,9 @@
+def <SYNTAX>:ArgumentList[0,0].ArgumentListEvaluation(
+  this: Ast:ArgumentList[0,0],
+): Normal[List[ESValue]] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  let ref = %0
+  call %1 = clo<GetValue>(ref)
+  let arg = [? %1]
+  return (new [arg])[#576]
+}

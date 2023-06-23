@@ -1,0 +1,22 @@
+def Canonicalize(
+  ch: Unknown["Character"],
+): Unknown["Character"] {
+  if (&& (= Unicode true) (= IgnoreCase true)) {
+    (yet "If the file <a href=\"https://unicode.org/Public/UCD/latest/ucd/CaseFolding.txt\"><code>CaseFolding.txt</code></a> of the Unicode Character Database provides a simple or common case folding mapping for _ch_, return the result of applying that mapping to _ch_.")
+    return ch
+  } else {}
+  if (= IgnoreCase false) {
+    return ch
+  } else {}
+  assert (yet "_ch_ is a UTF-16 code unit.")
+  (yet "Let _cp_ be the code point whose numeric value is that of _ch_.")
+  (yet "Let _u_ be the result of toUppercase(« _cp_ »), according to the Unicode Default Case Conversion algorithm.")
+  call %0 = clo<CodePointsToString>(u)
+  let uStr = %0
+  (yet "If _uStr_ does not consist of a single code unit, return _ch_.")
+  (yet "Let _cu_ be _uStr_'s single code unit element.")
+  if (&& (! (< ([math] ch) 128)) (< ([math] cu) 128)) {
+    return ch
+  } else {}
+  return cu
+}

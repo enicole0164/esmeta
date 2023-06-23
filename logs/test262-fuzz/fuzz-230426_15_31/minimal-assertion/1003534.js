@@ -1,0 +1,394 @@
+// [EXIT] normal
+$assert.sameValue($Object_getPrototypeOf(globalThis["$DONE"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["$DONE"]), true);
+$assert.callable(globalThis["$DONE"]);
+$assert.constructable(globalThis["$DONE"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["$DONE"]), ['length', 'name', 'prototype'], globalThis["$DONE"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["$DONE"]?.["prototype"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["$DONE"]?.["prototype"]), true);
+$assert.notCallable(globalThis["$DONE"]?.["prototype"]);
+$assert.notConstructable(globalThis["$DONE"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["$DONE"]?.["prototype"]), ['constructor'], globalThis["$DONE"]?.["prototype"]);
+$assert.sameValue(globalThis["$DONE"]?.["prototype"]?.["constructor"], globalThis["$DONE"]);
+$verifyProperty(globalThis["$DONE"]?.["prototype"], "constructor", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["$DONE"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["$DONE"], "name", {
+  value: "$DONE",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["$DONE"], "length", {
+  value: 1.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["Test262Error"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["Test262Error"]), true);
+$assert.callable(globalThis["Test262Error"]);
+$assert.constructable(globalThis["Test262Error"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["Test262Error"]), ['length', 'name', 'prototype', 'thrower'], globalThis["Test262Error"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["Test262Error"]?.["thrower"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["Test262Error"]?.["thrower"]), true);
+$assert.callable(globalThis["Test262Error"]?.["thrower"]);
+$assert.notConstructable(globalThis["Test262Error"]?.["thrower"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["Test262Error"]?.["thrower"]), ['length', 'name'], globalThis["Test262Error"]?.["thrower"]);
+$verifyProperty(globalThis["Test262Error"]?.["thrower"], "name", {
+  value: "",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["Test262Error"]?.["thrower"], "length", {
+  value: 1.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["Test262Error"], "thrower", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["Test262Error"]?.["prototype"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["Test262Error"]?.["prototype"]), true);
+$assert.notCallable(globalThis["Test262Error"]?.["prototype"]);
+$assert.notConstructable(globalThis["Test262Error"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["Test262Error"]?.["prototype"]), ['constructor', 'toString'], globalThis["Test262Error"]?.["prototype"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["Test262Error"]?.["prototype"]?.["toString"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["Test262Error"]?.["prototype"]?.["toString"]), true);
+$assert.callable(globalThis["Test262Error"]?.["prototype"]?.["toString"]);
+$assert.constructable(globalThis["Test262Error"]?.["prototype"]?.["toString"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["Test262Error"]?.["prototype"]?.["toString"]), ['length', 'name', 'prototype'], globalThis["Test262Error"]?.["prototype"]?.["toString"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"]), true);
+$assert.notCallable(globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"]);
+$assert.notConstructable(globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"]), ['constructor'], globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"]);
+$assert.sameValue(globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"]?.["constructor"], globalThis["Test262Error"]?.["prototype"]?.["toString"]);
+$verifyProperty(globalThis["Test262Error"]?.["prototype"]?.["toString"]?.["prototype"], "constructor", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["Test262Error"]?.["prototype"]?.["toString"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["Test262Error"]?.["prototype"]?.["toString"], "name", {
+  value: "",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["Test262Error"]?.["prototype"]?.["toString"], "length", {
+  value: 0.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["Test262Error"]?.["prototype"], "toString", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$assert.sameValue(globalThis["Test262Error"]?.["prototype"]?.["constructor"], globalThis["Test262Error"]);
+$verifyProperty(globalThis["Test262Error"]?.["prototype"], "constructor", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["Test262Error"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["Test262Error"], "name", {
+  value: "Test262Error",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["Test262Error"], "length", {
+  value: 1.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["__consolePrintHandle__"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["__consolePrintHandle__"]), true);
+$assert.callable(globalThis["__consolePrintHandle__"]);
+$assert.constructable(globalThis["__consolePrintHandle__"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["__consolePrintHandle__"]), ['length', 'name', 'prototype'], globalThis["__consolePrintHandle__"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["__consolePrintHandle__"]?.["prototype"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["__consolePrintHandle__"]?.["prototype"]), true);
+$assert.notCallable(globalThis["__consolePrintHandle__"]?.["prototype"]);
+$assert.notConstructable(globalThis["__consolePrintHandle__"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["__consolePrintHandle__"]?.["prototype"]), ['constructor'], globalThis["__consolePrintHandle__"]?.["prototype"]);
+$assert.sameValue(globalThis["__consolePrintHandle__"]?.["prototype"]?.["constructor"], globalThis["__consolePrintHandle__"]);
+$verifyProperty(globalThis["__consolePrintHandle__"]?.["prototype"], "constructor", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["__consolePrintHandle__"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["__consolePrintHandle__"], "name", {
+  value: "__consolePrintHandle__",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["__consolePrintHandle__"], "length", {
+  value: 1.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["assert"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["assert"]), true);
+$assert.callable(globalThis["assert"]);
+$assert.constructable(globalThis["assert"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["assert"]), ['length', 'name', 'prototype', '_isSameValue', 'notSameValue', 'throws', '_toString'], globalThis["assert"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["assert"]?.["prototype"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["assert"]?.["prototype"]), true);
+$assert.notCallable(globalThis["assert"]?.["prototype"]);
+$assert.notConstructable(globalThis["assert"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["assert"]?.["prototype"]), ['constructor'], globalThis["assert"]?.["prototype"]);
+$assert.sameValue(globalThis["assert"]?.["prototype"]?.["constructor"], globalThis["assert"]);
+$verifyProperty(globalThis["assert"]?.["prototype"], "constructor", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["assert"], "_isSameValue", {
+  value: null,
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["assert"]?.["throws"]), AsyncGeneratorFunction.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["assert"]?.["throws"]), true);
+$assert.callable(globalThis["assert"]?.["throws"]);
+$assert.notConstructable(globalThis["assert"]?.["throws"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["assert"]?.["throws"]), ['length', 'name', 'prototype'], globalThis["assert"]?.["throws"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["assert"]?.["throws"]?.["prototype"]), AsyncGeneratorFunction.prototype.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["assert"]?.["throws"]?.["prototype"]), true);
+$assert.notCallable(globalThis["assert"]?.["throws"]?.["prototype"]);
+$assert.notConstructable(globalThis["assert"]?.["throws"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["assert"]?.["throws"]?.["prototype"]), [], globalThis["assert"]?.["throws"]?.["prototype"]);
+$verifyProperty(globalThis["assert"]?.["throws"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["assert"]?.["throws"], "name", {
+  value: "",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"]?.["throws"], "length", {
+  value: 0.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"], "throws", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["assert"]?.["notSameValue"]), AsyncFunction.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["assert"]?.["notSameValue"]), true);
+$assert.callable(globalThis["assert"]?.["notSameValue"]);
+$assert.notConstructable(globalThis["assert"]?.["notSameValue"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["assert"]?.["notSameValue"]), ['length', 'name'], globalThis["assert"]?.["notSameValue"]);
+$verifyProperty(globalThis["assert"]?.["notSameValue"], "name", {
+  value: "x",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"]?.["notSameValue"], "length", {
+  value: 0.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"], "notSameValue", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"], "length", {
+  value: 2.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["assert"]?.["_toString"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["assert"]?.["_toString"]), true);
+$assert.callable(globalThis["assert"]?.["_toString"]);
+$assert.constructable(globalThis["assert"]?.["_toString"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["assert"]?.["_toString"]), ['length', 'name', 'prototype'], globalThis["assert"]?.["_toString"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["assert"]?.["_toString"]?.["prototype"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["assert"]?.["_toString"]?.["prototype"]), true);
+$assert.notCallable(globalThis["assert"]?.["_toString"]?.["prototype"]);
+$assert.notConstructable(globalThis["assert"]?.["_toString"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["assert"]?.["_toString"]?.["prototype"]), ['constructor'], globalThis["assert"]?.["_toString"]?.["prototype"]);
+$assert.sameValue(globalThis["assert"]?.["_toString"]?.["prototype"]?.["constructor"], globalThis["assert"]?.["_toString"]);
+$verifyProperty(globalThis["assert"]?.["_toString"]?.["prototype"], "constructor", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"]?.["_toString"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["assert"]?.["_toString"], "name", {
+  value: "",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"]?.["_toString"], "length", {
+  value: 1.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"], "_toString", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$verifyProperty(globalThis["assert"], "name", {
+  value: "assert",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["asyncIter"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["asyncIter"]), true);
+$assert.notCallable(globalThis["asyncIter"]);
+$assert.notConstructable(globalThis["asyncIter"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["asyncIter"]), ['next', Symbol.asyncIterator], globalThis["asyncIter"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["asyncIter"]?.[Symbol.asyncIterator]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["asyncIter"]?.[Symbol.asyncIterator]), true);
+$assert.callable(globalThis["asyncIter"]?.[Symbol.asyncIterator]);
+$assert.notConstructable(globalThis["asyncIter"]?.[Symbol.asyncIterator]);
+$assert.compareArray($Reflect_ownKeys(globalThis["asyncIter"]?.[Symbol.asyncIterator]), ['length', 'name'], globalThis["asyncIter"]?.[Symbol.asyncIterator]);
+$verifyProperty(globalThis["asyncIter"]?.[Symbol.asyncIterator], "name", {
+  value: "[Symbol.asyncIterator]",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["asyncIter"]?.[Symbol.asyncIterator], "length", {
+  value: 0.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["asyncIter"], Symbol.asyncIterator, {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["asyncIter"]?.["next"]), Function.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["asyncIter"]?.["next"]), true);
+$assert.callable(globalThis["asyncIter"]?.["next"]);
+$assert.notConstructable(globalThis["asyncIter"]?.["next"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["asyncIter"]?.["next"]), ['length', 'name'], globalThis["asyncIter"]?.["next"]);
+$verifyProperty(globalThis["asyncIter"]?.["next"], "name", {
+  value: "next",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["asyncIter"]?.["next"], "length", {
+  value: 0.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["asyncIter"], "next", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["await"]), AsyncFunction.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["await"]), true);
+$assert.callable(globalThis["await"]);
+$assert.notConstructable(globalThis["await"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["await"]), ['length', 'name'], globalThis["await"]);
+$verifyProperty(globalThis["await"], "name", {
+  value: "await",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["await"], "length", {
+  value: 0.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["f"]), AsyncGeneratorFunction.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["f"]), true);
+$assert.callable(globalThis["f"]);
+$assert.notConstructable(globalThis["f"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["f"]), ['length', 'name', 'prototype'], globalThis["f"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["f"]?.["prototype"]), AsyncGeneratorFunction.prototype.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["f"]?.["prototype"]), true);
+$assert.notCallable(globalThis["f"]?.["prototype"]);
+$assert.notConstructable(globalThis["f"]?.["prototype"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["f"]?.["prototype"]), [], globalThis["f"]?.["prototype"]);
+$verifyProperty(globalThis["f"], "prototype", {
+  writable: true,
+  enumerable: false,
+  configurable: false,
+});
+$verifyProperty(globalThis["f"], "name", {
+  value: "f",
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$verifyProperty(globalThis["f"], "length", {
+  value: 0.0,
+  writable: false,
+  enumerable: false,
+  configurable: true,
+});
+$assert.sameValue($Object_getPrototypeOf(globalThis["iter"]), globalThis["f"]?.["prototype"]);
+$assert.sameValue(Object.isExtensible(globalThis["iter"]), true);
+$assert.notCallable(globalThis["iter"]);
+$assert.notConstructable(globalThis["iter"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["iter"]), [], globalThis["iter"]);
+$assert.sameValue($Object_getPrototypeOf(globalThis["token"]), Object.prototype);
+$assert.sameValue(Object.isExtensible(globalThis["token"]), true);
+$assert.notCallable(globalThis["token"]);
+$assert.notConstructable(globalThis["token"]);
+$assert.compareArray($Reflect_ownKeys(globalThis["token"]), [], globalThis["token"]);

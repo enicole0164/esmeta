@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1950 {
+    label = "def <SYNTAX>:ExportsList[1,0].ExportedNames(this: Ast:ExportsList[1,0]): List[String]"
+    style = rounded
+    cluster1950_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1950_entry_name -> cluster1950_entry [arrowhead=none, color="black", style=dashed]
+    cluster1950_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1950_entry -> node10614 [color="black"]
+    cluster1950_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1950_exit_name -> cluster1950_exit [arrowhead=none, color="black", style=dashed]
+    cluster1950_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node10614_name [shape=none, label=<<font color="black">Call[10614]</font>>]
+    node10614_name -> node10614 [arrowhead=none, color="black", style=dashed]
+    node10614 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;ExportedNames()</font>> color="black" fillcolor="white", style=filled]
+    node10614 -> node10615 [color="black"]
+    node10615_name [shape=none, label=<<font color="black">Block[10615]</font>>]
+    node10615_name -> node10615 [arrowhead=none, color="black", style=dashed]
+    node10615 [shape=box, label=<<font color="black">[0] let names1 = %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10615 -> node10616 [color="black"]
+    node10616_name [shape=none, label=<<font color="black">Call[10616]</font>>]
+    node10616_name -> node10616 [arrowhead=none, color="black", style=dashed]
+    node10616 [shape=cds, label=<<font color="black">%1 = this[1]-&gt;ExportedNames()</font>> color="black" fillcolor="white", style=filled]
+    node10616 -> node10617 [color="black"]
+    node10617_name [shape=none, label=<<font color="black">Block[10617]</font>>]
+    node10617_name -> node10617 [arrowhead=none, color="black", style=dashed]
+    node10617 [shape=box, label=<<font color="black">[0] let names2 = %1<BR ALIGN="LEFT"/>[1] return (list-concat names1 names2)[#837]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node10617 -> cluster1950_exit [color="black"]
+  }
+}

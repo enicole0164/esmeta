@@ -1,0 +1,11 @@
+def <SYNTAX>:AsyncFunctionDeclaration[1,0].InstantiateAsyncFunctionObject(
+  this: Ast:AsyncFunctionDeclaration[1,0],
+  env: Unknown,
+  privateEnv: Unknown,
+): FunctionObject {
+  let sourceText = (source-text this)
+  call %0 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%AsyncFunction.prototype%"], sourceText, this[0], this[1], ~non-lexical-this~, env, privateEnv)
+  let F = %0
+  call %1 = clo<SetFunctionName>(F, "default")
+  return F
+}

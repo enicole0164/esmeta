@@ -1,0 +1,32 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1066 {
+    label = "def OrdinarySet(O: Object, P: Symbol | String, V: ESValue, Receiver: ESValue): Normal[Boolean] | Abrupt"
+    style = rounded
+    cluster1066_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1066_entry_name -> cluster1066_entry [arrowhead=none, color="black", style=dashed]
+    cluster1066_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1066_entry -> node4138 [color="black"]
+    cluster1066_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1066_exit_name -> cluster1066_exit [arrowhead=none, color="black", style=dashed]
+    cluster1066_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node4138_name [shape=none, label=<<font color="black">Call[4138]</font>>]
+    node4138_name -> node4138 [arrowhead=none, color="black", style=dashed]
+    node4138 [shape=cds, label=<<font color="black">%0 = O-&gt;GetOwnProperty(P)</font>> color="black" fillcolor="white", style=filled]
+    node4138 -> node4139 [color="black"]
+    node4139_name [shape=none, label=<<font color="black">Block[4139]</font>>]
+    node4139_name -> node4139 [arrowhead=none, color="black", style=dashed]
+    node4139 [shape=box, label=<<font color="black">[0] let ownDesc = [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4139 -> node4140 [color="black"]
+    node4140_name [shape=none, label=<<font color="black">Call[4140]</font>>]
+    node4140_name -> node4140 [arrowhead=none, color="black", style=dashed]
+    node4140 [shape=cds, label=<<font color="black">%1 = clo&lt;OrdinarySetWithOwnDescriptor&gt;(O, P, V, Receiver, ownDesc)</font>> color="black" fillcolor="white", style=filled]
+    node4140 -> node4141 [color="black"]
+    node4141_name [shape=none, label=<<font color="black">Block[4141]</font>>]
+    node4141_name -> node4141 [arrowhead=none, color="black", style=dashed]
+    node4141 [shape=box, label=<<font color="black">[0] return [? %1]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node4141 -> cluster1066_exit [color="black"]
+  }
+}

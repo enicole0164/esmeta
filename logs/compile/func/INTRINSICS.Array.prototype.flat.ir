@@ -1,0 +1,24 @@
+def <BUILTIN>:INTRINSICS.Array.prototype.flat(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let depth = (pop < argumentsList) else let depth = absent
+  call %0 = clo<ToObject>(this)
+  let O = [? %0]
+  call %1 = clo<LengthOfArrayLike>(O)
+  let sourceLen = [? %1]
+  let depthNum = 1
+  if (! (= depth undefined)) {
+    call %2 = clo<ToIntegerOrInfinity>(depth)
+    depthNum = [? %2]
+    if (< depthNum 0) {
+      depthNum = 0
+    } else {}
+  } else {}
+  call %3 = clo<ArraySpeciesCreate>(O, 0)
+  let A = [? %3]
+  call %4 = clo<FlattenIntoArray>(A, O, sourceLen, 0, depthNum)
+  [? %4]
+  return A
+}

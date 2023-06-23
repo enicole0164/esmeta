@@ -1,0 +1,7 @@
+def <NUM>:Number::bitwiseAND(
+  x: Number,
+  y: Number,
+): Unknown["IntegralNumber"] {
+  call %0 = clo<NumberBitwiseOp>("&", x, y)
+  return %0
+}

@@ -1,0 +1,6 @@
+def <SYNTAX>:ScriptBody[0,0].LexicallyDeclaredNames(
+  this: Ast:ScriptBody[0,0],
+): List[String] {
+  sdo-call %0 = this[0]->TopLevelLexicallyDeclaredNames()
+  return %0
+}

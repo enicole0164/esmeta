@@ -1,0 +1,5 @@
+def <SYNTAX>:Script[0,0].LexicallyScopedDeclarations(
+  this: Ast:Script[0,0],
+): List[Ast] {
+  return (new [])[#166]
+}

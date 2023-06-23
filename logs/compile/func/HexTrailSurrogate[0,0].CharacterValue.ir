@@ -1,0 +1,6 @@
+def <SYNTAX>:HexTrailSurrogate[0,0].CharacterValue(
+  this: Ast:HexTrailSurrogate[0,0],
+): Unknown["NonnegativeInteger"] {
+  sdo-call %0 = (nt |HexDigits|[])->MV()
+  return %0
+}

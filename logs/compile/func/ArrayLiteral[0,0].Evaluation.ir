@@ -1,0 +1,11 @@
+def <SYNTAX>:ArrayLiteral[0,0].Evaluation(
+  this: Ast:ArrayLiteral[0,0],
+): Unknown {
+  call %0 = clo<ArrayCreate>(0)
+  let array = [! %0]
+  if (! (= this[0] absent)) {
+    sdo-call %1 = this[0]->ArrayAccumulation(array, 0)
+    [? %1]
+  } else {}
+  return array
+}

@@ -1,0 +1,20 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster1042 {
+    label = "def AgentCanSuspend(): Boolean"
+    style = rounded
+    cluster1042_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster1042_entry_name -> cluster1042_entry [arrowhead=none, color="black", style=dashed]
+    cluster1042_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster1042_entry -> node3917 [color="black"]
+    cluster1042_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster1042_exit_name -> cluster1042_exit [arrowhead=none, color="black", style=dashed]
+    cluster1042_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3917_name [shape=none, label=<<font color="black">Block[3917]</font>>]
+    node3917_name -> node3917 [arrowhead=none, color="black", style=dashed]
+    node3917 [shape=box, label=<<font color="black">[0] (yet &quot;Let _AR_ be the Agent Record of the surrounding agent.&quot;)<BR ALIGN="LEFT"/>[1] return AR.CanBlock<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3917 -> cluster1042_exit [color="black"]
+  }
+}

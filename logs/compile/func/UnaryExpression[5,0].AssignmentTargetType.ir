@@ -1,0 +1,5 @@
+def <SYNTAX>:UnaryExpression[5,0].AssignmentTargetType(
+  this: Ast:UnaryExpression[5,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

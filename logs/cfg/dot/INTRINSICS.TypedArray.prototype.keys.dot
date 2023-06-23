@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2403 {
+    label = "def <BUILTIN>:INTRINSICS.TypedArray.prototype.keys(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2403_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2403_entry_name -> cluster2403_entry [arrowhead=none, color="black", style=dashed]
+    cluster2403_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2403_entry -> node16292 [color="black"]
+    cluster2403_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2403_exit_name -> cluster2403_exit [arrowhead=none, color="black", style=dashed]
+    cluster2403_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node16292_name [shape=none, label=<<font color="black">Block[16292]</font>>]
+    node16292_name -> node16292 [arrowhead=none, color="black", style=dashed]
+    node16292 [shape=box, label=<<font color="black">[0] let O = this<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16292 -> node16293 [color="black"]
+    node16293_name [shape=none, label=<<font color="black">Call[16293]</font>>]
+    node16293_name -> node16293 [arrowhead=none, color="black", style=dashed]
+    node16293 [shape=cds, label=<<font color="black">%0 = clo&lt;ValidateTypedArray&gt;(O)</font>> color="black" fillcolor="white", style=filled]
+    node16293 -> node16294 [color="black"]
+    node16294_name [shape=none, label=<<font color="black">Block[16294]</font>>]
+    node16294_name -> node16294 [arrowhead=none, color="black", style=dashed]
+    node16294 [shape=box, label=<<font color="black">[0] [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16294 -> node16295 [color="black"]
+    node16295_name [shape=none, label=<<font color="black">Call[16295]</font>>]
+    node16295_name -> node16295 [arrowhead=none, color="black", style=dashed]
+    node16295 [shape=cds, label=<<font color="black">%1 = clo&lt;CreateArrayIterator&gt;(O, ~key~)</font>> color="black" fillcolor="white", style=filled]
+    node16295 -> node16296 [color="black"]
+    node16296_name [shape=none, label=<<font color="black">Block[16296]</font>>]
+    node16296_name -> node16296 [arrowhead=none, color="black", style=dashed]
+    node16296 [shape=box, label=<<font color="black">[0] return %1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node16296 -> cluster2403_exit [color="black"]
+  }
+}

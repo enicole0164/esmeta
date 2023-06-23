@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.getTime(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<thisTimeValue>(this)
+  return [? %0]
+}

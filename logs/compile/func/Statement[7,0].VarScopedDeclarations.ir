@@ -1,0 +1,5 @@
+def <SYNTAX>:Statement[7,0].VarScopedDeclarations(
+  this: Ast:Statement[7,0],
+): List[Ast] {
+  return (new [])[#228]
+}

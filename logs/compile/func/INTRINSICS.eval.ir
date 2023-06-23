@@ -1,0 +1,12 @@
+def <BUILTIN>:INTRINSICS.eval(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let x = (pop < argumentsList) else let x = absent
+  assert (< 1 @EXECUTION_STACK.length)
+  let callerContext = @EXECUTION_STACK[1]
+  let callerRealm = callerContext.Realm
+  call %0 = clo<PerformEval>(x, callerRealm, false, false)
+  return [? %0]
+}

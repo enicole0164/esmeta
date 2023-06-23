@@ -1,0 +1,14 @@
+def IsNoTearConfiguration(
+  type: Unknown,
+  order: Unknown,
+): Boolean {
+  call %0 = clo<IsUnclampedIntegerElementType>(type)
+  if (= %0 true) {
+    return true
+  } else {}
+  call %1 = clo<IsBigIntElementType>(type)
+  if (&& (= %1 true) (! (|| (= order ~Init~) (= order ~Unordered~)))) {
+    return true
+  } else {}
+  return false
+}

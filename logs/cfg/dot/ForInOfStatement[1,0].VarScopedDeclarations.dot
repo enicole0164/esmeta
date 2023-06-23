@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster426 {
+    label = "def <SYNTAX>:ForInOfStatement[1,0].VarScopedDeclarations(this: Ast:ForInOfStatement[1,0]): List[Ast]"
+    style = rounded
+    cluster426_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster426_entry_name -> cluster426_entry [arrowhead=none, color="black", style=dashed]
+    cluster426_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster426_entry -> node2146 [color="black"]
+    cluster426_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster426_exit_name -> cluster426_exit [arrowhead=none, color="black", style=dashed]
+    cluster426_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node2146_name [shape=none, label=<<font color="black">Block[2146]</font>>]
+    node2146_name -> node2146 [arrowhead=none, color="black", style=dashed]
+    node2146 [shape=box, label=<<font color="black">[0] let declarations1 = (new [this[0]])[#243]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2146 -> node2147 [color="black"]
+    node2147_name [shape=none, label=<<font color="black">Call[2147]</font>>]
+    node2147_name -> node2147 [arrowhead=none, color="black", style=dashed]
+    node2147 [shape=cds, label=<<font color="black">%0 = this[2]-&gt;VarScopedDeclarations()</font>> color="black" fillcolor="white", style=filled]
+    node2147 -> node2148 [color="black"]
+    node2148_name [shape=none, label=<<font color="black">Block[2148]</font>>]
+    node2148_name -> node2148 [arrowhead=none, color="black", style=dashed]
+    node2148 [shape=box, label=<<font color="black">[0] let declarations2 = %0<BR ALIGN="LEFT"/>[1] return (list-concat declarations1 declarations2)[#244]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node2148 -> cluster426_exit [color="black"]
+  }
+}

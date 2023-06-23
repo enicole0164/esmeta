@@ -1,0 +1,5 @@
+def <SYNTAX>:BreakStatement[0,0].Evaluation(
+  this: Ast:BreakStatement[0,0],
+): Unknown {
+  return comp[~break~/~empty~](~empty~)
+}

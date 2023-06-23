@@ -1,0 +1,7 @@
+def <SYNTAX>:Catch[1,0].CatchClauseEvaluation(
+  this: Ast:Catch[1,0],
+  thrownValue: Unknown,
+): Normal[ESValue] | Abrupt {
+  sdo-call %0 = this[0]->Evaluation()
+  return %0
+}

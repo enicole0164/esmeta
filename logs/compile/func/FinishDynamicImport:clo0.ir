@@ -1,0 +1,22 @@
+def <BUILTIN-CLO>:FinishDynamicImport:clo0(
+  this: Unknown,
+  argumentsList: Unknown,
+  NewTarget: Unknown,
+): Unknown {
+  if (< 0 argumentsList.length) let result = (pop < argumentsList) else let result = absent
+  assert (= result undefined)
+  call %0 = clo<HostResolveImportedModule>(referencingScriptOrModule, specifier)
+  let moduleRecord = [! %0]
+  assert (yet "Evaluate has already been invoked on _moduleRecord_ and successfully completed.")
+  call %1 = clo<GetModuleNamespace>(moduleRecord)
+  call %2 = clo<Completion>(%1)
+  let namespace = %2
+  if (&& (comp? namespace) (! (= namespace.Type ~normal~))) {
+    call %3 = clo<Call>(promiseCapability.Reject, undefined, (new [namespace.Value])[#797])
+    [! %3]
+  } else {
+    call %4 = clo<Call>(promiseCapability.Resolve, undefined, (new [namespace.Value])[#798])
+    [! %4]
+  }
+  return ~unused~
+}

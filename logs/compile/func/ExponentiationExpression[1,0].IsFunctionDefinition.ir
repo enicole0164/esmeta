@@ -1,0 +1,5 @@
+def <SYNTAX>:ExponentiationExpression[1,0].IsFunctionDefinition(
+  this: Ast:ExponentiationExpression[1,0],
+): Boolean {
+  return false
+}

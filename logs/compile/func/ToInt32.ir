@@ -1,0 +1,17 @@
+def ToInt32(
+  argument: Unknown,
+): Unknown["EitherANormalCompletionContainingAnIntegralNumberOrAnAbruptCompletion"] {
+  call %0 = clo<ToNumber>(argument)
+  let number = [? %0]
+  if (|| (|| (|| (|| (= number NaN) (= number 0.0f)) (= number -0.0f)) (= number +INF)) (= number -INF)) {
+    return 0.0f
+  } else {}
+  let int = (floor (abs ([math] number)))
+  if (< number 0.0f) int = (* -1 int) else {}
+  let int32bit = (% int (** 2 32))
+  if (! (< int32bit (** 2 31))) {
+    return ([number] (- int32bit (** 2 32)))
+  } else {
+    return ([number] int32bit)
+  }
+}

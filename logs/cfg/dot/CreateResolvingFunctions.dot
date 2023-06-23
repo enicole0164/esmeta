@@ -1,0 +1,36 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2567 {
+    label = "def CreateResolvingFunctions(promise: Unknown): Unknown["RecordWithFields[[Resolve]](aFunctionObject)And[[Reject]](aFunctionObject)"]"
+    style = rounded
+    cluster2567_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2567_entry_name -> cluster2567_entry [arrowhead=none, color="black", style=dashed]
+    cluster2567_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2567_entry -> node18690 [color="black"]
+    cluster2567_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2567_exit_name -> cluster2567_exit [arrowhead=none, color="black", style=dashed]
+    cluster2567_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node18690_name [shape=none, label=<<font color="black">Block[18690]</font>>]
+    node18690_name -> node18690 [arrowhead=none, color="black", style=dashed]
+    node18690 [shape=box, label=<<font color="black">[0] let alreadyResolved = (new Record(&quot;Value&quot; -&gt; false))[#1233]<BR ALIGN="LEFT"/>[1] let stepsResolve = clo&lt;INTRINSICS.yet:PromiseResolveFunction&gt;<BR ALIGN="LEFT"/>[2] let lengthResolve = 1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18690 -> node18691 [color="black"]
+    node18691_name [shape=none, label=<<font color="black">Call[18691]</font>>]
+    node18691_name -> node18691 [arrowhead=none, color="black", style=dashed]
+    node18691 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateBuiltinFunction&gt;(stepsResolve, lengthResolve, &quot;&quot;, (new [&quot;Promise&quot;, &quot;AlreadyResolved&quot;])[#1234])</font>> color="black" fillcolor="white", style=filled]
+    node18691 -> node18692 [color="black"]
+    node18692_name [shape=none, label=<<font color="black">Block[18692]</font>>]
+    node18692_name -> node18692 [arrowhead=none, color="black", style=dashed]
+    node18692 [shape=box, label=<<font color="black">[0] let resolve = %0<BR ALIGN="LEFT"/>[1] resolve.Promise = promise<BR ALIGN="LEFT"/>[2] resolve.AlreadyResolved = alreadyResolved<BR ALIGN="LEFT"/>[3] let stepsReject = clo&lt;INTRINSICS.yet:PromiseRejectFunction&gt;<BR ALIGN="LEFT"/>[4] let lengthReject = 1<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18692 -> node18693 [color="black"]
+    node18693_name [shape=none, label=<<font color="black">Call[18693]</font>>]
+    node18693_name -> node18693 [arrowhead=none, color="black", style=dashed]
+    node18693 [shape=cds, label=<<font color="black">%1 = clo&lt;CreateBuiltinFunction&gt;(stepsReject, lengthReject, &quot;&quot;, (new [&quot;Promise&quot;, &quot;AlreadyResolved&quot;])[#1235])</font>> color="black" fillcolor="white", style=filled]
+    node18693 -> node18694 [color="black"]
+    node18694_name [shape=none, label=<<font color="black">Block[18694]</font>>]
+    node18694_name -> node18694 [arrowhead=none, color="black", style=dashed]
+    node18694 [shape=box, label=<<font color="black">[0] let reject = %1<BR ALIGN="LEFT"/>[1] reject.Promise = promise<BR ALIGN="LEFT"/>[2] reject.AlreadyResolved = alreadyResolved<BR ALIGN="LEFT"/>[3] return (new Record(&quot;Resolve&quot; -&gt; resolve, &quot;Reject&quot; -&gt; reject))[#1236]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node18694 -> cluster2567_exit [color="black"]
+  }
+}

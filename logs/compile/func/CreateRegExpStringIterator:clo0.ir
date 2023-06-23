@@ -1,0 +1,31 @@
+def <CLO>:CreateRegExpStringIterator:clo0(
+): Unknown {
+  loop[repeat] true {
+    call %0 = clo<RegExpExec>(R, S)
+    let match = [? %0]
+    if (= match null) {
+      return undefined
+    } else {}
+    if (= global false) {
+      call %1 = clo<CreateIterResultObject>(match, false)
+      call %2 = clo<GeneratorYield>(%1)
+      [? %2]
+      return undefined
+    } else {}
+    call %3 = clo<Get>(match, "0")
+    call %4 = clo<ToString>([? %3])
+    let matchStr = [? %4]
+    if (= matchStr "") {
+      call %5 = clo<Get>(R, "lastIndex")
+      call %6 = clo<ToLength>([? %5])
+      let thisIndex = ([math] [? %6])
+      call %7 = clo<AdvanceStringIndex>(S, thisIndex, fullUnicode)
+      let nextIndex = %7
+      call %8 = clo<Set>(R, "lastIndex", ([number] nextIndex), true)
+      [? %8]
+    } else {}
+    call %9 = clo<CreateIterResultObject>(match, false)
+    call %10 = clo<GeneratorYield>(%9)
+    [? %10]
+  }
+}

@@ -1,0 +1,11 @@
+def <SYNTAX>:OptionalChain[0,0].ChainEvaluation(
+  this: Ast:OptionalChain[0,0],
+  baseValue: Unknown,
+  baseReference: Unknown,
+): Normal[ESValue] | Abrupt {
+  let thisChain = this
+  call %0 = clo<IsInTailPosition>(thisChain)
+  let tailCall = %0
+  call %1 = clo<EvaluateCall>(baseValue, baseReference, this[0], tailCall)
+  return [? %1]
+}

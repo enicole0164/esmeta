@@ -1,0 +1,11 @@
+def <SYNTAX>:BindingProperty[0,0].PropertyBindingInitialization(
+  this: Ast:BindingProperty[0,0],
+  value: Unknown,
+  environment: Unknown,
+): Normal[List[Symbol | String]] | Abrupt {
+  sdo-call %0 = this[0]->BoundNames()
+  let name = %0[0]
+  sdo-call %1 = this[0]->KeyedBindingInitialization(value, environment, name)
+  [? %1]
+  return (new [name])[#602]
+}

@@ -1,0 +1,35 @@
+def <BUILTIN>:INTRINSICS.Date.prototype.setSeconds(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let sec = (pop < argumentsList) else let sec = absent
+  if (< 0 argumentsList.length) let ms = (pop < argumentsList) else let ms = absent
+  call %0 = clo<thisTimeValue>(this)
+  let t = [? %0]
+  call %1 = clo<ToNumber>(sec)
+  let s = [? %1]
+  if (! (= ms absent)) {
+    call %2 = clo<ToNumber>(ms)
+    let milli = [? %2]
+  } else {}
+  if (= t NaN) {
+    return NaN
+  } else {}
+  call %3 = clo<LocalTime>(t)
+  t = %3
+  if (= ms absent) {
+    (yet "let _milli_ be msFromTime(_t_).")
+  } else {}
+  call %4 = clo<Day>(t)
+  call %5 = clo<HourFromTime>(t)
+  call %6 = clo<MinFromTime>(t)
+  call %7 = clo<MakeTime>(%5, %6, s, milli)
+  call %8 = clo<MakeDate>(%4, %7)
+  let date = %8
+  call %9 = clo<UTC>(date)
+  call %10 = clo<TimeClip>(%9)
+  let u = %10
+  (yet "Set the [[DateValue]] internal slot of this Date object to _u_.")
+  return u
+}

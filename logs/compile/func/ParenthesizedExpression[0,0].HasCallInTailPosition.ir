@@ -1,0 +1,7 @@
+def <SYNTAX>:ParenthesizedExpression[0,0].HasCallInTailPosition(
+  this: Ast:ParenthesizedExpression[0,0],
+  call: Unknown,
+): Boolean {
+  sdo-call %0 = this[0]->HasCallInTailPosition(call)
+  return %0
+}

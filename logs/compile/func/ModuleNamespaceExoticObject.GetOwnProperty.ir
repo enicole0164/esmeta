@@ -1,0 +1,16 @@
+def <INTERNAL>:ModuleNamespaceExoticObject.GetOwnProperty(
+  O: ModuleNamespaceExoticObject,
+  P: Symbol | String,
+): Normal[PropertyDescriptor | Undefined] | Abrupt {
+  if (= (typeof P) @Symbol) {
+    call %0 = clo<OrdinaryGetOwnProperty>(O, P)
+    return %0
+  } else {}
+  let exports = O.Exports
+  if (! (contains exports P)) {
+    return undefined
+  } else {}
+  method-call %1 = O->Get(P, O)
+  let value = [? %1]
+  return (new PropertyDescriptor("Value" -> value, "Writable" -> true, "Enumerable" -> true, "Configurable" -> false))[#476]
+}

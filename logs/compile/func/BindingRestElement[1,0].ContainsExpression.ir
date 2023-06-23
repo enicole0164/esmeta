@@ -1,0 +1,6 @@
+def <SYNTAX>:BindingRestElement[1,0].ContainsExpression(
+  this: Ast:BindingRestElement[1,0],
+): Boolean {
+  sdo-call %0 = this[0]->ContainsExpression()
+  return %0
+}

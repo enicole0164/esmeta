@@ -1,0 +1,19 @@
+def <SYNTAX>:GeneratorExpression[0,0].InstantiateGeneratorFunctionExpression(
+  this: Ast:GeneratorExpression[0,0],
+  name?: Unknown,
+): FunctionObject {
+  if (= name absent) {
+    name = ""
+  } else {}
+  let env = @EXECUTION_STACK[0].LexicalEnvironment
+  let privateEnv = @EXECUTION_STACK[0].PrivateEnvironment
+  let sourceText = (source-text this)
+  call %0 = clo<OrdinaryFunctionCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%GeneratorFunction.prototype%"], sourceText, this[1], this[2], ~non-lexical-this~, env, privateEnv)
+  let closure = %0
+  call %1 = clo<SetFunctionName>(closure, name)
+  call %2 = clo<OrdinaryObjectCreate>(@EXECUTION_STACK[0].Realm.Intrinsics["%GeneratorFunction.prototype.prototype%"])
+  let prototype = %2
+  call %3 = clo<DefinePropertyOrThrow>(closure, "prototype", (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false))[#661])
+  [! %3]
+  return closure
+}

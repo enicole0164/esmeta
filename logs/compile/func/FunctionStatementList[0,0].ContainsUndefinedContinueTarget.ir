@@ -1,0 +1,7 @@
+def <SYNTAX>:FunctionStatementList[0,0].ContainsUndefinedContinueTarget(
+  this: Ast:FunctionStatementList[0,0],
+  iterationSet: Unknown,
+  labelSet: Unknown,
+): Boolean {
+  return false
+}

@@ -1,0 +1,15 @@
+def OrdinaryDelete(
+  O: Object,
+  P: Symbol | String,
+): Normal[Boolean] | Abrupt {
+  method-call %0 = O->GetOwnProperty(P)
+  let desc = [? %0]
+  if (= desc undefined) {
+    return true
+  } else {}
+  if (= desc.Configurable true) {
+    delete O.SubMap[P]
+    return true
+  } else {}
+  return false
+}

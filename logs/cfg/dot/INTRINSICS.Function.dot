@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster2033 {
+    label = "def <BUILTIN>:INTRINSICS.Function(this: ESValue, argumentsList: List[ESValue], NewTarget: Object | Undefined): Unknown"
+    style = rounded
+    cluster2033_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster2033_entry_name -> cluster2033_entry [arrowhead=none, color="black", style=dashed]
+    cluster2033_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster2033_entry -> node11493 [color="black"]
+    cluster2033_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster2033_exit_name -> cluster2033_exit [arrowhead=none, color="black", style=dashed]
+    cluster2033_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node11493_name [shape=none, label=<<font color="black">Block[11493]</font>>]
+    node11493_name -> node11493 [arrowhead=none, color="black", style=dashed]
+    node11493 [shape=box, label=<<font color="black">[0] let C = @EXECUTION_STACK[0].Function<BR ALIGN="LEFT"/>[1] let args = argumentsList<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node11493 -> node11494 [color="black"]
+    node11494_name [shape=none, label=<<font color="black">Call[11494]</font>>]
+    node11494_name -> node11494 [arrowhead=none, color="black", style=dashed]
+    node11494 [shape=cds, label=<<font color="black">%0 = clo&lt;CreateDynamicFunction&gt;(C, NewTarget, ~normal~, args)</font>> color="black" fillcolor="white", style=filled]
+    node11494 -> node11495 [color="black"]
+    node11495_name [shape=none, label=<<font color="black">Block[11495]</font>>]
+    node11495_name -> node11495 [arrowhead=none, color="black", style=dashed]
+    node11495 [shape=box, label=<<font color="black">[0] return [? %0]<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node11495 -> cluster2033_exit [color="black"]
+  }
+}

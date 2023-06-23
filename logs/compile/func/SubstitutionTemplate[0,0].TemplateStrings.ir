@@ -1,0 +1,15 @@
+def <SYNTAX>:SubstitutionTemplate[0,0].TemplateStrings(
+  this: Ast:SubstitutionTemplate[0,0],
+  raw: Unknown,
+): List[String] {
+  if (= raw false) {
+    sdo-call %0 = this[0]->TV()
+    let head = %0
+  } else {
+    sdo-call %1 = this[0]->TRV()
+    let head = %1
+  }
+  sdo-call %2 = this[2]->TemplateStrings(raw)
+  let tail = %2
+  return (list-concat (new [head])[#552] tail)[#551]
+}

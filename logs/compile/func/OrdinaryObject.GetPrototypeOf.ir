@@ -1,0 +1,6 @@
+def <INTERNAL>:OrdinaryObject.GetPrototypeOf(
+  O: OrdinaryObject,
+): Normal[Object | Null] {
+  call %0 = clo<OrdinaryGetPrototypeOf>(O)
+  return %0
+}

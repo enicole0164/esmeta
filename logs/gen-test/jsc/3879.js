@@ -1,0 +1,3 @@
+// [EXIT] throw-error: TypeError(RequireInternalSlot ((step 1, 2:40-70))<BUILTIN>:INTRINSICS.Set.prototype.delete)
+"use strict";
+Set . prototype . delete . call ( 0 , 0 ) ; 

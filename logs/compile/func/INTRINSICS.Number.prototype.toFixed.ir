@@ -1,0 +1,51 @@
+def <BUILTIN>:INTRINSICS.Number.prototype.toFixed(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let fractionDigits = (pop < argumentsList) else let fractionDigits = absent
+  call %0 = clo<thisNumberValue>(this)
+  let x = [? %0]
+  call %1 = clo<ToIntegerOrInfinity>(fractionDigits)
+  let f = [? %1]
+  assert (|| (! (= fractionDigits undefined)) (= f 0))
+  if (|| (= f NaN) (|| (= f +INF) (= f -INF))) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#927])
+  } else {}
+  if (|| (< f 0) (< 100 f)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%RangeError.prototype%"], "ErrorData" -> undefined))[#928])
+  } else {}
+  if (|| (= x NaN) (|| (= x +INF) (= x -INF))) {
+    call %2 = clo<Number::toString>(x)
+    return %2
+  } else {}
+  x = ([math] x)
+  let s = ""
+  if (< x 0) {
+    s = "-"
+    x = (- x)
+  } else {}
+  if (! (< x (** 10 21))) {
+    call %3 = clo<ToString>(([number] x))
+    let m = [! %3]
+  } else {
+    (yet "Let _n_ be an integer for which _n_ / 10<sup>_f_</sup> - _x_ is as close to zero as possible. If there are two such _n_, pick the larger _n_.")
+    if (== n 0) {
+      let m = "0"
+    } else {
+      (yet "let _m_ be the String value consisting of the digits of the decimal representation of _n_ (in order, with no leading zeroes).")
+    }
+    if (! (== f 0)) {
+      let k = m.length
+      if (! (< f k)) {
+        (yet "Let _z_ be the String value consisting of _f_ + 1 - _k_ occurrences of the code unit 0x0030 (DIGIT ZERO).")
+        m = (concat z m)
+        k = (+ f 1)
+      } else {}
+      (yet "Let _a_ be the first _k_ - _f_ code units of _m_.")
+      (yet "Let _b_ be the other _f_ code units of _m_.")
+      m = (concat a "." b)
+    } else {}
+  }
+  return (concat s m)
+}

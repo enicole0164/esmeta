@@ -1,0 +1,43 @@
+def <INTERNAL>:ProxyExoticObject.Set(
+  O: ProxyExoticObject,
+  P: Symbol | String,
+  V: ESValue,
+  Receiver: ESValue,
+): Normal[Boolean] | Abrupt {
+  let handler = O.ProxyHandler
+  if (= handler null) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#516])
+  } else {}
+  assert (= (typeof handler) @Object)
+  let target = O.ProxyTarget
+  call %0 = clo<GetMethod>(handler, "set")
+  let trap = [? %0]
+  if (= trap undefined) {
+    method-call %1 = target->Set(P, V, Receiver)
+    return [? %1]
+  } else {}
+  call %2 = clo<Call>(trap, handler, (new [target, P, V, Receiver])[#517])
+  call %3 = clo<ToBoolean>([? %2])
+  let booleanTrapResult = %3
+  if (= booleanTrapResult false) {
+    return false
+  } else {}
+  method-call %4 = target->GetOwnProperty(P)
+  let targetDesc = [? %4]
+  if (&& (! (= targetDesc undefined)) (= targetDesc.Configurable false)) {
+    call %5 = clo<IsDataDescriptor>(targetDesc)
+    if (&& (= %5 true) (= targetDesc.Writable false)) {
+      call %6 = clo<SameValue>(V, targetDesc.Value)
+      if (= %6 false) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#518])
+      } else {}
+    } else {}
+    call %7 = clo<IsAccessorDescriptor>(targetDesc)
+    if (= %7 true) {
+      if (= targetDesc.Set undefined) {
+        return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#519])
+      } else {}
+    } else {}
+  } else {}
+  return true
+}

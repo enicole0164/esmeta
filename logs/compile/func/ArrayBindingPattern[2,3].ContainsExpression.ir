@@ -1,0 +1,11 @@
+def <SYNTAX>:ArrayBindingPattern[2,3].ContainsExpression(
+  this: Ast:ArrayBindingPattern[2,3],
+): Boolean {
+  sdo-call %0 = this[0]->ContainsExpression()
+  let has = %0
+  if (= has true) {
+    return true
+  } else {}
+  sdo-call %1 = this[2]->ContainsExpression()
+  return %1
+}

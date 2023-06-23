@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster45 {
+    label = "def <NUM>:BigInt::sameValue(x: BigInt, y: BigInt): Boolean"
+    style = rounded
+    cluster45_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster45_entry_name -> cluster45_entry [arrowhead=none, color="black", style=dashed]
+    cluster45_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster45_entry -> node342 [color="black"]
+    cluster45_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster45_exit_name -> cluster45_exit [arrowhead=none, color="black", style=dashed]
+    cluster45_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node342_name [shape=none, label=<<font color="black">Call[342]</font>>]
+    node342_name -> node342 [arrowhead=none, color="black", style=dashed]
+    node342 [shape=cds, label=<<font color="black">%0 = clo&lt;BigInt::equal&gt;(x, y)</font>> color="black" fillcolor="white", style=filled]
+    node342 -> node343 [color="black"]
+    node343_name [shape=none, label=<<font color="black">Block[343]</font>>]
+    node343_name -> node343 [arrowhead=none, color="black", style=dashed]
+    node343 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node343 -> cluster45_exit [color="black"]
+  }
+}

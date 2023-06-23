@@ -1,0 +1,63 @@
+def <BUILTIN>:INTRINSICS.Date.UTC(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let year = (pop < argumentsList) else let year = absent
+  if (< 0 argumentsList.length) let month = (pop < argumentsList) else let month = absent
+  if (< 0 argumentsList.length) let date = (pop < argumentsList) else let date = absent
+  if (< 0 argumentsList.length) let hours = (pop < argumentsList) else let hours = absent
+  if (< 0 argumentsList.length) let minutes = (pop < argumentsList) else let minutes = absent
+  if (< 0 argumentsList.length) let seconds = (pop < argumentsList) else let seconds = absent
+  if (< 0 argumentsList.length) let ms = (pop < argumentsList) else let ms = absent
+  call %0 = clo<ToNumber>(year)
+  let y = [? %0]
+  if (! (= month absent)) {
+    call %1 = clo<ToNumber>(month)
+    let m = [? %1]
+  } else {
+    let m = 0.0f
+  }
+  if (! (= date absent)) {
+    call %2 = clo<ToNumber>(date)
+    let dt = [? %2]
+  } else {
+    let dt = 1.0f
+  }
+  if (! (= hours absent)) {
+    call %3 = clo<ToNumber>(hours)
+    let h = [? %3]
+  } else {
+    let h = 0.0f
+  }
+  if (! (= minutes absent)) {
+    call %4 = clo<ToNumber>(minutes)
+    let min = [? %4]
+  } else {
+    let min = 0.0f
+  }
+  if (! (= seconds absent)) {
+    call %5 = clo<ToNumber>(seconds)
+    let s = [? %5]
+  } else {
+    let s = 0.0f
+  }
+  if (! (= ms absent)) {
+    call %6 = clo<ToNumber>(ms)
+    let milli = [? %6]
+  } else {
+    let milli = 0.0f
+  }
+  if (= y NaN) {
+    let yr = NaN
+  } else {
+    call %7 = clo<ToIntegerOrInfinity>(y)
+    let yi = [! %7]
+    (yet "If 0 ≤ _yi_ ≤ 99, let _yr_ be *1900*<sub>𝔽</sub> + 𝔽(_yi_); otherwise, let _yr_ be _y_.")
+  }
+  call %8 = clo<MakeDay>(yr, m, dt)
+  call %9 = clo<MakeTime>(h, min, s, milli)
+  call %10 = clo<MakeDate>(%8, %9)
+  call %11 = clo<TimeClip>(%10)
+  return %11
+}

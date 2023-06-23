@@ -1,0 +1,28 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster977 {
+    label = "def <CONC>:DeclarativeEnvironmentRecord.InitializeBinding(envRec: DeclarativeEnvironmentRecord, N: String, V: ESValue): Normal[Const[~unused~]]"
+    style = rounded
+    cluster977_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster977_entry_name -> cluster977_entry [arrowhead=none, color="black", style=dashed]
+    cluster977_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster977_entry -> node3596 [color="black"]
+    cluster977_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster977_exit_name -> cluster977_exit [arrowhead=none, color="black", style=dashed]
+    cluster977_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node3596_name [shape=none, label=<<font color="black">Block[3596]</font>>]
+    node3596_name -> node3596 [arrowhead=none, color="black", style=dashed]
+    node3596 [shape=box, label=<<font color="black">[0] assert (= envRec.SubMap[N].initialized false)<BR ALIGN="LEFT"/>[1] envRec.SubMap[N].BoundValue = V<BR ALIGN="LEFT"/>[2] envRec.SubMap[N].initialized = true<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3596 -> node3597 [color="black"]
+    node3597_name [shape=none, label=<<font color="black">Call[3597]</font>>]
+    node3597_name -> node3597 [arrowhead=none, color="black", style=dashed]
+    node3597 [shape=cds, label=<<font color="black">%0 = clo&lt;NormalCompletion&gt;(~unused~)</font>> color="black" fillcolor="white", style=filled]
+    node3597 -> node3598 [color="black"]
+    node3598_name [shape=none, label=<<font color="black">Block[3598]</font>>]
+    node3598_name -> node3598 [arrowhead=none, color="black", style=dashed]
+    node3598 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node3598 -> cluster977_exit [color="black"]
+  }
+}

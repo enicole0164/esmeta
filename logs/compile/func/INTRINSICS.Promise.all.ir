@@ -1,0 +1,54 @@
+def <BUILTIN>:INTRINSICS.Promise.all(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let iterable = (pop < argumentsList) else let iterable = absent
+  let C = this
+  call %0 = clo<NewPromiseCapability>(C)
+  let promiseCapability = [? %0]
+  call %1 = clo<GetPromiseResolve>(C)
+  call %2 = clo<Completion>(%1)
+  let promiseResolve = %2
+  if (&& (comp? promiseResolve) (! (= promiseResolve.Type ~normal~))) {
+    call %3 = clo<Call>(promiseCapability.Reject, undefined, (new [promiseResolve.Value])[#1260])
+    [? %3]
+    return promiseCapability.Promise
+  } else {
+    if (? promiseResolve: "CompletionRecord") {
+      promiseResolve = promiseResolve.Value
+    } else {}
+  }
+  call %4 = clo<GetIterator>(iterable)
+  call %5 = clo<Completion>(%4)
+  let iteratorRecord = %5
+  if (&& (comp? iteratorRecord) (! (= iteratorRecord.Type ~normal~))) {
+    call %6 = clo<Call>(promiseCapability.Reject, undefined, (new [iteratorRecord.Value])[#1261])
+    [? %6]
+    return promiseCapability.Promise
+  } else {
+    if (? iteratorRecord: "CompletionRecord") {
+      iteratorRecord = iteratorRecord.Value
+    } else {}
+  }
+  call %7 = clo<PerformPromiseAll>(iteratorRecord, C, promiseCapability, promiseResolve)
+  call %8 = clo<Completion>(%7)
+  let result = %8
+  if (&& (comp? result) (! (= result.Type ~normal~))) {
+    if (= iteratorRecord.Done false) {
+      call %9 = clo<IteratorClose>(iteratorRecord, result)
+      call %10 = clo<Completion>(%9)
+      result = %10
+    } else {}
+    if (&& (comp? result) (! (= result.Type ~normal~))) {
+      call %11 = clo<Call>(promiseCapability.Reject, undefined, (new [result.Value])[#1262])
+      [? %11]
+      return promiseCapability.Promise
+    } else {
+      if (? result: "CompletionRecord") {
+        result = result.Value
+      } else {}
+    }
+  } else {}
+  return [? result]
+}

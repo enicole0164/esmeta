@@ -1,0 +1,19 @@
+def ByteListEqual(
+  xBytes: Unknown["ListOfByteValues"],
+  yBytes: Unknown["ListOfByteValues"],
+): Boolean {
+  (yet "If _xBytes_ and _yBytes_ do not have the same number of elements, return *false*.")
+  let i = 0
+  %1 = xBytes
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let xByte = %1[%0]
+    let yByte = yBytes[i]
+    if (! (== xByte yByte)) {
+      return false
+    } else {}
+    i = (+ i 1)
+    %0 = (+ %0 1)
+  }
+  return true
+}

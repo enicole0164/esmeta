@@ -1,0 +1,24 @@
+digraph {
+  graph [fontname = "Consolas"]
+  node [fontname = "Consolas"]
+  edge [fontname = "Consolas"]
+  subgraph cluster276 {
+    label = "def <SYNTAX>:ClassStaticBlockStatementList[0,1].LexicallyDeclaredNames(this: Ast:ClassStaticBlockStatementList[0,1]): List[String]"
+    style = rounded
+    cluster276_entry_name [shape=none, label=<<font color="black">Entry</font>>]
+    cluster276_entry_name -> cluster276_entry [arrowhead=none, color="black", style=dashed]
+    cluster276_entry [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    cluster276_entry -> node1751 [color="black"]
+    cluster276_exit_name [shape=none, label=<<font color="black">Exit</font>>]
+    cluster276_exit_name -> cluster276_exit [arrowhead=none, color="black", style=dashed]
+    cluster276_exit [shape=circle label=" " color="black" fillcolor="white" style=filled]
+    node1751_name [shape=none, label=<<font color="black">Call[1751]</font>>]
+    node1751_name -> node1751 [arrowhead=none, color="black", style=dashed]
+    node1751 [shape=cds, label=<<font color="black">%0 = this[0]-&gt;TopLevelLexicallyDeclaredNames()</font>> color="black" fillcolor="white", style=filled]
+    node1751 -> node1752 [color="black"]
+    node1752_name [shape=none, label=<<font color="black">Block[1752]</font>>]
+    node1752_name -> node1752 [arrowhead=none, color="black", style=dashed]
+    node1752 [shape=box, label=<<font color="black">[0] return %0<BR ALIGN="LEFT"/></font>> color="black" fillcolor="white", style=filled]
+    node1752 -> cluster276_exit [color="black"]
+  }
+}

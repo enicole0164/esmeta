@@ -1,0 +1,15 @@
+def <BUILTIN>:INTRINSICS.get SharedArrayBuffer.prototype.byteLength(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  let O = this
+  call %0 = clo<RequireInternalSlot>(O, "ArrayBufferData")
+  [? %0]
+  call %1 = clo<IsSharedArrayBuffer>(O)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1162])
+  } else {}
+  let length = O.ArrayBufferByteLength
+  return ([number] length)
+}

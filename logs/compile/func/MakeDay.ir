@@ -1,0 +1,20 @@
+def MakeDay(
+  year: Number,
+  month: Number,
+  date: Number,
+): Number {
+  (yet "If _year_ is not finite or _month_ is not finite or _date_ is not finite, return *NaN*.")
+  call %0 = clo<ToIntegerOrInfinity>(year)
+  let y = ([number] [! %0])
+  call %1 = clo<ToIntegerOrInfinity>(month)
+  let m = ([number] [! %1])
+  call %2 = clo<ToIntegerOrInfinity>(date)
+  let dt = ([number] [! %2])
+  let ym = (+ y ([number] (floor (/ ([math] m) 12))))
+  if (|| (= ym NaN) (|| (= ym +INF) (= ym -INF))) {
+    return NaN
+  } else {}
+  let mn = ([number] (% ([math] m) 12))
+  (yet "Find a finite time value _t_ such that YearFromTime(_t_) is _ym_ and MonthFromTime(_t_) is _mn_ and DateFromTime(_t_) is *1*<sub>𝔽</sub>; but if this is not possible (because some argument is out of range), return *NaN*.")
+  (yet "Return Day(_t_) + _dt_ - *1*<sub>𝔽</sub>.")
+}

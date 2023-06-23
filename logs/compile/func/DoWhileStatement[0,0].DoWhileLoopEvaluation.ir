@@ -1,0 +1,26 @@
+def <SYNTAX>:DoWhileStatement[0,0].DoWhileLoopEvaluation(
+  this: Ast:DoWhileStatement[0,0],
+  labelSet: Unknown,
+): Normal[ESValue] | Abrupt {
+  let V = undefined
+  loop[repeat] true {
+    sdo-call %0 = this[0]->Evaluation()
+    let stmtResult = %0
+    call %1 = clo<LoopContinues>(stmtResult, labelSet)
+    if (= %1 false) {
+      call %2 = clo<UpdateEmpty>(stmtResult, V)
+      return [? %2]
+    } else {}
+    if (! (= stmtResult.Value ~empty~)) {
+      V = stmtResult.Value
+    } else {}
+    sdo-call %3 = this[1]->Evaluation()
+    let exprRef = %3
+    call %4 = clo<GetValue>(exprRef)
+    let exprValue = [? %4]
+    call %5 = clo<ToBoolean>(exprValue)
+    if (= %5 false) {
+      return V
+    } else {}
+  }
+}

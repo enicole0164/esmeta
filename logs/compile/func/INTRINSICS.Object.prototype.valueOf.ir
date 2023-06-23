@@ -1,0 +1,8 @@
+def <BUILTIN>:INTRINSICS.Object.prototype.valueOf(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  call %0 = clo<ToObject>(this)
+  return [? %0]
+}

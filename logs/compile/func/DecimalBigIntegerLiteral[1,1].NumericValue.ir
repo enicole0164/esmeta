@@ -1,0 +1,7 @@
+def <SYNTAX>:DecimalBigIntegerLiteral[1,1].NumericValue(
+  this: Ast:DecimalBigIntegerLiteral[1,1],
+): Number | BigInt {
+  (yet "Let _n_ be the number of code points in |DecimalDigits|, excluding all occurrences of |NumericLiteralSeparator|.")
+  (yet "Let _mv_ be (the MV of |NonZeroDigit| × 10<sup>_n_</sup>) plus the MV of |DecimalDigits|.")
+  return ([bigInt] mv)
+}

@@ -1,0 +1,5 @@
+def <CONC>:GlobalEnvironmentRecord.GetThisBinding(
+  envRec: GlobalEnvironmentRecord,
+): Normal[Object] {
+  return envRec.GlobalThisValue
+}

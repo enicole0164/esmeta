@@ -1,0 +1,13 @@
+def EventSet(
+  execution: Unknown["CandidateExecution"],
+): Unknown["SetOfEvents"] {
+  (yet "Let _events_ be an empty Set.")
+  %1 = execution.EventsRecords
+  %0 = 0
+  loop[foreach] (< %0 %1.length) {
+    let aer = %1[%0]
+    (yet "For each event _E_ of _aer_.[[EventList]], do\n  1. Append _E_ to _events_.")
+    %0 = (+ %0 1)
+  }
+  return events
+}

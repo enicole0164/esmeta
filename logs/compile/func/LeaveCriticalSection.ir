@@ -1,0 +1,13 @@
+def LeaveCriticalSection(
+  WL: Unknown["WaiterList"],
+): Const[~unused~] {
+  assert (yet "The calling agent is in the critical section for _WL_.")
+  (yet "Let _execution_ be the [[CandidateExecution]] field of the calling surrounding's Agent Record.")
+  (yet "Let _eventsRecord_ be the Agent Events Record in _execution_.[[EventsRecords]] whose [[AgentSignifier]] is AgentSignifier().")
+  let leaverEventList = eventsRecord.EventList
+  (yet "Let _leaveEvent_ be a new Synchronize event.")
+  push leaverEventList < leaveEvent
+  (yet "Set the Synchronize event in _WL_ to _leaveEvent_.")
+  (yet "Leave the critical section for _WL_.")
+  return ~unused~
+}

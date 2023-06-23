@@ -1,0 +1,15 @@
+def SuspendAgent(
+  WL: Unknown["WaiterList"],
+  W: Unknown["AgentSignifier"],
+  timeout: Unknown["NonnegativeInteger"],
+): Boolean {
+  assert (yet "The calling agent is in the critical section for _WL_.")
+  assert (yet "_W_ is equivalent to AgentSignifier().")
+  assert (yet "_W_ is on the list of waiters in _WL_.")
+  call %0 = clo<AgentCanSuspend>()
+  assert (= %0 true)
+  (yet "Perform LeaveCriticalSection(_WL_) and suspend _W_ for up to _timeout_ milliseconds, performing the combined operation in such a way that a notification that arrives after the critical section is exited but before the suspension takes effect is not lost. _W_ can notify either because the timeout expired or because it was notified explicitly by another agent calling NotifyWaiter with arguments _WL_ and _W_, and not for any other reasons at all.")
+  call %1 = clo<EnterCriticalSection>(WL)
+  (yet "If _W_ was notified explicitly by another agent calling NotifyWaiter with arguments _WL_ and _W_, return *true*.")
+  return false
+}

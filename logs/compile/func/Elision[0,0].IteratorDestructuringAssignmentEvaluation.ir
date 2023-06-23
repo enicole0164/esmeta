@@ -1,0 +1,18 @@
+def <SYNTAX>:Elision[0,0].IteratorDestructuringAssignmentEvaluation(
+  this: Ast:Elision[0,0],
+  iteratorRecord: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  if (= iteratorRecord.Done false) {
+    call %0 = clo<IteratorStep>(iteratorRecord)
+    call %1 = clo<Completion>(%0)
+    let next = %1
+    if (&& (comp? next) (! (= next.Type ~normal~))) {
+      iteratorRecord.Done = true
+    } else {}
+    [? next]
+    if (= next false) {
+      iteratorRecord.Done = true
+    } else {}
+  } else {}
+  return ~unused~
+}

@@ -1,0 +1,5 @@
+def <SYNTAX>:RelationalExpression[5,0].AssignmentTargetType(
+  this: Ast:RelationalExpression[5,0],
+): Const[~invalid~, ~simple~] {
+  return ~invalid~
+}

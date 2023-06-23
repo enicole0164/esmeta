@@ -1,0 +1,13 @@
+def <SYNTAX>:GeneratorBody[0,0].EvaluateGeneratorBody(
+  this: Ast:GeneratorBody[0,0],
+  functionObject: Unknown,
+  argumentsList: Unknown["List"],
+): Abrupt[return, throw] {
+  call %0 = clo<FunctionDeclarationInstantiation>(functionObject, argumentsList)
+  [? %0]
+  call %1 = clo<OrdinaryCreateFromConstructor>(functionObject, "%GeneratorFunction.prototype.prototype%", (new ["GeneratorState", "GeneratorContext", "GeneratorBrand"])[#658])
+  let G = [? %1]
+  G.GeneratorBrand = ~empty~
+  call %2 = clo<GeneratorStart>(G, this[0])
+  return comp[~return~/~empty~](G)
+}

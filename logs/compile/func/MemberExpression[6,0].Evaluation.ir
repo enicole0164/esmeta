@@ -1,0 +1,6 @@
+def <SYNTAX>:MemberExpression[6,0].Evaluation(
+  this: Ast:MemberExpression[6,0],
+): Unknown {
+  call %0 = clo<EvaluateNew>(this[0], this[1])
+  return [? %0]
+}

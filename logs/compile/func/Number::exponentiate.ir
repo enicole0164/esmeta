@@ -1,0 +1,70 @@
+def <NUM>:Number::exponentiate(
+  base: Number,
+  exponent: Number,
+): Number {
+  if (= exponent NaN) {
+    return NaN
+  } else {}
+  if (|| (= exponent 0.0f) (= exponent -0.0f)) {
+    return 1.0f
+  } else {}
+  if (= base NaN) {
+    return NaN
+  } else {}
+  if (= base +INF) {
+    if (< 0.0f exponent) {
+      return +INF
+    } else {
+      return 0.0f
+    }
+  } else {}
+  if (= base -INF) {
+    if (< 0.0f exponent) {
+      (yet "If _exponent_ is an odd integral Number, return *-∞*<sub>𝔽</sub>. Otherwise, return *+∞*<sub>𝔽</sub>.")
+    } else {
+      (yet "If _exponent_ is an odd integral Number, return *-0*<sub>𝔽</sub>. Otherwise, return *+0*<sub>𝔽</sub>.")
+    }
+  } else {}
+  if (= base 0.0f) {
+    if (< 0.0f exponent) {
+      return 0.0f
+    } else {
+      return +INF
+    }
+  } else {}
+  if (= base -0.0f) {
+    if (< 0.0f exponent) {
+      (yet "If _exponent_ is an odd integral Number, return *-0*<sub>𝔽</sub>. Otherwise, return *+0*<sub>𝔽</sub>.")
+    } else {
+      (yet "If _exponent_ is an odd integral Number, return *-∞*<sub>𝔽</sub>. Otherwise, return *+∞*<sub>𝔽</sub>.")
+    }
+  } else {}
+  assert (! (|| (= base 0.0f) (= base -0.0f)))
+  if (= exponent +INF) {
+    if (< 1 (abs ([math] base))) {
+      return +INF
+    } else {}
+    if (= (abs ([math] base)) 1) {
+      return NaN
+    } else {}
+    if (< (abs ([math] base)) 1) {
+      return 0.0f
+    } else {}
+  } else {}
+  if (= exponent -INF) {
+    if (< 1 (abs ([math] base))) {
+      return 0.0f
+    } else {}
+    if (= (abs ([math] base)) 1) {
+      return NaN
+    } else {}
+    if (< (abs ([math] base)) 1) {
+      return +INF
+    } else {}
+  } else {}
+  assert (! (|| (= exponent 0.0f) (= exponent -0.0f)))
+  if (&& (< base -0.0f) (! (&& (? exponent: "Number") (= ([math] exponent) (floor ([math] exponent)))))) {
+    return NaN
+  } else {}
+  return ([approx-number] (** ([math] base) ([math] exponent)))
+}

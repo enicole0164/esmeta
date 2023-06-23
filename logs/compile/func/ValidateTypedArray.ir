@@ -1,0 +1,13 @@
+def ValidateTypedArray(
+  O: Unknown,
+): Normal[Const[~unused~]] | Abrupt {
+  call %0 = clo<RequireInternalSlot>(O, "TypedArrayName")
+  [? %0]
+  assert (! (= O.ViewedArrayBuffer absent))
+  let buffer = O.ViewedArrayBuffer
+  call %1 = clo<IsDetachedBuffer>(buffer)
+  if (= %1 true) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1103])
+  } else {}
+  return ~unused~
+}

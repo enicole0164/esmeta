@@ -1,0 +1,40 @@
+def <BUILTIN>:INTRINSICS.TypedArray.prototype.reduceRight(
+  this: ESValue,
+  argumentsList: List[ESValue],
+  NewTarget: Object | Undefined,
+): Unknown {
+  if (< 0 argumentsList.length) let callbackfn = (pop < argumentsList) else let callbackfn = absent
+  if (< 0 argumentsList.length) let initialValue = (pop < argumentsList) else let initialValue = absent
+  let O = this
+  call %0 = clo<ValidateTypedArray>(O)
+  [? %0]
+  let len = O.ArrayLength
+  call %1 = clo<IsCallable>(callbackfn)
+  if (= %1 false) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1081])
+  } else {}
+  if (&& (= len 0) (= initialValue absent)) {
+    return comp[~throw~/~empty~]((new OrdinaryObject("Prototype" -> @EXECUTION_STACK[0].Realm.Intrinsics["%TypeError.prototype%"], "ErrorData" -> undefined))[#1082])
+  } else {}
+  let k = (- len 1)
+  let accumulator = undefined
+  if (! (= initialValue absent)) {
+    accumulator = initialValue
+  } else {
+    call %2 = clo<ToString>(([number] k))
+    let Pk = [! %2]
+    call %3 = clo<Get>(O, Pk)
+    accumulator = [! %3]
+    k = (- k 1)
+  }
+  loop[repeat] (! (< k 0)) {
+    call %4 = clo<ToString>(([number] k))
+    let Pk = [! %4]
+    call %5 = clo<Get>(O, Pk)
+    let kValue = [! %5]
+    call %6 = clo<Call>(callbackfn, undefined, (new [accumulator, kValue, ([number] k), O])[#1083])
+    accumulator = [? %6]
+    k = (- k 1)
+  }
+  return accumulator
+}
