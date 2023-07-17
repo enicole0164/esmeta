@@ -85,26 +85,7 @@ class Test262Fuzzer(
     })
     time(
       s"- initializing program pool with ${initPool.size} programs", {
-        // Trial 1
-        // logForTests(
-        //   name = "test262-fuzz",
-        //   tests = initPool,
-        //   postSummary = "",
-        //   log = true,
-        // )(
-        //   check = test =>
-        //     println(test.name)
-        //     val rawCode = target.loadTest(test.name)
-        //     val code = scriptParser.from(rawCode).toString(grammar)
-        //     add_test262(code)
-        //     // ()
-        //     // 
-        //   ,
-        //   postJob = _ => {}
-        // )
-
-        // Trial 2
-        // // Get Available Cov.
+        // Get Available Cov.
         val fileList = iterateDir(s"$COV_DIR")
 
         for (filepath <- fileList) {
@@ -299,16 +280,7 @@ class Test262Fuzzer(
   /** mutator stat */
   val mutatorStat: MMap[String, Counter] = MMap()
 
-//   /** initial pool ver.0 */
-//   val initPool =
-//     SimpleSynthesizer.initPool.map(SimpleSynthesizer -> _) ++
-//     BuiltinSynthesizer.initPool.map(BuiltinSynthesizer -> _)
-
-//   /** initial pool ver.1 */
-//   val initPool =
-//     target.giveTest()
-
-  /** initial pool ver.2 */
+  /** initial pool */
   val initPool = {
     val tests = target.getTests(
         name = "eval",

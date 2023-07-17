@@ -15,8 +15,6 @@ import esmeta.test262.util.TestFilter
 import java.io.File
 import scala.collection.mutable.ListBuffer
 import esmeta.es.util.Coverage.*
-// import esmeta.es.util.Coverage.fromLog_testfuzz_multiple_files
-// import esmeta.es.util.Coverage.fromLog_testcov
 import esmeta.cfg.util.JsonProtocol
 import esmeta.es.util.JsonProtocol
 import io.circe.*, io.circe.syntax.*
@@ -36,145 +34,99 @@ case object Test262TestCov extends Phase[CFG, Unit] {
     // set test mode
     if (!config.noTestMode) TEST_MODE = true
 
-    // // Phase 0 get target version of Test262
-    // val version = Test262.getVersion(config.target)
-    // val test262 = Test262(version)
+    // Phase 1
+    // Get target version of Test262
+    val version = Test262.getVersion(config.target)
+    val test262 = Test262(version)
 
-    // val target = test262
-    // val dataList = test262.getDataList()
-    // val iterable = TestFilter(dataList).summary.normal
+    val target = test262
+    val dataList = test262.getDataList()
+    val iterable = TestFilter(dataList).summary.normal
 
-    // val initPool = {
-    //   val tests = target.getTests(
-    //     name = "test262-testcov",
-    //     dataList = target.getDataList(Nil),
-    //     useProgress = true,
-    //   )
-    //   tests
-    // }
-
-    // Generate Coverage (Phase 1)
-    // iterable.map(normalConfig => {
-    //   val testPath = normalConfig.name
-    //   val rawCode = test262.loadTest(normalConfig.name)
-    //   val testName = testPath.substring(BASE_DIR.length() + 1, testPath.length())
-    //   val testDir = testName.substring(0 , testName.length() - 3)
-    //   val test262CovDir = s"$COV_DIR/$testDir"
-    //   if (!File(test262CovDir).exists()) {
-    //     val cov: Coverage = Coverage()
-    //     cov.runAndCheck(Script(rawCode, testName))
-    //     cov.dumpToBaseDir(
-    //       baseDir = test262CovDir,
-    //       withScripts = true,
-    //       withScriptInfo = true,
-    //       withTargetCondViews = true,
-    //       withUnreachableFuncs = true,
-    //       withMsg = false,
-    //       logBool = true,
-    //     )
-    //   }
-    // })
+    val initPool = {
+      val tests = target.getTests(
+        name = "test262-testcov",
+        dataList = target.getDataList(Nil),
+        useProgress = true,
+      )
+      tests
+    }
     
-    // // // Phase1-1
-    // // YET, cov_2 didn't parse everything
-    // val lines = Source.fromFile("/Users/jaeryeong/Documents/URP/esmeta/logs/test262-fuzz/test262-testcov-230526_13_53/yet.log").getLines.toSet
-    // val filtered_lines = lines
-    //                       .filter(s => s.contains("built-ins/") || s.contains("language/"))
-    //                       .map(_.split(" - ").apply(0))
+    // Phase2
+    // Generate all test coverage
+    // 1. Eliminating test cases that are yet
+    val lines = Source.fromFile("/Users/jaeryeong/Documents/URP/esmeta/logs/test262-fuzz/test262-testcov-230526_13_53/yet.log").getLines.toSet
+    val filtered_lines = lines
+                          .filter(s => s.contains("built-ins/") || s.contains("language/"))
+                          .map(_.split(" - ").apply(0))
+    // 2. Generate coverage by file
+    logForTests(
+      name = "test262-testcov",
+      tests = initPool,
+      postSummary = "",
+      log = true,
+    )(
+      check = normalConfig => {
+        val testPath = normalConfig.name
+        val testName = testPath.substring(BASE_DIR.length() + 1, testPath.length())
+        val testName_shorter = testName.substring(19)
+        if (filtered_lines.contains(testName_shorter))
+          throw NotSupported("in yet logs")
+        val testDir = testName.substring(0 , testName.length() - 3)
+        val test262CovDir = s"${COV_DIR}_2/$testDir"
+        if (!File(test262CovDir).exists()) {
+          val rawCode = test262.loadTest(normalConfig.name)
+          val cov: Coverage = Coverage()
+          cov.runAndCheck(Script(rawCode, testName))
+          cov.dumpToBaseDir(
+            baseDir = test262CovDir,
+            withScripts = true,
+            withScriptInfo = true,
+            withTargetCondViews = true,
+            withUnreachableFuncs = true,
+            withMsg = false,
+            logBool = true,
+          )
+        }
+      }
+    )
 
-    // logForTests(
-    //   name = "test262-testcov",
-    //   tests = initPool,
-    //   postSummary = "",
-    //   log = true,
-    // )(
-    //   check = normalConfig => {
-    //     val testPath = normalConfig.name
-    //     val testName = testPath.substring(BASE_DIR.length() + 1, testPath.length())
-    //     val testName_shorter = testName.substring(19)
-    //     if (filtered_lines.contains(testName_shorter))
-    //       throw NotSupported("in yet logs")
-    //     val testDir = testName.substring(0 , testName.length() - 3)
-    //     val test262CovDir = s"${COV_DIR}_2/$testDir"
-    //     if (!File(test262CovDir).exists()) {
-    //       val rawCode = test262.loadTest(normalConfig.name)
-    //       val cov: Coverage = Coverage()
-    //       cov.runAndCheck(Script(rawCode, testName))
-    //       cov.dumpToBaseDir(
-    //         baseDir = test262CovDir,
-    //         withScripts = true,
-    //         withScriptInfo = true,
-    //         withTargetCondViews = true,
-    //         withUnreachableFuncs = true,
-    //         withMsg = false,
-    //         logBool = true,
-    //       )
-    //     }
-    //   }
-    // )
-    
-    // // Phase 2
-    // // // Get Available Cov.
-    // val fileList = iterateDir(s"$COV_DIR")
-    // println(fileList.length)
-
-    // // Initial Coverage
-    // val recovered_cov = fromLog_testfuzz(fileList.head)
-
-    // for (filepath <- fileList.tail) {
-    //   fromLog_testfuzz_multiple_files(filepath, recovered_cov)
-    // }
-    // recovered_cov.dumpToBaseDir(
-    //   baseDir = s"$COV_DIR/test262testcov",
-    //   withScripts = true,
-    //   withScriptInfo = false,
-    //   withTargetCondViews = true,
-    //   withUnreachableFuncs = true,
-    //   withMsg = true,
-    //   logBool = true,
-    // )
-
-    // // Phase 3
-    // println(s"Total Node Available: ${cfg.nodeMap.size}")
-    // println(s"Total Branch Available: ${cfg.branches.length}")
-    // println(s"Total riaExprs Available: ${cfg.riaExprs.length}")
-    // println(s"Total Complete Funcs Available: ${cfg.program.completeFuncs.length}")
-    // println(s"Total Incomplete Funcs Available: ${cfg.program.incompleteFuncs.length}")
-    // println(s"Total Program Funcs Available: ${cfg.program.funcs.length}")
-    // println(s"Total CFG Funcs Available: ${cfg.funcs.length}")
+    // Phase 3
+    // Get statistics
+    println(s"Total Node Available: ${cfg.nodeMap.size}")
+    println(s"Total Branch Available: ${cfg.branches.length}")
+    println(s"Total riaExprs Available: ${cfg.riaExprs.length}")
+    println(s"Total Complete Funcs Available: ${cfg.program.completeFuncs.length}")
+    println(s"Total Incomplete Funcs Available: ${cfg.program.incompleteFuncs.length}")
+    println(s"Total Program Funcs Available: ${cfg.program.funcs.length}")
+    println(s"Total CFG Funcs Available: ${cfg.funcs.length}")
 
     // Phase 4
     // Dump Test262 coverage
-    // val test262_cov = Coverage(Some(1), 0, false)
-    // val fileList = iterateDir(s"$COV_DIR")
+    val test262_cov = Coverage(Some(1), 0, false)
+    val fileList = iterateDir(s"$COV_DIR")
 
-    // for (filepath <- fileList) {
-    //   fromLog_testfuzz_multiple_files(filepath, test262_cov)
-    // }
+    for (filepath <- fileList) {
+      fromLog_testfuzz_multiple_files(filepath, test262_cov)
+    }
 
-    // cov.dumpTo(
-    //   baseDir = s"$COV_DIR/test262coverage",
-    //   withScripts = true,
-    //   withScriptInfo = false,
-    //   withTargetCondViews = true,
-    //   withUnreachableFuncs = true,
-    //   withMsg = true,
-    //   logBool = true,
-    // )
+    test262_cov.dumpTo(
+      baseDir = s"$COV_DIR/test262coverage",
+      withScripts = true,
+      withScriptInfo = false,
+      withTargetCondViews = true,
+      withUnreachableFuncs = true,
+      withMsg = true,
+      logBool = true,
+    )
 
-    // // Phase 5
-    // // Compare two coverage
-    println("Phase 5")
+    // Phase 5
+    // Compare two coverage
+    val test262coverage_dir = s"$COV_DIR/test262coverage"
+    val test262fuzzcoverage_dir = s"$COV_DIR/logs/test262-fuzz/fuzz-230522_07_42"
 
-    val discoveredNodeScript = compareNodeCov(s"$BASE_DIR/test262coverage", s"$BASE_DIR/logs/test262-fuzz/fuzz-230522_07_42")
-    // print(discoveredNodeScript)
-
-    // getDetailedDescriptionOfNode(discoveredNodeScript)
-
-    val discoveredCondScript = compareCondCov(s"$BASE_DIR/test262coverage", s"$BASE_DIR/logs/test262-fuzz/fuzz-230522_07_42")
-    // print(discoveredCondScript)
-
-    // getDetailedDescriptionOfCond(discoveredCondScript)
+    val discoveredNodeScript = compareNodeCov(test262coverage_dir, test262fuzzcoverage_dir)
+    val discoveredCondScript = compareCondCov(test262coverage_dir, test262fuzzcoverage_dir)
 
 
     // Generate a map that contains
@@ -198,24 +150,6 @@ case object Test262TestCov extends Phase[CFG, Unit] {
       getDetailedDescriptionOfACond((condview, script))
       discoveredCondMap += (cond -> DiscoveredCondInfo(cond, condview, script, func))
     }
-
-    // val test262_cov = fromLog_testfuzz(s"$BASE_DIR/test262coverage")
-    // val fuzz_cov = fromLog(s"$BASE_DIR/logs/test262-fuzz/fuzz-230522_07_42")
-
-    // val nodeViewforTest262 = test262_cov.getNodeViewMap
-    // val nodeViewforFuzz = fuzz_cov.getNodeViewMap
-
-    // println("HHIHII")
-    // // Coverage of Fuzz is larger~
-    // for ((node, _) <- nodeViewforFuzz) {
-    //   nodeViewforTest262.get(node) match {
-    //     case None => print("missing")
-    //     case Some(_) => print("yes")
-    //   }
-    // }
-
-    // println(nodeViewforFuzz)
-    // println(nodeViewforTest262)
   }
 
   case class DiscoveredNodeInfo(node: Node, nodeView: NodeView, script: String, func: Func)
